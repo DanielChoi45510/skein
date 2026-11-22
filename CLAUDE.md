@@ -54,11 +54,27 @@ python3.12 -m venv .venv && source .venv/bin/activate
 pip install -e ".[dev]" && pre-commit install
 
 python -m pipeline.config        # validate config/*.yaml (+ local config/profile.yaml if present)
+pip install -e ".[embed]"        # embedding model deps (torch); tests don't need them
+python -m pipeline run --state ../skein-state --out ../skein-site   # one run (live network) + feed JSON
+python -m pipeline.sample --out web/static   # offline sample feed from test fixtures (no network/model)
+python -m pipeline run --state ../skein-state --embedder hashing   # no model; scores meaningless
+python -m pipeline.calibrate --state ../skein-state   # relevance score distribution per topic
 pytest                           # tests
 pre-commit run --all-files       # gitleaks, ruff, yaml checks, validator, tests
 ```
 
-CI (`.github/workflows/ci.yml`) runs the validator, tests and pre-commit on every push to `main` and every PR.
+```sh
+# web (Node ≥ 22.12; from web/)
+npm ci
+python -m pipeline.sample --out web/static      # (from the repo root) offline sample feed for dev
+npm run dev                                     # http://localhost:5173
+npm run check && npm test                       # svelte-check + vitest
+BASE_PATH=/skein npm run build                  # static site in web/build (feed/ is copied in at deploy)
+```
+
+CI (`.github/workflows/ci.yml`) runs the validator, tests and pre-commit, plus a web job (check, test, build), on every push to `main` and every PR.
+
+The hourly pipeline (`.github/workflows/pipeline.yml`) runs on `main` only: fetch → export → push state to the `data` branch (`.github/scripts/state.sh`) → build → deploy to GitHub Pages. Run it by hand from the Actions tab (workflow_dispatch). Workflows are linted by actionlint in pre-commit.
 
 ## Working rules for AI assistants
 

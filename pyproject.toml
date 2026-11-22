@@ -10,9 +10,18 @@ requires-python = ">=3.12"
 dependencies = [
   "pydantic>=2.7,<3",  # config schemas
   "PyYAML>=6,<7",      # config parsing
+  "httpx>=0.28,<1",    # HTTP client: timeouts, MockTransport for offline tests
+  "feedparser>=6.0,<7",  # RSS/Atom parsing
+  "numpy>=2,<3",       # vector math (near-duplicate detection, relevance)
 ]
 
 [project.optional-dependencies]
+# Embedding model for relevance + near-dup detection. Large (pulls in torch), so it's
+# optional: tests use a hashing embedder and never install it. CI's hourly workflow
+# installs CPU-only torch first.
+embed = [
+  "sentence-transformers>=5,<7",
+]
 dev = [
   "pytest>=8",
   "pre-commit>=3.6",
@@ -24,6 +33,7 @@ include = ["pipeline*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+markers = ["model: uses the real embedding model; skipped unless it is installed and cached"]
 pythonpath = ["."]
 addopts = "-ra"
 

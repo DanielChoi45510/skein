@@ -1,0 +1,70 @@
+# Test fixture: a small config covering every topic mode the validator checks.
+# Independent of the real config/ files, which the owner edits freely.
+
+defaults:
+  daily_cap_per_thread: 5
+  dormant_after_days: 14
+  archive_after_days: 60
+  lookback_days: 7
+  relevance_threshold: 0.30
+
+groups:
+  - { id: news, name: News }
+  - { id: tech, name: Tech }
+  - { id: games, name: Games }
+
+global_filters:
+  hype: Breathless posts with no concrete facts.
+  listicles: '"Top 10" style roundups.'
+
+topics:
+  - id: world
+    name: World
+    group: news
+    mode: threaded
+    description: Major world events, diplomacy and elections outside the US.
+    include: [Election results in a European country]
+    exclude: [Celebrity gossip]
+
+  - id: politics
+    name: Politics
+    group: news
+    mode: threaded
+    description: US national politics, legislation and court rulings.
+
+  - id: gadgets
+    name: Gadgets
+    group: tech
+    mode: flat
+    max_per_week: 10
+    filters_off: [listicles]
+    description: Useful everyday tech accessories with tested reviews.
+
+  - id: trackers
+    name: Trackers
+    group: tech
+    mode: tracker
+    threads:
+      - { id: phones, title: Phones }
+      - { id: laptops, title: Laptops }
+    description: New phones and laptops with in-depth reviews.
+
+  - id: markets
+    name: Markets
+    group: news
+    mode: fixed
+    threads:
+      - { id: energy, title: Energy }
+      - { id: rates, title: Interest rates }
+    description: Stock market and economic news.
+
+  - id: leaks
+    name: Leaks
+    group: games
+    mode: patch_cycle
+    spoiler_policy: fail_closed
+    images: false
+    threads_per_cycle:
+      - { id: next-patch, title: Next patch, accepts: [beta_confirmed] }
+      - { id: long-range, title: Long-range, accepts: [reputable_leaker], label: speculation }
+    description: Upcoming game characters and balance changes.

@@ -13,6 +13,8 @@ defaults:
   dormant_after_days: 14
   archive_after_days: 60
   lookback_days: 7               # ignore items older than this on first sight
+  relevance_threshold: 0.50      # calibrated 2026-11-21 on HN titles (python -m pipeline.calibrate);
+                                 # recalibrate after changing sources
 
 groups:
   - { id: ai,     name: AI }

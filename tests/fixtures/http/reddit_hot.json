@@ -1,0 +1,23 @@
+{
+  "kind": "Listing",
+  "data": {
+    "after": "t3_ccc3",
+    "children": [
+      {"kind": "t3", "data": {"title": "Weekly discussion thread", "stickied": true, "score": 900,
+        "permalink": "/r/ExampleNews/comments/aaa1/weekly_discussion/", "created_utc": 1795255200.0,
+        "is_self": true, "selftext": "Pinned.", "upvote_ratio": 0.9, "num_comments": 400, "link_flair_text": "Meta"}},
+      {"kind": "t3", "data": {"title": "House committee releases budget numbers", "stickied": false, "score": 512,
+        "permalink": "/r/ExampleNews/comments/bbb2/house_committee_budget/", "created_utc": 1795262400.0,
+        "is_self": false, "url_overridden_by_dest": "https://news.example.com/budget-numbers",
+        "selftext": "", "upvote_ratio": 0.93, "num_comments": 88, "link_flair_text": "Policy"}},
+      {"kind": "t3", "data": {"title": "Summary of today's hearing, with sources", "stickied": false, "score": 75,
+        "permalink": "/r/ExampleNews/comments/ccc3/summary_hearing/", "created_utc": 1795266000.0,
+        "is_self": true, "selftext": "Three witnesses testified. Key numbers: 4.2 billion & 12 agencies.",
+        "upvote_ratio": 0.88, "num_comments": 40, "link_flair_text": null}},
+      {"kind": "t3", "data": {"title": "Low-score post is filtered by min_score", "stickied": false, "score": 12,
+        "permalink": "/r/ExampleNews/comments/ddd4/low_score/", "created_utc": 1795266100.0,
+        "is_self": true, "selftext": "", "upvote_ratio": 0.6, "num_comments": 2, "link_flair_text": null}},
+      {"kind": "t1", "data": {"body": "Not a post; ignored."}}
+    ]
+  }
+}

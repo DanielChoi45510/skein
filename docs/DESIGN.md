@@ -47,6 +47,7 @@ Source ──produces──▶ Item ──belongs to (0..1)──▶ Thread ─�
 // Matches config/sources.yaml; enforced by pipeline/config/schema.py.
 type Source = {
   id: string; type: "rss" | "reddit";       // later phases add "pubmed" | "job_board" | "github_list"
+  name?: string;                            // display name; else the feed's own title, else the id
   url?: string;                             // rss only
   subreddit?: string;                       // reddit only
   topics: string[];                         // which topics it may feed
@@ -55,17 +56,23 @@ type Source = {
   lean?: "left" | "center-left" | "center" | "center-right" | "right" | null; // news outlets only
   kind?: "reporting" | "analysis" | "opinion" | "study" | "listing" | "guide"; // default content-kind hint
   verified: boolean;                        // URL checked during curation (default false)
+  excerpt: boolean;                         // default true; false drops the feed's description (boilerplate feeds)
   options?: Record<string, unknown>;        // e.g. reddit min_score
 };
 
+// Stored as NDJSON in items/YYYY-MM-DD.ndjson (by first_seen_at); see pipeline/models.py.
 type Item = {
-  id: string;                 // hash of canonical URL
-  source_id: string; url: string; canonical_url: string;
-  title: string; excerpt?: string;          // feed-provided, ≤300 chars
-  published_at: string; fetched_at: string;
+  id: string;                 // first 16 hex chars of sha256(canonical URL)
+  source_id: string; url: string; canonical_url: string;   // url = original link, used for linking out
+  title: string; excerpt?: string;          // feed-provided, plain text, ≤300 chars
+  published_at: string;       // UTC; missing or future dates → first_seen_at
+  first_seen_at: string;      // run that first stored it; never changes
+  also_covered_by: string[];  // other sources with the same story (§6.3), a ranking signal
+  duplicate_of?: string;      // set with hidden_reason "duplicate"
   topic_id?: string; thread_id?: string;
-  relevance: number;          // 0–1
-  importance: number;         // ranking score, §6.6
+  relevance?: number;         // 0–1 (§6.4); topic_id is the best-scoring topic
+  // importance (§6.6) depends on the current time: computed at export, never stored
+  extra: Record<string, unknown>;           // small source metadata (e.g. Reddit score, flair)
   labels: {
     kind?: "reporting" | "analysis" | "opinion" | "study" | "listing" | "guide";
     credibility?: "beta_confirmed" | "reputable_leaker" | "unverified" | "fake";   // Genshin
@@ -73,7 +80,7 @@ type Item = {
     region?: string;          // world news
     flags?: string[];         // e.g. "listicle", "spoiler_risk", "overclaim"
   };
-  hidden_reason?: string;     // set when filtered; kept for the review screen
+  hidden_reason?: "duplicate";  // more reasons arrive with filters (§7); thresholds are applied at export, not stored
   study_card?: StudyCard;     // §8.2
 };
 
@@ -141,13 +148,17 @@ fetch → normalize → dedupe → embed → relevance → classify/filter → a
 Canonicalize URLs (strip tracking params), parse dates to UTC, trim the excerpt to ≤300 chars, and drop items older than the topic's lookback window.
 
 ### 6.3 Dedupe
-1. Exact: canonical URL hash.
-2. Near-duplicate: title-embedding cosine ≥ 0.92 within 48 h → keep the higher-weight source, record the others as `also_covered_by` (used as a corroboration signal in ranking).
+1. Exact: canonical URL hash (tracking params like `utm_*`, `smid`, `fbclid` stripped; fragment dropped; params sorted). A second source adds itself to `also_covered_by`; a strictly higher-weight source takes the item over.
+2. Near-duplicate: title-embedding cosine ≥ 0.92 within 48 h → keep the higher-weight source (ties: the item stored first), record the others as `also_covered_by` (used as a corroboration signal in ranking). The hidden one is kept with `duplicate_of`, so reruns recognize it by id.
 
 ### 6.4 Embed and relevance
-- Small CPU embedding model (e.g. `bge-small-en-v1.5` or `all-MiniLM-L6-v2`), cached between runs with the Actions cache.
-- Each topic's `description` + `include` examples are embedded as positive anchors, and its `exclude` examples as negative anchors.
-- `relevance = sim(item, positives) − λ·sim(item, negatives)`. Items below the topic threshold are dropped. Items from sources mapped to several topics go to the best-scoring one.
+- Small CPU embedding model: `BAAI/bge-small-en-v1.5` (optional `[embed]` extra), cached between runs with the Actions cache. Loaded only when a run has new items. Whether anchors get bge's query instruction is a constant (`USE_QUERY_INSTRUCTION`), chosen by calibration.
+- Each topic's `description` + `include` examples are embedded as positive anchors, and its `exclude` examples as negative anchors. Items are embedded as title + excerpt.
+- `relevance = pos − λ·max(0, neg − pos)` with `pos`/`neg` the max similarity to the positive/negative anchors, λ = 0.5, clipped to [0, 1]. An exclude only counts against items closer to it than to the topic: subtracting `λ·neg` outright dropped every item in topics with in-domain excludes (calibration, 2026-11-21). Items from sources mapped to several topics go to the best-scoring one (ties: first listed).
+- Only the score is stored; thresholds are applied at export, so a threshold change takes effect on the next run for stored items too.
+- Threshold precedence: source `relevance.threshold` → topic `relevance_threshold` → `defaults.relevance_threshold`. A single-topic source can set `relevance: {skip: true}`: its items are never hidden by a threshold but are still scored, so ranking uses real relevance.
+- An item is shown if any source that carried it (its own or `also_covered_by`) would show it, so a story a skip source carried isn't hidden because another source's copy scored low.
+- Calibrate with `python -m pipeline.calibrate --state DIR`: scores stored items (instruction off and on) and prints per-topic percentiles, counts kept at candidate thresholds, and sample titles.
 - For job listings and gear trackers, the private profile adds an extra similarity term (§10.3).
 
 ### 6.5 Thread assignment (threaded / question / tracker / patch_cycle)
@@ -164,7 +175,9 @@ Mode-specific rules:
 - Thresholds are tuned against a small hand-labeled set in `tests/fixtures/threading/`.
 
 ### 6.6 Rank and cap
-`importance = relevance × source_weight × (1 + 0.3·log(1 + corroborating_sources)) × freshness_decay`
+`importance = relevance × source_weight × (1 + 0.3·ln(1 + corroborating_sources)) × freshness_decay`
+
+`freshness_decay = 0.5^(age_hours / 36)`. Importance depends on the current time, so it's computed at export, never stored.
 
 - **Per-thread daily cap: 5.** Overflow is collapsed behind "+N more", never dropped.
 - Flat topics have per-day or per-week caps from config.
@@ -183,6 +196,12 @@ The LLM client takes a provider list (`github_models` → fallbacks). Calls use 
 
 ### 6.8 Export and deploy
 Write the static JSON the site reads (`feed/index.json`, `feed/topics/<id>.json`, `feed/threads/<id>.json`). Build the SvelteKit site and deploy to GitHub Pages in the same workflow.
+
+The contract is `pipeline/export/models.py` (`schema_version` 1):
+- `feed/index.json`: `generated_at`; groups → topics `{id, name, mode, has_sources, visible_count, collapsed_count, latest_first_seen_at}`; sources `{id, name, type, status, lean, kind}`.
+- `feed/topics/<id>.json` (Phase 1: every topic as a flat ranked list): items within the topic's lookback, grouped by UTC day of publication (newest first), ranked by importance; each item `{id, title, url, source_id, published_at, first_seen_at, excerpt, importance, also_covered_by, collapsed}`. Hidden items are never exported.
+- Days are UTC in the export; the frontend regroups items by the viewer's local day for display. Per-day caps still count UTC days, so a local day can show slightly more than one day's cap.
+- Phase 1 caps: `max_per_day` per day; `max_per_week` / `target_per_week` over the trailing 7 days, `max_per_month` over 30; otherwise `defaults.daily_cap_per_thread` per day. Over-cap items are exported with `collapsed: true`.
 
 ## 7. Filters and labels
 
@@ -279,9 +298,12 @@ For each source: items fetched, shown, opened, hidden (by reason), last success 
 
 ### 10.1 Storage
 - State lives on an orphan `data` branch as JSON/NDJSON: items partitioned by day, `threads.json`, centroids as `.npy`, and an LLM cache.
+- Fetch state: `http_cache.json` (ETag / Last-Modified per feed URL) and `source_health.json` (per source: last attempt, status, last success, item count, last error, consecutive failures, feed title). All state is written once at the end of a run, so a crashed run never saves validators for items it didn't store.
 - Only the last ~30 days of item embeddings are kept.
 - The `data` branch is squashed periodically (history isn't needed) so the repo stays small.
 - Each run checks out `data`, updates it, commits and pushes. Concurrency: workflow-level `concurrency` group so runs never overlap.
+- Implementation: `.github/workflows/pipeline.yml` (hourly at :17 + `workflow_dispatch`) uses `.github/scripts/state.sh` to check `data` out as a git worktree (the first run creates the orphan branch) and to commit and push. Pushes are never forced: a run that somehow missed the existing branch is rejected instead of replacing state. Source health timestamps change every run, so `data` gets about one commit per hour until squashing exists.
+- Jobs and permissions: `run` (`contents: write`) → `build` (`contents: read`; site built with `BASE_PATH=/<repo>`, feed copied into `build/feed`) → `deploy` (`pages: write`, `id-token: write`). If `run` fails (e.g. invalid config), nothing is deployed and the site keeps the last feed.
 
 ### 10.2 Owner Worker (Cloudflare Worker + KV, free tier)
 | Endpoint | Purpose |

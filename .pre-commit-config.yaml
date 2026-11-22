@@ -9,6 +9,12 @@ repos:
     hooks:
       - id: gitleaks
 
+  # Workflows can't run locally; lint them (expressions, keys, action inputs).
+  - repo: https://github.com/rhysd/actionlint
+    rev: v1.7.12
+    hooks:
+      - id: actionlint
+
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v6.0.0
     hooks:
@@ -45,10 +51,24 @@ repos:
         files: ^(config/|pipeline/config/)
         pass_filenames: false
 
+      # Needs Node and `npm ci` in web/ (see CLAUDE.md). CI runs these in its own job.
+      - id: web
+        name: web (svelte-check + vitest)
+        language: system
+        entry: bash -c 'cd web && npm run --silent check && npm test --silent'
+        files: ^web/
+        pass_filenames: false
+
       - id: pytest
         name: pytest
         language: python
         entry: python -m pytest -q
-        additional_dependencies: ["pydantic>=2.7,<3", "PyYAML>=6,<7", "pytest>=8"]
+        additional_dependencies:
+          - "pydantic>=2.7,<3"
+          - "PyYAML>=6,<7"
+          - "httpx>=0.28,<1"
+          - "feedparser>=6.0,<7"
+          - "numpy>=2,<3"
+          - "pytest>=8"
         files: ^(pipeline/|tests/|config/|pyproject\.toml$)
         pass_filenames: false

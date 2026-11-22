@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Synthetic fixture: Atom 1.0 review site. -->
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Example Gadget Lab</title>
+  <link href="https://reviews.example.org/"/>
+  <updated>2026-11-21T08:00:00Z</updated>
+  <id>urn:uuid:7d5c0c4e-0000-4000-8000-000000000001</id>
+  <entry>
+    <title>We Tested 12 Desk Lamps for Small Rooms</title>
+    <link href="https://reviews.example.org/desk-lamps-tested"/>
+    <id>urn:uuid:7d5c0c4e-0000-4000-8000-000000000002</id>
+    <updated>2026-11-21T08:00:00Z</updated>
+    <published>2026-11-21T07:45:00+01:00</published>
+    <summary type="html">&lt;p&gt;Measured lux and color temperature for each lamp.&lt;/p&gt;</summary>
+  </entry>
+  <entry>
+    <title>Laptop Review: The Example Book 14</title>
+    <link href="https://reviews.example.org/example-book-14-review"/>
+    <id>urn:uuid:7d5c0c4e-0000-4000-8000-000000000003</id>
+    <updated>2026-11-20T15:00:00Z</updated>
+    <summary>Battery lasted 14 hours in our looping-video test.</summary>
+  </entry>
+</feed>

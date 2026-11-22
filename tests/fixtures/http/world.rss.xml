@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Synthetic fixture shaped like a newspaper section feed (RSS 2.0 + dc/media/atom). -->
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Example Times &gt; World</title>
+    <link>https://www.example.com/section/world</link>
+    <atom:link href="https://feeds.example.com/world.xml" rel="self" type="application/rss+xml"/>
+    <description>World news from the Example Times.</description>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 21 Nov 2026 12:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Coalition Talks Resume After Close Election in Freedonia</title>
+      <link>https://www.example.com/2026/11/21/world/freedonia-coalition.html?smid=rss&amp;utm_source=feed</link>
+      <guid isPermaLink="true">https://www.example.com/2026/11/21/world/freedonia-coalition.html</guid>
+      <description>Party leaders met for a &lt;b&gt;third&lt;/b&gt; day as the vote count settled at 31 percent for the largest bloc.</description>
+      <dc:creator>A. Reporter</dc:creator>
+      <pubDate>Sat, 21 Nov 2026 10:30:00 +0000</pubDate>
+      <media:content url="https://static.example.com/images/freedonia.jpg" medium="image" width="1050" height="550"/>
+    </item>
+    <item>
+      <title>Central Bank of Sylvania Holds Rates Steady</title>
+      <link>https://www.example.com/2026/11/20/business/sylvania-rates.html</link>
+      <description>The bank kept its benchmark rate at 3.25 percent, citing slowing inflation.</description>
+      <pubDate>Fri, 20 Nov 2026 18:15:00 -0500</pubDate>
+    </item>
+    <item>
+      <title>Item Without a Date</title>
+      <link>https://www.example.com/2026/11/19/world/undated.html</link>
+      <description>Feeds sometimes omit pubDate.</description>
+    </item>
+    <item>
+      <title>Item Without a Link Is Skipped</title>
+      <description>No link element at all.</description>
+      <pubDate>Sat, 21 Nov 2026 09:00:00 +0000</pubDate>
+    </item>
+  </channel>
+</rss>

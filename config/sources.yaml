@@ -4,11 +4,17 @@
 # skeleton. Anything with `verified: false` needs its URL checked before it is
 # enabled.
 #
+# name:    optional display name (default: the feed's own title, else the id)
 # status:  active | trial | disabled      (trial sources are badged in the feed)
 # weight:  0.5–1.5 manual trust knob (default 1.0)
 # lean:    news outlets only: left | center-left | center | center-right | right
 #          (from published media-bias ratings; record which rating you used)
 # kind:    default content kind hint: reporting | analysis | opinion | study | listing | guide
+# excerpt: false to drop the feed's description when it's boilerplate (default true)
+# relevance: per-source override of the topic threshold, either
+#            {threshold: 0.2}   a different bar for this source's items, or
+#            {skip: true}       single-topic sources only: never hidden by a threshold
+#                               (still scored, so ranking uses real relevance)
 
 sources:
 
@@ -20,6 +26,7 @@ sources:
     kind: reporting
     lean: null          # fill in from a media-bias rating
     verified: false
+    relevance: { skip: true }   # section feed: the outlet already sorted it
 
   - id: nyt-world
     type: rss
@@ -29,12 +36,14 @@ sources:
     kind: reporting
     lean: null
     verified: false
+    relevance: { skip: true }   # section feed: the outlet already sorted it
 
   - id: hn-frontpage
     type: rss
     url: https://hnrss.org/frontpage?points=200    # third-party Hacker News feed
     topics: [ai-news, ai-practice, jobs-market]
     status: trial
+    excerpt: false      # hnrss descriptions are just "Article URL / Comments URL / Points"
     verified: false
 
   - id: reddit-genshin-leaks

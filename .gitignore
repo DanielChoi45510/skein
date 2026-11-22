@@ -16,3 +16,9 @@ dist/
 .pytest_cache/
 .ruff_cache/
 .coverage
+
+# Web (SvelteKit)
+web/node_modules/
+web/.svelte-kit/
+web/build/
+web/static/feed/
