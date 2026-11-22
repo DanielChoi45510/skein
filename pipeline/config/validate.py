@@ -22,7 +22,7 @@ from typing import Any
 import yaml
 from pydantic import BaseModel, ValidationError
 
-from .schema import Profile, SourcesFile, TopicsFile, duplicates
+from .schema import Profile, Source, SourcesFile, Topic, TopicsFile, duplicates
 
 DEFAULT_CONFIG_DIR = Path(__file__).resolve().parents[2] / "config"
 
@@ -89,14 +89,33 @@ def check_sources(t: TopicsFile, s: SourcesFile) -> list[str]:
             topic = topics.get(tid)
             if topic is None:
                 errors.append(f"sources.yaml: source '{src.id}': unknown topic '{tid}'")
-            # CLAUDE.md principle 7. Remove this check when the Phase 3 spoiler filter ships.
+            # CLAUDE.md principle 7. Remove this check once a spoiler filter exists.
             elif topic.spoiler_policy == "fail_closed" and src.status != "disabled":
                 errors.append(
                     f"sources.yaml: source '{src.id}' feeds spoiler-protected topic '{tid}' and "
                     "must stay `status: disabled` until the spoiler filter exists "
-                    "(CLAUDE.md principle 7; DESIGN.md §14 phase 3)"
+                    '(CLAUDE.md principle 7; DESIGN.md "Parked")'
                 )
+        errors += _check_region(src, topics)
     return errors
+
+
+def _check_region(src: Source, topics: dict[str, Topic]) -> list[str]:
+    """`options.region` pre-tags items for a topic's region facet (e.g. world news).
+
+    It must be one of the `regions` of a topic the source feeds. Generic on purpose:
+    no topic id is hardcoded (CLAUDE.md principle 2).
+    """
+    if "region" not in src.options:
+        return []
+    region = src.options["region"]
+    allowed = {r for tid in src.topics if tid in topics for r in topics[tid].regions}
+    where = f"sources.yaml: source '{src.id}': options.region"
+    if not allowed:
+        return [f"{where} is only allowed on sources feeding a topic that lists `regions`"]
+    if region not in allowed:
+        return [f"{where} '{region}' is not one of: {', '.join(sorted(allowed))}"]
+    return []
 
 
 def _load[M: BaseModel](

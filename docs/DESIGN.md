@@ -46,18 +46,22 @@ Source ──produces──▶ Item ──belongs to (0..1)──▶ Thread ─�
 ```ts
 // Matches config/sources.yaml; enforced by pipeline/config/schema.py.
 type Source = {
-  id: string; type: "rss" | "reddit";       // later phases add "pubmed" | "job_board" | "github_list"
+  id: string;
+  type: "rss" | "reddit"                    // fetched since Phase 1
+      | "github_list" | "nyt_books" | "fred"; // Phase 4 fetchers; must stay disabled until then
   name?: string;                            // display name; else the feed's own title, else the id
-  url?: string;                             // rss only
+  url?: string;                             // rss only (Phase 4 types keep settings in options)
   subreddit?: string;                       // reddit only
   topics: string[];                         // which topics it may feed
   status: "active" | "trial" | "disabled";
   weight: number;                           // 0.5–1.5, manual trust knob (default 1.0)
-  lean?: "left" | "center-left" | "center" | "center-right" | "right" | null; // news outlets only
+  lean?: "left" | "lean_left" | "center" | "lean_right" | "right" | null; // AllSides; only with kind reporting/analysis/opinion
   kind?: "reporting" | "analysis" | "opinion" | "study" | "listing" | "guide"; // default content-kind hint
-  verified: boolean;                        // URL checked during curation (default false)
+  paywall: "none" | "partial" | "full";     // default none; partial/full show a 🔒 badge
+  verified: boolean;                        // returned a valid feed in a real run (default false)
   excerpt: boolean;                         // default true; false drops the feed's description (boilerplate feeds)
-  options?: Record<string, unknown>;        // e.g. reddit min_score
+  relevance?: { threshold: number } | { skip: true };  // §6.4
+  options?: Record<string, unknown>;        // e.g. reddit min_score; region (§8.4); Phase 4 type settings
 };
 
 // Stored as NDJSON in items/YYYY-MM-DD.ndjson (by first_seen_at); see pipeline/models.py.
@@ -75,7 +79,7 @@ type Item = {
   extra: Record<string, unknown>;           // small source metadata (e.g. Reddit score, flair)
   labels: {
     kind?: "reporting" | "analysis" | "opinion" | "study" | "listing" | "guide";
-    credibility?: "beta_confirmed" | "reputable_leaker" | "unverified" | "fake";   // Genshin
+    credibility?: "beta_confirmed" | "reputable_leaker" | "unverified" | "fake";   // parked leaks topic (§16)
     evidence?: "strong" | "moderate" | "weak";                                     // studies
     region?: string;          // world news
     flags?: string[];         // e.g. "listicle", "spoiler_risk", "overclaim"
@@ -108,7 +112,6 @@ Each topic in `topics.yaml` has a `mode`:
 | `flat` | No threads. A ranked list with a daily or weekly cap. | AI in practice, Everyday upgrades, Job-search guides |
 | `tracker` | Fixed, never-ending threads, one per product category. Items are compared against the owner's private gear list. | Tech trackers |
 | `question` | Threads are research questions ("training volume for hypertrophy"). They collect studies for months and go dormant slowly. | Health topics |
-| `patch_cycle` | Two threads per game version: **Next patch** and **Long-range & meta**. Threads close when the patch ships. | Genshin leaks |
 | `fixed` | Predefined threads only (no automatic creation). | Markets (sectors + economy-wide) |
 | `listings` | Job listings matched to the private profile, with a weekly target count. | Jobs: listings |
 | `reading_list` | Slow lane, a few picks a month. | Books |
@@ -142,7 +145,9 @@ fetch → normalize → dedupe → embed → relevance → classify/filter → a
 - Conditional GET (ETag / Last-Modified); unchanged feeds cost nothing.
 - Per-host rate limits, timeouts, retries with backoff, descriptive User-Agent.
 - Reddit via its public RSS/JSON endpoints, which may be rate-limited or blocked from cloud runners. A source failure must not fail the run; it's recorded in source health (§9.4).
-- Source types for v1: `rss`, `reddit`. Later: `pubmed`, `job_board` (Greenhouse / Lever / Ashby public job-board APIs), `github_list` (community internship lists).
+- Source types since Phase 1: `rss`, `reddit`. `rss` also covers Google News search feeds (used for Reuters, which has no official feed); their items have headlines only and link through news.google.com.
+- Phase 4 adds `github_list` (SimplifyJobs JSON listings), `nyt_books` (NYT Books API) and `fred` (FRED series observations). Until their fetchers exist, sources of these types must be `status: disabled` (validator rule). Later still: companies' public Greenhouse / Lever / Ashby job boards (§8.7).
+- `options.region` on a source pre-tags its items for a topic's region facet (§8.4). It must be one of the `regions` of a topic the source feeds.
 
 ### 6.2 Normalize
 Canonicalize URLs (strip tracking params), parse dates to UTC, trim the excerpt to ≤300 chars, and drop items older than the topic's lookback window.
@@ -161,7 +166,7 @@ Canonicalize URLs (strip tracking params), parse dates to UTC, trim the excerpt 
 - Calibrate with `python -m pipeline.calibrate --state DIR`: scores stored items (instruction off and on) and prints per-topic percentiles, counts kept at candidate thresholds, and sample titles.
 - For job listings and gear trackers, the private profile adds an extra similarity term (§10.3).
 
-### 6.5 Thread assignment (threaded / question / tracker / patch_cycle)
+### 6.5 Thread assignment (threaded / question / tracker)
 For each relevant item in a threaded topic:
 1. Candidates: the topic's threads (any state except archived), ranked by cosine(item, thread centroid), with a boost for overlapping named entities.
 2. Top score ≥ `T_high` (start at 0.75) with a clear margin → attach.
@@ -171,8 +176,9 @@ For each relevant item in a threaded topic:
 
 Mode-specific rules:
 - `tracker` and `fixed`: assign only to the predefined threads (nearest by similarity); never create new ones.
-- `patch_cycle`: route by credibility. Beta-confirmed → **Next patch**; reputable-leaker or long-range → **Long-range & meta**.
 - Thresholds are tuned against a small hand-labeled set in `tests/fixtures/threading/`.
+
+**Thread rescue** (Phase 2): an item scoring within 0.05 below its topic's relevance threshold (§6.4) is kept anyway if it attaches to an active thread with similarity ≥ `T_high`. Short or terse headlines that belong to a story already being followed shouldn't be lost to the threshold.
 
 ### 6.6 Rank and cap
 `importance = relevance × source_weight × (1 + 0.3·ln(1 + corroborating_sources)) × freshness_decay`
@@ -185,12 +191,11 @@ Mode-specific rules:
 
 ### 6.7 Enrich (LLM, optional)
 A small, bounded number of calls per run, prioritized in this order:
-1. Genshin spoiler / credibility classification (blocks display).
-2. Content-kind labels (reporting / analysis / opinion) and filter checks (§7) for borderline items.
-3. Thread assignment tiebreaks (§6.5 step 3).
-4. Thread titles for newly promoted threads.
-5. Study cards (§8.2).
-6. Primers for new politics and world threads (§8.5).
+1. Content-kind labels (reporting / analysis / opinion) and filter checks (§7) for borderline items.
+2. Thread assignment tiebreaks (§6.5 step 3).
+3. Thread titles for newly promoted threads.
+4. Study cards (§8.2).
+5. Primers for new politics and world threads (§8.5).
 
 The LLM client takes a provider list (`github_models` → fallbacks). Calls use JSON-schema output, are cached by input hash, and log nothing secret. When the run's budget is exhausted, remaining items get heuristic defaults and are re-queued for the next run.
 
@@ -198,8 +203,8 @@ The LLM client takes a provider list (`github_models` → fallbacks). Calls use 
 Write the static JSON the site reads (`feed/index.json`, `feed/topics/<id>.json`, `feed/threads/<id>.json`). Build the SvelteKit site and deploy to GitHub Pages in the same workflow.
 
 The contract is `pipeline/export/models.py` (`schema_version` 1):
-- `feed/index.json`: `generated_at`; groups → topics `{id, name, mode, has_sources, visible_count, collapsed_count, latest_first_seen_at}`; sources `{id, name, type, status, lean, kind}`.
-- `feed/topics/<id>.json` (Phase 1: every topic as a flat ranked list): items within the topic's lookback, grouped by UTC day of publication (newest first), ranked by importance; each item `{id, title, url, source_id, published_at, first_seen_at, excerpt, importance, also_covered_by, collapsed}`. Hidden items are never exported.
+- `feed/index.json`: `generated_at`; groups → topics `{id, name, mode, has_sources, visible_count, collapsed_count, latest_first_seen_at}`; sources `{id, name, type, status, lean, kind, paywall}`.
+- `feed/topics/<id>.json` (Phase 1: every topic as a flat ranked list): items within the topic's lookback, grouped by UTC day of publication (newest first), ranked by importance; each item `{id, title, url, source_id, published_at, first_seen_at, excerpt, importance, also_covered_by, collapsed}`. Hidden items are never exported, and neither are items carried only by disabled or removed sources: disabling a source hides its stored items on the next run.
 - Days are UTC in the export; the frontend regroups items by the viewer's local day for display. Per-day caps still count UTC days, so a local day can show slightly more than one day's cap.
 - Phase 1 caps: `max_per_day` per day; `max_per_week` / `target_per_week` over the trailing 7 days, `max_per_month` over 30; otherwise `defaults.daily_cap_per_thread` per day. Over-cap items are exported with `collapsed: true`.
 
@@ -220,27 +225,24 @@ Global filters (on for every topic unless the topic opts out):
 
 Implementation: negative embedding anchors first (free), then the LLM checks only borderline items. Filtered items keep a `hidden_reason` and appear on the **Hidden items** screen so filters can be audited and tuned.
 
-Labels shown on cards: **Reporting / Analysis / Opinion / Study / Guide / Listing**, the outlet's political lean for news outlets (from `sources.yaml`), credibility badges (Genshin) and evidence badges (studies).
+Labels shown on cards: **Reporting / Analysis / Opinion / Study / Guide / Listing**, the outlet's political lean for news outlets (from `sources.yaml`) and evidence badges (studies).
 
 ## 8. Topic-specific features
 
-### 8.1 Genshin leaks
-- Wanted: new characters and banners; character kits and their meta and team implications; impactful gameplay and QoL changes.
-- **Never shown:** story leaks; map, region or area specifics and visuals (a bare "a new region is coming" is OK); events; livestreams; codes; patch notes.
-- **Credibility tiers:** ✅ beta-confirmed (current beta cycle) · 🟡 reputable leaker (long-range, unconfirmable) · ⚪ unverified · 🚩 fake (hidden). Signals: the subreddit's own reliability flairs (trusted for "reliable"), title keywords, known leaker names (config list), score and upvote ratio, and the share of top comments calling a leak fake or debunked.
-- **Spoiler safety (fail closed):** classify title + flair (+ excerpt) before display; hide if spoiler risk isn't confidently low. **No thumbnails or images** for this topic, ever. The Hidden screen shows titles blurred until tapped.
-- **Threads:** per version — **Next patch** (concrete) and **Long-range & meta** (speculative, labeled). Both close when that version ships.
+### 8.1 Genshin leaks: parked
+Moved to §16 (Parked) on 2026-11-22.
 
 ### 8.2 Health study cards
-- Prefer primary sources (study databases, journals) over health news.
+- Health items are **articles about studies** from evidence-focused writers (Stronger By Science, Sweat Science, NYT Well, Examine, Harvard Health), not raw study-database searches (`evidence: articles_about_studies`).
+- When an article links a paper (DOI, PubMed or journal URL), look up that paper's abstract and metadata (PubMed E-utilities / Crossref) and build the study card from it. No linked paper means no card.
 - Card fields: design (RCT, meta-analysis, cohort …), sample size, duration and population; key results **with numbers**; the **claim strength the authors use** ("associated with" vs "caused"); limitations if stated; a link to the paper.
 - **Evidence badges:** 🟢 meta-analysis / systematic review / large RCT · 🟡 smaller RCT or large observational study · ⚪ small, pilot, animal or in-vitro study.
-- **Overclaim flag:** when a news article links a study and its headline claims more than the abstract supports, show "Headline says *X*; study found *Y*".
+- **Overclaim flag:** compare the article's headline claim with the linked paper's abstract; when the headline claims more, show "Headline says *X*; study found *Y*".
 - Generated only from the abstract and metadata. If the abstract isn't available, show no card, just the link.
 - Emphasis: what the study found, more than personal takeaways.
 
 ### 8.3 Tech trackers
-- Fixed threads: phones, laptops, headphones & earbuds, wearables, tablets, EVs (low priority).
+- Fixed threads: phones, laptops, headphones & earbuds, wearables, tablets. (No EVs: the owner doesn't follow cars.)
 - Each relevant release or review is compared against the owner's private gear list ("vs. what you have"). That comparison is computed in the pipeline; only the comparison text is published, never the raw gear list. **[open]** decide whether even the comparison text should be owner-only (served from the Worker) rather than public.
 - Favor in-depth reviews with real testing over roundups.
 
@@ -259,16 +261,18 @@ Labels shown on cards: **Reporting / Analysis / Opinion / Study / Guide / Listin
 
 ### 8.7 Jobs
 Fully separate from Markets; no cross-posting.
-- **Listings** (`listings` mode): internships first, new-grad full-time second; any industry with CS, ML or data roles (healthcare, defense, biotech, finance … not only big tech). Target 20–30 per week. Matched against the private profile; badges for **fresh** (posted < 48 h), **less-known company**, and **citizenship/clearance required** when stated. Sources: community-maintained internship lists and companies' public job-board APIs, polled directly. Polling boards directly also surfaces listings that never trend on aggregators.
+- **Listings** (`listings` mode): internships first, new-grad full-time second; any industry with CS, ML or data roles (healthcare, defense, biotech, finance … not only big tech). Target 20–30 per week. Matched against the private profile; badges for **fresh** (posted < 48 h), **less-known company**, and **citizenship/clearance required** when stated. Sources: the SimplifyJobs internship and new-grad lists, HN "Who is hiring?", and (Phase 4) chosen companies' public Greenhouse / Lever / Ashby job boards, polled directly, which also surfaces listings that never trend on aggregators. Companies on Workday aren't supported. Each listing card gets a **"Look up on Glassdoor"** search link for manual research (a link only; nothing is fetched).
 - **Job-market news** (threaded, daily): companies changing direction, in-demand skills, salary data, interview trends. Layoffs and hiring freezes are included at lower weight.
 - **Job-search guides** (flat): what to practice (LeetCode / NeetCode / system design), systems for finding and applying efficiently, project ideas that build in-demand skills. Networking is low priority; resume formatting low; negotiation out of scope for now.
-- LinkedIn is never scraped (its terms prohibit it). LinkedIn-style influencer content is filtered wherever it appears.
+- **Never** scrape LinkedIn, Glassdoor or Indeed: their terms prohibit it (Glassdoor retired its public API in 2022). LinkedIn-style influencer content is filtered wherever it appears.
 
 ### 8.8 Books
 `reading_list` mode: high-impact nonfiction widely considered a must-read, and new nonfiction with real buzz on AI, the economy and practical life skills. A few picks a month.
 
 ### 8.9 Markets
-Fixed threads for the 11 GICS sectors plus economy-wide threads (Fed and rates, inflation and jobs reports, trade and tariffs, major earnings surprises). News only; never buy/sell advice. **[v2]** a sector performance panel, if a reliable free daily data source exists.
+Fixed threads for the 11 GICS sectors plus economy-wide threads (Fed and rates, inflation and jobs reports, trade and tariffs, major earnings surprises). News only; never buy/sell advice.
+- **Panel** (Phase 4, `panel` in `topics.yaml`): daily closes with day and week change for the S&P 500, Nasdaq Composite and Dow, from FRED (`SP500`, `NASDAQCOM`, `DJIA`).
+- **[open]** A sector performance grid.
 
 ## 9. Frontend
 
@@ -278,8 +282,8 @@ SvelteKit static app, installable PWA, dark mode first, responsive from phone to
 - **Home:** topic groups with "N new" counts per topic; ends with "You're all caught up."
 - **Topic:** threads sorted by last update; cooling threads lower; dormant threads grayed and collapsed at the bottom. Flat topics show a ranked list.
 - **Thread (catch-up view):** "N updates since <your last visit>", newest first, with a toggle for chronological; primer at the top when applicable; per-day groups with the cap and "+N more".
-- **Item card:** title, source, time, labels and badges, excerpt. Tap → opens the original article. On an installed PWA, out-of-scope links open in the system's in-app browser sheet; on desktop, a new tab.
-- **Hidden items:** filtered items with their reasons (Genshin titles blurred).
+- **Item card:** title, source, time, labels and badges (🔒 for `paywall: partial | full`), excerpt. Tap → opens the original article. On an installed PWA, out-of-scope links open in the system's in-app browser sheet; on desktop, a new tab.
+- **Hidden items:** filtered items with their reasons.
 - **Sources:** per-source health and usefulness (§9.4).
 - **Settings:** paste the owner token (once per device).
 
@@ -293,6 +297,7 @@ The app re-fetches the feed JSON every few minutes while open. "Refresh now" (ow
 
 ### 9.4 Source report
 For each source: items fetched, shown, opened, hidden (by reason), last success and last error. Trial sources are badged in the feed. Used to decide what to keep.
+- **Unique items:** the share of a source's shown items that no other source also covered (`also_covered_by` empty). Sources with near-zero unique contribution after 2 weeks are flagged as candidates to cut. This is how the owner decides whether adding more sources (especially job listings) is worth it.
 
 ## 10. Hosting, data and security
 
@@ -323,6 +328,7 @@ Auth: a long random bearer token. CORS limited to the site's origin.
 - GitHub push protection on; pre-commit secret scanner; `.gitignore` covers `.env*`, `profile.yaml`, `*.local.*`.
 - Workflow permissions are least-privilege per job (`contents: write` only where needed, `models: read`, `pages: write`, `id-token: write`).
 - No secrets in logs; mask any derived values.
+- Secrets (Actions secrets, needed from Phase 4): `PROFILE_YAML`, `FRED_API_KEY` (market panel), `NYT_API_KEY` (NYT Books API).
 - Config validator (`python -m pipeline.config`, in pre-commit and CI): schemas for all three config files, cross-file references, and the principle 7 guard (sources feeding a `spoiler_policy: fail_closed` topic must stay `disabled`). Profile errors show field paths only, never values.
 
 ## 11. Free-tier budget
@@ -352,13 +358,33 @@ Only build the current phase.
 | **0. Setup** | Repo, `.gitignore`, pre-commit (secret scan, lint), `AGENTS.md` symlink, config schemas + validator (pydantic), CI running tests + validator. |
 | **1. MVP feed** | RSS + Reddit fetch → normalize → dedupe → embed → relevance → **flat** ranked lists per topic → JSON export → SvelteKit PWA on GitHub Pages, hourly. No LLM. Genshin source stays disabled. |
 | **2. Threads** | Thread assignment + lifecycle, per-thread caps, catch-up view, owner Worker (read sync, refresh, overrides). |
-| **3. LLM layer** | Content-kind labels, filter checks, thread titles, Genshin credibility + spoiler filter (then enable the Genshin source), primers, opinion balance. |
+| **3. LLM layer** | Content-kind labels, filter checks, thread titles, primers, opinion balance. |
 | **4. Special lanes** | Study cards, tech trackers with gear comparison, job listings, world weekly roundup, reading list, source report, Hidden screen. |
 | **5. Polish & open source** | Setup docs for forkers, demo mode with sample data, performance and accessibility pass. |
 
 ## 15. Open questions
-- ~~Final project name~~: **Skein** (decided 2026-11-21).
-- **[open]** Source curation, with feed URLs verified: the next working session.
+- **[open]** Confirm the AllSides lean for every news/opinion source marked `# AllSides: check` before Phase 3 opinion balancing.
 - **[open]** Job listings during grad-school application season: pause or reduce listings until Dec 15?
 - **[open]** Whether tracker comparison text should be public or owner-only (§8.3).
-- **[open]** A free daily market-data source for the v2 sector panel.
+- **[open]** A free daily data source for a sector performance grid (§8.9).
+
+## 16. Parked
+
+Designed but not scheduled. Nothing here is on the roadmap (§14) until the owner revives it.
+
+### 16.1 Genshin leaks (parked 2026-11-22)
+
+**Why parked:** Reddit refuses both its JSON and RSS listings to this pipeline (403 and 404 with our User-Agent, 2026-11-22), and approval for the official API is uncertain. A possible future route: follow a Discord announcement channel into a server the owner owns and read it there with a bot (a proper bot account; **never a self-bot**, which breaks Discord's terms).
+
+**If revived:** add the topic and its source back to `config/` (the schema still supports everything below), build the spoiler filter and credibility classification as the first LLM priority (it blocks display), and only then enable the source. CLAUDE.md principle 7 and the validator keep any source feeding a `spoiler_policy: fail_closed` topic disabled until then.
+
+**Topic design** (formerly §8.1):
+- Wanted: new characters and banners; character kits and their meta and team implications; impactful gameplay and QoL changes.
+- **Never shown:** story leaks; map, region or area specifics and visuals (a bare "a new region is coming" is OK); events; livestreams; codes; patch notes.
+- **Credibility tiers:** ✅ beta-confirmed (current beta cycle) · 🟡 reputable leaker (long-range, unconfirmable) · ⚪ unverified · 🚩 fake (hidden). Signals: the subreddit's own reliability flairs (trusted for "reliable"), title keywords, known leaker names (config list), score and upvote ratio, and the share of top comments calling a leak fake or debunked.
+- **Spoiler safety (fail closed):** classify title + flair (+ excerpt) before display; hide if spoiler risk isn't confidently low. **No thumbnails or images** for this topic, ever. The Hidden screen shows titles blurred until tapped.
+- **Threads:** per version — **Next patch** (concrete) and **Long-range & meta** (speculative, labeled). Both close when that version ships.
+
+**Mode `patch_cycle`** (formerly in §4): two threads per game version, **Next patch** and **Long-range & meta**. Threads close when the patch ships. Thread assignment (formerly in §6.5) routes by credibility: beta-confirmed → **Next patch**; reputable leaker or long-range → **Long-range & meta**.
+
+**Labels:** credibility badges on cards (formerly in §7); the Hidden screen shows this topic's titles blurred until tapped (formerly in §9.1).

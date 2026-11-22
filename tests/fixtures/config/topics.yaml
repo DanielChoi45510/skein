@@ -25,6 +25,7 @@ topics:
     description: Major world events, diplomacy and elections outside the US.
     include: [Election results in a European country]
     exclude: [Celebrity gossip]
+    regions: [Europe, Americas]
 
   - id: politics
     name: Politics

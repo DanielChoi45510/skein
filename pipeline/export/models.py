@@ -70,6 +70,7 @@ class SourceSummary(_Out):
     status: str  # "trial" sources are badged in the UI
     lean: str | None
     kind: str | None
+    paywall: str  # none | partial | full
 
 
 class FeedIndex(_Out):

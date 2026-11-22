@@ -6,8 +6,10 @@ cover well over a day of a subreddit's activity.
 
 The item link is the Reddit post itself (the discussion is the content for
 leak/discussion subreddits); an external link, when present, goes in `extra`.
-Genshin-specific options (`use_flair_credibility`, `fetch_top_comments`) are
-Phase 3 and ignored here.
+Credibility options (`use_flair_credibility`, `fetch_top_comments`) belong to
+the parked leaks topic (DESIGN "Parked") and are ignored here. As of 2026-11-22
+Reddit refuses both the JSON and RSS listings from this fetcher, so no Reddit
+source is enabled.
 """
 
 from __future__ import annotations

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { ExportItem, SourceSummary } from '$lib/types';
 	import { fullDate, relativeTime } from '$lib/time';
-	import { kindLabel, leanLabel } from '$lib/labels';
+	import { kindLabel, leanLabel, paywallLabel } from '$lib/labels';
 
 	interface Props {
 		item: ExportItem;
@@ -14,6 +14,7 @@
 	const source = $derived(sources.get(item.source_id));
 	const kind = $derived(kindLabel(source?.kind ?? null));
 	const lean = $derived(leanLabel(source?.lean ?? null));
+	const paywall = $derived(paywallLabel(source?.paywall));
 	const also = $derived(item.also_covered_by.map((id) => sources.get(id)?.name ?? id));
 </script>
 
@@ -30,7 +31,10 @@
 		</time>
 		{#if isNew}<span class="badge badge-new">New</span>{/if}
 		{#if kind}<span class="badge">{kind}</span>{/if}
-		{#if lean}<span class="badge" title="Outlet's political lean">{lean}</span>{/if}
+		{#if lean}<span class="badge" title="Outlet's political lean (AllSides)">{lean}</span>{/if}
+		{#if paywall}<span class="badge" title={paywall}
+				><span aria-hidden="true">🔒</span><span class="visually-hidden">{paywall}</span></span
+			>{/if}
 		{#if source?.status === 'trial'}<span class="badge badge-trial" title="Source on trial"
 				>Trial</span
 			>{/if}

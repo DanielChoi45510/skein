@@ -19,7 +19,7 @@ A personal, self-hosted news feed that replaces social-media scrolling. It pulls
 4. **Zero cost.** Free tiers only. If a feature would need money, stop and ask the owner.
 5. **The LLM is optional.** The pipeline must finish and produce a usable feed when every LLM call fails (rate limit, outage, no access). LLM features degrade gracefully: keyword thread names, no labels, no primers.
 6. **Public-repo safety.** No secrets, tokens or personal data in the repo. Private data lives in the `PROFILE_YAML` GitHub Actions secret and in Cloudflare Worker secrets.
-7. **Fail closed on spoilers.** Genshin items that might contain story, map or region spoilers are hidden unless the classifier is confident they're safe. The Genshin source stays disabled until the spoiler filter exists.
+7. **Fail closed on spoilers.** For any topic that enables `spoiler_policy`, items that might contain spoilers are hidden unless the classifier is confident they're safe. Sources feeding such a topic stay disabled until a spoiler filter exists (the validator enforces this).
 
 ## Stack
 
@@ -103,4 +103,4 @@ Don't build these unless the owner explicitly asks:
 - Multi-user accounts, sign-up, comments or any social features
 - Push notifications
 - Paid services of any kind
-- Scraping sites whose terms prohibit it (e.g. LinkedIn)
+- Scraping sites whose terms prohibit it (LinkedIn, Glassdoor, Indeed, …)
