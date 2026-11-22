@@ -63,9 +63,10 @@ sources:
   - id: ainews-smol
     name: AINews (smol.ai)
     type: rss
-    url: https://news.smol.ai/rss.xml
+    url: https://latent.space/feeds/news.xml
     topics: [ai-news]
     status: active
+    paywall: partial
     verified: true
 
   - id: verge-ai
@@ -145,7 +146,7 @@ sources:
   - id: notebookcheck
     name: Notebookcheck
     type: rss
-    url: https://www.notebookcheck.net/RSS-Feed-All-Articles-EN.165552.0.html   # TODO: swap for reviews-only feed if one exists
+    url: https://www.notebookcheck.net/RSS-Feed-Notebook-Reviews.8156.0.html   # reviews only (linked from the Reviews page)
     topics: [tech-trackers, everyday-upgrades]
     status: trial
     verified: true
@@ -171,7 +172,7 @@ sources:
     type: rss
     url: https://thewirecutter.com/feed
     topics: [everyday-upgrades]
-    status: trial
+    status: disabled    # 403 at nytimes.com/wirecutter/feed (2026-11-22)
     verified: false
 
   - id: reddit-buyitforlife
@@ -179,7 +180,7 @@ sources:
     type: reddit
     subreddit: BuyItForLife
     topics: [everyday-upgrades]
-    status: trial
+    status: disabled    # Reddit blocks JSON (403) and RSS (404) (2026-11-22)
     options:
       min_score: 500
     verified: false
@@ -230,25 +231,25 @@ sources:
     type: rss
     url: https://examine.com/feed/
     topics: [health-nutrition]
-    status: trial
+    status: disabled    # 429 rate-limited (2026-11-22)
     paywall: partial
     verified: false
 
   - id: cochrane
     name: Cochrane Database of Systematic Reviews
     type: rss
-    url: https://www.cochranelibrary.com/   # TODO: find the CDSR RSS URL (offered since Jul 2024), then enable
+    url: https://www.cochrane.org/evidence/rss   # plain-language review summaries; entries carry no dates
     topics: [health-wellbeing, health-sleep, health-nutrition]
-    status: disabled
+    status: trial
     kind: study
-    verified: false
+    verified: true
 
   - id: harvard-health
     name: Harvard Health Blog
     type: rss
     url: https://www.health.harvard.edu/blog/feed
     topics: [health-wellbeing, health-sleep, health-nutrition]
-    status: trial
+    status: disabled    # feed URL 404 (2026-11-22)
     verified: false
 
   # ═══════════════════════════ US politics & world: reporting ═══════════════════════════
@@ -576,7 +577,7 @@ sources:
     type: rss
     url: https://hnrss.org/whoishiring/jobs   # verify: /whoishiring also includes "Who wants to be hired"
     topics: [jobs-listings]
-    status: trial
+    status: disabled    # until Phase 4 listings (items are single comments)
     kind: listing
     verified: true
 
@@ -604,7 +605,7 @@ sources:
     type: rss
     url: https://interviewing.io/blog/rss.xml
     topics: [jobs-guides]
-    status: active
+    status: disabled    # feed URL 404 (2026-11-22)
     kind: guide
     verified: false
 
