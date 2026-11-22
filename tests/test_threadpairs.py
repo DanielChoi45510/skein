@@ -16,6 +16,7 @@ from pipeline.threadpairs import (
     Pair,
     PairSide,
     all_pairs,
+    bands_between,
     eligible,
     embed_items,
     main,
@@ -95,6 +96,16 @@ def test_sample_spreads_across_bands_and_never_reuses_items() -> None:
     ids = [x for p in sample for x in (p.a.id, p.b.id)]
     assert len(ids) == len(set(ids))
     assert sample == sample_pairs(pairs, 10)  # deterministic for a seed
+
+
+def test_sample_within_range_skips_excluded_items() -> None:
+    bands = bands_between(0.65, 0.85, 0.05)
+    assert bands == ((0.65, 0.7), (0.7, 0.75), (0.75, 0.8), (0.8, 0.85))
+    pairs = [pair(n, 0.60 + 0.01 * n) for n in range(30)]
+    sample = sample_pairs(pairs, 8, bands=bands, exclude_items=frozenset({"x10", "y11"}))
+    assert all(0.65 <= p.score < 0.85 for p in sample)
+    assert {p.a.id for p in sample}.isdisjoint({"x10", "x11"})
+    assert len(sample) == 8
 
 
 def test_sample_round_robins_topics() -> None:

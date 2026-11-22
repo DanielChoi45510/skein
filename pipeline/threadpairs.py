@@ -1,6 +1,7 @@
 """Labeled-set builder for thread thresholds (DESIGN §6.5): a dev tool, like calibrate.
 
     python -m pipeline.threadpairs pairs   --state DIR [--n 30] [--out pairs.json]
+                                           [--range LO HI [--step 0.05]] [--exclude earlier.json]
     python -m pipeline.threadpairs routing --state DIR [--per-topic 10]
 
 `pairs` embeds the stored items that would be threaded (visible, in a threaded
@@ -115,16 +116,30 @@ def all_pairs(items: Sequence[Item], vectors: Mapping[str, np.ndarray]) -> list[
     return pairs
 
 
-def sample_pairs(pairs: Sequence[Pair], n: int, seed: int = 0) -> list[Pair]:
-    """About n/len(BANDS) pairs per score band, spread round-robin across topics.
+def bands_between(lo: float, hi: float, step: float) -> tuple[tuple[float, float], ...]:
+    """[lo, hi) cut into `step`-wide bands, e.g. 0.65-0.85 by 0.05 → four bands."""
+    count = round((hi - lo) / step)
+    return tuple((round(lo + k * step, 4), round(lo + (k + 1) * step, 4)) for k in range(count))
 
-    No item appears twice, so one prolific story can't fill the sample.
+
+def sample_pairs(
+    pairs: Sequence[Pair],
+    n: int,
+    seed: int = 0,
+    *,
+    bands: Sequence[tuple[float, float]] = BANDS,
+    exclude_items: frozenset[str] = frozenset(),
+) -> list[Pair]:
+    """About n/len(bands) pairs per score band, spread round-robin across topics.
+
+    No item appears twice (nor any in `exclude_items`, e.g. an earlier batch's),
+    so one prolific story can't fill the sample.
     """
     rng = random.Random(seed)
-    per_band = max(1, n // len(BANDS))
-    used: set[str] = set()
+    per_band = max(1, n // len(bands))
+    used: set[str] = set(exclude_items)
     picked: list[Pair] = []
-    for lo, hi in BANDS:
+    for lo, hi in bands:
         by_topic: dict[str, list[Pair]] = {}
         for p in pairs:
             if lo <= p.score < hi:
@@ -208,6 +223,19 @@ def main(argv: list[str] | None = None) -> int:
         p.add_argument("--seed", type=int, default=0)
     sub.choices["pairs"].add_argument("--n", type=int, default=30)
     sub.choices["pairs"].add_argument("--out", type=Path, help="write the sample as JSON")
+    sub.choices["pairs"].add_argument(
+        "--range", nargs=2, type=float, metavar=("LO", "HI"), help="sample only this score range"
+    )
+    sub.choices["pairs"].add_argument(
+        "--step", type=float, default=0.05, help="band width for --range"
+    )
+    sub.choices["pairs"].add_argument(
+        "--exclude",
+        type=Path,
+        action="append",
+        default=[],
+        help="earlier sample JSON whose items are not reused (repeatable)",
+    )
     sub.choices["routing"].add_argument("--per-topic", type=int, default=10)
     args = parser.parse_args(argv)
 
@@ -230,7 +258,14 @@ def main(argv: list[str] | None = None) -> int:
         return 0
 
     pairs = all_pairs(items, vectors)
-    sample = sample_pairs(pairs, args.n, args.seed)
+    bands = bands_between(*args.range, args.step) if args.range else BANDS
+    exclude = frozenset(
+        side["id"]
+        for path in args.exclude
+        for p in json.loads(path.read_text())
+        for side in (p["a"], p["b"])
+    )
+    sample = sample_pairs(pairs, args.n, args.seed, bands=bands, exclude_items=exclude)
     print(f"{len(items)} eligible items, {len(pairs)} same-topic pairs, {len(sample)} sampled\n")
     for n, p in enumerate(sample, 1):
         shared = f"  shared: {', '.join(p.shared_entities)}" if p.shared_entities else ""
