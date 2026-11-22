@@ -55,6 +55,7 @@ type Source = {
   lean?: "left" | "center-left" | "center" | "center-right" | "right" | null; // news outlets only
   kind?: "reporting" | "analysis" | "opinion" | "study" | "listing" | "guide"; // default content-kind hint
   verified: boolean;                        // URL checked during curation (default false)
+  excerpt: boolean;                         // default true; false drops the feed's description (boilerplate feeds)
   options?: Record<string, unknown>;        // e.g. reddit min_score
 };
 

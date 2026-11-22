@@ -169,6 +169,7 @@ class Source(StrictModel):
     lean: Lean | None = None
     kind: ContentKind | None = None
     verified: bool = False
+    excerpt: bool = True  # false: drop the feed's description (e.g. when it's boilerplate)
     options: dict[str, Any] = {}
 
     @model_validator(mode="after")

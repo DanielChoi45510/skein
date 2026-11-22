@@ -136,7 +136,7 @@ def normalize(
                 url=entry.url.strip(),
                 canonical_url=canonical,
                 title=title,
-                excerpt=excerpt(entry.summary),
+                excerpt=excerpt(entry.summary) if source.excerpt else None,
                 published_at=published,
                 first_seen_at=now,
                 extra=entry.extra,

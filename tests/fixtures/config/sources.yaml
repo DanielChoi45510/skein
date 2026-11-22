@@ -21,6 +21,7 @@ sources:
     url: https://hn.example.net/frontpage?points=200
     topics: [gadgets, politics]
     status: trial
+    excerpt: false
 
   - id: example-reddit
     type: reddit

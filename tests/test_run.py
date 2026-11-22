@@ -204,3 +204,9 @@ def test_crash_before_save_leaves_state_untouched(tmp_path: Path, monkeypatch) -
     with pytest.raises(RuntimeError):
         do_run(tmp_path, FakeWeb().serve_fixtures(etag='"new"'), now=LATER)
     assert snapshot(tmp_path) == before
+
+
+def test_excerpt_false_source_stores_no_excerpts(tmp_path: Path) -> None:
+    do_run(tmp_path, FakeWeb().serve_fixtures())
+    hn = [i for i in read_items(tmp_path).values() if i["source_id"] == "example-hn"]
+    assert hn and all(i["excerpt"] is None for i in hn)

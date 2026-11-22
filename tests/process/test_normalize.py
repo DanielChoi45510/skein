@@ -204,3 +204,9 @@ def test_lookback_uses_longest_topic_override() -> None:
     assert lookback_days(SOURCES["example-world"], topics) == 7
     only_gadgets = SOURCES["example-gadgets"].model_copy(update={"topics": ["gadgets"]})
     assert lookback_days(only_gadgets, topics) == 3
+
+
+def test_excerpt_disabled_per_source() -> None:
+    entry = raw(source_id="example-hn", summary="<p>Article URL: https://x Points: 300</p>")
+    [item] = normalize([entry], SOURCES, CFG.topics, NOW)
+    assert item.excerpt is None
