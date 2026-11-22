@@ -190,6 +190,60 @@ def test_invalid_sources(config_dir: Path, mutate: Callable, expected: str) -> N
     assert expected in errors_for(config_dir)
 
 
+@pytest.mark.parametrize(
+    ("relevance", "expected"),
+    [
+        pytest.param({"threshold": 0.2, "skip": True}, "exactly one of", id="both"),
+        pytest.param({}, "exactly one of", id="neither"),
+        pytest.param({"threshold": 1.5}, "less than or equal to 1", id="out-of-range"),
+    ],
+)
+def test_invalid_source_relevance(config_dir: Path, relevance: dict, expected: str) -> None:
+    edit(
+        config_dir, "sources.yaml", lambda d: source(d, "example-world").update(relevance=relevance)
+    )
+    assert expected in errors_for(config_dir)
+
+
+def test_relevance_skip_needs_single_topic(config_dir: Path) -> None:
+    edit(
+        config_dir,
+        "sources.yaml",
+        lambda d: source(d, "example-hn").update(relevance={"skip": True}),
+    )
+    assert "needs exactly one topic" in errors_for(config_dir)
+
+
+def test_valid_relevance_overrides(config_dir: Path) -> None:
+    edit(
+        config_dir,
+        "sources.yaml",
+        lambda d: source(d, "example-world").update(relevance={"skip": True}),
+    )
+    edit(
+        config_dir,
+        "sources.yaml",
+        lambda d: source(d, "example-hn").update(relevance={"threshold": 0.1}),
+    )
+    edit(config_dir, "topics.yaml", lambda d: topic(d, "world").update(relevance_threshold=0.45))
+    load_config(config_dir)
+
+
+@pytest.mark.parametrize(
+    "mutate",
+    [
+        pytest.param(lambda d: d["defaults"].pop("relevance_threshold"), id="default-missing"),
+        pytest.param(
+            lambda d: d["defaults"].update(relevance_threshold=-0.1), id="default-negative"
+        ),
+        pytest.param(lambda d: topic(d, "world").update(relevance_threshold=2), id="topic-over-1"),
+    ],
+)
+def test_invalid_relevance_threshold(config_dir: Path, mutate: Callable) -> None:
+    edit(config_dir, "topics.yaml", mutate)
+    assert "relevance_threshold" in errors_for(config_dir)
+
+
 @pytest.mark.parametrize("status", ["trial", "active"])
 def test_spoiler_protected_source_must_stay_disabled(config_dir: Path, status: str) -> None:
     """CLAUDE.md principle 7: the Genshin source stays disabled until the spoiler filter exists."""

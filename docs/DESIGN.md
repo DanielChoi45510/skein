@@ -69,8 +69,8 @@ type Item = {
   also_covered_by: string[];  // other sources with the same story (§6.3), a ranking signal
   duplicate_of?: string;      // set with hidden_reason "duplicate"
   topic_id?: string; thread_id?: string;
-  relevance?: number;         // 0–1
-  importance?: number;        // ranking score, §6.6
+  relevance?: number;         // 0–1 (§6.4); topic_id is the best-scoring topic, also for hidden items
+  // importance (§6.6) depends on the current time: computed at export, never stored
   extra: Record<string, unknown>;           // small source metadata (e.g. Reddit score, flair)
   labels: {
     kind?: "reporting" | "analysis" | "opinion" | "study" | "listing" | "guide";
@@ -151,9 +151,11 @@ Canonicalize URLs (strip tracking params), parse dates to UTC, trim the excerpt 
 2. Near-duplicate: title-embedding cosine ≥ 0.92 within 48 h → keep the higher-weight source (ties: the item stored first), record the others as `also_covered_by` (used as a corroboration signal in ranking). The hidden one is kept with `duplicate_of`, so reruns recognize it by id.
 
 ### 6.4 Embed and relevance
-- Small CPU embedding model (e.g. `bge-small-en-v1.5` or `all-MiniLM-L6-v2`), cached between runs with the Actions cache.
-- Each topic's `description` + `include` examples are embedded as positive anchors, and its `exclude` examples as negative anchors.
-- `relevance = sim(item, positives) − λ·sim(item, negatives)`. Items below the topic threshold are dropped. Items from sources mapped to several topics go to the best-scoring one.
+- Small CPU embedding model: `BAAI/bge-small-en-v1.5` (optional `[embed]` extra), cached between runs with the Actions cache. Loaded only when a run has new items. Whether anchors get bge's query instruction is a constant (`USE_QUERY_INSTRUCTION`), chosen by calibration.
+- Each topic's `description` + `include` examples are embedded as positive anchors, and its `exclude` examples as negative anchors. Items are embedded as title + excerpt.
+- `relevance = max sim(item, positives) − λ·max sim(item, negatives)`, λ = 0.5, clipped to [0, 1]. Items from sources mapped to several topics go to the best-scoring one (ties: first listed). Below the threshold, items are hidden (`below_threshold`) but keep their best topic and score.
+- Threshold precedence: source `relevance.threshold` → topic `relevance_threshold` → `defaults.relevance_threshold`. A single-topic source can set `relevance: {skip: true}` to route every item to its topic with relevance 1.0.
+- Calibrate with `python -m pipeline.calibrate --state DIR`: scores stored items (instruction off and on) and prints per-topic percentiles, counts kept at candidate thresholds, and sample titles.
 - For job listings and gear trackers, the private profile adds an extra similarity term (§10.3).
 
 ### 6.5 Thread assignment (threaded / question / tracker / patch_cycle)
@@ -170,7 +172,9 @@ Mode-specific rules:
 - Thresholds are tuned against a small hand-labeled set in `tests/fixtures/threading/`.
 
 ### 6.6 Rank and cap
-`importance = relevance × source_weight × (1 + 0.3·log(1 + corroborating_sources)) × freshness_decay`
+`importance = relevance × source_weight × (1 + 0.3·ln(1 + corroborating_sources)) × freshness_decay`
+
+`freshness_decay = 0.5^(age_hours / 36)`. Importance depends on the current time, so it's computed at export, never stored.
 
 - **Per-thread daily cap: 5.** Overflow is collapsed behind "+N more", never dropped.
 - Flat topics have per-day or per-week caps from config.

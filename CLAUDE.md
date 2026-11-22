@@ -54,7 +54,10 @@ python3.12 -m venv .venv && source .venv/bin/activate
 pip install -e ".[dev]" && pre-commit install
 
 python -m pipeline.config        # validate config/*.yaml (+ local config/profile.yaml if present)
+pip install -e ".[embed]"        # embedding model deps (torch); tests don't need them
 python -m pipeline run --state ../skein-state   # one pipeline run (live network); state dir outside the repo
+python -m pipeline run --state ../skein-state --embedder hashing   # no model; scores meaningless
+python -m pipeline.calibrate --state ../skein-state   # relevance score distribution per topic
 pytest                           # tests
 pre-commit run --all-files       # gitleaks, ruff, yaml checks, validator, tests
 ```

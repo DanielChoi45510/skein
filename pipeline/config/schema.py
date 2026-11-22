@@ -16,6 +16,7 @@ Id = Annotated[str, StringConstraints(pattern=r"^[a-z0-9]+(-[a-z0-9]+)*$")]
 FilterName = Annotated[str, StringConstraints(pattern=r"^[a-z][a-z0-9_]*$")]
 NonEmptyStr = Annotated[str, StringConstraints(strip_whitespace=True, min_length=1)]
 PositiveInt = Annotated[int, Field(gt=0)]
+Fraction = Annotated[float, Field(ge=0.0, le=1.0)]
 
 Mode = Literal[
     "threaded", "flat", "tracker", "question", "patch_cycle", "fixed", "listings", "reading_list"
@@ -38,6 +39,7 @@ class Defaults(StrictModel):
     dormant_after_days: PositiveInt
     archive_after_days: PositiveInt
     lookback_days: PositiveInt
+    relevance_threshold: Fraction  # items scoring below this for every topic are hidden
 
 
 class Group(StrictModel):
@@ -86,6 +88,7 @@ class Topic(StrictModel):
     dormant_after_days: PositiveInt | None = None
     archive_after_days: PositiveInt | None = None
     lookback_days: PositiveInt | None = None
+    relevance_threshold: Fraction | None = None
 
     # Caps
     max_per_day: PositiveInt | None = None
@@ -158,6 +161,19 @@ class TopicsFile(StrictModel):
 # ───────────────────────────── sources.yaml ─────────────────────────────
 
 
+class SourceRelevance(StrictModel):
+    """Per-source relevance override: a different bar, or no relevance check at all."""
+
+    threshold: Fraction | None = None
+    skip: bool = False
+
+    @model_validator(mode="after")
+    def _one_of(self) -> SourceRelevance:
+        if self.skip == (self.threshold is not None):
+            raise ValueError("set exactly one of `threshold` or `skip: true`")
+        return self
+
+
 class Source(StrictModel):
     id: Id
     type: Literal["rss", "reddit"]
@@ -170,6 +186,7 @@ class Source(StrictModel):
     kind: ContentKind | None = None
     verified: bool = False
     excerpt: bool = True  # false: drop the feed's description (e.g. when it's boilerplate)
+    relevance: SourceRelevance | None = None
     options: dict[str, Any] = {}
 
     @model_validator(mode="after")
@@ -184,6 +201,8 @@ class Source(StrictModel):
                 raise ValueError("reddit sources require `subreddit`")
             if self.url is not None:
                 raise ValueError("reddit sources must not set `url` (use `subreddit`)")
+        if self.relevance and self.relevance.skip and len(self.topics) != 1:
+            raise ValueError("`relevance: {skip: true}` needs exactly one topic to route items to")
         return self
 
 

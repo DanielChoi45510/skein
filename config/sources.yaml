@@ -10,6 +10,9 @@
 #          (from published media-bias ratings; record which rating you used)
 # kind:    default content kind hint: reporting | analysis | opinion | study | listing | guide
 # excerpt: false to drop the feed's description when it's boilerplate (default true)
+# relevance: per-source override of the topic threshold, either
+#            {threshold: 0.2}   a different bar for this source's items, or
+#            {skip: true}       single-topic sources only: no relevance check
 
 sources:
 

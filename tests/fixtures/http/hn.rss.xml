@@ -22,5 +22,13 @@
       <link>https://WWW.example.com/2026/11/21/world/freedonia-coalition.html?utm_medium=social#top</link>
       <comments>https://hn.example.net/item?id=1002</comments>
     </item>
+    <item>
+      <title>Central bank of Sylvania holds rates steady</title>
+      <description><![CDATA[<p>Points: 205</p>]]></description>
+      <pubDate>Sat, 21 Nov 2026 08:00:00 +0000</pubDate>
+      <!-- same headline as world.rss.xml, different outlet URL: a near-duplicate, not exact -->
+      <link>https://wire.example.org/markets/sylvania-rates</link>
+      <comments>https://hn.example.net/item?id=1003</comments>
+    </item>
   </channel>
 </rss>

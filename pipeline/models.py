@@ -45,9 +45,8 @@ class Item(BaseModel):
     also_covered_by: list[str] = []  # other sources that carried the same story
     duplicate_of: str | None = None  # id of the item kept instead of this one
     hidden_reason: HiddenReason | None = None
-    topic_id: str | None = None  # set by relevance (step c)
-    relevance: float | None = None  # step c
-    importance: float | None = None  # step c
+    topic_id: str | None = None  # best-scoring topic, also kept for hidden items
+    relevance: float | None = None  # 0-1, set with topic_id (importance is computed at export)
     extra: dict[str, Any] = {}  # small source metadata, e.g. Reddit score / flair
 
     @property

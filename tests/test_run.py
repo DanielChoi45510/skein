@@ -10,6 +10,7 @@ import httpx
 import pytest
 
 from pipeline.__main__ import main
+from pipeline.process.embed import HashingEmbedder
 from pipeline.run import run
 
 from .conftest import FIXTURE_CONFIG, FakeClock, FakeWeb
@@ -21,7 +22,12 @@ WORLD = "https://feeds.example.com/world.xml"
 
 def do_run(state: Path, web: FakeWeb, now: dt.datetime = NOW):
     return run(
-        state, config_dir=FIXTURE_CONFIG, now=now, transport=web.transport, sleep=FakeClock().sleep
+        state,
+        config_dir=FIXTURE_CONFIG,
+        now=now,
+        transport=web.transport,
+        sleep=FakeClock().sleep,
+        embedder=HashingEmbedder(),
     )
 
 
@@ -41,7 +47,7 @@ def test_fetches_enabled_sources_only(tmp_path: Path) -> None:
     ]
     assert report.errors == {}
     assert not any("disabled" in u or "ExampleLeaks" in u for u in web.urls())
-    assert len(report.entries) == 3 + 2 + 2 + 2  # world, gadgets, hn, reddit (min_score 50)
+    assert len(report.entries) == 3 + 2 + 3 + 2  # world, gadgets, hn, reddit (min_score 50)
 
 
 def test_health_and_cache_written(tmp_path: Path) -> None:
@@ -147,13 +153,13 @@ def snapshot(directory: Path) -> dict[str, bytes]:
 
 def test_items_are_stored_in_first_seen_partition(tmp_path: Path) -> None:
     report = do_run(tmp_path, FakeWeb().serve_fixtures())
-    # 9 entries; the HN copy of the Freedonia story is an exact duplicate
-    assert len(report.entries) == 9
-    assert len(report.new_item_ids) == 8
+    # 10 entries; the HN copy of the Freedonia story is an exact duplicate
+    assert len(report.entries) == 10
+    assert len(report.new_item_ids) == 9
     assert [p.name for p in (tmp_path / "items").iterdir()] == ["2026-11-21.ndjson"]
 
     items = read_items(tmp_path)
-    assert len(items) == 8
+    assert len(items) == 9
     assert all(len(i["excerpt"] or "") <= 300 for i in items.values())
     freedonia = next(i for i in items.values() if "Freedonia" in i["title"])
     assert freedonia["source_id"] == "example-world"
@@ -210,3 +216,53 @@ def test_excerpt_false_source_stores_no_excerpts(tmp_path: Path) -> None:
     do_run(tmp_path, FakeWeb().serve_fixtures())
     hn = [i for i in read_items(tmp_path).values() if i["source_id"] == "example-hn"]
     assert hn and all(i["excerpt"] is None for i in hn)
+
+
+# ───────────────────────────── near-dup + relevance ─────────────────────────────
+
+
+def test_near_duplicate_across_sources_is_hidden(tmp_path: Path) -> None:
+    do_run(tmp_path, FakeWeb().serve_fixtures())
+    items = read_items(tmp_path).values()
+    sylvania = [i for i in items if "sylvania" in i["title"].lower()]
+    assert len(sylvania) == 2
+    kept = next(i for i in sylvania if i["hidden_reason"] != "duplicate")
+    hidden = next(i for i in sylvania if i["hidden_reason"] == "duplicate")
+    assert kept["source_id"] == "example-world"  # equal weights: stored first wins
+    assert kept["also_covered_by"] == ["example-hn"]
+    assert hidden["duplicate_of"] == kept["id"]
+    assert hidden["topic_id"] is None  # duplicates aren't scored
+
+
+def test_visible_new_items_get_topic_and_relevance(tmp_path: Path) -> None:
+    do_run(tmp_path, FakeWeb().serve_fixtures())
+    sources = {
+        "example-world": {"world"},
+        "example-gadgets": {"gadgets", "trackers"},
+        "example-hn": {"gadgets", "politics"},
+        "example-reddit": {"politics"},
+    }
+    for i in read_items(tmp_path).values():
+        if i["hidden_reason"] == "duplicate":
+            continue
+        assert i["topic_id"] in sources[i["source_id"]]
+        assert 0.0 <= i["relevance"] <= 1.0
+        assert (i["hidden_reason"] == "below_threshold") == (i["relevance"] < 0.30)
+
+
+def test_no_new_items_means_no_embedding(tmp_path: Path) -> None:
+    do_run(tmp_path, FakeWeb().serve_fixtures())
+
+    class Exploding:
+        def embed(self, texts, kind):
+            raise AssertionError("embedder used with nothing new")
+
+    report = run(
+        tmp_path,
+        config_dir=FIXTURE_CONFIG,
+        now=LATER,
+        transport=FakeWeb().serve_fixtures().transport,
+        sleep=FakeClock().sleep,
+        embedder=Exploding(),
+    )
+    assert report.new_item_ids == []

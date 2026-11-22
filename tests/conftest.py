@@ -83,9 +83,12 @@ class FakeClock:
 
 
 @pytest.fixture(autouse=True)
-def _no_github_env(monkeypatch: pytest.MonkeyPatch) -> None:
-    """CI sets GITHUB_REPOSITORY; tests that need it set it explicitly."""
+def _test_env(monkeypatch: pytest.MonkeyPatch) -> None:
+    # CI sets GITHUB_REPOSITORY; tests that need it set it explicitly.
     monkeypatch.delenv("GITHUB_REPOSITORY", raising=False)
+    # Tests never touch the network: the model may only load from the local cache.
+    monkeypatch.setenv("HF_HUB_OFFLINE", "1")
+    monkeypatch.setenv("TRANSFORMERS_OFFLINE", "1")
 
 
 @pytest.fixture

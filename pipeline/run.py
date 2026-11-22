@@ -1,6 +1,6 @@
 """One pipeline run. Phase 1 so far:
 
-fetch → normalize → exact dedupe → (embed → near-dup → relevance → rank → export: later steps)
+fetch → normalize → exact dedupe → embed → near-dup → relevance → (rank → export: step d)
 
 A source that fails is recorded in source health and skipped; it never fails the
 run. Everything is written to the state dir once, at the end (see state.py).
@@ -21,8 +21,10 @@ from .config import load_config
 from .config.validate import DEFAULT_CONFIG_DIR
 from .fetch import FeedParseError, FetchError, FetchOutcome, HttpFetcher, fetch_source
 from .models import RawEntry, SourceHealth
-from .process.dedupe import merge_exact
+from .process.dedupe import NEAR_DUP_WINDOW, mark_near_duplicates, merge_exact
+from .process.embed import Embedder, SentenceTransformerEmbedder
 from .process.normalize import normalize
+from .process.relevance import assign_topics
 from .state import State
 
 log = logging.getLogger(__name__)
@@ -46,8 +48,12 @@ def run(
     now: dt.datetime | None = None,
     transport: httpx.BaseTransport | None = None,
     sleep: Callable[[float], None] = time.sleep,
+    embedder: Embedder | None = None,
 ) -> RunReport:
-    """Run the pipeline. Raises ConfigError if the config is invalid."""
+    """Run the pipeline. Raises ConfigError if the config is invalid.
+
+    `embedder` defaults to the real model, loaded only when there are new items.
+    """
     cfg = load_config(config_dir)
     now = now or dt.datetime.now(dt.UTC)
     state = State(state_dir, now)
@@ -87,6 +93,26 @@ def run(
     candidates = normalize(report.entries, sources, cfg.topics, now)
     report.new_item_ids = merge_exact(state.items, candidates, weights)
     log.info("%d new item(s) from %d entries", len(report.new_item_ids), len(report.entries))
+
+    if report.new_item_ids:
+        embedder = embedder or SentenceTransformerEmbedder()
+        new_items = [state.items[i] for i in report.new_item_ids]
+
+        # Near-duplicates: compare titles with every visible item that could be in range.
+        oldest = min(i.published_at for i in new_items) - NEAR_DUP_WINDOW
+        pool = [i for i in state.items.values() if i.visible and i.published_at >= oldest]
+        vectors = dict(
+            zip(
+                [i.id for i in pool],
+                embedder.embed([i.title for i in pool], "passage"),
+                strict=True,
+            )
+        )
+        dups = mark_near_duplicates(state.items, report.new_item_ids, vectors, weights)
+
+        assign_topics([i for i in new_items if i.visible], sources, cfg.topics, embedder)
+        hidden = sum(1 for i in new_items if i.hidden_reason == "below_threshold")
+        log.info("%d near-duplicate(s), %d below relevance threshold", len(dups), hidden)
 
     state.save()
     return report

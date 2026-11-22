@@ -6,6 +6,7 @@ defaults:
   dormant_after_days: 14
   archive_after_days: 60
   lookback_days: 7
+  relevance_threshold: 0.30
 
 groups:
   - { id: news, name: News }

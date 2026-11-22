@@ -13,6 +13,7 @@ defaults:
   dormant_after_days: 14
   archive_after_days: 60
   lookback_days: 7               # ignore items older than this on first sight
+  relevance_threshold: 0.30      # PROVISIONAL: set from calibration (python -m pipeline.calibrate)
 
 groups:
   - { id: ai,     name: AI }
