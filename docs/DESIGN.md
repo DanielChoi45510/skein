@@ -204,7 +204,7 @@ Write the static JSON the site reads (`feed/index.json`, `feed/topics/<id>.json`
 
 The contract is `pipeline/export/models.py` (`schema_version` 1):
 - `feed/index.json`: `generated_at`; groups → topics `{id, name, mode, has_sources, visible_count, collapsed_count, latest_first_seen_at}`; sources `{id, name, type, status, lean, kind, paywall}`.
-- `feed/topics/<id>.json` (Phase 1: every topic as a flat ranked list): items within the topic's lookback, grouped by UTC day of publication (newest first), ranked by importance; each item `{id, title, url, source_id, published_at, first_seen_at, excerpt, importance, also_covered_by, collapsed}`. Hidden items are never exported.
+- `feed/topics/<id>.json` (Phase 1: every topic as a flat ranked list): items within the topic's lookback, grouped by UTC day of publication (newest first), ranked by importance; each item `{id, title, url, source_id, published_at, first_seen_at, excerpt, importance, also_covered_by, collapsed}`. Hidden items are never exported, and neither are items carried only by disabled or removed sources: disabling a source hides its stored items on the next run.
 - Days are UTC in the export; the frontend regroups items by the viewer's local day for display. Per-day caps still count UTC days, so a local day can show slightly more than one day's cap.
 - Phase 1 caps: `max_per_day` per day; `max_per_week` / `target_per_week` over the trailing 7 days, `max_per_month` over 30; otherwise `defaults.daily_cap_per_thread` per day. Over-cap items are exported with `collapsed: true`.
 

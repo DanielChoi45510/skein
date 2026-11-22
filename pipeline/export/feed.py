@@ -8,8 +8,10 @@ Phase 1 shows every topic as a flat ranked list (threads arrive in Phase 2):
   none of these uses `defaults.daily_cap_per_thread` per day. Items over a cap
   are exported with `collapsed: true` ("+N more"), never dropped.
 Relevance thresholds are applied here, from stored scores, so a threshold change
-takes effect on the next run (see process/relevance.py). Duplicates and items
-below every carrying source's threshold are never exported.
+takes effect on the next run (see process/relevance.py). Only enabled sources
+count, so disabling a source hides its stored items on the next run too.
+Duplicates, items below every carrying source's threshold, and items carried
+only by disabled or removed sources are never exported.
 """
 
 from __future__ import annotations
@@ -50,19 +52,26 @@ def export_feed(
     now: dt.datetime,
 ) -> FeedIndex:
     """Write feed/index.json and feed/topics/<id>.json; remove stale topic files."""
-    sources = {s.id: s for s in cfg.sources.sources}
+    # Only enabled sources count: disabling (or removing) a source hides its stored
+    # items on the next run. A story it shared with an enabled source stays, because
+    # an item shows if any enabled source that carried it would show it.
+    enabled = {s.id: s for s in cfg.sources.sources if s.status != "disabled"}
     weights = {s.id: s.weight for s in cfg.sources.sources}
-    enabled_topics = {t for s in cfg.sources.sources if s.status != "disabled" for t in s.topics}
+    enabled_topics = {t for s in enabled.values() for t in s.topics}
     by_topic: dict[str, list[Item]] = {}
-    below = 0
+    below = no_source = 0
     for item in items:
-        if not item.visible or item.topic_id is None or item.source_id not in weights:
+        if not item.visible or item.topic_id is None:
             continue
-        if passes_threshold(item, sources, cfg.topics):
+        if not any(sid in enabled for sid in (item.source_id, *item.also_covered_by)):
+            no_source += 1
+        elif passes_threshold(item, enabled, cfg.topics):
             by_topic.setdefault(item.topic_id, []).append(item)
         else:
             below += 1
     log.info("%d stored item(s) below their relevance threshold, not exported", below)
+    if no_source:
+        log.info("%d stored item(s) only from disabled or removed sources, not exported", no_source)
 
     feeds = {
         t.id: build_topic_feed(t, by_topic.get(t.id, []), cfg.topics, weights, now)
@@ -117,7 +126,7 @@ def build_topic_feed(
     lookback = topic.lookback_days or topics.defaults.lookback_days
     oldest = now - dt.timedelta(days=lookback)
     scored = [
-        (item, importance(item, weights[item.source_id], now))
+        (item, importance(item, weights.get(item.source_id, 1.0), now))
         for item in items
         if item.published_at >= oldest
     ]

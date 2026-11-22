@@ -8,6 +8,7 @@ import json
 from pathlib import Path
 
 from pipeline.config import load_config
+from pipeline.config.schema import SourceRelevance
 from pipeline.config.validate import Config
 from pipeline.export import export_feed
 from pipeline.export.feed import build_topic_feed
@@ -224,3 +225,38 @@ def test_stale_topic_files_removed(tmp_path: Path) -> None:
     stale.write_text("{}")
     run_export(tmp_path, [])
     assert not stale.exists()
+
+
+def exported_ids(tmp_path: Path, items: list[Item], topic_id: str = "world") -> list[str]:
+    run_export(tmp_path, items)
+    data = json.loads((tmp_path / "feed" / "topics" / f"{topic_id}.json").read_text())
+    return [i["id"] for d in data["days"] for i in d["items"]]
+
+
+def test_disabled_source_items_are_hidden_immediately(tmp_path: Path) -> None:
+    # example-disabled is a disabled rss source feeding `world` in the fixture config
+    items = [item(1), item(2, source_id="example-disabled", relevance=0.9)]
+    assert exported_ids(tmp_path, items) == ["i01"]
+
+
+def test_story_shared_with_an_enabled_source_stays(tmp_path: Path) -> None:
+    shared = item(2, source_id="example-disabled", also_covered_by=["example-world"])
+    assert exported_ids(tmp_path, [shared]) == ["i02"]
+
+
+def test_disabled_skip_source_does_not_rescue_low_scores(tmp_path: Path) -> None:
+    disabled_skip = CFG.sources.model_copy(
+        update={
+            "sources": [
+                s.model_copy(update={"relevance": SourceRelevance(skip=True)})
+                if s.id == "example-disabled"
+                else s
+                for s in CFG.sources.sources
+            ]
+        }
+    )
+    cfg = dataclasses.replace(CFG, sources=disabled_skip)
+    low = item(1, relevance=0.1, also_covered_by=["example-disabled"])  # below 0.30
+    run_export(tmp_path, [low], cfg)
+    data = json.loads((tmp_path / "feed" / "topics" / "world.json").read_text())
+    assert data["days"] == []
