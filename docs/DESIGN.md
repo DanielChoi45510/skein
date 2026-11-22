@@ -79,7 +79,7 @@ type Item = {
   extra: Record<string, unknown>;           // small source metadata (e.g. Reddit score, flair)
   labels: {
     kind?: "reporting" | "analysis" | "opinion" | "study" | "listing" | "guide";
-    credibility?: "beta_confirmed" | "reputable_leaker" | "unverified" | "fake";   // Genshin
+    credibility?: "beta_confirmed" | "reputable_leaker" | "unverified" | "fake";   // parked leaks topic (§16)
     evidence?: "strong" | "moderate" | "weak";                                     // studies
     region?: string;          // world news
     flags?: string[];         // e.g. "listicle", "spoiler_risk", "overclaim"
@@ -112,7 +112,6 @@ Each topic in `topics.yaml` has a `mode`:
 | `flat` | No threads. A ranked list with a daily or weekly cap. | AI in practice, Everyday upgrades, Job-search guides |
 | `tracker` | Fixed, never-ending threads, one per product category. Items are compared against the owner's private gear list. | Tech trackers |
 | `question` | Threads are research questions ("training volume for hypertrophy"). They collect studies for months and go dormant slowly. | Health topics |
-| `patch_cycle` | Two threads per game version: **Next patch** and **Long-range & meta**. Threads close when the patch ships. | Genshin leaks |
 | `fixed` | Predefined threads only (no automatic creation). | Markets (sectors + economy-wide) |
 | `listings` | Job listings matched to the private profile, with a weekly target count. | Jobs: listings |
 | `reading_list` | Slow lane, a few picks a month. | Books |
@@ -167,7 +166,7 @@ Canonicalize URLs (strip tracking params), parse dates to UTC, trim the excerpt 
 - Calibrate with `python -m pipeline.calibrate --state DIR`: scores stored items (instruction off and on) and prints per-topic percentiles, counts kept at candidate thresholds, and sample titles.
 - For job listings and gear trackers, the private profile adds an extra similarity term (§10.3).
 
-### 6.5 Thread assignment (threaded / question / tracker / patch_cycle)
+### 6.5 Thread assignment (threaded / question / tracker)
 For each relevant item in a threaded topic:
 1. Candidates: the topic's threads (any state except archived), ranked by cosine(item, thread centroid), with a boost for overlapping named entities.
 2. Top score ≥ `T_high` (start at 0.75) with a clear margin → attach.
@@ -177,8 +176,9 @@ For each relevant item in a threaded topic:
 
 Mode-specific rules:
 - `tracker` and `fixed`: assign only to the predefined threads (nearest by similarity); never create new ones.
-- `patch_cycle`: route by credibility. Beta-confirmed → **Next patch**; reputable-leaker or long-range → **Long-range & meta**.
 - Thresholds are tuned against a small hand-labeled set in `tests/fixtures/threading/`.
+
+**Thread rescue** (Phase 2): an item scoring within 0.05 below its topic's relevance threshold (§6.4) is kept anyway if it attaches to an active thread with similarity ≥ `T_high`. Short or terse headlines that belong to a story already being followed shouldn't be lost to the threshold.
 
 ### 6.6 Rank and cap
 `importance = relevance × source_weight × (1 + 0.3·ln(1 + corroborating_sources)) × freshness_decay`
@@ -191,12 +191,11 @@ Mode-specific rules:
 
 ### 6.7 Enrich (LLM, optional)
 A small, bounded number of calls per run, prioritized in this order:
-1. Genshin spoiler / credibility classification (blocks display).
-2. Content-kind labels (reporting / analysis / opinion) and filter checks (§7) for borderline items.
-3. Thread assignment tiebreaks (§6.5 step 3).
-4. Thread titles for newly promoted threads.
-5. Study cards (§8.2).
-6. Primers for new politics and world threads (§8.5).
+1. Content-kind labels (reporting / analysis / opinion) and filter checks (§7) for borderline items.
+2. Thread assignment tiebreaks (§6.5 step 3).
+3. Thread titles for newly promoted threads.
+4. Study cards (§8.2).
+5. Primers for new politics and world threads (§8.5).
 
 The LLM client takes a provider list (`github_models` → fallbacks). Calls use JSON-schema output, are cached by input hash, and log nothing secret. When the run's budget is exhausted, remaining items get heuristic defaults and are re-queued for the next run.
 
@@ -226,16 +225,12 @@ Global filters (on for every topic unless the topic opts out):
 
 Implementation: negative embedding anchors first (free), then the LLM checks only borderline items. Filtered items keep a `hidden_reason` and appear on the **Hidden items** screen so filters can be audited and tuned.
 
-Labels shown on cards: **Reporting / Analysis / Opinion / Study / Guide / Listing**, the outlet's political lean for news outlets (from `sources.yaml`), credibility badges (Genshin) and evidence badges (studies).
+Labels shown on cards: **Reporting / Analysis / Opinion / Study / Guide / Listing**, the outlet's political lean for news outlets (from `sources.yaml`) and evidence badges (studies).
 
 ## 8. Topic-specific features
 
-### 8.1 Genshin leaks
-- Wanted: new characters and banners; character kits and their meta and team implications; impactful gameplay and QoL changes.
-- **Never shown:** story leaks; map, region or area specifics and visuals (a bare "a new region is coming" is OK); events; livestreams; codes; patch notes.
-- **Credibility tiers:** ✅ beta-confirmed (current beta cycle) · 🟡 reputable leaker (long-range, unconfirmable) · ⚪ unverified · 🚩 fake (hidden). Signals: the subreddit's own reliability flairs (trusted for "reliable"), title keywords, known leaker names (config list), score and upvote ratio, and the share of top comments calling a leak fake or debunked.
-- **Spoiler safety (fail closed):** classify title + flair (+ excerpt) before display; hide if spoiler risk isn't confidently low. **No thumbnails or images** for this topic, ever. The Hidden screen shows titles blurred until tapped.
-- **Threads:** per version — **Next patch** (concrete) and **Long-range & meta** (speculative, labeled). Both close when that version ships.
+### 8.1 Genshin leaks: parked
+Moved to §16 (Parked) on 2026-11-22.
 
 ### 8.2 Health study cards
 - Health items are **articles about studies** from evidence-focused writers (Stronger By Science, Sweat Science, NYT Well, Examine, Harvard Health), not raw study-database searches (`evidence: articles_about_studies`).
@@ -288,7 +283,7 @@ SvelteKit static app, installable PWA, dark mode first, responsive from phone to
 - **Topic:** threads sorted by last update; cooling threads lower; dormant threads grayed and collapsed at the bottom. Flat topics show a ranked list.
 - **Thread (catch-up view):** "N updates since <your last visit>", newest first, with a toggle for chronological; primer at the top when applicable; per-day groups with the cap and "+N more".
 - **Item card:** title, source, time, labels and badges (🔒 for `paywall: partial | full`), excerpt. Tap → opens the original article. On an installed PWA, out-of-scope links open in the system's in-app browser sheet; on desktop, a new tab.
-- **Hidden items:** filtered items with their reasons (Genshin titles blurred).
+- **Hidden items:** filtered items with their reasons.
 - **Sources:** per-source health and usefulness (§9.4).
 - **Settings:** paste the owner token (once per device).
 
@@ -363,7 +358,7 @@ Only build the current phase.
 | **0. Setup** | Repo, `.gitignore`, pre-commit (secret scan, lint), `AGENTS.md` symlink, config schemas + validator (pydantic), CI running tests + validator. |
 | **1. MVP feed** | RSS + Reddit fetch → normalize → dedupe → embed → relevance → **flat** ranked lists per topic → JSON export → SvelteKit PWA on GitHub Pages, hourly. No LLM. Genshin source stays disabled. |
 | **2. Threads** | Thread assignment + lifecycle, per-thread caps, catch-up view, owner Worker (read sync, refresh, overrides). |
-| **3. LLM layer** | Content-kind labels, filter checks, thread titles, Genshin credibility + spoiler filter (then enable the Genshin source), primers, opinion balance. |
+| **3. LLM layer** | Content-kind labels, filter checks, thread titles, primers, opinion balance. |
 | **4. Special lanes** | Study cards, tech trackers with gear comparison, job listings, world weekly roundup, reading list, source report, Hidden screen. |
 | **5. Polish & open source** | Setup docs for forkers, demo mode with sample data, performance and accessibility pass. |
 
@@ -372,3 +367,24 @@ Only build the current phase.
 - **[open]** Job listings during grad-school application season: pause or reduce listings until Dec 15?
 - **[open]** Whether tracker comparison text should be public or owner-only (§8.3).
 - **[open]** A free daily data source for a sector performance grid (§8.9).
+
+## 16. Parked
+
+Designed but not scheduled. Nothing here is on the roadmap (§14) until the owner revives it.
+
+### 16.1 Genshin leaks (parked 2026-11-22)
+
+**Why parked:** Reddit refuses both its JSON and RSS listings to this pipeline (403 and 404 with our User-Agent, 2026-11-22), and approval for the official API is uncertain. A possible future route: follow a Discord announcement channel into a server the owner owns and read it there with a bot (a proper bot account; **never a self-bot**, which breaks Discord's terms).
+
+**If revived:** add the topic and its source back to `config/` (the schema still supports everything below), build the spoiler filter and credibility classification as the first LLM priority (it blocks display), and only then enable the source. CLAUDE.md principle 7 and the validator keep any source feeding a `spoiler_policy: fail_closed` topic disabled until then.
+
+**Topic design** (formerly §8.1):
+- Wanted: new characters and banners; character kits and their meta and team implications; impactful gameplay and QoL changes.
+- **Never shown:** story leaks; map, region or area specifics and visuals (a bare "a new region is coming" is OK); events; livestreams; codes; patch notes.
+- **Credibility tiers:** ✅ beta-confirmed (current beta cycle) · 🟡 reputable leaker (long-range, unconfirmable) · ⚪ unverified · 🚩 fake (hidden). Signals: the subreddit's own reliability flairs (trusted for "reliable"), title keywords, known leaker names (config list), score and upvote ratio, and the share of top comments calling a leak fake or debunked.
+- **Spoiler safety (fail closed):** classify title + flair (+ excerpt) before display; hide if spoiler risk isn't confidently low. **No thumbnails or images** for this topic, ever. The Hidden screen shows titles blurred until tapped.
+- **Threads:** per version — **Next patch** (concrete) and **Long-range & meta** (speculative, labeled). Both close when that version ships.
+
+**Mode `patch_cycle`** (formerly in §4): two threads per game version, **Next patch** and **Long-range & meta**. Threads close when the patch ships. Thread assignment (formerly in §6.5) routes by credibility: beta-confirmed → **Next patch**; reputable leaker or long-range → **Long-range & meta**.
+
+**Labels:** credibility badges on cards (formerly in §7); the Hidden screen shows this topic's titles blurred until tapped (formerly in §9.1).

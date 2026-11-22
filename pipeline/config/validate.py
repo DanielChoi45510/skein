@@ -89,12 +89,12 @@ def check_sources(t: TopicsFile, s: SourcesFile) -> list[str]:
             topic = topics.get(tid)
             if topic is None:
                 errors.append(f"sources.yaml: source '{src.id}': unknown topic '{tid}'")
-            # CLAUDE.md principle 7. Remove this check when the Phase 3 spoiler filter ships.
+            # CLAUDE.md principle 7. Remove this check once a spoiler filter exists.
             elif topic.spoiler_policy == "fail_closed" and src.status != "disabled":
                 errors.append(
                     f"sources.yaml: source '{src.id}' feeds spoiler-protected topic '{tid}' and "
                     "must stay `status: disabled` until the spoiler filter exists "
-                    "(CLAUDE.md principle 7; DESIGN.md §14 phase 3)"
+                    '(CLAUDE.md principle 7; DESIGN.md "Parked")'
                 )
         errors += _check_region(src, topics)
     return errors

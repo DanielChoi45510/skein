@@ -185,19 +185,6 @@ sources:
       min_score: 500
     verified: false
 
-  # ═══════════════════════════ Games ═══════════════════════════
-  - id: reddit-genshin-leaks
-    name: r/Genshin_Impact_Leaks
-    type: reddit
-    subreddit: Genshin_Impact_Leaks
-    topics: [genshin-leaks]
-    status: disabled    # stays disabled until the spoiler filter exists (CLAUDE.md principle 7)
-    options:
-      min_score: 50
-      use_flair_credibility: true
-      fetch_top_comments: 10
-    verified: false
-
   # ═══════════════════════════ Health ═══════════════════════════
   - id: stronger-by-science
     name: Stronger By Science
@@ -586,7 +573,7 @@ sources:
     type: rss
     url: https://techcrunch.com/feed/
     topics: [jobs-market]
-    status: trial
+    status: disabled    # off-topic for jobs-market (calibration 2026-11-22)
     kind: reporting
     verified: true
 

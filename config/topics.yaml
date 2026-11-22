@@ -5,21 +5,20 @@
 # This file is PUBLIC. Keep personal details (gear, health, job profile) in the
 # private profile instead; see profile.example.yaml.
 #
-# Modes: threaded | flat | tracker | question | patch_cycle | fixed | listings | reading_list
-# (see docs/DESIGN.md §4)
+# Modes: threaded | flat | tracker | question | fixed | listings | reading_list
+# (see docs/DESIGN.md §4; patch_cycle is parked, see DESIGN "Parked")
 
 defaults:
   daily_cap_per_thread: 5        # overflow collapses behind "+N more", never dropped
   dormant_after_days: 14
   archive_after_days: 60
   lookback_days: 7               # ignore items older than this on first sight
-  relevance_threshold: 0.50      # calibrated 2026-11-21 on HN titles (python -m pipeline.calibrate);
-                                 # recalibrate after changing sources
+  relevance_threshold: 0.50      # calibrated 2026-11-22 on 52 verified sources, query instruction off
+                                 # (python -m pipeline.calibrate); recalibrate after changing sources
 
 groups:
   - { id: ai,     name: AI }
   - { id: tech,   name: Tech }
-  - { id: games,  name: Games }
   - { id: health, name: Health }
   - { id: news,   name: News }
   - { id: money,  name: Money & Jobs }
@@ -93,6 +92,8 @@ topics:
     exclude:
       - Rumor roundups with no sourcing
       - Deal posts and sales
+      - Software beta and release-candidate builds
+      - TV, movie and streaming listings and schedules
 
   - id: everyday-upgrades
     name: Everyday upgrades
@@ -109,34 +110,6 @@ topics:
       - Review of a 3-in-1 charging stand with testing results
       - Best desk lamps for a small room tested
       - Battery pack comparison with measured capacity
-
-  # ───────────────────────────── GAMES ─────────────────────────────
-  - id: genshin-leaks
-    name: Genshin leaks
-    group: games
-    mode: patch_cycle
-    spoiler_policy: fail_closed      # hide unless confidently spoiler-free
-    images: false                    # never show thumbnails for this topic
-    threads_per_cycle:
-      - { id: next-patch, title: "Next patch", accepts: [beta_confirmed] }
-      - { id: long-range, title: "Long-range & meta", accepts: [reputable_leaker, unverified], label: speculation }
-    hide_credibility: [fake]
-    description: >
-      Genshin Impact leaks about upcoming characters and banners, character kits,
-      and how new characters affect the meta and team building. Also impactful
-      gameplay and quality-of-life system changes.
-    include:
-      - Beta character kit details and multipliers
-      - Upcoming banner lineup
-      - Long-range leak about future character elements and roles
-      - Major quality-of-life system change in the next patch
-    exclude:
-      - Story, lore or plot leaks of any kind
-      - Map, region or area details, layouts or visuals
-      - Events
-      - Livestream announcements and redeem codes
-      - Patch notes
-    known_leakers: []                # fill in during source curation
 
   # ───────────────────────────── HEALTH ─────────────────────────────
   # All health topics: articles about studies (DESIGN §8.2), study cards on, evidence badges on.
@@ -200,6 +173,7 @@ topics:
     name: US politics
     group: news
     mode: threaded
+    relevance_threshold: 0.45      # calibrated 2026-11-22: 0.50 hid real news (e.g. 0.48-0.49)
     dormant_after_days: 10
     primers: true
     opinion: { allowed: true, label: true, balance_across_lean: true }
@@ -218,6 +192,7 @@ topics:
     name: World news
     group: news
     mode: threaded
+    relevance_threshold: 0.45      # calibrated 2026-11-22: 0.50 hid real news (e.g. 0.46-0.48)
     dormant_after_days: 14
     primers: true
     opinion: { allowed: true, label: true, balance_across_lean: true }
@@ -311,6 +286,7 @@ topics:
     name: Reading list
     group: read
     mode: reading_list
+    relevance_threshold: 0.45      # PROVISIONAL: calibrated on 3 items (2026-11-22)
     max_per_month: 4
     description: >
       High-impact nonfiction that is widely considered a must-read, and new

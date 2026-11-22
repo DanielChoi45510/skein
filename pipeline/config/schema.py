@@ -115,7 +115,7 @@ class Topic(StrictModel):
     compare_with_profile: ProfileSection | None = None
     match_profile: ProfileSection | None = None
 
-    # Genshin / spoiler handling
+    # Spoiler / credibility handling (no topic uses it today; see DESIGN "Parked")
     spoiler_policy: Literal["fail_closed"] | None = None
     images: bool = True
     hide_credibility: list[Credibility] = []
