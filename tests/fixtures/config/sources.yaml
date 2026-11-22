@@ -1,0 +1,43 @@
+# Test fixture. Hosts are reserved example domains; responses come from
+# tests/fixtures/http/ via httpx.MockTransport. Tests never touch the network.
+
+sources:
+  - id: example-world
+    type: rss
+    url: https://feeds.example.com/world.xml
+    topics: [world]
+    status: active
+    kind: reporting
+    lean: center
+
+  - id: example-gadgets
+    type: rss
+    url: https://atom.example.org/gadgets.atom
+    topics: [gadgets, trackers]
+    status: trial
+
+  - id: example-hn
+    type: rss
+    url: https://hn.example.net/frontpage?points=200
+    topics: [gadgets, politics]
+    status: trial
+
+  - id: example-reddit
+    type: reddit
+    subreddit: ExampleNews
+    topics: [politics]
+    status: active
+    options:
+      min_score: 50
+
+  - id: example-disabled
+    type: rss
+    url: https://disabled.example.com/feed.xml
+    topics: [world]
+    status: disabled
+
+  - id: example-leaks
+    type: reddit
+    subreddit: ExampleLeaks
+    topics: [leaks]
+    status: disabled

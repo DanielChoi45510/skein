@@ -1,0 +1,35 @@
+# PRIVATE PROFILE: example shape only.
+#
+# The real file is NEVER committed:
+#   - local dev:  config/profile.yaml   (gitignored)
+#   - CI:         the PROFILE_YAML GitHub Actions secret (paste the whole file)
+#
+# Used only for scoring and comparisons. Never written to the data branch or
+# the site verbatim (see docs/DESIGN.md §10.3).
+
+gear:                              # tech trackers compare new releases against these
+  phone: Example Phone 15
+  laptop: Example Laptop 13 (16 GB / 512 GB)
+  earbuds: Example Buds Pro
+  headphones: Example Over-Ear 4
+  watch: Example Watch 8
+  tablet: null
+
+health:                            # nudges relevance for health topics
+  goals:
+    - example goal (e.g. build muscle)
+    - example goal (e.g. improve a fitness metric)
+  notes: free text the pipeline may use for relevance only
+
+jobs:
+  seeking: [internship, new_grad]  # in priority order
+  role_families: [software engineering, machine learning, data]
+  industries: any                  # or a list
+  skills_summary: >
+    A few lines summarizing skills and experience, derived from your resume.
+    Do not paste the resume itself.
+  locations: [any]                 # or a list; "remote" allowed
+  constraints:
+    work_authorization: example    # used to flag listings that require citizenship
+    clearance_ok: false
+  pause_listings_until: null       # e.g. 2026-12-16 during application season

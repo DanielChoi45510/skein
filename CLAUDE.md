@@ -54,6 +54,7 @@ python3.12 -m venv .venv && source .venv/bin/activate
 pip install -e ".[dev]" && pre-commit install
 
 python -m pipeline.config        # validate config/*.yaml (+ local config/profile.yaml if present)
+python -m pipeline run --state ../skein-state   # one pipeline run (live network); state dir outside the repo
 pytest                           # tests
 pre-commit run --all-files       # gitleaks, ruff, yaml checks, validator, tests
 ```

@@ -49,6 +49,11 @@ repos:
         name: pytest
         language: python
         entry: python -m pytest -q
-        additional_dependencies: ["pydantic>=2.7,<3", "PyYAML>=6,<7", "pytest>=8"]
+        additional_dependencies:
+          - "pydantic>=2.7,<3"
+          - "PyYAML>=6,<7"
+          - "httpx>=0.28,<1"
+          - "feedparser>=6.0,<7"
+          - "pytest>=8"
         files: ^(pipeline/|tests/|config/|pyproject\.toml$)
         pass_filenames: false

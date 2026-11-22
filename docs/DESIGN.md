@@ -279,6 +279,7 @@ For each source: items fetched, shown, opened, hidden (by reason), last success 
 
 ### 10.1 Storage
 - State lives on an orphan `data` branch as JSON/NDJSON: items partitioned by day, `threads.json`, centroids as `.npy`, and an LLM cache.
+- Fetch state: `http_cache.json` (ETag / Last-Modified per feed URL) and `source_health.json` (per source: last attempt, status, last success, item count, last error, consecutive failures, feed title). All state is written once at the end of a run, so a crashed run never saves validators for items it didn't store.
 - Only the last ~30 days of item embeddings are kept.
 - The `data` branch is squashed periodically (history isn't needed) so the repo stays small.
 - Each run checks out `data`, updates it, commits and pushes. Concurrency: workflow-level `concurrency` group so runs never overlap.

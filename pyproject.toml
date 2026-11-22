@@ -10,6 +10,8 @@ requires-python = ">=3.12"
 dependencies = [
   "pydantic>=2.7,<3",  # config schemas
   "PyYAML>=6,<7",      # config parsing
+  "httpx>=0.28,<1",    # HTTP client: timeouts, MockTransport for offline tests
+  "feedparser>=6.0,<7",  # RSS/Atom parsing
 ]
 
 [project.optional-dependencies]

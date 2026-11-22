@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Synthetic fixture shaped like an aggregator front-page feed with comment links. -->
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Example News: Front Page</title>
+    <link>https://hn.example.net/</link>
+    <description>Front page stories with at least 200 points</description>
+    <item>
+      <title>Show EN: An open-source tool that schedules my workouts</title>
+      <description><![CDATA[<p>Article URL: <a href="https://blog.example.dev/workouts">https://blog.example.dev/workouts</a></p><p>Points: 312</p>]]></description>
+      <pubDate>Sat, 21 Nov 2026 11:05:12 +0000</pubDate>
+      <link>https://blog.example.dev/workouts</link>
+      <dc:creator>someuser</dc:creator>
+      <comments>https://hn.example.net/item?id=1001</comments>
+      <guid isPermaLink="false">https://hn.example.net/item?id=1001</guid>
+    </item>
+    <item>
+      <title>Senate passes chip export bill</title>
+      <description><![CDATA[<p>Points: 240</p>]]></description>
+      <pubDate>Sat, 21 Nov 2026 09:40:00 +0000</pubDate>
+      <link>https://www.example.com/2026/11/21/us/politics/chip-export-bill.html</link>
+      <comments>https://hn.example.net/item?id=1002</comments>
+    </item>
+  </channel>
+</rss>
