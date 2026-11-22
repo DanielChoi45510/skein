@@ -1,0 +1,32 @@
+{
+  "hn-frontpage": {
+    "consecutive_failures": 0,
+    "feed_title": "Hacker News: Front Page",
+    "last_attempt_at": "2026-11-22T03:51:06.410293Z",
+    "last_error": null,
+    "last_error_at": null,
+    "last_item_count": 10,
+    "last_status": "ok",
+    "last_success_at": "2026-11-22T03:51:06.410293Z"
+  },
+  "nyt-politics": {
+    "consecutive_failures": 0,
+    "feed_title": "NYT > U.S. > Politics",
+    "last_attempt_at": "2026-11-22T03:51:06.410293Z",
+    "last_error": null,
+    "last_error_at": null,
+    "last_item_count": 20,
+    "last_status": "ok",
+    "last_success_at": "2026-11-22T03:51:06.410293Z"
+  },
+  "nyt-world": {
+    "consecutive_failures": 0,
+    "feed_title": "NYT > World News",
+    "last_attempt_at": "2026-11-22T03:51:06.410293Z",
+    "last_error": null,
+    "last_error_at": null,
+    "last_item_count": 52,
+    "last_status": "ok",
+    "last_success_at": "2026-11-22T03:51:06.410293Z"
+  }
+}
