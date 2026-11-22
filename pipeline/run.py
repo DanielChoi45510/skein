@@ -1,6 +1,6 @@
-"""One pipeline run. Phase 1 step (a): fetch only.
+"""One pipeline run. Phase 1 so far:
 
-fetch → (normalize → dedupe → embed → relevance → rank → export: later steps)
+fetch → normalize → exact dedupe → (embed → near-dup → relevance → rank → export: later steps)
 
 A source that fails is recorded in source health and skipped; it never fails the
 run. Everything is written to the state dir once, at the end (see state.py).
@@ -21,6 +21,8 @@ from .config import load_config
 from .config.validate import DEFAULT_CONFIG_DIR
 from .fetch import FeedParseError, FetchError, FetchOutcome, HttpFetcher, fetch_source
 from .models import RawEntry, SourceHealth
+from .process.dedupe import merge_exact
+from .process.normalize import normalize
 from .state import State
 
 log = logging.getLogger(__name__)
@@ -30,6 +32,7 @@ log = logging.getLogger(__name__)
 class RunReport:
     outcomes: dict[str, FetchOutcome] = field(default_factory=dict)
     errors: dict[str, str] = field(default_factory=dict)
+    new_item_ids: list[str] = field(default_factory=list)
 
     @property
     def entries(self) -> list[RawEntry]:
@@ -47,7 +50,7 @@ def run(
     """Run the pipeline. Raises ConfigError if the config is invalid."""
     cfg = load_config(config_dir)
     now = now or dt.datetime.now(dt.UTC)
-    state = State(state_dir)
+    state = State(state_dir, now)
     report = RunReport()
 
     enabled = [s for s in cfg.sources.sources if s.status != "disabled"]
@@ -78,6 +81,12 @@ def run(
             health.last_error, health.last_error_at = message, now
             health.consecutive_failures += 1
             log.warning("%s: error: %s", source.id, message)
+
+    sources = {s.id: s for s in cfg.sources.sources}
+    weights = {s.id: s.weight for s in cfg.sources.sources}
+    candidates = normalize(report.entries, sources, cfg.topics, now)
+    report.new_item_ids = merge_exact(state.items, candidates, weights)
+    log.info("%d new item(s) from %d entries", len(report.new_item_ids), len(report.entries))
 
     state.save()
     return report

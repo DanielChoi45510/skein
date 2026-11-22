@@ -25,6 +25,36 @@ class RawEntry(BaseModel):
     extra: dict[str, Any] = {}
 
 
+HiddenReason = Literal["duplicate", "below_threshold"]
+
+
+class Item(BaseModel):
+    """One stored item (DESIGN §3.1). Metadata and a link only, never full text.
+
+    Stored as NDJSON in `items/YYYY-MM-DD.ndjson`, partitioned by `first_seen_at`.
+    """
+
+    id: str  # first 16 hex chars of sha256(canonical_url)
+    source_id: str
+    url: str
+    canonical_url: str
+    title: str
+    excerpt: str | None = None  # feed-provided, plain text, ≤ 300 chars
+    published_at: dt.datetime
+    first_seen_at: dt.datetime
+    also_covered_by: list[str] = []  # other sources that carried the same story
+    duplicate_of: str | None = None  # id of the item kept instead of this one
+    hidden_reason: HiddenReason | None = None
+    topic_id: str | None = None  # set by relevance (step c)
+    relevance: float | None = None  # step c
+    importance: float | None = None  # step c
+    extra: dict[str, Any] = {}  # small source metadata, e.g. Reddit score / flair
+
+    @property
+    def visible(self) -> bool:
+        return self.hidden_reason is None
+
+
 FetchStatus = Literal["ok", "unchanged", "error"]
 
 

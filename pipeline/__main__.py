@@ -30,7 +30,10 @@ def main(argv: list[str] | None = None) -> int:
             print(f"  - {err}", file=sys.stderr)
         return 1
     ok = len(report.outcomes)
-    print(f"Fetched {ok} source(s), {len(report.errors)} error(s), {len(report.entries)} entries.")
+    print(
+        f"Fetched {ok} source(s), {len(report.errors)} error(s), {len(report.entries)} entries, "
+        f"{len(report.new_item_ids)} new item(s)."
+    )
     return 0
 
 

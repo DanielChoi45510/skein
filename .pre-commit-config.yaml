@@ -54,6 +54,7 @@ repos:
           - "PyYAML>=6,<7"
           - "httpx>=0.28,<1"
           - "feedparser>=6.0,<7"
+          - "numpy>=2,<3"
           - "pytest>=8"
         files: ^(pipeline/|tests/|config/|pyproject\.toml$)
         pass_filenames: false

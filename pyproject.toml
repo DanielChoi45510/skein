@@ -12,6 +12,7 @@ dependencies = [
   "PyYAML>=6,<7",      # config parsing
   "httpx>=0.28,<1",    # HTTP client: timeouts, MockTransport for offline tests
   "feedparser>=6.0,<7",  # RSS/Atom parsing
+  "numpy>=2,<3",       # vector math (near-duplicate detection, relevance)
 ]
 
 [project.optional-dependencies]

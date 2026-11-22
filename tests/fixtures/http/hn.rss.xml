@@ -15,10 +15,11 @@
       <guid isPermaLink="false">https://hn.example.net/item?id=1001</guid>
     </item>
     <item>
-      <title>Senate passes chip export bill</title>
+      <title>Coalition talks resume in Freedonia after close election</title>
       <description><![CDATA[<p>Points: 240</p>]]></description>
-      <pubDate>Sat, 21 Nov 2026 09:40:00 +0000</pubDate>
-      <link>https://www.example.com/2026/11/21/us/politics/chip-export-bill.html</link>
+      <pubDate>Sat, 21 Nov 2026 10:40:00 +0000</pubDate>
+      <!-- same story as world.rss.xml, different tracking params: exact duplicate after canonicalization -->
+      <link>https://WWW.example.com/2026/11/21/world/freedonia-coalition.html?utm_medium=social#top</link>
       <comments>https://hn.example.net/item?id=1002</comments>
     </item>
   </channel>

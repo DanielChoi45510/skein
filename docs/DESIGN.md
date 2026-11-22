@@ -58,14 +58,19 @@ type Source = {
   options?: Record<string, unknown>;        // e.g. reddit min_score
 };
 
+// Stored as NDJSON in items/YYYY-MM-DD.ndjson (by first_seen_at); see pipeline/models.py.
 type Item = {
-  id: string;                 // hash of canonical URL
-  source_id: string; url: string; canonical_url: string;
-  title: string; excerpt?: string;          // feed-provided, ≤300 chars
-  published_at: string; fetched_at: string;
+  id: string;                 // first 16 hex chars of sha256(canonical URL)
+  source_id: string; url: string; canonical_url: string;   // url = original link, used for linking out
+  title: string; excerpt?: string;          // feed-provided, plain text, ≤300 chars
+  published_at: string;       // UTC; missing or future dates → first_seen_at
+  first_seen_at: string;      // run that first stored it; never changes
+  also_covered_by: string[];  // other sources with the same story (§6.3), a ranking signal
+  duplicate_of?: string;      // set with hidden_reason "duplicate"
   topic_id?: string; thread_id?: string;
-  relevance: number;          // 0–1
-  importance: number;         // ranking score, §6.6
+  relevance?: number;         // 0–1
+  importance?: number;        // ranking score, §6.6
+  extra: Record<string, unknown>;           // small source metadata (e.g. Reddit score, flair)
   labels: {
     kind?: "reporting" | "analysis" | "opinion" | "study" | "listing" | "guide";
     credibility?: "beta_confirmed" | "reputable_leaker" | "unverified" | "fake";   // Genshin
@@ -73,7 +78,7 @@ type Item = {
     region?: string;          // world news
     flags?: string[];         // e.g. "listicle", "spoiler_risk", "overclaim"
   };
-  hidden_reason?: string;     // set when filtered; kept for the review screen
+  hidden_reason?: "duplicate" | "below_threshold";  // more reasons arrive with filters (§7); kept for the review screen
   study_card?: StudyCard;     // §8.2
 };
 
@@ -141,8 +146,8 @@ fetch → normalize → dedupe → embed → relevance → classify/filter → a
 Canonicalize URLs (strip tracking params), parse dates to UTC, trim the excerpt to ≤300 chars, and drop items older than the topic's lookback window.
 
 ### 6.3 Dedupe
-1. Exact: canonical URL hash.
-2. Near-duplicate: title-embedding cosine ≥ 0.92 within 48 h → keep the higher-weight source, record the others as `also_covered_by` (used as a corroboration signal in ranking).
+1. Exact: canonical URL hash (tracking params like `utm_*`, `smid`, `fbclid` stripped; fragment dropped; params sorted). A second source adds itself to `also_covered_by`; a strictly higher-weight source takes the item over.
+2. Near-duplicate: title-embedding cosine ≥ 0.92 within 48 h → keep the higher-weight source (ties: the item stored first), record the others as `also_covered_by` (used as a corroboration signal in ranking). The hidden one is kept with `duplicate_of`, so reruns recognize it by id.
 
 ### 6.4 Embed and relevance
 - Small CPU embedding model (e.g. `bge-small-en-v1.5` or `all-MiniLM-L6-v2`), cached between runs with the Actions cache.
