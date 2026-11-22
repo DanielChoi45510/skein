@@ -23,8 +23,12 @@ Mode = Literal[
 ]
 Credibility = Literal["beta_confirmed", "reputable_leaker", "unverified", "fake"]
 ProfileSection = Literal["gear", "health", "jobs"]
-Lean = Literal["left", "center-left", "center", "center-right", "right"]
+Lean = Literal["left", "lean_left", "center", "lean_right", "right"]  # AllSides scale
 ContentKind = Literal["reporting", "analysis", "opinion", "study", "listing", "guide"]
+LEAN_KINDS = frozenset({"reporting", "analysis", "opinion"})  # kinds an outlet lean applies to
+Paywall = Literal["none", "partial", "full"]
+# Source types whose fetchers arrive in Phase 4. Until then they must stay disabled.
+FUTURE_SOURCE_TYPES = frozenset({"github_list", "nyt_books", "fred"})
 
 
 class StrictModel(BaseModel):
@@ -62,6 +66,13 @@ class CycleThread(StrictModel):
     title: NonEmptyStr
     accepts: list[Credibility] = Field(min_length=1)
     label: str | None = None
+
+
+class Panel(StrictModel):
+    """A data panel shown above a topic (Markets: index closes, DESIGN §8.9). Phase 4."""
+
+    provider: Literal["fred"]
+    series: list[NonEmptyStr] = Field(min_length=1)
 
 
 class OpinionPolicy(StrictModel):
@@ -111,7 +122,7 @@ class Topic(StrictModel):
     known_leakers: list[NonEmptyStr] = []
 
     # Health
-    evidence: Literal["studies_preferred"] | None = None
+    evidence: Literal["articles_about_studies"] | None = None
     study_cards: bool = False
 
     # News
@@ -122,6 +133,7 @@ class Topic(StrictModel):
 
     # Markets
     advice: Literal["never"] | None = None
+    panel: Panel | None = None
 
     @model_validator(mode="after")
     def _mode_rules(self) -> Topic:
@@ -180,14 +192,15 @@ class SourceRelevance(StrictModel):
 class Source(StrictModel):
     id: Id
     name: NonEmptyStr | None = None  # display name; else the feed's own title, else the id
-    type: Literal["rss", "reddit"]
+    type: Literal["rss", "reddit", "github_list", "nyt_books", "fred"]
     url: HttpUrl | None = None
     subreddit: Annotated[str, StringConstraints(pattern=r"^[A-Za-z0-9_]{2,21}$")] | None = None
     topics: list[Id] = Field(min_length=1)
     status: Literal["active", "trial", "disabled"]
     weight: Annotated[float, Field(ge=0.5, le=1.5)] = 1.0
-    lean: Lean | None = None
+    lean: Lean | None = None  # only with kind reporting / analysis / opinion
     kind: ContentKind | None = None
+    paywall: Paywall = "none"  # partial / full: lock badge on cards
     verified: bool = False
     excerpt: bool = True  # false: drop the feed's description (e.g. when it's boilerplate)
     relevance: SourceRelevance | None = None
@@ -205,6 +218,16 @@ class Source(StrictModel):
                 raise ValueError("reddit sources require `subreddit`")
             if self.url is not None:
                 raise ValueError("reddit sources must not set `url` (use `subreddit`)")
+        else:  # Phase 4 types: settings live in `options`
+            if self.url is not None or self.subreddit is not None:
+                raise ValueError(f"{self.type} sources take no `url`/`subreddit` (use `options`)")
+            if self.status != "disabled":
+                raise ValueError(
+                    f"{self.type} sources must stay `status: disabled` until their fetcher "
+                    "exists (DESIGN §14 phase 4)"
+                )
+        if self.lean is not None and self.kind not in LEAN_KINDS:
+            raise ValueError("`lean` is only allowed with kind reporting, analysis or opinion")
         if self.relevance and self.relevance.skip and len(self.topics) != 1:
             raise ValueError("`relevance: {skip: true}` needs exactly one topic to route items to")
         return self

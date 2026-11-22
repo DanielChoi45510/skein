@@ -210,7 +210,9 @@ def test_source_names_fall_back(tmp_path: Path) -> None:
         "example-world": SourceHealth(feed_title="Feed Title Ignored"),
         "example-gadgets": SourceHealth(feed_title="Gadget Lab"),
     }
-    names = {s.id: s.name for s in run_export(tmp_path, [], cfg, health).sources}
+    summaries = run_export(tmp_path, [], cfg, health).sources
+    assert {s.paywall for s in summaries} == {"none"}  # fixture default
+    names = {s.id: s.name for s in summaries}
     assert names["example-world"] == "Named"
     assert names["example-gadgets"] == "Gadget Lab"
     assert names["example-hn"] == "example-hn"

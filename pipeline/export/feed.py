@@ -90,6 +90,7 @@ def export_feed(
                 status=s.status,
                 lean=s.lean,
                 kind=s.kind,
+                paywall=s.paywall,
             )
             for s in cfg.sources.sources
         ],

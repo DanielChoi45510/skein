@@ -103,4 +103,4 @@ Don't build these unless the owner explicitly asks:
 - Multi-user accounts, sign-up, comments or any social features
 - Push notifications
 - Paid services of any kind
-- Scraping sites whose terms prohibit it (e.g. LinkedIn)
+- Scraping sites whose terms prohibit it (LinkedIn, Glassdoor, Indeed, …)

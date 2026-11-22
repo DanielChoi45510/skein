@@ -244,6 +244,121 @@ def test_invalid_relevance_threshold(config_dir: Path, mutate: Callable) -> None
     assert "relevance_threshold" in errors_for(config_dir)
 
 
+# ───────────────────────────── sources-v2 rules ─────────────────────────────
+
+
+@pytest.mark.parametrize(
+    ("mutate", "expected"),
+    [
+        pytest.param(
+            lambda d: source(d, "example-world").update(paywall="sometimes"),
+            "paywall: Input should be 'none', 'partial' or 'full'",
+            id="bad-paywall",
+        ),
+        pytest.param(
+            lambda d: source(d, "example-world").update(lean="center-left"),
+            "lean: Input should be",
+            id="old-lean-value",
+        ),
+        pytest.param(
+            lambda d: source(d, "example-gadgets").update(lean="center"),  # no kind
+            "`lean` is only allowed with kind reporting, analysis or opinion",
+            id="lean-without-news-kind",
+        ),
+        pytest.param(
+            lambda d: source(d, "example-world").update(kind="guide"),  # has lean: center
+            "`lean` is only allowed with kind",
+            id="lean-with-guide-kind",
+        ),
+        pytest.param(
+            lambda d: d["sources"].append(
+                {"id": "fred-x", "type": "fred", "topics": ["markets"], "status": "active"}
+            ),
+            "fred sources must stay `status: disabled`",
+            id="future-type-enabled",
+        ),
+        pytest.param(
+            lambda d: d["sources"].append(
+                {
+                    "id": "gh",
+                    "type": "github_list",
+                    "url": "https://github.com/x/y",
+                    "topics": ["markets"],
+                    "status": "disabled",
+                }
+            ),
+            "github_list sources take no `url`",
+            id="future-type-with-url",
+        ),
+        pytest.param(
+            lambda d: source(d, "example-world").update(options={"region": "Mars"}),
+            "options.region 'Mars' is not one of: Americas, Europe",
+            id="unknown-region",
+        ),
+        pytest.param(
+            lambda d: source(d, "example-gadgets").update(options={"region": "Europe"}),
+            "only allowed on sources feeding a topic that lists `regions`",
+            id="region-on-non-regional-source",
+        ),
+    ],
+)
+def test_invalid_sources_v2(config_dir: Path, mutate: Callable, expected: str) -> None:
+    edit(config_dir, "sources.yaml", mutate)
+    assert expected in errors_for(config_dir)
+
+
+def test_valid_sources_v2(config_dir: Path) -> None:
+    def mutate(d: dict) -> None:
+        source(d, "example-world").update(paywall="full", options={"region": "Europe"})
+        d["sources"].append(
+            {
+                "id": "nyt-books",
+                "type": "nyt_books",
+                "topics": ["gadgets"],
+                "status": "disabled",
+                "options": {"list": "x"},
+            }
+        )
+
+    edit(config_dir, "sources.yaml", mutate)
+    cfg = load_config(config_dir)
+    by_id = {s.id: s for s in cfg.sources.sources}
+    assert by_id["example-world"].paywall == "full"
+    assert by_id["example-gadgets"].paywall == "none"  # default
+
+
+@pytest.mark.parametrize(
+    ("mutate", "expected"),
+    [
+        pytest.param(
+            lambda d: topic(d, "markets").update(panel={"provider": "yahoo", "series": ["X"]}),
+            "panel.provider: Input should be 'fred'",
+            id="panel-provider",
+        ),
+        pytest.param(
+            lambda d: topic(d, "markets").update(panel={"provider": "fred", "series": []}),
+            "panel.series",
+            id="panel-empty-series",
+        ),
+        pytest.param(
+            lambda d: topic(d, "world").update(evidence="studies_preferred"),
+            "evidence: Input should be 'articles_about_studies'",
+            id="old-evidence-value",
+        ),
+    ],
+)
+def test_invalid_topics_v2(config_dir: Path, mutate: Callable, expected: str) -> None:
+    edit(config_dir, "topics.yaml", mutate)
+    assert expected in errors_for(config_dir)
+
+
+def test_valid_panel(config_dir: Path) -> None:
+    panel = {"provider": "fred", "series": ["SP500", "DJIA"]}
+    edit(config_dir, "topics.yaml", lambda d: topic(d, "markets").update(panel=panel))
+    markets = next(t for t in load_config(config_dir).topics.topics if t.id == "markets")
+    assert markets.panel is not None and markets.panel.series == ["SP500", "DJIA"]
+
+
 @pytest.mark.parametrize("status", ["trial", "active"])
 def test_spoiler_protected_source_must_stay_disabled(config_dir: Path, status: str) -> None:
     """CLAUDE.md principle 7: the Genshin source stays disabled until the spoiler filter exists."""

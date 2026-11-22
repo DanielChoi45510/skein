@@ -52,6 +52,7 @@ export interface SourceSummary {
 	status: string;
 	lean: string | null;
 	kind: string | null;
+	paywall?: 'none' | 'partial' | 'full'; // absent in feeds exported before sources-v2
 }
 
 export interface FeedIndex {

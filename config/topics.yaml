@@ -86,10 +86,9 @@ topics:
       - { id: audio,       title: Headphones & earbuds }
       - { id: wearables,   title: Wearables }
       - { id: tablets,     title: Tablets }
-      - { id: evs,         title: EVs, priority: low }
     description: >
       New releases, in-depth reviews with real testing, and major updates for phones,
-      laptops, headphones and earbuds, wearables, tablets and EVs. Emphasis on how new
+      laptops, headphones and earbuds, wearables and tablets. Emphasis on how new
       products compare with current best-in-class options.
     exclude:
       - Rumor roundups with no sourcing
@@ -140,12 +139,12 @@ topics:
     known_leakers: []                # fill in during source curation
 
   # ───────────────────────────── HEALTH ─────────────────────────────
-  # All health topics: studies first, study cards on, evidence badges on.
+  # All health topics: articles about studies (DESIGN §8.2), study cards on, evidence badges on.
   - id: health-training
     name: Training
     group: health
     mode: question
-    evidence: studies_preferred
+    evidence: articles_about_studies
     study_cards: true
     max_per_week: 4
     dormant_after_days: 120
@@ -161,7 +160,7 @@ topics:
     name: Sleep
     group: health
     mode: question
-    evidence: studies_preferred
+    evidence: articles_about_studies
     study_cards: true
     max_per_week: 2
     dormant_after_days: 120
@@ -173,7 +172,7 @@ topics:
     name: Nutrition on a budget
     group: health
     mode: question
-    evidence: studies_preferred
+    evidence: articles_about_studies
     study_cards: true
     max_per_week: 2
     dormant_after_days: 120
@@ -188,7 +187,7 @@ topics:
     name: General well-being
     group: health
     mode: question
-    evidence: studies_preferred
+    evidence: articles_about_studies
     study_cards: true
     max_per_week: 2
     dormant_after_days: 120
@@ -244,6 +243,9 @@ topics:
     group: money
     mode: fixed
     advice: never                  # report news; never buy/sell recommendations
+    panel:
+      provider: fred
+      series: [SP500, NASDAQCOM, DJIA]   # daily closes; Phase 4
     threads:
       # 11 GICS sectors
       - { id: it,            title: Information Technology }

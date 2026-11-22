@@ -1,52 +1,192 @@
-# Sources: where items come from.
+# Sources: where items come from. Curated 2026-11-21.
 #
-# Full curation is the next working session. Entries here are a starting
-# skeleton. Anything with `verified: false` needs its URL checked before it is
-# enabled.
+# status:   active | trial | disabled   (trial = badged in the feed; disabled = never fetched)
+# kind:     default content kind: reporting | analysis | opinion | study | listing | guide
+# lean:     news/opinion outlets only: left | lean_left | center | lean_right | right
+#           Source: AllSides Media Bias Ratings. Only ratings confirmed on 2026-11-21 are
+#           filled in; the rest are null with a "# AllSides: check" note. Confirm before Phase 3.
+# paywall:  none | partial | full   (partial/full show a lock badge on cards)
+# verified: true once the URL has returned a valid feed in a real pipeline run.
 #
-# name:    optional display name (default: the feed's own title, else the id)
-# status:  active | trial | disabled      (trial sources are badged in the feed)
-# weight:  0.5–1.5 manual trust knob (default 1.0)
-# lean:    news outlets only: left | center-left | center | center-right | right
-#          (from published media-bias ratings; record which rating you used)
-# kind:    default content kind hint: reporting | analysis | opinion | study | listing | guide
-# excerpt: false to drop the feed's description when it's boilerplate (default true)
-# relevance: per-source override of the topic threshold, either
-#            {threshold: 0.2}   a different bar for this source's items, or
-#            {skip: true}       single-topic sources only: never hidden by a threshold
-#                               (still scored, so ranking uses real relevance)
+# Types: rss | reddit             fetched from Phase 1
+#        github_list | nyt_books | fred    fetchers arrive in Phase 4; disabled until then
+#
+# Google News search feeds (used for Reuters) are plain `rss`. Items have headlines only,
+# and links go through news.google.com.
 
 sources:
 
-  - id: nyt-politics
+  # ═══════════════════════════ AI in practice ═══════════════════════════
+  - id: simon-willison
+    name: Simon Willison's Weblog
     type: rss
-    url: https://rss.nytimes.com/services/xml/rss/nyt/Politics.xml
-    topics: [us-politics]
-    status: trial
-    kind: reporting
-    lean: null          # fill in from a media-bias rating
+    url: https://simonwillison.net/atom/everything/
+    topics: [ai-practice, ai-news]
+    status: active
     verified: false
-    relevance: { skip: true }   # section feed: the outlet already sorted it
 
-  - id: nyt-world
+  - id: one-useful-thing
+    name: One Useful Thing
     type: rss
-    url: https://rss.nytimes.com/services/xml/rss/nyt/World.xml
-    topics: [world-news]
-    status: trial
-    kind: reporting
-    lean: null
+    url: https://www.oneusefulthing.org/feed
+    topics: [ai-practice, ai-news]
+    status: active
+    kind: analysis
     verified: false
-    relevance: { skip: true }   # section feed: the outlet already sorted it
 
   - id: hn-frontpage
+    name: Hacker News (200+ points)
     type: rss
-    url: https://hnrss.org/frontpage?points=200    # third-party Hacker News feed
-    topics: [ai-news, ai-practice, jobs-market]
+    url: https://hnrss.org/frontpage?points=200
+    topics: [ai-practice, ai-news, jobs-market]
     status: trial
     excerpt: false      # hnrss descriptions are just "Article URL / Comments URL / Points"
     verified: false
 
+  - id: antigravity-blog
+    name: Google Antigravity Blog
+    type: rss
+    url: https://antigravity.google/blog/rss.xml
+    topics: [ai-practice, ai-news]
+    status: active
+    verified: false
+
+  - id: claude-blog
+    name: Claude Blog (unofficial feed)
+    type: rss
+    url: https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_claude.xml   # community scraper
+    topics: [ai-practice, ai-news]
+    status: trial
+    verified: false
+
+  # ═══════════════════════════ AI news ═══════════════════════════
+  - id: ainews-smol
+    name: AINews (smol.ai)
+    type: rss
+    url: https://news.smol.ai/rss.xml
+    topics: [ai-news]
+    status: active
+    verified: false
+
+  - id: verge-ai
+    name: The Verge – AI
+    type: rss
+    url: https://www.theverge.com/rss/ai-artificial-intelligence/index.xml
+    topics: [ai-news]
+    status: active
+    verified: false
+
+  - id: ars-ai
+    name: Ars Technica – AI
+    type: rss
+    url: https://arstechnica.com/ai/feed/
+    topics: [ai-news]
+    status: active
+    verified: false
+
+  - id: openai-news
+    name: OpenAI News
+    type: rss
+    url: https://openai.com/news/rss.xml
+    topics: [ai-news]
+    status: active
+    verified: false
+
+  - id: deepmind-blog
+    name: Google DeepMind Blog
+    type: rss
+    url: https://deepmind.google/blog/rss.xml
+    topics: [ai-news]
+    status: active
+    verified: false
+
+  - id: anthropic-news
+    name: Anthropic News (unofficial feed)
+    type: rss
+    url: https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_anthropic_news.xml
+    topics: [ai-news]
+    status: trial
+    verified: false
+
+  - id: google-ai-dev
+    name: Google Developers Blog – AI (unofficial feed)
+    type: rss
+    url: https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_google_ai.xml
+    topics: [ai-news, ai-practice]
+    status: trial
+    verified: false
+
+  - id: gemini-blog
+    name: Google Blog – Gemini
+    type: rss
+    url: https://blog.google/products/gemini/rss/
+    topics: [ai-news, ai-practice]
+    status: active
+    verified: false
+
+  # ═══════════════════════════ Tech ═══════════════════════════
+  - id: verge-reviews
+    name: The Verge – Reviews
+    type: rss
+    url: https://www.theverge.com/rss/reviews/index.xml
+    topics: [tech-trackers, everyday-upgrades]
+    status: active
+    verified: false
+
+  - id: rtings
+    name: RTINGS
+    type: rss
+    url: https://www.rtings.com/latest-rss.xml
+    topics: [tech-trackers, everyday-upgrades]
+    status: active
+    paywall: partial        # some reviews are behind RTINGS Insider
+    verified: false
+
+  - id: notebookcheck
+    name: Notebookcheck
+    type: rss
+    url: https://www.notebookcheck.net/RSS-Feed-All-Articles-EN.165552.0.html   # TODO: swap for reviews-only feed if one exists
+    topics: [tech-trackers, everyday-upgrades]
+    status: trial
+    verified: false
+
+  - id: 9to5mac
+    name: 9to5Mac
+    type: rss
+    url: https://9to5mac.com/feed/
+    topics: [tech-trackers, everyday-upgrades]
+    status: trial
+    verified: false
+
+  - id: verge-installer
+    name: The Verge – Installer
+    type: rss
+    url: https://www.theverge.com/rss/installer-newsletter/index.xml
+    topics: [everyday-upgrades]
+    status: active
+    verified: false
+
+  - id: wirecutter
+    name: Wirecutter
+    type: rss
+    url: https://thewirecutter.com/feed
+    topics: [everyday-upgrades]
+    status: trial
+    verified: false
+
+  - id: reddit-buyitforlife
+    name: r/BuyItForLife
+    type: reddit
+    subreddit: BuyItForLife
+    topics: [everyday-upgrades]
+    status: trial
+    options:
+      min_score: 500
+    verified: false
+
+  # ═══════════════════════════ Games ═══════════════════════════
   - id: reddit-genshin-leaks
+    name: r/Genshin_Impact_Leaks
     type: reddit
     subreddit: Genshin_Impact_Leaks
     topics: [genshin-leaks]
@@ -54,5 +194,432 @@ sources:
     options:
       min_score: 50
       use_flair_credibility: true
-      fetch_top_comments: 10   # for the "called fake" signal
+      fetch_top_comments: 10
+    verified: false
+
+  # ═══════════════════════════ Health ═══════════════════════════
+  - id: stronger-by-science
+    name: Stronger By Science
+    type: rss
+    url: https://www.strongerbyscience.com/feed/
+    topics: [health-training, health-nutrition]
+    status: active
+    kind: analysis
+    verified: false
+
+  - id: sweat-science
+    name: Sweat Science (Alex Hutchinson)
+    type: rss
+    url: https://sweatscience.substack.com/feed
+    topics: [health-training, health-wellbeing, health-sleep]
+    status: active
+    kind: analysis
+    verified: false
+
+  - id: nyt-well
+    name: NYT – Well
+    type: rss
+    url: https://rss.nytimes.com/services/xml/rss/nyt/Well.xml
+    topics: [health-training, health-sleep, health-nutrition, health-wellbeing]
+    status: active
+    paywall: full           # owner subscribes
+    verified: false
+
+  - id: examine
+    name: Examine
+    type: rss
+    url: https://examine.com/feed/
+    topics: [health-nutrition]
+    status: trial
+    paywall: partial
+    verified: false
+
+  - id: cochrane
+    name: Cochrane Database of Systematic Reviews
+    type: rss
+    url: https://www.cochranelibrary.com/   # TODO: find the CDSR RSS URL (offered since Jul 2024), then enable
+    topics: [health-wellbeing, health-sleep, health-nutrition]
+    status: disabled
+    kind: study
+    verified: false
+
+  - id: harvard-health
+    name: Harvard Health Blog
+    type: rss
+    url: https://www.health.harvard.edu/blog/feed
+    topics: [health-wellbeing, health-sleep, health-nutrition]
+    status: trial
+    verified: false
+
+  # ═══════════════════════════ US politics & world: reporting ═══════════════════════════
+  - id: nyt-politics
+    name: NYT – Politics
+    type: rss
+    url: https://rss.nytimes.com/services/xml/rss/nyt/Politics.xml
+    topics: [us-politics]
+    status: active
+    kind: reporting
+    lean: null          # AllSides: check (NYT news)
+    paywall: full       # owner subscribes
+    verified: false
+
+  - id: nyt-world
+    name: NYT – World
+    type: rss
+    url: https://rss.nytimes.com/services/xml/rss/nyt/World.xml
+    topics: [world-news]
+    status: active
+    kind: reporting
+    lean: null          # AllSides: check (NYT news)
+    paywall: full
+    verified: false
+
+  - id: reuters-world
+    name: Reuters – World (via Google News)
+    type: rss
+    url: https://news.google.com/rss/search?q=when:24h+site:reuters.com/world&ceid=US:en&hl=en-US&gl=US
+    topics: [world-news, us-politics]
+    status: active
+    kind: reporting
+    lean: center        # AllSides, confirmed in July 2025 Blind Bias Survey
+    verified: false
+
+  - id: ap-top
+    name: AP – Top Stories (Flipboard)
+    type: rss
+    url: https://flipboard.com/@associatedpress/top-stories-u7govdf1z.rss
+    topics: [us-politics, world-news]
+    status: active
+    kind: reporting
+    lean: null          # AllSides: check
+    verified: false
+
+  - id: ap-us
+    name: AP – U.S. News (Flipboard)
+    type: rss
+    url: https://flipboard.com/@associatedpress/u.s.-news-lhl4uphvz.rss
+    topics: [us-politics]
+    status: active
+    kind: reporting
+    lean: null          # AllSides: check
+    verified: false
+
+  - id: npr-politics
+    name: NPR – Politics
+    type: rss
+    url: https://feeds.npr.org/1014/rss.xml
+    topics: [us-politics]
+    status: trial
+    kind: reporting
+    lean: null          # AllSides: check
+    verified: false
+
+  - id: wsj-world
+    name: WSJ – World News
+    type: rss
+    url: https://feeds.content.dowjones.io/public/rss/RSSWorldNews
+    topics: [world-news]
+    status: active
+    kind: reporting
+    lean: null          # AllSides: check (WSJ news; rated separately from WSJ opinion)
+    paywall: full
+    verified: false
+
+  # BBC regional feeds: options.region pre-tags items for the world-news region facet.
+  - id: bbc-world
+    name: BBC – World
+    type: rss
+    url: https://feeds.bbci.co.uk/news/world/rss.xml
+    topics: [world-news]
+    status: active
+    kind: reporting
+    lean: null          # AllSides: check
+    verified: false
+
+  - id: bbc-africa
+    name: BBC – Africa
+    type: rss
+    url: https://feeds.bbci.co.uk/news/world/africa/rss.xml
+    topics: [world-news]
+    status: active
+    kind: reporting
+    lean: null          # AllSides: check
+    options: { region: Sub-Saharan Africa }   # North Africa stories get re-tagged by the classifier
+    verified: false
+
+  - id: bbc-asia
+    name: BBC – Asia
+    type: rss
+    url: https://feeds.bbci.co.uk/news/world/asia/rss.xml
+    topics: [world-news]
+    status: active
+    kind: reporting
+    lean: null          # AllSides: check
+    options: { region: East Asia }            # mixed region; classifier refines (East/South/Southeast)
+    verified: false
+
+  - id: bbc-india
+    name: BBC – India
+    type: rss
+    url: https://feeds.bbci.co.uk/news/world/asia/india/rss.xml
+    topics: [world-news]
+    status: active
+    kind: reporting
+    lean: null          # AllSides: check
+    options: { region: South Asia }
+    verified: false
+
+  - id: bbc-europe
+    name: BBC – Europe
+    type: rss
+    url: https://feeds.bbci.co.uk/news/world/europe/rss.xml
+    topics: [world-news]
+    status: active
+    kind: reporting
+    lean: null          # AllSides: check
+    options: { region: Europe }
+    verified: false
+
+  - id: bbc-latam
+    name: BBC – Latin America & Caribbean
+    type: rss
+    url: https://feeds.bbci.co.uk/news/world/latin_america/rss.xml
+    topics: [world-news]
+    status: active
+    kind: reporting
+    lean: null          # AllSides: check
+    options: { region: Americas }
+    verified: false
+
+  - id: bbc-middle-east
+    name: BBC – Middle East
+    type: rss
+    url: https://feeds.bbci.co.uk/news/world/middle_east/rss.xml
+    topics: [world-news]
+    status: active
+    kind: reporting
+    lean: null          # AllSides: check
+    options: { region: Middle East & North Africa }
+    verified: false
+
+  - id: bbc-australia
+    name: BBC – Australia
+    type: rss
+    url: https://feeds.bbci.co.uk/news/world/australia/rss.xml
+    topics: [world-news]
+    status: active
+    kind: reporting
+    lean: null          # AllSides: check
+    options: { region: Oceania }
+    verified: false
+
+  # ═══════════════════════════ Opinion (labeled, balanced, strictest filters) ═══════════════════════════
+  - id: nyt-opinion
+    name: NYT – Opinion
+    type: rss
+    url: https://rss.nytimes.com/services/xml/rss/nyt/Opinion.xml
+    topics: [us-politics, world-news]
+    status: active
+    kind: opinion
+    lean: null          # AllSides: check (NYT opinion)
+    paywall: full
+    verified: false
+
+  - id: the-atlantic
+    name: The Atlantic
+    type: rss
+    url: https://www.theatlantic.com/feed/all/
+    topics: [us-politics, world-news]
+    status: trial
+    kind: opinion
+    lean: left          # AllSides, confirmed in July 2025 Blind Bias Survey
+    paywall: partial
+    verified: false
+
+  - id: the-dispatch
+    name: The Dispatch
+    type: rss
+    url: https://thedispatch.com/feed/
+    topics: [us-politics, world-news]
+    status: trial
+    kind: opinion
+    lean: null          # AllSides: check
+    paywall: partial
+    verified: false
+
+  - id: national-review
+    name: National Review
+    type: rss
+    url: https://www.nationalreview.com/feed/
+    topics: [us-politics, world-news]
+    status: trial
+    kind: opinion
+    lean: null          # AllSides: check
+    paywall: partial
+    verified: false
+
+  - id: wsj-opinion
+    name: WSJ – Opinion
+    type: rss
+    url: https://feeds.content.dowjones.io/public/rss/RSSOpinion
+    topics: [us-politics, world-news]
+    status: trial
+    kind: opinion
+    lean: null          # AllSides: check (WSJ opinion)
+    paywall: full
+    verified: false
+
+  # ═══════════════════════════ Markets ═══════════════════════════
+  - id: fed-monetary
+    name: Federal Reserve – Monetary Policy
+    type: rss
+    url: https://www.federalreserve.gov/feeds/press_monetary.xml
+    topics: [markets]
+    status: active
+    kind: reporting
+    verified: false
+
+  - id: bls-empsit
+    name: BLS – Employment Situation
+    type: rss
+    url: https://www.bls.gov/feed/empsit.rss
+    topics: [markets]
+    status: active
+    kind: reporting
+    verified: false
+
+  - id: bls-cpi
+    name: BLS – Consumer Price Index
+    type: rss
+    url: https://www.bls.gov/feed/cpi.rss
+    topics: [markets]
+    status: active
+    kind: reporting
+    verified: false
+
+  - id: reuters-markets
+    name: Reuters – Markets & Business (via Google News)
+    type: rss
+    url: https://news.google.com/rss/search?q=when:24h+(site:reuters.com/markets+OR+site:reuters.com/business)&ceid=US:en&hl=en-US&gl=US
+    topics: [markets]
+    status: active
+    kind: reporting
+    lean: center
+    verified: false
+
+  - id: nyt-business
+    name: NYT – Business
+    type: rss
+    url: https://rss.nytimes.com/services/xml/rss/nyt/Business.xml
+    topics: [markets]
+    status: active
+    kind: reporting
+    paywall: full
+    verified: false
+
+  - id: nyt-economy
+    name: NYT – Economy
+    type: rss
+    url: https://rss.nytimes.com/services/xml/rss/nyt/Economy.xml
+    topics: [markets]
+    status: active
+    kind: reporting
+    paywall: full
+    verified: false
+
+  - id: wsj-markets
+    name: WSJ – Markets
+    type: rss
+    url: https://feeds.content.dowjones.io/public/rss/RSSMarketsMain
+    topics: [markets]
+    status: active
+    kind: reporting
+    paywall: full
+    verified: false
+
+  - id: fred-indexes
+    name: FRED – Index closes
+    type: fred
+    topics: [markets]
+    status: disabled          # Phase 4: market panel. Needs FRED_API_KEY secret.
+    options:
+      series: [SP500, NASDAQCOM, DJIA]
+    verified: false
+
+  # ═══════════════════════════ Jobs ═══════════════════════════
+  - id: simplify-internships
+    name: SimplifyJobs – Summer 2027 Internships
+    type: github_list
+    topics: [jobs-listings]
+    status: disabled          # Phase 4 fetcher. Repo stores listings in a JSON file. Find its path on the dev branch.
+    kind: listing
+    options:
+      repo: SimplifyJobs/Summer2027-Internships
+      branch: dev
+    verified: false
+
+  - id: simplify-newgrad
+    name: SimplifyJobs – New Grad Positions
+    type: github_list
+    topics: [jobs-listings]
+    status: disabled          # Phase 4 fetcher
+    kind: listing
+    options:
+      repo: SimplifyJobs/New-Grad-Positions
+      branch: dev
+    verified: false
+
+  - id: hn-whoishiring
+    name: HN – Who is hiring?
+    type: rss
+    url: https://hnrss.org/whoishiring/jobs   # verify: /whoishiring also includes "Who wants to be hired"
+    topics: [jobs-listings]
+    status: trial
+    kind: listing
+    verified: false
+
+  - id: techcrunch
+    name: TechCrunch
+    type: rss
+    url: https://techcrunch.com/feed/
+    topics: [jobs-market]
+    status: trial
+    kind: reporting
+    verified: false
+
+  - id: pragmatic-engineer
+    name: The Pragmatic Engineer
+    type: rss
+    url: https://newsletter.pragmaticengineer.com/feed
+    topics: [jobs-market, jobs-guides]
+    status: active
+    kind: analysis
+    paywall: partial
+    verified: false
+
+  - id: interviewing-io
+    name: interviewing.io Blog
+    type: rss
+    url: https://interviewing.io/blog/rss.xml
+    topics: [jobs-guides]
+    status: active
+    kind: guide
+    verified: false
+
+  # ═══════════════════════════ Books ═══════════════════════════
+  - id: nyt-bestsellers-nonfiction
+    name: NYT Best Sellers – Combined Nonfiction
+    type: nyt_books
+    topics: [books]
+    status: disabled          # Phase 4 fetcher. Needs NYT_API_KEY secret (free at developer.nytimes.com).
+    options:
+      list: combined-print-and-e-book-nonfiction
+    verified: false
+
+  - id: five-books
+    name: Five Books
+    type: rss
+    url: https://fivebooks.com/feed/
+    topics: [books]
+    status: active
     verified: false
