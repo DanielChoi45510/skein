@@ -1,0 +1,54 @@
+# Install once per clone:  pre-commit install
+# Run on everything:       pre-commit run --all-files
+# Versions are pinned; bump with `pre-commit autoupdate`.
+
+repos:
+  # Secret scanner (CLAUDE.md principle 6). pre-commit bootstraps Go itself.
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.30.0
+    hooks:
+      - id: gitleaks
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: check-yaml
+      - id: check-merge-conflict
+      - id: check-added-large-files
+      - id: check-symlinks
+      - id: detect-private-key
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.17.6
+    hooks:
+      - id: ruff-check
+        args: [--fix]
+      - id: ruff-format
+
+  - repo: local
+    hooks:
+      # Belt and braces for .gitignore: block a force-added private profile.
+      - id: forbid-profile
+        name: never commit the private profile (use PROFILE_YAML secret)
+        language: fail
+        entry: "config/profile.yaml is private; see config/profile.example.yaml"
+        files: (^|/)profile\.yaml$
+
+      # Hook deps below mirror pyproject.toml; keep them in sync.
+      - id: validate-config
+        name: validate config/*.yaml
+        language: python
+        entry: python -m pipeline.config
+        additional_dependencies: ["pydantic>=2.7,<3", "PyYAML>=6,<7"]
+        files: ^(config/|pipeline/config/)
+        pass_filenames: false
+
+      - id: pytest
+        name: pytest
+        language: python
+        entry: python -m pytest -q
+        additional_dependencies: ["pydantic>=2.7,<3", "PyYAML>=6,<7", "pytest>=8"]
+        files: ^(pipeline/|tests/|config/|pyproject\.toml$)
+        pass_filenames: false

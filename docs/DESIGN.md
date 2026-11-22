@@ -44,13 +44,17 @@ Source ──produces──▶ Item ──belongs to (0..1)──▶ Thread ─�
 ### 3.1 Data model (sketch)
 
 ```ts
+// Matches config/sources.yaml; enforced by pipeline/config/schema.py.
 type Source = {
-  id: string; type: "rss" | "reddit" | "pubmed" | "job_board" | "github_list";
-  url: string; topics: string[];            // which topics it may feed
+  id: string; type: "rss" | "reddit";       // later phases add "pubmed" | "job_board" | "github_list"
+  url?: string;                             // rss only
+  subreddit?: string;                       // reddit only
+  topics: string[];                         // which topics it may feed
   status: "active" | "trial" | "disabled";
-  weight: number;                           // 0.5–1.5, manual trust knob
-  lean?: "left" | "center-left" | "center" | "center-right" | "right"; // news outlets only
-  content_kind_hint?: "reporting" | "opinion" | "analysis" | "study" | "listing";
+  weight: number;                           // 0.5–1.5, manual trust knob (default 1.0)
+  lean?: "left" | "center-left" | "center" | "center-right" | "right" | null; // news outlets only
+  kind?: "reporting" | "analysis" | "opinion" | "study" | "listing" | "guide"; // default content-kind hint
+  verified: boolean;                        // URL checked during curation (default false)
   options?: Record<string, unknown>;        // e.g. reddit min_score
 };
 
@@ -297,6 +301,7 @@ Auth: a long random bearer token. CORS limited to the site's origin.
 - GitHub push protection on; pre-commit secret scanner; `.gitignore` covers `.env*`, `profile.yaml`, `*.local.*`.
 - Workflow permissions are least-privilege per job (`contents: write` only where needed, `models: read`, `pages: write`, `id-token: write`).
 - No secrets in logs; mask any derived values.
+- Config validator (`python -m pipeline.config`, in pre-commit and CI): schemas for all three config files, cross-file references, and the principle 7 guard (sources feeding a `spoiler_policy: fail_closed` topic must stay `disabled`). Profile errors show field paths only, never values.
 
 ## 11. Free-tier budget
 

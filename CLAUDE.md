@@ -48,7 +48,17 @@ tests/               pipeline tests with recorded fixtures
 
 ## Commands
 
-_Fill in as they're created._
+```sh
+# one-time setup (Python 3.12)
+python3.12 -m venv .venv && source .venv/bin/activate
+pip install -e ".[dev]" && pre-commit install
+
+python -m pipeline.config        # validate config/*.yaml (+ local config/profile.yaml if present)
+pytest                           # tests
+pre-commit run --all-files       # gitleaks, ruff, yaml checks, validator, tests
+```
+
+CI (`.github/workflows/ci.yml`) runs the validator, tests and pre-commit on every push to `main` and every PR.
 
 ## Working rules for AI assistants
 
