@@ -1,0 +1,316 @@
+# Topics: what the feed follows.
+#
+# `description`, `include` and `exclude` are used for relevance matching
+# (embedded as positive / negative anchors), so write them as plain English.
+# This file is PUBLIC. Keep personal details (gear, health, job profile) in the
+# private profile instead; see profile.example.yaml.
+#
+# Modes: threaded | flat | tracker | question | patch_cycle | fixed | listings | reading_list
+# (see docs/DESIGN.md §4)
+
+defaults:
+  daily_cap_per_thread: 5        # overflow collapses behind "+N more", never dropped
+  dormant_after_days: 14
+  archive_after_days: 60
+  lookback_days: 7               # ignore items older than this on first sight
+
+groups:
+  - { id: ai,     name: AI }
+  - { id: tech,   name: Tech }
+  - { id: games,  name: Games }
+  - { id: health, name: Health }
+  - { id: news,   name: News }
+  - { id: money,  name: Money & Jobs }
+  - { id: read,   name: Reading }
+
+global_filters:                  # on for every topic unless listed in a topic's `filters_off`
+  hype: Breathless "this changes everything" posts with no concrete facts, numbers or specifics.
+  memes: Memes, jokes, shitposts and humor posts.
+  doom: Doom posting and speculation about catastrophe without new evidence.
+  listicles: '"Top 10" style roundups and "X things you need" lists.'
+  charged_extremes: Emotionally charged, one-sided takes from either political extreme; outrage framing.
+  engagement_bait: Rage bait, clickbait and engagement-farming posts, including LinkedIn-style posts.
+  influencer: Influencer content (fitness, career, tech) built for personal brand rather than information.
+  obvious_advice: Generic advice any informed adult already knows, with no specific number, dose, comparison or method.
+
+topics:
+
+  # ───────────────────────────── AI ─────────────────────────────
+  - id: ai-practice
+    name: AI in practice
+    group: ai
+    mode: flat
+    max_per_day: 5
+    description: >
+      Practical ways to get more out of AI tools and agents: concrete workflows,
+      setups and automations that complete real tasks, for example editing a LaTeX
+      paper with a coding agent through a Git repo, or a skill file that plans and
+      tracks workouts. Focused on agents and tools that complete tasks for you.
+    include:
+      - Step-by-step workflow using a coding agent in VSCode
+      - How to set up an AI agent to automate a recurring personal task
+      - New feature in an AI assistant and how to use it effectively
+    exclude:
+      - AI image or video generation
+      - Running models locally on your own hardware
+      - '"10 prompts you need" lists'
+
+  - id: ai-news
+    name: AI news
+    group: ai
+    mode: threaded
+    dormant_after_days: 21
+    description: >
+      The AI industry: company strategy, funding, stock moves and deals; new model
+      and product releases; regulation affecting AI companies. Research only when it
+      is a major breakthrough. Facts and numbers, not hype or doom.
+    include:
+      - AI company announces new model with benchmark results
+      - AI startup raises funding round or is acquired
+      - AI company restructures, changes leadership or strategy
+    exclude:
+      - AI doom or existential-risk debate
+      - Incremental academic papers
+
+  # ───────────────────────────── TECH ─────────────────────────────
+  - id: tech-trackers
+    name: Tech trackers
+    group: tech
+    mode: tracker
+    compare_with_profile: gear     # compare against the private gear list
+    threads:
+      - { id: phones,      title: Phones }
+      - { id: laptops,     title: Laptops }
+      - { id: audio,       title: Headphones & earbuds }
+      - { id: wearables,   title: Wearables }
+      - { id: tablets,     title: Tablets }
+      - { id: evs,         title: EVs, priority: low }
+    description: >
+      New releases, in-depth reviews with real testing, and major updates for phones,
+      laptops, headphones and earbuds, wearables, tablets and EVs. Emphasis on how new
+      products compare with current best-in-class options.
+    exclude:
+      - Rumor roundups with no sourcing
+      - Deal posts and sales
+
+  - id: everyday-upgrades
+    name: Everyday upgrades
+    group: tech
+    mode: flat
+    max_per_week: 10
+    filters_off: [listicles]       # listicles are a useful starting point here
+    description: >
+      Products that make daily life easier that most people don't know about: desk
+      lamps and softer lighting, battery packs, chargers and charging stands,
+      backpacks, laptop and phone accessories. Prefer reviews with clear testing
+      criteria.
+    include:
+      - Review of a 3-in-1 charging stand with testing results
+      - Best desk lamps for a small room tested
+      - Battery pack comparison with measured capacity
+
+  # ───────────────────────────── GAMES ─────────────────────────────
+  - id: genshin-leaks
+    name: Genshin leaks
+    group: games
+    mode: patch_cycle
+    spoiler_policy: fail_closed      # hide unless confidently spoiler-free
+    images: false                    # never show thumbnails for this topic
+    threads_per_cycle:
+      - { id: next-patch, title: "Next patch", accepts: [beta_confirmed] }
+      - { id: long-range, title: "Long-range & meta", accepts: [reputable_leaker, unverified], label: speculation }
+    hide_credibility: [fake]
+    description: >
+      Genshin Impact leaks about upcoming characters and banners, character kits,
+      and how new characters affect the meta and team building. Also impactful
+      gameplay and quality-of-life system changes.
+    include:
+      - Beta character kit details and multipliers
+      - Upcoming banner lineup
+      - Long-range leak about future character elements and roles
+      - Major quality-of-life system change in the next patch
+    exclude:
+      - Story, lore or plot leaks of any kind
+      - Map, region or area details, layouts or visuals
+      - Events
+      - Livestream announcements and redeem codes
+      - Patch notes
+    known_leakers: []                # fill in during source curation
+
+  # ───────────────────────────── HEALTH ─────────────────────────────
+  # All health topics: studies first, study cards on, evidence badges on.
+  - id: health-training
+    name: Training
+    group: health
+    mode: question
+    evidence: studies_preferred
+    study_cards: true
+    max_per_week: 4
+    dormant_after_days: 120
+    description: >
+      Exercise science on resistance training for hypertrophy (volume, frequency,
+      rep ranges, proximity to failure, rest periods) and on cardio for improving
+      VO2 max (zone 2, intervals, programming).
+    exclude:
+      - Influencer workout programs
+      - Supplement marketing
+
+  - id: health-sleep
+    name: Sleep
+    group: health
+    mode: question
+    evidence: studies_preferred
+    study_cards: true
+    max_per_week: 2
+    dormant_after_days: 120
+    description: >
+      Sleep science and evidence-backed techniques for better sleep quality and
+      consistency: timing, environment, light exposure, caffeine, naps.
+
+  - id: health-nutrition
+    name: Nutrition on a budget
+    group: health
+    mode: question
+    evidence: studies_preferred
+    study_cards: true
+    max_per_week: 2
+    dormant_after_days: 120
+    description: >
+      Evidence on nutrient-dense, cost-effective foods and grocery planning, and on
+      steady, sustainable weight loss while keeping enough protein for muscle.
+    exclude:
+      - Extreme or fad diets
+      - Single-food "causes cancer" or "miracle food" headlines
+
+  - id: health-wellbeing
+    name: General well-being
+    group: health
+    mode: question
+    evidence: studies_preferred
+    study_cards: true
+    max_per_week: 2
+    dormant_after_days: 120
+    description: >
+      Evidence on avoiding illness, mental health, and long-term health and
+      longevity, with specific, actionable findings.
+
+  # ───────────────────────────── NEWS ─────────────────────────────
+  - id: us-politics
+    name: US politics
+    group: news
+    mode: threaded
+    dormant_after_days: 10
+    primers: true
+    opinion: { allowed: true, label: true, balance_across_lean: true }
+    description: >
+      US national politics and policy: the economy and taxes, tech and AI
+      regulation, healthcare, education and student loans, foreign policy, and
+      major legislation with broad effects on the legal system. Landmark court
+      rulings with nationwide effects. Energy and climate only for major changes.
+    exclude:
+      - Routine court proceedings
+      - Immigration policy (low interest)
+      - Local or state news
+      - Campaign gossip and horse-race polling chatter
+
+  - id: world-news
+    name: World news
+    group: news
+    mode: threaded
+    dormant_after_days: 14
+    primers: true
+    opinion: { allowed: true, label: true, balance_across_lean: true }
+    weekly_region_roundup: true
+    regions:
+      - Americas
+      - Europe                     # includes Russia and Ukraine
+      - Middle East & North Africa
+      - Sub-Saharan Africa
+      - East Asia
+      - South Asia
+      - Southeast Asia             # includes island nations
+      - Oceania
+      - Global                     # UN, trade blocs, summits
+    description: >
+      Major world events outside the US: wars and conflicts, elections and changes
+      of government, diplomacy, economic shifts, and major policy changes in
+      influential countries and regions.
+
+  # ───────────────────────────── MONEY & JOBS ─────────────────────────────
+  - id: markets
+    name: Markets
+    group: money
+    mode: fixed
+    advice: never                  # report news; never buy/sell recommendations
+    threads:
+      # 11 GICS sectors
+      - { id: it,            title: Information Technology }
+      - { id: comms,         title: Communication Services }
+      - { id: discretionary, title: Consumer Discretionary }
+      - { id: staples,       title: Consumer Staples }
+      - { id: health-care,   title: Health Care }
+      - { id: financials,    title: Financials }
+      - { id: industrials,   title: Industrials (incl. aerospace & defense) }
+      - { id: energy,        title: Energy }
+      - { id: utilities,     title: Utilities }
+      - { id: materials,     title: Materials }
+      - { id: real-estate,   title: Real Estate }
+      # economy-wide
+      - { id: fed-rates,     title: Fed & interest rates }
+      - { id: macro-data,    title: Inflation & jobs reports }
+      - { id: trade,         title: Trade & tariffs }
+      - { id: earnings,      title: Major earnings surprises }
+    description: >
+      Broad stock-market and economic news across all sectors: big moves, earnings,
+      sector trends, the Federal Reserve, inflation, jobs data and trade policy.
+
+  - id: jobs-listings
+    name: Job listings
+    group: money
+    mode: listings
+    target_per_week: 25            # 20–30
+    match_profile: jobs            # uses the private job profile
+    description: >
+      Internship (first) and new-grad (second) openings for software engineering,
+      machine learning, AI and data roles at companies in any industry, including
+      healthcare, defense, biotech and finance, not only big tech.
+
+  - id: jobs-market
+    name: Job market
+    group: money
+    mode: threaded
+    dormant_after_days: 14
+    description: >
+      Tech hiring trends: companies changing direction or opening new teams,
+      in-demand skills, salary data, and what technical interviews are asking now.
+      Layoffs and hiring freezes at lower priority.
+    exclude:
+      - LinkedIn influencer career posts
+      - Generic "how to stand out" advice
+
+  - id: jobs-guides
+    name: Job-search guides
+    group: money
+    mode: flat
+    max_per_week: 5
+    description: >
+      Concrete guides for landing tech internships and jobs: what to practice for
+      coding and system-design interviews, systems for finding and applying to many
+      listings efficiently (including less-known listings), and project ideas that
+      build in-demand skills. Networking and resume formatting at low priority.
+    exclude:
+      - Offer negotiation
+      - Motivational career content
+
+  # ───────────────────────────── READING ─────────────────────────────
+  - id: books
+    name: Reading list
+    group: read
+    mode: reading_list
+    max_per_month: 4
+    description: >
+      High-impact nonfiction that is widely considered a must-read, and new
+      nonfiction with real buzz about AI, the economy, and practical life skills.
+    exclude:
+      - Fiction
+      - Celebrity memoirs

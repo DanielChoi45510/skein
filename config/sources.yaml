@@ -1,0 +1,49 @@
+# Sources: where items come from.
+#
+# Full curation is the next working session. Entries here are a starting
+# skeleton. Anything with `verified: false` needs its URL checked before it is
+# enabled.
+#
+# status:  active | trial | disabled      (trial sources are badged in the feed)
+# weight:  0.5–1.5 manual trust knob (default 1.0)
+# lean:    news outlets only: left | center-left | center | center-right | right
+#          (from published media-bias ratings; record which rating you used)
+# kind:    default content kind hint: reporting | analysis | opinion | study | listing | guide
+
+sources:
+
+  - id: nyt-politics
+    type: rss
+    url: https://rss.nytimes.com/services/xml/rss/nyt/Politics.xml
+    topics: [us-politics]
+    status: trial
+    kind: reporting
+    lean: null          # fill in from a media-bias rating
+    verified: false
+
+  - id: nyt-world
+    type: rss
+    url: https://rss.nytimes.com/services/xml/rss/nyt/World.xml
+    topics: [world-news]
+    status: trial
+    kind: reporting
+    lean: null
+    verified: false
+
+  - id: hn-frontpage
+    type: rss
+    url: https://hnrss.org/frontpage?points=200    # third-party Hacker News feed
+    topics: [ai-news, ai-practice, jobs-market]
+    status: trial
+    verified: false
+
+  - id: reddit-genshin-leaks
+    type: reddit
+    subreddit: Genshin_Impact_Leaks
+    topics: [genshin-leaks]
+    status: disabled    # stays disabled until the spoiler filter exists (CLAUDE.md principle 7)
+    options:
+      min_score: 50
+      use_flair_credibility: true
+      fetch_top_comments: 10   # for the "called fake" signal
+    verified: false
