@@ -4,10 +4,12 @@ from __future__ import annotations
 
 import datetime as dt
 import json
+import shutil
 from pathlib import Path
 
 import httpx
 import pytest
+import yaml
 
 from pipeline.__main__ import main
 from pipeline.process.embed import HashingEmbedder
@@ -247,7 +249,7 @@ def test_visible_new_items_get_topic_and_relevance(tmp_path: Path) -> None:
             continue
         assert i["topic_id"] in sources[i["source_id"]]
         assert 0.0 <= i["relevance"] <= 1.0
-        assert (i["hidden_reason"] == "below_threshold") == (i["relevance"] < 0.30)
+        assert i["hidden_reason"] is None  # thresholds are applied at export, not stored
 
 
 def test_no_new_items_means_no_embedding(tmp_path: Path) -> None:
@@ -279,8 +281,10 @@ def test_run_with_out_dir_exports_feed(tmp_path: Path) -> None:
     index = json.loads((out / "feed" / "index.json").read_text())
     assert index["schema_version"] == 1
     assert index["generated_at"] == "2026-11-21T12:00:00Z"
-    stored_visible = {
-        i["id"] for i in read_items(tmp_path / "state").values() if i["hidden_reason"] is None
+    stored_visible = {  # fixture threshold 0.30, no skip sources, no corroboration needed
+        i["id"]
+        for i in read_items(tmp_path / "state").values()
+        if i["hidden_reason"] is None and i["relevance"] >= 0.30
     }
     exported = {
         i["id"]
@@ -324,3 +328,26 @@ def test_sample_feed_tool(tmp_path: Path) -> None:
     index = json.loads((tmp_path / "feed" / "index.json").read_text())
     visible = sum(t["visible_count"] for g in index["groups"] for t in g["topics"])
     assert visible > 0  # threshold forced to 0, so the sample is never empty
+
+
+def test_threshold_change_applies_on_next_run_without_new_items(tmp_path: Path) -> None:
+    config = tmp_path / "config"
+    shutil.copytree(FIXTURE_CONFIG, config)
+
+    def exported(threshold: float) -> int:
+        topics = yaml.safe_load((config / "topics.yaml").read_text())
+        topics["defaults"]["relevance_threshold"] = threshold
+        (config / "topics.yaml").write_text(yaml.safe_dump(topics, sort_keys=False))
+        run(tmp_path / "state", out_dir=tmp_path / "site", config_dir=config, now=NOW,
+            transport=FakeWeb().serve_fixtures().transport, sleep=FakeClock().sleep,
+            embedder=HashingEmbedder())  # fmt: skip
+        index = json.loads((tmp_path / "site" / "feed" / "index.json").read_text())
+        return sum(t["visible_count"] + t["collapsed_count"] for g in index["groups"]
+                   for t in g["topics"])  # fmt: skip
+
+    strict = exported(0.99)
+    lenient = exported(0.0)  # second run: nothing new, same stored scores
+    assert strict < lenient
+    assert lenient == sum(  # every non-duplicate stored item is exported
+        1 for i in read_items(tmp_path / "state").values() if i["hidden_reason"] is None
+    )

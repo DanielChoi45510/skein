@@ -7,12 +7,15 @@ Phase 1 shows every topic as a flat ranked list (threads arrive in Phase 2):
   trailing 7 days and `max_per_month` over the trailing 30 days; a topic with
   none of these uses `defaults.daily_cap_per_thread` per day. Items over a cap
   are exported with `collapsed: true` ("+N more"), never dropped.
-Hidden items (duplicates, below threshold) are never exported.
+Relevance thresholds are applied here, from stored scores, so a threshold change
+takes effect on the next run (see process/relevance.py). Duplicates and items
+below every carrying source's threshold are never exported.
 """
 
 from __future__ import annotations
 
 import datetime as dt
+import logging
 from collections.abc import Iterable, Mapping
 from pathlib import Path
 
@@ -20,6 +23,7 @@ from ..config.schema import Topic, TopicsFile
 from ..config.validate import Config
 from ..models import Item, SourceHealth
 from ..process.rank import importance
+from ..process.relevance import passes_threshold
 from ..state import write_text_atomic
 from .models import (
     Day,
@@ -30,6 +34,8 @@ from .models import (
     TopicFeed,
     TopicSummary,
 )
+
+log = logging.getLogger(__name__)
 
 FEED_DIR = "feed"
 TOPICS_DIR = "topics"
@@ -44,12 +50,19 @@ def export_feed(
     now: dt.datetime,
 ) -> FeedIndex:
     """Write feed/index.json and feed/topics/<id>.json; remove stale topic files."""
+    sources = {s.id: s for s in cfg.sources.sources}
     weights = {s.id: s.weight for s in cfg.sources.sources}
     enabled_topics = {t for s in cfg.sources.sources if s.status != "disabled" for t in s.topics}
     by_topic: dict[str, list[Item]] = {}
+    below = 0
     for item in items:
-        if item.visible and item.topic_id is not None and item.source_id in weights:
+        if not item.visible or item.topic_id is None or item.source_id not in weights:
+            continue
+        if passes_threshold(item, sources, cfg.topics):
             by_topic.setdefault(item.topic_id, []).append(item)
+        else:
+            below += 1
+    log.info("%d stored item(s) below their relevance threshold, not exported", below)
 
     feeds = {
         t.id: build_topic_feed(t, by_topic.get(t.id, []), cfg.topics, weights, now)

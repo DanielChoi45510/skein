@@ -175,7 +175,7 @@ def test_hidden_and_unrouted_items_are_not_exported(tmp_path: Path) -> None:
     items = [
         item(1),
         item(2, hidden_reason="duplicate", duplicate_of="i01"),
-        item(3, hidden_reason="below_threshold"),
+        item(3, relevance=0.1),  # below the fixture threshold (0.30)
         item(4, topic_id=None),
         item(5, source_id="removed-source"),
         item(6, topic="removed-topic"),

@@ -6,7 +6,8 @@ score percentiles, how many items each candidate threshold would keep, and the
 lowest- and highest-scoring titles. Use it to choose `relevance_threshold`
 values and `USE_QUERY_INSTRUCTION`, e.g. after changing sources or topics.
 
-Per-source `relevance` overrides are ignored here so every item gets a real score.
+Scores are recomputed with the current topics; thresholds and per-source
+`relevance` overrides don't affect them.
 """
 
 from __future__ import annotations
@@ -36,10 +37,10 @@ def main(argv: list[str] | None = None) -> int:
     args = parser.parse_args(argv)
 
     cfg = load_config(args.config_dir)
-    sources = {s.id: s.model_copy(update={"relevance": None}) for s in cfg.sources.sources}
+    sources = {s.id: s for s in cfg.sources.sources}
     stored = load_items(args.state / ITEMS_DIR, dt.datetime.now(dt.UTC).date())
     base = [
-        i.model_copy(update={"hidden_reason": None, "topic_id": None, "relevance": None})
+        i.model_copy(update={"topic_id": None, "relevance": None})
         for i in stored.values()
         if i.source_id in sources and i.hidden_reason != "duplicate"
     ]

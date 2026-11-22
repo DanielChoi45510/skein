@@ -162,7 +162,10 @@ class TopicsFile(StrictModel):
 
 
 class SourceRelevance(StrictModel):
-    """Per-source relevance override: a different bar, or no relevance check at all."""
+    """Per-source relevance override: a different bar, or never hidden (`skip`).
+
+    Skipped sources are still scored, so ranking uses real relevance.
+    """
 
     threshold: Fraction | None = None
     skip: bool = False

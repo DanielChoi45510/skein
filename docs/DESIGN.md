@@ -70,7 +70,7 @@ type Item = {
   also_covered_by: string[];  // other sources with the same story (§6.3), a ranking signal
   duplicate_of?: string;      // set with hidden_reason "duplicate"
   topic_id?: string; thread_id?: string;
-  relevance?: number;         // 0–1 (§6.4); topic_id is the best-scoring topic, also for hidden items
+  relevance?: number;         // 0–1 (§6.4); topic_id is the best-scoring topic
   // importance (§6.6) depends on the current time: computed at export, never stored
   extra: Record<string, unknown>;           // small source metadata (e.g. Reddit score, flair)
   labels: {
@@ -80,7 +80,7 @@ type Item = {
     region?: string;          // world news
     flags?: string[];         // e.g. "listicle", "spoiler_risk", "overclaim"
   };
-  hidden_reason?: "duplicate" | "below_threshold";  // more reasons arrive with filters (§7); kept for the review screen
+  hidden_reason?: "duplicate";  // more reasons arrive with filters (§7); thresholds are applied at export, not stored
   study_card?: StudyCard;     // §8.2
 };
 
@@ -154,8 +154,10 @@ Canonicalize URLs (strip tracking params), parse dates to UTC, trim the excerpt 
 ### 6.4 Embed and relevance
 - Small CPU embedding model: `BAAI/bge-small-en-v1.5` (optional `[embed]` extra), cached between runs with the Actions cache. Loaded only when a run has new items. Whether anchors get bge's query instruction is a constant (`USE_QUERY_INSTRUCTION`), chosen by calibration.
 - Each topic's `description` + `include` examples are embedded as positive anchors, and its `exclude` examples as negative anchors. Items are embedded as title + excerpt.
-- `relevance = pos − λ·max(0, neg − pos)` with `pos`/`neg` the max similarity to the positive/negative anchors, λ = 0.5, clipped to [0, 1]. An exclude only counts against items closer to it than to the topic: subtracting `λ·neg` outright dropped every item in topics with in-domain excludes (calibration, 2026-11-21). Items from sources mapped to several topics go to the best-scoring one (ties: first listed). Below the threshold, items are hidden (`below_threshold`) but keep their best topic and score.
-- Threshold precedence: source `relevance.threshold` → topic `relevance_threshold` → `defaults.relevance_threshold`. A single-topic source can set `relevance: {skip: true}` to route every item to its topic with relevance 1.0.
+- `relevance = pos − λ·max(0, neg − pos)` with `pos`/`neg` the max similarity to the positive/negative anchors, λ = 0.5, clipped to [0, 1]. An exclude only counts against items closer to it than to the topic: subtracting `λ·neg` outright dropped every item in topics with in-domain excludes (calibration, 2026-11-21). Items from sources mapped to several topics go to the best-scoring one (ties: first listed).
+- Only the score is stored; thresholds are applied at export, so a threshold change takes effect on the next run for stored items too.
+- Threshold precedence: source `relevance.threshold` → topic `relevance_threshold` → `defaults.relevance_threshold`. A single-topic source can set `relevance: {skip: true}`: its items are never hidden by a threshold but are still scored, so ranking uses real relevance.
+- An item is shown if any source that carried it (its own or `also_covered_by`) would show it, so a story a skip source carried isn't hidden because another source's copy scored low.
 - Calibrate with `python -m pipeline.calibrate --state DIR`: scores stored items (instruction off and on) and prints per-topic percentiles, counts kept at candidate thresholds, and sample titles.
 - For job listings and gear trackers, the private profile adds an extra similarity term (§10.3).
 
@@ -198,6 +200,7 @@ Write the static JSON the site reads (`feed/index.json`, `feed/topics/<id>.json`
 The contract is `pipeline/export/models.py` (`schema_version` 1):
 - `feed/index.json`: `generated_at`; groups → topics `{id, name, mode, has_sources, visible_count, collapsed_count, latest_first_seen_at}`; sources `{id, name, type, status, lean, kind}`.
 - `feed/topics/<id>.json` (Phase 1: every topic as a flat ranked list): items within the topic's lookback, grouped by UTC day of publication (newest first), ranked by importance; each item `{id, title, url, source_id, published_at, first_seen_at, excerpt, importance, also_covered_by, collapsed}`. Hidden items are never exported.
+- Days are UTC in the export; the frontend regroups items by the viewer's local day for display. Per-day caps still count UTC days, so a local day can show slightly more than one day's cap.
 - Phase 1 caps: `max_per_day` per day; `max_per_week` / `target_per_week` over the trailing 7 days, `max_per_month` over 30; otherwise `defaults.daily_cap_per_thread` per day. Over-cap items are exported with `collapsed: true`.
 
 ## 7. Filters and labels

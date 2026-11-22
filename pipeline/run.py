@@ -1,6 +1,7 @@
 """One pipeline run. Phase 1 so far:
 
-fetch → normalize → exact dedupe → embed → near-dup → relevance → save state → rank + export
+fetch → normalize → exact dedupe → embed → near-dup → relevance scores → save state
+      → export (thresholds, ranking, caps)
 
 A source that fails is recorded in source health and skipped; it never fails the
 run. Everything is written to the state dir once, at the end (see state.py).
@@ -114,8 +115,7 @@ def run(
         dups = mark_near_duplicates(state.items, report.new_item_ids, vectors, weights)
 
         assign_topics([i for i in new_items if i.visible], sources, cfg.topics, embedder)
-        hidden = sum(1 for i in new_items if i.hidden_reason == "below_threshold")
-        log.info("%d near-duplicate(s), %d below relevance threshold", len(dups), hidden)
+        log.info("%d near-duplicate(s)", len(dups))
 
     state.save()
     if out_dir is not None:

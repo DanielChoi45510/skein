@@ -142,7 +142,7 @@ def test_same_source_near_duplicate_keeps_earlier_without_self_corroboration() -
 
 def test_hidden_items_are_not_match_targets() -> None:
     store = {
-        "hidden": item("hidden", hidden_reason="below_threshold"),
+        "hidden": item("hidden", hidden_reason="duplicate", duplicate_of="x"),
         "new": item("new", source="b"),
     }
     assert mark_near_duplicates(store, ["new"], {"hidden": BASE, "new": BASE}, {}) == []

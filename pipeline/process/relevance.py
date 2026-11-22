@@ -12,12 +12,15 @@ in-domain, e.g. "Campaign gossip" under US politics: calibration showed a flat
 ~0.27 drop across the whole topic.)
 
 An item is scored against every topic its source feeds and goes to the best one.
-Below the threshold it's hidden (`below_threshold`) but keeps its best topic and
-score, for calibration now and the Hidden screen later.
+Only the score is stored. Thresholds are applied at export (`passes_threshold`),
+so changing one takes effect on the next run, for stored items too.
 
 Threshold precedence: source `relevance.threshold` → topic `relevance_threshold`
-→ `defaults.relevance_threshold`. A source with `relevance: {skip: true}` routes
-straight to its single topic with relevance 1.0.
+→ `defaults.relevance_threshold`. A source with `relevance: {skip: true}` is never
+hidden by a threshold; its items are still scored, so ranking uses real relevance.
+An item shows if any source that carried it (its own or `also_covered_by`) would
+show it: a story an NYT section feed carried isn't hidden because HN's copy
+scored low.
 """
 
 from __future__ import annotations
@@ -83,33 +86,39 @@ def threshold_for(source: Source, topic: Topic, topics: TopicsFile) -> float:
     return topics.defaults.relevance_threshold
 
 
+def passes_threshold(item: Item, sources: Mapping[str, Source], topics: TopicsFile) -> bool:
+    """Whether any source that carried the item would show it in the item's topic."""
+    topic = next((t for t in topics.topics if t.id == item.topic_id), None)
+    if topic is None:
+        return False
+    for source_id in (item.source_id, *item.also_covered_by):
+        source = sources.get(source_id)
+        if source is None:
+            continue
+        if source.relevance and source.relevance.skip:
+            return True
+        if item.relevance is not None and item.relevance >= threshold_for(source, topic, topics):
+            return True
+    return False
+
+
 def assign_topics(
     items: list[Item],
     sources: Mapping[str, Source],
     topics: TopicsFile,
     embedder: Embedder,
 ) -> None:
-    """Set topic_id and relevance on each item; hide those below their threshold."""
-    by_id = {t.id: t for t in topics.topics}
-    to_score: list[Item] = []
-    for item in items:
-        source = sources[item.source_id]
-        if source.relevance and source.relevance.skip:
-            item.topic_id, item.relevance = source.topics[0], 1.0
-        else:
-            to_score.append(item)
-    if not to_score:
+    """Set topic_id (best-scoring topic of the item's source) and relevance on each item."""
+    if not items:
         return
-
-    needed = {tid for i in to_score for tid in sources[i.source_id].topics if tid in by_id}
+    by_id = {t.id: t for t in topics.topics}
+    needed = {tid for i in items for tid in sources[i.source_id].topics if tid in by_id}
     anchors = build_anchors((by_id[t] for t in sorted(needed)), embedder)
-    vectors = embedder.embed([item_text(i) for i in to_score], "passage")
-    for item, vector in zip(to_score, vectors, strict=True):
+    vectors = embedder.embed([item_text(i) for i in items], "passage")
+    for item, vector in zip(items, vectors, strict=True):
         source = sources[item.source_id]
         # Ties go to the topic listed first on the source.
         scored = [(score(vector, anchors[t]), t) for t in source.topics if t in anchors]
         best_score, best_topic = max(scored, key=lambda st: st[0])
         item.topic_id = best_topic
         item.relevance = round(best_score, 4)
-        if best_score < threshold_for(source, by_id[best_topic], topics):
-            item.hidden_reason = "below_threshold"

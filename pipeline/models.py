@@ -25,7 +25,8 @@ class RawEntry(BaseModel):
     extra: dict[str, Any] = {}
 
 
-HiddenReason = Literal["duplicate", "below_threshold"]
+# Thresholds are applied at export, so "below threshold" is never stored.
+HiddenReason = Literal["duplicate"]
 
 
 class Item(BaseModel):

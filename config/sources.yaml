@@ -13,7 +13,8 @@
 # excerpt: false to drop the feed's description when it's boilerplate (default true)
 # relevance: per-source override of the topic threshold, either
 #            {threshold: 0.2}   a different bar for this source's items, or
-#            {skip: true}       single-topic sources only: no relevance check
+#            {skip: true}       single-topic sources only: never hidden by a threshold
+#                               (still scored, so ranking uses real relevance)
 
 sources:
 
