@@ -292,7 +292,13 @@ class Lifecycle:
     archive: int
 
 
-def lifecycle(topic: Topic, defaults: Defaults) -> Lifecycle:
+LIFECYCLE_FIELDS = ("cooling_after_days", "dormant_after_days", "archive_after_days")
+
+
+def lifecycle(topic: Topic, defaults: Defaults) -> Lifecycle | None:
+    """None for tracker and fixed topics: their threads never cool, go dormant or archive."""
+    if topic.mode in PREDEFINED_MODES:
+        return None
     return Lifecycle(
         cooling=topic.cooling_after_days or defaults.cooling_after_days,
         dormant=topic.dormant_after_days or defaults.dormant_after_days,

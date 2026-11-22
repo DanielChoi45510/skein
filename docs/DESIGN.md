@@ -130,10 +130,10 @@ pending ──(2+ items or high importance)──▶ active ──(no items N da
 - **cooling:** sinks in the topic list.
 - **dormant:** grayed out and collapsed at the bottom of the topic.
 - **archived:** hidden; searchable. Its centroid is dropped, so it is never matched again (§6.5).
-- A cooling or dormant thread **revives** (back to active) when a new item matches it, keeping its full history. Archived threads don't revive: a new item starts a new thread.
-- Timings are per topic, counted from the thread's last item: `cooling_after_days`, `dormant_after_days`, `archive_after_days` (topic override, else `defaults`). The validator requires cooling < dormant < archive. Defaults: cooling 3 days (health questions 30); dormant: politics 10, world and jobs 14, AI 21, health 120. Tracker and fixed threads never cool, go dormant or archive.
+- A cooling or dormant thread **revives** (back to active) when a new item matches it, keeping its full history. Archived threads don't revive: a new item starts a new thread. When an archived story resurfaces, the owner joins the new thread to the old one with the **merge** override (Phase 2b, below); the pipeline never does this on its own.
+- Timings are per topic, counted from the thread's last item: `cooling_after_days`, `dormant_after_days`, `archive_after_days` (topic override, else `defaults`). The validator requires cooling < dormant < archive, and rejects these keys on tracker and fixed topics. Defaults: cooling 3 days (health questions 30); dormant: politics 10, world and jobs 14, AI 21, health 120. Tracker and fixed threads never cool, go dormant or archive.
 
-**Owner overrides** (stored by the Worker, applied at the start of each pipeline run): rename, pin, mute, merge two threads, split items out to a new thread, move an item to another thread.
+**Owner overrides** (Phase 2b; stored by the Worker, applied at the start of each pipeline run): rename, pin, mute, merge two threads, split items out to a new thread, move an item to another thread.
 
 ## 6. Pipeline
 
@@ -359,7 +359,7 @@ Only build the current phase.
 |---|---|
 | **0. Setup** | Repo, `.gitignore`, pre-commit (secret scan, lint), `AGENTS.md` symlink, config schemas + validator (pydantic), CI running tests + validator. |
 | **1. MVP feed** | RSS + Reddit fetch → normalize → dedupe → embed → relevance → **flat** ranked lists per topic → JSON export → SvelteKit PWA on GitHub Pages, hourly. No LLM. Genshin source stays disabled. |
-| **2. Threads** | Thread assignment + lifecycle, per-thread caps, catch-up view, owner Worker (read sync, refresh, overrides). |
+| **2. Threads** | **2a:** thread assignment + lifecycle, per-thread caps, catch-up view (read state in localStorage). **2b:** owner Worker (read sync, refresh, overrides incl. merge). |
 | **3. LLM layer** | Content-kind labels, filter checks, thread titles, primers, opinion balance. |
 | **4. Special lanes** | Study cards, tech trackers with gear comparison, job listings, world weekly roundup, reading list, source report, Hidden screen. |
 | **5. Polish & open source** | Setup docs for forkers, demo mode with sample data, performance and accessibility pass. |

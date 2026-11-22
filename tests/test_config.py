@@ -179,6 +179,33 @@ def test_topic_lifecycle_overrides_defaults(config_dir: Path) -> None:
     assert lifecycle(politics, cfg.topics.defaults) == Lifecycle(3, 14, 60)
 
 
+@pytest.mark.parametrize("topic_id", ["trackers", "markets"])
+def test_tracker_and_fixed_topics_have_no_lifecycle(config_dir: Path, topic_id: str) -> None:
+    """DESIGN §5: tracker and fixed threads never cool, go dormant or archive."""
+    cfg = load_config(config_dir)
+    t = next(t for t in cfg.topics.topics if t.id == topic_id)
+    assert t.mode in ("tracker", "fixed")
+    assert lifecycle(t, cfg.topics.defaults) is None
+
+
+@pytest.mark.parametrize("topic_id", ["trackers", "markets"])
+@pytest.mark.parametrize(
+    "field", ["cooling_after_days", "dormant_after_days", "archive_after_days"]
+)
+def test_tracker_and_fixed_topics_reject_lifecycle_timings(
+    config_dir: Path, topic_id: str, field: str
+) -> None:
+    edit(config_dir, "topics.yaml", lambda d: topic(d, topic_id).update({field: 30}))
+    assert f"topic '{topic_id}': `{field}` is not allowed for mode" in errors_for(config_dir)
+
+
+def test_committed_tracker_and_fixed_topics_have_no_lifecycle(tmp_path: Path) -> None:
+    cfg = load_config(copy_config(REPO_CONFIG, tmp_path))
+    predefined = [t for t in cfg.topics.topics if t.mode in ("tracker", "fixed")]
+    assert predefined
+    assert all(lifecycle(t, cfg.topics.defaults) is None for t in predefined)
+
+
 # ───────────────────────────── sources.yaml ─────────────────────────────
 
 
