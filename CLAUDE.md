@@ -63,7 +63,16 @@ pytest                           # tests
 pre-commit run --all-files       # gitleaks, ruff, yaml checks, validator, tests
 ```
 
-CI (`.github/workflows/ci.yml`) runs the validator, tests and pre-commit on every push to `main` and every PR.
+```sh
+# web (Node ≥ 22.12; from web/)
+npm ci
+python -m pipeline.sample --out web/static      # (from the repo root) offline sample feed for dev
+npm run dev                                     # http://localhost:5173
+npm run check && npm test                       # svelte-check + vitest
+BASE_PATH=/skein npm run build                  # static site in web/build (feed/ is copied in at deploy)
+```
+
+CI (`.github/workflows/ci.yml`) runs the validator, tests and pre-commit, plus a web job (check, test, build), on every push to `main` and every PR.
 
 ## Working rules for AI assistants
 

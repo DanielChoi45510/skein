@@ -45,6 +45,14 @@ repos:
         files: ^(config/|pipeline/config/)
         pass_filenames: false
 
+      # Needs Node and `npm ci` in web/ (see CLAUDE.md). CI runs these in its own job.
+      - id: web
+        name: web (svelte-check + vitest)
+        language: system
+        entry: bash -c 'cd web && npm run --silent check && npm test --silent'
+        files: ^web/
+        pass_filenames: false
+
       - id: pytest
         name: pytest
         language: python
