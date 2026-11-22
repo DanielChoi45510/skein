@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "skein"
+version = "0.0.0"
+description = "Personal, finite news feed: pipeline"
+requires-python = ">=3.12"
+dependencies = [
+  "pydantic>=2.7,<3",  # config schemas
+  "PyYAML>=6,<7",      # config parsing
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8",
+  "pre-commit>=3.6",
+  "ruff>=0.6",
+]
+
+[tool.setuptools.packages.find]
+include = ["pipeline*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-ra"
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "SIM", "RUF"]

@@ -1,3 +1,18 @@
+# OS
 .DS_Store
-config/profile.yaml
+
+# Secrets and private data (never commit; see CLAUDE.md principle 6)
 .env*
+profile.yaml
+*.local.*
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.ruff_cache/
+.coverage
