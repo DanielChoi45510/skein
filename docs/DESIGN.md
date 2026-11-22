@@ -302,6 +302,8 @@ For each source: items fetched, shown, opened, hidden (by reason), last success 
 - Only the last ~30 days of item embeddings are kept.
 - The `data` branch is squashed periodically (history isn't needed) so the repo stays small.
 - Each run checks out `data`, updates it, commits and pushes. Concurrency: workflow-level `concurrency` group so runs never overlap.
+- Implementation: `.github/workflows/pipeline.yml` (hourly at :17 + `workflow_dispatch`) uses `.github/scripts/state.sh` to check `data` out as a git worktree (the first run creates the orphan branch) and to commit and push. Pushes are never forced: a run that somehow missed the existing branch is rejected instead of replacing state. Source health timestamps change every run, so `data` gets about one commit per hour until squashing exists.
+- Jobs and permissions: `run` (`contents: write`) → `build` (`contents: read`; site built with `BASE_PATH=/<repo>`, feed copied into `build/feed`) → `deploy` (`pages: write`, `id-token: write`). If `run` fails (e.g. invalid config), nothing is deployed and the site keeps the last feed.
 
 ### 10.2 Owner Worker (Cloudflare Worker + KV, free tier)
 | Endpoint | Purpose |

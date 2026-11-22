@@ -74,6 +74,8 @@ BASE_PATH=/skein npm run build                  # static site in web/build (feed
 
 CI (`.github/workflows/ci.yml`) runs the validator, tests and pre-commit, plus a web job (check, test, build), on every push to `main` and every PR.
 
+The hourly pipeline (`.github/workflows/pipeline.yml`) runs on `main` only: fetch → export → push state to the `data` branch (`.github/scripts/state.sh`) → build → deploy to GitHub Pages. Run it by hand from the Actions tab (workflow_dispatch). Workflows are linted by actionlint in pre-commit.
+
 ## Working rules for AI assistants
 
 - **Build only what's asked, or what the current roadmap phase in `docs/DESIGN.md` §14 lists.** If something seems useful but isn't specified, propose it in chat; don't build it.

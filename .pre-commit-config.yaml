@@ -9,6 +9,12 @@ repos:
     hooks:
       - id: gitleaks
 
+  # Workflows can't run locally; lint them (expressions, keys, action inputs).
+  - repo: https://github.com/rhysd/actionlint
+    rev: v1.7.12
+    hooks:
+      - id: actionlint
+
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v6.0.0
     hooks:
