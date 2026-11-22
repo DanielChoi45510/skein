@@ -55,7 +55,8 @@ pip install -e ".[dev]" && pre-commit install
 
 python -m pipeline.config        # validate config/*.yaml (+ local config/profile.yaml if present)
 pip install -e ".[embed]"        # embedding model deps (torch); tests don't need them
-python -m pipeline run --state ../skein-state   # one pipeline run (live network); state dir outside the repo
+python -m pipeline run --state ../skein-state --out ../skein-site   # one run (live network) + feed JSON
+python -m pipeline.sample --out web/static   # offline sample feed from test fixtures (no network/model)
 python -m pipeline run --state ../skein-state --embedder hashing   # no model; scores meaningless
 python -m pipeline.calibrate --state ../skein-state   # relevance score distribution per topic
 pytest                           # tests

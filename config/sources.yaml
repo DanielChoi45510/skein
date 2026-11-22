@@ -4,6 +4,7 @@
 # skeleton. Anything with `verified: false` needs its URL checked before it is
 # enabled.
 #
+# name:    optional display name (default: the feed's own title, else the id)
 # status:  active | trial | disabled      (trial sources are badged in the feed)
 # weight:  0.5–1.5 manual trust knob (default 1.0)
 # lean:    news outlets only: left | center-left | center | center-right | right

@@ -1,4 +1,4 @@
-"""CLI: python -m pipeline run --state DIR [--config-dir DIR]"""
+"""CLI: python -m pipeline run --state DIR [--out DIR] [--config-dir DIR] [--embedder ...]"""
 
 from __future__ import annotations
 
@@ -18,6 +18,7 @@ def main(argv: list[str] | None = None) -> int:
     sub = parser.add_subparsers(dest="command", required=True)
     p_run = sub.add_parser("run", help="run the pipeline once")
     p_run.add_argument("--state", type=Path, required=True, help="state directory")
+    p_run.add_argument("--out", type=Path, help="write the site's feed JSON to OUT/feed/")
     p_run.add_argument("--config-dir", type=Path, default=DEFAULT_CONFIG_DIR)
     p_run.add_argument(
         "--embedder",
@@ -31,7 +32,7 @@ def main(argv: list[str] | None = None) -> int:
     logging.getLogger("httpx").setLevel(logging.WARNING)  # we log one line per source instead
     try:
         embedder = HashingEmbedder() if args.embedder == "hashing" else None
-        report = run(args.state, config_dir=args.config_dir, embedder=embedder)
+        report = run(args.state, out_dir=args.out, config_dir=args.config_dir, embedder=embedder)
     except ConfigError as e:
         print("Config invalid:", file=sys.stderr)
         for err in e.errors:

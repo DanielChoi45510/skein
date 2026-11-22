@@ -47,6 +47,7 @@ Source ──produces──▶ Item ──belongs to (0..1)──▶ Thread ─�
 // Matches config/sources.yaml; enforced by pipeline/config/schema.py.
 type Source = {
   id: string; type: "rss" | "reddit";       // later phases add "pubmed" | "job_board" | "github_list"
+  name?: string;                            // display name; else the feed's own title, else the id
   url?: string;                             // rss only
   subreddit?: string;                       // reddit only
   topics: string[];                         // which topics it may feed
@@ -193,6 +194,11 @@ The LLM client takes a provider list (`github_models` → fallbacks). Calls use 
 
 ### 6.8 Export and deploy
 Write the static JSON the site reads (`feed/index.json`, `feed/topics/<id>.json`, `feed/threads/<id>.json`). Build the SvelteKit site and deploy to GitHub Pages in the same workflow.
+
+The contract is `pipeline/export/models.py` (`schema_version` 1):
+- `feed/index.json`: `generated_at`; groups → topics `{id, name, mode, has_sources, visible_count, collapsed_count, latest_first_seen_at}`; sources `{id, name, type, status, lean, kind}`.
+- `feed/topics/<id>.json` (Phase 1: every topic as a flat ranked list): items within the topic's lookback, grouped by UTC day of publication (newest first), ranked by importance; each item `{id, title, url, source_id, published_at, first_seen_at, excerpt, importance, also_covered_by, collapsed}`. Hidden items are never exported.
+- Phase 1 caps: `max_per_day` per day; `max_per_week` / `target_per_week` over the trailing 7 days, `max_per_month` over 30; otherwise `defaults.daily_cap_per_thread` per day. Over-cap items are exported with `collapsed: true`.
 
 ## 7. Filters and labels
 

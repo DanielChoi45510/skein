@@ -266,3 +266,61 @@ def test_no_new_items_means_no_embedding(tmp_path: Path) -> None:
         embedder=Exploding(),
     )
     assert report.new_item_ids == []
+
+
+# ───────────────────────────── export ─────────────────────────────
+
+
+def test_run_with_out_dir_exports_feed(tmp_path: Path) -> None:
+    out = tmp_path / "site"
+    run(tmp_path / "state", out_dir=out, config_dir=FIXTURE_CONFIG, now=NOW,
+        transport=FakeWeb().serve_fixtures().transport, sleep=FakeClock().sleep,
+        embedder=HashingEmbedder())  # fmt: skip
+    index = json.loads((out / "feed" / "index.json").read_text())
+    assert index["schema_version"] == 1
+    assert index["generated_at"] == "2026-11-21T12:00:00Z"
+    stored_visible = {
+        i["id"] for i in read_items(tmp_path / "state").values() if i["hidden_reason"] is None
+    }
+    exported = {
+        i["id"]
+        for path in (out / "feed" / "topics").glob("*.json")
+        for d in json.loads(path.read_text())["days"]
+        for i in d["items"]
+    }
+    assert exported == stored_visible
+
+
+def test_export_is_deterministic(tmp_path: Path) -> None:
+    def once(name: str) -> dict[str, bytes]:
+        out = tmp_path / name
+        run(tmp_path / f"state-{name}", out_dir=out, config_dir=FIXTURE_CONFIG, now=NOW,
+            transport=FakeWeb().serve_fixtures().transport, sleep=FakeClock().sleep,
+            embedder=HashingEmbedder())  # fmt: skip
+        return snapshot(out)
+
+    assert once("a") == once("b")
+
+
+def test_cli_run_with_out(tmp_path: Path, monkeypatch) -> None:
+    calls = {}
+
+    def fake_run(state, **kwargs):
+        calls.update(kwargs, state=state)
+        from pipeline.run import RunReport
+
+        return RunReport()
+
+    monkeypatch.setattr("pipeline.__main__.run", fake_run)
+    assert main(["run", "--state", "s", "--out", "o", "--embedder", "hashing"]) == 0
+    assert calls["state"] == Path("s") and calls["out_dir"] == Path("o")
+    assert isinstance(calls["embedder"], HashingEmbedder)
+
+
+def test_sample_feed_tool(tmp_path: Path) -> None:
+    from pipeline.sample import main as sample_main
+
+    assert sample_main(["--out", str(tmp_path)]) == 0
+    index = json.loads((tmp_path / "feed" / "index.json").read_text())
+    visible = sum(t["visible_count"] for g in index["groups"] for t in g["topics"])
+    assert visible > 0  # threshold forced to 0, so the sample is never empty

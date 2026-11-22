@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import json
 from collections.abc import Callable
 from pathlib import Path
 
@@ -15,12 +16,7 @@ FIXTURE_CONFIG = FIXTURES / "config"
 HTTP_FIXTURES = FIXTURES / "http"
 
 # URL → fixture file, for the sources in tests/fixtures/config/sources.yaml.
-FIXTURE_ROUTES = {
-    "https://feeds.example.com/world.xml": "world.rss.xml",
-    "https://atom.example.org/gadgets.atom": "gadgets.atom",
-    "https://hn.example.net/frontpage?points=200": "hn.rss.xml",
-    "https://www.reddit.com/r/ExampleNews/hot.json?limit=100&raw_json=1": "reddit_hot.json",
-}
+FIXTURE_ROUTES: dict[str, str] = json.loads((HTTP_FIXTURES / "routes.json").read_text())
 
 
 def http_fixture(name: str) -> bytes:

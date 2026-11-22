@@ -1,6 +1,6 @@
 """One pipeline run. Phase 1 so far:
 
-fetch → normalize → exact dedupe → embed → near-dup → relevance → (rank → export: step d)
+fetch → normalize → exact dedupe → embed → near-dup → relevance → save state → rank + export
 
 A source that fails is recorded in source health and skipped; it never fails the
 run. Everything is written to the state dir once, at the end (see state.py).
@@ -19,6 +19,7 @@ import httpx
 
 from .config import load_config
 from .config.validate import DEFAULT_CONFIG_DIR
+from .export import export_feed
 from .fetch import FeedParseError, FetchError, FetchOutcome, HttpFetcher, fetch_source
 from .models import RawEntry, SourceHealth
 from .process.dedupe import NEAR_DUP_WINDOW, mark_near_duplicates, merge_exact
@@ -44,6 +45,7 @@ class RunReport:
 def run(
     state_dir: Path,
     *,
+    out_dir: Path | None = None,
     config_dir: Path = DEFAULT_CONFIG_DIR,
     now: dt.datetime | None = None,
     transport: httpx.BaseTransport | None = None,
@@ -53,6 +55,7 @@ def run(
     """Run the pipeline. Raises ConfigError if the config is invalid.
 
     `embedder` defaults to the real model, loaded only when there are new items.
+    With `out_dir`, the site's feed JSON is written there (out_dir/feed/...).
     """
     cfg = load_config(config_dir)
     now = now or dt.datetime.now(dt.UTC)
@@ -115,4 +118,8 @@ def run(
         log.info("%d near-duplicate(s), %d below relevance threshold", len(dups), hidden)
 
     state.save()
+    if out_dir is not None:
+        index = export_feed(out_dir, cfg, state.items.values(), state.health, now)
+        shown = sum(t.visible_count for g in index.groups for t in g.topics)
+        log.info("exported %d visible item(s) to %s", shown, out_dir / "feed")
     return report

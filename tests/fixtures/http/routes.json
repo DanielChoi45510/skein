@@ -1,0 +1,6 @@
+{
+  "https://feeds.example.com/world.xml": "world.rss.xml",
+  "https://atom.example.org/gadgets.atom": "gadgets.atom",
+  "https://hn.example.net/frontpage?points=200": "hn.rss.xml",
+  "https://www.reddit.com/r/ExampleNews/hot.json?limit=100&raw_json=1": "reddit_hot.json"
+}

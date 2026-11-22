@@ -176,6 +176,7 @@ class SourceRelevance(StrictModel):
 
 class Source(StrictModel):
     id: Id
+    name: NonEmptyStr | None = None  # display name; else the feed's own title, else the id
     type: Literal["rss", "reddit"]
     url: HttpUrl | None = None
     subreddit: Annotated[str, StringConstraints(pattern=r"^[A-Za-z0-9_]{2,21}$")] | None = None
