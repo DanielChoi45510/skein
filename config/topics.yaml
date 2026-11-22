@@ -10,6 +10,7 @@
 
 defaults:
   daily_cap_per_thread: 5        # overflow collapses behind "+N more", never dropped
+  cooling_after_days: 3          # thread lifecycle (DESIGN §5): active → cooling → dormant → archived
   dormant_after_days: 14
   archive_after_days: 60
   lookback_days: 7               # ignore items older than this on first sight
@@ -120,7 +121,9 @@ topics:
     evidence: articles_about_studies
     study_cards: true
     max_per_week: 4
+    cooling_after_days: 30
     dormant_after_days: 120
+    archive_after_days: 365        # must exceed dormant_after_days
     description: >
       Exercise science on resistance training for hypertrophy (volume, frequency,
       rep ranges, proximity to failure, rest periods) and on cardio for improving
@@ -136,7 +139,9 @@ topics:
     evidence: articles_about_studies
     study_cards: true
     max_per_week: 2
+    cooling_after_days: 30
     dormant_after_days: 120
+    archive_after_days: 365        # must exceed dormant_after_days
     description: >
       Sleep science and evidence-backed techniques for better sleep quality and
       consistency: timing, environment, light exposure, caffeine, naps.
@@ -148,7 +153,9 @@ topics:
     evidence: articles_about_studies
     study_cards: true
     max_per_week: 2
+    cooling_after_days: 30
     dormant_after_days: 120
+    archive_after_days: 365        # must exceed dormant_after_days
     description: >
       Evidence on nutrient-dense, cost-effective foods and grocery planning, and on
       steady, sustainable weight loss while keeping enough protein for muscle.
@@ -163,7 +170,9 @@ topics:
     evidence: articles_about_studies
     study_cards: true
     max_per_week: 2
+    cooling_after_days: 30
     dormant_after_days: 120
+    archive_after_days: 365        # must exceed dormant_after_days
     description: >
       Evidence on avoiding illness, mental health, and long-term health and
       longevity, with specific, actionable findings.

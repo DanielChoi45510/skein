@@ -75,6 +75,7 @@ type Item = {
   duplicate_of?: string;      // set with hidden_reason "duplicate"
   topic_id?: string; thread_id?: string;
   relevance?: number;         // 0–1 (§6.4); topic_id is the best-scoring topic
+  thread_score?: number;      // similarity to the thread when attached (rescue, §6.5)
   // importance (§6.6) depends on the current time: computed at export, never stored
   extra: Record<string, unknown>;           // small source metadata (e.g. Reddit score, flair)
   labels: {
@@ -88,14 +89,15 @@ type Item = {
   study_card?: StudyCard;     // §8.2
 };
 
+// Stored in threads.json; see pipeline/models.py.
 type Thread = {
   id: string; topic_id: string;
-  kind: "story" | "tracker" | "question" | "patch" | "fixed";
-  title: string;              // LLM-named, or keyword fallback
+  kind: "story" | "tracker" | "question" | "fixed";   // from the topic's mode ("patch" is parked, §16)
+  title: string;              // LLM-named, or keyword fallback; config title for tracker/fixed threads
   state: "pending" | "active" | "cooling" | "dormant" | "archived";
-  created_at: string; last_item_at: string;
-  centroid: number[];         // embedding centroid (stored separately, §10.1)
-  item_ids: string[];
+  created_at: string; last_item_at: string;           // last_item_at: newest item's published_at
+  // centroid: stored separately (centroids.npy, §10.1), only while the thread can be matched
+  item_ids: string[];         // in attach order
   primer?: { text: string; sources: string[]; generated_at: string };   // §8.5
   region?: string;
   pinned?: boolean; muted?: boolean;          // owner overrides
@@ -124,12 +126,12 @@ pending ──(2+ items or high importance)──▶ active ──(no items N da
                                               └──────── new matching item ◀────────────┘
 ```
 
-- **pending:** a new thread with one item. Shown inline as a single item and only promoted to a thread when a second item arrives within 72 h, or when the first item's importance is very high. This prevents a flood of one-item threads.
+- **pending:** a new thread with one item. Shown inline as a single item and only promoted to a thread when a second item arrives within 72 h, or when the first item's importance is very high. This prevents a flood of one-item threads. After 72 h a pending thread can no longer be matched (its centroid is dropped); its item stays a single item.
 - **cooling:** sinks in the topic list.
 - **dormant:** grayed out and collapsed at the bottom of the topic.
-- **archived:** hidden; searchable.
-- A dormant or archived thread **revives** when a new item matches it, keeping its full history.
-- Timings are per topic (`dormant_after_days`, `archive_after_days`). Defaults: politics 7–14 days; AI ~21; trackers and fixed threads never.
+- **archived:** hidden; searchable. Its centroid is dropped, so it is never matched again (§6.5).
+- A cooling or dormant thread **revives** (back to active) when a new item matches it, keeping its full history. Archived threads don't revive: a new item starts a new thread.
+- Timings are per topic, counted from the thread's last item: `cooling_after_days`, `dormant_after_days`, `archive_after_days` (topic override, else `defaults`). The validator requires cooling < dormant < archive. Defaults: cooling 3 days (health questions 30); dormant: politics 10, world and jobs 14, AI 21, health 120. Tracker and fixed threads never cool, go dormant or archive.
 
 **Owner overrides** (stored by the Worker, applied at the start of each pipeline run): rename, pin, mute, merge two threads, split items out to a new thread, move an item to another thread.
 
@@ -302,9 +304,9 @@ For each source: items fetched, shown, opened, hidden (by reason), last success 
 ## 10. Hosting, data and security
 
 ### 10.1 Storage
-- State lives on an orphan `data` branch as JSON/NDJSON: items partitioned by day, `threads.json`, centroids as `.npy`, and an LLM cache.
+- State lives on an orphan `data` branch as JSON/NDJSON: items partitioned by day, `threads.json` (sorted by id), thread centroids as float32 rows in `centroids.npy` named in order by `centroid_ids.json` (only threads that can still be matched), and an LLM cache.
 - Fetch state: `http_cache.json` (ETag / Last-Modified per feed URL) and `source_health.json` (per source: last attempt, status, last success, item count, last error, consecutive failures, feed title). All state is written once at the end of a run, so a crashed run never saves validators for items it didn't store.
-- Only the last ~30 days of item embeddings are kept.
+- Item embeddings are **not** stored (decided 2026-11-22): ~10–20 MB of vectors rewritten by every hourly commit isn't worth it. New items are embedded anyway; any other item that needs a vector (e.g. the one-time thread backfill) is embedded again.
 - The `data` branch is squashed periodically (history isn't needed) so the repo stays small.
 - Each run checks out `data`, updates it, commits and pushes. Concurrency: workflow-level `concurrency` group so runs never overlap.
 - Implementation: `.github/workflows/pipeline.yml` (hourly at :17 + `workflow_dispatch`) uses `.github/scripts/state.sh` to check `data` out as a git worktree (the first run creates the orphan branch) and to commit and push. Pushes are never forced: a run that somehow missed the existing branch is rejected instead of replacing state. Source health timestamps change every run, so `data` gets about one commit per hour until squashing exists.

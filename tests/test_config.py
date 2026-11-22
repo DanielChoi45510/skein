@@ -15,6 +15,7 @@ import pytest
 import yaml
 
 from pipeline.config import ConfigError, load_config
+from pipeline.config.schema import Lifecycle, lifecycle
 from pipeline.config.validate import main
 
 from .conftest import FIXTURE_CONFIG, REPO_CONFIG
@@ -140,11 +141,42 @@ def test_local_profile_is_validated_when_present(config_dir: Path) -> None:
             "String should match pattern",
             id="bad-id",
         ),
+        pytest.param(
+            lambda d: d["defaults"].pop("cooling_after_days"),
+            "defaults.cooling_after_days: Field required",
+            id="cooling-default-required",
+        ),
+        pytest.param(
+            lambda d: topic(d, "world").update(dormant_after_days=90),
+            "topic 'world': thread timings must satisfy cooling_after_days < "
+            "dormant_after_days < archive_after_days (effective: 3, 90, 60)",
+            id="dormant-after-archive",
+        ),
+        pytest.param(
+            lambda d: topic(d, "world").update(cooling_after_days=14),
+            "topic 'world': thread timings must satisfy",
+            id="cooling-not-before-dormant",
+        ),
     ],
 )
 def test_invalid_topics(config_dir: Path, mutate: Callable, expected: str) -> None:
     edit(config_dir, "topics.yaml", mutate)
     assert expected in errors_for(config_dir)
+
+
+def test_topic_lifecycle_overrides_defaults(config_dir: Path) -> None:
+    edit(
+        config_dir,
+        "topics.yaml",
+        lambda d: topic(d, "world").update(
+            cooling_after_days=30, dormant_after_days=120, archive_after_days=365
+        ),
+    )
+    cfg = load_config(config_dir)
+    world = next(t for t in cfg.topics.topics if t.id == "world")
+    politics = next(t for t in cfg.topics.topics if t.id == "politics")
+    assert lifecycle(world, cfg.topics.defaults) == Lifecycle(30, 120, 365)
+    assert lifecycle(politics, cfg.topics.defaults) == Lifecycle(3, 14, 60)
 
 
 # ───────────────────────────── sources.yaml ─────────────────────────────

@@ -8,6 +8,7 @@ Every model forbids unknown keys so a typo fails validation instead of being ign
 from __future__ import annotations
 
 import datetime as dt
+from dataclasses import dataclass
 from typing import Annotated, Any, Literal
 
 from pydantic import BaseModel, ConfigDict, Field, HttpUrl, StringConstraints, model_validator
@@ -40,6 +41,7 @@ class StrictModel(BaseModel):
 
 class Defaults(StrictModel):
     daily_cap_per_thread: PositiveInt
+    cooling_after_days: PositiveInt  # thread lifecycle (DESIGN §5): active → cooling
     dormant_after_days: PositiveInt
     archive_after_days: PositiveInt
     lookback_days: PositiveInt
@@ -96,6 +98,7 @@ class Topic(StrictModel):
 
     # Overrides of `defaults`
     daily_cap_per_thread: PositiveInt | None = None
+    cooling_after_days: PositiveInt | None = None
     dormant_after_days: PositiveInt | None = None
     archive_after_days: PositiveInt | None = None
     lookback_days: PositiveInt | None = None
@@ -274,6 +277,27 @@ class Profile(PrivateModel):
 
 
 # ───────────────────────────── helpers ─────────────────────────────
+
+
+THREADED_MODES = frozenset({"threaded", "question", "tracker", "fixed"})  # DESIGN §6.5
+PREDEFINED_MODES = frozenset({"tracker", "fixed"})  # only the threads listed in config
+
+
+@dataclass(frozen=True)
+class Lifecycle:
+    """A topic's effective thread timings in days (DESIGN §5): topic override, else default."""
+
+    cooling: int
+    dormant: int
+    archive: int
+
+
+def lifecycle(topic: Topic, defaults: Defaults) -> Lifecycle:
+    return Lifecycle(
+        cooling=topic.cooling_after_days or defaults.cooling_after_days,
+        dormant=topic.dormant_after_days or defaults.dormant_after_days,
+        archive=topic.archive_after_days or defaults.archive_after_days,
+    )
 
 
 def duplicates(ids: list[str]) -> list[str]:

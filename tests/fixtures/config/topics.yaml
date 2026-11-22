@@ -3,6 +3,7 @@
 
 defaults:
   daily_cap_per_thread: 5
+  cooling_after_days: 3
   dormant_after_days: 14
   archive_after_days: 60
   lookback_days: 7

@@ -22,7 +22,7 @@ from typing import Any
 import yaml
 from pydantic import BaseModel, ValidationError
 
-from .schema import Profile, Source, SourcesFile, Topic, TopicsFile, duplicates
+from .schema import Profile, Source, SourcesFile, Topic, TopicsFile, duplicates, lifecycle
 
 DEFAULT_CONFIG_DIR = Path(__file__).resolve().parents[2] / "config"
 
@@ -76,6 +76,13 @@ def check_topics(t: TopicsFile) -> list[str]:
                 errors.append(
                     f"topics.yaml: topic '{topic.id}': filters_off names unknown filter '{f}'"
                 )
+        life = lifecycle(topic, t.defaults)
+        if not life.cooling < life.dormant < life.archive:
+            errors.append(
+                f"topics.yaml: topic '{topic.id}': thread timings must satisfy "
+                "cooling_after_days < dormant_after_days < archive_after_days "
+                f"(effective: {life.cooling}, {life.dormant}, {life.archive})"
+            )
     return errors
 
 

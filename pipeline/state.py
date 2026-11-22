@@ -11,11 +11,17 @@ unchanged partition produces identical bytes, so reruns leave no diff. Only the
 last ITEM_WINDOW_DAYS days of partitions are loaded; older ones are left alone.
 (Lookback windows are ≤ 30 days, so an entry old enough to fall outside the
 loaded window is dropped by normalization before it could be re-added.)
+
+Threads (DESIGN §5, §6.5) live in `threads.json`, sorted by id. Their centroids
+are float32 rows in `centroids.npy`, named in order by `centroid_ids.json`; only
+threads that can still be matched have one. Item embeddings are not stored
+(§10.1): items that need a vector are embedded again.
 """
 
 from __future__ import annotations
 
 import datetime as dt
+import io
 import json
 import os
 import tempfile
@@ -23,17 +29,22 @@ from collections.abc import Iterable
 from pathlib import Path
 from typing import Any
 
+import numpy as np
 from pydantic import TypeAdapter
 
-from .models import CacheEntry, Item, SourceHealth
+from .models import CacheEntry, Item, SourceHealth, Thread
 
 HTTP_CACHE = "http_cache.json"
 SOURCE_HEALTH = "source_health.json"
 ITEMS_DIR = "items"
+THREADS = "threads.json"
+CENTROIDS = "centroids.npy"
+CENTROID_IDS = "centroid_ids.json"
 ITEM_WINDOW_DAYS = 30
 
 _cache_adapter = TypeAdapter(dict[str, CacheEntry])
 _health_adapter = TypeAdapter(dict[str, SourceHealth])
+_threads_adapter = TypeAdapter(list[Thread])
 
 
 class State:
@@ -46,10 +57,17 @@ class State:
         self.health: dict[str, SourceHealth] = _health_adapter.validate_python(
             read_json(root / SOURCE_HEALTH, {})
         )
+        self.threads: dict[str, Thread] = {
+            t.id: t for t in _threads_adapter.validate_python(read_json(root / THREADS, []))
+        }
+        self.centroids: dict[str, np.ndarray] = load_centroids(root)
 
     def save(self) -> None:
         self.root.mkdir(parents=True, exist_ok=True)
         save_items(self.root / ITEMS_DIR, self.items.values())
+        threads = sorted(self.threads.values(), key=lambda t: t.id)
+        write_json(self.root / THREADS, _threads_adapter.dump_python(threads, mode="json"))
+        save_centroids(self.root, self.centroids)
         write_json(self.root / SOURCE_HEALTH, _health_adapter.dump_python(self.health, mode="json"))
         # Last: validators are only useful once the items they cover are on disk.
         write_json(self.root / HTTP_CACHE, _cache_adapter.dump_python(self.http_cache, mode="json"))
@@ -88,6 +106,29 @@ def save_items(items_dir: Path, items: Iterable[Item]) -> None:
         write_text_atomic(items_dir / partition_name(day), "\n".join(lines) + "\n")
 
 
+def load_centroids(root: Path) -> dict[str, np.ndarray]:
+    ids = read_json(root / CENTROID_IDS, [])
+    if not ids:
+        return {}
+    matrix = np.load(root / CENTROIDS, allow_pickle=False)
+    if matrix.ndim != 2 or matrix.shape[0] != len(ids):
+        raise ValueError(f"{CENTROIDS} has shape {matrix.shape}, expected {len(ids)} rows")
+    return {thread_id: matrix[row].copy() for row, thread_id in enumerate(ids)}
+
+
+def save_centroids(root: Path, centroids: dict[str, np.ndarray]) -> None:
+    """Rows sorted by thread id, float32: unchanged centroids give identical bytes."""
+    ids = sorted(centroids)
+    if ids:
+        matrix = np.stack([np.asarray(centroids[i], dtype=np.float32) for i in ids])
+    else:
+        matrix = np.zeros((0, 0), np.float32)
+    buf = io.BytesIO()
+    np.save(buf, matrix, allow_pickle=False)
+    write_bytes_atomic(root / CENTROIDS, buf.getvalue())
+    write_json(root / CENTROID_IDS, ids)
+
+
 def read_json(path: Path, default: Any) -> Any:
     try:
         return json.loads(path.read_text(encoding="utf-8"))
@@ -102,11 +143,15 @@ def write_json(path: Path, data: Any) -> None:
 
 
 def write_text_atomic(path: Path, text: str) -> None:
+    write_bytes_atomic(path, text.encode("utf-8"))
+
+
+def write_bytes_atomic(path: Path, data: bytes) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     fd, tmp = tempfile.mkstemp(dir=path.parent, prefix=f".{path.name}.", suffix=".tmp")
     try:
-        with os.fdopen(fd, "w", encoding="utf-8") as f:
-            f.write(text)
+        with os.fdopen(fd, "wb") as f:
+            f.write(data)
         os.replace(tmp, path)
     except BaseException:
         Path(tmp).unlink(missing_ok=True)
