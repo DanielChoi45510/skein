@@ -24,6 +24,7 @@ sources:
     kind: reporting
     lean: null          # fill in from a media-bias rating
     verified: false
+    relevance: { skip: true }   # section feed: the outlet already sorted it
 
   - id: nyt-world
     type: rss
@@ -33,6 +34,7 @@ sources:
     kind: reporting
     lean: null
     verified: false
+    relevance: { skip: true }   # section feed: the outlet already sorted it
 
   - id: hn-frontpage
     type: rss

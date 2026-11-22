@@ -3,7 +3,13 @@
 Each topic's `description` and `include` examples are positive anchors; its
 `exclude` examples are negative anchors. For an item and a topic:
 
-    relevance = max cos(item, positives) - λ * max cos(item, negatives), clipped to [0, 1]
+    pos = max cos(item, positives),  neg = max cos(item, negatives)
+    relevance = pos - λ * max(0, neg - pos), clipped to [0, 1]
+
+An exclude only counts against an item that is closer to it than to the topic.
+(Subtracting λ·neg outright penalized every item in topics whose excludes are
+in-domain, e.g. "Campaign gossip" under US politics: calibration showed a flat
+~0.27 drop across the whole topic.)
 
 An item is scored against every topic its source feeds and goes to the best one.
 Below the threshold it's hidden (`below_threshold`) but keeps its best topic and
@@ -61,9 +67,11 @@ def item_text(item: Item) -> str:
 
 
 def score(vector: np.ndarray, anchors: Anchors) -> float:
-    value = float(np.max(anchors.positive @ vector))
+    pos = float(np.max(anchors.positive @ vector))
+    value = pos
     if anchors.negative is not None:
-        value -= NEGATIVE_WEIGHT * float(np.max(anchors.negative @ vector))
+        neg = float(np.max(anchors.negative @ vector))
+        value -= NEGATIVE_WEIGHT * max(0.0, neg - pos)
     return min(1.0, max(0.0, value))
 
 

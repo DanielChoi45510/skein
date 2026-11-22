@@ -28,7 +28,7 @@ _AXES = {"election": 0, "politics": 1, "legislation": 1, "accessor": 2, "lamp": 
 
 
 class KeywordEmbedder:
-    """Vectors built from keyword hits, so expected scores can be computed by hand."""
+    """Vectors built from keyword counts, so expected scores can be computed by hand."""
 
     def __init__(self) -> None:
         self.calls: list[tuple[list[str], str]] = []
@@ -39,11 +39,14 @@ class KeywordEmbedder:
         for row, text in enumerate(texts):
             lower = text.lower()
             for word, axis in _AXES.items():
-                if word in lower:
-                    out[row, axis] = 1.0
+                out[row, axis] += lower.count(word)
             if not out[row].any():
                 out[row, 4] = 1.0
         return out / np.linalg.norm(out, axis=1, keepdims=True)
+
+
+# (2, 0, 0, 3) / sqrt(13): pos ≈ 0.555, neg ≈ 0.832, relevance ≈ 0.416
+MIDDLING = "Election election gossip gossip gossip"
 
 
 def item(title: str, source: str = "example-world", **kw) -> Item:
@@ -80,10 +83,12 @@ def topics_with(**updates: dict):
 # ───────────────────────────── score ─────────────────────────────
 
 
-def test_score_positive_minus_half_negative() -> None:
+def test_negative_counts_only_when_closer_than_positive() -> None:
     anchors = Anchors(positive=np.eye(3)[[0]], negative=np.eye(3)[[1]])
-    v = np.array([0.8, 0.6, 0.0])
-    assert score(v, anchors) == pytest.approx(0.8 - 0.5 * 0.6)
+    # closer to the topic than to the exclude: no penalty
+    assert score(np.array([0.8, 0.6, 0.0]), anchors) == pytest.approx(0.8)
+    # closer to the exclude: pos - 0.5 * (neg - pos)
+    assert score(np.array([0.6, 0.8, 0.0]), anchors) == pytest.approx(0.6 - 0.5 * 0.2)
 
 
 def test_score_takes_best_anchor_and_clips() -> None:
@@ -117,11 +122,15 @@ def test_relevant_item_routed_and_visible() -> None:
     assert (it.topic_id, it.relevance, it.visible) == ("world", 1.0, True)
 
 
-def test_negative_anchor_lowers_score() -> None:
-    plain, gossip = item("Election news"), item("Election gossip")
-    assign_topics([plain, gossip], sources(), CFG.topics, KeywordEmbedder())
-    assert gossip.relevance == pytest.approx(round(math.sqrt(0.5) * 0.5, 4), abs=1e-4)
-    assert gossip.relevance < plain.relevance
+def test_negative_anchor_lowers_score_only_when_closer() -> None:
+    plain = item("Election news")
+    balanced = item("Election gossip")  # as close to the exclude as to the topic
+    mostly_gossip = item("Election gossip gossip")  # closer to the exclude
+    assign_topics([plain, balanced, mostly_gossip], sources(), CFG.topics, KeywordEmbedder())
+    assert plain.relevance == 1.0
+    assert balanced.relevance == pytest.approx(math.sqrt(0.5), abs=1e-4)  # no penalty
+    pos, neg = 1 / math.sqrt(5), 2 / math.sqrt(5)
+    assert mostly_gossip.relevance == pytest.approx(pos - 0.5 * (neg - pos), abs=1e-4)
 
 
 def test_below_threshold_hidden_but_keeps_topic_and_score() -> None:
@@ -144,8 +153,15 @@ def test_tie_goes_to_first_listed_topic() -> None:
     assert it.topic_id == "gadgets"  # listed first on example-hn
 
 
+def test_middling_item_passes_default_threshold() -> None:
+    it = item(MIDDLING)
+    assign_topics([it], sources(), CFG.topics, KeywordEmbedder())
+    assert it.relevance == pytest.approx(0.416, abs=1e-3)
+    assert it.visible
+
+
 def test_topic_threshold_override() -> None:
-    it = item("Election gossip")  # relevance ≈ 0.354, default threshold 0.30
+    it = item(MIDDLING)  # relevance ≈ 0.42; default threshold 0.30
     assign_topics(
         [it], sources(), topics_with(world={"relevance_threshold": 0.5}), KeywordEmbedder()
     )
@@ -153,7 +169,7 @@ def test_topic_threshold_override() -> None:
 
 
 def test_source_threshold_beats_topic_threshold() -> None:
-    it = item("Election gossip")
+    it = item(MIDDLING)
     srcs = sources(example_world={"relevance": SourceRelevance(threshold=0.2)})
     topics = topics_with(world={"relevance_threshold": 0.5})
     assign_topics([it], srcs, topics, KeywordEmbedder())
