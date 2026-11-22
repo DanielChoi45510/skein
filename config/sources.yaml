@@ -23,7 +23,7 @@ sources:
     url: https://simonwillison.net/atom/everything/
     topics: [ai-practice, ai-news]
     status: active
-    verified: false
+    verified: true
 
   - id: one-useful-thing
     name: One Useful Thing
@@ -32,7 +32,7 @@ sources:
     topics: [ai-practice, ai-news]
     status: active
     kind: analysis
-    verified: false
+    verified: true
 
   - id: hn-frontpage
     name: Hacker News (200+ points)
@@ -41,7 +41,7 @@ sources:
     topics: [ai-practice, ai-news, jobs-market]
     status: trial
     excerpt: false      # hnrss descriptions are just "Article URL / Comments URL / Points"
-    verified: false
+    verified: true
 
   - id: antigravity-blog
     name: Google Antigravity Blog
@@ -49,7 +49,7 @@ sources:
     url: https://antigravity.google/blog/rss.xml
     topics: [ai-practice, ai-news]
     status: active
-    verified: false
+    verified: true
 
   - id: claude-blog
     name: Claude Blog (unofficial feed)
@@ -57,7 +57,7 @@ sources:
     url: https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_claude.xml   # community scraper
     topics: [ai-practice, ai-news]
     status: trial
-    verified: false
+    verified: true
 
   # ═══════════════════════════ AI news ═══════════════════════════
   - id: ainews-smol
@@ -66,7 +66,7 @@ sources:
     url: https://news.smol.ai/rss.xml
     topics: [ai-news]
     status: active
-    verified: false
+    verified: true
 
   - id: verge-ai
     name: The Verge – AI
@@ -74,7 +74,7 @@ sources:
     url: https://www.theverge.com/rss/ai-artificial-intelligence/index.xml
     topics: [ai-news]
     status: active
-    verified: false
+    verified: true
 
   - id: ars-ai
     name: Ars Technica – AI
@@ -82,7 +82,7 @@ sources:
     url: https://arstechnica.com/ai/feed/
     topics: [ai-news]
     status: active
-    verified: false
+    verified: true
 
   - id: openai-news
     name: OpenAI News
@@ -90,7 +90,7 @@ sources:
     url: https://openai.com/news/rss.xml
     topics: [ai-news]
     status: active
-    verified: false
+    verified: true
 
   - id: deepmind-blog
     name: Google DeepMind Blog
@@ -98,7 +98,7 @@ sources:
     url: https://deepmind.google/blog/rss.xml
     topics: [ai-news]
     status: active
-    verified: false
+    verified: true
 
   - id: anthropic-news
     name: Anthropic News (unofficial feed)
@@ -106,7 +106,7 @@ sources:
     url: https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_anthropic_news.xml
     topics: [ai-news]
     status: trial
-    verified: false
+    verified: true
 
   - id: google-ai-dev
     name: Google Developers Blog – AI (unofficial feed)
@@ -114,7 +114,7 @@ sources:
     url: https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_google_ai.xml
     topics: [ai-news, ai-practice]
     status: trial
-    verified: false
+    verified: true
 
   - id: gemini-blog
     name: Google Blog – Gemini
@@ -122,7 +122,7 @@ sources:
     url: https://blog.google/products/gemini/rss/
     topics: [ai-news, ai-practice]
     status: active
-    verified: false
+    verified: true
 
   # ═══════════════════════════ Tech ═══════════════════════════
   - id: verge-reviews
@@ -131,7 +131,7 @@ sources:
     url: https://www.theverge.com/rss/reviews/index.xml
     topics: [tech-trackers, everyday-upgrades]
     status: active
-    verified: false
+    verified: true
 
   - id: rtings
     name: RTINGS
@@ -140,7 +140,7 @@ sources:
     topics: [tech-trackers, everyday-upgrades]
     status: active
     paywall: partial        # some reviews are behind RTINGS Insider
-    verified: false
+    verified: true
 
   - id: notebookcheck
     name: Notebookcheck
@@ -148,7 +148,7 @@ sources:
     url: https://www.notebookcheck.net/RSS-Feed-All-Articles-EN.165552.0.html   # TODO: swap for reviews-only feed if one exists
     topics: [tech-trackers, everyday-upgrades]
     status: trial
-    verified: false
+    verified: true
 
   - id: 9to5mac
     name: 9to5Mac
@@ -156,7 +156,7 @@ sources:
     url: https://9to5mac.com/feed/
     topics: [tech-trackers, everyday-upgrades]
     status: trial
-    verified: false
+    verified: true
 
   - id: verge-installer
     name: The Verge – Installer
@@ -164,7 +164,7 @@ sources:
     url: https://www.theverge.com/rss/installer-newsletter/index.xml
     topics: [everyday-upgrades]
     status: active
-    verified: false
+    verified: true
 
   - id: wirecutter
     name: Wirecutter
@@ -205,7 +205,7 @@ sources:
     topics: [health-training, health-nutrition]
     status: active
     kind: analysis
-    verified: false
+    verified: true
 
   - id: sweat-science
     name: Sweat Science (Alex Hutchinson)
@@ -214,7 +214,7 @@ sources:
     topics: [health-training, health-wellbeing, health-sleep]
     status: active
     kind: analysis
-    verified: false
+    verified: true
 
   - id: nyt-well
     name: NYT – Well
@@ -223,7 +223,7 @@ sources:
     topics: [health-training, health-sleep, health-nutrition, health-wellbeing]
     status: active
     paywall: full           # owner subscribes
-    verified: false
+    verified: true
 
   - id: examine
     name: Examine
@@ -261,7 +261,7 @@ sources:
     kind: reporting
     lean: null          # AllSides: check (NYT news)
     paywall: full       # owner subscribes
-    verified: false
+    verified: true
 
   - id: nyt-world
     name: NYT – World
@@ -272,7 +272,7 @@ sources:
     kind: reporting
     lean: null          # AllSides: check (NYT news)
     paywall: full
-    verified: false
+    verified: true
 
   - id: reuters-world
     name: Reuters – World (via Google News)
@@ -282,7 +282,8 @@ sources:
     status: active
     kind: reporting
     lean: center        # AllSides, confirmed in July 2025 Blind Bias Survey
-    verified: false
+    excerpt: false      # Google News description = headline + "Reuters" (checked 2026-11-22)
+    verified: true
 
   - id: ap-top
     name: AP – Top Stories (Flipboard)
@@ -292,7 +293,7 @@ sources:
     status: active
     kind: reporting
     lean: null          # AllSides: check
-    verified: false
+    verified: true
 
   - id: ap-us
     name: AP – U.S. News (Flipboard)
@@ -302,7 +303,7 @@ sources:
     status: active
     kind: reporting
     lean: null          # AllSides: check
-    verified: false
+    verified: true
 
   - id: npr-politics
     name: NPR – Politics
@@ -312,7 +313,7 @@ sources:
     status: trial
     kind: reporting
     lean: null          # AllSides: check
-    verified: false
+    verified: true
 
   - id: wsj-world
     name: WSJ – World News
@@ -323,7 +324,7 @@ sources:
     kind: reporting
     lean: null          # AllSides: check (WSJ news; rated separately from WSJ opinion)
     paywall: full
-    verified: false
+    verified: true
 
   # BBC regional feeds: options.region pre-tags items for the world-news region facet.
   - id: bbc-world
@@ -334,7 +335,7 @@ sources:
     status: active
     kind: reporting
     lean: null          # AllSides: check
-    verified: false
+    verified: true
 
   - id: bbc-africa
     name: BBC – Africa
@@ -345,7 +346,7 @@ sources:
     kind: reporting
     lean: null          # AllSides: check
     options: { region: Sub-Saharan Africa }   # North Africa stories get re-tagged by the classifier
-    verified: false
+    verified: true
 
   - id: bbc-asia
     name: BBC – Asia
@@ -356,7 +357,7 @@ sources:
     kind: reporting
     lean: null          # AllSides: check
     options: { region: East Asia }            # mixed region; classifier refines (East/South/Southeast)
-    verified: false
+    verified: true
 
   - id: bbc-india
     name: BBC – India
@@ -367,7 +368,7 @@ sources:
     kind: reporting
     lean: null          # AllSides: check
     options: { region: South Asia }
-    verified: false
+    verified: true
 
   - id: bbc-europe
     name: BBC – Europe
@@ -378,7 +379,7 @@ sources:
     kind: reporting
     lean: null          # AllSides: check
     options: { region: Europe }
-    verified: false
+    verified: true
 
   - id: bbc-latam
     name: BBC – Latin America & Caribbean
@@ -389,7 +390,7 @@ sources:
     kind: reporting
     lean: null          # AllSides: check
     options: { region: Americas }
-    verified: false
+    verified: true
 
   - id: bbc-middle-east
     name: BBC – Middle East
@@ -400,7 +401,7 @@ sources:
     kind: reporting
     lean: null          # AllSides: check
     options: { region: Middle East & North Africa }
-    verified: false
+    verified: true
 
   - id: bbc-australia
     name: BBC – Australia
@@ -411,7 +412,7 @@ sources:
     kind: reporting
     lean: null          # AllSides: check
     options: { region: Oceania }
-    verified: false
+    verified: true
 
   # ═══════════════════════════ Opinion (labeled, balanced, strictest filters) ═══════════════════════════
   - id: nyt-opinion
@@ -423,7 +424,7 @@ sources:
     kind: opinion
     lean: null          # AllSides: check (NYT opinion)
     paywall: full
-    verified: false
+    verified: true
 
   - id: the-atlantic
     name: The Atlantic
@@ -434,7 +435,7 @@ sources:
     kind: opinion
     lean: left          # AllSides, confirmed in July 2025 Blind Bias Survey
     paywall: partial
-    verified: false
+    verified: true
 
   - id: the-dispatch
     name: The Dispatch
@@ -445,7 +446,7 @@ sources:
     kind: opinion
     lean: null          # AllSides: check
     paywall: partial
-    verified: false
+    verified: true
 
   - id: national-review
     name: National Review
@@ -456,7 +457,7 @@ sources:
     kind: opinion
     lean: null          # AllSides: check
     paywall: partial
-    verified: false
+    verified: true
 
   - id: wsj-opinion
     name: WSJ – Opinion
@@ -467,7 +468,7 @@ sources:
     kind: opinion
     lean: null          # AllSides: check (WSJ opinion)
     paywall: full
-    verified: false
+    verified: true
 
   # ═══════════════════════════ Markets ═══════════════════════════
   - id: fed-monetary
@@ -477,7 +478,7 @@ sources:
     topics: [markets]
     status: active
     kind: reporting
-    verified: false
+    verified: true
 
   - id: bls-empsit
     name: BLS – Employment Situation
@@ -486,7 +487,7 @@ sources:
     topics: [markets]
     status: active
     kind: reporting
-    verified: false
+    verified: true
 
   - id: bls-cpi
     name: BLS – Consumer Price Index
@@ -495,7 +496,7 @@ sources:
     topics: [markets]
     status: active
     kind: reporting
-    verified: false
+    verified: true
 
   - id: reuters-markets
     name: Reuters – Markets & Business (via Google News)
@@ -505,7 +506,8 @@ sources:
     status: active
     kind: reporting
     lean: center
-    verified: false
+    excerpt: false      # Google News description = headline + "Reuters" (checked 2026-11-22)
+    verified: true
 
   - id: nyt-business
     name: NYT – Business
@@ -515,7 +517,7 @@ sources:
     status: active
     kind: reporting
     paywall: full
-    verified: false
+    verified: true
 
   - id: nyt-economy
     name: NYT – Economy
@@ -525,7 +527,7 @@ sources:
     status: active
     kind: reporting
     paywall: full
-    verified: false
+    verified: true
 
   - id: wsj-markets
     name: WSJ – Markets
@@ -535,7 +537,7 @@ sources:
     status: active
     kind: reporting
     paywall: full
-    verified: false
+    verified: true
 
   - id: fred-indexes
     name: FRED – Index closes
@@ -576,7 +578,7 @@ sources:
     topics: [jobs-listings]
     status: trial
     kind: listing
-    verified: false
+    verified: true
 
   - id: techcrunch
     name: TechCrunch
@@ -585,7 +587,7 @@ sources:
     topics: [jobs-market]
     status: trial
     kind: reporting
-    verified: false
+    verified: true
 
   - id: pragmatic-engineer
     name: The Pragmatic Engineer
@@ -595,7 +597,7 @@ sources:
     status: active
     kind: analysis
     paywall: partial
-    verified: false
+    verified: true
 
   - id: interviewing-io
     name: interviewing.io Blog
@@ -622,4 +624,4 @@ sources:
     url: https://fivebooks.com/feed/
     topics: [books]
     status: active
-    verified: false
+    verified: true
