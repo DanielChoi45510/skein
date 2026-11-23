@@ -203,6 +203,16 @@ Code: `pipeline/process/threads.py`. For each relevant item in a `threaded` or `
 
 Mode-specific rules:
 - `tracker` and `fixed`: assign every eligible item to the nearest predefined thread; never create new ones. Each thread's anchor is the embedding of its optional `description` in `topics.yaml`, else its title. A bare title is a weak anchor: with titles only, iPhone and AirPods items went to Wearables (2026-11-22).
+  - **Catch-all:**
+    - **Config:** a topic can set `min_match` and mark one of its threads `catch_all: true`. The validator requires both or neither, at most one catch-all, and at least one other thread.
+    - **Routing:** an item whose nearest anchor scores below `min_match` goes to the catch-all instead of being forced into the least-bad thread. Its `thread_score` stays its best anchor's score.
+    - **Never matched directly:** the catch-all has no anchor; its `description` is for people.
+  - **Markets** (`min_match: 0.60`, catch-all "Market news"):
+    - **Descriptions:** each sector's description names typical companies and subjects (not people, who go stale).
+    - **Why:** with one-line descriptions and no floor, the Anthropic IPO and Nvidia stories filled Health Care, Financials and Major earnings surprises.
+    - **Re-routing the 122 stored markets items (2026-11-24):** Health Care 10 → 2, Major earnings surprises 19 → 5, Information Technology 25 → 51 (that week's Nvidia and Anthropic news). 19 items fell to Market news, mostly stories that fit no sector (a cattle-supply story, a court ruling, currency moves).
+    - **Choosing the floor:** at 0.62 correct sector items (Citi, Anthropic IPO explainers) start to fall through.
+    - **Limit:** broad-market stories ("S&P 500 futures rise") still score 0.60–0.67 against sectors and can land in one. A floor can't separate them; see the open question in the change notes.
 
 **Per run** (`pipeline/process/thread_assign.py`, after relevance scoring):
 - **Who gets assigned:** items in a threaded, question, tracker or fixed topic that are visible, within the topic's lookback, carried by an enabled source, not excluded by title, and not yet in a thread.

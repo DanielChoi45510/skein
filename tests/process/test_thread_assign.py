@@ -188,6 +188,32 @@ def test_tracker_items_route_to_predefined_threads_only() -> None:
     assert report.predefined == 4 and report.created == 0
 
 
+def with_market_catch_all(min_match: float) -> Config:
+    topics = []
+    for t in CFG.topics.topics:
+        if t.id == "markets":
+            news = t.threads[0].model_copy(
+                update={"id": "news", "title": "Market news", "catch_all": True}
+            )
+            t = t.model_copy(update={"min_match": min_match, "threads": [*t.threads, news]})
+        topics.append(t)
+    return dataclasses.replace(CFG, topics=CFG.topics.model_copy(update={"topics": topics}))
+
+
+def test_fixed_items_below_min_match_go_to_the_catch_all() -> None:
+    run = Run(with_market_catch_all(0.5))
+    report = run([
+        item(1, "Energy prices climb", topic="markets"),
+        item(2, "Rates on hold", topic="markets"),
+        item(3, "Stocks wobble", topic="markets"),  # matches no sector
+    ])  # fmt: skip
+    ids = {i.id: i.thread_id for i in run.items.values()}
+    assert ids == {"i01": "markets--energy", "i02": "markets--rates", "i03": "markets--news"}
+    news = run.threads["markets--news"]
+    assert (news.title, news.kind, news.state) == ("Market news", "fixed", "active")
+    assert report.predefined == 3 and report.created == 0
+
+
 # ───────────────────────────── rescue ─────────────────────────────
 
 

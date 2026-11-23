@@ -132,6 +132,41 @@ def test_local_profile_is_validated_when_present(config_dir: Path) -> None:
             id="duplicate-thread",
         ),
         pytest.param(
+            lambda d: topic(d, "markets").update(min_match=0.6),
+            "`min_match` and a `catch_all` thread go together",
+            id="min-match-without-catch-all",
+        ),
+        pytest.param(
+            lambda d: topic(d, "markets")["threads"].append(
+                {"id": "news", "title": "News", "catch_all": True}
+            ),
+            "`min_match` and a `catch_all` thread go together",
+            id="catch-all-without-min-match",
+        ),
+        pytest.param(
+            lambda d: topic(d, "markets").update(
+                min_match=0.6,
+                threads=[
+                    {"id": "energy", "title": "Energy", "catch_all": True},
+                    {"id": "news", "title": "News", "catch_all": True},
+                ],
+            ),
+            "at most one `catch_all` thread",
+            id="two-catch-alls",
+        ),
+        pytest.param(
+            lambda d: topic(d, "markets").update(
+                min_match=0.6, threads=[{"id": "news", "title": "News", "catch_all": True}]
+            ),
+            "needs at least one other thread",
+            id="catch-all-alone",
+        ),
+        pytest.param(
+            lambda d: topic(d, "markets").update(min_match=1.5),
+            "min_match: Input should be less than or equal to 1",
+            id="min-match-range",
+        ),
+        pytest.param(
             lambda d: topic(d, "world").update(mode="infinite"),
             "mode: Input should be",
             id="unknown-mode",

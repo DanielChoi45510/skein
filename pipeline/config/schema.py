@@ -82,6 +82,10 @@ class FixedThread(StrictModel):
     title: NonEmptyStr
     description: NonEmptyStr | None = None
     priority: Literal["low", "normal"] = "normal"
+    # The topic's catch-all: never matched by its own description; it gets the
+    # items whose best match among the other threads is below the topic's
+    # `min_match` (DESIGN §6.5). At most one per topic, and only with `min_match`.
+    catch_all: bool = False
 
 
 class CycleThread(StrictModel):
@@ -135,6 +139,9 @@ class Topic(StrictModel):
 
     # Predefined threads
     threads: list[FixedThread] | None = None
+    # Tracker / fixed: an item whose best thread scores below this goes to the
+    # topic's `catch_all` thread instead of being forced into the nearest one.
+    min_match: Fraction | None = None
     threads_per_cycle: list[CycleThread] | None = None
 
     # Private-profile matching
@@ -182,6 +189,16 @@ class Topic(StrictModel):
 
         if self.mode == "listings" and self.target_per_week is None:
             raise ValueError("mode 'listings' requires `target_per_week`")
+
+        catch_alls = [t.id for t in self.threads or [] if t.catch_all]
+        if len(catch_alls) > 1:
+            raise ValueError(f"at most one `catch_all` thread, got: {', '.join(catch_alls)}")
+        if (self.min_match is None) != (not catch_alls):
+            raise ValueError(
+                "`min_match` and a `catch_all` thread go together: set both or neither"
+            )
+        if catch_alls and len(self.threads or []) < 2:
+            raise ValueError("a `catch_all` thread needs at least one other thread to match")
 
         thread_ids = [t.id for t in (self.threads or self.threads_per_cycle or [])]
         if dupes := duplicates(thread_ids):

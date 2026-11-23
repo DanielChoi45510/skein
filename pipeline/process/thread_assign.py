@@ -38,6 +38,7 @@ from .threads import (
     Attach,
     Candidate,
     Thresholds,
+    catch_all_thread_id,
     decide,
     entities,
     in_rescue_band,
@@ -183,7 +184,9 @@ def assign_threads(
 
         if topic.mode in PREDEFINED_MODES:
             own = {k: v for k, v in anchors.items() if k.startswith(f"{topic.id}--")}
-            routed = route_predefined(vector, own)
+            routed = route_predefined(
+                vector, own, min_match=topic.min_match, catch_all=catch_all_thread_id(topic)
+            )
             if in_band and routed.score < t.high:
                 continue
             thread = threads.get(routed.thread_id) or _predefined_thread(

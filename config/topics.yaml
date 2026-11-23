@@ -250,54 +250,63 @@ topics:
     panel:
       provider: fred
       series: [SP500, NASDAQCOM, DJIA]   # daily closes; Phase 4
-    threads:                       # items go to the nearest `description` (else title)
+    min_match: 0.60                # below this best match, an item goes to "Market news" (picked 2026-11-24, DESIGN §6.5)
+    threads:                       # items go to the nearest `description` (else title) …
+      # … unless no thread scores ≥ min_match: then to the catch-all "Market news".
+      # Descriptions name each sector's typical companies and subjects (no people:
+      # they go stale). Company lists are examples, not an index.
       # 11 GICS sectors
       - id: it
         title: Information Technology
-        description: "Information technology sector: software, semiconductors, chipmakers, cloud and tech company stocks"
+        description: "Information technology stocks such as Apple, Microsoft, Nvidia, Broadcom, AMD, Intel, Oracle and Salesforce: chipmakers and semiconductors, software, cloud computing, data centers and AI companies"
       - id: comms
         title: Communication Services
-        description: "Communication services sector: telecom, media, social networks, advertising and streaming stocks"
+        description: "Communication services stocks such as Alphabet (Google), Meta, Netflix, Disney, Comcast, Verizon, AT&T and T-Mobile: telecom, media and entertainment, streaming, social media and digital advertising"
       - id: discretionary
         title: Consumer Discretionary
-        description: "Consumer discretionary sector: retailers, automakers, restaurants, travel and consumer spending"
+        description: "Consumer discretionary stocks such as Amazon, Tesla, Home Depot, McDonald's, Nike, Starbucks and Booking: retailers and holiday shopping, automakers and electric vehicles, restaurants, travel, hotels and consumer spending"
       - id: staples
         title: Consumer Staples
-        description: "Consumer staples sector: food, beverages, household products and grocery companies"
+        description: "Consumer staples stocks such as Walmart, Costco, Procter & Gamble, Coca-Cola, PepsiCo, Philip Morris and Kraft Heinz: groceries, food and beverage makers, household products and tobacco"
       - id: health-care
         title: Health Care
-        description: "Health care sector: pharmaceutical, biotech, medical device and insurer stocks"
+        description: "Health care stocks such as Eli Lilly, Johnson & Johnson, UnitedHealth, Pfizer, Merck, AbbVie, Novo Nordisk and Moderna: drugmakers and biotech, FDA approvals and drug pricing, weight-loss drugs, medical devices, hospitals and health insurers"
       - id: financials
         title: Financials
-        description: "Financials sector: banks, insurers, asset managers, brokerages and fintech"
+        description: "Financial stocks such as JPMorgan Chase, Bank of America, Goldman Sachs, Morgan Stanley, Wells Fargo, Berkshire Hathaway, BlackRock, Visa and Mastercard: banks and bank earnings, insurers, asset managers, brokerages, payments, fintech and crypto exchanges"
       - id: industrials
         title: Industrials (incl. aerospace & defense)
-        description: "Industrials sector: aerospace, defense, airlines, railroads, machinery and manufacturing"
+        description: "Industrial stocks such as Boeing, Lockheed Martin, RTX, GE Aerospace, Caterpillar, Honeywell, UPS, Union Pacific and Delta: aerospace and defense contracts, airlines, railroads, shipping and logistics, machinery and manufacturing"
       - id: energy
         title: Energy
-        description: "Energy sector: oil, natural gas, OPEC, crude prices and energy companies"
+        description: "Energy stocks such as ExxonMobil, Chevron, ConocoPhillips, Shell, BP and Saudi Aramco: crude oil and natural gas prices, OPEC+ output, refining, drilling and LNG exports"
       - id: utilities
         title: Utilities
-        description: "Utilities sector: electric and gas utilities, power grid and electricity demand"
+        description: "Utility stocks such as NextEra Energy, Duke Energy, Southern Company, Constellation Energy and Dominion: electric and gas utilities, power grids, electricity prices and demand, nuclear power"
       - id: materials
         title: Materials
-        description: "Materials sector: mining, metals, chemicals, gold and copper prices"
+        description: "Metals and materials: gold, silver and copper prices and precious metals, mining stocks such as Newmont, Freeport-McMoRan, Rio Tinto and BHP, steel (Nucor), chemicals (Linde, Dow, DuPont), fertilizers and lithium"
       - id: real-estate
         title: Real Estate
-        description: "Real estate sector: REITs, housing market, mortgages and commercial property"
+        description: "Real estate stocks and housing, such as Prologis, American Tower, Equinix and Simon Property: REITs, home sales and home prices, mortgage rates, housing starts, homebuilders and commercial property"
       # economy-wide
       - id: fed-rates
         title: Fed & interest rates
-        description: "Federal Reserve and interest rates: Fed meetings, rate cuts and hikes, bond yields"
+        description: "The Federal Reserve and interest rates: FOMC meetings and rate decisions, the Fed chair and Fed officials, rate cuts and hikes, Treasury bond yields and the dollar"
       - id: macro-data
         title: Inflation & jobs reports
-        description: "Economic data: inflation CPI reports, jobs reports, unemployment, GDP"
+        description: "Economic data releases: CPI and PCE inflation, the monthly jobs report and payrolls, the unemployment rate, GDP growth, retail sales figures and consumer sentiment"
       - id: trade
         title: Trade & tariffs
-        description: "Trade and tariffs: tariff announcements, trade deals, import and export policy"
+        description: "Trade and tariffs: tariff announcements and rates, trade deals and negotiations, trade wars, import and export restrictions, customs duties"
       - id: earnings
         title: Major earnings surprises
-        description: "Major earnings surprises: quarterly results that beat or miss expectations, guidance"
+        description: "Quarterly earnings reports: company results that beat or miss analyst expectations, revenue and profit forecasts, guidance raised or cut"
+      # catch-all: never matched by its description
+      - id: market-news
+        title: Market news
+        description: "General market news that fits no sector or economy-wide thread: index moves, broad rallies and selloffs, market outlook"
+        catch_all: true
     description: >
       Broad stock-market and economic news across all sectors: big moves, earnings,
       sector trends, the Federal Reserve, inflation, jobs data and trade policy.

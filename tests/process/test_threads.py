@@ -8,7 +8,7 @@ import numpy as np
 import pytest
 
 from pipeline.config import load_config
-from pipeline.config.schema import SourceRelevance
+from pipeline.config.schema import FixedThread, SourceRelevance
 from pipeline.models import Item, Thread
 from pipeline.process.embed import HashingEmbedder
 from pipeline.process.threads import (
@@ -20,6 +20,7 @@ from pipeline.process.threads import (
     New,
     Scored,
     Thresholds,
+    catch_all_thread_id,
     decide,
     entities,
     entity_boost,
@@ -373,3 +374,29 @@ def test_predefined_anchor_uses_description_else_title() -> None:
     embedder = RecordingEmbedder()
     predefined_anchors([described], embedder)
     assert embedder.texts == ["Smartphones: iPhone", "Laptops"]
+
+
+def test_route_predefined_falls_back_to_the_catch_all_below_min_match() -> None:
+    anchors = {"m--energy": unit(1, 0), "m--rates": unit(0, 1)}
+    weak = unit(1, 1.2)  # best: rates at ≈ 0.77
+    kw = {"min_match": 0.8, "catch_all": "m--news"}
+    routed = route_predefined(weak, anchors, **kw)
+    assert routed.thread_id == "m--news"
+    assert routed.score == pytest.approx(float(weak @ unit(0, 1)))  # still the best match's score
+    assert route_predefined(unit(0.1, 1), anchors, **kw).thread_id == "m--rates"
+    # Without both settings nothing changes.
+    assert route_predefined(weak, anchors, min_match=0.8).thread_id == "m--rates"
+
+
+def test_catch_all_threads_have_no_anchor() -> None:
+    markets = next(t for t in CFG.topics.topics if t.id == "markets")
+    assert markets.threads is not None
+    with_news = markets.model_copy(
+        update={
+            "min_match": 0.6,
+            "threads": [*markets.threads, FixedThread(id="news", title="News", catch_all=True)],
+        }
+    )
+    assert "markets--news" not in predefined_anchors([with_news], HashingEmbedder())
+    assert catch_all_thread_id(with_news) == "markets--news"
+    assert catch_all_thread_id(markets) is None

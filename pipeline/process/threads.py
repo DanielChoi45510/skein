@@ -13,7 +13,9 @@ Candidates are ranked by score. Then:
 
 Tracker and fixed topics route every item to the nearest predefined thread,
 whose anchor is the embedding of its config `description` (else its title);
-they never create threads.
+they never create threads. A topic with `min_match` sends items whose nearest
+anchor scores below it to its `catch_all` thread instead, so a story that fits
+no thread isn't forced into the least-bad one.
 
 Rescue: an item just below its relevance threshold (within RESCUE_BAND) is kept
 only if its best match is an active thread scoring ≥ high. It never creates a
@@ -277,12 +279,17 @@ def update_centroid(centroid: np.ndarray | None, vector: np.ndarray, n_items: in
 
 
 def predefined_anchors(topics: Iterable[Topic], embedder: Embedder) -> dict[str, np.ndarray]:
-    """Thread id → anchor vector (config description, else title), for tracker / fixed topics."""
+    """Thread id → anchor vector (config description, else title), for tracker / fixed topics.
+
+    Catch-all threads have no anchor: they're never matched, only fallen back to.
+    """
     ids, texts = [], []
     for topic in topics:
         if topic.mode not in PREDEFINED_MODES:
             continue
         for th in topic.threads or []:
+            if th.catch_all:
+                continue
             ids.append(predefined_thread_id(topic.id, th.id))
             texts.append(th.description or th.title)
     if not texts:
@@ -290,8 +297,19 @@ def predefined_anchors(topics: Iterable[Topic], embedder: Embedder) -> dict[str,
     return dict(zip(ids, embedder.embed(texts, "query"), strict=True))
 
 
-def route_predefined(vector: np.ndarray, anchors: Mapping[str, np.ndarray]) -> Attach:
-    """Nearest anchor. Every item attaches; ties go to the thread listed first."""
+def route_predefined(
+    vector: np.ndarray,
+    anchors: Mapping[str, np.ndarray],
+    *,
+    min_match: float | None = None,
+    catch_all: str | None = None,
+) -> Attach:
+    """Nearest anchor; ties go to the thread listed first.
+
+    Every item attaches. With `min_match` and a `catch_all` thread, an item whose
+    nearest anchor scores below `min_match` goes to the catch-all instead (the
+    score kept is still its best anchor's, for reference).
+    """
     best_id, best = "", float("-inf")
     for thread_id, anchor in anchors.items():
         sim = float(np.dot(vector, anchor))
@@ -299,7 +317,15 @@ def route_predefined(vector: np.ndarray, anchors: Mapping[str, np.ndarray]) -> A
             best_id, best = thread_id, sim
     if not best_id:
         raise ValueError("no predefined threads to route to")
+    if min_match is not None and catch_all is not None and best < min_match:
+        return Attach(catch_all, best)
     return Attach(best_id, best)
+
+
+def catch_all_thread_id(topic: Topic) -> str | None:
+    """The topic's catch-all thread id (`predefined_thread_id` form), if it has one."""
+    spec = next((th for th in topic.threads or [] if th.catch_all), None)
+    return predefined_thread_id(topic.id, spec.id) if spec else None
 
 
 # ───────────────────────────── which items are threaded ─────────────────────────────
