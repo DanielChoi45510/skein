@@ -155,3 +155,50 @@ def test_cli_evaluate(tmp_path: Path, capsys) -> None:
     assert "4 labeled pairs: 2 same thread, 2 different" in capsys.readouterr().out
     path.write_text(json.dumps([pairs[0] | {"label": None}]))
     assert main(["evaluate", "--pairs", str(path)]) == 1
+
+
+# ───────────────────────────── joins ─────────────────────────────
+
+
+def test_joins_sample_and_evaluate(tmp_path: Path, capsys) -> None:
+    from pipeline.models import Thread
+    from pipeline.state import THREADS, write_json
+    from pipeline.threadpairs import all_joins, evaluate_joins, sample_joins
+
+    items = {
+        i.id: i
+        for i in [
+            item("a", "Alpha one"),
+            item("b", "Alpha two", thread_score=0.95),
+            item("c", "Alpha three", thread_score=0.85),
+            item("d", "Alpha four", thread_score=0.81),
+        ]
+    }
+    thread = Thread(
+        id="t1", topic_id="world", kind="story", title="Alpha", state="active",
+        created_at=NOW, last_item_at=NOW, item_ids=["a", "b", "c", "d"],
+    )  # fmt: skip
+    sources = {s.id: s for s in CFG.sources.sources}
+    joins = all_joins([thread], items, sources, min_before=2)
+    assert [(j.item.id, j.thread_before) for j in joins] == [
+        ("c", ["Alpha one", "Alpha two"]),
+        ("d", ["Alpha one", "Alpha two", "Alpha three"]),
+    ]
+    assert len(all_joins([thread], items, sources, min_before=1)) == 3
+    capped = sample_joins(joins, 2, ((0.80, 0.90),), per_thread=1)
+    assert len(capped) == 1 and capped[0].item.id in ("c", "d")
+
+    labeled = [{"score": 0.85, "label": True}, {"score": 0.81, "label": False}]
+    m = evaluate_joins(labeled, 0.83)
+    assert (m.tp, m.fp, m.fn, m.tn) == (1, 0, 0, 1)
+
+    save_items(tmp_path / "items", items.values())
+    write_json(tmp_path / THREADS, [thread.model_dump(mode="json")])
+    out = tmp_path / "joins.json"
+    args = ["joins", "--state", str(tmp_path), "--config-dir", str(FIXTURE_CONFIG)]
+    assert main([*args, "--out", str(out)]) == 0
+    assert all(j["label"] is None for j in json.loads(out.read_text()))
+    path = tmp_path / "labeled.json"
+    path.write_text(json.dumps(labeled))
+    assert main(["evaluate-joins", "--joins", str(path)]) == 0
+    assert "2 labeled joins: 1 belong, 1 don't" in capsys.readouterr().out

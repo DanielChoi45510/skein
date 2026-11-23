@@ -4,6 +4,8 @@
                                            [--range LO HI [--step 0.05]] [--exclude earlier.json]
     python -m pipeline.threadpairs routing --state DIR [--per-topic 10]
     python -m pipeline.threadpairs evaluate --pairs tests/fixtures/threading/pairs.json
+    python -m pipeline.threadpairs joins   --state DIR [--n 20] [--range 0.80 0.92] [--out FILE]
+    python -m pipeline.threadpairs evaluate-joins --joins tests/fixtures/threading/joins.json
 
 `pairs` embeds the stored items that would be threaded (visible, in a threaded
 or question topic, passing the relevance threshold) and samples same-topic
@@ -19,6 +21,14 @@ boost. Without the LLM a one-item thread is joined iff score ≥ `fallback`
 (a single candidate always has a clear margin), so that is the cut it tunes.
 It ranks settings by F0.5: a wrong merge muddles a thread, while a missed one
 only leaves an item as its own pending thread, so precision weighs more.
+
+`joins` needs no model either: it reads a state dir after a run and samples
+items that joined an automatic thread which already had `--min-before` items,
+showing the headlines the thread held at that moment. Item-vs-centroid scores
+run higher than item-vs-item ones (a centroid is an average, so more generic),
+so joins to grown threads get their own labeled set and cut. `evaluate-joins`
+grid-searches that cut on the recorded join scores (only raising it can be
+measured: items that scored below the cut used at the run never joined).
 
 `routing` shows, for tracker and fixed topics, which predefined thread each
 sampled item goes to, with the runner-up, to judge whether title anchors work.
@@ -44,12 +54,12 @@ import numpy as np
 from .config import load_config
 from .config.schema import PREDEFINED_MODES, Topic
 from .config.validate import DEFAULT_CONFIG_DIR, Config
-from .models import Item
+from .models import Item, Thread
 from .process.embed import Embedder, HashingEmbedder, SentenceTransformerEmbedder
-from .process.normalize import excluded_by_title
+from .process.normalize import display_title, excluded_by_title
 from .process.relevance import item_text, passes_threshold
 from .process.threads import DEFAULT, Thresholds, entities, entity_boost, predefined_anchors
-from .state import ITEMS_DIR, load_items
+from .state import ITEMS_DIR, THREADS, load_items, read_json
 
 BANDS = ((0.45, 0.55), (0.55, 0.65), (0.65, 0.75), (0.75, 0.85), (0.85, 0.95))
 AUTO_MODES = frozenset({"threaded", "question"})
@@ -289,6 +299,101 @@ def _print_evaluation(pairs: Sequence[Mapping]) -> None:
         )
 
 
+# ───────────────────────────── joins ─────────────────────────────
+
+
+@dataclass(frozen=True)
+class Join:
+    topic_id: str
+    thread_id: str
+    thread_before: list[str]  # the thread's headlines when the item joined, oldest first
+    item: PairSide
+    score: float  # thread_score: cosine with the centroid + entity boost
+    label: bool | None = None  # true = the item belongs in this thread
+
+
+def all_joins(
+    threads: Sequence[Thread],
+    items: Mapping[str, Item],
+    sources: Mapping,
+    min_before: int = 2,
+) -> list[Join]:
+    """Every attach to an automatic thread that already held `min_before` loaded items."""
+    out = []
+    for th in sorted(threads, key=lambda t: t.id):
+        if th.kind not in ("story", "question"):
+            continue
+        for k, item_id in enumerate(th.item_ids):
+            item = items.get(item_id)
+            if k < min_before or item is None or item.thread_score is None:
+                continue
+            before = [display_title(items[i], sources) for i in th.item_ids[:k] if i in items]
+            side = PairSide(item.id, display_title(item, sources), item.source_id,
+                            item.published_at.isoformat())  # fmt: skip
+            out.append(Join(th.topic_id, th.id, before, side, item.thread_score))
+    return out
+
+
+def sample_joins(
+    joins: Sequence[Join],
+    n: int,
+    bands: Sequence[tuple[float, float]],
+    seed: int = 0,
+    per_thread: int = 3,
+) -> list[Join]:
+    """About n/len(bands) joins per band, round-robin over threads, at most `per_thread` each."""
+    rng = random.Random(seed)
+    per_band = max(1, n // len(bands))
+    taken: dict[str, int] = {}
+    picked: list[Join] = []
+    for lo, hi in bands:
+        by_thread: dict[str, list[Join]] = {}
+        for j in joins:
+            if lo <= j.score < hi:
+                by_thread.setdefault(j.thread_id, []).append(j)
+        for group in by_thread.values():
+            rng.shuffle(group)
+        queues = [by_thread[t] for t in sorted(by_thread)]
+        rng.shuffle(queues)
+        band: list[Join] = []
+        while len(band) < per_band and any(queues):
+            for q in queues:
+                if q and len(band) < per_band and taken.get(q[0].thread_id, 0) < per_thread:
+                    j = q.pop(0)
+                    band.append(j)
+                    taken[j.thread_id] = taken.get(j.thread_id, 0) + 1
+                elif q:
+                    q.clear()  # thread used up
+        picked += sorted(band, key=lambda j: j.score)
+    return picked
+
+
+JOIN_CUTS = tuple(round(0.80 + 0.01 * k, 2) for k in range(13))  # 0.80 … 0.92
+
+
+def evaluate_joins(joins: Sequence[Mapping], cut: float) -> Metrics:
+    tp = fp = fn = tn = 0
+    for j in joins:
+        kept = float(j["score"]) >= cut
+        if j["label"]:
+            tp, fn = tp + kept, fn + (not kept)
+        else:
+            fp, tn = fp + kept, tn + (not kept)
+    return Metrics(cut, 0.0, tp, fp, fn, tn)
+
+
+def _print_join_evaluation(joins: Sequence[Mapping]) -> None:
+    yes = sum(1 for j in joins if j["label"])
+    print(f"{len(joins)} labeled joins: {yes} belong, {len(joins) - yes} don't\n")
+    print(f"{'cut':>5}  {'prec':>5} {'recall':>6} {'acc':>5} {'F0.5':>5}  tp fp fn tn")
+    for cut in JOIN_CUTS:
+        m = evaluate_joins(joins, cut)
+        print(
+            f"{m.cut:>5.2f}  {m.precision:>5.2f} {m.recall:>6.2f} {m.accuracy:>5.2f} "
+            f"{m.f05:>5.2f}  {m.tp:>2} {m.fp:>2} {m.fn:>2} {m.tn:>2}"
+        )
+
+
 def _embedder(name: str) -> Embedder:
     return HashingEmbedder() if name == "hashing" else SentenceTransformerEmbedder()
 
@@ -298,6 +403,19 @@ def main(argv: list[str] | None = None) -> int:
     sub = parser.add_subparsers(dest="command", required=True)
     p_eval = sub.add_parser("evaluate")
     p_eval.add_argument("--pairs", type=Path, required=True, help="labeled pairs JSON")
+    p_ej = sub.add_parser("evaluate-joins")
+    p_ej.add_argument("--joins", type=Path, required=True, help="labeled joins JSON")
+    p_j = sub.add_parser("joins")
+    p_j.add_argument("--state", type=Path, required=True)
+    p_j.add_argument("--config-dir", type=Path, default=DEFAULT_CONFIG_DIR)
+    p_j.add_argument("--n", type=int, default=20)
+    p_j.add_argument("--range", nargs=2, type=float, default=[0.80, 0.92], metavar=("LO", "HI"))
+    p_j.add_argument("--step", type=float, default=0.02)
+    p_j.add_argument("--min-before", type=int, default=2)
+    p_j.add_argument("--max-before", type=int, default=None, help="only threads this small")
+    p_j.add_argument("--per-thread", type=int, default=3)
+    p_j.add_argument("--seed", type=int, default=0)
+    p_j.add_argument("--out", type=Path, help="write the sample as JSON")
     for name in ("pairs", "routing"):
         p = sub.add_parser(name)
         p.add_argument("--state", type=Path, required=True)
@@ -328,6 +446,37 @@ def main(argv: list[str] | None = None) -> int:
             print("Every pair needs a true/false label.", file=sys.stderr)
             return 1
         _print_evaluation(pairs)
+        return 0
+
+    if args.command == "evaluate-joins":
+        joins = json.loads(args.joins.read_text())
+        if any(j.get("label") is None for j in joins):
+            print("Every join needs a true/false label.", file=sys.stderr)
+            return 1
+        _print_join_evaluation(joins)
+        return 0
+
+    if args.command == "joins":
+        cfg = load_config(args.config_dir)
+        stored = load_items(args.state / ITEMS_DIR, dt.datetime.now(dt.UTC).date())
+        threads = [Thread.model_validate(t) for t in read_json(args.state / THREADS, [])]
+        sources = {s.id: s for s in cfg.sources.sources}
+        found = all_joins(threads, stored, sources, args.min_before)
+        if args.max_before is not None:
+            found = [j for j in found if len(j.thread_before) <= args.max_before]
+        bands = bands_between(*args.range, args.step)
+        sample = sample_joins(found, args.n, bands, args.seed, args.per_thread)
+        print(
+            f"{len(found)} joins to threads with ≥ {args.min_before} items, {len(sample)} sampled\n"
+        )
+        for n, j in enumerate(sample, 1):
+            print(f"{n:>2}. [{j.topic_id}] score {j.score:.2f}  thread had {len(j.thread_before)}:")
+            for title in j.thread_before[-4:]:
+                print(f"      · {title[:100]}")
+            print(f"    + {j.item.title}  [{j.item.source_id}]")
+        if args.out:
+            args.out.write_text(json.dumps([asdict(j) for j in sample], indent=2) + "\n")
+            print(f"\nWrote {args.out}")
         return 0
 
     cfg = load_config(args.config_dir)
