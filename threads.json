@@ -1,5 +1,17 @@
 [
   {
+    "created_at": "2026-11-23T10:43:53.978530Z",
+    "id": "markets--comms",
+    "item_ids": [
+      "4b55e9ad79027a0a"
+    ],
+    "kind": "fixed",
+    "last_item_at": "2026-11-23T10:30:00Z",
+    "state": "active",
+    "title": "Communication Services",
+    "topic_id": "markets"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "markets--earnings",
     "item_ids": [
@@ -16,10 +28,12 @@
       "75732ecceaaeff84",
       "15c97ac991c48201",
       "065a2811353486ad",
-      "1dc15dc702f1c81b"
+      "1dc15dc702f1c81b",
+      "56aa0bd5222a93c8",
+      "a982dd94ed97e04a"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-23T06:59:00Z",
+    "last_item_at": "2026-11-23T09:52:53Z",
     "state": "active",
     "title": "Major earnings surprises",
     "topic_id": "markets"
@@ -302,12 +316,13 @@
     "item_ids": [
       "6265549d52d9093d",
       "6d91545fde4cf2c0",
-      "69f1cf9d15217f92"
+      "69f1cf9d15217f92",
+      "efcaf0cb2767be5e"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-22T15:46:00Z",
+    "last_item_at": "2026-11-23T10:02:21Z",
     "state": "active",
-    "title": "Elect for Education Freedom",
+    "title": "This Is How the Democrats Win MAHA Voters",
     "topic_id": "us-politics"
   },
   {
@@ -333,6 +348,18 @@
     "state": "pending",
     "title": "Traumatized teens sue school, cops after Doritos bag triggers AI gun alert",
     "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-23T10:43:53.978530Z",
+    "id": "t085cbb26f6e4",
+    "item_ids": [
+      "12a3f41f26459fc5"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T09:47:43Z",
+    "state": "pending",
+    "title": "Denmark to propose mobile phone ban in schools in 2027",
+    "topic_id": "us-politics"
   },
   {
     "created_at": "2026-11-22T09:09:42.410739Z",
@@ -748,6 +775,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-23T10:43:53.978530Z",
+    "id": "t1de2488c3e35",
+    "item_ids": [
+      "9b035508084277d7"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T10:02:56Z",
+    "state": "pending",
+    "title": "How to Prepare for Population Decline and an Emptier World",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-23T01:41:04.329483Z",
     "id": "t1e4fa10e2abf",
     "item_ids": [
@@ -1066,6 +1105,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-23T10:43:53.978530Z",
+    "id": "t30d13ac216df",
+    "item_ids": [
+      "752b1d3d20e3d4a6"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T10:03:20Z",
+    "state": "pending",
+    "title": "They Loved Their Proximity to Trump. They Won’t Like What Comes Next.",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "t314285daee18",
     "item_ids": [
@@ -1089,7 +1140,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-20T10:00:00Z",
-    "state": "active",
+    "state": "cooling",
     "title": "AI · Frontier",
     "topic_id": "ai-news"
   },
@@ -1708,12 +1759,13 @@
     "created_at": "2026-11-22T12:34:08.686149Z",
     "id": "t4ca5d6bb314a",
     "item_ids": [
-      "8c1223663033aeef"
+      "8c1223663033aeef",
+      "d2e12515753be205"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-22T10:01:55Z",
-    "state": "pending",
-    "title": "Republicans Debate Why They Lost the Midterms, and if Trump Is to Blame",
+    "last_item_at": "2026-11-23T09:45:06Z",
+    "state": "active",
+    "title": "Republicans · Debate",
     "topic_id": "us-politics"
   },
   {
@@ -1796,12 +1848,13 @@
     "created_at": "2026-11-23T07:48:38.314750Z",
     "id": "t54985eb194ef",
     "item_ids": [
-      "3d5bd26e53efb1ec"
+      "3d5bd26e53efb1ec",
+      "b3e8eb0f4fd596c8"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-23T00:22:03Z",
-    "state": "pending",
-    "title": "Father and daughter detained by ICE at Seattle airport were traveling to family baptism, lawyer says",
+    "last_item_at": "2026-11-23T01:59:38Z",
+    "state": "active",
+    "title": "Seattle · Airport · ICE",
     "topic_id": "world-news"
   },
   {
@@ -1939,6 +1992,18 @@
     "last_item_at": "2026-11-20T14:28:00Z",
     "state": "pending",
     "title": "The U.S. Is Auctioning Off a Slice of the Pacific Ocean Floor in Push for Minerals",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-23T10:43:53.978530Z",
+    "id": "t5c0c1c7b620b",
+    "item_ids": [
+      "0479a7feea2d659e"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T10:26:17Z",
+    "state": "pending",
+    "title": "They Were Too Old to Enlist, but Not to Fight. Meet the Steppe Wolves of Ukraine.",
     "topic_id": "world-news"
   },
   {
@@ -2839,6 +2904,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-23T10:43:53.978530Z",
+    "id": "t8d2a75b32666",
+    "item_ids": [
+      "629cb1f901264da7"
+    ],
+    "kind": "question",
+    "last_item_at": "2026-11-23T10:00:31Z",
+    "state": "pending",
+    "title": "Eating for Pleasure Doesn’t Need to Stop at the Holidays",
+    "topic_id": "health-wellbeing"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "t8e51bd340404",
     "item_ids": [
@@ -3017,12 +3094,13 @@
       "815741e2d927b6a6",
       "39e6b213e9167030",
       "b29fd3556edb63a7",
-      "3e5e3e24a0f6aa63"
+      "3e5e3e24a0f6aa63",
+      "fc898244b0296dcc"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-22T23:09:00Z",
+    "last_item_at": "2026-11-23T09:59:08Z",
     "state": "active",
-    "title": "Russia · Russian · Ukraine · Bridge",
+    "title": "Ukraine · Strikes · Russian · Bridge",
     "topic_id": "world-news"
   },
   {
@@ -3553,6 +3631,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-23T10:43:53.978530Z",
+    "id": "tb1787dc8cdd5",
+    "item_ids": [
+      "db45b47e1cd89eff"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T10:04:00Z",
+    "state": "pending",
+    "title": "D.N.C. Plans 12 Debates for the 2028 Presidential Primary, Starting in June",
+    "topic_id": "us-politics"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "tb2aafcc0dfc0",
     "item_ids": [
@@ -3898,6 +3988,18 @@
     "topic_id": "us-politics"
   },
   {
+    "created_at": "2026-11-23T10:43:53.978530Z",
+    "id": "tbe12f3bb06de",
+    "item_ids": [
+      "4223b834ee5cf3ec"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T10:02:48Z",
+    "state": "pending",
+    "title": "Colombia Marks 10 Years Since FARC Peace Deal: In Photos",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "tbe7dbb91c658",
     "item_ids": [
@@ -4194,12 +4296,13 @@
     "created_at": "2026-11-23T05:03:30.236987Z",
     "id": "td058a3929035",
     "item_ids": [
-      "1c2727d0dc3d650a"
+      "1c2727d0dc3d650a",
+      "ee4eda51b0ed8379"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-23T05:00:07Z",
-    "state": "pending",
-    "title": "China Fears A.I. Could Give the U.S. an Edge in Nuclear Rivalry",
+    "last_item_at": "2026-11-23T10:01:58Z",
+    "state": "active",
+    "title": "China · A.I",
     "topic_id": "world-news"
   },
   {
@@ -4353,10 +4456,11 @@
     "id": "tdc0eb12c1e4c",
     "item_ids": [
       "a48b5e5df1cd9dc9",
-      "b1f12833e221941f"
+      "b1f12833e221941f",
+      "6d9618f3b48dc4c9"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-21T10:00:00Z",
+    "last_item_at": "2026-11-23T10:02:07Z",
     "state": "active",
     "title": "Electoral · College",
     "topic_id": "us-politics"
