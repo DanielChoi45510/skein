@@ -196,10 +196,11 @@
       "15283700f5d0ad7f",
       "fb7da4942988aa35",
       "ebd61e3c7d0376d9",
-      "9d5053d54dcac672"
+      "9d5053d54dcac672",
+      "c008aff4490fc788"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-23T00:58:00Z",
+    "last_item_at": "2026-11-23T11:55:45Z",
     "state": "active",
     "title": "Materials",
     "topic_id": "markets"
@@ -310,6 +311,18 @@
     "state": "active",
     "title": "Myanmar · Genocide · Ruling · Court",
     "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-23T12:48:37.980822Z",
+    "id": "t05a46b753734",
+    "item_ids": [
+      "febabd52f77169c4"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T12:00:00Z",
+    "state": "pending",
+    "title": "The Right’s Absurd Misreading of Orwell",
+    "topic_id": "us-politics"
   },
   {
     "created_at": "2026-11-22T09:09:42.410739Z",
@@ -589,6 +602,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-23T12:48:37.980822Z",
+    "id": "t118a7efd9f4b",
+    "item_ids": [
+      "d76321c82e0f0e35"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T12:00:00Z",
+    "state": "pending",
+    "title": "Review: The Asus ProArt P16 offers a glimpse of a future powered by local AI",
+    "topic_id": "ai-news"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "t13710d067d3f",
     "item_ids": [
@@ -642,10 +667,11 @@
     "item_ids": [
       "e76d9d98faa1c176",
       "9ad3b6ed337fcbd6",
-      "8a5f41832ca081fe"
+      "8a5f41832ca081fe",
+      "105d8c8463a32652"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-22T18:23:08Z",
+    "last_item_at": "2026-11-23T12:42:03Z",
     "state": "active",
     "title": "Democrats · Clinch · House · Seats",
     "topic_id": "us-politics"
@@ -1094,6 +1120,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-23T12:48:37.980822Z",
+    "id": "t2f6c26bccbc5",
+    "item_ids": [
+      "599ec3a9c12f02c6"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T11:00:00Z",
+    "state": "pending",
+    "title": "Meta Muse can do your Black Friday shopping at Walmart",
+    "topic_id": "ai-news"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "t2fae688d19b3",
     "item_ids": [
@@ -1325,7 +1363,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-20T12:08:04Z",
-    "state": "active",
+    "state": "cooling",
     "title": "Gen · Z-ers · Mayor",
     "topic_id": "world-news"
   },
@@ -2349,6 +2387,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-23T12:48:37.980822Z",
+    "id": "t689785f82b52",
+    "item_ids": [
+      "a162e46c0e68d657"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T11:57:33Z",
+    "state": "pending",
+    "title": "Israeli attacks have turned Gaza into 'toxic wasteland', Oxfam says",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "t6961f88da7a1",
     "item_ids": [
@@ -2703,12 +2753,13 @@
     "created_at": "2026-11-23T01:41:04.329483Z",
     "id": "t7f0fc3a98c77",
     "item_ids": [
-      "76ea1ba212a5a4ff"
+      "76ea1ba212a5a4ff",
+      "61d2bd59f6806ac7"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-23T01:00:00Z",
-    "state": "pending",
-    "title": "Fugitive Criminals Need a New Hideout Since the U.A.E. Started Extraditing Them",
+    "last_item_at": "2026-11-23T12:36:00Z",
+    "state": "active",
+    "title": "The Morning Risk Report: Fugitives Seek New Hideouts as UAE Begins Extraditing",
     "topic_id": "world-news"
   },
   {
@@ -2921,12 +2972,13 @@
     "created_at": "2026-11-22T03:51:06.410293Z",
     "id": "t8adeb5382fb9",
     "item_ids": [
-      "99ec0aa79a389c1e"
+      "99ec0aa79a389c1e",
+      "0232e8fab79b2088"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-21T05:53:09Z",
-    "state": "pending",
-    "title": "Federal Court Halts Pregnant Workers’ Protection Law",
+    "last_item_at": "2026-11-22T19:44:32Z",
+    "state": "active",
+    "title": "Court · Law · Pregnant · Workers",
     "topic_id": "us-politics"
   },
   {
@@ -3157,10 +3209,11 @@
       "39e6b213e9167030",
       "b29fd3556edb63a7",
       "3e5e3e24a0f6aa63",
-      "fc898244b0296dcc"
+      "fc898244b0296dcc",
+      "ac9b4c74ae248913"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-23T09:59:08Z",
+    "last_item_at": "2026-11-23T11:34:10Z",
     "state": "active",
     "title": "Ukraine · Strikes · Russian · Bridge",
     "topic_id": "world-news"
@@ -4467,6 +4520,18 @@
     "topic_id": "health-wellbeing"
   },
   {
+    "created_at": "2026-11-23T12:48:37.980822Z",
+    "id": "td3bb9cc5a81f",
+    "item_ids": [
+      "392e64f8c0231d11"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T11:56:41Z",
+    "state": "pending",
+    "title": "Morocco and Senegal await Afcon final verdict after court case",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-23T11:48:25.998267Z",
     "id": "td509988d8c1c",
     "item_ids": [
@@ -4506,12 +4571,13 @@
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "td826ac167620",
     "item_ids": [
-      "5b3fb3b963d453a9"
+      "5b3fb3b963d453a9",
+      "0af75c32a8c245a9"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-20T16:32:36Z",
-    "state": "pending",
-    "title": "Storms deluging Florida with historic flooding shift further north",
+    "last_item_at": "2026-11-23T12:00:00Z",
+    "state": "active",
+    "title": "How the Blue Wave Missed Florida",
     "topic_id": "world-news"
   },
   {
@@ -4525,6 +4591,18 @@
     "last_item_at": "2026-11-21T16:45:01Z",
     "state": "active",
     "title": "Advice to Democrats: Impeach Trump’s Cabinet",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-23T12:48:37.980822Z",
+    "id": "td9936a2263fa",
+    "item_ids": [
+      "3a97db6e2683ee28"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T12:00:00Z",
+    "state": "pending",
+    "title": "An Ode to Executive Assistants",
     "topic_id": "us-politics"
   },
   {
@@ -5143,7 +5221,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-20T12:30:47Z",
-    "state": "active",
+    "state": "cooling",
     "title": "Gemini · AI",
     "topic_id": "ai-news"
   },
