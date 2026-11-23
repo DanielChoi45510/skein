@@ -113,10 +113,11 @@
       "897937e48e1bd80d",
       "cf91e1d3c3ccce4d",
       "095b1fd1eb2d40a0",
-      "7251c0248171bb3b"
+      "7251c0248171bb3b",
+      "f10c09ecedead20a"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-23T13:13:00Z",
+    "last_item_at": "2026-11-23T14:42:52Z",
     "state": "active",
     "title": "Financials",
     "topic_id": "markets"
@@ -203,10 +204,11 @@
       "9d5053d54dcac672",
       "c008aff4490fc788",
       "a56f071d71c99a96",
-      "e9727474d80efe94"
+      "e9727474d80efe94",
+      "f02b6e5db3612470"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-23T13:07:00Z",
+    "last_item_at": "2026-11-23T14:36:59Z",
     "state": "active",
     "title": "Materials",
     "topic_id": "markets"
@@ -796,6 +798,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-23T14:48:38.783438Z",
+    "id": "t18f2d45d56cc",
+    "item_ids": [
+      "b563e41197993830"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T14:00:00Z",
+    "state": "pending",
+    "title": "The World Emperor of Debt",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-22T20:20:33.012568Z",
     "id": "t1a1597aa278b",
     "item_ids": [
@@ -1148,6 +1162,18 @@
     "state": "pending",
     "title": "Trump administration use of encrypted messaging apps like Signal is scrutinized by House Democrat",
     "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-23T14:48:38.783438Z",
+    "id": "t2ffc24da2339",
+    "item_ids": [
+      "4284f2dd949236ac"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T14:00:09Z",
+    "state": "pending",
+    "title": "US arrears leave chemical weapons watchdog facing budget crisis",
+    "topic_id": "world-news"
   },
   {
     "created_at": "2026-11-22T09:09:42.410739Z",
@@ -2122,12 +2148,13 @@
       "f17097afc77ae539",
       "ee30fe0868592daa",
       "d14d371c9eeeeafb",
-      "fbe62532d644f942"
+      "fbe62532d644f942",
+      "13fda4e36f38058e"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-23T06:33:50Z",
+    "last_item_at": "2026-11-23T14:20:21Z",
     "state": "active",
-    "title": "Deal · Climate · Talks · COP31",
+    "title": "COP31 · Deal · Climate · Talks",
     "topic_id": "world-news"
   },
   {
@@ -2366,6 +2393,18 @@
     "state": "pending",
     "title": "Gerrymandering Worked",
     "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-23T14:48:38.783438Z",
+    "id": "t67ecdca0f3e6",
+    "item_ids": [
+      "9aa4e015d910120b"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T14:00:00Z",
+    "state": "pending",
+    "title": "A New Age of Sail",
+    "topic_id": "world-news"
   },
   {
     "created_at": "2026-11-22T09:09:42.410739Z",
@@ -5333,11 +5372,12 @@
     "id": "tfc446d87b4c9",
     "item_ids": [
       "b0dd6261a508b939",
-      "04b0c59a769f86d3"
+      "04b0c59a769f86d3",
+      "3b38f7127b86a94d"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-17T20:32:55Z",
-    "state": "cooling",
+    "last_item_at": "2026-11-23T14:01:23Z",
+    "state": "active",
     "title": "Jensen · Huang · Nvidia",
     "topic_id": "ai-news"
   },
