@@ -1,7 +1,8 @@
 // Read state, Phase 1: per-topic "last seen" in this browser only (DESIGN §9.2).
 // Owner sync through the Worker arrives in Phase 2.
 
-import type { ExportItem } from './types';
+import { allItems } from './group';
+import type { ExportItem, TopicFeed } from './types';
 
 const KEY = 'skein.lastSeen.v1';
 
@@ -66,6 +67,32 @@ export function latestFirstSeen(items: ExportItem[]): string | undefined {
 	let best: string | undefined;
 	for (const i of items) {
 		if (best === undefined || Date.parse(i.first_seen_at) > Date.parse(best)) best = i.first_seen_at;
+	}
+	return best;
+}
+
+/** How many of these first-seen instants are after `lastSeen` (all of them if never seen). */
+export function newSince(instants: string[], lastSeen: string | undefined): number {
+	if (lastSeen === undefined) return instants.length;
+	const since = Date.parse(lastSeen);
+	return instants.filter((t) => Date.parse(t) > since).length;
+}
+
+/** New shown items in a topic: its single items plus every listed thread's. */
+export function topicNewCount(feed: TopicFeed, lastSeen: string | undefined): number {
+	return (
+		newCount(allItems(feed.days), lastSeen) +
+		feed.threads.reduce((n, t) => n + newSince(t.first_seen, lastSeen), 0)
+	);
+}
+
+/** Newest first_seen_at in a topic, thread items included (what "seen" moves to). */
+export function topicLatestFirstSeen(feed: TopicFeed): string | undefined {
+	let best = latestFirstSeen(allItems(feed.days));
+	for (const t of feed.threads) {
+		if (best === undefined || Date.parse(t.latest_first_seen_at) > Date.parse(best)) {
+			best = t.latest_first_seen_at;
+		}
 	}
 	return best;
 }

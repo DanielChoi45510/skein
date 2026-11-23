@@ -327,6 +327,11 @@ SvelteKit static app, installable PWA, dark mode first, responsive from phone to
 ### 9.1 Views
 - **Home:** topic groups with "N new" counts per topic; ends with "You're all caught up."
 - **Topic:** threads sorted by last update; cooling threads lower; dormant threads grayed and collapsed at the bottom. Flat topics show a ranked list.
+  - **Threaded modes** (threaded, question, tracker, fixed):
+    - Active threads and single items (pending threads and unthreaded items) interleave by last update. Single items over the topic's cap sit behind "+N more single stories".
+    - Cooling threads follow under "Quiet lately". Dormant threads are behind "Show N dormant threads", grayed.
+    - A thread card shows its title, the number of updates, the last update, "N new" since the last visit, and the newest headline, which links out to the article.
+  - **"N new"** for a topic counts its single items and the shown items of its threads.
 - **Thread (catch-up view):** "N updates since <your last visit>", newest first, with a toggle for chronological; primer at the top when applicable; per-day groups with the cap and "+N more".
 - **Item card:** title, source, time, labels and badges (🔒 for `paywall: partial | full`), excerpt. Tap → opens the original article. On an installed PWA, out-of-scope links open in the system's in-app browser sheet; on desktop, a new tab.
 - **Hidden items:** filtered items with their reasons.
