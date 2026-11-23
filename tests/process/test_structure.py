@@ -25,6 +25,8 @@ P = StructureParams(
     link=0.72,
     link_predefined=0.65,
     min_items=3,
+    min_branch_items=1,
+    min_branch_items_predefined=2,
     anchor_day_penalty=0.15,
     related=0.8,
     related_max=5,
@@ -165,3 +167,19 @@ def test_thread_structures_skips_pending_muted_and_hidden_items() -> None:
     out = thread_structures(items, threads, cfg.topics, vectors_for, skip={"t3"})
     assert asked == [["a", "b"]]  # one call; no hidden, pending or muted items
     assert set(out.threads) == {"t1"} and out.threads["t1"].spine == ["a", "b"]
+
+
+def test_predefined_threads_fold_one_item_branches_into_the_spine() -> None:
+    ms = [
+        member("s1", 0, A),
+        member("s2", 1, unit(1, 0.05, 0)),
+        member("s3", 2, unit(1, 0, 0.05)),
+        member("x", 3, C),  # a one-item aside
+        member("b1", 4, B),
+        member("b2", 5, unit(0.05, 1, 0)),
+    ]
+    story = structure(ms, P)
+    assert [b.items for b in story.branches] == [["x"], ["b1", "b2"]]  # story threads unchanged
+    tracker = structure(ms, P, predefined=True)
+    assert tracker.spine == ["s1", "s2", "s3", "x"]  # folded in, time order
+    assert [b.items for b in tracker.branches] == [["b1", "b2"]]

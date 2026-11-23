@@ -278,6 +278,10 @@ Heuristics only; naming branches with the LLM is Phase 3. Code in `pipeline/proc
   - **Spine:** the largest storyline. Ties go to the one spanning the most time (the most continuous), then the one that started first.
   - **Branches:** every other storyline. Each is anchored to the spine item that maximizes `cos(branch centroid, item) − anchor_day_penalty × |days between it and the branch's first item|` (0.15 per day): closest in meaning and time.
   - **No structure:** threads under `min_items` (3) items, or whose largest storyline is a single item, are all spine.
+  - **Folding:** storylines smaller than `min_branch_items` fold into the spine instead of branching.
+    - Story threads: 1, so one-item side developments still branch.
+    - Tracker and fixed threads: `min_branch_items_predefined`, 2. One-item asides there are mostly routing noise, not side stories.
+    - Folded items join the spine in time order and can anchor branches.
 - **Related threads** (the spokes):
   - **Rule:** other listed threads whose centroid (normalized mean of their item vectors) has cosine ≥ `related` (0.80) with this one's, most similar first, at most `related_max` (5). Any topic qualifies.
   - **Exception:** two predefined threads of the same tracker / fixed topic are never related. They're the topic's own categories, already side by side and broadly similar by construction (market sectors scored 0.81–0.86 with one another).

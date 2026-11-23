@@ -10,11 +10,10 @@ Both steps are done and committed on `ui-data` (off `origin/main`). Nothing was 
   - **39 of 51 verified sources provide images.**
 - **Step B, thread structure ✅**
   - Each thread file now carries `structure: {spine, branches[{id, anchor, items}], related[{id, title, topic_id, similarity}]}`, from embedding storylines (average-linkage clustering) and thread-centroid similarity.
-  - Thresholds are config values in `topics.yaml` `defaults.structure`, picked from the real stored data: link 0.72, link_predefined 0.65, anchor_day_penalty 0.15, related 0.80, related_max 5, min_items 3. Documented in DESIGN §6.9.
-  - On real data: 27 of 104 threads have branches, and 47 have related threads. **20 examples are below for review.**
+  - Thresholds are config values in `topics.yaml` `defaults.structure`, picked from the real stored data: link 0.72, link_predefined 0.65, anchor_day_penalty 0.15, related 0.80, related_max 5, min_items 3, min_branch_items 1 / min_branch_items_predefined 2 (added after review). Documented in DESIGN §6.9.
+  - On real data: 23 of 104 threads have branches (40 branches), and 47 have related threads. **20 examples are below for review** (generated before the folding rule; tracker and fixed threads now keep only their 2+ item branches).
 - **Please look at:**
   - The 20 examples (do the spines and branches match your sense of the stories?).
-  - Whether one-item branches should exist in tracker / fixed threads.
   - The initials-tile fallback on cards without images.
   - AP images coming via flipboard's CDN.
 - **Tests:** pytest 475, web vitest 95, svelte-check clean, build OK, validator OK, pre-commit green, before each commit.
@@ -486,3 +485,9 @@ Totals: 104 listed threads; 27 have branches (73 branches, 54 of them single ite
   - Drones, Texts and Diversions: How Mexico Captured a Most Wanted Man
   - Drug Kingpin’s Capture in Mexico Risks Bloody Succession Battle
 - Related: none
+
+## Follow-up (after review): fold one-item branches in tracker / fixed threads
+
+- **The change:** new config `min_branch_items: 1` (story threads unchanged) and `min_branch_items_predefined: 2` (tracker / fixed). Storylines below the minimum fold into the spine (time order) and can anchor branches.
+- **Real data:** branches 73 → 40. All 21 remaining one-item branches are in story threads. Tracker / fixed threads keep only multi-item side stories: Phones 6 → 2, Information Technology 3 → 1, Financials 8 → 2, Energy / Health Care / Materials → 0.
+- **Tests:** pytest 476 (new folding test); validator OK.

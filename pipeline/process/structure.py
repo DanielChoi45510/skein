@@ -14,8 +14,11 @@ through a run of near neighbours.
   measured from the branch's first item.
 - Threads with fewer than `min_items` items, or whose largest storyline is a
   single item (no shared storyline at all), are all spine.
+- Storylines smaller than `min_branch_items` fold into the spine instead of
+  branching.
 - Tracker and fixed threads gather a whole subject, so they use the looser
-  `link_predefined`.
+  `link_predefined` and `min_branch_items_predefined` (one-item asides there
+  are mostly routing noise, not side stories).
 
 **Related threads** (the spokes) are other threads whose centroid (normalized
 mean of their item vectors) has cosine ≥ `related` with this thread's, most
@@ -113,9 +116,13 @@ def structure(
     if len(spine) < 2:
         return Structure(spine=ids, branches=[])
 
+    min_branch = p.min_branch_items_predefined if predefined else p.min_branch_items
+    folded = sorted(
+        spine + [i for g in groups if g is not spine and len(g) < min_branch for i in g]
+    )
     branches = []
     for g in groups:
-        if g is spine:
+        if g is spine or len(g) < min_branch:
             continue
         centroid = vectors[g].mean(axis=0)
         norm = float(np.linalg.norm(centroid)) or 1.0
@@ -125,9 +132,9 @@ def structure(
             days = abs((ordered[s].published_at - start).total_seconds()) / DAY
             return float(vectors[s] @ centroid) - p.anchor_day_penalty * days
 
-        anchor = max(spine, key=lambda s: (score(s), -s))
+        anchor = max(folded, key=lambda s: (score(s), -s))
         branches.append(Branch(anchor=ids[anchor], items=[ids[i] for i in g]))
-    return Structure(spine=[ids[i] for i in spine], branches=branches)
+    return Structure(spine=[ids[i] for i in folded], branches=branches)
 
 
 def centroid(vectors: Sequence[np.ndarray]) -> np.ndarray | None:
