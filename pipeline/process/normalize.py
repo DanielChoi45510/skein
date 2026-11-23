@@ -14,6 +14,10 @@ before the cleanup display cleanly too.
 pattern, e.g. stock-quote pages that a search feed returns as if they were
 news. Stored items are checked again at export and before threading, so adding
 a pattern also hides what the source already delivered.
+
+`title_strip` then removes matching text from a source's titles, e.g. the
+" - Reuters" suffix Google News adds (the card shows the source anyway). The
+export applies it again (`display_title`), for titles stored before.
 """
 
 from __future__ import annotations
@@ -61,6 +65,22 @@ def _compiled(pattern: str) -> re.Pattern[str]:
 def title_excluded(title: str, source: Source) -> bool:
     """Whether the title matches one of the source's `title_exclude` patterns (case-insensitive)."""
     return any(_compiled(p).search(title) for p in source.title_exclude)
+
+
+def strip_title(title: str, source: Source) -> str:
+    """Remove the source's `title_strip` matches; never strips a title down to nothing."""
+    out = title
+    for pattern in source.title_strip:
+        out = _compiled(pattern).sub("", out)
+    out = _WS.sub(" ", out).strip()
+    return out or title
+
+
+def display_title(item: Item, sources: Mapping[str, Source]) -> str:
+    """The title as shown: cleaned, and stripped by the item's own source's rules."""
+    title = clean_title(item.title)
+    source = sources.get(item.source_id)
+    return strip_title(title, source) if source else title
 
 
 def excluded_by_title(item: Item, sources: Mapping[str, Source]) -> bool:
@@ -166,6 +186,7 @@ def normalize(
         title = clean_title(entry.title)
         if not title or title_excluded(title, source):
             continue
+        title = strip_title(title, source)
         published = entry.published.astimezone(dt.UTC) if entry.published else now
         if published > now + FUTURE_TOLERANCE:
             published = now

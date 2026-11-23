@@ -216,6 +216,9 @@ class Source(StrictModel):
     # Regexes (case-insensitive, re.search): entries whose title matches are dropped,
     # and stored ones hidden, e.g. stock-quote pages in a search feed (DESIGN §6.2).
     title_exclude: list[NonEmptyStr] = []
+    # Regexes (case-insensitive) whose matches are removed from titles, e.g. a
+    # " - Reuters" suffix the card already shows as the source. After title_exclude.
+    title_strip: list[NonEmptyStr] = []
     options: dict[str, Any] = {}
 
     @model_validator(mode="after")
@@ -240,11 +243,12 @@ class Source(StrictModel):
                 )
         if self.lean is not None and self.kind not in LEAN_KINDS:
             raise ValueError("`lean` is only allowed with kind reporting, analysis or opinion")
-        for n, pattern in enumerate(self.title_exclude):
-            try:
-                re.compile(pattern)
-            except re.error as e:
-                raise ValueError(f"title_exclude[{n}] is not a valid regex: {e}") from e
+        for key in ("title_exclude", "title_strip"):
+            for n, pattern in enumerate(getattr(self, key)):
+                try:
+                    re.compile(pattern)
+                except re.error as e:
+                    raise ValueError(f"{key}[{n}] is not a valid regex: {e}") from e
         if self.relevance and self.relevance.skip and len(self.topics) != 1:
             raise ValueError("`relevance: {skip: true}` needs exactly one topic to route items to")
         return self

@@ -454,13 +454,14 @@ def test_profile_yaml_syntax_error_never_echoes_line(config_dir: Path) -> None:
     assert SECRET not in out
 
 
-def test_title_exclude_must_be_valid_regex(config_dir: Path) -> None:
+@pytest.mark.parametrize("key", ["title_exclude", "title_strip"])
+def test_title_patterns_must_be_valid_regex(config_dir: Path, key: str) -> None:
     edit(
         config_dir,
         "sources.yaml",
-        lambda d: source(d, "example-world").update(title_exclude=["ok", "(unclosed"]),
+        lambda d: source(d, "example-world").update({key: ["ok", "(unclosed"]}),
     )
-    assert "title_exclude[1] is not a valid regex" in errors_for(config_dir)
+    assert f"{key}[1] is not a valid regex" in errors_for(config_dir)
 
 
 def test_title_exclude_valid(config_dir: Path) -> None:

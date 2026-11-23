@@ -205,6 +205,17 @@ def test_title_exclude_hides_stored_items(tmp_path: Path) -> None:
     assert sorted(i["id"] for d in data["days"] for i in d["items"]) == ["i02", "i03"]
 
 
+def test_stored_titles_are_stripped_on_export(tmp_path: Path) -> None:
+    sources = [
+        s.model_copy(update={"title_strip": [r"\s+-\s+Reuters$"]}) if s.id == "example-world" else s
+        for s in CFG.sources.sources
+    ]
+    cfg = dataclasses.replace(CFG, sources=CFG.sources.model_copy(update={"sources": sources}))
+    run_export(tmp_path, [item(1, title="Deal signed - Reuters")], cfg)
+    data = json.loads((tmp_path / "feed" / "topics" / "world.json").read_text())
+    assert data["days"][0]["items"][0]["title"] == "Deal signed"
+
+
 def test_stored_titles_are_cleaned_on_export(tmp_path: Path) -> None:
     run_export(tmp_path, [item(1, title="<i>Grand Theft Auto VI</i> &amp; time")])
     data = json.loads((tmp_path / "feed" / "topics" / "world.json").read_text())

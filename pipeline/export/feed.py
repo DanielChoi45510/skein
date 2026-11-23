@@ -12,8 +12,9 @@ takes effect on the next run (see process/relevance.py). Only enabled sources
 count, so disabling a source hides its stored items on the next run too.
 Duplicates, items below every carrying source's threshold, items whose title
 every carrying source excludes (`title_exclude`), and items carried only by
-disabled or removed sources are never exported. Titles are cleaned on the way
-out (`clean_title`), so items stored before the cleanup display the same.
+disabled or removed sources are never exported. Titles are cleaned and stripped
+on the way out (`display_title`), so items stored before those rules display
+the same.
 """
 
 from __future__ import annotations
@@ -23,10 +24,10 @@ import logging
 from collections.abc import Iterable, Mapping
 from pathlib import Path
 
-from ..config.schema import Topic, TopicsFile
+from ..config.schema import Source, Topic, TopicsFile
 from ..config.validate import Config
 from ..models import Item, SourceHealth
-from ..process.normalize import clean_title, excluded_by_title
+from ..process.normalize import display_title, excluded_by_title
 from ..process.rank import importance
 from ..process.relevance import passes_threshold
 from ..state import write_text_atomic
@@ -60,6 +61,7 @@ def export_feed(
     # an item shows if any enabled source that carried it would show it.
     enabled = {s.id: s for s in cfg.sources.sources if s.status != "disabled"}
     weights = {s.id: s.weight for s in cfg.sources.sources}
+    all_sources = {s.id: s for s in cfg.sources.sources}  # display rules apply to any source
     enabled_topics = {t for s in enabled.values() for t in s.topics}
     by_topic: dict[str, list[Item]] = {}
     below = no_source = excluded = 0
@@ -81,7 +83,9 @@ def export_feed(
         log.info("%d stored item(s) only from disabled or removed sources, not exported", no_source)
 
     feeds = {
-        t.id: build_topic_feed(t, by_topic.get(t.id, []), cfg.topics, weights, now)
+        t.id: build_topic_feed(
+            t, by_topic.get(t.id, []), cfg.topics, weights, now, sources=all_sources
+        )
         for t in cfg.topics.topics
     }
     index = FeedIndex(
@@ -129,6 +133,8 @@ def build_topic_feed(
     topics: TopicsFile,
     weights: Mapping[str, float],
     now: dt.datetime,
+    *,
+    sources: Mapping[str, Source] | None = None,
 ) -> TopicFeed:
     lookback = topic.lookback_days or topics.defaults.lookback_days
     oldest = now - dt.timedelta(days=lookback)
@@ -146,7 +152,7 @@ def build_topic_feed(
         days.setdefault(item.published_at.astimezone(dt.UTC).date(), []).append(
             ExportItem(
                 id=item.id,
-                title=clean_title(item.title),
+                title=display_title(item, sources or {}),
                 url=item.url,
                 source_id=item.source_id,
                 published_at=item.published_at,

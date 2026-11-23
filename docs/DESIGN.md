@@ -62,6 +62,7 @@ type Source = {
   excerpt: boolean;                         // default true; false drops the feed's description (boilerplate feeds)
   relevance?: { threshold: number } | { skip: true };  // §6.4
   title_exclude?: string[];                 // regexes (case-insensitive): matching titles are dropped / hidden (§6.2)
+  title_strip?: string[];                   // regexes (case-insensitive): matching text is removed from titles (§6.2)
   options?: Record<string, unknown>;        // e.g. reddit min_score; region (§8.4); Phase 4 type settings
 };
 
@@ -156,6 +157,7 @@ fetch → normalize → dedupe → embed → relevance → classify/filter → a
 Canonicalize URLs (strip tracking params), parse dates to UTC, trim the excerpt to ≤300 chars, and drop items older than the topic's lookback window.
 - **Titles** are cleaned: inline formatting tags (`<i>`, `<em>`, `<b>`, `<a>`, `<span>` …) are removed and entities decoded, because some feeds double-encode markup. Other angle-bracket text stays: a literal "<canvas>" in a headline is text. The export cleans titles again, so items stored before this rule display the same.
 - **`title_exclude`** (per source, `sources.yaml`): entries whose cleaned title matches any pattern are dropped. Stored items are checked again at export and before threading, so a new pattern also hides what the source already delivered. An item stays if another source that carried it doesn't exclude it (as with thresholds, §6.4). First use: the Reuters markets search feed returns stock-quote pages ("Nutrien Ltd (NTR.TO) | Stock Price & Latest News - Reuters"): 94 of its first 96 items (2026-11-22).
+- **`title_strip`** (per source): matching text is then removed from the title, e.g. the " - Reuters" that Google News appends; the card already shows the source. It runs after `title_exclude`, so exclude patterns see the title as sent. It never strips a title to nothing, and the export applies it again for titles stored before.
 
 ### 6.3 Dedupe
 1. Exact: canonical URL hash (tracking params like `utm_*`, `smid`, `fbclid` stripped; fragment dropped; params sorted). A second source adds itself to `also_covered_by`; a strictly higher-weight source takes the item over.
@@ -214,7 +216,7 @@ Write the static JSON the site reads (`feed/index.json`, `feed/topics/<id>.json`
 
 The contract is `pipeline/export/models.py` (`schema_version` 1):
 - `feed/index.json`: `generated_at`; groups → topics `{id, name, mode, has_sources, visible_count, collapsed_count, latest_first_seen_at}`; sources `{id, name, type, status, lean, kind, paywall}`.
-- `feed/topics/<id>.json` (Phase 1: every topic as a flat ranked list): items within the topic's lookback, grouped by UTC day of publication (newest first), ranked by importance; each item `{id, title, url, source_id, published_at, first_seen_at, excerpt, importance, also_covered_by, collapsed}`. Hidden items are never exported, and neither are items whose title every carrying source excludes (`title_exclude`, §6.2), nor items carried only by disabled or removed sources: disabling a source hides its stored items on the next run. Titles are exported cleaned (§6.2).
+- `feed/topics/<id>.json` (Phase 1: every topic as a flat ranked list): items within the topic's lookback, grouped by UTC day of publication (newest first), ranked by importance; each item `{id, title, url, source_id, published_at, first_seen_at, excerpt, importance, also_covered_by, collapsed}`. Hidden items are never exported, and neither are items whose title every carrying source excludes (`title_exclude`, §6.2), nor items carried only by disabled or removed sources: disabling a source hides its stored items on the next run. Titles are exported cleaned and stripped by their own source's `title_strip` (§6.2).
 - Days are UTC in the export; the frontend regroups items by the viewer's local day for display. Per-day caps still count UTC days, so a local day can show slightly more than one day's cap.
 - Phase 1 caps: `max_per_day` per day; `max_per_week` / `target_per_week` over the trailing 7 days, `max_per_month` over 30; otherwise `defaults.daily_cap_per_thread` per day. Over-cap items are exported with `collapsed: true`.
 
