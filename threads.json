@@ -12,6 +12,18 @@
     "topic_id": "markets"
   },
   {
+    "created_at": "2026-11-23T11:48:25.998267Z",
+    "id": "markets--discretionary",
+    "item_ids": [
+      "6ebe73ccea0316a3"
+    ],
+    "kind": "fixed",
+    "last_item_at": "2026-11-23T11:25:00Z",
+    "state": "active",
+    "title": "Consumer Discretionary",
+    "topic_id": "markets"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "markets--earnings",
     "item_ids": [
@@ -30,10 +42,11 @@
       "065a2811353486ad",
       "1dc15dc702f1c81b",
       "56aa0bd5222a93c8",
-      "a982dd94ed97e04a"
+      "a982dd94ed97e04a",
+      "95c927307cd733b7"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-23T09:52:53Z",
+    "last_item_at": "2026-11-23T11:04:36Z",
     "state": "active",
     "title": "Major earnings surprises",
     "topic_id": "markets"
@@ -433,7 +446,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-20T11:00:14Z",
-    "state": "active",
+    "state": "cooling",
     "title": "‘It Feels Corrupt Because It Likely Is’",
     "topic_id": "us-politics"
   },
@@ -1684,6 +1697,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-23T11:48:25.998267Z",
+    "id": "t48fdbfd9f882",
+    "item_ids": [
+      "5e037567ddb31d3d"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T11:26:12Z",
+    "state": "pending",
+    "title": "Flights grounded in Belgium due to strike against austerity measures",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-23T01:41:04.329483Z",
     "id": "t49defd2d5d61",
     "item_ids": [
@@ -1711,12 +1736,13 @@
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "t4a60303e4833",
     "item_ids": [
-      "337053657e172022"
+      "337053657e172022",
+      "ce6cc86b7e43ccb1"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-18T20:12:00Z",
-    "state": "pending",
-    "title": "The West Leaves Free Speech Behind",
+    "last_item_at": "2026-11-23T11:00:00Z",
+    "state": "active",
+    "title": "Free · Speech",
     "topic_id": "world-news"
   },
   {
@@ -1818,6 +1844,18 @@
     "state": "pending",
     "title": "Is Mexico Stepping Up in the War on Drugs?",
     "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-23T11:48:25.998267Z",
+    "id": "t4f494769778b",
+    "item_ids": [
+      "1ca2582dbb264ad8"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T10:33:43Z",
+    "state": "pending",
+    "title": "Australia to treat AI as key foreign policy challenge",
+    "topic_id": "us-politics"
   },
   {
     "created_at": "2026-11-22T09:09:42.410739Z",
@@ -2072,6 +2110,18 @@
     "state": "cooling",
     "title": "Le Groupe Figaro and OpenAI partner to bring Le Figaro journalism to ChatGPT",
     "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-23T11:48:25.998267Z",
+    "id": "t5d777a6c79e2",
+    "item_ids": [
+      "90c0b230ac98deff"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T11:38:55Z",
+    "state": "pending",
+    "title": "Search and rescue teams race against time after Nigeria boat tragedy",
+    "topic_id": "world-news"
   },
   {
     "created_at": "2026-11-22T09:09:42.410739Z",
@@ -2660,6 +2710,18 @@
     "state": "pending",
     "title": "Fugitive Criminals Need a New Hideout Since the U.A.E. Started Extraditing Them",
     "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-23T11:48:25.998267Z",
+    "id": "t7f38beb36cde",
+    "item_ids": [
+      "395722564b055081"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T11:04:20Z",
+    "state": "pending",
+    "title": "After decades, Texas Democrats have political capital. This is how they plan to spend it",
+    "topic_id": "us-politics"
   },
   {
     "created_at": "2026-11-22T09:09:42.410739Z",
@@ -3323,6 +3385,18 @@
     "topic_id": "us-politics"
   },
   {
+    "created_at": "2026-11-23T11:48:25.998267Z",
+    "id": "ta4564fe19653",
+    "item_ids": [
+      "a2917b1ca998cf04"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T11:00:00Z",
+    "state": "pending",
+    "title": "Hakeem Jeffries’s Reckless Medicare Expansion",
+    "topic_id": "us-politics"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "ta48e8227e673",
     "item_ids": [
@@ -3366,12 +3440,25 @@
       "e04fe2e77b1532dc",
       "349acfab2f31b18c",
       "1f3fed02a0c96e9a",
-      "fea8a8674624f72e"
+      "fea8a8674624f72e",
+      "4f65d63f78466896"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-23T00:05:50Z",
+    "last_item_at": "2026-11-23T11:03:59Z",
     "state": "active",
-    "title": "Jensen · Alice · Huang · Nvidia",
+    "title": "Jensen · Nvidia · China · Huang",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-23T11:48:25.998267Z",
+    "id": "ta5e30c41924b",
+    "item_ids": [
+      "3eb9388870fbfef8"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T11:00:00Z",
+    "state": "pending",
+    "title": "It Takes a Family",
     "topic_id": "us-politics"
   },
   {
@@ -3655,10 +3742,11 @@
       "c726200f0d4f418f",
       "10d8e4311cc852dc",
       "005ab5a941284f6b",
-      "7b117f0fbba33258"
+      "7b117f0fbba33258",
+      "bcfdecf2d6eb951f"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-22T16:46:00Z",
+    "last_item_at": "2026-11-23T11:00:00Z",
     "state": "active",
     "title": "China · Nvidia · Xi · Scandal",
     "topic_id": "world-news"
@@ -4379,6 +4467,18 @@
     "topic_id": "health-wellbeing"
   },
   {
+    "created_at": "2026-11-23T11:48:25.998267Z",
+    "id": "td509988d8c1c",
+    "item_ids": [
+      "51e3c7b1c0aabd86"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T10:43:19Z",
+    "state": "pending",
+    "title": "Hundreds of German schools received bomb threats, Bild reports",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "td61646383e6a",
     "item_ids": [
@@ -5060,6 +5160,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-23T11:48:25.998267Z",
+    "id": "tf9c868ecef4d",
+    "item_ids": [
+      "c2d4de7304adb4f6"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T11:29:03Z",
+    "state": "pending",
+    "title": "Donald Trump’s Lame-Duck Foreign Policy",
+    "topic_id": "us-politics"
+  },
+  {
     "created_at": "2026-11-23T01:41:04.329483Z",
     "id": "tfa2b1a09598f",
     "item_ids": [
@@ -5099,12 +5211,13 @@
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "tfb5c07223fc4",
     "item_ids": [
-      "2754e8dedc36cf5a"
+      "2754e8dedc36cf5a",
+      "c0b0a2ffe7d4fabe"
     ],
     "kind": "question",
-    "last_item_at": "2026-11-22T09:09:42.410739Z",
-    "state": "pending",
-    "title": "What are the effects of medicines to increase the body's production of white blood cells (granulopoiesis-stimulating factors) for preventing treatment-related complications in people with solid tumors?",
+    "last_item_at": "2026-11-23T11:48:25.998267Z",
+    "state": "active",
+    "title": "Blood · People",
     "topic_id": "health-wellbeing"
   },
   {
