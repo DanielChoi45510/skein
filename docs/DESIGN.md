@@ -379,7 +379,7 @@ Code: `worker/` (TypeScript, `wrangler.toml`, one KV namespace bound as `SKEIN`)
 | `POST /refresh` | owner | GitHub `workflow_dispatch` for the pipeline, 5-minute cooldown | 2b.3 |
 | `GET /overrides` | owner, pipeline | Thread overrides; the pipeline reads them at the start of each run | 2b.4 |
 | `POST /overrides` | owner | One override action (rename, pin, unpin, mute, unmute, merge, split, move) | 2b.4 |
-| cron (hourly) | — | Backup trigger: dispatches the pipeline if no run started in the last ~70 min | 2b.3 |
+| cron (hourly, :47) | — | Backup trigger: dispatches the pipeline if no run is active and none started in the last 50 min | 2b.3 |
 
 - **Tokens** (bearer, long random strings, Worker secrets):
   - `OWNER_TOKEN` can do everything.
@@ -401,6 +401,16 @@ Code: `worker/` (TypeScript, `wrangler.toml`, one KV namespace bound as `SKEIN`)
   - **Pruning:** entries older than 90 days are dropped.
   - **Writes:** KV is written only when something changed.
   - **Races:** two simultaneous PUTs from different devices can race (KV is last-write-wins); the losing device's entries return with its next PUT, since clients send their whole state.
+- **Refresh** (`POST /refresh`):
+  - Calls `workflow_dispatch` for `GITHUB_WORKFLOW` on `GITHUB_REF` and returns 202 `{dispatched_at, next_allowed_at}`.
+  - **Cooldown:** 5 minutes (KV `refresh:last`); within it, 429 with `retry-after`.
+  - **GitHub errors:** 502 with GitHub's status only.
+  - **No GitHub settings:** 503.
+- **Backup cron** (`src/cron.ts`, `[triggers]` in `wrangler.toml`): GitHub's `schedule` trigger can be late or skipped, so at :47 the Worker lists the workflow's recent runs. It dispatches only if none is queued or running and none started in the last 50 minutes.
+  - Why 50 and not 60+: the Worker's own dispatch an hour earlier must not count as recent, or it would skip every other hour.
+  - A GitHub-scheduled run at :17 is 30 minutes old at :47, so the backup stays quiet while GitHub's schedule works.
+  - If GitHub can't list runs, it does nothing (never dispatches blind).
+- **GitHub token:** a fine-grained personal access token for this repository only, with **Actions: read and write** (dispatch and list runs). Nothing else.
 - **Errors:** `{"error": {"code", "message"}}` with an HTTP status. Responses are never cached (`cache-control: no-store`), and internals are never echoed.
 - **Per-deployment settings** are not committed, so the repo carries no account details:
   - `ALLOWED_ORIGINS` (the Pages origin) and `GITHUB_REPO` (`owner/name`) are set like secrets: `npx wrangler secret put <NAME>`.

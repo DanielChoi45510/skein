@@ -29,3 +29,10 @@ export function call(path: string, o: CallOptions = {}): Promise<Response> {
 	}
 	return SELF.fetch(`https://worker.test${path}`, { method: o.method ?? 'GET', headers, body });
 }
+
+/** Clear the test KV namespace: storage is shared between tests in a file. */
+export async function resetKv(): Promise<void> {
+	const { env } = await import('cloudflare:test');
+	const { keys } = await env.SKEIN.list();
+	await Promise.all(keys.map((k) => env.SKEIN.delete(k.name)));
+}

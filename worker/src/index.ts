@@ -10,7 +10,9 @@ import { authenticate, type Role } from './auth';
 import type { Env } from './env';
 import { corsHeaders, empty, error, withCors } from './http';
 import { AUTH_FAILURE_LIMIT, FixedWindow, REQUEST_LIMIT } from './limiter';
+import { backupTrigger } from './cron';
 import { getReadState, putReadState } from './readState';
+import { postRefresh } from './refresh';
 
 export interface Context {
 	request: Request;
@@ -30,7 +32,8 @@ export const routes: Route[] = [
 	// Lets the Settings screen check a pasted token without side effects.
 	{ method: 'GET', path: '/auth', roles: ['owner'], handler: () => empty(204) },
 	{ method: 'GET', path: '/read-state', roles: ['owner'], handler: getReadState },
-	{ method: 'PUT', path: '/read-state', roles: ['owner'], handler: putReadState }
+	{ method: 'PUT', path: '/read-state', roles: ['owner'], handler: putReadState },
+	{ method: 'POST', path: '/refresh', roles: ['owner'], handler: postRefresh }
 ];
 
 // Per Worker instance (see limiter.ts).
@@ -86,5 +89,11 @@ export default {
 			console.error('unhandled error', e instanceof Error ? e.name : typeof e);
 			return withCors(error(500, 'internal', 'Something went wrong.'), cors);
 		}
+	},
+
+	async scheduled(_controller: ScheduledController, env: Env, ctx: ExecutionContext): Promise<void> {
+		ctx.waitUntil(
+			backupTrigger(env).then((decision) => console.log('backup trigger:', decision))
+		);
 	}
 } satisfies ExportedHandler<Env>;

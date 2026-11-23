@@ -20,6 +20,11 @@ GITHUB_REF = "main"
 binding = "SKEIN"
 id = "REPLACE_WITH_KV_NAMESPACE_ID"
 
+# Backup trigger for the pipeline (src/cron.ts): dispatches only if no run started
+# in the last 50 min. Free plans allow up to 5 cron triggers.
+[triggers]
+crons = ["47 * * * *"]
+
 # Optional, if your plan includes it: Cloudflare's rate-limiting binding replaces the
 # built-in per-instance limiter for the per-IP request limit.
 # [[ratelimits]]

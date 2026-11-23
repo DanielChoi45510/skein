@@ -1,7 +1,9 @@
 import { env } from 'cloudflare:test';
-import { describe, expect, it } from 'vitest';
+import { beforeEach, describe, expect, it } from 'vitest';
 import { KEY, MAX_ENTRIES, merge, parse, PRUNE_AFTER_DAYS, type ReadState } from '../src/readState';
-import { call, OWNER, PIPELINE } from './helpers';
+import { call, OWNER, PIPELINE, resetKv } from './helpers';
+
+beforeEach(resetKv);
 
 const DAY = 24 * 3600 * 1000;
 const NOW = Date.parse('2026-11-23T12:00:00Z');
