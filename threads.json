@@ -15,10 +15,11 @@
       "00ca701528f4cfd2",
       "75732ecceaaeff84",
       "15c97ac991c48201",
-      "065a2811353486ad"
+      "065a2811353486ad",
+      "1dc15dc702f1c81b"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-23T01:44:00Z",
+    "last_item_at": "2026-11-23T06:59:00Z",
     "state": "active",
     "title": "Major earnings surprises",
     "topic_id": "markets"
@@ -1763,6 +1764,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-23T07:48:38.314750Z",
+    "id": "t54985eb194ef",
+    "item_ids": [
+      "3d5bd26e53efb1ec"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T00:22:03Z",
+    "state": "pending",
+    "title": "Father and daughter detained by ICE at Seattle airport were traveling to family baptism, lawyer says",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "t54a05801dcd7",
     "item_ids": [
@@ -1811,6 +1824,18 @@
     "last_item_at": "2026-11-20T12:11:00Z",
     "state": "pending",
     "title": "U.S. Has Floated NATO Membership for Ukraine in Recent Meetings",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-23T07:48:38.314750Z",
+    "id": "t581c45a8445f",
+    "item_ids": [
+      "01a29e2182894c99"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T17:39:00Z",
+    "state": "pending",
+    "title": "Why AI fakes are spreading after Saudi skyscraper attack",
     "topic_id": "world-news"
   },
   {
@@ -1905,10 +1930,12 @@
       "58e0886c7b20ef8c",
       "b60ea2405000155d",
       "ca280e82c6b6ff3d",
-      "f17097afc77ae539"
+      "f17097afc77ae539",
+      "ee30fe0868592daa",
+      "d14d371c9eeeeafb"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-22T18:57:24Z",
+    "last_item_at": "2026-11-22T20:12:18Z",
     "state": "active",
     "title": "Deal · COP31 · Climate · Talks",
     "topic_id": "world-news"
@@ -2272,6 +2299,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-23T07:48:38.314750Z",
+    "id": "t703bf2bc9dca",
+    "item_ids": [
+      "3ffa0edc993086ee"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T06:42:00Z",
+    "state": "pending",
+    "title": "South Korea nominates new foreign, unification ministers, spy chief",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "t717dcd042f2c",
     "item_ids": [
@@ -2294,6 +2333,18 @@
     "state": "pending",
     "title": "The Good List: 6 Things to Bring Some Delight to Your Day",
     "topic_id": "health-sleep"
+  },
+  {
+    "created_at": "2026-11-23T07:48:38.314750Z",
+    "id": "t730459894953",
+    "item_ids": [
+      "2e48cf3c4820b3bd"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-22T12:00:08Z",
+    "state": "pending",
+    "title": "Scientists are fighting for their halted funds. Trust of Black communities may be harder to win back",
+    "topic_id": "world-news"
   },
   {
     "created_at": "2026-11-22T09:09:42.410739Z",
@@ -2884,7 +2935,10 @@
       "fa30b29d765c8b1e",
       "a1692a690c033874",
       "4c785d2ff42dcc85",
-      "815741e2d927b6a6"
+      "815741e2d927b6a6",
+      "39e6b213e9167030",
+      "b29fd3556edb63a7",
+      "3e5e3e24a0f6aa63"
     ],
     "kind": "story",
     "last_item_at": "2026-11-22T23:09:00Z",
@@ -2992,12 +3046,13 @@
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "t9c933057dc87",
     "item_ids": [
-      "155963e08c1f5cb2"
+      "155963e08c1f5cb2",
+      "f032c85c111132c9"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-21T12:40:21Z",
-    "state": "pending",
-    "title": "How a GOP redistricting 'dummymander' in North Carolina backfired by 2 seats",
+    "last_item_at": "2026-11-22T18:26:06Z",
+    "state": "active",
+    "title": "North · Carolina",
     "topic_id": "us-politics"
   },
   {
@@ -3022,7 +3077,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-20T07:12:24Z",
-    "state": "active",
+    "state": "cooling",
     "title": "Anthropic · Initial · Public · Offering",
     "topic_id": "ai-news"
   },
@@ -3776,6 +3831,18 @@
     "topic_id": "ai-news"
   },
   {
+    "created_at": "2026-11-23T07:48:38.314750Z",
+    "id": "tc0220c4baa28",
+    "item_ids": [
+      "5f1323b26b89e393"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-22T19:00:32Z",
+    "state": "pending",
+    "title": "Big Ten takes a beating, no teams in AP top 5 for 1st time since 2021 as Georgia, Utah hold steady",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "tc088d1fb61c5",
     "item_ids": [
@@ -4459,6 +4526,18 @@
     "topic_id": "us-politics"
   },
   {
+    "created_at": "2026-11-23T07:48:38.314750Z",
+    "id": "tef48bbe0f75c",
+    "item_ids": [
+      "c9018cc92d3f9b03"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-21T16:12:31Z",
+    "state": "pending",
+    "title": "Hormuz swim highlights environmental cost of war",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "tef67c91c4fc5",
     "item_ids": [
@@ -4748,6 +4827,18 @@
     "state": "active",
     "title": "Gemini · AI",
     "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-23T07:48:38.314750Z",
+    "id": "tf90a5515ef57",
+    "item_ids": [
+      "ada79bd745dee2bb"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T01:23:04Z",
+    "state": "pending",
+    "title": "More remains recovered in the search for 34 workers missing after an Indonesian candy factory fire",
+    "topic_id": "world-news"
   },
   {
     "created_at": "2026-11-23T01:41:04.329483Z",

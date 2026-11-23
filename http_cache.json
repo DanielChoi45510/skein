@@ -1,7 +1,7 @@
 {
   "https://9to5mac.com/feed/": {
-    "etag": "W/\"80c6a930362d39f7f56ba3e5130bec10\"",
-    "last_modified": "Mon, 23 Nov 2026 02:19:43 GMT"
+    "etag": "W/\"7cfb928f1468bbdbe2f43ff08d5be136\"",
+    "last_modified": "Mon, 23 Nov 2026 07:43:49 GMT"
   },
   "https://antigravity.google/blog/rss.xml": {
     "etag": null,
@@ -12,19 +12,19 @@
     "last_modified": "Mon, 23 Nov 2026 03:25:21 GMT"
   },
   "https://deepmind.google/blog/rss.xml": {
-    "etag": "\"tyctBA\"",
+    "etag": "\"bs9AHg\"",
     "last_modified": null
   },
   "https://feeds.content.dowjones.io/public/rss/RSSMarketsMain": {
-    "etag": "W/\"9f48-yA+/a+1SgArSe0CZGgzDTc8/Pug\"",
+    "etag": "W/\"9f9f-cC0PRb4tZn9FkFx8TS/6UVQDv14\"",
     "last_modified": null
   },
   "https://feeds.content.dowjones.io/public/rss/RSSOpinion": {
-    "etag": "W/\"f903-X7DNQSmNKbcP9dpQu/WlMkaHmGQ\"",
+    "etag": "W/\"f903-1ZdaIO4cy7K9JShLhxU+ABKKO7Q\"",
     "last_modified": null
   },
   "https://feeds.content.dowjones.io/public/rss/RSSWorldNews": {
-    "etag": "W/\"c623-B+i2K5sr+myUL/vuL86BkYBFqcU\"",
+    "etag": "W/\"c623-vNoMTcnnJOYBmAMmZRFei8txeIg\"",
     "last_modified": null
   },
   "https://fivebooks.com/feed/": {
@@ -32,11 +32,11 @@
     "last_modified": "Sun, 22 Nov 2026 23:06:03 GMT"
   },
   "https://flipboard.com/@associatedpress/top-stories-u7govdf1z.rss": {
-    "etag": "W/\"b639-WeHmPBGXddhL0ud+m2Ucvu1r7XY\"",
+    "etag": "W/\"ad74-wMPHwds5Up3G9IlJ6QeF3ZBKCYA\"",
     "last_modified": null
   },
   "https://flipboard.com/@associatedpress/u.s.-news-lhl4uphvz.rss": {
-    "etag": "W/\"b431-q3Pmygd3a81I/N0OMV2LrQ9ZLQw\"",
+    "etag": "W/\"b437-zfk8PxivOcsNz2OQEp8mclIpRUE\"",
     "last_modified": null
   },
   "https://hnrss.org/frontpage?points=200": {
@@ -45,10 +45,10 @@
   },
   "https://latent.space/feeds/news.xml": {
     "etag": null,
-    "last_modified": "Mon, 23 Nov 2026 06:46:26 GMT"
+    "last_modified": "Mon, 23 Nov 2026 07:44:49 GMT"
   },
   "https://newsletter.pragmaticengineer.com/feed": {
-    "etag": "W/\"a212e-skeqzDhhvX3JJiugI4tswnyTKwg\"",
+    "etag": "W/\"a212e-lXpRR7o3u6Mfago00LagyAXF/bU\"",
     "last_modified": null
   },
   "https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_anthropic_news.xml": {
@@ -89,10 +89,10 @@
   },
   "https://www.notebookcheck.net/RSS-Feed-Notebook-Reviews.8156.0.html": {
     "etag": null,
-    "last_modified": "Mon, 23 Nov 2026 06:48:47 GMT"
+    "last_modified": "Mon, 23 Nov 2026 07:48:43 GMT"
   },
   "https://www.oneusefulthing.org/feed": {
-    "etag": "W/\"e0f01-OssaCraky1BWy/VCArn7m3LCu64\"",
+    "etag": "W/\"e0f01-6KiuYPVp4fRAZDnzqqza/Gcjmh0\"",
     "last_modified": null
   },
   "https://www.rtings.com/latest-rss.xml": {
