@@ -333,6 +333,9 @@ SvelteKit static app, installable PWA, dark mode first, responsive from phone to
     - A thread card shows its title, the number of updates, the last update, "N new" since the last visit, and the newest headline, which links out to the article.
   - **"N new"** for a topic counts its single items and the shown items of its threads.
 - **Thread (catch-up view):** "N updates since <your last visit>", newest first, with a toggle for chronological; primer at the top when applicable; per-day groups with the cap and "+N more".
+  - Since Phase 2a: "First visit · N updates" when never opened.
+  - "Newest first" / "Oldest first" orders days and the items within them by time. The export's per-thread cap still decides what sits behind "+N more".
+  - The chosen order is remembered per browser.
 - **Item card:** title, source, time, labels and badges (🔒 for `paywall: partial | full`), excerpt. Tap → opens the original article. On an installed PWA, out-of-scope links open in the system's in-app browser sheet; on desktop, a new tab.
 - **Hidden items:** filtered items with their reasons.
 - **Sources:** per-source health and usefulness (§9.4).
@@ -342,6 +345,11 @@ SvelteKit static app, installable PWA, dark mode first, responsive from phone to
 - Everyone sees the same public, read-only site.
 - With the owner token present, read state syncs through the Worker, and owner controls appear: refresh now, mute, pin, rename, merge, split, move item.
 - Visitors' read marks stay in their own browser only and affect nothing.
+- **Phase 2a read state** (`web/src/lib/readState.ts`, localStorage, this browser only) has two stores:
+  - **Per topic:** opening a topic marks everything in it seen, its threads' items included. This drives the home page's "N new".
+  - **Per thread:** opening a thread marks it seen.
+  - **Seeding:** when a topic page loads, threads never opened inherit the topic's previous visit. So a thread card's "N new" and the thread page's "N updates since your last visit" agree.
+  - Phase 2b syncs both through the Worker.
 
 ### 9.3 Refresh
 The app re-fetches the feed JSON every few minutes while open. "Refresh now" (owner) → Worker → GitHub `workflow_dispatch` → about a minute later the new feed appears.

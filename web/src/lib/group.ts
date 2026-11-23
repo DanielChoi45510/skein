@@ -33,3 +33,23 @@ export function groupByLocalDay(days: Day[], timeZone?: string): LocalDay[] {
 export function allItems(days: Day[]): ExportItem[] {
 	return days.flatMap((d) => d.items);
 }
+
+export type Order = 'newest' | 'chronological';
+
+/**
+ * A thread's local days in time order (the catch-up view): newest first, or
+ * oldest first to read the story as it unfolded. Which items are shown and
+ * which sit behind "+N more" doesn't change: the export's cap decides that.
+ */
+export function inTimeOrder(days: LocalDay[], order: Order): LocalDay[] {
+	const sign = order === 'newest' ? -1 : 1;
+	const byTime = (a: ExportItem, b: ExportItem) =>
+		sign * (Date.parse(a.published_at) - Date.parse(b.published_at)) ||
+		(a.id < b.id ? -1 : a.id > b.id ? 1 : 0);
+	const ordered = days.map((d) => ({
+		key: d.key,
+		shown: [...d.shown].sort(byTime),
+		more: [...d.more].sort(byTime)
+	}));
+	return order === 'newest' ? ordered : ordered.reverse();
+}

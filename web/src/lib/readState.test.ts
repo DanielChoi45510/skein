@@ -3,9 +3,12 @@ import {
 	isNew,
 	latestFirstSeen,
 	loadLastSeen,
+	loadThreadSeen,
 	markSeen,
+	markThreadSeen,
 	newCount,
 	newSince,
+	seedThreadSeen,
 	topicLatestFirstSeen,
 	topicNewCount
 } from './readState';
@@ -137,5 +140,41 @@ describe('topics with threads', () => {
 	it('the latest first-seen includes thread items', () => {
 		expect(topicLatestFirstSeen(feed)).toBe('2026-11-21T13:00:00Z');
 		expect(topicLatestFirstSeen({ ...feed, threads: [] })).toBe('2026-11-21T11:30:00Z');
+	});
+});
+
+describe('thread read state', () => {
+	it('is stored apart from topics and never moves backwards', () => {
+		const store = memoryStore();
+		markSeen('world', '2026-11-21T12:00:00Z', store);
+		markThreadSeen('t1', '2026-11-21T10:00:00Z', store);
+		markThreadSeen('t1', '2026-11-21T09:00:00Z', store);
+		expect(loadThreadSeen(store)).toEqual({ t1: '2026-11-21T10:00:00Z' });
+		expect(loadLastSeen(store)).toEqual({ world: '2026-11-21T12:00:00Z' });
+		expect([...store.data.keys()].sort()).toEqual(['skein.lastSeen.v1', 'skein.threadSeen.v1']);
+	});
+
+	it('seeds unopened threads with the topic previous visit only', () => {
+		const store = memoryStore();
+		markThreadSeen('opened', '2026-11-21T11:00:00Z', store);
+		seedThreadSeen(['opened', 'fresh'], '2026-11-20T08:00:00Z', store);
+		expect(loadThreadSeen(store)).toEqual({
+			opened: '2026-11-21T11:00:00Z', // its own visit wins, even if older seeds come later
+			fresh: '2026-11-20T08:00:00Z'
+		});
+	});
+
+	it('does not seed on a first topic visit', () => {
+		const store = memoryStore();
+		seedThreadSeen(['t1'], undefined, store);
+		expect(loadThreadSeen(store)).toEqual({});
+		expect(store.data.size).toBe(0);
+	});
+
+	it('a seeded thread moves forward when opened', () => {
+		const store = memoryStore();
+		seedThreadSeen(['t1'], '2026-11-20T08:00:00Z', store);
+		markThreadSeen('t1', '2026-11-21T12:00:00Z', store);
+		expect(loadThreadSeen(store).t1).toBe('2026-11-21T12:00:00Z');
 	});
 });

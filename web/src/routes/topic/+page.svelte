@@ -11,8 +11,10 @@
 	import {
 		isNew,
 		loadLastSeen,
+		loadThreadSeen,
 		markSeen,
 		newSince,
+		seedThreadSeen,
 		topicLatestFirstSeen,
 		topicNewCount
 	} from '$lib/readState';
@@ -28,6 +30,7 @@
 	let now = $state(Date.now());
 	// "Last visit" is read once, before this visit marks the topic as seen.
 	let previousVisit = $state<string | undefined>(undefined);
+	let threadSeen = $state<Record<string, string>>({}); // read once, like previousVisit
 	let firstLoad = true;
 	let showMoreItems = $state(false);
 	let showDormant = $state(false);
@@ -41,11 +44,16 @@
 			const [idx, topic] = await Promise.all([fetchIndex(), fetchTopic(id)]);
 			if (firstLoad) {
 				previousVisit = loadLastSeen()[id];
+				threadSeen = loadThreadSeen();
 				firstLoad = false;
 			}
 			index = idx;
 			feed = topic;
 			error = null;
+			seedThreadSeen(
+				topic.threads.map((t) => t.id),
+				previousVisit
+			);
 			const latest = topicLatestFirstSeen(topic);
 			if (latest) markSeen(id, latest);
 		} catch (e) {
@@ -72,8 +80,11 @@
 	);
 	// No "New" badges on a first visit: there's nothing to compare against.
 	const showNew = (item: ExportItem) => previousVisit !== undefined && isNew(item, previousVisit);
-	const threadFresh = (t: ThreadSummary) =>
-		previousVisit === undefined ? 0 : newSince(t.first_seen, previousVisit);
+	// A thread's own last visit, else the topic's (what seedThreadSeen stores for it).
+	const threadFresh = (t: ThreadSummary) => {
+		const since = threadSeen[t.id] ?? previousVisit;
+		return since === undefined ? 0 : newSince(t.first_seen, since);
+	};
 	const threadHref = (threadId: string) =>
 		`${resolve('/thread/')}?id=${encodeURIComponent(threadId)}`;
 </script>
