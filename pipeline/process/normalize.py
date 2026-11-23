@@ -201,6 +201,7 @@ def normalize(
                 canonical_url=canonical,
                 title=title,
                 excerpt=excerpt(entry.summary) if source.excerpt else None,
+                image_url=entry.image_url if source.images else None,
                 published_at=published,
                 first_seen_at=now,
                 extra=entry.extra,

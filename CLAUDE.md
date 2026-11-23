@@ -16,6 +16,9 @@ A personal, self-hosted news feed that replaces social-media scrolling. It pulls
 1. **Finite, not infinite.** No infinite scroll, autoplay, streaks, engagement mechanics or notifications.
 2. **The owner curates.** Topics and sources come only from `config/*.yaml`. Never hardcode a source or topic in code.
 3. **Link out, never republish.** Store and show headline, source, date, the feed's own short description (truncated to ~300 chars) and the link. Never store or display full article text, and never embed articles in iframes. The one exception is health **study cards**, which summarize a paper's *abstract* (see DESIGN §8.2).
+   - **Images:** only the image URL the feed itself provides (`media:content`, `media:thumbnail`, an image enclosure, or the first `<img>` in the feed's description). Never scrape article pages for one.
+   - Never download, store or re-host images. The reader's browser loads them from the source URL (`loading="lazy"`, `referrerpolicy="no-referrer"`), with the source's name on every card and a plain fallback when an image is missing or broken.
+   - A source opts out with `images: false` in `sources.yaml` (default true). A topic can also turn images off (`images: false`).
 4. **Zero cost.** Free tiers only. If a feature would need money, stop and ask the owner.
 5. **The LLM is optional.** The pipeline must finish and produce a usable feed when every LLM call fails (rate limit, outage, no access). LLM features degrade gracefully: keyword thread names, no labels, no primers.
 6. **Public-repo safety.** No secrets, tokens or personal data in the repo. Private data lives in the `PROFILE_YAML` GitHub Actions secret and in Cloudflare Worker secrets.

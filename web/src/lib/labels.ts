@@ -25,3 +25,10 @@ export function paywallLabel(paywall: string | undefined): string | null {
 	if (paywall === 'partial') return 'Partly paywalled';
 	return null;
 }
+
+/** Up to two initials for a source's image fallback: "Example Times > World" → "ET". */
+export function sourceInitials(name: string): string {
+	const words = name.split(/[^\p{L}\p{N}]+/u).filter(Boolean);
+	const letters = words.length > 1 ? words[0][0] + words[1][0] : (words[0] ?? '?').slice(0, 2);
+	return letters.toUpperCase();
+}

@@ -29,6 +29,9 @@ class ExportItem(_Out):
     published_at: dt.datetime
     first_seen_at: dt.datetime
     excerpt: str | None = Field(default=None, max_length=300)
+    # The image the feed itself offers, loaded by the reader's browser from the
+    # source (never downloaded or re-hosted). None when absent or not allowed.
+    image_url: str | None = None
     importance: float
     also_covered_by: list[str]
     collapsed: bool  # over the cap: shown behind "+N more", never dropped

@@ -60,6 +60,7 @@ type Source = {
   paywall: "none" | "partial" | "full";     // default none; partial/full show a 🔒 badge
   verified: boolean;                        // returned a valid feed in a real run (default false)
   excerpt: boolean;                         // default true; false drops the feed's description (boilerplate feeds)
+  images: boolean;                          // default true; false never shows the feed's images (§6.1, CLAUDE.md principle 3)
   relevance?: { threshold: number } | { skip: true };  // §6.4
   title_exclude?: string[];                 // regexes (case-insensitive): matching titles are dropped / hidden (§6.2)
   title_strip?: string[];                   // regexes (case-insensitive): matching text is removed from titles (§6.2)
@@ -71,6 +72,7 @@ type Item = {
   id: string;                 // first 16 hex chars of sha256(canonical URL)
   source_id: string; url: string; canonical_url: string;   // url = original link, used for linking out
   title: string; excerpt?: string;          // feed-provided, plain text, ≤300 chars
+  image_url?: string;         // the image URL the feed itself offers (§6.1); never downloaded or re-hosted
   published_at: string;       // UTC; missing or future dates → first_seen_at
   first_seen_at: string;      // run that first stored it; never changes
   also_covered_by: string[];  // other sources with the same story (§6.3), a ranking signal
@@ -156,6 +158,16 @@ fetch → normalize → dedupe → embed → relevance → classify/filter → a
 - Source types since Phase 1: `rss`, `reddit`. `rss` also covers Google News search feeds (used for Reuters, which has no official feed); their items have headlines only and link through news.google.com.
 - Phase 4 adds `github_list` (SimplifyJobs JSON listings), `nyt_books` (NYT Books API) and `fred` (FRED series observations). Until their fetchers exist, sources of these types must be `status: disabled` (validator rule). Later still: companies' public Greenhouse / Lever / Ashby job boards (§8.7).
 - `options.region` on a source pre-tags its items for a topic's region facet (§8.4). It must be one of the `regions` of a topic the source feeds.
+- **Images** (`pipeline/fetch/images.py`, CLAUDE.md principle 3):
+  - **What's captured:** only the image URL the feed itself provides, in this order: `media:content` that is an image, then `media:thumbnail`, then an image `<enclosure>`, then the first `<img>` in the entry's description / content. Article pages are never fetched for one.
+  - **URL rules:**
+    - http(s) only; http is upgraded to https (the site is https), and protocol-relative and relative URLs are resolved against the entry's link.
+    - At most 2048 characters.
+    - Likely tracking pixels and icons are skipped: declared width or height under 40 px, or tracker-like paths.
+  - **Never stored as an image:** the item keeps only the URL (`image_url`). The image itself is never downloaded or re-hosted.
+  - **When it's kept:** only if the source has `images: true` (the default). An item first stored without an image picks up its source's image once, the next time the feed lists it.
+  - **Ownership:** an image belongs to the source shown on the card. If a more trusted source takes over an item (§6.3), the image switches to that source's, or to none.
+  - Reddit listings aren't checked for images (no Reddit source is enabled).
 
 ### 6.2 Normalize
 Canonicalize URLs (strip tracking params), parse dates to UTC, trim the excerpt to ≤300 chars, and drop items older than the topic's lookback window.
@@ -242,7 +254,8 @@ The contract is `pipeline/export/models.py` (`schema_version` **2** since Phase 
   - Visible, routed to a topic, and carried by an enabled source: disabling a source hides its stored items on the next run.
   - Not title-excluded by every source that carried them (`title_exclude`, §6.2).
   - Passing the relevance threshold, or **rescued**: in the rescue band and attached to a listed thread with `thread_score ≥ T_high` (§6.5). A thread that cools keeps what it rescued.
-  - Each item `{id, title, url, source_id, published_at, first_seen_at, excerpt, importance, also_covered_by, collapsed}`; titles cleaned and stripped by the item's own source's `title_strip` (§6.2).
+  - Each item `{id, title, url, source_id, published_at, first_seen_at, excerpt, image_url, importance, also_covered_by, collapsed}`; titles cleaned and stripped by the item's own source's `title_strip` (§6.2).
+  - `image_url` is the feed's own image URL (§6.1), or null. It's exported only while the item's source and its topic both allow images (`images` in sources.yaml / topics.yaml), so turning images off hides stored ones on the next run. It's an optional field (older feeds lack it), so the schema version is unchanged.
 - `feed/index.json`: `generated_at`; groups → topics `{id, name, mode, has_sources, visible_count, collapsed_count, latest_first_seen_at}` (thread items counted too); sources `{id, name, type, status, lean, kind, paywall}`.
 - `feed/topics/<id>.json`:
   - `threads`: the topic's **listed** threads (active, cooling, dormant; not pending or archived) with at least one exported item, newest update first. Each summary is `{id, title, kind, state, last_item_at, item_count, collapsed_count, latest_first_seen_at, first_seen, latest}`. `first_seen` lists the shown items' `first_seen_at` (for "N new"); `latest` is the newest item, for a preview. Not limited to the lookback, so dormant threads still list.
@@ -338,6 +351,9 @@ SvelteKit static app, installable PWA, dark mode first, responsive from phone to
   - "Newest first" / "Oldest first" orders days and the items within them by time. The export's per-thread cap still decides what sits behind "+N more".
   - The chosen order is remembered per browser.
 - **Item card:** title, source, time, labels and badges (🔒 for `paywall: partial | full`), excerpt. Tap → opens the original article. On an installed PWA, out-of-scope links open in the system's in-app browser sheet; on desktop, a new tab.
+  - **Thumbnail:** a small fixed-size square beside the title. It shows the feed's own image (`image_url`), loaded from the source with `loading="lazy"` and `referrerpolicy="no-referrer"`.
+  - **Fallback:** when there's no image, or it fails to load, the square shows the source's initials instead, on the same surface.
+  - The source's name is always in the card's byline. The square has a fixed size, so loading an image never shifts the layout.
 - **Hidden items:** filtered items with their reasons.
 - **Sources:** per-source health and usefulness (§9.4).
 - **Settings** (`/settings/`, reached by URL only, so visitors see no link to it): paste the owner token once per device.

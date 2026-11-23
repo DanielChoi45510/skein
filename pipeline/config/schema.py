@@ -212,6 +212,9 @@ class Source(StrictModel):
     paywall: Paywall = "none"  # partial / full: lock badge on cards
     verified: bool = False
     excerpt: bool = True  # false: drop the feed's description (e.g. when it's boilerplate)
+    # false: never show the image the feed offers (CLAUDE.md principle 3). Images are
+    # only ever loaded from the source's URL, never downloaded or re-hosted.
+    images: bool = True
     relevance: SourceRelevance | None = None
     # Regexes (case-insensitive, re.search): entries whose title matches are dropped,
     # and stored ones hidden, e.g. stock-quote pages in a search feed (DESIGN §6.2).

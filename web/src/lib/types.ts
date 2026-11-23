@@ -10,6 +10,8 @@ export interface ExportItem {
 	published_at: string; // ISO 8601, UTC
 	first_seen_at: string;
 	excerpt: string | null;
+	// The feed's own image, loaded from the source (never stored or re-hosted). Absent in older feeds.
+	image_url?: string | null;
 	importance: number;
 	also_covered_by: string[];
 	collapsed: boolean; // over the cap: behind "+N more"

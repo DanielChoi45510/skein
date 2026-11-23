@@ -30,6 +30,11 @@ can unmute.
 Items over a cap are exported with `collapsed: true` ("+N more"), never dropped.
 Titles are cleaned and stripped on the way out (`display_title`). Stale topic
 and thread files are removed.
+
+`image_url` is exported only while the item's source and its topic both allow
+images (`images` in sources.yaml / topics.yaml), so turning images off hides
+stored ones on the next run. It's the feed's own URL: the site never stores or
+re-hosts images (CLAUDE.md principle 3).
 """
 
 from __future__ import annotations
@@ -223,7 +228,14 @@ def _rank(items: Iterable[Item], weights: Mapping[str, float], now: dt.datetime)
     return scored
 
 
-def _days(scored: Scored, collapsed: set[str], sources: Mapping[str, Source]) -> list[Day]:
+def _image(item: Item, sources: Mapping[str, Source], topic_images: bool) -> str | None:
+    source = sources.get(item.source_id)
+    return item.image_url if topic_images and source is not None and source.images else None
+
+
+def _days(
+    scored: Scored, collapsed: set[str], sources: Mapping[str, Source], images: bool = True
+) -> list[Day]:
     days: dict[dt.date, list[ExportItem]] = {}
     for item, imp in scored:
         days.setdefault(item.published_at.astimezone(dt.UTC).date(), []).append(
@@ -235,6 +247,7 @@ def _days(scored: Scored, collapsed: set[str], sources: Mapping[str, Source]) ->
                 published_at=item.published_at,
                 first_seen_at=item.first_seen_at,
                 excerpt=item.excerpt,
+                image_url=_image(item, sources, images),
                 importance=round(imp, 4),
                 also_covered_by=item.also_covered_by,
                 collapsed=item.id in collapsed,
@@ -267,7 +280,7 @@ def build_topic_feed(
         group=topic.group,
         mode=topic.mode,
         threads=[],
-        days=_days(scored, collapsed, sources or {}),
+        days=_days(scored, collapsed, sources or {}, topic.images),
     )
 
 
@@ -291,7 +304,7 @@ def build_thread_feed(
         state=thread.state,
         created_at=thread.created_at,
         last_item_at=max(i.published_at for i in items),
-        days=_days(scored, _over_daily_cap(scored, cap), sources or {}),
+        days=_days(scored, _over_daily_cap(scored, cap), sources or {}, topic.images),
     )
 
 

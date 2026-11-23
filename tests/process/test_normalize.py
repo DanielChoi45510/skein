@@ -357,3 +357,23 @@ def test_committed_reuters_title_strip() -> None:
         assert strip_title(REUTERS_NEWS[0], sources[sid]) == (
             "EU and Indonesia sign trade deal after 10 years of negotiations"
         )
+
+
+# ───────────────────────────── images ─────────────────────────────
+
+
+def test_feed_image_is_kept() -> None:
+    [it] = normalize([raw(image_url="https://img.example/a.jpg")], SOURCES, CFG.topics, NOW)
+    assert it.image_url == "https://img.example/a.jpg"
+
+
+def test_source_with_images_off_drops_the_image() -> None:
+    sources = SOURCES | {
+        "example-world": SOURCES["example-world"].model_copy(update={"images": False})
+    }
+    [it] = normalize([raw(image_url="https://img.example/a.jpg")], sources, CFG.topics, NOW)
+    assert it.image_url is None
+
+
+def test_images_default_on_in_the_schema() -> None:
+    assert all(s.images for s in CFG.sources.sources)

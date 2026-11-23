@@ -7,6 +7,8 @@
 #           filled in; the rest are null with a "# AllSides: check" note. Confirm before Phase 3.
 # paywall:  none | partial | full   (partial/full show a lock badge on cards)
 # verified: true once the URL has returned a valid feed in a real pipeline run.
+# images:   true (default) | false: whether cards show the image the feed itself offers.
+#           Loaded from the source, never downloaded or re-hosted (CLAUDE.md principle 3).
 #
 # Types: rss | reddit             fetched from Phase 1
 #        github_list | nyt_books | fred    fetchers arrive in Phase 4; disabled until then

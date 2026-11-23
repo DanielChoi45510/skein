@@ -166,3 +166,24 @@ def test_zero_vector_does_not_crash() -> None:
     store = {"old": item("old"), "new": item("new", source="b")}
     zero = np.zeros(2)
     assert mark_near_duplicates(store, ["new"], {"old": zero, "new": BASE}, {}) == []
+
+
+def test_same_source_repeat_picks_up_a_missing_image_once() -> None:
+    store = {"x": item("x", source="a")}
+    merge_exact(store, [item("x", source="a", image_url="https://img.example/x.jpg")], {})
+    assert store["x"].image_url == "https://img.example/x.jpg"
+    # an image already stored is never replaced by a later one
+    merge_exact(store, [item("x", source="a", image_url="https://img.example/other.jpg")], {})
+    assert store["x"].image_url == "https://img.example/x.jpg"
+
+
+def test_takeover_brings_the_new_sources_image() -> None:
+    store = {"x": item("x", source="a", image_url="https://img.example/a.jpg")}
+    merge_exact(store, [item("x", source="b")], {"a": 1.0, "b": 1.3})
+    assert store["x"].image_url is None  # never shows a's image under b's name
+
+
+def test_corroborating_source_does_not_change_the_image() -> None:
+    store = {"x": item("x", source="a")}
+    merge_exact(store, [item("x", source="b", image_url="https://img.example/b.jpg")], {})
+    assert store["x"].image_url is None

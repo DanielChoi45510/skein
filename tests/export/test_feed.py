@@ -27,7 +27,7 @@ CFG = load_config(FIXTURE_CONFIG)
 WEIGHTS = {s.id: s.weight for s in CFG.sources.sources}
 EXPORT_ITEM_KEYS = {
     "id", "title", "url", "source_id", "published_at", "first_seen_at", "excerpt",
-    "importance", "also_covered_by", "collapsed",
+    "image_url", "importance", "also_covered_by", "collapsed",
 }  # fmt: skip
 
 
@@ -464,3 +464,33 @@ def test_tracker_threads_are_listed(tmp_path: Path) -> None:
         ("trackers--phones", "tracker", "Phones")
     ]
     assert data["days"] == []
+
+
+# ───────────────────────────── images (CLAUDE.md principle 3) ─────────────────────────────
+
+
+def exported_image(tmp_path: Path, cfg: Config = CFG) -> str | None:
+    run_export(tmp_path, [item(1, image_url="https://img.example/1.jpg")], cfg)
+    data = json.loads((tmp_path / "feed" / "topics" / "world.json").read_text())
+    return data["days"][0]["items"][0]["image_url"]
+
+
+def test_feed_image_url_is_exported(tmp_path: Path) -> None:
+    assert exported_image(tmp_path) == "https://img.example/1.jpg"
+
+
+def test_source_with_images_off_exports_no_image(tmp_path: Path) -> None:
+    sources = [
+        s.model_copy(update={"images": False}) if s.id == "example-world" else s
+        for s in CFG.sources.sources
+    ]
+    cfg = dataclasses.replace(CFG, sources=CFG.sources.model_copy(update={"sources": sources}))
+    assert exported_image(tmp_path, cfg) is None
+
+
+def test_topic_with_images_off_exports_no_image(tmp_path: Path) -> None:
+    topics = [
+        t.model_copy(update={"images": False}) if t.id == "world" else t for t in CFG.topics.topics
+    ]
+    cfg = dataclasses.replace(CFG, topics=CFG.topics.model_copy(update={"topics": topics}))
+    assert exported_image(tmp_path, cfg) is None
