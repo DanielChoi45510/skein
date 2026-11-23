@@ -393,3 +393,19 @@ def test_rerun_without_new_items_leaves_threads_unchanged(tmp_path: Path) -> Non
     assert report.threads.assigned == 0
     for name in ("threads.json", "centroids.npy", "centroid_ids.json"):
         assert snapshot(tmp_path)[name] == before[name]
+
+
+def test_thread_files_carry_structure(tmp_path: Path) -> None:
+    from pipeline.sample import main as sample_main
+
+    out = tmp_path / "site"
+    assert sample_main(["--out", str(out)]) == 0
+    thread_files = list((out / "feed" / "threads").glob("*.json"))
+    assert thread_files
+    for path in thread_files:
+        data = json.loads(path.read_text())
+        st = data["structure"]
+        exported = {i["id"] for d in data["days"] for i in d["items"]}
+        placed = set(st["spine"]) | {i for b in st["branches"] for i in b["items"]}
+        assert placed == exported  # every exported item is placed exactly once
+        assert all(b["anchor"] in st["spine"] for b in st["branches"])

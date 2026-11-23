@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { ExportItem, SourceSummary } from '$lib/types';
 	import { fullDate, relativeTime } from '$lib/time';
-	import { kindLabel, leanLabel, paywallLabel } from '$lib/labels';
+	import { kindLabel, leanLabel, paywallLabel, sourceInitials } from '$lib/labels';
 
 	interface Props {
 		item: ExportItem;
@@ -19,6 +19,11 @@
 	const lean = $derived(leanLabel(source?.lean ?? null));
 	const paywall = $derived(paywallLabel(source?.paywall));
 	const also = $derived(item.also_covered_by.map((id) => sources.get(id)?.name ?? id));
+	const sourceName = $derived(source?.name ?? item.source_id);
+	// The feed's own image, loaded straight from the source (CLAUDE.md principle 3).
+	// Missing or broken: a quiet tile with the source's initials, same size, no shift.
+	let broken = $state(false);
+	const image = $derived(item.image_url && !broken ? item.image_url : null);
 </script>
 
 <article class:new={isNew} class:selected>
@@ -28,12 +33,28 @@
 			<span class="visually-hidden">Select “{item.title}”</span>
 		</label>
 	{/if}
+	<div class="thumb" class:fallback={!image} aria-hidden="true">
+		{#if image}
+			<img
+				src={image}
+				alt=""
+				width="72"
+				height="72"
+				loading="lazy"
+				decoding="async"
+				referrerpolicy="no-referrer"
+				onerror={() => (broken = true)}
+			/>
+		{:else}
+			{sourceInitials(sourceName)}
+		{/if}
+	</div>
 	<h3>
 		<!-- Link out, never embed (CLAUDE.md principle 3). -->
 		<a href={item.url} target="_blank" rel="noopener noreferrer">{item.title}</a>
 	</h3>
 	<p class="meta">
-		<span class="source">{source?.name ?? item.source_id}</span>
+		<span class="source">{sourceName}</span>
 		<span aria-hidden="true">·</span>
 		<time datetime={item.published_at} title={fullDate(item.published_at)}>
 			{relativeTime(item.published_at, now)}
@@ -82,6 +103,29 @@
 		width: 1.2rem;
 		height: 1.2rem;
 		accent-color: var(--accent);
+	}
+	.thumb {
+		float: right;
+		display: grid;
+		place-items: center;
+		width: 4.5rem;
+		height: 4.5rem;
+		margin: 0.15rem 0 0.4rem 0.75rem;
+		overflow: hidden;
+		border-radius: calc(var(--radius) - 2px);
+		background: var(--border);
+	}
+	.thumb img {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+	.thumb.fallback {
+		font-size: 0.85rem;
+		font-weight: 700;
+		letter-spacing: 0.04em;
+		color: var(--muted);
 	}
 	h3 {
 		margin: 0;

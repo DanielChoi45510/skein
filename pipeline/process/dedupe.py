@@ -36,7 +36,14 @@ def merge_exact(
             store[item.id] = item
             added.append(item.id)
             continue
-        if item.source_id == existing.source_id or item.source_id in existing.also_covered_by:
+        if item.source_id == existing.source_id:
+            # Already known: a no-op that keeps reruns idempotent, except that an item
+            # stored before its feed offered an image (or before images were captured)
+            # picks the image up once.
+            if existing.image_url is None and item.image_url is not None:
+                existing.image_url = item.image_url
+            continue
+        if item.source_id in existing.also_covered_by:
             continue  # already known: no-op, which keeps reruns idempotent
         if existing.duplicate_of and (kept := store.get(existing.duplicate_of)):
             # Hidden near-duplicate: the corroboration belongs to the item that is shown.
@@ -48,6 +55,7 @@ def merge_exact(
             existing.also_covered_by = _add(existing.also_covered_by, existing.source_id)
             existing.source_id = item.source_id
             existing.url, existing.title, existing.excerpt = item.url, item.title, item.excerpt
+            existing.image_url = item.image_url  # the image belongs to the source shown
             existing.extra = item.extra
         else:
             existing.also_covered_by = _add(existing.also_covered_by, item.source_id)

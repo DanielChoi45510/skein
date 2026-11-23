@@ -22,6 +22,7 @@ class RawEntry(BaseModel):
     title: str
     summary: str | None = None
     published: dt.datetime | None = None  # UTC, when the feed provides one
+    image_url: str | None = None  # the image the feed itself offers (fetch/images.py)
     extra: dict[str, Any] = {}
 
 
@@ -41,6 +42,7 @@ class Item(BaseModel):
     canonical_url: str
     title: str
     excerpt: str | None = None  # feed-provided, plain text, ≤ 300 chars
+    image_url: str | None = None  # feed-provided image URL; loaded from the source, never stored
     published_at: dt.datetime
     first_seen_at: dt.datetime
     also_covered_by: list[str] = []  # other sources that carried the same story
@@ -59,6 +61,7 @@ class Item(BaseModel):
 
 ThreadKind = Literal["story", "question", "tracker", "fixed"]
 ThreadState = Literal["pending", "active", "cooling", "dormant", "archived"]
+LISTED_STATES = frozenset({"active", "cooling", "dormant"})  # promoted and not archived: shown
 
 
 class Thread(BaseModel):

@@ -40,6 +40,22 @@ class StrictModel(BaseModel):
 # ───────────────────────────── topics.yaml ─────────────────────────────
 
 
+class StructureParams(StrictModel):
+    """Thread structure for the spine-and-branches view (DESIGN §6.9).
+
+    Picked from the stored data on 2026-11-24; see docs/overnight-log.md.
+    """
+
+    link: Fraction  # storylines: merge while their average pairwise cosine is ≥ this
+    link_predefined: Fraction  # the same for tracker / fixed threads (broad by design)
+    min_items: PositiveInt  # threads smaller than this are all spine
+    min_branch_items: PositiveInt  # smaller storylines fold into the spine instead of branching
+    min_branch_items_predefined: PositiveInt  # the same for tracker / fixed threads
+    anchor_day_penalty: Annotated[float, Field(ge=0.0, le=1.0)]  # per day, when anchoring a branch
+    related: Fraction  # related threads: thread-centroid cosine ≥ this
+    related_max: Annotated[int, Field(ge=0, le=20)]
+
+
 class Defaults(StrictModel):
     daily_cap_per_thread: PositiveInt
     cooling_after_days: PositiveInt  # thread lifecycle (DESIGN §5): active → cooling
@@ -47,6 +63,7 @@ class Defaults(StrictModel):
     archive_after_days: PositiveInt
     lookback_days: PositiveInt
     relevance_threshold: Fraction  # items scoring below this for every topic are hidden
+    structure: StructureParams
 
 
 class Group(StrictModel):
@@ -212,6 +229,9 @@ class Source(StrictModel):
     paywall: Paywall = "none"  # partial / full: lock badge on cards
     verified: bool = False
     excerpt: bool = True  # false: drop the feed's description (e.g. when it's boilerplate)
+    # false: never show the image the feed offers (CLAUDE.md principle 3). Images are
+    # only ever loaded from the source's URL, never downloaded or re-hosted.
+    images: bool = True
     relevance: SourceRelevance | None = None
     # Regexes (case-insensitive, re.search): entries whose title matches are dropped,
     # and stored ones hidden, e.g. stock-quote pages in a search feed (DESIGN §6.2).

@@ -60,6 +60,7 @@ type Source = {
   paywall: "none" | "partial" | "full";     // default none; partial/full show a 🔒 badge
   verified: boolean;                        // returned a valid feed in a real run (default false)
   excerpt: boolean;                         // default true; false drops the feed's description (boilerplate feeds)
+  images: boolean;                          // default true; false never shows the feed's images (§6.1, CLAUDE.md principle 3)
   relevance?: { threshold: number } | { skip: true };  // §6.4
   title_exclude?: string[];                 // regexes (case-insensitive): matching titles are dropped / hidden (§6.2)
   title_strip?: string[];                   // regexes (case-insensitive): matching text is removed from titles (§6.2)
@@ -71,6 +72,7 @@ type Item = {
   id: string;                 // first 16 hex chars of sha256(canonical URL)
   source_id: string; url: string; canonical_url: string;   // url = original link, used for linking out
   title: string; excerpt?: string;          // feed-provided, plain text, ≤300 chars
+  image_url?: string;         // the image URL the feed itself offers (§6.1); never downloaded or re-hosted
   published_at: string;       // UTC; missing or future dates → first_seen_at
   first_seen_at: string;      // run that first stored it; never changes
   also_covered_by: string[];  // other sources with the same story (§6.3), a ranking signal
@@ -156,6 +158,16 @@ fetch → normalize → dedupe → embed → relevance → classify/filter → a
 - Source types since Phase 1: `rss`, `reddit`. `rss` also covers Google News search feeds (used for Reuters, which has no official feed); their items have headlines only and link through news.google.com.
 - Phase 4 adds `github_list` (SimplifyJobs JSON listings), `nyt_books` (NYT Books API) and `fred` (FRED series observations). Until their fetchers exist, sources of these types must be `status: disabled` (validator rule). Later still: companies' public Greenhouse / Lever / Ashby job boards (§8.7).
 - `options.region` on a source pre-tags its items for a topic's region facet (§8.4). It must be one of the `regions` of a topic the source feeds.
+- **Images** (`pipeline/fetch/images.py`, CLAUDE.md principle 3):
+  - **What's captured:** only the image URL the feed itself provides, in this order: `media:content` that is an image, then `media:thumbnail`, then an image `<enclosure>`, then the first `<img>` in the entry's description / content. Article pages are never fetched for one.
+  - **URL rules:**
+    - http(s) only; http is upgraded to https (the site is https), and protocol-relative and relative URLs are resolved against the entry's link.
+    - At most 2048 characters.
+    - Likely tracking pixels and icons are skipped: declared width or height under 40 px, or tracker-like paths.
+  - **Never stored as an image:** the item keeps only the URL (`image_url`). The image itself is never downloaded or re-hosted.
+  - **When it's kept:** only if the source has `images: true` (the default). An item first stored without an image picks up its source's image once, the next time the feed lists it.
+  - **Ownership:** an image belongs to the source shown on the card. If a more trusted source takes over an item (§6.3), the image switches to that source's, or to none.
+  - Reddit listings aren't checked for images (no Reddit source is enabled).
 
 ### 6.2 Normalize
 Canonicalize URLs (strip tracking params), parse dates to UTC, trim the excerpt to ≤300 chars, and drop items older than the topic's lookback window.
@@ -242,18 +254,51 @@ The contract is `pipeline/export/models.py` (`schema_version` **2** since Phase 
   - Visible, routed to a topic, and carried by an enabled source: disabling a source hides its stored items on the next run.
   - Not title-excluded by every source that carried them (`title_exclude`, §6.2).
   - Passing the relevance threshold, or **rescued**: in the rescue band and attached to a listed thread with `thread_score ≥ T_high` (§6.5). A thread that cools keeps what it rescued.
-  - Each item `{id, title, url, source_id, published_at, first_seen_at, excerpt, importance, also_covered_by, collapsed}`; titles cleaned and stripped by the item's own source's `title_strip` (§6.2).
+  - Each item `{id, title, url, source_id, published_at, first_seen_at, excerpt, image_url, importance, also_covered_by, collapsed}`; titles cleaned and stripped by the item's own source's `title_strip` (§6.2).
+  - `image_url` is the feed's own image URL (§6.1), or null. It's exported only while the item's source and its topic both allow images (`images` in sources.yaml / topics.yaml), so turning images off hides stored ones on the next run. It's an optional field (older feeds lack it), so the schema version is unchanged.
 - `feed/index.json`: `generated_at`; groups → topics `{id, name, mode, has_sources, visible_count, collapsed_count, latest_first_seen_at}` (thread items counted too); sources `{id, name, type, status, lean, kind, paywall}`.
 - `feed/topics/<id>.json`:
   - `threads`: the topic's **listed** threads (active, cooling, dormant; not pending or archived) with at least one exported item, newest update first. Each summary is `{id, title, kind, state, last_item_at, item_count, collapsed_count, latest_first_seen_at, first_seen, latest}`. `first_seen` lists the shown items' `first_seen_at` (for "N new"); `latest` is the newest item, for a preview. Not limited to the lookback, so dormant threads still list.
   - Owner overrides (§10.2) add `pinned` to summaries (pinned threads list first) and `muted: [{id, title}]` to the topic. These fields are additive, so `schema_version` stays 2.
   - `days`: the other items within the topic's lookback, grouped by UTC day of publication (newest first) and ranked by importance. For flat topics that's every item; for threaded ones, pending single items and unthreaded ones.
-- `feed/threads/<id>.json`: `{id, topic_id, title, kind, state, created_at, last_item_at, days}` with every exported item of the thread among the loaded items (≈ 30 days), by UTC day, ranked by importance. Stale topic and thread files are removed.
+- `feed/threads/<id>.json`: `{id, topic_id, title, kind, state, created_at, last_item_at, days, structure}` with every exported item of the thread among the loaded items (≈ 30 days), by UTC day, ranked by importance. Stale topic and thread files are removed.
+  - `structure` (§6.9) is `{spine: [item id…], branches: [{id, anchor, items: [item id…]}], related: [{id, title, topic_id, similarity}]}`.
+  - Every exported item appears exactly once, in the spine or one branch.
+  - It's null when the run couldn't compute it. It's additive, so `schema_version` stays 2.
 - Days are UTC in the export; the frontend regroups items by the viewer's local day for display. Per-day caps still count UTC days, so a local day can show slightly more than one day's cap.
 - **Caps:**
   - Topic `days`: `max_per_day` per day; `max_per_week` / `target_per_week` over the trailing 7 days, `max_per_month` over 30; otherwise `defaults.daily_cap_per_thread` per day.
   - Thread files: the per-thread daily cap, `daily_cap_per_thread` (topic override, else default 5).
   - Over-cap items are exported with `collapsed: true` and never dropped.
+
+### 6.9 Thread structure (spine and branches)
+Heuristics only; naming branches with the LLM is Phase 3. Code in `pipeline/process/structure.py`; parameters in `topics.yaml` `defaults.structure`.
+- **Storylines:**
+  - **Grouping:** a thread's visible stored items are grouped by average-linkage agglomerative clustering of their vectors (title + excerpt, as for thread assignment). The two closest groups merge while their average pairwise cosine is ≥ `link` (0.72). Tracker and fixed threads gather a whole subject, so they use the looser `link_predefined` (0.65). Average linkage can't chain unrelated items through a run of near neighbours.
+  - **Spine:** the largest storyline. Ties go to the one spanning the most time (the most continuous), then the one that started first.
+  - **Branches:** every other storyline. Each is anchored to the spine item that maximizes `cos(branch centroid, item) − anchor_day_penalty × |days between it and the branch's first item|` (0.15 per day): closest in meaning and time.
+  - **No structure:** threads under `min_items` (3) items, or whose largest storyline is a single item, are all spine.
+  - **Folding:** storylines smaller than `min_branch_items` fold into the spine instead of branching.
+    - Story threads: 1, so one-item side developments still branch.
+    - Tracker and fixed threads: `min_branch_items_predefined`, 2. One-item asides there are mostly routing noise, not side stories.
+    - Folded items join the spine in time order and can anchor branches.
+- **Related threads** (the spokes):
+  - **Rule:** other listed threads whose centroid (normalized mean of their item vectors) has cosine ≥ `related` (0.80) with this one's, most similar first, at most `related_max` (5). Any topic qualifies.
+  - **Exception:** two predefined threads of the same tracker / fixed topic are never related. They're the topic's own categories, already side by side and broadly similar by construction (market sectors scored 0.81–0.86 with one another).
+- **When it runs:**
+  - Every run that exports. Nothing is stored, so it's idempotent, and owner merges, splits and moves show at once.
+  - The embedding model is loaded for it even on runs without new items (about 400 thread items at the time of writing, a few seconds on CPU).
+  - If it fails, the feed exports without `structure` and the view falls back to a timeline.
+- **Export (§6.8):**
+  - The structure is computed over the visible stored items and projected onto the ones the thread file exports. Unexported items are dropped.
+  - A branch whose anchor isn't exported moves to the exported spine item nearest in time to its first item.
+  - Exported items the structure doesn't place join the spine.
+  - With no exported spine item left, everything is spine.
+- **Tuning:** values were picked on 2026-11-24 from the stored data (104 listed threads, 425 items, the real model).
+  - **Within-thread similarity:** the median pairwise cosine is 0.72 for story threads and 0.62 for tracker / fixed ones.
+  - **`link`:** at 0.70 real side stories merge into the spine; at 0.75 spines fragment (median spine share 0.67, about 4 storylines per thread).
+  - **`related`:** at 0.80 pairs are reliably about the same subject; 0.75–0.80 is mixed; below that, mostly coincidence.
+  - Example structures are in docs/overnight-log.md. Retune as data accumulates; the first sample covers only two days.
 
 ## 7. Filters and labels
 
@@ -338,6 +383,9 @@ SvelteKit static app, installable PWA, dark mode first, responsive from phone to
   - "Newest first" / "Oldest first" orders days and the items within them by time. The export's per-thread cap still decides what sits behind "+N more".
   - The chosen order is remembered per browser.
 - **Item card:** title, source, time, labels and badges (🔒 for `paywall: partial | full`), excerpt. Tap → opens the original article. On an installed PWA, out-of-scope links open in the system's in-app browser sheet; on desktop, a new tab.
+  - **Thumbnail:** a small fixed-size square beside the title. It shows the feed's own image (`image_url`), loaded from the source with `loading="lazy"` and `referrerpolicy="no-referrer"`.
+  - **Fallback:** when there's no image, or it fails to load, the square shows the source's initials instead, on the same surface.
+  - The source's name is always in the card's byline. The square has a fixed size, so loading an image never shifts the layout.
 - **Hidden items:** filtered items with their reasons.
 - **Sources:** per-source health and usefulness (§9.4).
 - **Settings** (`/settings/`, reached by URL only, so visitors see no link to it): paste the owner token once per device.

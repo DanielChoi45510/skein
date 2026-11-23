@@ -30,6 +30,11 @@ can unmute.
 Items over a cap are exported with `collapsed: true` ("+N more"), never dropped.
 Titles are cleaned and stripped on the way out (`display_title`). Stale topic
 and thread files are removed.
+
+`image_url` is exported only while the item's source and its topic both allow
+images (`images` in sources.yaml / topics.yaml), so turning images off hides
+stored ones on the next run. It's the feed's own URL: the site never stores or
+re-hosts images (CLAUDE.md principle 3).
 """
 
 from __future__ import annotations
@@ -41,11 +46,12 @@ from pathlib import Path
 
 from ..config.schema import Source, Topic, TopicsFile
 from ..config.validate import Config
-from ..models import Item, SourceHealth, Thread
+from ..models import LISTED_STATES, Item, SourceHealth, Thread
 from ..overrides import EMPTY, Overrides
 from ..process.normalize import display_title, excluded_by_title
 from ..process.rank import importance
 from ..process.relevance import passes_threshold
+from ..process.structure import Structure, Structures
 from ..process.threads import DEFAULT, in_rescue_band
 from ..state import write_text_atomic
 from .models import (
@@ -54,8 +60,11 @@ from .models import (
     FeedIndex,
     GroupSummary,
     MutedThread,
+    RelatedThread,
     SourceSummary,
+    StructureBranch,
     ThreadFeed,
+    ThreadStructure,
     ThreadSummary,
     TopicFeed,
     TopicSummary,
@@ -66,7 +75,6 @@ log = logging.getLogger(__name__)
 FEED_DIR = "feed"
 TOPICS_DIR = "topics"
 THREADS_DIR = "threads"
-LISTED_STATES = frozenset({"active", "cooling", "dormant"})  # promoted and not archived
 _WINDOW_CAPS = (("max_per_week", 7), ("target_per_week", 7), ("max_per_month", 30))
 
 Scored = list[tuple[Item, float]]
@@ -80,9 +88,11 @@ def export_feed(
     now: dt.datetime,
     threads: Mapping[str, Thread] | None = None,
     overrides: Overrides = EMPTY,
+    structures: Structures | None = None,
 ) -> FeedIndex:
     """Write feed/index.json, feed/topics/<id>.json and feed/threads/<id>.json."""
     threads = threads or {}
+    structures = structures or Structures()
     # Only enabled sources count: disabling (or removing) a source hides its stored
     # items on the next run. A story it shared with an enabled source stays, because
     # an item shows if any enabled source that carried it would show it.
@@ -155,6 +165,22 @@ def export_feed(
         )
         feeds[topic.id] = feed.model_copy(update={"threads": summaries, "muted": muted_here})
 
+    for thread_id, tf in thread_feeds.items():
+        if (st := structures.threads.get(thread_id)) is not None:
+            related = [
+                RelatedThread(
+                    id=other,
+                    title=thread_feeds[other].title,
+                    topic_id=thread_feeds[other].topic_id,
+                    similarity=sim,
+                )
+                for other, sim in structures.related.get(thread_id, [])
+                if other in thread_feeds
+            ]
+            thread_feeds[thread_id] = tf.model_copy(
+                update={"structure": project_structure(st, tf, related)}
+            )
+
     index = FeedIndex(
         generated_at=now,
         groups=[
@@ -190,6 +216,39 @@ def export_feed(
     return index
 
 
+def project_structure(
+    st: Structure, feed: ThreadFeed, related: list[RelatedThread]
+) -> ThreadStructure:
+    """A thread's structure over the items its file actually exports.
+
+    The structure is computed from every visible stored item; some aren't
+    exported (below the relevance threshold, title-excluded, …). Those are
+    dropped. A branch whose anchor isn't exported moves to the exported spine
+    item nearest in time to the branch's first item. With no exported spine
+    item left, every exported item is spine.
+    """
+    times = {i.id: i.published_at for d in feed.days for i in d.items}
+    order = sorted(times, key=lambda i: (times[i], i))
+    spine = [i for i in st.spine if i in times]
+    covered = set(spine)
+    branches: list[StructureBranch] = []
+    if spine:
+        for b in st.branches:
+            members = [i for i in b.items if i in times]
+            if not members:
+                continue
+            anchor = b.anchor
+            if anchor not in times:
+                start = times[members[0]]
+                anchor = min(spine, key=lambda s: (abs((times[s] - start).total_seconds()), s))
+            branches.append(StructureBranch(id=f"b-{members[0]}", anchor=anchor, items=members))
+            covered.update(members)
+    # Exported items the structure doesn't know (e.g. joined since): spine, by time.
+    spine = sorted(spine + [i for i in order if i not in covered], key=lambda i: (times[i], i))
+    branches.sort(key=lambda b: (times[b.items[0]], b.id))
+    return ThreadStructure(spine=spine, branches=branches, related=related)
+
+
 def _rescued(
     item: Item, threads: Mapping[str, Thread], sources: Mapping[str, Source], topics: TopicsFile
 ) -> bool:
@@ -223,7 +282,14 @@ def _rank(items: Iterable[Item], weights: Mapping[str, float], now: dt.datetime)
     return scored
 
 
-def _days(scored: Scored, collapsed: set[str], sources: Mapping[str, Source]) -> list[Day]:
+def _image(item: Item, sources: Mapping[str, Source], topic_images: bool) -> str | None:
+    source = sources.get(item.source_id)
+    return item.image_url if topic_images and source is not None and source.images else None
+
+
+def _days(
+    scored: Scored, collapsed: set[str], sources: Mapping[str, Source], images: bool = True
+) -> list[Day]:
     days: dict[dt.date, list[ExportItem]] = {}
     for item, imp in scored:
         days.setdefault(item.published_at.astimezone(dt.UTC).date(), []).append(
@@ -235,6 +301,7 @@ def _days(scored: Scored, collapsed: set[str], sources: Mapping[str, Source]) ->
                 published_at=item.published_at,
                 first_seen_at=item.first_seen_at,
                 excerpt=item.excerpt,
+                image_url=_image(item, sources, images),
                 importance=round(imp, 4),
                 also_covered_by=item.also_covered_by,
                 collapsed=item.id in collapsed,
@@ -267,7 +334,7 @@ def build_topic_feed(
         group=topic.group,
         mode=topic.mode,
         threads=[],
-        days=_days(scored, collapsed, sources or {}),
+        days=_days(scored, collapsed, sources or {}, topic.images),
     )
 
 
@@ -291,7 +358,7 @@ def build_thread_feed(
         state=thread.state,
         created_at=thread.created_at,
         last_item_at=max(i.published_at for i in items),
-        days=_days(scored, _over_daily_cap(scored, cap), sources or {}),
+        days=_days(scored, _over_daily_cap(scored, cap), sources or {}, topic.images),
     )
 
 
