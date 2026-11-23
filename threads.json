@@ -172,10 +172,11 @@
       "6c9f6a138c014817",
       "7c2cdff92f5740e3",
       "70a4e471ba6bb9a2",
-      "a3e1759d367a3ca9"
+      "a3e1759d367a3ca9",
+      "908f38f7dff39f7e"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-23T16:13:32Z",
+    "last_item_at": "2026-11-23T20:21:44Z",
     "state": "active",
     "title": "Information Technology",
     "topic_id": "markets"
@@ -822,7 +823,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-20T20:22:14Z",
-    "state": "active",
+    "state": "cooling",
     "title": "Britain · Brexit",
     "topic_id": "world-news"
   },
@@ -1082,6 +1083,18 @@
     "topic_id": "ai-news"
   },
   {
+    "created_at": "2026-11-23T20:48:27.182294Z",
+    "id": "t27f58013906a",
+    "item_ids": [
+      "198fa5ab69a3cc89"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-22T23:57:45Z",
+    "state": "pending",
+    "title": "Nespresso's project to reduce grams of coffee per capsule",
+    "topic_id": "ai-news"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "t285a596b0564",
     "item_ids": [
@@ -1116,6 +1129,18 @@
     "state": "pending",
     "title": "Ask HN: I have been unemployed for 2y. 15 years of experience, US. What to do?",
     "topic_id": "jobs-market"
+  },
+  {
+    "created_at": "2026-11-23T20:48:27.182294Z",
+    "id": "t2a2a9571fb36",
+    "item_ids": [
+      "a401628e25e3fc9d"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T00:00:00Z",
+    "state": "pending",
+    "title": "KPMG's Todd Lohr on AI when your data is also your clients' data",
+    "topic_id": "ai-news"
   },
   {
     "created_at": "2026-11-22T09:09:42.410739Z",
@@ -1492,12 +1517,13 @@
     "id": "t3915651da431",
     "item_ids": [
       "57250bd7b2e98c69",
-      "17d79bf1f5c48d9a"
+      "17d79bf1f5c48d9a",
+      "74f05c5b6c901f8a"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-20T12:08:04Z",
-    "state": "cooling",
-    "title": "Gen · Z-ers · Mayor",
+    "last_item_at": "2026-11-23T20:22:18Z",
+    "state": "active",
+    "title": "Gen · Z-ers · Rising · Mayor",
     "topic_id": "world-news"
   },
   {
@@ -2522,6 +2548,18 @@
     "topic_id": "ai-news"
   },
   {
+    "created_at": "2026-11-23T20:48:27.182294Z",
+    "id": "t65a67d9cc525",
+    "item_ids": [
+      "51e4eb10a0f20f8c"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T20:30:51Z",
+    "state": "pending",
+    "title": "The Economy Is a Hostage Situation",
+    "topic_id": "us-politics"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "t65c998f88a52",
     "item_ids": [
@@ -2838,12 +2876,13 @@
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "t7663695b6503",
     "item_ids": [
-      "3298713995b15316"
+      "3298713995b15316",
+      "6545db87281ad58e"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-21T15:00:00Z",
-    "state": "pending",
-    "title": "Can Anthropic afford to put safety first?",
+    "last_item_at": "2026-11-23T20:00:00Z",
+    "state": "active",
+    "title": "Claude AI can review pull requests and ship fixes on its own now",
     "topic_id": "ai-news"
   },
   {
@@ -3471,6 +3510,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-23T20:48:27.182294Z",
+    "id": "t98a11b00cabe",
+    "item_ids": [
+      "de0f31745cc5ebed"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T11:34:16Z",
+    "state": "pending",
+    "title": "The next circle of security hell",
+    "topic_id": "jobs-market"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "t98ca8841b31a",
     "item_ids": [
@@ -3523,6 +3574,18 @@
     "state": "pending",
     "title": "WSJ Opinion: Tech Outages Raise National Security Concerns",
     "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-23T20:48:27.182294Z",
+    "id": "t99b872d9f0c2",
+    "item_ids": [
+      "53510b5370cd8096"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T17:07:26Z",
+    "state": "pending",
+    "title": "Dario is hyping the dangers so OSS models are illegal and *he* stays in control",
+    "topic_id": "ai-news"
   },
   {
     "created_at": "2026-11-22T09:09:42.410739Z",
@@ -3784,12 +3847,13 @@
       "2694922a08bd75e6",
       "dc2f75bdb0006cbe",
       "9497f550831e4347",
-      "ed6ad9e1aea09542"
+      "ed6ad9e1aea09542",
+      "9c8cfec0d3131d57"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-23T19:23:26Z",
+    "last_item_at": "2026-11-23T20:09:33Z",
     "state": "active",
-    "title": "Trump · Nvidia · Huang · Jensen",
+    "title": "Trump · Jensen · Huang · Nvidia",
     "topic_id": "us-politics"
   },
   {
@@ -4179,6 +4243,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-23T20:48:27.182294Z",
+    "id": "tb56c88dee802",
+    "item_ids": [
+      "6851a6a04065867c"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T18:48:10Z",
+    "state": "pending",
+    "title": "Apple removed my open-source app from EU App Stores after 9 years",
+    "topic_id": "ai-news"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "tb59ae8829ae3",
     "item_ids": [
@@ -4187,7 +4263,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-20T20:31:00Z",
-    "state": "active",
+    "state": "cooling",
     "title": "Russian · Poland",
     "topic_id": "world-news"
   },
@@ -4906,6 +4982,18 @@
     "last_item_at": "2026-11-23T12:00:00Z",
     "state": "active",
     "title": "How the Blue Wave Missed Florida",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-23T20:48:27.182294Z",
+    "id": "td8648796d8cb",
+    "item_ids": [
+      "98911c842df0025c"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T20:19:34Z",
+    "state": "pending",
+    "title": "Explainer: What to know about US Army plans to blow up a stockpile of lead azide in Iowa",
     "topic_id": "world-news"
   },
   {
