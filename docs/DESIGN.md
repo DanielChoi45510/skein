@@ -139,7 +139,7 @@ Code: `pipeline/process/lifecycle.py`, run every pipeline run, so states follow 
 
 **Titles** (until Phase 3 names threads with the LLM): a promoted thread is titled with up to 4 words its headlines share, as "A · B · C". Words used by more headlines come first, named entities win ties, and the order and spelling follow the newest headline, e.g. "GPT-6.2 · Astra · Sol" or "Trump · Xi · Putin · Historic". With fewer than two shared words, the newest headline is the title. Pending threads use their item's headline; tracker and fixed threads keep their config title. Titles are recomputed whenever items attach.
 
-**Owner overrides** (Phase 2b; stored by the Worker, applied at the start of each pipeline run): rename, pin, mute, merge two threads, split items out to a new thread, move an item to another thread.
+**Owner overrides** (Phase 2b; stored by the Worker, applied at the start of each pipeline run): rename, pin, mute, merge two threads, split items out to a new thread, move an item to another thread. Contract: §10.2 "Overrides".
 
 ## 6. Pipeline
 
@@ -401,6 +401,26 @@ Code: `worker/` (TypeScript, `wrangler.toml`, one KV namespace bound as `SKEIN`)
   - **Pruning:** entries older than 90 days are dropped.
   - **Writes:** KV is written only when something changed.
   - **Races:** two simultaneous PUTs from different devices can race (KV is last-write-wins); the losing device's entries return with its next PUT, since clients send their whole state.
+- **Overrides** (KV key `overrides`; `worker/src/overrides.ts`; mirrored in Python in Phase 2b step 5):
+  ```
+  {"version": 1, "updated_at": instant | null,
+   "threads": {<thread id>: {"title"?: str, "pinned"?: true, "muted"?: true}},
+   "ops": [{"id", "at", "type": "merge", "from", "into"}
+         | {"id", "at", "type": "split", "thread", "items": [item ids], "new_id"}
+         | {"id", "at", "type": "move", "item", "to"}]}
+  ```
+  - **Settings** (`threads`): applied on every run. An entry left empty is removed.
+  - **Ops:** structural one-shot changes. The pipeline applies each once, in `at` order, and records the applied ids on the `data` branch.
+  - **`POST /overrides` takes exactly one action:**
+    - `rename {thread, title}`: 1–120 characters; `title: null` goes back to the automatic title.
+    - `pin`, `unpin`, `mute`, `unmute` `{thread}`.
+    - `merge {from, into}`: also drops the merged-away thread's settings.
+    - `split {thread, items}`: 1–50 items. The Worker assigns `new_id = u<12 hex>`, which never collides with the pipeline's `t…` and `topic--…` ids.
+    - `move {item, to}`.
+
+    It returns the whole document.
+  - **Limits:** ops expire after 30 days; at most 500 ops and 2,000 thread settings.
+  - **Validity:** the Worker doesn't know which threads and items exist. The pipeline skips and logs ops that point at something gone.
 - **Refresh** (`POST /refresh`):
   - Calls `workflow_dispatch` for `GITHUB_WORKFLOW` on `GITHUB_REF` and returns 202 `{dispatched_at, next_allowed_at}`.
   - **Cooldown:** 5 minutes (KV `refresh:last`); within it, 429 with `retry-after`.

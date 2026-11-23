@@ -11,6 +11,7 @@ import type { Env } from './env';
 import { corsHeaders, empty, error, withCors } from './http';
 import { AUTH_FAILURE_LIMIT, FixedWindow, REQUEST_LIMIT } from './limiter';
 import { backupTrigger } from './cron';
+import { getOverrides, postOverrides } from './overrides';
 import { getReadState, putReadState } from './readState';
 import { postRefresh } from './refresh';
 
@@ -33,7 +34,10 @@ export const routes: Route[] = [
 	{ method: 'GET', path: '/auth', roles: ['owner'], handler: () => empty(204) },
 	{ method: 'GET', path: '/read-state', roles: ['owner'], handler: getReadState },
 	{ method: 'PUT', path: '/read-state', roles: ['owner'], handler: putReadState },
-	{ method: 'POST', path: '/refresh', roles: ['owner'], handler: postRefresh }
+	{ method: 'POST', path: '/refresh', roles: ['owner'], handler: postRefresh },
+	// The pipeline reads overrides with its own token; only the owner changes them.
+	{ method: 'GET', path: '/overrides', roles: ['owner', 'pipeline'], handler: getOverrides },
+	{ method: 'POST', path: '/overrides', roles: ['owner'], handler: postOverrides }
 ];
 
 // Per Worker instance (see limiter.ts).
