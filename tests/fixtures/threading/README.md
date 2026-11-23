@@ -3,29 +3,43 @@
 Owner-labeled, from real stored items (headlines only, no excerpts). Used by
 `tests/process/test_thread_tuning.py` (DESIGN §6.5).
 
-## Labeling rubric (owner, 2026-11-22)
+## Labeling rubric (owner, 2026-11-22): a thread is one subject
 
-Ask: *would I want this item as the next update in this thread, read right after
-its earlier headlines?*
+A thread is **one subject the news keeps coming back to**, with its developments,
+consequences and commentary:
 
-1. **Same event or its direct consequences** → yes. Fallout counts only if the event caused it.
-2. **Analysis or opinion about that same event** → yes.
-3. **Same people, company or event, and its implications** → yes. A thread is a wide shot of
-   them, not one narrow development.
-4. **An ongoing war is one thread**: strikes, counter-strikes and other developments of
-   the same war belong together.
-5. **A product line is one thread** (Gemini 4 models, ChatGPT products).
-6. **A different event that only shares a theme** → no. Example: a general piece on nuclear
-   arms policy vs. the Trump–Xi–Putin summit's takeaways.
-7. Judge against the headlines shown, not what the thread became later.
-8. Unsure → no: a wrong merge muddles a thread; a missed one only leaves the item alone.
+- a company or organization (Nvidia, Anthropic, OpenAI);
+- a product line (Gemini, ChatGPT);
+- a war or conflict (the Ukraine war, the Iran war);
+- a specific event and its aftermath (the Trump–Xi–Putin summit, COP31, the House
+  majority result, the lame-duck session);
+- in health topics: one health question or public-health story (the measles comeback).
 
-Rules 3 and 4 were widened after the pairs below were labeled (see DESIGN §6.5).
+Topics (AI news, US politics, World news …) are the umbrellas above threads.
+
+1. **Same subject → same**, even from a different angle: Anthropic's IPO and its
+   safety stance; Nvidia's scandal, chips and export policy; the Iran war's fallout
+   and its tanker strikes.
+2. **Implications and consequences of an event belong to it** (oil pledges made at
+   the summit).
+3. **Group by what the story is about, not who is mentioned**: a name that's
+   everywhere in a topic (Trump in US politics, "AI" in AI news) doesn't make two
+   stories one subject.
+4. **Different subjects that only share a theme → different** (general nuclear-arms
+   policy vs. the summit; AI-at-work essays about different companies).
+5. An item about two subjects goes with the one it's mainly about.
+6. Judge against the headlines shown, not what the thread became later.
+7. **Unsure → different**: a wrong merge muddles a thread; a missed one only leaves
+   the item alone.
+
+The first labels used a narrower grain (one storyline); 13 pairs were relabeled
+"same" under this rubric (`relabeled` field). The joins were labeled in between
+and fit this rubric unchanged.
 
 ## `pairs.json`
 
-50 pairs, `label: true` = the two belong in the same thread; same topic in every
-pair. `cosine` is the bge-small-en-v1.5 similarity of title + excerpt, recorded at
+50 pairs (31 same, 19 different), `label: true` = the two belong in the same
+thread; same topic in every pair. `cosine` is the bge-small-en-v1.5 similarity of title + excerpt, recorded at
 labeling time, so tests need no model; the entity boost is recomputed from the
 titles. `batch` 1: 30 pairs sampled evenly over 0.45–0.95; `batch` 2: 20 more over
 0.65–0.85.

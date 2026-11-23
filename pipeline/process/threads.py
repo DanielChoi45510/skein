@@ -46,19 +46,25 @@ CENTROID_MIN_ALPHA = 0.25  # weight of the newest item in the centroid, once a t
 class Thresholds:
     """Decision constants (DESIGN §6.5).
 
-    Tuned 2026-11-22 on 50 hand-labeled pairs of real stored items
-    (tests/fixtures/threading/pairs.json; `python -m pipeline.threadpairs evaluate`):
-    - fallback 0.80 with a 0.02 boost: no wrong merges, 13 of 18 true pairs
-      joined (DESIGN's 0.65 merged 20 of 32 different pairs);
+    Tuned 2026-11-22 on 50 owner-labeled pairs of real stored items, at the
+    thread grain "one subject: a company, product line, war or event"
+    (tests/fixtures/threading/; `python -m pipeline.threadpairs evaluate`):
+    - fallback 0.68 with a 0.02 boost: 28 of 31 same-subject pairs joined,
+      3 of 19 different ones merged (precision and recall 0.90);
+    - grown 0.80 for threads with 2+ items: at 0.68 they chained (a 78-item
+      catch-all of US politics op-eds); a sweep on the first full run found
+      0.80 the lowest cut without catch-alls, and 18 of 20 labeled real joins
+      at ≥ 0.80 belong (tests/fixtures/threading/joins.json);
     - high 0.82: above the best-scoring different pair (0.79); rescue relies on it;
-    - low 0.65: below the worst-scoring true pair (0.70), so the Phase 3 LLM
-      sees every borderline case;
+    - low 0.65: at or below the worst-scoring true pair (0.653), so the Phase 3
+      LLM sees every borderline case;
     - margin: not measurable on pairs (one candidate each); DESIGN's 0.05 kept.
     """
 
     high: float = 0.82
     low: float = 0.65
-    fallback: float = 0.80  # gray zone without the LLM
+    fallback: float = 0.68  # gray zone without the LLM, for a one-item (pending) thread
+    grown: float = 0.80  # the same for a thread that already has 2+ items
     margin: float = 0.05  # top - second needed to attach outright at ≥ high
     entity_boost: float = 0.02  # per shared named entity
     entity_boost_max: float = 0.06
@@ -153,6 +159,7 @@ class Candidate:
     centroid: np.ndarray
     entities: frozenset[str]  # from the titles of the thread's items
     state: str
+    size: int = 1  # items in the thread
 
 
 @dataclass(frozen=True)
@@ -160,6 +167,7 @@ class Scored:
     thread_id: str
     similarity: float  # cosine with the centroid
     score: float  # similarity + entity boost
+    size: int = 1  # items in the thread
 
 
 @dataclass(frozen=True)
@@ -203,7 +211,7 @@ def rank(
     for c in candidates:
         sim = float(np.dot(vector, c.centroid))
         boost = entity_boost(item_entities, c.entities, t)
-        scored.append(Scored(c.thread_id, sim, sim + boost))
+        scored.append(Scored(c.thread_id, sim, sim + boost, c.size))
     scored.sort(key=lambda s: (-s.score, s.thread_id))
     return scored
 
@@ -221,10 +229,16 @@ def decide(ranked: Sequence[Scored], t: Thresholds = DEFAULT) -> Decision:
 
 
 def resolve_without_llm(decision: Decision, t: Thresholds = DEFAULT) -> Attach | New:
-    """The heuristic for the gray zone when no LLM answer is available."""
+    """The heuristic for the gray zone when no LLM answer is available.
+
+    A grown thread's centroid is an average, so more generic than any one
+    headline: it needs the stricter `grown` cut, or it chains (each loose join
+    makes the next easier).
+    """
     if isinstance(decision, AskLLM):
         top = decision.options[0]
-        return Attach(top.thread_id, top.score) if top.score >= t.fallback else New()
+        cut = t.grown if top.size >= 2 else t.fallback
+        return Attach(top.thread_id, top.score) if top.score >= cut else New()
     return decision
 
 

@@ -181,7 +181,11 @@ Canonicalize URLs (strip tracking params), parse dates to UTC, trim the excerpt 
 Code: `pipeline/process/threads.py`. For each relevant item in a `threaded` or `question` topic (visible, within lookback, passing the relevance threshold), in (published_at, id) order:
 1. Candidates: the topic's threads that can still be matched: active, cooling and dormant, plus pending threads less than 72 h old. Never archived (§5). Score = cosine(item, thread centroid) + entity boost: +0.02 per named entity shared with the thread's item titles, capped at +0.06. Entities are rough: tokens with digits (GPT-5), acronyms (NATO), mixed case (OpenAI) and capitalized non-first words, minus common title-case words and bracketed feed tags ("[AINews]").
 2. Top score ≥ `T_high` (**0.82**) with a margin ≥ 0.05 over the second → attach.
-3. Between `T_low` (**0.65**) and `T_high`, or ≥ `T_high` without the margin → the gray zone: ask the LLM to pick among the top 3 or "new thread" (Phase 3). If the LLM is unavailable: attach if ≥ `fallback` (**0.80**), else new. Until Phase 3, `fallback` is the cut that actually decides attach vs. new.
+3. Between `T_low` (**0.65**) and `T_high`, or ≥ `T_high` without the margin → the gray zone: ask the LLM to pick among the top 3 or "new thread" (Phase 3). If the LLM is unavailable, attach if the score reaches the cut, else new:
+   - `fallback` (**0.68**) for a one-item (pending) thread;
+   - `grown` (**0.80**) for a thread that already has 2+ items.
+
+   Until Phase 3, these two cuts are what actually decide attach vs. new.
 4. Otherwise → new `pending` thread.
 5. Update the centroid as a recency-weighted average: `c ← normalize((1−α)c + αv)`, α = max(1/n, 0.25).
 
@@ -197,12 +201,17 @@ Mode-specific rules:
 - **New threads:** a new pending thread's `created_at` is its item's `first_seen_at`, and its founding item gets `thread_score` 1.0. Tracker and fixed thread records are created when their first item arrives.
 - **Wrap-up:** then the lifecycle runs (§5), threads that changed are retitled, and unused threads are pruned.
 
-**Tuning** (2026-11-22). Labeled set: 50 owner-labeled pairs of real stored items in `tests/fixtures/threading/pairs.json` (18 same thread, 32 different; recorded bge cosines, so tests need no model). **Thread grain** (owner rubric, `tests/fixtures/threading/README.md`): a thread is a wide shot of one set of people, company or event and its implications. An ongoing war is one thread. A product line is one thread. A different event that only shares a theme (general nuclear policy vs. a summit's takeaways) is not. The pairs were labeled before rules 3–4 were widened, so a few "different" pairs would now be "same". `python -m pipeline.threadpairs pairs` samples new pairs; `evaluate` grid-searches `fallback` and the boost, ranking by F0.5 because a wrong merge is worse than a missed one.
-- `fallback` 0.80 with the 0.02 boost: no wrong merges, 13 of 18 true pairs joined. DESIGN's first guess of 0.65 merged 20 of the 32 different pairs. Without the boost, the best cut finds only 10 of 18.
-- `T_high` 0.82 sits above the best-scoring different pair (0.79); `T_low` 0.65 sits below the worst-scoring true pair (0.70).
+**Tuning** (2026-11-22). Labeled set: 50 owner-labeled pairs of real stored items in `tests/fixtures/threading/pairs.json` (18 same thread, 32 different; recorded bge cosines, so tests need no model). **Thread grain** (owner rubric, `tests/fixtures/threading/README.md`): a thread is **one subject** the news keeps coming back to, with its developments, consequences and commentary. That can be a company (Nvidia: scandal, chips and exports together), a product line (Gemini), a war (Ukraine), or an event and its aftermath (the Trump–Xi–Putin summit). Topics are the umbrellas above threads. Group by what a story is about, not who it mentions: Trump in US politics doesn't make two stories one subject. Different subjects that only share a theme stay apart. `python -m pipeline.threadpairs pairs` samples new pairs; `evaluate` grid-searches `fallback` and the boost, ranking by F0.5 because a wrong merge is worse than a missed one.
+- **`fallback` 0.68** with the 0.02 boost, at the subject grain (31 same, 19 different): 28 of 31 joined, 3 of 19 merged (precision and recall 0.90). At the first, narrower grain the best cut was 0.80.
+- `T_high` 0.82 sits above the best-scoring different pair (0.79); `T_low` 0.65 sits at or below the worst-scoring true pair (0.653).
 - The margin can't be measured on pairs (one candidate each), so the 0.05 guess stays.
 - Pairs stand in for item-vs-centroid scores: for a one-item pending thread they are the same. Joins to grown threads score higher, because a centroid is an average and so more generic.
-- **Real joins** (`joins.json`, 20 joins from the first full run): 18 of 20 belong under the rubric, and 0.80 is also the best cut for grown threads. At 0.83 the two wrong joins go, but so do 8 of the 18 right ones. So there is one cut for all threads.
+- **Real joins** (`joins.json`, 20 joins from the first full run, cut 0.80): 18 of 20 belong. At 0.83 the two wrong joins go, but so do 8 of the 18 right ones.
+- **Why grown threads need their own cut.** At 0.68 for every thread, a re-run of the first full run chained: an op-ed seeded a 78-item catch-all of US politics opinion (45% of the topic). Each loose join made the centroid more generic, and so the next join easier. Sweeping the grown cut (0.68 / 0.72 / 0.75 / 0.78 / 0.80):
+  - **0.75:** the largest US politics thread is still a generic "Republicans · Democrats · Senate" mix (17 items).
+  - **0.78:** a 9-item chain of post-midterm op-eds remains.
+  - **0.80:** no catch-alls (largest: the Anthropic IPO, 9 items). The Ukraine war (13 items), the summit (23) and the Nvidia scandal (10) each form one thread.
+- No "too-common name" rule is needed: the entity boost is capped at +0.06, and the grown cut alone stops the Trump catch-all.
 
 **Thread rescue** (Phase 2): an item scoring within 0.05 below its topic's relevance threshold (§6.4), for the most lenient source that carried it, is kept anyway if its best match is an **active** thread scoring ≥ `T_high`. It never creates a thread. The similarity is stored as `thread_score`, so the export can apply the rule from stored data. Short or terse headlines that belong to a story already being followed shouldn't be lost to the threshold.
 

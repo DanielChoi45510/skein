@@ -230,8 +230,9 @@
       "published_at": "2026-11-20T17:45:55+00:00"
     },
     "cosine": 0.6378,
-    "label": false,
-    "batch": 2
+    "label": true,
+    "batch": 2,
+    "relabeled": "2026-11-22 entity grain"
   },
   {
     "topic_id": "us-politics",
@@ -266,8 +267,9 @@
       "published_at": "2026-11-21T17:21:53+00:00"
     },
     "cosine": 0.6528,
-    "label": false,
-    "batch": 1
+    "label": true,
+    "batch": 1,
+    "relabeled": "2026-11-22 entity grain"
   },
   {
     "topic_id": "ai-news",
@@ -338,8 +340,9 @@
       "published_at": "2026-11-16T12:00:00+00:00"
     },
     "cosine": 0.6695,
-    "label": false,
-    "batch": 1
+    "label": true,
+    "batch": 1,
+    "relabeled": "2026-11-22 entity grain"
   },
   {
     "topic_id": "us-politics",
@@ -374,8 +377,9 @@
       "published_at": "2026-11-16T09:30:00+00:00"
     },
     "cosine": 0.686,
-    "label": false,
-    "batch": 2
+    "label": true,
+    "batch": 2,
+    "relabeled": "2026-11-22 entity grain"
   },
   {
     "topic_id": "us-politics",
@@ -392,8 +396,9 @@
       "published_at": "2026-11-18T14:08:00+00:00"
     },
     "cosine": 0.6941,
-    "label": false,
-    "batch": 2
+    "label": true,
+    "batch": 2,
+    "relabeled": "2026-11-22 entity grain"
   },
   {
     "topic_id": "ai-news",
@@ -446,8 +451,9 @@
       "published_at": "2026-11-16T08:00:00+00:00"
     },
     "cosine": 0.7092,
-    "label": false,
-    "batch": 2
+    "label": true,
+    "batch": 2,
+    "relabeled": "2026-11-22 entity grain"
   },
   {
     "topic_id": "world-news",
@@ -482,8 +488,9 @@
       "published_at": "2026-11-21T04:55:24+00:00"
     },
     "cosine": 0.7172,
-    "label": false,
-    "batch": 1
+    "label": true,
+    "batch": 1,
+    "relabeled": "2026-11-22 entity grain"
   },
   {
     "topic_id": "ai-news",
@@ -500,8 +507,9 @@
       "published_at": "2026-11-20T12:30:47+00:00"
     },
     "cosine": 0.7205,
-    "label": false,
-    "batch": 2
+    "label": true,
+    "batch": 2,
+    "relabeled": "2026-11-22 entity grain"
   },
   {
     "topic_id": "us-politics",
@@ -536,8 +544,9 @@
       "published_at": "2026-11-15T22:00:00+00:00"
     },
     "cosine": 0.7289,
-    "label": false,
-    "batch": 2
+    "label": true,
+    "batch": 2,
+    "relabeled": "2026-11-22 entity grain"
   },
   {
     "topic_id": "world-news",
@@ -554,8 +563,9 @@
       "published_at": "2026-11-20T19:55:00+00:00"
     },
     "cosine": 0.7323,
-    "label": false,
-    "batch": 2
+    "label": true,
+    "batch": 2,
+    "relabeled": "2026-11-22 entity grain"
   },
   {
     "topic_id": "us-politics",
@@ -590,8 +600,9 @@
       "published_at": "2026-11-20T00:00:00+00:00"
     },
     "cosine": 0.7582,
-    "label": false,
-    "batch": 1
+    "label": true,
+    "batch": 1,
+    "relabeled": "2026-11-22 entity grain"
   },
   {
     "topic_id": "us-politics",
@@ -626,8 +637,9 @@
       "published_at": "2026-11-20T22:36:47+00:00"
     },
     "cosine": 0.7666,
-    "label": false,
-    "batch": 2
+    "label": true,
+    "batch": 2,
+    "relabeled": "2026-11-22 entity grain"
   },
   {
     "topic_id": "ai-news",
@@ -644,8 +656,9 @@
       "published_at": "2026-11-18T06:00:00+00:00"
     },
     "cosine": 0.7718,
-    "label": false,
-    "batch": 2
+    "label": true,
+    "batch": 2,
+    "relabeled": "2026-11-22 entity grain"
   },
   {
     "topic_id": "health-wellbeing",

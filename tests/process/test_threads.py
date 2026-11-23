@@ -147,7 +147,7 @@ H, L, F, M = DEFAULT.high, DEFAULT.low, DEFAULT.fallback, DEFAULT.margin
 
 
 def test_tuned_thresholds_are_ordered() -> None:
-    assert L <= F <= H
+    assert L <= F <= DEFAULT.grown <= H
 
 
 def test_high_with_clear_margin_attaches() -> None:
@@ -183,6 +183,21 @@ def test_gray_zone_without_llm_attaches_at_fallback(top: float, expected) -> Non
     d = decide(scored(top, top - 0.01))
     assert isinstance(d, AskLLM)
     assert resolve_without_llm(d) == expected
+
+
+def test_grown_threads_need_the_grown_cut() -> None:
+    between = (F + DEFAULT.grown) / 2
+    one = AskLLM((Scored("t0", between, between, size=1),))
+    grown = AskLLM((Scored("t0", between, between, size=2),))
+    assert resolve_without_llm(one) == Attach("t0", between)
+    assert resolve_without_llm(grown) == New()
+    at_cut = AskLLM((Scored("t0", DEFAULT.grown, DEFAULT.grown, size=5),))
+    assert resolve_without_llm(at_cut) == Attach("t0", DEFAULT.grown)
+
+
+def test_rank_carries_thread_size() -> None:
+    ranked = rank(E0, frozenset(), [Candidate("t", E0, frozenset(), "active", 7)])
+    assert ranked[0].size == 7
 
 
 def test_resolve_passes_clear_decisions_through() -> None:

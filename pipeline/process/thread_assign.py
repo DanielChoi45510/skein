@@ -171,7 +171,7 @@ def assign_threads(
             continue
 
         candidates = [
-            Candidate(th.id, centroids[th.id], thread_entities(th), th.state)
+            Candidate(th.id, centroids[th.id], thread_entities(th), th.state, len(th.item_ids))
             for th in threads.values()
             if th.topic_id == topic.id and is_candidate(th, th.id in centroids, now)
         ]
