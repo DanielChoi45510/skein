@@ -10,6 +10,7 @@ import { authenticate, type Role } from './auth';
 import type { Env } from './env';
 import { corsHeaders, empty, error, withCors } from './http';
 import { AUTH_FAILURE_LIMIT, FixedWindow, REQUEST_LIMIT } from './limiter';
+import { getReadState, putReadState } from './readState';
 
 export interface Context {
 	request: Request;
@@ -27,7 +28,9 @@ export interface Route {
 
 export const routes: Route[] = [
 	// Lets the Settings screen check a pasted token without side effects.
-	{ method: 'GET', path: '/auth', roles: ['owner'], handler: () => empty(204) }
+	{ method: 'GET', path: '/auth', roles: ['owner'], handler: () => empty(204) },
+	{ method: 'GET', path: '/read-state', roles: ['owner'], handler: getReadState },
+	{ method: 'PUT', path: '/read-state', roles: ['owner'], handler: putReadState }
 ];
 
 // Per Worker instance (see limiter.ts).

@@ -395,6 +395,12 @@ Code: `worker/` (TypeScript, `wrangler.toml`, one KV namespace bound as `SKEIN`)
   - The default is an in-memory window per Worker instance: free, best-effort, and with 256-bit tokens brute force is out of reach anyway.
   - The optional Cloudflare rate-limiting binding (commented out in `wrangler.toml`; free-plan availability unconfirmed) replaces the per-IP request limit.
   - KV is never used for counters (eventually consistent, 1,000 free writes a day).
+- **Read state** (KV key `read-state`): `{"topics": {id: instant}, "threads": {id: instant}}`.
+  - **PUT merges:** for each id the later instant wins, so a lagging device never moves state backwards and devices never conflict. The response is the merged document, so a client syncs in one round trip.
+  - **Limits:** at most 5,000 entries per section, 256 KB per body, no instants more than a day ahead.
+  - **Pruning:** entries older than 90 days are dropped.
+  - **Writes:** KV is written only when something changed.
+  - **Races:** two simultaneous PUTs from different devices can race (KV is last-write-wins); the losing device's entries return with its next PUT, since clients send their whole state.
 - **Errors:** `{"error": {"code", "message"}}` with an HTTP status. Responses are never cached (`cache-control: no-store`), and internals are never echoed.
 - **Per-deployment settings** are not committed, so the repo carries no account details:
   - `ALLOWED_ORIGINS` (the Pages origin) and `GITHUB_REPO` (`owner/name`) are set like secrets: `npx wrangler secret put <NAME>`.
