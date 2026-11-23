@@ -494,3 +494,68 @@ def test_topic_with_images_off_exports_no_image(tmp_path: Path) -> None:
     ]
     cfg = dataclasses.replace(CFG, topics=CFG.topics.model_copy(update={"topics": topics}))
     assert exported_image(tmp_path, cfg) is None
+
+
+# ───────────────────────────── thread structure (DESIGN §6.9) ─────────────────────────────
+
+
+def test_structure_is_projected_onto_exported_items(tmp_path: Path) -> None:
+    from pipeline.process.structure import Branch, Structure, Structures
+
+    hour = dt.timedelta(hours=1)
+    items = [item(n, published=NOW - (10 - n) * hour, thread_id="t1") for n in range(1, 6)]
+    items[1] = items[1].model_copy(update={"relevance": 0.1})  # i02: below threshold, not exported
+    threads = {
+        "t1": Thread(
+            id="t1", topic_id="world", kind="story", title="One", state="active",
+            created_at=NOW, last_item_at=NOW, item_ids=[i.id for i in items],
+        ),
+        "t2": Thread(
+            id="t2", topic_id="world", kind="story", title="Two", state="active",
+            created_at=NOW, last_item_at=NOW, item_ids=["i09"],
+        ),
+    }  # fmt: skip
+    items.append(item(9, thread_id="t2"))
+    structures = Structures(
+        threads={
+            "t1": Structure(
+                spine=["i01", "i03", "i04"],
+                branches=[Branch(anchor="i02", items=["i02", "i05"])],  # anchor not exported
+            )
+        },
+        related={"t1": [("t2", 0.83), ("t-gone", 0.81)]},
+    )
+    export_feed(tmp_path, CFG, items, {}, NOW, threads=threads, structures=structures)
+    data = json.loads((tmp_path / "feed" / "threads" / "t1.json").read_text())
+    st = data["structure"]
+    assert st["spine"] == ["i01", "i03", "i04"]
+    # i02 dropped; the branch re-anchored to the spine item nearest its first item (i05)
+    assert st["branches"] == [{"id": "b-i05", "anchor": "i04", "items": ["i05"]}]
+    assert st["related"] == [{"id": "t2", "title": "Two", "topic_id": "world", "similarity": 0.83}]
+    # no structure computed for t2: none exported
+    assert json.loads((tmp_path / "feed" / "threads" / "t2.json").read_text())["structure"] is None
+
+
+def test_structure_falls_back_to_all_spine(tmp_path: Path) -> None:
+    from pipeline.export.feed import project_structure
+    from pipeline.export.models import ThreadFeed
+    from pipeline.process.structure import Branch, Structure
+
+    feed = ThreadFeed.model_validate(
+        {
+            "id": "t", "topic_id": "world", "title": "T", "kind": "story", "state": "active",
+            "created_at": NOW, "last_item_at": NOW,
+            "days": [{"date": NOW.date(), "items": [
+                {"id": i, "title": i, "url": "https://e.com", "source_id": "s",
+                 "published_at": NOW + dt.timedelta(minutes=n), "first_seen_at": NOW,
+                 "importance": 0.5, "also_covered_by": [], "collapsed": False}
+                for n, i in enumerate(["x", "y", "z"])
+            ]}],
+        }
+    )  # fmt: skip
+    gone = Structure(spine=["gone"], branches=[Branch(anchor="gone", items=["y"])])
+    st = project_structure(gone, feed, [])
+    assert st.spine == ["x", "y", "z"] and st.branches == []
+    # exported items the structure doesn't know join the spine, by time
+    partial = Structure(spine=["x"], branches=[])
+    assert project_structure(partial, feed, []).spine == ["x", "y", "z"]

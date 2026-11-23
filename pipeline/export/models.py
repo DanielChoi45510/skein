@@ -76,6 +76,31 @@ class TopicFeed(_Out):
     muted: list[MutedThread] = []  # so the owner can unmute; by title
 
 
+class StructureBranch(_Out):
+    """A smaller storyline of the thread, hanging off one spine item (DESIGN §6.9)."""
+
+    id: str  # "b-" + its first item's id: stable while that item leads it
+    anchor: str  # the spine item it hangs off (closest in meaning and time)
+    items: list[str]  # item ids, oldest first
+
+
+class RelatedThread(_Out):
+    """Another listed thread whose items are similar overall (a spoke)."""
+
+    id: str
+    title: str  # as exported (owner renames applied)
+    topic_id: str
+    similarity: float  # thread-centroid cosine, rounded
+
+
+class ThreadStructure(_Out):
+    """Spine and branches of a thread, over its exported items (heuristic; DESIGN §6.9)."""
+
+    spine: list[str]  # item ids of the main storyline, oldest first
+    branches: list[StructureBranch]  # by first item, oldest first
+    related: list[RelatedThread]  # most similar first
+
+
 class ThreadFeed(_Out):
     schema_version: int = SCHEMA_VERSION
     id: str
@@ -86,6 +111,8 @@ class ThreadFeed(_Out):
     created_at: dt.datetime
     last_item_at: dt.datetime
     days: list[Day]  # newest first; per-thread daily cap (§6.6), not the topic's lookback
+    # Absent when the run couldn't compute it (e.g. no embedding model): show a timeline.
+    structure: ThreadStructure | None = None
 
 
 class TopicSummary(_Out):

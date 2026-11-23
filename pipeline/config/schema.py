@@ -40,6 +40,20 @@ class StrictModel(BaseModel):
 # ───────────────────────────── topics.yaml ─────────────────────────────
 
 
+class StructureParams(StrictModel):
+    """Thread structure for the spine-and-branches view (DESIGN §6.9).
+
+    Picked from the stored data on 2026-11-24; see docs/overnight-log.md.
+    """
+
+    link: Fraction  # storylines: merge while their average pairwise cosine is ≥ this
+    link_predefined: Fraction  # the same for tracker / fixed threads (broad by design)
+    min_items: PositiveInt  # threads smaller than this are all spine
+    anchor_day_penalty: Annotated[float, Field(ge=0.0, le=1.0)]  # per day, when anchoring a branch
+    related: Fraction  # related threads: thread-centroid cosine ≥ this
+    related_max: Annotated[int, Field(ge=0, le=20)]
+
+
 class Defaults(StrictModel):
     daily_cap_per_thread: PositiveInt
     cooling_after_days: PositiveInt  # thread lifecycle (DESIGN §5): active → cooling
@@ -47,6 +61,7 @@ class Defaults(StrictModel):
     archive_after_days: PositiveInt
     lookback_days: PositiveInt
     relevance_threshold: Fraction  # items scoring below this for every topic are hidden
+    structure: StructureParams
 
 
 class Group(StrictModel):

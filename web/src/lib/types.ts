@@ -56,6 +56,28 @@ export interface TopicFeed {
 	muted?: MutedThread[]; // owner overrides (Phase 2b); absent in older feeds
 }
 
+/** A smaller storyline of a thread, hanging off one spine item (DESIGN §6.9). */
+export interface StructureBranch {
+	id: string; // "b-" + its first item's id
+	anchor: string; // spine item id it hangs off
+	items: string[]; // item ids, oldest first
+}
+
+/** Another listed thread whose items are similar overall (a spoke). */
+export interface RelatedThread {
+	id: string;
+	title: string;
+	topic_id: string;
+	similarity: number;
+}
+
+/** Spine and branches over a thread's exported items (heuristic; DESIGN §6.9). */
+export interface ThreadStructure {
+	spine: string[]; // item ids of the main storyline, oldest first
+	branches: StructureBranch[]; // by first item, oldest first
+	related: RelatedThread[]; // most similar first
+}
+
 export interface ThreadFeed {
 	schema_version: number;
 	id: string;
@@ -66,6 +88,7 @@ export interface ThreadFeed {
 	created_at: string;
 	last_item_at: string;
 	days: Day[]; // per-thread daily cap
+	structure?: ThreadStructure | null; // absent in older feeds, or when the run couldn't compute it
 }
 
 export interface TopicSummary {

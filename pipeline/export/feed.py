@@ -46,11 +46,12 @@ from pathlib import Path
 
 from ..config.schema import Source, Topic, TopicsFile
 from ..config.validate import Config
-from ..models import Item, SourceHealth, Thread
+from ..models import LISTED_STATES, Item, SourceHealth, Thread
 from ..overrides import EMPTY, Overrides
 from ..process.normalize import display_title, excluded_by_title
 from ..process.rank import importance
 from ..process.relevance import passes_threshold
+from ..process.structure import Structure, Structures
 from ..process.threads import DEFAULT, in_rescue_band
 from ..state import write_text_atomic
 from .models import (
@@ -59,8 +60,11 @@ from .models import (
     FeedIndex,
     GroupSummary,
     MutedThread,
+    RelatedThread,
     SourceSummary,
+    StructureBranch,
     ThreadFeed,
+    ThreadStructure,
     ThreadSummary,
     TopicFeed,
     TopicSummary,
@@ -71,7 +75,6 @@ log = logging.getLogger(__name__)
 FEED_DIR = "feed"
 TOPICS_DIR = "topics"
 THREADS_DIR = "threads"
-LISTED_STATES = frozenset({"active", "cooling", "dormant"})  # promoted and not archived
 _WINDOW_CAPS = (("max_per_week", 7), ("target_per_week", 7), ("max_per_month", 30))
 
 Scored = list[tuple[Item, float]]
@@ -85,9 +88,11 @@ def export_feed(
     now: dt.datetime,
     threads: Mapping[str, Thread] | None = None,
     overrides: Overrides = EMPTY,
+    structures: Structures | None = None,
 ) -> FeedIndex:
     """Write feed/index.json, feed/topics/<id>.json and feed/threads/<id>.json."""
     threads = threads or {}
+    structures = structures or Structures()
     # Only enabled sources count: disabling (or removing) a source hides its stored
     # items on the next run. A story it shared with an enabled source stays, because
     # an item shows if any enabled source that carried it would show it.
@@ -160,6 +165,22 @@ def export_feed(
         )
         feeds[topic.id] = feed.model_copy(update={"threads": summaries, "muted": muted_here})
 
+    for thread_id, tf in thread_feeds.items():
+        if (st := structures.threads.get(thread_id)) is not None:
+            related = [
+                RelatedThread(
+                    id=other,
+                    title=thread_feeds[other].title,
+                    topic_id=thread_feeds[other].topic_id,
+                    similarity=sim,
+                )
+                for other, sim in structures.related.get(thread_id, [])
+                if other in thread_feeds
+            ]
+            thread_feeds[thread_id] = tf.model_copy(
+                update={"structure": project_structure(st, tf, related)}
+            )
+
     index = FeedIndex(
         generated_at=now,
         groups=[
@@ -193,6 +214,39 @@ def export_feed(
     _write_all(feed_dir / THREADS_DIR, thread_feeds)
     write_text_atomic(feed_dir / "index.json", index.model_dump_json() + "\n")
     return index
+
+
+def project_structure(
+    st: Structure, feed: ThreadFeed, related: list[RelatedThread]
+) -> ThreadStructure:
+    """A thread's structure over the items its file actually exports.
+
+    The structure is computed from every visible stored item; some aren't
+    exported (below the relevance threshold, title-excluded, …). Those are
+    dropped. A branch whose anchor isn't exported moves to the exported spine
+    item nearest in time to the branch's first item. With no exported spine
+    item left, every exported item is spine.
+    """
+    times = {i.id: i.published_at for d in feed.days for i in d.items}
+    order = sorted(times, key=lambda i: (times[i], i))
+    spine = [i for i in st.spine if i in times]
+    covered = set(spine)
+    branches: list[StructureBranch] = []
+    if spine:
+        for b in st.branches:
+            members = [i for i in b.items if i in times]
+            if not members:
+                continue
+            anchor = b.anchor
+            if anchor not in times:
+                start = times[members[0]]
+                anchor = min(spine, key=lambda s: (abs((times[s] - start).total_seconds()), s))
+            branches.append(StructureBranch(id=f"b-{members[0]}", anchor=anchor, items=members))
+            covered.update(members)
+    # Exported items the structure doesn't know (e.g. joined since): spine, by time.
+    spine = sorted(spine + [i for i in order if i not in covered], key=lambda i: (times[i], i))
+    branches.sort(key=lambda b: (times[b.items[0]], b.id))
+    return ThreadStructure(spine=spine, branches=branches, related=related)
 
 
 def _rescued(

@@ -261,12 +261,40 @@ The contract is `pipeline/export/models.py` (`schema_version` **2** since Phase 
   - `threads`: the topic's **listed** threads (active, cooling, dormant; not pending or archived) with at least one exported item, newest update first. Each summary is `{id, title, kind, state, last_item_at, item_count, collapsed_count, latest_first_seen_at, first_seen, latest}`. `first_seen` lists the shown items' `first_seen_at` (for "N new"); `latest` is the newest item, for a preview. Not limited to the lookback, so dormant threads still list.
   - Owner overrides (§10.2) add `pinned` to summaries (pinned threads list first) and `muted: [{id, title}]` to the topic. These fields are additive, so `schema_version` stays 2.
   - `days`: the other items within the topic's lookback, grouped by UTC day of publication (newest first) and ranked by importance. For flat topics that's every item; for threaded ones, pending single items and unthreaded ones.
-- `feed/threads/<id>.json`: `{id, topic_id, title, kind, state, created_at, last_item_at, days}` with every exported item of the thread among the loaded items (≈ 30 days), by UTC day, ranked by importance. Stale topic and thread files are removed.
+- `feed/threads/<id>.json`: `{id, topic_id, title, kind, state, created_at, last_item_at, days, structure}` with every exported item of the thread among the loaded items (≈ 30 days), by UTC day, ranked by importance. Stale topic and thread files are removed.
+  - `structure` (§6.9) is `{spine: [item id…], branches: [{id, anchor, items: [item id…]}], related: [{id, title, topic_id, similarity}]}`.
+  - Every exported item appears exactly once, in the spine or one branch.
+  - It's null when the run couldn't compute it. It's additive, so `schema_version` stays 2.
 - Days are UTC in the export; the frontend regroups items by the viewer's local day for display. Per-day caps still count UTC days, so a local day can show slightly more than one day's cap.
 - **Caps:**
   - Topic `days`: `max_per_day` per day; `max_per_week` / `target_per_week` over the trailing 7 days, `max_per_month` over 30; otherwise `defaults.daily_cap_per_thread` per day.
   - Thread files: the per-thread daily cap, `daily_cap_per_thread` (topic override, else default 5).
   - Over-cap items are exported with `collapsed: true` and never dropped.
+
+### 6.9 Thread structure (spine and branches)
+Heuristics only; naming branches with the LLM is Phase 3. Code in `pipeline/process/structure.py`; parameters in `topics.yaml` `defaults.structure`.
+- **Storylines:**
+  - **Grouping:** a thread's visible stored items are grouped by average-linkage agglomerative clustering of their vectors (title + excerpt, as for thread assignment). The two closest groups merge while their average pairwise cosine is ≥ `link` (0.72). Tracker and fixed threads gather a whole subject, so they use the looser `link_predefined` (0.65). Average linkage can't chain unrelated items through a run of near neighbours.
+  - **Spine:** the largest storyline. Ties go to the one spanning the most time (the most continuous), then the one that started first.
+  - **Branches:** every other storyline. Each is anchored to the spine item that maximizes `cos(branch centroid, item) − anchor_day_penalty × |days between it and the branch's first item|` (0.15 per day): closest in meaning and time.
+  - **No structure:** threads under `min_items` (3) items, or whose largest storyline is a single item, are all spine.
+- **Related threads** (the spokes):
+  - **Rule:** other listed threads whose centroid (normalized mean of their item vectors) has cosine ≥ `related` (0.80) with this one's, most similar first, at most `related_max` (5). Any topic qualifies.
+  - **Exception:** two predefined threads of the same tracker / fixed topic are never related. They're the topic's own categories, already side by side and broadly similar by construction (market sectors scored 0.81–0.86 with one another).
+- **When it runs:**
+  - Every run that exports. Nothing is stored, so it's idempotent, and owner merges, splits and moves show at once.
+  - The embedding model is loaded for it even on runs without new items (about 400 thread items at the time of writing, a few seconds on CPU).
+  - If it fails, the feed exports without `structure` and the view falls back to a timeline.
+- **Export (§6.8):**
+  - The structure is computed over the visible stored items and projected onto the ones the thread file exports. Unexported items are dropped.
+  - A branch whose anchor isn't exported moves to the exported spine item nearest in time to its first item.
+  - Exported items the structure doesn't place join the spine.
+  - With no exported spine item left, everything is spine.
+- **Tuning:** values were picked on 2026-11-24 from the stored data (104 listed threads, 425 items, the real model).
+  - **Within-thread similarity:** the median pairwise cosine is 0.72 for story threads and 0.62 for tracker / fixed ones.
+  - **`link`:** at 0.70 real side stories merge into the spine; at 0.75 spines fragment (median spine share 0.67, about 4 storylines per thread).
+  - **`related`:** at 0.80 pairs are reliably about the same subject; 0.75–0.80 is mixed; below that, mostly coincidence.
+  - Example structures are in docs/overnight-log.md. Retune as data accumulates; the first sample covers only two days.
 
 ## 7. Filters and labels
 

@@ -61,6 +61,7 @@ class Item(BaseModel):
 
 ThreadKind = Literal["story", "question", "tracker", "fixed"]
 ThreadState = Literal["pending", "active", "cooling", "dormant", "archived"]
+LISTED_STATES = frozenset({"active", "cooling", "dormant"})  # promoted and not archived: shown
 
 
 class Thread(BaseModel):

@@ -1,10 +1,13 @@
 """One pipeline run:
 
 fetch → normalize → exact dedupe → embed → near-dup → relevance scores → threads
-      → save state → export (thresholds, ranking, caps)
+      → save state → thread structure → export (thresholds, ranking, caps)
 
 The embedding model is loaded at most once, and only when something needs a
-vector: new items, stored items still to be threaded, or tracker / fixed anchors.
+vector: new items, stored items still to be threaded, tracker / fixed anchors,
+or (with an export) the items of listed threads, for their structure (DESIGN
+§6.9). Structure isn't stored: it's recomputed from the stored items each run,
+and if it fails the feed is exported without it.
 
 A source that fails is recorded in source health and skipped; it never fails the
 run. Everything is written to the state dir once, at the end (see state.py).
@@ -30,7 +33,8 @@ from .overrides import load_overrides
 from .process.dedupe import NEAR_DUP_WINDOW, mark_near_duplicates, merge_exact
 from .process.embed import Embedder, SentenceTransformerEmbedder
 from .process.normalize import normalize
-from .process.relevance import assign_topics
+from .process.relevance import assign_topics, item_text
+from .process.structure import Structures, thread_structures
 from .process.thread_assign import ThreadReport, assign_threads
 from .process.threads import DEFAULT, Thresholds
 from .state import State
@@ -165,6 +169,27 @@ def run(
 
     state.save()
     if out_dir is not None:
+        structures = Structures()
+        try:
+
+            def vectors_for(needed: list) -> dict:
+                missing = [i for i in needed if i.id not in vectors]
+                found = get_embedder().embed([item_text(i) for i in missing], "passage")
+                return {i.id: vectors[i.id] for i in needed if i.id in vectors} | dict(
+                    zip([i.id for i in missing], found, strict=True)
+                )
+
+            structures = thread_structures(
+                state.items, state.threads, cfg.topics, vectors_for, skip=state.overrides.muted
+            )
+            branches = sum(len(s.branches) for s in structures.threads.values())
+            log.info(
+                "structure: %d thread(s), %d branch(es), %d with related threads",
+                len(structures.threads), branches, sum(1 for r in structures.related.values() if r),
+            )  # fmt: skip
+        except Exception:  # the view degrades to a plain timeline; the feed still exports
+            log.exception("thread structure failed; exporting without it")
+            structures = Structures()
         index = export_feed(
             out_dir,
             cfg,
@@ -173,6 +198,7 @@ def run(
             now,
             threads=state.threads,
             overrides=state.overrides,
+            structures=structures,
         )
         shown = sum(t.visible_count for g in index.groups for t in g.topics)
         log.info("exported %d visible item(s) to %s", shown, out_dir / "feed")

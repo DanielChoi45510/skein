@@ -16,6 +16,13 @@ defaults:
   lookback_days: 7               # ignore items older than this on first sight
   relevance_threshold: 0.50      # calibrated 2026-11-22 on 52 verified sources, query instruction off
                                  # (python -m pipeline.calibrate); recalibrate after changing sources
+  structure:                     # spine-and-branches thread view (DESIGN §6.9); picked 2026-11-24
+    link: 0.72                   #   storylines merge while their average pairwise cosine is ≥ this
+    link_predefined: 0.65        #   the same for tracker / fixed threads, which are broad by design
+    min_items: 3                 #   smaller threads are all spine
+    anchor_day_penalty: 0.15     #   a branch hangs off the spine item best by cosine − 0.15 × days apart
+    related: 0.80                #   related threads: thread-centroid cosine ≥ this …
+    related_max: 5               #   … at most this many, most similar first
 
 groups:
   - { id: ai,     name: AI }
