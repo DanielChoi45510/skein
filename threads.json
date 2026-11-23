@@ -69,10 +69,11 @@
       "6c992c3cf6f309e8",
       "34dd0bfc6f38c1c2",
       "547e0916d06632a0",
-      "835c9cf5195f32c9"
+      "835c9cf5195f32c9",
+      "4c98bc46eb20d7db"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-23T21:08:00Z",
+    "last_item_at": "2026-11-23T23:38:00Z",
     "state": "active",
     "title": "Energy",
     "topic_id": "markets"
@@ -1598,12 +1599,13 @@
     "created_at": "2026-11-22T03:51:06.410293Z",
     "id": "t39c1522980ae",
     "item_ids": [
-      "fec2a0ef2d9f1c6b"
+      "fec2a0ef2d9f1c6b",
+      "7a642af60377ca6c"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-20T15:03:34Z",
-    "state": "pending",
-    "title": "C.F.T.C. Officials Considered Investigating Trump’s Memecoin, Then Punted",
+    "last_item_at": "2026-11-23T23:35:54Z",
+    "state": "active",
+    "title": "Trump Toasted a Troubled Boxer as a V.I.P. at Crypto Gala",
     "topic_id": "us-politics"
   },
   {
@@ -1615,7 +1617,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-20T23:11:05Z",
-    "state": "active",
+    "state": "cooling",
     "title": "Rescue Mission",
     "topic_id": "world-news"
   },
@@ -1653,6 +1655,18 @@
     "state": "cooling",
     "title": "William · Kate · Mumbai",
     "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-23T23:48:50.044707Z",
+    "id": "t3d49334dc17c",
+    "item_ids": [
+      "0725746026853f96"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T22:59:00Z",
+    "state": "pending",
+    "title": "House Democrats Win an 85-Seat Margin",
+    "topic_id": "us-politics"
   },
   {
     "created_at": "2026-11-22T09:09:42.410739Z",
@@ -1766,12 +1780,13 @@
     "created_at": "2026-11-23T01:41:04.329483Z",
     "id": "t3fb94f5d1c90",
     "item_ids": [
-      "6a0f36b62cdc09e1"
+      "6a0f36b62cdc09e1",
+      "2a85fee8ebc07b06"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-23T01:32:02Z",
-    "state": "pending",
-    "title": "Israeli Political Leaders Denounce ‘Jewish Terrorism’ After West Bank Attacks",
+    "last_item_at": "2026-11-23T22:49:00Z",
+    "state": "active",
+    "title": "West · Bank",
     "topic_id": "world-news"
   },
   {
@@ -1798,6 +1813,18 @@
     "state": "active",
     "title": "E.R. Doctors on Avoiding Thanksgiving Hazards",
     "topic_id": "health-wellbeing"
+  },
+  {
+    "created_at": "2026-11-23T23:48:50.044707Z",
+    "id": "t419afc71183f",
+    "item_ids": [
+      "0bd11b2ae353de12"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T22:44:35Z",
+    "state": "pending",
+    "title": "The Second Trump Coup",
+    "topic_id": "us-politics"
   },
   {
     "created_at": "2026-11-22T03:51:06.410293Z",
@@ -3756,6 +3783,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-23T23:48:50.044707Z",
+    "id": "t9d6ab9b93c72",
+    "item_ids": [
+      "a94134d97c28ee43"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T22:57:00Z",
+    "state": "pending",
+    "title": "Lina Khan’s Grand Theft Antitrust",
+    "topic_id": "us-politics"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "t9f492d3d7aeb",
     "item_ids": [
@@ -3910,12 +3949,14 @@
       "9c8cfec0d3131d57",
       "742679a10b1dc2ca",
       "21db08f197663db9",
-      "5c04090732f29702"
+      "5c04090732f29702",
+      "10f0d48cba269a1d",
+      "4cf839c6aa7ed738"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-23T21:41:30Z",
+    "last_item_at": "2026-11-23T23:07:26Z",
     "state": "active",
-    "title": "Trump · Jensen · Huang · Nvidia",
+    "title": "Nvidia · Jensen · Huang · Trump",
     "topic_id": "us-politics"
   },
   {
@@ -4254,7 +4295,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-20T23:11:00Z",
-    "state": "active",
+    "state": "cooling",
     "title": "Opinion | Why China Wants to Control a Yacht Maker",
     "topic_id": "world-news"
   },
@@ -5226,12 +5267,13 @@
     "created_at": "2026-11-22T20:20:33.012568Z",
     "id": "te32e0d9c590a",
     "item_ids": [
-      "4d97ad244af2dbcd"
+      "4d97ad244af2dbcd",
+      "c0ba9ad412b8e7c4"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-21T04:21:30Z",
-    "state": "pending",
-    "title": "Leaders of Mexican drug cartel and 19 others indicted for smuggling guns, drugs and people",
+    "last_item_at": "2026-11-23T23:13:02Z",
+    "state": "active",
+    "title": "Mexico nabs yet another top drug lord, but history of 'Kingpin Strategy' mixed",
     "topic_id": "us-politics"
   },
   {
@@ -5257,6 +5299,18 @@
     "state": "pending",
     "title": "How does chemotherapy followed by surgery compare with chemotherapy and radiation given together without surgery for the treatment of locally advanced cervical cancer?",
     "topic_id": "health-wellbeing"
+  },
+  {
+    "created_at": "2026-11-23T23:48:50.044707Z",
+    "id": "te641a95d21bc",
+    "item_ids": [
+      "e4a813abb4c01ec0"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T22:40:00Z",
+    "state": "pending",
+    "title": "The Case for Capitalism: Your Thanksgiving Meal",
+    "topic_id": "us-politics"
   },
   {
     "created_at": "2026-11-22T20:20:33.012568Z",
@@ -5721,6 +5775,18 @@
     "last_item_at": "2026-11-20T22:16:00Z",
     "state": "pending",
     "title": "Trump Case Against the New York Times Advances",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-23T23:48:50.044707Z",
+    "id": "tf72da37af9c8",
+    "item_ids": [
+      "a4ac370dc415a9e0"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T23:25:40Z",
+    "state": "pending",
+    "title": "South Korea briefly issues evacuation warning after Russia aircraft enters airspace",
     "topic_id": "world-news"
   },
   {
