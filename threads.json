@@ -169,10 +169,11 @@
       "d1fd56c023d68f5f",
       "6c9f6a138c014817",
       "7c2cdff92f5740e3",
-      "70a4e471ba6bb9a2"
+      "70a4e471ba6bb9a2",
+      "a3e1759d367a3ca9"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-23T08:29:18Z",
+    "last_item_at": "2026-11-23T16:13:32Z",
     "state": "active",
     "title": "Information Technology",
     "topic_id": "markets"
@@ -1721,12 +1722,13 @@
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "t45a287cf3748",
     "item_ids": [
-      "b9091987348b0b7f"
+      "b9091987348b0b7f",
+      "7efdd80ad22aa381"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-17T21:08:00Z",
-    "state": "pending",
-    "title": "Canada and China Draw Closer with Expanded Trade Pact",
+    "last_item_at": "2026-11-23T15:49:46Z",
+    "state": "active",
+    "title": "China · Trade",
     "topic_id": "world-news"
   },
   {
@@ -2077,6 +2079,18 @@
     "state": "pending",
     "title": "The Point of Humans in a Jobless World",
     "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-23T16:48:47.053737Z",
+    "id": "t593813ce6927",
+    "item_ids": [
+      "f66d96ccd108a3f5"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T05:00:49Z",
+    "state": "pending",
+    "title": "Yes, 17M lines of Lean is a lot",
+    "topic_id": "ai-news"
   },
   {
     "created_at": "2026-11-22T09:09:42.410739Z",
@@ -3591,10 +3605,11 @@
       "fea8a8674624f72e",
       "4f65d63f78466896",
       "34ffdb14260fcca7",
-      "41e3386b916ebd7e"
+      "41e3386b916ebd7e",
+      "a31a76959eaf330f"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-23T14:51:24Z",
+    "last_item_at": "2026-11-23T16:21:00Z",
     "state": "active",
     "title": "China · Jensen · Huang · Nvidia",
     "topic_id": "us-politics"
@@ -3731,6 +3746,18 @@
     "last_item_at": "2026-11-19T22:48:00Z",
     "state": "pending",
     "title": "The U.S. Navy Needs Frigates. Japan Has One",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-23T16:48:47.053737Z",
+    "id": "tab680a6eedb3",
+    "item_ids": [
+      "42bd98a1f00202ab"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T16:46:05Z",
+    "state": "pending",
+    "title": "Fiscal Reality Interrupts Everyone’s Social Security Fairy Tales",
     "topic_id": "us-politics"
   },
   {
@@ -4409,6 +4436,18 @@
     "topic_id": "ai-news"
   },
   {
+    "created_at": "2026-11-23T16:48:47.053737Z",
+    "id": "tc409fdacccd1",
+    "item_ids": [
+      "e5f5e550f3cd33ed"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T16:29:51Z",
+    "state": "pending",
+    "title": "EXCLUSIVE: Canada and Qatar to sign investment pact on Tuesday, source says",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-23T01:41:04.329483Z",
     "id": "tc85ea3ff5836",
     "item_ids": [
@@ -4968,10 +5007,11 @@
       "6e64202f347e6403",
       "e6275d365c834ce9",
       "3af798269da269ef",
-      "af91479be4c537a4"
+      "af91479be4c537a4",
+      "f55495a17ad2b67f"
     ],
     "kind": "tracker",
-    "last_item_at": "2026-11-21T22:22:26Z",
+    "last_item_at": "2026-11-23T16:06:02Z",
     "state": "active",
     "title": "Phones",
     "topic_id": "tech-trackers"
