@@ -115,10 +115,11 @@
       "cf91e1d3c3ccce4d",
       "095b1fd1eb2d40a0",
       "7251c0248171bb3b",
-      "f10c09ecedead20a"
+      "f10c09ecedead20a",
+      "67a996cc5dfb1d5d"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-23T14:42:52Z",
+    "last_item_at": "2026-11-23T18:32:00Z",
     "state": "active",
     "title": "Financials",
     "topic_id": "markets"
@@ -524,6 +525,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-23T18:48:42.826335Z",
+    "id": "t0ac5d86767de",
+    "item_ids": [
+      "6245f3b7b3d1778f"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T18:34:00Z",
+    "state": "pending",
+    "title": "Nvidia’s Lesson: Set Rules Before a Crisis",
+    "topic_id": "us-politics"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "t0aef3d1adc87",
     "item_ids": [
@@ -659,6 +672,18 @@
     "state": "pending",
     "title": "Review: The Asus ProArt P16 offers a glimpse of a future powered by local AI",
     "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-23T18:48:42.826335Z",
+    "id": "t12cb787e84a3",
+    "item_ids": [
+      "faf2bac6aa5b36a3"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T18:23:57Z",
+    "state": "pending",
+    "title": "Over 700,000 Russian Soldiers Have Died in Ukraine, Analysis Indicates",
+    "topic_id": "world-news"
   },
   {
     "created_at": "2026-11-22T09:09:42.410739Z",
@@ -861,6 +886,18 @@
     "topic_id": "health-wellbeing"
   },
   {
+    "created_at": "2026-11-23T18:48:42.826335Z",
+    "id": "t1ba42751f10c",
+    "item_ids": [
+      "533f6df34f5c0c1f"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T18:33:00Z",
+    "state": "pending",
+    "title": "Opinion | Marco Rubio Is Hostage to a Failing Foreign Policy",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-23T15:48:33.493735Z",
     "id": "t1d7faf813b57",
     "item_ids": [
@@ -906,6 +943,18 @@
     "last_item_at": "2026-11-22T22:01:00Z",
     "state": "pending",
     "title": "How to Kill a Bull Market",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-23T18:48:42.826335Z",
+    "id": "t1e913131296a",
+    "item_ids": [
+      "1851a7d2a3cff15d"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T18:19:26Z",
+    "state": "pending",
+    "title": "A.I.-Powered Fake Personas Target Taiwan’s Elections",
     "topic_id": "us-politics"
   },
   {
@@ -1606,6 +1655,18 @@
     "state": "pending",
     "title": "Anthropic worker claims to have solved a Holy Grail of math problems with the help of AI",
     "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-23T18:48:42.826335Z",
+    "id": "t3f1bb075515e",
+    "item_ids": [
+      "e00f9fbc9656008f"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T17:00:00Z",
+    "state": "pending",
+    "title": "Expanding the Antigravity Plugin Ecosystem",
+    "topic_id": "ai-news"
   },
   {
     "created_at": "2026-11-22T09:09:42.410739Z",
@@ -2496,6 +2557,18 @@
     "topic_id": "us-politics"
   },
   {
+    "created_at": "2026-11-23T18:48:42.826335Z",
+    "id": "t6711e873c1c7",
+    "item_ids": [
+      "df399afa649b6b64"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T18:02:45Z",
+    "state": "pending",
+    "title": "The President Is Acting Like He Works for China",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-23T14:48:38.783438Z",
     "id": "t67ecdca0f3e6",
     "item_ids": [
@@ -3335,6 +3408,18 @@
     "topic_id": "us-politics"
   },
   {
+    "created_at": "2026-11-23T18:48:42.826335Z",
+    "id": "t939600038124",
+    "item_ids": [
+      "b53558d620676ec2"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T00:00:00Z",
+    "state": "pending",
+    "title": "Zero data retention with Enterprise Frontier Safeguards is now in beta",
+    "topic_id": "ai-news"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "t9548eb4404f3",
     "item_ids": [
@@ -3363,12 +3448,13 @@
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "t97bea4e82635",
     "item_ids": [
-      "a31f12d90e35ab25"
+      "a31f12d90e35ab25",
+      "5878956fc5a1c810"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-18T00:00:00Z",
-    "state": "pending",
-    "title": "A Hunger Crisis Is Making Ebola Even Deadlier",
+    "last_item_at": "2026-11-23T18:03:00Z",
+    "state": "active",
+    "title": "Making · Crisis",
     "topic_id": "world-news"
   },
   {
@@ -3683,12 +3769,13 @@
       "a31a76959eaf330f",
       "87c6a5eccafc884a",
       "2694922a08bd75e6",
-      "dc2f75bdb0006cbe"
+      "dc2f75bdb0006cbe",
+      "9497f550831e4347"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-23T17:30:04Z",
+    "last_item_at": "2026-11-23T18:08:17Z",
     "state": "active",
-    "title": "Jensen · Huang · Nvidia · China",
+    "title": "Trump · Jensen · Huang · Nvidia",
     "topic_id": "us-politics"
   },
   {
@@ -3943,7 +4030,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-20T18:00:00Z",
-    "state": "active",
+    "state": "cooling",
     "title": "What’s So Important About Nvidia’s Chips?",
     "topic_id": "us-politics"
   },
