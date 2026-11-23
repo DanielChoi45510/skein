@@ -279,7 +279,7 @@ def test_run_with_out_dir_exports_feed(tmp_path: Path) -> None:
         transport=FakeWeb().serve_fixtures().transport, sleep=FakeClock().sleep,
         embedder=HashingEmbedder())  # fmt: skip
     index = json.loads((out / "feed" / "index.json").read_text())
-    assert index["schema_version"] == 1
+    assert index["schema_version"] == 2
     assert index["generated_at"] == "2026-11-21T12:00:00Z"
     stored_visible = {  # fixture threshold 0.30, no skip sources, no corroboration needed
         i["id"]
@@ -288,11 +288,14 @@ def test_run_with_out_dir_exports_feed(tmp_path: Path) -> None:
     }
     exported = {
         i["id"]
-        for path in (out / "feed" / "topics").glob("*.json")
+        for path in [
+            *(out / "feed" / "topics").glob("*.json"),
+            *(out / "feed" / "threads").glob("*.json"),
+        ]
         for d in json.loads(path.read_text())["days"]
         for i in d["items"]
     }
-    assert exported == stored_visible
+    assert exported == stored_visible  # loose items in topic files, the rest in thread files
 
 
 def test_export_is_deterministic(tmp_path: Path) -> None:
@@ -328,6 +331,14 @@ def test_sample_feed_tool(tmp_path: Path) -> None:
     index = json.loads((tmp_path / "feed" / "index.json").read_text())
     visible = sum(t["visible_count"] for g in index["groups"] for t in g["topics"])
     assert visible > 0  # threshold forced to 0, so the sample is never empty
+    # The sample-only wire feed forms threads for the web views to show.
+    world = json.loads((tmp_path / "feed" / "topics" / "world.json").read_text())
+    states = sorted(t["state"] for t in world["threads"])
+    assert states == ["active", "active", "cooling"]
+    assert any(t["collapsed_count"] > 0 for t in world["threads"])  # "+N more" in a thread
+    assert world["days"]  # and single items
+    for t in world["threads"]:
+        assert (tmp_path / "feed" / "threads" / f"{t['id']}.json").exists()
 
 
 def test_threshold_change_applies_on_next_run_without_new_items(tmp_path: Path) -> None:

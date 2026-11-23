@@ -237,11 +237,22 @@ The LLM client takes a provider list (`github_models` → fallbacks). Calls use 
 ### 6.8 Export and deploy
 Write the static JSON the site reads (`feed/index.json`, `feed/topics/<id>.json`, `feed/threads/<id>.json`). Build the SvelteKit site and deploy to GitHub Pages in the same workflow.
 
-The contract is `pipeline/export/models.py` (`schema_version` 1):
-- `feed/index.json`: `generated_at`; groups → topics `{id, name, mode, has_sources, visible_count, collapsed_count, latest_first_seen_at}`; sources `{id, name, type, status, lean, kind, paywall}`.
-- `feed/topics/<id>.json` (Phase 1: every topic as a flat ranked list): items within the topic's lookback, grouped by UTC day of publication (newest first), ranked by importance; each item `{id, title, url, source_id, published_at, first_seen_at, excerpt, importance, also_covered_by, collapsed}`. Hidden items are never exported, and neither are items whose title every carrying source excludes (`title_exclude`, §6.2), nor items carried only by disabled or removed sources: disabling a source hides its stored items on the next run. Titles are exported cleaned and stripped by their own source's `title_strip` (§6.2).
+The contract is `pipeline/export/models.py` (`schema_version` **2** since Phase 2a; the app refuses a feed of another version and asks for a reload):
+- **Exported items:**
+  - Visible, routed to a topic, and carried by an enabled source: disabling a source hides its stored items on the next run.
+  - Not title-excluded by every source that carried them (`title_exclude`, §6.2).
+  - Passing the relevance threshold, or **rescued**: in the rescue band and attached to a listed thread with `thread_score ≥ T_high` (§6.5). A thread that cools keeps what it rescued.
+  - Each item `{id, title, url, source_id, published_at, first_seen_at, excerpt, importance, also_covered_by, collapsed}`; titles cleaned and stripped by the item's own source's `title_strip` (§6.2).
+- `feed/index.json`: `generated_at`; groups → topics `{id, name, mode, has_sources, visible_count, collapsed_count, latest_first_seen_at}` (thread items counted too); sources `{id, name, type, status, lean, kind, paywall}`.
+- `feed/topics/<id>.json`:
+  - `threads`: the topic's **listed** threads (active, cooling, dormant; not pending or archived) with at least one exported item, newest update first. Each summary is `{id, title, kind, state, last_item_at, item_count, collapsed_count, latest_first_seen_at, first_seen, latest}`. `first_seen` lists the shown items' `first_seen_at` (for "N new"); `latest` is the newest item, for a preview. Not limited to the lookback, so dormant threads still list.
+  - `days`: the other items within the topic's lookback, grouped by UTC day of publication (newest first) and ranked by importance. For flat topics that's every item; for threaded ones, pending single items and unthreaded ones.
+- `feed/threads/<id>.json`: `{id, topic_id, title, kind, state, created_at, last_item_at, days}` with every exported item of the thread among the loaded items (≈ 30 days), by UTC day, ranked by importance. Stale topic and thread files are removed.
 - Days are UTC in the export; the frontend regroups items by the viewer's local day for display. Per-day caps still count UTC days, so a local day can show slightly more than one day's cap.
-- Phase 1 caps: `max_per_day` per day; `max_per_week` / `target_per_week` over the trailing 7 days, `max_per_month` over 30; otherwise `defaults.daily_cap_per_thread` per day. Over-cap items are exported with `collapsed: true`.
+- **Caps:**
+  - Topic `days`: `max_per_day` per day; `max_per_week` / `target_per_week` over the trailing 7 days, `max_per_month` over 30; otherwise `defaults.daily_cap_per_thread` per day.
+  - Thread files: the per-thread daily cap, `daily_cap_per_thread` (topic override, else default 5).
+  - Over-cap items are exported with `collapsed: true` and never dropped.
 
 ## 7. Filters and labels
 

@@ -31,6 +31,7 @@ from .process.embed import Embedder, SentenceTransformerEmbedder
 from .process.normalize import normalize
 from .process.relevance import assign_topics
 from .process.thread_assign import ThreadReport, assign_threads
+from .process.threads import DEFAULT, Thresholds
 from .state import State
 
 log = logging.getLogger(__name__)
@@ -57,6 +58,7 @@ def run(
     transport: httpx.BaseTransport | None = None,
     sleep: Callable[[float], None] = time.sleep,
     embedder: Embedder | None = None,
+    thresholds: Thresholds = DEFAULT,
 ) -> RunReport:
     """Run the pipeline. Raises ConfigError if the config is invalid.
 
@@ -139,6 +141,7 @@ def run(
         new_ids=set(report.new_item_ids),
         vectors=vectors,
         get_embedder=get_embedder,
+        t=thresholds,
     )
     t = report.threads
     log.info(
@@ -149,7 +152,9 @@ def run(
 
     state.save()
     if out_dir is not None:
-        index = export_feed(out_dir, cfg, state.items.values(), state.health, now)
+        index = export_feed(
+            out_dir, cfg, state.items.values(), state.health, now, threads=state.threads
+        )
         shown = sum(t.visible_count for g in index.groups for t in g.topics)
         log.info("exported %d visible item(s) to %s", shown, out_dir / "feed")
     return report

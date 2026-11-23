@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Sample-only fixture (python -m pipeline.sample): fictional stories that form threads. -->
+<rss version="2.0">
+  <channel>
+    <title>Example Wire</title>
+    <link>https://wire.example.com/</link>
+    <description>Sample wire stories for the threaded views.</description>
+    <item>
+      <title>Freedonia coalition talks near deal on budget</title>
+      <link>https://wire.example.com/freedonia-coalition-deal</link>
+      <description>Freedonia coalition negotiators near a budget deal after the close election.</description>
+      <pubDate>Sat, 21 Nov 2026 07:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Freedonia coalition names prime minister candidate</title>
+      <link>https://wire.example.com/freedonia-coalition-pm</link>
+      <description>The Freedonia coalition named its prime minister candidate after the election talks.</description>
+      <pubDate>Sat, 21 Nov 2026 10:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Freedonia parliament schedules coalition vote</title>
+      <link>https://wire.example.com/freedonia-coalition-vote</link>
+      <description>Freedonia parliament set the coalition confidence vote after the election talks.</description>
+      <pubDate>Fri, 20 Nov 2026 10:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Sylvania drought dries farm wells</title>
+      <link>https://wire.example.com/sylvania-drought-wells</link>
+      <description>Sylvania drought: farm wells run dry as reservoirs fall.</description>
+      <pubDate>Tue, 17 Nov 2026 09:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Sylvania drought forces water rationing</title>
+      <link>https://wire.example.com/sylvania-drought-rationing</link>
+      <description>Sylvania drought: cities ration water as reservoirs fall.</description>
+      <pubDate>Tue, 17 Nov 2026 03:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Sylvania drought cuts wheat harvest</title>
+      <link>https://wire.example.com/sylvania-drought-harvest</link>
+      <description>Sylvania drought: wheat harvest falls as reservoirs dry.</description>
+      <pubDate>Mon, 16 Nov 2026 12:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Grand Fenwick port strike: dockworkers walk out</title>
+      <link>https://wire.example.com/fenwick-port-strike-0</link>
+      <description>Grand Fenwick port strike: dockworkers walk out at the Fenwick harbour docks.</description>
+      <pubDate>Sat, 21 Nov 2026 11:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Grand Fenwick port strike: ships queue offshore</title>
+      <link>https://wire.example.com/fenwick-port-strike-1</link>
+      <description>Grand Fenwick port strike: ships queue offshore at the Fenwick harbour docks.</description>
+      <pubDate>Sat, 21 Nov 2026 10:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Grand Fenwick port strike: union rejects offer</title>
+      <link>https://wire.example.com/fenwick-port-strike-2</link>
+      <description>Grand Fenwick port strike: union rejects offer at the Fenwick harbour docks.</description>
+      <pubDate>Sat, 21 Nov 2026 09:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Grand Fenwick port strike: ministers call talks</title>
+      <link>https://wire.example.com/fenwick-port-strike-3</link>
+      <description>Grand Fenwick port strike: ministers call talks at the Fenwick harbour docks.</description>
+      <pubDate>Sat, 21 Nov 2026 08:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Grand Fenwick port strike: exporters count losses</title>
+      <link>https://wire.example.com/fenwick-port-strike-4</link>
+      <description>Grand Fenwick port strike: exporters count losses at the Fenwick harbour docks.</description>
+      <pubDate>Sat, 21 Nov 2026 07:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Grand Fenwick port strike: ferry routes suspended</title>
+      <link>https://wire.example.com/fenwick-port-strike-5</link>
+      <description>Grand Fenwick port strike: ferry routes suspended at the Fenwick harbour docks.</description>
+      <pubDate>Sat, 21 Nov 2026 06:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Grand Fenwick port strike: strike enters second shift</title>
+      <link>https://wire.example.com/fenwick-port-strike-6</link>
+      <description>Grand Fenwick port strike: strike enters second shift at the Fenwick harbour docks.</description>
+      <pubDate>Sat, 21 Nov 2026 05:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Osterlich opens national museum of clocks</title>
+      <link>https://wire.example.com/osterlich-museum</link>
+      <description>Osterlich opened a museum of historic clocks in its capital.</description>
+      <pubDate>Sat, 21 Nov 2026 09:00:00 +0000</pubDate>
+    </item>
+  </channel>
+</rss>

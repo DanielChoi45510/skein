@@ -1,7 +1,8 @@
 """The static JSON the site reads (DESIGN §6.8). This is the frontend's contract.
 
-    feed/index.json         FeedIndex
-    feed/topics/<id>.json   TopicFeed
+    feed/index.json          FeedIndex
+    feed/topics/<id>.json    TopicFeed (threads summarized, loose items by day)
+    feed/threads/<id>.json   ThreadFeed (one thread's items by day)
 
 Bump SCHEMA_VERSION on any breaking change, and update web/src/lib/types.ts.
 Only public fields belong here: no full text, nothing from the private profile.
@@ -13,7 +14,7 @@ import datetime as dt
 
 from pydantic import BaseModel, ConfigDict, Field
 
-SCHEMA_VERSION = 1
+SCHEMA_VERSION = 2  # 2: threads (Phase 2a)
 
 
 class _Out(BaseModel):
@@ -38,13 +39,41 @@ class Day(_Out):
     items: list[ExportItem]  # ranked by importance; collapsed items last
 
 
+class ThreadSummary(_Out):
+    """A thread as listed in its topic. Only promoted threads (not pending, not archived)."""
+
+    id: str
+    title: str
+    kind: str  # story | question | tracker | fixed
+    state: str  # active | cooling | dormant
+    last_item_at: dt.datetime  # newest exported item's published_at
+    item_count: int  # exported items, collapsed included
+    collapsed_count: int  # over the per-thread daily cap
+    latest_first_seen_at: dt.datetime  # for "N new" hints
+    first_seen: list[dt.datetime]  # first_seen_at of every shown (not collapsed) item, newest first
+    latest: ExportItem  # the newest item, for a preview line
+
+
 class TopicFeed(_Out):
     schema_version: int = SCHEMA_VERSION
     id: str
     name: str
     group: str
     mode: str
-    days: list[Day]  # newest first
+    threads: list[ThreadSummary]  # newest update first; empty for unthreaded modes
+    days: list[Day]  # newest first; in threaded modes only items not in a listed thread
+
+
+class ThreadFeed(_Out):
+    schema_version: int = SCHEMA_VERSION
+    id: str
+    topic_id: str
+    title: str
+    kind: str
+    state: str
+    created_at: dt.datetime
+    last_item_at: dt.datetime
+    days: list[Day]  # newest first; per-thread daily cap (§6.6), not the topic's lookback
 
 
 class TopicSummary(_Out):

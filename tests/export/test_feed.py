@@ -7,13 +7,16 @@ import datetime as dt
 import json
 from pathlib import Path
 
+import pytest
+
 from pipeline.config import load_config
 from pipeline.config.schema import SourceRelevance
 from pipeline.config.validate import Config
 from pipeline.export import export_feed
 from pipeline.export.feed import build_topic_feed
 from pipeline.export.models import FeedIndex, TopicFeed
-from pipeline.models import Item, SourceHealth
+from pipeline.models import Item, SourceHealth, Thread
+from pipeline.process.threads import DEFAULT
 
 from ..conftest import FIXTURE_CONFIG
 
@@ -295,4 +298,169 @@ def test_disabled_skip_source_does_not_rescue_low_scores(tmp_path: Path) -> None
     low = item(1, relevance=0.1, also_covered_by=["example-disabled"])  # below 0.30
     run_export(tmp_path, [low], cfg)
     data = json.loads((tmp_path / "feed" / "topics" / "world.json").read_text())
+    assert data["days"] == []
+
+
+# ───────────────────────────── threads (schema v2) ─────────────────────────────
+
+
+def thread(thread_id: str, state: str = "active", topic: str = "world", **kw) -> Thread:
+    fields = {
+        "id": thread_id,
+        "topic_id": topic,
+        "kind": "story",
+        "title": f"Title {thread_id}",
+        "state": state,
+        "created_at": NOW - 2 * D,
+        "last_item_at": NOW,
+    }
+    return Thread(**(fields | kw))
+
+
+def export(tmp_path: Path, items: list[Item], threads: list[Thread], cfg: Config = CFG):
+    index = export_feed(tmp_path, cfg, items, {}, NOW, threads={t.id: t for t in threads})
+    feed_dir = tmp_path / "feed"
+    topic = json.loads((feed_dir / "topics" / "world.json").read_text())
+    files = {p.stem: json.loads(p.read_text()) for p in (feed_dir / "threads").glob("*.json")}
+    return index, topic, files
+
+
+def ids_in(days: list) -> list[str]:
+    return [i["id"] for d in days for i in d["items"]]
+
+
+def test_promoted_thread_items_leave_the_topic_days(tmp_path: Path) -> None:
+    items = [
+        item(1, thread_id="t1", published=NOW - 2 * H),
+        item(2, thread_id="t1", published=NOW - H),
+        item(3, thread_id="p1"),  # pending: shown as a single item
+        item(4),  # unthreaded
+    ]
+    _, topic, files = export(tmp_path, items, [thread("t1"), thread("p1", "pending")])
+    assert sorted(ids_in(topic["days"])) == ["i03", "i04"]
+    [summary] = topic["threads"]
+    assert summary["id"] == "t1" and summary["title"] == "Title t1"
+    assert (summary["item_count"], summary["collapsed_count"]) == (2, 0)
+    assert summary["latest"]["id"] == "i02"
+    assert summary["last_item_at"] == "2026-11-21T11:00:00Z"
+    assert summary["first_seen"] == ["2026-11-21T11:00:00Z", "2026-11-21T10:00:00Z"]
+    assert set(files) == {"t1"}
+    assert files["t1"]["schema_version"] == 2
+    assert sorted(ids_in(files["t1"]["days"])) == ["i01", "i02"]
+
+
+def test_cooling_and_dormant_threads_are_listed_archived_are_not(tmp_path: Path) -> None:
+    items = [
+        item(1, thread_id="c", published=NOW - 3 * H),
+        item(2, thread_id="d", published=NOW - 2 * H),
+        item(3, thread_id="a", published=NOW - H),
+    ]
+    threads = [thread("c", "cooling"), thread("d", "dormant"), thread("a", "archived")]
+    _, topic, files = export(tmp_path, items, threads)
+    assert [(s["id"], s["state"]) for s in topic["threads"]] == [("d", "dormant"), ("c", "cooling")]
+    assert ids_in(topic["days"]) == ["i03"]  # an archived thread's item shows alone
+    assert set(files) == {"c", "d"}
+
+
+def test_threads_list_newest_update_first(tmp_path: Path) -> None:
+    items = [
+        item(1, thread_id="old", published=NOW - 5 * H),
+        item(2, thread_id="new", published=NOW - H),
+        item(3, thread_id="mid", published=NOW - 3 * H),
+    ]
+    _, topic, _ = export(tmp_path, items, [thread("old"), thread("new"), thread("mid")])
+    assert [s["id"] for s in topic["threads"]] == ["new", "mid", "old"]
+
+
+def test_per_thread_daily_cap(tmp_path: Path) -> None:
+    today = [item(n, thread_id="t1", relevance=0.3 + n / 100, published=NOW - n * H / 10)
+             for n in range(1, 8)]  # fmt: skip
+    yesterday = [item(n, thread_id="t1", published=NOW - D) for n in range(8, 10)]
+    _, topic, files = export(tmp_path, today + yesterday, [thread("t1")])
+    days = files["t1"]["days"]
+    assert [d["date"] for d in days] == ["2026-11-21", "2026-11-20"]
+    shown = [i["id"] for i in days[0]["items"] if not i["collapsed"]]
+    more = [i["id"] for i in days[0]["items"] if i["collapsed"]]
+    assert len(shown) == CFG.topics.defaults.daily_cap_per_thread == 5
+    assert set(more) == {"i01", "i02"}  # lowest importance collapsed, never dropped
+    assert not any(i["collapsed"] for i in days[1]["items"])
+    s = topic["threads"][0]
+    assert (s["item_count"], s["collapsed_count"], len(s["first_seen"])) == (9, 2, 7)
+
+
+def test_topic_cap_override_applies_per_thread(tmp_path: Path) -> None:
+    cfg = dataclasses.replace(
+        CFG,
+        topics=CFG.topics.model_copy(
+            update={
+                "topics": [topic("world", daily_cap_per_thread=2)]
+                + [t for t in CFG.topics.topics if t.id != "world"]
+            }
+        ),
+    )
+    items = [item(n, thread_id="t1", published=NOW - n * H) for n in range(1, 5)]
+    _, _, files = export(tmp_path, items, [thread("t1")], cfg)
+    assert sum(not i["collapsed"] for i in files["t1"]["days"][0]["items"]) == 2
+
+
+def test_thread_files_ignore_the_topic_lookback(tmp_path: Path) -> None:
+    old = item(1, thread_id="t1", published=NOW - 10 * D)  # fixture lookback: 7 days
+    _, topic, files = export(tmp_path, [old, item(2)], [thread("t1", "cooling")])
+    assert ids_in(files["t1"]["days"]) == ["i01"]
+    assert [s["id"] for s in topic["threads"]] == ["t1"]
+    assert ids_in(topic["days"]) == ["i02"]
+
+
+@pytest.mark.parametrize(
+    ("relevance", "score", "state", "shown"),
+    [
+        (0.27, DEFAULT.high, "active", True),  # rescued: in the band, strong match
+        (0.27, DEFAULT.high, "cooling", True),  # stays rescued after the thread cools
+        (0.27, DEFAULT.high - 0.01, "active", False),  # weak match
+        (0.27, DEFAULT.high, "pending", False),  # pending threads don't rescue
+        (0.20, DEFAULT.high, "active", False),  # below the band (threshold 0.30 - 0.05)
+    ],
+)
+def test_rescue_visibility(
+    tmp_path: Path, relevance: float, score: float, state: str, shown: bool
+) -> None:
+    items = [
+        item(1, thread_id="t1"),
+        item(2, thread_id="t1", relevance=relevance, thread_score=score),
+    ]
+    _, topic, files = export(tmp_path, items, [thread("t1", state)])
+    exported = ids_in(topic["days"]) + [i for f in files.values() for i in ids_in(f["days"])]
+    assert ("i02" in exported) is shown
+
+
+def test_threads_without_exported_items_are_not_listed(tmp_path: Path) -> None:
+    items = [
+        item(1, thread_id="t1", relevance=0.1),
+        item(2, thread_id="t2", hidden_reason="duplicate"),
+    ]
+    _, topic, files = export(tmp_path, items, [thread("t1"), thread("t2")])
+    assert topic["threads"] == [] and files == {}
+
+
+def test_stale_thread_files_removed(tmp_path: Path) -> None:
+    export(tmp_path, [item(1, thread_id="t1")], [thread("t1")])
+    _, _, files = export(tmp_path, [item(1, thread_id="t2")], [thread("t2")])
+    assert set(files) == {"t2"}
+
+
+def test_index_counts_include_thread_items(tmp_path: Path) -> None:
+    items = [item(n, thread_id="t1", published=NOW - n * H / 10) for n in range(1, 8)] + [item(9)]
+    index, _, _ = export(tmp_path, items, [thread("t1")])
+    world = next(t for g in index.groups for t in g.topics if t.id == "world")
+    assert (world.visible_count, world.collapsed_count) == (6, 2)
+
+
+def test_tracker_threads_are_listed(tmp_path: Path) -> None:
+    phones = thread("trackers--phones", topic="trackers", kind="tracker", title="Phones")
+    items = [item(1, topic="trackers", source_id="example-gadgets", thread_id=phones.id)]
+    export_feed(tmp_path, CFG, items, {}, NOW, threads={phones.id: phones})
+    data = json.loads((tmp_path / "feed" / "topics" / "trackers.json").read_text())
+    assert [(s["id"], s["kind"], s["title"]) for s in data["threads"]] == [
+        ("trackers--phones", "tracker", "Phones")
+    ]
     assert data["days"] == []
