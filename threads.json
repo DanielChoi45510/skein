@@ -1,0 +1,4834 @@
+[
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "markets--earnings",
+    "item_ids": [
+      "35594c3f0c8c091d",
+      "eb796bcdeffd38b9",
+      "a568d84036c66478",
+      "39595e27f56a8df4",
+      "78e5dbbab4558933",
+      "22d17409c2fbadf0",
+      "e003d9b58740f697",
+      "d35ba380b9920fd4",
+      "5af7bfd2951c0d3f",
+      "00ca701528f4cfd2",
+      "75732ecceaaeff84",
+      "15c97ac991c48201",
+      "065a2811353486ad"
+    ],
+    "kind": "fixed",
+    "last_item_at": "2026-11-23T01:44:00Z",
+    "state": "active",
+    "title": "Major earnings surprises",
+    "topic_id": "markets"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "markets--energy",
+    "item_ids": [
+      "e75094c6c9155edb",
+      "5a2670fb27897314",
+      "d0b8f781a29f9bd6",
+      "797e385c709a20cf",
+      "4a514d9df520b461",
+      "992ef491a25b9821",
+      "7731da88903b10fb",
+      "ac882ad6c0a8fe19",
+      "6c992c3cf6f309e8"
+    ],
+    "kind": "fixed",
+    "last_item_at": "2026-11-23T00:41:00Z",
+    "state": "active",
+    "title": "Energy",
+    "topic_id": "markets"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "markets--fed-rates",
+    "item_ids": [
+      "811f3197004cf7f4",
+      "8a00ec090a9402c0",
+      "4f3e083023cd6c0c",
+      "eede5ca594cc6739",
+      "c0c4ef66e0d9307c",
+      "92235eb6cfa85e0d",
+      "cacb977714398141",
+      "39b5ca4e43f90028"
+    ],
+    "kind": "fixed",
+    "last_item_at": "2026-11-22T13:00:02Z",
+    "state": "active",
+    "title": "Fed & interest rates",
+    "topic_id": "markets"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "markets--financials",
+    "item_ids": [
+      "31d829f40f16bc15",
+      "16efff1ba38ce215",
+      "d346ef444588de8f",
+      "b1a9a7c8cfb44503",
+      "1e572bd964434751",
+      "c4dcbdb5493edebe",
+      "82db6739d6b03f6c",
+      "6536f77e17e3105a",
+      "a0c9bea35198f692",
+      "a4a4ccaff4c93042",
+      "bf901259d8518573",
+      "897937e48e1bd80d",
+      "cf91e1d3c3ccce4d",
+      "095b1fd1eb2d40a0"
+    ],
+    "kind": "fixed",
+    "last_item_at": "2026-11-23T02:00:00Z",
+    "state": "active",
+    "title": "Financials",
+    "topic_id": "markets"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "markets--health-care",
+    "item_ids": [
+      "5cb6e8ad09569039",
+      "d9c5bd67cc6cb88a",
+      "e3ebda9fd81311c4",
+      "7f91b1ba04222db8",
+      "7211aaa1b78be5c0",
+      "b5b50a58d2c8f278",
+      "76afe3b6385720dc",
+      "6d57ec4322daf073",
+      "2c45e78682146dd7"
+    ],
+    "kind": "fixed",
+    "last_item_at": "2026-11-23T03:00:00Z",
+    "state": "active",
+    "title": "Health Care",
+    "topic_id": "markets"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "markets--it",
+    "item_ids": [
+      "3023cccb24dbef70",
+      "5dccd59ee1c79213",
+      "ed412d44b327d96b",
+      "b738d74109ab5a9b",
+      "b8b1c9ab41a68ad9",
+      "94fcff8855a111de",
+      "67a438f61ae1d58d",
+      "08735f11f39d73da",
+      "35bcb1bf9c5cc606",
+      "b6565c51a4c87c73",
+      "ff01b2f62722e1f3",
+      "80373002c72eac93",
+      "f7300f5512bce26c",
+      "6e525b4c701fe18b",
+      "8ac3aaa623dd0230",
+      "9df12670c3c3a475",
+      "f1eb0ce85cd3774c",
+      "e6eeee40505bc31d",
+      "d1fd56c023d68f5f",
+      "6c9f6a138c014817",
+      "7c2cdff92f5740e3"
+    ],
+    "kind": "fixed",
+    "last_item_at": "2026-11-22T17:55:31Z",
+    "state": "active",
+    "title": "Information Technology",
+    "topic_id": "markets"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "markets--macro-data",
+    "item_ids": [
+      "de8f7c6c3fdaefe0",
+      "d866193457004aff",
+      "295795a537947d04",
+      "c2811254f14da10f",
+      "7c9d37856a45b0d6"
+    ],
+    "kind": "fixed",
+    "last_item_at": "2026-11-22T10:01:46Z",
+    "state": "active",
+    "title": "Inflation & jobs reports",
+    "topic_id": "markets"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "markets--materials",
+    "item_ids": [
+      "e7cef7bb4353f204",
+      "15283700f5d0ad7f",
+      "fb7da4942988aa35",
+      "ebd61e3c7d0376d9",
+      "9d5053d54dcac672"
+    ],
+    "kind": "fixed",
+    "last_item_at": "2026-11-23T00:58:00Z",
+    "state": "active",
+    "title": "Materials",
+    "topic_id": "markets"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "markets--real-estate",
+    "item_ids": [
+      "4ede0be310326c9d",
+      "8f0a351a515a272b",
+      "cc10264994523507",
+      "fe7108dad77de006",
+      "0a0b3831ef3c5d38"
+    ],
+    "kind": "fixed",
+    "last_item_at": "2026-11-20T21:50:00Z",
+    "state": "active",
+    "title": "Real Estate",
+    "topic_id": "markets"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "markets--staples",
+    "item_ids": [
+      "c4ff3195c3d8cde0"
+    ],
+    "kind": "fixed",
+    "last_item_at": "2026-11-19T18:51:49Z",
+    "state": "active",
+    "title": "Consumer Staples",
+    "topic_id": "markets"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t008cd710c09c",
+    "item_ids": [
+      "8cf7a61aa3082fa3"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T17:00:00Z",
+    "state": "pending",
+    "title": "Trump initially accepted the midterm results, but most GOP voters doubt they were fair",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t01e2c6c2edd8",
+    "item_ids": [
+      "1b62a9d0746452ae"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-22T07:23:08Z",
+    "state": "pending",
+    "title": "Europe Needs to Save Itself",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T20:20:33.012568Z",
+    "id": "t01f9b7057de7",
+    "item_ids": [
+      "75f3c5bdc4506d32"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-22T17:58:00Z",
+    "state": "pending",
+    "title": "Give Thanks to Inverse Billionaires",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t0395c72c9d2e",
+    "item_ids": [
+      "e26ac677b2fb1830",
+      "a78ee26b510c7c40"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-22T10:02:15Z",
+    "state": "active",
+    "title": "Is Annie Andrews Too Real for the Senate? South Carolinians Are About to Find Out.",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t03d275fe8859",
+    "item_ids": [
+      "eba22d39b4b00715",
+      "d6ea4783c08e2a19"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-21T16:03:26Z",
+    "state": "active",
+    "title": "Hakeem · Jeffries",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t0523ddca4df1",
+    "item_ids": [
+      "345b0d26d3755c42",
+      "d15f321092f942d6",
+      "6465535f46cf573f",
+      "64ac45562e39806c",
+      "3e17f7a4ac7d6cbd",
+      "6ed905091a48d8d9"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-22T20:35:19Z",
+    "state": "active",
+    "title": "Myanmar · Genocide · Ruling · Court",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t06d1d04905bb",
+    "item_ids": [
+      "38a622bc7479010c"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-19T23:34:34Z",
+    "state": "pending",
+    "title": "The Limits of Positive Thinking",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t06e71c452289",
+    "item_ids": [
+      "6265549d52d9093d",
+      "6d91545fde4cf2c0",
+      "69f1cf9d15217f92"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-22T15:46:00Z",
+    "state": "active",
+    "title": "Elect for Education Freedom",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t07144af29043",
+    "item_ids": [
+      "8f1ee87487d734af"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-22T03:00:00Z",
+    "state": "pending",
+    "title": "Ukraine Is Racing to Keep Its Booming Defense Industry From Stalling",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t07b83dd49568",
+    "item_ids": [
+      "2f808e192e0664c8"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-19T20:19:28Z",
+    "state": "pending",
+    "title": "Traumatized teens sue school, cops after Doritos bag triggers AI gun alert",
+    "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t087d8b5f73e1",
+    "item_ids": [
+      "6ab5d7679dc03dec",
+      "0d6609eafd66d0b2"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-17T16:11:23Z",
+    "state": "cooling",
+    "title": "Engineering · Software",
+    "topic_id": "jobs-market"
+  },
+  {
+    "created_at": "2026-11-22T03:51:06.410293Z",
+    "id": "t08a9434b1020",
+    "item_ids": [
+      "77652c24788548b0"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-21T20:35:07Z",
+    "state": "pending",
+    "title": "Pentagon Issued Memo Limiting ‘Social Activities’ With Canadian Military",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T12:34:08.686149Z",
+    "id": "t08f05115f8b1",
+    "item_ids": [
+      "2ea5ca21ecfa8819",
+      "3e0fc781fc329b2d"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-22T16:42:00Z",
+    "state": "active",
+    "title": "Stephen · Miller",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t092bf51a3d17",
+    "item_ids": [
+      "0216c9a3d929e4c0"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-17T18:27:27Z",
+    "state": "pending",
+    "title": "UK sanctions firms over Israeli West Bank settlements",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t0952cd0e1e6b",
+    "item_ids": [
+      "893933690c9cb111"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T11:00:00Z",
+    "state": "pending",
+    "title": "Welcome to the Melaniaverse",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t0956f1239d5f",
+    "item_ids": [
+      "9b343f510b010317",
+      "e50507ce8f887cb6",
+      "faeea5052b8e3ea7"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T11:00:14Z",
+    "state": "active",
+    "title": "‘It Feels Corrupt Because It Likely Is’",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t0a053169ecc5",
+    "item_ids": [
+      "12930deb1c86d082",
+      "07fe62eb4197e45c",
+      "052b2598a31c5b4d"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-22T11:00:00Z",
+    "state": "active",
+    "title": "Grand · Theft · Auto · VI",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-23T05:03:30.236987Z",
+    "id": "t0a053b33b0aa",
+    "item_ids": [
+      "e5200c986e39f593"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T01:33:00Z",
+    "state": "pending",
+    "title": "Foreign inflows lend support to rupee, bonds; oil in focus",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T20:20:33.012568Z",
+    "id": "t0a220785dc73",
+    "item_ids": [
+      "5391f890dd45a202"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-22T17:57:00Z",
+    "state": "pending",
+    "title": "Gerald Ford, Thanksgiving and Friendship",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t0aef3d1adc87",
+    "item_ids": [
+      "e191768cef4af09a",
+      "0937b9a931e8e81a",
+      "9b884804d22671bd",
+      "fe1538973bcdf48b"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-22T15:01:00Z",
+    "state": "active",
+    "title": "FAA · Ground · Stop · Blame",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t0afe1b0a9f82",
+    "item_ids": [
+      "9448a9d3f6df5c69"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-18T22:00:00Z",
+    "state": "pending",
+    "title": "Notable & Quotable: Justice Alito’s Warning",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t0bad3f25ac16",
+    "item_ids": [
+      "659eb247afabf6a0"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T22:54:00Z",
+    "state": "pending",
+    "title": "It’s a Permitting Miracle in the Senate",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t0cf1bb82c60d",
+    "item_ids": [
+      "7f81a923175c19f0"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-18T22:40:00Z",
+    "state": "pending",
+    "title": "Congress Dithers on Section 702",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t0d87730d8496",
+    "item_ids": [
+      "e2c7aa458e5ce3b0"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T17:19:00Z",
+    "state": "pending",
+    "title": "What Corporate America Needs From Its CEOs",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t0df79e817286",
+    "item_ids": [
+      "53fadd7cc84bf5a8",
+      "238a9aaa5ccc9297"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-19T16:04:47Z",
+    "state": "cooling",
+    "title": "MAGA Is Dead. A Cult of Personality Remains.",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T03:51:06.410293Z",
+    "id": "t0ec94106416c",
+    "item_ids": [
+      "9dc83f2bb1bac435"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T21:55:47Z",
+    "state": "pending",
+    "title": "Here’s the latest.",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T12:34:08.686149Z",
+    "id": "t1174aa16c916",
+    "item_ids": [
+      "6844e2825ff7110e"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-22T11:00:00Z",
+    "state": "pending",
+    "title": "How Washington Could Exploit Qatar’s LNG Shopping Spree",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t13710d067d3f",
+    "item_ids": [
+      "08f5453c42156258"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T00:51:00Z",
+    "state": "pending",
+    "title": "‘I’m Not MAGA,’ Says Man in MAGA Hat",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t1482e4c851ee",
+    "item_ids": [
+      "72cab66bf4031d57"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-19T21:12:00Z",
+    "state": "pending",
+    "title": "Is Everything Fast Fashion Now?",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T20:20:33.012568Z",
+    "id": "t14835f5a927a",
+    "item_ids": [
+      "76e530923815d4d9"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T23:27:05Z",
+    "state": "pending",
+    "title": "Court approves $7.25 billion settlement with Bayer over claims Roundup weed killer caused cancer",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t1579378b3483",
+    "item_ids": [
+      "dc9b4a0c426ddc42"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-21T23:56:28Z",
+    "state": "pending",
+    "title": "Muru",
+    "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t15a839d086e4",
+    "item_ids": [
+      "e76d9d98faa1c176",
+      "9ad3b6ed337fcbd6",
+      "8a5f41832ca081fe"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-22T18:23:08Z",
+    "state": "active",
+    "title": "Democrats · Clinch · House · Seats",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t15e04c8a2268",
+    "item_ids": [
+      "2559fa10bdd2ca63"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T23:15:20Z",
+    "state": "pending",
+    "title": "US declassifies more UFO footage filmed in the Middle East",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T20:20:33.012568Z",
+    "id": "t160744455e3c",
+    "item_ids": [
+      "88672f5e138e7852"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-22T13:00:00Z",
+    "state": "pending",
+    "title": "How ‘Real Food’ Nearly Broke the White House",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T12:34:08.686149Z",
+    "id": "t16713e66703b",
+    "item_ids": [
+      "603b5b3a9a99f4b1",
+      "ab10e0b13048fd79"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-22T12:00:00Z",
+    "state": "active",
+    "title": "The Rising Religious Left May Buoy Conservative Christians Too",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t172ee03998e3",
+    "item_ids": [
+      "b9b6c5e5f157e072"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T21:32:44Z",
+    "state": "pending",
+    "title": "John Grisham: Scott Colom Makes Me Proud of Mississippi",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t173adf0ef47a",
+    "item_ids": [
+      "28a491ed72721634",
+      "4996853303fb0e04",
+      "107e25b02fde2e76",
+      "f2db6b5d7760f744",
+      "03eb8dde151d689a"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T20:22:14Z",
+    "state": "active",
+    "title": "Britain · Brexit",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t17d6a3f02dce",
+    "item_ids": [
+      "4b8df6d25f102525"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-18T22:15:23Z",
+    "state": "pending",
+    "title": "Trump ‘Disappeared’ Them in 2025. I Found Them, Locked Up and Famished.",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t18285b9632d8",
+    "item_ids": [
+      "58702748c231afcc"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T15:58:27Z",
+    "state": "pending",
+    "title": "(Not) up in the air: Travelers' trepidations spike as Thanksgiving nears and tech hiccups abound",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t1866b69a4a91",
+    "item_ids": [
+      "ef654c4550cd9511"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-22T08:27:46Z",
+    "state": "pending",
+    "title": "Most Gulf bourses retreat as sporadic attacks continue",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T20:20:33.012568Z",
+    "id": "t1a1597aa278b",
+    "item_ids": [
+      "97000885946feb34"
+    ],
+    "kind": "question",
+    "last_item_at": "2026-11-22T19:10:04Z",
+    "state": "pending",
+    "title": "Donald Hooton Sr., Who Crusaded Against Steroids in Sports, Has Died",
+    "topic_id": "health-wellbeing"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t1d90c12958c8",
+    "item_ids": [
+      "e459636ebdd640d0"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-17T18:58:00Z",
+    "state": "pending",
+    "title": "Rubio and the Founders Against the ICC",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-23T01:41:04.329483Z",
+    "id": "t1e4fa10e2abf",
+    "item_ids": [
+      "2135de5abda79be3"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-22T22:01:00Z",
+    "state": "pending",
+    "title": "How to Kill a Bull Market",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t200317f103f9",
+    "item_ids": [
+      "1bc5d35f2feb6905"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-21T00:27:10Z",
+    "state": "pending",
+    "title": "‘Class Is Not an Identity’",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t204e30f0429f",
+    "item_ids": [
+      "2e9b838c23821c88"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-21T16:41:58Z",
+    "state": "pending",
+    "title": "FBI investigating apparent hack of its key national criminal justice database, AP source says",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t21168433d12a",
+    "item_ids": [
+      "7b55e0378c08f3e1"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T14:00:00Z",
+    "state": "pending",
+    "title": "The Taylor Swift Museum Exhibition Is an SOS Call",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t2152a15ca561",
+    "item_ids": [
+      "cc88c546d1214b65"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T20:59:08Z",
+    "state": "pending",
+    "title": "Researcher plants 2m canaries into the AI supply chain. A privacy disaster surfaced.",
+    "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-22T20:20:33.012568Z",
+    "id": "t220cc9c5f727",
+    "item_ids": [
+      "57a308ebc60d46ba"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T22:07:01Z",
+    "state": "pending",
+    "title": "Senator proposes select committee on AI as Democrats hope to move quickly to regulate it",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t22aee7627680",
+    "item_ids": [
+      "da628ec4ef432907",
+      "cda6fdcfb798fd77"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T18:51:23Z",
+    "state": "active",
+    "title": "Trump · Data · Centers · Abroad",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t24cbc5155b89",
+    "item_ids": [
+      "efbd0f5c74bd40b5"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T20:16:00Z",
+    "state": "pending",
+    "title": "New Satellite Photos Show Expansion of North Korean Uranium-Enrichment Plant",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t2577aaf5a4d1",
+    "item_ids": [
+      "5334b6678a27ffd7",
+      "6adde3b13420e9d5",
+      "7ce74b66eca4ae19"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T21:22:38Z",
+    "state": "active",
+    "title": "Lame-Duck Senators Should Not Be Able to Block Good Judicial Nominees",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T20:20:33.012568Z",
+    "id": "t25fc875003bd",
+    "item_ids": [
+      "84fea740ae17edcb"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-22T18:32:43Z",
+    "state": "pending",
+    "title": "Libya's eastern government suspects drone attack caused explosion on Russian ship in Benghazi",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t263f7a796a47",
+    "item_ids": [
+      "ec8e761e0eb8542f"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-21T20:03:37Z",
+    "state": "pending",
+    "title": "The UN fails to agree on rules regulating ‘killer robots’",
+    "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t285a596b0564",
+    "item_ids": [
+      "0a3e8c674a4c46f6"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-21T14:00:00Z",
+    "state": "pending",
+    "title": "Chess.com’s next move is a new hub for classic games, from mahjong to sudoku",
+    "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t291e3ffd54f3",
+    "item_ids": [
+      "cac57b5217ba2caa"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-18T18:13:42Z",
+    "state": "pending",
+    "title": "Genie 4 is now available",
+    "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-22T03:51:06.410293Z",
+    "id": "t29ac4c5ef682",
+    "item_ids": [
+      "3293eb0f037addf5"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T23:18:32Z",
+    "state": "pending",
+    "title": "Ask HN: I have been unemployed for 2y. 15 years of experience, US. What to do?",
+    "topic_id": "jobs-market"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t2a9feeb56ed9",
+    "item_ids": [
+      "d6405e947d13f881"
+    ],
+    "kind": "question",
+    "last_item_at": "2026-11-21T01:28:24Z",
+    "state": "pending",
+    "title": "Marsha Linehan Has Died. She Transformed Treatment for Personality Disorder.",
+    "topic_id": "health-wellbeing"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t2ae61748f032",
+    "item_ids": [
+      "e9f4e4caf32f33e0",
+      "9fc5a2b14d0ff23d"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-21T17:00:00Z",
+    "state": "active",
+    "title": "The U.A.E. Is Shuttling Oil Past Iran in Risky Hormuz Operation",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t2d1f83fe7a9a",
+    "item_ids": [
+      "9ce310a52611754b"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-19T22:51:55Z",
+    "state": "pending",
+    "title": "The Global Crackdown on Press Freedom",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-23T01:41:04.329483Z",
+    "id": "t2d83d2589075",
+    "item_ids": [
+      "fc9b8d7fe59bdf47"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-22T20:47:00Z",
+    "state": "pending",
+    "title": "Opinion | America Hits the Brakes on AI",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t2df113b2d114",
+    "item_ids": [
+      "a890a236270cc5e3"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-19T00:00:00Z",
+    "state": "pending",
+    "title": "Deploying Daybreak Red",
+    "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t2df612de5a08",
+    "item_ids": [
+      "981ea1f3c7cf9611",
+      "4f7724848c27eb31"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T01:44:20Z",
+    "state": "cooling",
+    "title": "Anthropic Has Gone Public. What Now?",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t2e30dd16843f",
+    "item_ids": [
+      "3ac344c50cc66ad7",
+      "3afdf5a7b1a6fd8a"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T18:50:19Z",
+    "state": "active",
+    "title": "Trump threatens ‘tremendous tax’ for moving AI data centers outside the US",
+    "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t2eb04ed3bc21",
+    "item_ids": [
+      "26a444a0aabf92a2"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-18T00:27:29Z",
+    "state": "pending",
+    "title": "Copilot is \"the new OS for work,\" and now Office runs inside of it",
+    "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t2ed109a5e4cb",
+    "item_ids": [
+      "495e6c52da73407c"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T22:02:00Z",
+    "state": "pending",
+    "title": "Will Campus Civics Programs Survive the Blue Wave?",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t2efcd097eff6",
+    "item_ids": [
+      "fa581b35a4482de2"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-16T21:12:13Z",
+    "state": "pending",
+    "title": "Pope Leo hit by flying rosary while waving to crowds in Peru",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t2fae688d19b3",
+    "item_ids": [
+      "a79a934b00559df1"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T16:15:30Z",
+    "state": "pending",
+    "title": "Trump administration use of encrypted messaging apps like Signal is scrutinized by House Democrat",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t306a3b98f413",
+    "item_ids": [
+      "bd083d05025e6ec5"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T22:42:47Z",
+    "state": "pending",
+    "title": "Tech stock sell-off drags markets down as Anthropic shares slide",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t314285daee18",
+    "item_ids": [
+      "0f17b41a954a879e"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-21T11:27:09Z",
+    "state": "pending",
+    "title": "EXCLUSIVE: Denmark pushes EU to tighten travel curbs on Russians after foiled plot",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t332599a383ce",
+    "item_ids": [
+      "9fe6d2ae73e55f52",
+      "0e7f690aa4ff229b",
+      "99be0c0a7e074380",
+      "58da586369f33999",
+      "7ad44f990f0c53ef"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T10:00:00Z",
+    "state": "active",
+    "title": "AI · Frontier",
+    "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-23T01:41:04.329483Z",
+    "id": "t338b45615c27",
+    "item_ids": [
+      "3022bc5c7274f1ec"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-22T23:44:00Z",
+    "state": "pending",
+    "title": "US futures bounce while Asia markets brace for AI wipeout",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T03:51:06.410293Z",
+    "id": "t346608177efb",
+    "item_ids": [
+      "d3d67e375fc5f12b"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-19T12:08:19Z",
+    "state": "pending",
+    "title": "China Bars Bloomberg Reporter From Trilateral Talks for Asking a Question",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t3520b9141a6d",
+    "item_ids": [
+      "da3aef13d493b88e"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-19T17:25:00Z",
+    "state": "pending",
+    "title": "Rural Americans Deserve a Seat at the Table",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t3662ea7dd7c4",
+    "item_ids": [
+      "5533ff6ef04530c1"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-21T15:02:24Z",
+    "state": "pending",
+    "title": "Voters oust some sheriffs who signed pacts to help Trump's immigration enforcement efforts",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t36c691cbee66",
+    "item_ids": [
+      "f2993c3c760a4d22"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-18T22:56:00Z",
+    "state": "pending",
+    "title": "Extreme Poverty Is a Thing of the Past in India",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t36eac9c01107",
+    "item_ids": [
+      "32dc31d62f70b3f3",
+      "19951a57bc588867"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-21T19:11:51Z",
+    "state": "active",
+    "title": "Tech Outages Are Only the Beginning. A.I. Will Bring More Disruptions.",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t371b45fb7d74",
+    "item_ids": [
+      "4e5feab1cd671f18"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-22T02:00:00Z",
+    "state": "pending",
+    "title": "How Kim Jong Un Gets Away With Building Nukes and Ghosting Trump",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t374cf404e3ce",
+    "item_ids": [
+      "2ec8669b74f4febd"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T20:04:21Z",
+    "state": "pending",
+    "title": "The Showdowns Are Coming Thick and Fast in Washington",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-23T05:03:30.236987Z",
+    "id": "t379964aaef85",
+    "item_ids": [
+      "6454e250eba58948"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T03:44:00Z",
+    "state": "pending",
+    "title": "EU Inks Trade Deal With Indonesia to Cut Tariffs, Catalyze Investment",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t37e7cf387779",
+    "item_ids": [
+      "9c0aaeb9f521c91e"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T21:32:33Z",
+    "state": "pending",
+    "title": "How Do You Investigate a President This Corrupt?",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t380d6791b0a3",
+    "item_ids": [
+      "dd659f011024f04f"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-16T17:00:00Z",
+    "state": "pending",
+    "title": "Strengthening the fight against online child sexual abuse with new tools and support",
+    "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t381be351f7fd",
+    "item_ids": [
+      "2b5ff6bd79abd433"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T21:51:00Z",
+    "state": "pending",
+    "title": "Ron Johnson Stirs a Social Security Debate / Why the U.S. Has Measles Again",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t38b9445be9e3",
+    "item_ids": [
+      "0787d9a53f5cf4ac",
+      "35734c13e86f12e1"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-19T17:24:00Z",
+    "state": "cooling",
+    "title": "This Election Proves What We Knew on Race",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t3915651da431",
+    "item_ids": [
+      "57250bd7b2e98c69",
+      "17d79bf1f5c48d9a"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T12:08:04Z",
+    "state": "active",
+    "title": "Gen · Z-ers · Mayor",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t3991752b9bf3",
+    "item_ids": [
+      "87f04cbdab765186"
+    ],
+    "kind": "question",
+    "last_item_at": "2026-11-19T12:10:20Z",
+    "state": "pending",
+    "title": "The Longevity Obsession Has Gone Too Far, Some Experts Say",
+    "topic_id": "health-wellbeing"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t39a145616eb1",
+    "item_ids": [
+      "06d07538b72a1923",
+      "27b93354216544f0"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-21T13:58:04Z",
+    "state": "active",
+    "title": "Can a Country Be Guilty of Genocide? Finally, the Answer Is Yes.",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T03:51:06.410293Z",
+    "id": "t39c1522980ae",
+    "item_ids": [
+      "fec2a0ef2d9f1c6b"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T15:03:34Z",
+    "state": "pending",
+    "title": "C.F.T.C. Officials Considered Investigating Trump’s Memecoin, Then Punted",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t3c082a0682e5",
+    "item_ids": [
+      "b1ff608324e81790",
+      "01c92e77953a82ba"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T23:11:05Z",
+    "state": "active",
+    "title": "Rescue Mission",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t3c6fc61241e9",
+    "item_ids": [
+      "f121684c99d6bf35",
+      "f028939e02f3fa58",
+      "8b493afea548081f",
+      "f4bece262cce7739",
+      "288a7346dc293145",
+      "b5c77317900d5421",
+      "9664dc95dbab756f",
+      "da385e821ffe1490",
+      "30e9812bcc418604"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-22T15:00:00Z",
+    "state": "active",
+    "title": "Anthropic · IPO · Future · AI",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t3cf98acda0dc",
+    "item_ids": [
+      "c5bf25b26c673232",
+      "2abb13e257939493",
+      "bd4fe0bb3bca417e",
+      "4ed848e9203cb726"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-18T22:32:47Z",
+    "state": "cooling",
+    "title": "William · Kate · Mumbai",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t3ddfe1dab1b3",
+    "item_ids": [
+      "a75903ce41c27a07"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-18T17:55:00Z",
+    "state": "pending",
+    "title": "How China Is Winning in Latin America",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T03:51:06.410293Z",
+    "id": "t3de8751b33e5",
+    "item_ids": [
+      "9e1df6b0cc9dfb05"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-19T18:48:51Z",
+    "state": "pending",
+    "title": "Some leaders flew private to the APEC summit, but not Mexico’s president.",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t3dfa2666e5a2",
+    "item_ids": [
+      "199712b47eedd52b"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-21T11:50:00Z",
+    "state": "pending",
+    "title": "The (Dead) City Planner With a Cult Following",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t3e636cb2bcbd",
+    "item_ids": [
+      "eee6a1f2b28e06a6"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-19T19:36:00Z",
+    "state": "pending",
+    "title": "After an Electoral Trouncing, Conservatives Start a Comeback",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t3ecdc438091c",
+    "item_ids": [
+      "7e039492850e9f53"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T22:14:17Z",
+    "state": "pending",
+    "title": "'I tell my son it's just fireworks': Life inside Yemeni city besieged by Houthis",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t3ee166336963",
+    "item_ids": [
+      "acb85e93db3b200b"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-21T04:55:24Z",
+    "state": "pending",
+    "title": "Anthropic worker claims to have solved a Holy Grail of math problems with the help of AI",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t3f25c66e04f3",
+    "item_ids": [
+      "19cd9c82754d45f7"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-19T22:19:00Z",
+    "state": "pending",
+    "title": "Bonfire of the Showboaters",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t3fa25b1fc063",
+    "item_ids": [
+      "c3d2f46e07977542"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-19T17:19:05Z",
+    "state": "pending",
+    "title": "The Anti-Semitism Playbook Comes for Indian Americans",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-23T01:41:04.329483Z",
+    "id": "t3fb94f5d1c90",
+    "item_ids": [
+      "6a0f36b62cdc09e1"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T01:32:02Z",
+    "state": "pending",
+    "title": "Israeli Political Leaders Denounce ‘Jewish Terrorism’ After West Bank Attacks",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t40b1f2b2a170",
+    "item_ids": [
+      "ee8b24b22cd3cc84"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-18T14:08:00Z",
+    "state": "pending",
+    "title": "How Much Will Republicans Get Done In Their Lame-Duck Sprint?",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t41302bcb8d76",
+    "item_ids": [
+      "459592c742b55f16",
+      "69459e12f74757e7"
+    ],
+    "kind": "question",
+    "last_item_at": "2026-11-20T10:04:08Z",
+    "state": "active",
+    "title": "E.R. Doctors on Avoiding Thanksgiving Hazards",
+    "topic_id": "health-wellbeing"
+  },
+  {
+    "created_at": "2026-11-22T03:51:06.410293Z",
+    "id": "t42dfe9a39b0b",
+    "item_ids": [
+      "f21c70b8aa4668d0",
+      "04ed4449660964f1"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T04:35:25Z",
+    "state": "active",
+    "title": "How Homeowners Are Powering Vietnam’s E-Bike Surge",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t42e8cf4fad20",
+    "item_ids": [
+      "614ce6c7cac6ea85"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-18T18:39:00Z",
+    "state": "pending",
+    "title": "The (Low) Reconciliation Odds",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t43aca31d232c",
+    "item_ids": [
+      "5071cad85fccd006",
+      "8ded4bccf2111a44"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-21T12:00:06Z",
+    "state": "active",
+    "title": "The Midterms Were Epic. What Comes Next?",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t448f6c3eb086",
+    "item_ids": [
+      "66178202aadb083d"
+    ],
+    "kind": "question",
+    "last_item_at": "2026-11-17T10:02:19Z",
+    "state": "pending",
+    "title": "How Much Does My Fitness Decline After a Break From Exercise?",
+    "topic_id": "health-training"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t4537874e8277",
+    "item_ids": [
+      "cfb885e4436a4ad6",
+      "e8eb596f5f26ccaf"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-18T15:45:00Z",
+    "state": "cooling",
+    "title": "BOE’s Bailey Sees Length of Iran War as Key to Rate Path",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t458277e94222",
+    "item_ids": [
+      "3dcb9a4a71020ffe"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-18T22:00:00Z",
+    "state": "pending",
+    "title": "The GOP Ponders Its Purpose",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t45a287cf3748",
+    "item_ids": [
+      "b9091987348b0b7f"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-17T21:08:00Z",
+    "state": "pending",
+    "title": "Canada and China Draw Closer with Expanded Trade Pact",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t45fb3841fd8f",
+    "item_ids": [
+      "89b3244407811f7b"
+    ],
+    "kind": "question",
+    "last_item_at": "2026-11-16T15:03:46Z",
+    "state": "pending",
+    "title": "This Cancer Kills Children in a Year. Research Has Been Stalled for a Year.",
+    "topic_id": "health-wellbeing"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t464c6a8a0f0a",
+    "item_ids": [
+      "378a574378f9dfec"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-18T23:31:00Z",
+    "state": "pending",
+    "title": "European Defense Chief Snaps at Pentagon Official Over Ukraine Criticism",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-23T01:41:04.329483Z",
+    "id": "t47068fb10c9c",
+    "item_ids": [
+      "c49fbbdea2bc1982"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-22T19:20:15Z",
+    "state": "pending",
+    "title": "What Happened to Silicon Valley?",
+    "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t48211cfc1ea9",
+    "item_ids": [
+      "3e398dc2bccc8ed7",
+      "821eca60bf6d0ece",
+      "8afc67698d9b5f71"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T21:00:00Z",
+    "state": "active",
+    "title": "Silicon · Valley",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t48aa3abf5325",
+    "item_ids": [
+      "4ca62c10e49c30f0"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T11:30:24Z",
+    "state": "pending",
+    "title": "Why Is Everything Breaking?",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-23T01:41:04.329483Z",
+    "id": "t49defd2d5d61",
+    "item_ids": [
+      "122b9b962e31a498"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-22T22:04:25Z",
+    "state": "pending",
+    "title": "North Carolina win gives Democrats biggest US House majority since early 1990s",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t49f889f22681",
+    "item_ids": [
+      "1fe798716a0e623f"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T19:54:00Z",
+    "state": "pending",
+    "title": "American Heroism Could Return to the Screen",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t4a60303e4833",
+    "item_ids": [
+      "337053657e172022"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-18T20:12:00Z",
+    "state": "pending",
+    "title": "The West Leaves Free Speech Behind",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t4ad73f30fbf8",
+    "item_ids": [
+      "c5d06ce5d4801458"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T23:06:47Z",
+    "state": "pending",
+    "title": "The Supreme Court Deserves Celebration, Not Condemnation",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t4b9de75da4b3",
+    "item_ids": [
+      "2b2cedb659aca639"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-19T22:18:00Z",
+    "state": "pending",
+    "title": "Guess Who’s Coming to Mecca",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T03:51:06.410293Z",
+    "id": "t4c6594a954a2",
+    "item_ids": [
+      "cb5e6e91712c9ca4"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T18:33:14Z",
+    "state": "pending",
+    "title": "Hurried Announcement: Alessandro Masullo GRH",
+    "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-22T12:34:08.686149Z",
+    "id": "t4ca5d6bb314a",
+    "item_ids": [
+      "8c1223663033aeef"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-22T10:01:55Z",
+    "state": "pending",
+    "title": "Republicans Debate Why They Lost the Midterms, and if Trump Is to Blame",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T20:20:33.012568Z",
+    "id": "t4d21550f3065",
+    "item_ids": [
+      "d5b0dd4cca41171d"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-22T15:47:00Z",
+    "state": "pending",
+    "title": "Surviving the New York City Swindlers on the FDR Drive",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-23T01:41:04.329483Z",
+    "id": "t4d3db5e2743c",
+    "item_ids": [
+      "136fb63f837704ac"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-22T22:00:00Z",
+    "state": "pending",
+    "title": "The Real Reason Electric Bills Are Rising",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t4d7547d47233",
+    "item_ids": [
+      "73862c02427933b0",
+      "978649e19fc49d9d",
+      "56b568e2582b3376"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-21T02:20:16Z",
+    "state": "active",
+    "title": "Army · Bomb-making · Safety · Iowa",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-23T01:41:04.329483Z",
+    "id": "t4e164b6bbfe8",
+    "item_ids": [
+      "2e99c0e0b587c924"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T01:26:59Z",
+    "state": "pending",
+    "title": "Is Mexico Stepping Up in the War on Drugs?",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t4f552e279829",
+    "item_ids": [
+      "269dd01d47ad7e64",
+      "2c50be8b56f0321e"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-19T17:44:00Z",
+    "state": "cooling",
+    "title": "U.S. Consortium Wins Bid to Prospect at $62 Billion Kenyan Rare-Earth Deposit",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t54a05801dcd7",
+    "item_ids": [
+      "9026aaa1d5288963",
+      "5ca24160586a5219",
+      "95da0fde7d56c751",
+      "a913764b1be35e0f"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-19T07:07:43Z",
+    "state": "cooling",
+    "title": "Gemini · 4 · Neon",
+    "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t54b757fb8aa9",
+    "item_ids": [
+      "7797a7703c0e92b9"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T20:26:33Z",
+    "state": "pending",
+    "title": "Elon Musk Has Regrets",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t5618f88ef83f",
+    "item_ids": [
+      "f8133dc16aac0ad5"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-19T22:31:41Z",
+    "state": "pending",
+    "title": "Apple is hiring engineers to build its own AI agent",
+    "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t567767702621",
+    "item_ids": [
+      "b7722baa3c6db8d1"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T12:11:00Z",
+    "state": "pending",
+    "title": "U.S. Has Floated NATO Membership for Ukraine in Recent Meetings",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t5917d00f2a1a",
+    "item_ids": [
+      "4f9477f9faddd915"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-21T06:00:00Z",
+    "state": "pending",
+    "title": "The Point of Humans in a Jobless World",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t5982932a54e8",
+    "item_ids": [
+      "28ce395ad6f72d6a",
+      "70afa686bee845ff"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-21T14:01:57Z",
+    "state": "active",
+    "title": "A 10% drop for the stock market is unnerving, but it's not that unusual",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T03:51:06.410293Z",
+    "id": "t5a6e7be9f82e",
+    "item_ids": [
+      "2c0c40f5ab36341a"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-21T14:17:42Z",
+    "state": "pending",
+    "title": "A Butler School in the Netherlands Offers Entry Into a Gilded World",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t5b25431d5ae9",
+    "item_ids": [
+      "34996169cf7ac86a"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-18T07:34:53Z",
+    "state": "pending",
+    "title": "Venezuelan ex-world boxing champion Linares in ICE detention",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t5b9aadc17fc5",
+    "item_ids": [
+      "dc689d97c79b6c23"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T14:28:00Z",
+    "state": "pending",
+    "title": "The U.S. Is Auctioning Off a Slice of the Pacific Ocean Floor in Push for Minerals",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-23T05:03:30.236987Z",
+    "id": "t5c2acf3135b7",
+    "item_ids": [
+      "e791d852b86644ce"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T04:55:00Z",
+    "state": "pending",
+    "title": "Asian Regulators Step Up Efforts to Calm AI-Driven Market Turmoil",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t5ca67687d4db",
+    "item_ids": [
+      "03fe614d384145fa"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-16T17:10:00Z",
+    "state": "pending",
+    "title": "Bank of Canada Gov. Macklem to Leave in June, Kicking Off Search for New Leader",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t5cfcf0d0ff32",
+    "item_ids": [
+      "58e0886c7b20ef8c",
+      "b60ea2405000155d",
+      "ca280e82c6b6ff3d",
+      "f17097afc77ae539"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-22T18:57:24Z",
+    "state": "active",
+    "title": "Deal · COP31 · Climate · Talks",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T12:34:08.686149Z",
+    "id": "t5cff19f9f3cf",
+    "item_ids": [
+      "2fc3a0402159ebcd"
+    ],
+    "kind": "question",
+    "last_item_at": "2026-11-22T10:00:57Z",
+    "state": "pending",
+    "title": "Patient Marks One Year Living With Pig Kidney, a Transplant Milestone",
+    "topic_id": "health-wellbeing"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t5d1bfcf0faa9",
+    "item_ids": [
+      "ff7833693fa2a067",
+      "a1de396d3910fa2e"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-18T00:00:00Z",
+    "state": "cooling",
+    "title": "Le Groupe Figaro and OpenAI partner to bring Le Figaro journalism to ChatGPT",
+    "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t5e2e1c9dc13c",
+    "item_ids": [
+      "80fa6725ee7b11a2"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-19T22:13:00Z",
+    "state": "pending",
+    "title": "Fight the Everything Tax",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t5f406846781d",
+    "item_ids": [
+      "b43ef08ac3ed4f7a",
+      "8f6af8c44a4a1bfb",
+      "db9b81401cb73d7b",
+      "8145fefb47ff1ca9"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T00:00:00Z",
+    "state": "cooling",
+    "title": "GPT-6.2 · Astra · Sol",
+    "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t5f6800dc70b9",
+    "item_ids": [
+      "5f78100ee7be37d2"
+    ],
+    "kind": "question",
+    "last_item_at": "2026-11-16T23:19:37Z",
+    "state": "pending",
+    "title": "An Intriguing Approach to Slow Alzheimer’s Shows Mixed Results",
+    "topic_id": "health-sleep"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t5f9219675e77",
+    "item_ids": [
+      "ba821b03c9c51ae3",
+      "2d14f93a7c983330"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-21T17:14:17Z",
+    "state": "active",
+    "title": "In France’s Angry Autumn, TV News Channels Are Accused of Stirring the Pot",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t5fdd657000bb",
+    "item_ids": [
+      "075c35f78416c2f0",
+      "9740f346e9b6164c"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-21T11:00:00Z",
+    "state": "active",
+    "title": "JD Vance Should Not Be Finger-Pointing in the Midst of War",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t605d85159269",
+    "item_ids": [
+      "1991d9043659f291"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-21T03:00:00Z",
+    "state": "pending",
+    "title": "Where in the World Is Mark Carney? Five Continents and 32 Countries in 113 Days",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T03:51:06.410293Z",
+    "id": "t60c6b0327f81",
+    "item_ids": [
+      "9ada93cb25b256ff"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-21T19:58:02Z",
+    "state": "pending",
+    "title": "International Student Enrollment Plunged. Schools Are Bracing for More Losses.",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T03:51:06.410293Z",
+    "id": "t621f3356fa53",
+    "item_ids": [
+      "26675f5799290efa",
+      "3798f1051f80c23d"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-22T00:10:37Z",
+    "state": "active",
+    "title": "Nigerian youth have shown their power in the past - why aren't they shaping this election?",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t649dc144bd6e",
+    "item_ids": [
+      "2f320920587e9801",
+      "a60082507d40edfc"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-19T17:23:00Z",
+    "state": "cooling",
+    "title": "A Lesson on the Economics of Tariff Leverage",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t64fb9f00e189",
+    "item_ids": [
+      "64c1ecc02d51eecd",
+      "d37d97cf60e117a3"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-18T13:04:48Z",
+    "state": "cooling",
+    "title": "Kuwait says it repelled first Iranian attack in two months after US strikes island",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T12:34:08.686149Z",
+    "id": "t65489352bd57",
+    "item_ids": [
+      "202bb17241b3412a"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-22T11:00:00Z",
+    "state": "pending",
+    "title": "A Glorious Man",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t65a0b2729d1e",
+    "item_ids": [
+      "17b7a2b39f098895"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-19T00:00:00Z",
+    "state": "pending",
+    "title": "See PR scans in action",
+    "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t65c998f88a52",
+    "item_ids": [
+      "29d27ac9a390d26b"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-19T22:19:00Z",
+    "state": "pending",
+    "title": "I Baked My Way Through The Atlantic’s Archives",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t65cd38cf72de",
+    "item_ids": [
+      "00de7b4447c3830f"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T18:08:27Z",
+    "state": "pending",
+    "title": "The Rot of Youth Sports Is Spreading",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t66f18dc933f4",
+    "item_ids": [
+      "056955d224552db2"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T12:30:00Z",
+    "state": "pending",
+    "title": "Gerrymandering Worked",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t6844d6ed68cf",
+    "item_ids": [
+      "5f8cf1cec84d45bd"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-16T22:44:00Z",
+    "state": "pending",
+    "title": "Spanberger Toes the Union Line",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T03:51:06.410293Z",
+    "id": "t6862597c3c73",
+    "item_ids": [
+      "c9330725500daa14",
+      "4de696ac7f163372"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-21T00:39:00Z",
+    "state": "active",
+    "title": "Denmark Accuses Russia of Trying to Kill Ukrainian Rapper",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t6961f88da7a1",
+    "item_ids": [
+      "8795834e676edd6c"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-22T05:01:13Z",
+    "state": "pending",
+    "title": "American vs. Chinese Mahjong: Why the Rivalry Is Stirring Controversy",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t69c7cd07fd80",
+    "item_ids": [
+      "20764b914590be9e"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-21T08:10:03Z",
+    "state": "pending",
+    "title": "Trafalgar Square Christmas tree felled in Norway",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t69d96b2c095b",
+    "item_ids": [
+      "f69bc4aa986a3583"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-18T21:43:00Z",
+    "state": "pending",
+    "title": "Tales From a City of Thieves",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t6a5e85b52221",
+    "item_ids": [
+      "f6b8858e945555be"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-21T17:21:53Z",
+    "state": "pending",
+    "title": "Iran strikes 3 tankers as it shows off missile launchers, and other Mideast news",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t6b20eb9557b4",
+    "item_ids": [
+      "ef8fb07183ba6d8f"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-21T12:00:00Z",
+    "state": "pending",
+    "title": "Fighting a Radical Militia Was Not Part of the Plan",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t6b777e93c212",
+    "item_ids": [
+      "ff6307023962ff19"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T01:41:18Z",
+    "state": "pending",
+    "title": "Andrey Zvyagintsev Showed Us What Russia Is, and We Didn’t Realize",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t6f8bd182d9c3",
+    "item_ids": [
+      "f3b939e0f9a2fa4a"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-21T13:17:38Z",
+    "state": "pending",
+    "title": "Zelensky says Crimean Bridge strikes 'fair response' as he meets UK's Streeting",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t6fcb97c08330",
+    "item_ids": [
+      "49a1c83f625ad52a"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T19:55:59Z",
+    "state": "pending",
+    "title": "Mamdani’s ‘Affordability’ Deception",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t6ffb3203250b",
+    "item_ids": [
+      "171b713574ec3350"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T17:55:48Z",
+    "state": "pending",
+    "title": "Hillary Clinton: What Trump Should Have Said to Putin",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t717dcd042f2c",
+    "item_ids": [
+      "4c4aa4130d6ffa5a"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-18T21:34:00Z",
+    "state": "pending",
+    "title": "To Negotiate With Putin Is to Concede Defeat",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t71ddc8640116",
+    "item_ids": [
+      "b754418984bacffd"
+    ],
+    "kind": "question",
+    "last_item_at": "2026-11-18T21:31:38Z",
+    "state": "pending",
+    "title": "The Good List: 6 Things to Bring Some Delight to Your Day",
+    "topic_id": "health-sleep"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t73266d4b1fb1",
+    "item_ids": [
+      "478ea25aeed3c997"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T02:49:57Z",
+    "state": "pending",
+    "title": "Token fraud is here and it’s BAD (YouTube)",
+    "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t760715ab73af",
+    "item_ids": [
+      "afe6c0b09a560625"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-18T03:00:00Z",
+    "state": "pending",
+    "title": "He Runs One of the World’s Deadliest Military Forces. We Went Inside His Bunker.",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t7663695b6503",
+    "item_ids": [
+      "3298713995b15316"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-21T15:00:00Z",
+    "state": "pending",
+    "title": "Can Anthropic afford to put safety first?",
+    "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t76a7e41b9264",
+    "item_ids": [
+      "877a6dce8fac1241",
+      "f535d837030f95fe"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T15:20:14Z",
+    "state": "active",
+    "title": "Inside COP31: Part Trade Show, Part Climate Therapy Session",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t78296bd051a6",
+    "item_ids": [
+      "b82b64ef90f76e66"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-16T09:30:00Z",
+    "state": "pending",
+    "title": "How Revolut raises ambition without lowering the bar",
+    "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t784f0d5a3393",
+    "item_ids": [
+      "3461d379d9554498"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T17:19:00Z",
+    "state": "pending",
+    "title": "Let Congress Keep Doing Its Job With the FAA",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T20:20:33.012568Z",
+    "id": "t78721906ec8c",
+    "item_ids": [
+      "3c5318394b3bd94d"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-22T17:16:03Z",
+    "state": "pending",
+    "title": "US intelligence chief says Putin is 'not America's friend in Ukraine'",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t788c41c5f95d",
+    "item_ids": [
+      "5dd9171adbe58784"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T14:41:53Z",
+    "state": "pending",
+    "title": "What does the new Brexit deal mean for Northern Ireland?",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t78df06abf96e",
+    "item_ids": [
+      "99e1227e19f4e7e0"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-21T00:09:08Z",
+    "state": "pending",
+    "title": "Caring for Aging Loved Ones Is Not an Injustice",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t79d6beaed71d",
+    "item_ids": [
+      "cd0bae114c3c59ac"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-18T21:43:00Z",
+    "state": "pending",
+    "title": "The Fate of Jensen Huang",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t7a85acc235dd",
+    "item_ids": [
+      "0bfc7178969043ed"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-21T11:00:00Z",
+    "state": "pending",
+    "title": "Deregulation Is Bringing Us Our First Nuclear Reactors of the Century",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t7ae8f89369f4",
+    "item_ids": [
+      "eb984eaa8deff162",
+      "c8ed71db85d33cab"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-19T13:31:23Z",
+    "state": "cooling",
+    "title": "Venezuela · Military · Deal",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t7db4f1910d2c",
+    "item_ids": [
+      "7b03ac8526675b24"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T22:28:10Z",
+    "state": "pending",
+    "title": "The System Is ‘Stacked’ Against the Young",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t7e65add1bfbf",
+    "item_ids": [
+      "77b871659814b034",
+      "b331a244d62b8fc8"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-19T20:22:17Z",
+    "state": "cooling",
+    "title": "Meta · Muse",
+    "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-23T01:41:04.329483Z",
+    "id": "t7f0fc3a98c77",
+    "item_ids": [
+      "76ea1ba212a5a4ff"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T01:00:00Z",
+    "state": "pending",
+    "title": "Fugitive Criminals Need a New Hideout Since the U.A.E. Started Extraditing Them",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t7f4d7ba6a366",
+    "item_ids": [
+      "431682917c2f9c6f",
+      "173bb0ef856a0f86",
+      "f53df61906c19e8a",
+      "d771595d0adedb38",
+      "ea3af83a4c4d87d8",
+      "0bb7c54e0bd6e5ab",
+      "fef2af5a8e94f99a",
+      "2db3d6e535316793",
+      "a2d81e5e20163f1b",
+      "9389c4f0235c607c",
+      "99bbe6caa15d4a64",
+      "7be4a7444604ca03",
+      "88c25ab4c1453b23",
+      "450b9027bc4176f5",
+      "4f65a194f0481a79",
+      "a1ed121c68ba09d5",
+      "e907693f218ea8d5",
+      "a7532331300c3678",
+      "ade6296b88477175",
+      "aced56439e665105",
+      "3dca9d375e0800ac",
+      "df95222c573bf7e2",
+      "00f6f848d231b94e"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-22T22:00:00Z",
+    "state": "active",
+    "title": "Trump · Putin · Summit · Xi",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T12:34:08.686149Z",
+    "id": "t801ff55c363f",
+    "item_ids": [
+      "3e7958cf15161a16"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-22T12:00:00Z",
+    "state": "pending",
+    "title": "What We Don’t Know About the Iran War",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t828080d93b83",
+    "item_ids": [
+      "cf0cc1885bfe693d"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-19T11:38:09Z",
+    "state": "pending",
+    "title": "Indian driver wins $1.3m in life-changing lottery prize",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t82cc1027955f",
+    "item_ids": [
+      "2660f3803c0bca14",
+      "9360eecd21f5ebad"
+    ],
+    "kind": "question",
+    "last_item_at": "2026-11-20T22:29:07Z",
+    "state": "active",
+    "title": "Health · RFK · Jr",
+    "topic_id": "health-wellbeing"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t832352496024",
+    "item_ids": [
+      "aec5763de8491892"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-21T13:00:00Z",
+    "state": "pending",
+    "title": "Hollywood Needs a New Pixar",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t836568bceace",
+    "item_ids": [
+      "e3f4899f14d269a1"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-16T22:37:00Z",
+    "state": "pending",
+    "title": "Gig Work Is Good Work",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t8421a187fb2a",
+    "item_ids": [
+      "aca7a975afb6188e"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-21T11:48:09Z",
+    "state": "pending",
+    "title": "Russia grasps US offer on European security to revive old demands",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t86c11b0104bb",
+    "item_ids": [
+      "cc015673d5dacb52"
+    ],
+    "kind": "question",
+    "last_item_at": "2026-11-17T00:19:40Z",
+    "state": "pending",
+    "title": "Study Paves Way for GLP-1s for Young Children, but Some Doctors Are Uneasy",
+    "topic_id": "health-wellbeing"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t877953abeed0",
+    "item_ids": [
+      "c38d64c0173f94d5",
+      "ed8565833f04ee14",
+      "40ffaa0deb1f5a0d"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T23:58:00Z",
+    "state": "active",
+    "title": "U.S · Measles",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T20:20:33.012568Z",
+    "id": "t88057bbbb9e0",
+    "item_ids": [
+      "1c55d2e5eb91b4f0"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-22T17:41:23Z",
+    "state": "pending",
+    "title": "Issue with automation system causes Delta flight delays in Atlanta",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T03:51:06.410293Z",
+    "id": "t8814942bf13f",
+    "item_ids": [
+      "669f1c5f43e16104"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T05:15:27Z",
+    "state": "pending",
+    "title": "Love and Carjackings in a Video Game",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t8825b5d5c084",
+    "item_ids": [
+      "ec2a0d0199c49029"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-19T17:55:15Z",
+    "state": "pending",
+    "title": "Analysis: Trilateral summit high on spectacle, short on substance",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t88570b992be5",
+    "item_ids": [
+      "294aff57c9876a4f"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T08:00:00Z",
+    "state": "pending",
+    "title": "What Will Democrats Do With the Gavel?",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t890c420b01fb",
+    "item_ids": [
+      "cb7cf15fdb2b51ff"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T05:01:36Z",
+    "state": "pending",
+    "title": "Asian American women feel the impact of Nvidia CEO affair scandal and 'spy' accusations",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T03:51:06.410293Z",
+    "id": "t8adeb5382fb9",
+    "item_ids": [
+      "99ec0aa79a389c1e"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-21T05:53:09Z",
+    "state": "pending",
+    "title": "Federal Court Halts Pregnant Workers’ Protection Law",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t8b0cd9e519e1",
+    "item_ids": [
+      "184d931227f2504d"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-18T10:00:00Z",
+    "state": "pending",
+    "title": "The Silent Consensus",
+    "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t8b1e8e8156d4",
+    "item_ids": [
+      "5de549b98bc75856"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-21T16:22:00Z",
+    "state": "pending",
+    "title": "WSJ Opinion: Gig Work Is Good Work",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t8b388d20801a",
+    "item_ids": [
+      "4b7a62a76bfd43d7"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-21T09:12:54Z",
+    "state": "pending",
+    "title": "As Trump basks in summit pomp, China's Xi strengthens his hand",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t8e51bd340404",
+    "item_ids": [
+      "dae9aada9e6d06c2"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-17T16:54:29Z",
+    "state": "pending",
+    "title": "Commonwealth medallist Lobban switches from Scotland to Australia",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t8e5c0bc0aa96",
+    "item_ids": [
+      "e2690a2f759a79a0"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-16T22:39:00Z",
+    "state": "pending",
+    "title": "Pat Buchanan Was a Foretaste",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t8e84edc87d73",
+    "item_ids": [
+      "0044e5759ecfd66c"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T17:20:55Z",
+    "state": "pending",
+    "title": "Fake forests hiding locations in Russia",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T03:51:06.410293Z",
+    "id": "t8fc15885ea92",
+    "item_ids": [
+      "e0391599eab5b056"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-19T15:08:16Z",
+    "state": "pending",
+    "title": "See how New York Times photographers covered the aftermath of Myanmar’s 2017 attacks on the Rohingya.",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t90bcbf794fcb",
+    "item_ids": [
+      "cc869be6dce057aa",
+      "32c0ee762a9375ba",
+      "ca386817a4f5b69d"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-22T16:43:00Z",
+    "state": "active",
+    "title": "Opinion | Iran Doubles Down on Its Nuclear Ambitions",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t90e265b38595",
+    "item_ids": [
+      "4ba7954943abda2b"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-16T20:11:00Z",
+    "state": "pending",
+    "title": "The Call for Civility in a Divided Government",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t92001617da45",
+    "item_ids": [
+      "5556cd143c0d2397",
+      "929307f066c8592e"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-22T09:20:45Z",
+    "state": "active",
+    "title": "Korea · Education · Minister · Resigns",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T03:51:06.410293Z",
+    "id": "t9230b5e21b29",
+    "item_ids": [
+      "6c69e97c5257c80c"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-21T18:02:19Z",
+    "state": "pending",
+    "title": "Inkling-2-Mini in 5.4 GB Memory",
+    "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t934bd43ddc62",
+    "item_ids": [
+      "a300633cb4cbc866"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T20:56:08Z",
+    "state": "pending",
+    "title": "The Obscenely Simple Question at the Heart of Israeli Politics",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t9548eb4404f3",
+    "item_ids": [
+      "b3a746945a8955db",
+      "e8029993afd719ae"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-22T13:00:00Z",
+    "state": "active",
+    "title": "The vibe-coding revolution is coming to all the gadgets",
+    "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-23T05:03:30.236987Z",
+    "id": "t964976d9f473",
+    "item_ids": [
+      "f6b61828ff68ee3f"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T04:26:00Z",
+    "state": "pending",
+    "title": "California AG Bonta filed lawsuit against OpenAI over model security, public safety",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t97bea4e82635",
+    "item_ids": [
+      "a31f12d90e35ab25"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-18T00:00:00Z",
+    "state": "pending",
+    "title": "A Hunger Crisis Is Making Ebola Even Deadlier",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t98ca8841b31a",
+    "item_ids": [
+      "617a41c573e07fff",
+      "8c49435c2a19dd2d",
+      "3166b73a63cfd7bd",
+      "8c91fa4e51356972",
+      "f48e22fe89d9ff3f",
+      "0cf18205826702b9",
+      "c6bf8116ef07d9d6",
+      "67d39d916333c3e8",
+      "b9390b3483ad07c2",
+      "fa30b29d765c8b1e",
+      "a1692a690c033874",
+      "4c785d2ff42dcc85",
+      "815741e2d927b6a6"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-22T23:09:00Z",
+    "state": "active",
+    "title": "Russia · Russian · Ukraine · Bridge",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t98f390262cba",
+    "item_ids": [
+      "fff2e1c3ff4cf7c8"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-18T19:54:00Z",
+    "state": "pending",
+    "title": "William & Mary & Wawa",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T20:20:33.012568Z",
+    "id": "t9962143f4518",
+    "item_ids": [
+      "aa3293db7c2a526d"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-22T15:02:00Z",
+    "state": "pending",
+    "title": "WSJ Opinion: Tech Outages Raise National Security Concerns",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t9a386648e3b8",
+    "item_ids": [
+      "0cfa9d0e6f1bc576"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-19T22:18:00Z",
+    "state": "pending",
+    "title": "How I Survived the Blue Tsunami",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t9b40d9116170",
+    "item_ids": [
+      "ff4bce487fe44011"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-16T12:42:14Z",
+    "state": "pending",
+    "title": "Ashes of exiled Nobel Laureate Miguel Ángel Asturias returned to Guatemala",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t9b5aed59253d",
+    "item_ids": [
+      "b56239a4da2ec66c"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-17T21:00:00Z",
+    "state": "pending",
+    "title": "See what 5 builders are making with Gemini 4 Carbon",
+    "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t9b715e99fd69",
+    "item_ids": [
+      "d6b88907cbdaa308"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-18T14:44:48Z",
+    "state": "pending",
+    "title": "The PSF end-of-year fundraiser",
+    "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t9bf886ed4f2c",
+    "item_ids": [
+      "a91d2c853cda3c3d"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-19T18:17:00Z",
+    "state": "pending",
+    "title": "Welcome to Software Beirut",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t9c7ec2fed169",
+    "item_ids": [
+      "9434292048106a1c"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-17T00:00:00Z",
+    "state": "pending",
+    "title": "Linked billing on the Claude Platform",
+    "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t9c933057dc87",
+    "item_ids": [
+      "155963e08c1f5cb2"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-21T12:40:21Z",
+    "state": "pending",
+    "title": "How a GOP redistricting 'dummymander' in North Carolina backfired by 2 seats",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "t9f492d3d7aeb",
+    "item_ids": [
+      "e308a84a77ae00d8",
+      "fd109fdc361c3cd3",
+      "abadb4e0aaec88e9"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T07:12:24Z",
+    "state": "active",
+    "title": "Anthropic · Initial · Public · Offering",
+    "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-22T12:34:08.686149Z",
+    "id": "ta1a2a3819b19",
+    "item_ids": [
+      "ac9190fe80d8fc76"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-22T12:00:00Z",
+    "state": "pending",
+    "title": "A Movie About What Happens When the Party’s Over",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T20:20:33.012568Z",
+    "id": "ta1e436b185c5",
+    "item_ids": [
+      "d0b049ded60613ba"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-22T14:00:00Z",
+    "state": "pending",
+    "title": "The Rise and Fall of the Telephone Century",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "ta296c6f7e2c9",
+    "item_ids": [
+      "24a789cf81ee84ef"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-17T03:00:00Z",
+    "state": "pending",
+    "title": "The Bitter Feud Between the Leaders of Brazil and Argentina Goes Global",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "ta2e62c5fee42",
+    "item_ids": [
+      "23b214ab04dfd259"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-21T13:10:27Z",
+    "state": "pending",
+    "title": "Products in food-inspired colors like matcha and ube are popping up in unexpected places",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "ta3552385c417",
+    "item_ids": [
+      "d25de4f029966643"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-18T18:10:33Z",
+    "state": "pending",
+    "title": "Will Wright's next simulation will use AI to mine content from your memories",
+    "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "ta3989aded281",
+    "item_ids": [
+      "13ad191e04c40b07"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-17T18:55:00Z",
+    "state": "pending",
+    "title": "Trading on Taxpayer’s Time",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "ta48e8227e673",
+    "item_ids": [
+      "5dbfdbf0774cddc4"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-21T16:16:29Z",
+    "state": "pending",
+    "title": "Wes Streeting calls Putin a 'cold-blooded killer' as he meets Zelensky in Kyiv",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "ta4a10ce70917",
+    "item_ids": [
+      "c2a5088c704a775e",
+      "40a0d4e3b8cff0ee"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-22T00:03:40Z",
+    "state": "active",
+    "title": "Judge · Blocks · Trump",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "ta4cc630424f9",
+    "item_ids": [
+      "61d68d43ae3309d0"
+    ],
+    "kind": "question",
+    "last_item_at": "2026-11-19T17:11:05Z",
+    "state": "pending",
+    "title": "I’m Sad That My Boyfriend Uses A.I. to Write Love Notes",
+    "topic_id": "health-sleep"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "ta557c7c0234e",
+    "item_ids": [
+      "e04fe2e77b1532dc",
+      "349acfab2f31b18c",
+      "1f3fed02a0c96e9a",
+      "fea8a8674624f72e"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T00:05:50Z",
+    "state": "active",
+    "title": "Jensen · Alice · Huang · Nvidia",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "ta6b0aa711826",
+    "item_ids": [
+      "dbc76a5012a78768",
+      "038eaedf77af7e47"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-21T13:00:00Z",
+    "state": "active",
+    "title": "Our Best Stuff on the Spate of Tech Outages",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "ta74adc6e09c0",
+    "item_ids": [
+      "e2495912c5fa2d7d"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-22T04:04:56Z",
+    "state": "pending",
+    "title": "Toyota, Nissan, and Honda to standardize parts to lower costs",
+    "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-22T03:51:06.410293Z",
+    "id": "ta772f96ca0ce",
+    "item_ids": [
+      "f9684b758a29b187"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-19T16:14:06Z",
+    "state": "pending",
+    "title": "Greenland Pulls Closer to the U.S. — by an Hour",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T03:51:06.410293Z",
+    "id": "ta7b7860ea02e",
+    "item_ids": [
+      "ebd3fa555afa3d46"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-21T11:00:08Z",
+    "state": "pending",
+    "title": "A Chinese Tech Hub Offers a Peek at the Electric Cars Headed for Canada",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-23T01:41:04.329483Z",
+    "id": "ta80f3ae426cb",
+    "item_ids": [
+      "14a7ac03ad90b180"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T00:11:00Z",
+    "state": "pending",
+    "title": "UK government to make case for greater public control of utilities",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "ta82b7ccecd35",
+    "item_ids": [
+      "eb5c12ac3920e6e5"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T01:19:32Z",
+    "state": "pending",
+    "title": "Why C.E.O.s Who Commit Adultery Are Dangerous for Their Companies",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "ta892bb3d9c0f",
+    "item_ids": [
+      "3c37785fd0d99fac",
+      "382a89549f52ab18"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-17T18:56:00Z",
+    "state": "cooling",
+    "title": "The Broken Promises Behind Trump’s Tariffs",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "taa5289816ccf",
+    "item_ids": [
+      "f2c88882a45432e8"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-16T20:11:00Z",
+    "state": "pending",
+    "title": "Emergencies Teach Us Patience and Empathy",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "taa86c3e8a02a",
+    "item_ids": [
+      "68ddb817fe4001c0"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-18T00:00:00Z",
+    "state": "pending",
+    "title": "Advancing chip design with OpenAI models",
+    "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "tab5564effefd",
+    "item_ids": [
+      "d134ec74a04fadeb"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-19T22:48:00Z",
+    "state": "pending",
+    "title": "The U.S. Navy Needs Frigates. Japan Has One",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "tac30d65a5265",
+    "item_ids": [
+      "d4f77e4dbc00aae4"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T14:58:02Z",
+    "state": "pending",
+    "title": "The Tuners",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "tad412901fa0c",
+    "item_ids": [
+      "4ee26f541c5dd3e0"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-21T16:36:30Z",
+    "state": "pending",
+    "title": "Tom Hanks Got A.I.-Cloned. Here’s How We Stop It From Happening to You.",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "tad5530b6fcfd",
+    "item_ids": [
+      "03ed28dc6e52f9a6"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T11:00:00Z",
+    "state": "pending",
+    "title": "The Filibuster Is a Pillar of American Government",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T12:34:08.686149Z",
+    "id": "tad864376312f",
+    "item_ids": [
+      "5bc4f9ba088a96c1"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-22T11:00:11Z",
+    "state": "pending",
+    "title": "In Movies and Politics, Money Gets You Only So Far",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "tad9533d49571",
+    "item_ids": [
+      "6c32643416c6f347"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-19T15:28:58Z",
+    "state": "pending",
+    "title": "Trump’s Embarrassing, Inconsequential Summit",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "tae00f13cabea",
+    "item_ids": [
+      "2ad9b9740bd9961a"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T22:53:36Z",
+    "state": "pending",
+    "title": "The New Right Can’t Win Without Godzilla",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "taf69b5bbbe8f",
+    "item_ids": [
+      "15e9283d2abd9ac1"
+    ],
+    "kind": "question",
+    "last_item_at": "2026-11-20T11:29:08Z",
+    "state": "pending",
+    "title": "Will Salmon Sperm Make You Look Younger?",
+    "topic_id": "health-sleep"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "tb0559a57fc07",
+    "item_ids": [
+      "fbe87aecef197dd2",
+      "bbde5766c7216552",
+      "0b83da30ea9c973a"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T18:00:00Z",
+    "state": "active",
+    "title": "What’s So Important About Nvidia’s Chips?",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "tb0ce6c6ae471",
+    "item_ids": [
+      "572c0bbae5b62eff"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T06:02:00Z",
+    "state": "pending",
+    "title": "Is the U.S. Facing a Coordinated Cyberattack?",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "tb0ff15677b39",
+    "item_ids": [
+      "c75f6740fdd65246"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T21:50:00Z",
+    "state": "pending",
+    "title": "El Salvador Takes Its Gang-Fighting Strategy to Haiti",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "tb2aafcc0dfc0",
+    "item_ids": [
+      "83a168fe666778f7",
+      "2cf95f465a4b0234",
+      "a0216c6ea54c79d5",
+      "20063e9de7eb16b4",
+      "a4d667a9cecfe165",
+      "582f3699c33479e1",
+      "c726200f0d4f418f",
+      "10d8e4311cc852dc",
+      "005ab5a941284f6b",
+      "7b117f0fbba33258"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-22T16:46:00Z",
+    "state": "active",
+    "title": "China · Nvidia · Xi · Scandal",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "tb3c30073b1c5",
+    "item_ids": [
+      "8c1952062e8bd0db"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T23:11:00Z",
+    "state": "active",
+    "title": "Opinion | Why China Wants to Control a Yacht Maker",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "tb3e124cf20c3",
+    "item_ids": [
+      "53d809d7420a3923"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-18T08:00:00Z",
+    "state": "pending",
+    "title": "How Sumitomo Life’s leaders helped teams adopt ChatGPT Enterprise",
+    "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "tb3e611f09131",
+    "item_ids": [
+      "3566c6fe343e383f"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-21T14:35:23Z",
+    "state": "pending",
+    "title": "Margaret Atwood: Born Into a Storm",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "tb3ebc3d4c155",
+    "item_ids": [
+      "c6b0bd18cd1b9509"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-18T19:57:57Z",
+    "state": "pending",
+    "title": "When Americans Sing Together",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "tb41bb24f271b",
+    "item_ids": [
+      "fdff1adeec68f626"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-21T01:02:39Z",
+    "state": "pending",
+    "title": "They were fined $811m for conning detained migrants, but the scams didn't stop",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "tb4f35750ad1d",
+    "item_ids": [
+      "d167dd3881bbd473"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T23:28:17Z",
+    "state": "pending",
+    "title": "A new Nepal, an old neighbour - Balendra Shah's India test on first visit",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "tb59ae8829ae3",
+    "item_ids": [
+      "db0e6a8b169a8ed7",
+      "6fea7a123d901d39"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T20:31:00Z",
+    "state": "active",
+    "title": "Russian · Poland",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "tb5b24a8774da",
+    "item_ids": [
+      "eba93985a0b760d5"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-19T20:00:00Z",
+    "state": "pending",
+    "title": "Follow the Reagan Model on Defense Spending",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "tb5c91f233585",
+    "item_ids": [
+      "d1c951d7ba7ad9c7"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T16:50:00Z",
+    "state": "pending",
+    "title": "The Benefits of Reading Are Incalculable",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "tb6b1698c9b8c",
+    "item_ids": [
+      "06a402121aa1a33e",
+      "1f55bc39dbfcd608",
+      "23eeac525516e127",
+      "bb96c010511f1120"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-21T12:40:15Z",
+    "state": "active",
+    "title": "Trump · Conference",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "tb782aa6521ed",
+    "item_ids": [
+      "21b4758ab52123ac",
+      "21e886491b30cfff"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-16T06:00:00Z",
+    "state": "cooling",
+    "title": "More ways to move care forward with ChatGPT for Healthcare",
+    "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "tb7b51dc227de",
+    "item_ids": [
+      "76df676b0a6be0fc"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T23:40:15Z",
+    "state": "pending",
+    "title": "The Real Stakes of the Wilderness Years",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "tb7b67082a461",
+    "item_ids": [
+      "6bdd117d6a37820d"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-19T17:08:59Z",
+    "state": "pending",
+    "title": "The Pulse: Is Amazon’s writing culture collapsing because of AI?",
+    "topic_id": "jobs-market"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "tb803672a97df",
+    "item_ids": [
+      "d19a29986e638809"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-21T22:01:19Z",
+    "state": "pending",
+    "title": "Lock of former US President George Washington's hair sells for $4,000",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "tb8fe9c66409c",
+    "item_ids": [
+      "8f48c3599f5e6e23"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-18T18:08:52Z",
+    "state": "pending",
+    "title": "Software factories and code reviews with Harjot Gill",
+    "topic_id": "jobs-market"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "tb93f4ee83788",
+    "item_ids": [
+      "e930ce31c3898846"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-21T14:13:06Z",
+    "state": "pending",
+    "title": "Most new Black Democrats in decades to join US Congress, set to sway policy, party",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "tbab7b3698dfe",
+    "item_ids": [
+      "58027c93f10f681d"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T20:02:17Z",
+    "state": "pending",
+    "title": "Experimental Drugs for the Sickest Patients",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "tbac510b3f3a4",
+    "item_ids": [
+      "2614a9bd98e3bf13",
+      "98668531e5be1d68"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-21T05:00:00Z",
+    "state": "active",
+    "title": "Pepper · Salt",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T03:51:06.410293Z",
+    "id": "tbae4f2a472b9",
+    "item_ids": [
+      "b0788b0bd2d9aed1"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-21T13:35:19Z",
+    "state": "pending",
+    "title": "U.N. Fails to Regulate Lethal Autonomous Weapons, but Plans to Try Again",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "tbbae3f94e487",
+    "item_ids": [
+      "29c047ee0b1ef8c7",
+      "409da1a4ba96603e",
+      "8a04e8c5d17abf94",
+      "ab5aea15d1cea03d",
+      "74d24e1c69c84114"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-22T21:10:00Z",
+    "state": "active",
+    "title": "Drug · Top · Mexico · Captured",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "tbbd7521aed03",
+    "item_ids": [
+      "0f4f024050006f5f",
+      "386164a61a12f5c6"
+    ],
+    "kind": "question",
+    "last_item_at": "2026-11-22T09:09:42.410739Z",
+    "state": "active",
+    "title": "Benefits · Risks",
+    "topic_id": "health-wellbeing"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "tbbee5718a561",
+    "item_ids": [
+      "d0919cc954d57cde",
+      "60d7e8a4e20cab41"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-21T12:54:44Z",
+    "state": "active",
+    "title": "On the Trail With Spain’s Prime Minister, as He Tries to Pull Out a Win",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T20:20:33.012568Z",
+    "id": "tbc5742cfa54d",
+    "item_ids": [
+      "28c764e2cf8a36ef"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-22T17:25:20Z",
+    "state": "pending",
+    "title": "Binding of Isaac developer removes AI music from Repentance Plus",
+    "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "tbd36848027d3",
+    "item_ids": [
+      "fe879eac8d192e25"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-18T21:46:00Z",
+    "state": "pending",
+    "title": "The Shakespearean Tragedy of King Donald",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T12:34:08.686149Z",
+    "id": "tbd41f3230182",
+    "item_ids": [
+      "9535cc547ca193dd"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-22T04:13:45Z",
+    "state": "pending",
+    "title": "Trump vows to work with Democrats to cap credit card interest rates at 10%",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T20:20:33.012568Z",
+    "id": "tbd794f6aff91",
+    "item_ids": [
+      "27d43b3283f8f6c4"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-22T11:00:08Z",
+    "state": "pending",
+    "title": "A California billionaire tax proposal faced a major setback despite big wins for progressives",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "tbe7dbb91c658",
+    "item_ids": [
+      "1a9bca9e42fde4e2"
+    ],
+    "kind": "question",
+    "last_item_at": "2026-11-22T09:09:42.410739Z",
+    "state": "pending",
+    "title": "Can inositol (a supplement that helps control blood sugar and hormones) help women with polycystic ovary syndrome (a common hormone condition that affects fertility) have a baby?",
+    "topic_id": "health-nutrition"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "tbf48eb93b26c",
+    "item_ids": [
+      "d4774d28d264a29f"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-17T15:28:59Z",
+    "state": "pending",
+    "title": "Ars Live: What do drone strikes on data centers mean for the future? Talk at 1 pm EST today",
+    "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "tc088d1fb61c5",
+    "item_ids": [
+      "8b57b72566ad3c58"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T03:01:57Z",
+    "state": "pending",
+    "title": "llm-gemini 0.38.1",
+    "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-22T03:51:06.410293Z",
+    "id": "tc1093a5919b9",
+    "item_ids": [
+      "9a09e8d4899e7e91",
+      "6b25411317bb5a31",
+      "4944a97f01a7a8ae"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-19T16:27:27Z",
+    "state": "cooling",
+    "title": "The Rohingya Crisis Over the Years",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T20:20:33.012568Z",
+    "id": "tc111ef69fb3f",
+    "item_ids": [
+      "4c316e2e3ff4005d"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-22T14:00:05Z",
+    "state": "pending",
+    "title": "Why I Loved the Slick and Dirty HBO Divorce Drama ‘War’",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "tc1a078a3140e",
+    "item_ids": [
+      "3d8c0c8f3876e086"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T17:18:00Z",
+    "state": "pending",
+    "title": "Beware of Conflicts With Medical Platforms",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "tc1cf1d2c45eb",
+    "item_ids": [
+      "3b3be741a87f5e21"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-17T00:00:00Z",
+    "state": "pending",
+    "title": "Introducing OpenAI for Chile",
+    "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-22T12:34:08.686149Z",
+    "id": "tc2454854eea5",
+    "item_ids": [
+      "d25de59c6fa8a666",
+      "401dc75af06a0a21"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-22T16:59:00Z",
+    "state": "active",
+    "title": "U.N · Climate · Talks · Fossil",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T12:34:08.686149Z",
+    "id": "tc3327beb07e5",
+    "item_ids": [
+      "e30dab416c7a0a06"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-22T12:29:33Z",
+    "state": "pending",
+    "title": "Canada’s Boreal Forest Is Reshaped by Logging and Climate Change",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T20:20:33.012568Z",
+    "id": "tc36a577a8dcc",
+    "item_ids": [
+      "0acedaff6086fffb"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-22T14:00:00Z",
+    "state": "pending",
+    "title": "Is the Populist Moment Over?",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "tc372c1a47ce0",
+    "item_ids": [
+      "90cd778fd9a9571c"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-17T17:37:04Z",
+    "state": "pending",
+    "title": "Trump says US taking 'very seriously' any Iranian plot against Washington",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T03:51:06.410293Z",
+    "id": "tc3d6b0745652",
+    "item_ids": [
+      "5468ed6efa238620"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-21T12:53:05Z",
+    "state": "pending",
+    "title": "Chinese-Born Neuroscientist Is Detained by ICE While Traveling From Conference",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "tc3ec1ea900fb",
+    "item_ids": [
+      "85d0c5a4a983edfb"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T21:47:10Z",
+    "state": "pending",
+    "title": "Meta reconsiders 2030 net-zero goal amid record emissions from AI data centers",
+    "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-23T01:41:04.329483Z",
+    "id": "tc85ea3ff5836",
+    "item_ids": [
+      "5cd10b7c4a71ab1a"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T00:27:25Z",
+    "state": "pending",
+    "title": "Why Democrat Abdul El-Sayed is Talking Up ‘TrumpCare’",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "tc9dc00df4195",
+    "item_ids": [
+      "f2bd9101712f00c8"
+    ],
+    "kind": "question",
+    "last_item_at": "2026-11-22T09:09:42.410739Z",
+    "state": "pending",
+    "title": "What are the benefits and risks of turmeric (Curcuma longa) supplements for people with osteoarthritis?",
+    "topic_id": "health-wellbeing"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "tcb177871fb21",
+    "item_ids": [
+      "55c9a975e965f753"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T16:45:34Z",
+    "state": "pending",
+    "title": "Cost of living protests sweep across Europe",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T20:20:33.012568Z",
+    "id": "tcb95a8726dfe",
+    "item_ids": [
+      "e9ffa36464d8bebe"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T22:11:41Z",
+    "state": "pending",
+    "title": "Plastic surgeon convicted of killing lawyer in Florida is sentenced to death",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-23T01:41:04.329483Z",
+    "id": "tcd8581599ef4",
+    "item_ids": [
+      "7d27fffa3906bd9a"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-22T22:48:02Z",
+    "state": "pending",
+    "title": "We haven’t seen the last of the major tech outages",
+    "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "tce26490ca336",
+    "item_ids": [
+      "b3cfc4a6cd73070a",
+      "3c8bd49014502bb3",
+      "50ae360832f8f707"
+    ],
+    "kind": "question",
+    "last_item_at": "2026-11-17T20:52:05Z",
+    "state": "active",
+    "title": "U.S. Loses Its Measles Elimination Status, a Historic Setback for American Health",
+    "topic_id": "health-wellbeing"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "tce4e21606fa2",
+    "item_ids": [
+      "8a4a51ffb1060fb9"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-21T15:00:00Z",
+    "state": "pending",
+    "title": "The Russian POW Camp Where Sex Abuse Became Part of the System",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T20:20:33.012568Z",
+    "id": "tcf3979c52b73",
+    "item_ids": [
+      "f0f4d6b860a375a7"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-22T15:47:38Z",
+    "state": "pending",
+    "title": "The World’s Biggest Climate Conference Just Fell Apart",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T03:51:06.410293Z",
+    "id": "tcfdd985c08de",
+    "item_ids": [
+      "1d3a7e31bda05a61"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-21T13:54:46Z",
+    "state": "pending",
+    "title": "A New Trump Tactic to Restrict Transit Funding: Rewrite the Rules",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-23T05:03:30.236987Z",
+    "id": "td058a3929035",
+    "item_ids": [
+      "1c2727d0dc3d650a"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T05:00:07Z",
+    "state": "pending",
+    "title": "China Fears A.I. Could Give the U.S. an Edge in Nuclear Rivalry",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "td12d3a79ca4c",
+    "item_ids": [
+      "f884e53513578fa0"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T20:54:12Z",
+    "state": "pending",
+    "title": "Trump threatens ban on US firms building AI data centres overseas",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T20:20:33.012568Z",
+    "id": "td1e72eb359fa",
+    "item_ids": [
+      "308611b423ea4303"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-22T17:57:00Z",
+    "state": "pending",
+    "title": "Opinion | The Guatemalan Lawyer Who Beat Putin",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "td22a45d70354",
+    "item_ids": [
+      "585ff7e8265edb24"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T22:02:00Z",
+    "state": "pending",
+    "title": "Opinion | Germany’s ‘Green’ Energy Policies Fuel the AfD’s Rise",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "td247808b4476",
+    "item_ids": [
+      "d91fd06de7b8771e",
+      "2d7a5d6b20fff3cd"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-16T17:00:00Z",
+    "state": "cooling",
+    "title": "Broadening access to AI for scientists",
+    "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-22T20:20:33.012568Z",
+    "id": "td317fdbd71a0",
+    "item_ids": [
+      "a69150efbacbe705"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-22T15:47:00Z",
+    "state": "pending",
+    "title": "Buying Cheap Furniture Can Cost You More",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "td396b021cb9c",
+    "item_ids": [
+      "27a498f13bc481d3"
+    ],
+    "kind": "question",
+    "last_item_at": "2026-11-18T21:18:59Z",
+    "state": "pending",
+    "title": "Intolerance of Uncertainty Is Rising in Young Adults",
+    "topic_id": "health-wellbeing"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "td61646383e6a",
+    "item_ids": [
+      "c61d952c9b056598"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-21T00:34:51Z",
+    "state": "pending",
+    "title": "ANC fights to keep control of South Africa's key cities after election setback",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "td78da3dc794c",
+    "item_ids": [
+      "e46269d685c5a5d2"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-17T09:24:56Z",
+    "state": "pending",
+    "title": "[AINews] Perplexity hits a $1B revenue run rate, up 4x in 2026",
+    "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "td826ac167620",
+    "item_ids": [
+      "5b3fb3b963d453a9"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T16:32:36Z",
+    "state": "pending",
+    "title": "Storms deluging Florida with historic flooding shift further north",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "td899b3cc9304",
+    "item_ids": [
+      "de42e16e0ede7bf7",
+      "5588df75de43daa9"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-21T16:45:01Z",
+    "state": "active",
+    "title": "Advice to Democrats: Impeach Trump’s Cabinet",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "tda69ef7c50ca",
+    "item_ids": [
+      "cd5a74b8cf857642"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-17T18:57:00Z",
+    "state": "pending",
+    "title": "Houston, We Have an Ongoing FAA Problem",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T03:51:06.410293Z",
+    "id": "tdaca0ffcdfcd",
+    "item_ids": [
+      "788ffe95874a68e9"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-19T18:47:57Z",
+    "state": "pending",
+    "title": "Dutch and Austrian Embassies Are Damaged as Russian Drones Swarm Kyiv",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "tdc0eb12c1e4c",
+    "item_ids": [
+      "a48b5e5df1cd9dc9",
+      "b1f12833e221941f"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-21T10:00:00Z",
+    "state": "active",
+    "title": "Electoral · College",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "tdc8b7cdaea9f",
+    "item_ids": [
+      "9a92f28f6cb8fd9e"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T11:00:00Z",
+    "state": "pending",
+    "title": "The Week: The Three Amigos Summit",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "tddd6de296961",
+    "item_ids": [
+      "ae5a204aaba705d5"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T21:58:29Z",
+    "state": "pending",
+    "title": "Google rolls out new search homepage with AI chat history and no search button",
+    "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "tddfa27787b69",
+    "item_ids": [
+      "5672c177889c4ac2"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-16T22:58:27Z",
+    "state": "pending",
+    "title": "Robo-soldier startup backed by Eric Trump misses payroll, may collapse",
+    "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "tde085868f05d",
+    "item_ids": [
+      "f327e7fc58e3ac00"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-17T22:35:00Z",
+    "state": "pending",
+    "title": "What Happens When Schools Ban Phones",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "te002a1ebeba8",
+    "item_ids": [
+      "0de6aadc71dab203"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-17T14:00:29Z",
+    "state": "pending",
+    "title": "Grok Bot took unapproved actions, ignored orders to stop, and then denied it",
+    "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "te00378fe57f8",
+    "item_ids": [
+      "cde7f5a4f7fa11ed"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T22:36:47Z",
+    "state": "pending",
+    "title": "Treasury secretary says no further restrictions are needed for Nvidia chip exports to China",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T20:20:33.012568Z",
+    "id": "te32e0d9c590a",
+    "item_ids": [
+      "4d97ad244af2dbcd"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-21T04:21:30Z",
+    "state": "pending",
+    "title": "Leaders of Mexican drug cartel and 19 others indicted for smuggling guns, drugs and people",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "te4cfe9f4030f",
+    "item_ids": [
+      "9342dbf934e428aa"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-19T08:00:00Z",
+    "state": "pending",
+    "title": "How OpenAI’s Performance Factory keeps ChatGPT fast",
+    "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "te552c47c4107",
+    "item_ids": [
+      "63b9bed35d5caecf"
+    ],
+    "kind": "question",
+    "last_item_at": "2026-11-22T09:09:42.410739Z",
+    "state": "pending",
+    "title": "How does chemotherapy followed by surgery compare with chemotherapy and radiation given together without surgery for the treatment of locally advanced cervical cancer?",
+    "topic_id": "health-wellbeing"
+  },
+  {
+    "created_at": "2026-11-22T20:20:33.012568Z",
+    "id": "te7fbb70efc77",
+    "item_ids": [
+      "ec09114a181cad42"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-22T13:30:00Z",
+    "state": "pending",
+    "title": "The Relationship That Can Survive Not Talking for Years",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "te86729cd3c05",
+    "item_ids": [
+      "8497404ed00af944",
+      "2184d4a63135e4ee",
+      "06c62e91f9c2cbb7"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T01:42:00Z",
+    "state": "cooling",
+    "title": "Houthi · Attack · Saudi · Tower",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T12:34:08.686149Z",
+    "id": "tec23ac8617b3",
+    "item_ids": [
+      "e03d1744715126e8"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-22T11:00:23Z",
+    "state": "pending",
+    "title": "Would You Buy a Used Civilization From This Man?",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "tech-trackers--audio",
+    "item_ids": [
+      "29594aca893561bb",
+      "568aebbe6c0d7aba",
+      "3f710e6a019f12d9",
+      "3e31e73a80f0d5f6",
+      "d011b55db33ed5ba",
+      "fd6ee874f31d210c",
+      "26999269be793181",
+      "9679a39f98d068f1",
+      "e339e895925ce8c6"
+    ],
+    "kind": "tracker",
+    "last_item_at": "2026-11-22T13:00:00Z",
+    "state": "active",
+    "title": "Headphones & earbuds",
+    "topic_id": "tech-trackers"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "tech-trackers--laptops",
+    "item_ids": [
+      "c5e7a717ee16a3a7",
+      "24033796ffda8ef8",
+      "b7857f36d69849ec",
+      "c2cd10dcb78631e4",
+      "9dc9f28f5125956d",
+      "38baecee86582e1b",
+      "0b05e2ba44afe23a"
+    ],
+    "kind": "tracker",
+    "last_item_at": "2026-11-22T15:38:23Z",
+    "state": "active",
+    "title": "Laptops",
+    "topic_id": "tech-trackers"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "tech-trackers--phones",
+    "item_ids": [
+      "f5b13c7e601b7960",
+      "17253ea9f4643371",
+      "0b1928da4868f327",
+      "3775b37f8cb140a3",
+      "b59037db53d5575b",
+      "ea1c541b76e2a83c",
+      "1853254cafc627f2",
+      "9f15865cdc2f667e",
+      "00c36cf41adce21d",
+      "7d80df5f3be4a634",
+      "569e8bf8ac010f6e",
+      "4ed146a993e6e16a",
+      "f454ae57570eab57",
+      "9ffafb4a68fd5b18",
+      "a5a6221cafcb734b",
+      "e947df1e7743f09e",
+      "89131e7c1de90c4a",
+      "e71942c5f659a2b4",
+      "e6aec54ab08a1cc2",
+      "60b0ebcd885c2353",
+      "a2ec3bc9307d2066",
+      "93443991cf720b48",
+      "f73f1dfbf0f678a4",
+      "b7adc0baab81d193",
+      "6e64202f347e6403",
+      "e6275d365c834ce9",
+      "3af798269da269ef",
+      "af91479be4c537a4"
+    ],
+    "kind": "tracker",
+    "last_item_at": "2026-11-21T22:22:26Z",
+    "state": "active",
+    "title": "Phones",
+    "topic_id": "tech-trackers"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "tech-trackers--tablets",
+    "item_ids": [
+      "0af7401b5a3894e5",
+      "f83cfed049decf0e",
+      "4f3ec132f13fb8d5"
+    ],
+    "kind": "tracker",
+    "last_item_at": "2026-11-19T16:09:55Z",
+    "state": "active",
+    "title": "Tablets",
+    "topic_id": "tech-trackers"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "tech-trackers--wearables",
+    "item_ids": [
+      "061bef60130ecc64",
+      "a6f1adebd025a4d2",
+      "b5b2890766e5da55",
+      "4f80b6053e3636eb"
+    ],
+    "kind": "tracker",
+    "last_item_at": "2026-11-20T20:25:35Z",
+    "state": "active",
+    "title": "Wearables",
+    "topic_id": "tech-trackers"
+  },
+  {
+    "created_at": "2026-11-22T03:51:06.410293Z",
+    "id": "tedad584547c1",
+    "item_ids": [
+      "9eeb4d7da81810af",
+      "ac25d442b8560428",
+      "202a51f4b75954e1",
+      "26c04bb70cbae03c"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-22T13:12:09Z",
+    "state": "active",
+    "title": "Trump · Contractors · Congress",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "tef67c91c4fc5",
+    "item_ids": [
+      "f8dbff412760a4dc"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T11:00:00Z",
+    "state": "pending",
+    "title": "The Complex Reputation of James Burnham",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "tef9428dd5185",
+    "item_ids": [
+      "6a6ce95b2c4c7e7b"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T13:04:58Z",
+    "state": "pending",
+    "title": "AP reporter says Texas execution was like no other he's witnessed before",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "tf05c027b0189",
+    "item_ids": [
+      "d2b60f698accd54d"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-19T19:47:00Z",
+    "state": "pending",
+    "title": "Outrage Over Another Cruel ICE Tactic",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "tf0ecd858d6e1",
+    "item_ids": [
+      "77387aa99325956f"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-19T20:39:00Z",
+    "state": "pending",
+    "title": "Israeli Spy Chief Pressed for Renewed Iran Strikes During U.S. Visit",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T03:51:06.410293Z",
+    "id": "tf0ed2fbf2eea",
+    "item_ids": [
+      "6de15d8bbbb2c91f"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-19T10:03:10Z",
+    "state": "pending",
+    "title": "Colombia’s President Is Acquiring a Reputation for Courting Controversy",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-23T05:03:30.236987Z",
+    "id": "tf168883857ff",
+    "item_ids": [
+      "596512ea8ca6361f"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T03:00:00Z",
+    "state": "pending",
+    "title": "The Russian Exile Behind the Missiles That Helped Destroy the Crimea Bridge",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "tf1af72ed5c0e",
+    "item_ids": [
+      "3047d7657748ea76"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-17T08:00:00Z",
+    "state": "pending",
+    "title": "Introducing ChatGPT for Sales",
+    "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "tf1b9b8f664c0",
+    "item_ids": [
+      "dbc7d0c5b1d03a23"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T18:48:48Z",
+    "state": "pending",
+    "title": "Miami or Vice City? Tour the real-world inspiration for GTA 6",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T20:20:33.012568Z",
+    "id": "tf206c9a6d34f",
+    "item_ids": [
+      "20ce0ffba2533e0c"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-22T19:52:50Z",
+    "state": "active",
+    "title": "Explosion on Russian ship at Libya port caused by suspected drone attack, officials say",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "tf235710f805b",
+    "item_ids": [
+      "fd2593a31b066d9f",
+      "2c1d902c2e1a6e7b"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-16T20:12:00Z",
+    "state": "cooling",
+    "title": "The Window to Achieve Immigration Reform",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "tf238c2f1bc96",
+    "item_ids": [
+      "bb240217e1d41afc"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T23:16:00Z",
+    "state": "pending",
+    "title": "Indian Man Sentenced to Almost 20 Years in Murder-for-Hire Plot on U.S. Soil",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "tf29a2445495c",
+    "item_ids": [
+      "fc07d27aadfe7bde",
+      "c4f864918677af99"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T21:43:22Z",
+    "state": "active",
+    "title": "UK-EU · Deal · Mean",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T03:51:06.410293Z",
+    "id": "tf2a988bb7088",
+    "item_ids": [
+      "87c690ca0cc8c805"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-21T01:43:40Z",
+    "state": "pending",
+    "title": "Officials Find Cascade of Problems With ICE Training in Trump’s Immigration Crackdown",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "tf2fd7075cbe9",
+    "item_ids": [
+      "8cd621d4f3dc4333"
+    ],
+    "kind": "question",
+    "last_item_at": "2026-11-22T00:09:47Z",
+    "state": "pending",
+    "title": "A Short Workout to Strengthen Your Neck",
+    "topic_id": "health-training"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "tf4d74d60f552",
+    "item_ids": [
+      "d03bc117b3bfbbc6"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-18T23:10:00Z",
+    "state": "pending",
+    "title": "WSJ Opinion: U.S.-China Asymmetry Amid Trump’s Electoral Defeat and the Nvidia Crisis",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "tf4e8f0de1cf6",
+    "item_ids": [
+      "a457925fbd609abe"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-19T20:43:57Z",
+    "state": "pending",
+    "title": "PostgreSQL 19 Released",
+    "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "tf583e6ed8c4f",
+    "item_ids": [
+      "735c2a561ed9c3b3"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-17T18:32:00Z",
+    "state": "pending",
+    "title": "Beware Socialism’s Moderate Makeover",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T20:20:33.012568Z",
+    "id": "tf5cf1d7c0239",
+    "item_ids": [
+      "6996b6ed493ce699"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-22T17:02:29Z",
+    "state": "pending",
+    "title": "Live updates: A shuffle is on deck in the AP Top 25 after losses by UCLA and Indiana",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "tf5ddedfd4b77",
+    "item_ids": [
+      "d35b280d8e69ebf9"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-21T12:54:57Z",
+    "state": "pending",
+    "title": "Christian nationalists see Republicans' midterm losses as an opportunity to supplant Trump's MAGA",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "tf5f18d67394a",
+    "item_ids": [
+      "b0689f3f0535b0ef"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-19T14:37:40Z",
+    "state": "pending",
+    "title": "‘The Tuners’: The Hidden Contest at the International Chopin Piano Competition",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "tf6509b42ae49",
+    "item_ids": [
+      "a5e3711359364494"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T22:16:00Z",
+    "state": "pending",
+    "title": "Trump Case Against the New York Times Advances",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "tf7b931f35ee8",
+    "item_ids": [
+      "c56552896459d73e"
+    ],
+    "kind": "question",
+    "last_item_at": "2026-11-22T09:09:42.410739Z",
+    "state": "pending",
+    "title": "How safe and effective is mifepristone when used for emergency contraception?",
+    "topic_id": "health-sleep"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "tf8b0f2ad42e0",
+    "item_ids": [
+      "c1a2af93db54bfcf"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T00:00:00Z",
+    "state": "pending",
+    "title": "Can AI help scientists identify promising drug candidates?",
+    "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "tf8d74f8f6385",
+    "item_ids": [
+      "7fbdbfd5cb782bea",
+      "af7d30f58230f923"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T12:30:47Z",
+    "state": "active",
+    "title": "Gemini · AI",
+    "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-23T01:41:04.329483Z",
+    "id": "tfa2b1a09598f",
+    "item_ids": [
+      "443dff3f325e6a38"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-22T20:42:00Z",
+    "state": "pending",
+    "title": "Climate Conference Collapses. The Consensus Already Had",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "tfa6bad495c49",
+    "item_ids": [
+      "d7a4c85e88aa4910"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-18T21:57:37Z",
+    "state": "pending",
+    "title": "Crime Rates in American Cities Have Never Been Lower. Why?",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "tfb3cacc91ba4",
+    "item_ids": [
+      "a16a060150c59a52"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-19T21:59:35Z",
+    "state": "pending",
+    "title": "A brief history of Nvidia’s recent stock fluctuations",
+    "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "tfb5c07223fc4",
+    "item_ids": [
+      "2754e8dedc36cf5a"
+    ],
+    "kind": "question",
+    "last_item_at": "2026-11-22T09:09:42.410739Z",
+    "state": "pending",
+    "title": "What are the effects of medicines to increase the body's production of white blood cells (granulopoiesis-stimulating factors) for preventing treatment-related complications in people with solid tumors?",
+    "topic_id": "health-wellbeing"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "tfb925c78c105",
+    "item_ids": [
+      "277695a91095a2b8"
+    ],
+    "kind": "question",
+    "last_item_at": "2026-11-22T09:09:42.410739Z",
+    "state": "pending",
+    "title": "Does electrical stimulation of the leg muscles improve muscle structure and function in adults with kidney failure undergoing dialysis?",
+    "topic_id": "health-sleep"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "tfc446d87b4c9",
+    "item_ids": [
+      "b0dd6261a508b939",
+      "04b0c59a769f86d3"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-17T20:32:55Z",
+    "state": "cooling",
+    "title": "Jensen · Huang · Nvidia",
+    "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "tfd7c8b0dbeda",
+    "item_ids": [
+      "0f7f40cc53f39292"
+    ],
+    "kind": "question",
+    "last_item_at": "2026-11-18T10:00:37Z",
+    "state": "pending",
+    "title": "How to Stop Ruminating",
+    "topic_id": "health-sleep"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "tfe3fa43c7422",
+    "item_ids": [
+      "29e185753bf5ef40"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-17T22:36:00Z",
+    "state": "pending",
+    "title": "Trump Meets With the Anti-U.S. Axis",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-22T09:09:42.410739Z",
+    "id": "tffa3633fbc07",
+    "item_ids": [
+      "23f1100f13c21b26"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-17T22:35:00Z",
+    "state": "pending",
+    "title": "Saving the Franchise Model, for Good",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-22T20:20:33.012568Z",
+    "id": "tffe643ed8e1f",
+    "item_ids": [
+      "62b9eb5a092176d8"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-22T13:00:00Z",
+    "state": "pending",
+    "title": "My Apology to American Democracy",
+    "topic_id": "world-news"
+  }
+]
