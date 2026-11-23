@@ -1,15 +1,29 @@
 """Normalize raw entries into Items (DESIGN §6.2).
 
 Canonical URLs (tracking parameters stripped), plain-text excerpts of at most
-300 characters, UTC dates, and the lookback cut.
+300 characters, clean titles, UTC dates, the lookback cut, and each source's
+`title_exclude` patterns.
+
+Titles arrive decoded (feedparser / Reddit JSON), but some feeds double-encode
+markup, so a title can hold literal "<i>…</i>". `clean_title` removes only
+inline formatting tags and decodes leftover entities: a literal "<canvas>" in a
+headline is text and stays. The export applies it again, so titles stored
+before the cleanup display cleanly too.
+
+`title_exclude` (sources.yaml) drops a source's entries whose title matches any
+pattern, e.g. stock-quote pages that a search feed returns as if they were
+news. Stored items are checked again at export and before threading, so adding
+a pattern also hides what the source already delivered.
 """
 
 from __future__ import annotations
 
 import datetime as dt
+import functools
 import hashlib
+import html
 import re
-from collections.abc import Iterable
+from collections.abc import Iterable, Mapping
 from html.parser import HTMLParser
 from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 
@@ -27,6 +41,37 @@ _TRACKING_PARAMS = frozenset(
 _TRACKING_PREFIXES = ("utm_", "mc_")
 _DEFAULT_PORTS = {"http": 80, "https": 443}
 _WS = re.compile(r"\s+")
+# Inline formatting only; anything else in a decoded title is literal text.
+_INLINE_TAG = re.compile(
+    r"</?(?:a|abbr|b|cite|code|em|font|i|mark|q|s|small|span|strong|sub|sup|u)(?:\s[^<>]*)?/?>",
+    re.IGNORECASE,
+)
+
+
+def clean_title(title: str) -> str:
+    """Strip inline formatting tags, decode entities, collapse whitespace."""
+    return _WS.sub(" ", _INLINE_TAG.sub("", html.unescape(title))).strip()
+
+
+@functools.cache
+def _compiled(pattern: str) -> re.Pattern[str]:
+    return re.compile(pattern, re.IGNORECASE)
+
+
+def title_excluded(title: str, source: Source) -> bool:
+    """Whether the title matches one of the source's `title_exclude` patterns (case-insensitive)."""
+    return any(_compiled(p).search(title) for p in source.title_exclude)
+
+
+def excluded_by_title(item: Item, sources: Mapping[str, Source]) -> bool:
+    """True when every known source that carried the item excludes its title.
+
+    Like thresholds (§6.4): a story another source carried without excluding it
+    still shows.
+    """
+    carriers = [sources[s] for s in (item.source_id, *item.also_covered_by) if s in sources]
+    title = clean_title(item.title)
+    return bool(carriers) and all(title_excluded(title, s) for s in carriers)
 
 
 def canonical_url(url: str) -> str:
@@ -118,10 +163,8 @@ def normalize(
     items = []
     for entry in entries:
         source = sources[entry.source_id]
-        # Titles arrive already decoded (feedparser / raw_json), so no HTML stripping:
-        # a literal "<canvas>" in a title is text, not a tag.
-        title = _WS.sub(" ", entry.title).strip()
-        if not title:
+        title = clean_title(entry.title)
+        if not title or title_excluded(title, source):
             continue
         published = entry.published.astimezone(dt.UTC) if entry.published else now
         if published > now + FUTURE_TOLERANCE:

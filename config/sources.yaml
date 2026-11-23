@@ -496,6 +496,9 @@ sources:
     lean: center
     excerpt: false      # Google News description = headline + "Reuters" (checked 2026-11-22)
     verified: true
+    title_exclude:      # stock-quote pages, not news: 94 of the first 96 items (2026-11-22)
+      - '\| Stock Price & Latest News - Reuters$'   # "Nutrien Ltd (NTR.TO) | Stock Price & …"
+      - '^\S+ - Reuters$'                          # bare ticker: "THO.TH - Reuters"
 
   - id: nyt-business
     name: NYT – Business

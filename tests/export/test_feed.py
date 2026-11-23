@@ -186,6 +186,31 @@ def test_hidden_and_unrouted_items_are_not_exported(tmp_path: Path) -> None:
     assert [i["id"] for d in data["days"] for i in d["items"]] == ["i01"]
 
 
+def with_title_exclude(*patterns: str) -> Config:
+    sources = [
+        s.model_copy(update={"title_exclude": list(patterns)}) if s.id == "example-world" else s
+        for s in CFG.sources.sources
+    ]
+    return dataclasses.replace(CFG, sources=CFG.sources.model_copy(update={"sources": sources}))
+
+
+def test_title_exclude_hides_stored_items(tmp_path: Path) -> None:
+    items = [
+        item(1, title="NTR.TO | Stock Price"),
+        item(2, title="Real news"),
+        item(3, title="ABC | Stock Price", also_covered_by=["example-hn"]),  # hn keeps it
+    ]
+    run_export(tmp_path, items, with_title_exclude(r"\| stock price$"))
+    data = json.loads((tmp_path / "feed" / "topics" / "world.json").read_text())
+    assert sorted(i["id"] for d in data["days"] for i in d["items"]) == ["i02", "i03"]
+
+
+def test_stored_titles_are_cleaned_on_export(tmp_path: Path) -> None:
+    run_export(tmp_path, [item(1, title="<i>Grand Theft Auto VI</i> &amp; time")])
+    data = json.loads((tmp_path / "feed" / "topics" / "world.json").read_text())
+    assert data["days"][0]["items"][0]["title"] == "Grand Theft Auto VI & time"
+
+
 def test_index_summaries(tmp_path: Path) -> None:
     items = [item(n) for n in range(1, 8)] + [item(9, topic="gadgets", first_seen_at=NOW - H)]
     index = run_export(tmp_path, items)

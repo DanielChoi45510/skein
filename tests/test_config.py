@@ -452,3 +452,21 @@ def test_profile_yaml_syntax_error_never_echoes_line(config_dir: Path) -> None:
     out = errors_for(config_dir)
     assert "profile.yaml: invalid YAML at line" in out
     assert SECRET not in out
+
+
+def test_title_exclude_must_be_valid_regex(config_dir: Path) -> None:
+    edit(
+        config_dir,
+        "sources.yaml",
+        lambda d: source(d, "example-world").update(title_exclude=["ok", "(unclosed"]),
+    )
+    assert "title_exclude[1] is not a valid regex" in errors_for(config_dir)
+
+
+def test_title_exclude_valid(config_dir: Path) -> None:
+    edit(
+        config_dir,
+        "sources.yaml",
+        lambda d: source(d, "example-world").update(title_exclude=[r"\| Stock Price$"]),
+    )
+    load_config(config_dir)

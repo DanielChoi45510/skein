@@ -46,6 +46,7 @@ from .config.schema import PREDEFINED_MODES, Topic
 from .config.validate import DEFAULT_CONFIG_DIR, Config
 from .models import Item
 from .process.embed import Embedder, HashingEmbedder, SentenceTransformerEmbedder
+from .process.normalize import excluded_by_title
 from .process.relevance import item_text, passes_threshold
 from .process.threads import DEFAULT, Thresholds, entities, entity_boost, predefined_anchors
 from .state import ITEMS_DIR, load_items
@@ -84,6 +85,7 @@ def eligible(cfg: Config, items: Mapping[str, Item], modes: frozenset[str]) -> l
         if i.visible
         and topic_modes.get(i.topic_id or "") in modes
         and any(sid in enabled for sid in (i.source_id, *i.also_covered_by))
+        and not excluded_by_title(i, enabled)
         and passes_threshold(i, enabled, cfg.topics)
     ]
     return sorted(out, key=lambda i: i.id)

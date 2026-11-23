@@ -10,8 +10,10 @@ Phase 1 shows every topic as a flat ranked list (threads arrive in Phase 2):
 Relevance thresholds are applied here, from stored scores, so a threshold change
 takes effect on the next run (see process/relevance.py). Only enabled sources
 count, so disabling a source hides its stored items on the next run too.
-Duplicates, items below every carrying source's threshold, and items carried
-only by disabled or removed sources are never exported.
+Duplicates, items below every carrying source's threshold, items whose title
+every carrying source excludes (`title_exclude`), and items carried only by
+disabled or removed sources are never exported. Titles are cleaned on the way
+out (`clean_title`), so items stored before the cleanup display the same.
 """
 
 from __future__ import annotations
@@ -24,6 +26,7 @@ from pathlib import Path
 from ..config.schema import Topic, TopicsFile
 from ..config.validate import Config
 from ..models import Item, SourceHealth
+from ..process.normalize import clean_title, excluded_by_title
 from ..process.rank import importance
 from ..process.relevance import passes_threshold
 from ..state import write_text_atomic
@@ -59,17 +62,21 @@ def export_feed(
     weights = {s.id: s.weight for s in cfg.sources.sources}
     enabled_topics = {t for s in enabled.values() for t in s.topics}
     by_topic: dict[str, list[Item]] = {}
-    below = no_source = 0
+    below = no_source = excluded = 0
     for item in items:
         if not item.visible or item.topic_id is None:
             continue
         if not any(sid in enabled for sid in (item.source_id, *item.also_covered_by)):
             no_source += 1
+        elif excluded_by_title(item, enabled):
+            excluded += 1
         elif passes_threshold(item, enabled, cfg.topics):
             by_topic.setdefault(item.topic_id, []).append(item)
         else:
             below += 1
     log.info("%d stored item(s) below their relevance threshold, not exported", below)
+    if excluded:
+        log.info("%d stored item(s) match their sources' title_exclude, not exported", excluded)
     if no_source:
         log.info("%d stored item(s) only from disabled or removed sources, not exported", no_source)
 
@@ -139,7 +146,7 @@ def build_topic_feed(
         days.setdefault(item.published_at.astimezone(dt.UTC).date(), []).append(
             ExportItem(
                 id=item.id,
-                title=item.title,
+                title=clean_title(item.title),
                 url=item.url,
                 source_id=item.source_id,
                 published_at=item.published_at,
