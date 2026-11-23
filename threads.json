@@ -530,12 +530,13 @@
       "e191768cef4af09a",
       "0937b9a931e8e81a",
       "9b884804d22671bd",
-      "fe1538973bcdf48b"
+      "fe1538973bcdf48b",
+      "441e045c4f0b8628"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-22T15:01:00Z",
+    "last_item_at": "2026-11-23T17:32:00Z",
     "state": "active",
-    "title": "FAA · Ground · Stop · Blame",
+    "title": "Don’t · FAA · Air · Ground",
     "topic_id": "us-politics"
   },
   {
@@ -612,6 +613,18 @@
     "topic_id": "us-politics"
   },
   {
+    "created_at": "2026-11-23T17:48:41.578622Z",
+    "id": "t0f961df50327",
+    "item_ids": [
+      "d96affde4a02ff2f"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T17:31:00Z",
+    "state": "pending",
+    "title": "Government Gets a Tax Windfall From Anthropic",
+    "topic_id": "us-politics"
+  },
+  {
     "created_at": "2026-11-22T12:34:08.686149Z",
     "id": "t1174aa16c916",
     "item_ids": [
@@ -621,6 +634,18 @@
     "last_item_at": "2026-11-22T11:00:00Z",
     "state": "pending",
     "title": "How Washington Could Exploit Qatar’s LNG Shopping Spree",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-23T17:48:41.578622Z",
+    "id": "t1175f5c71ac2",
+    "item_ids": [
+      "4f33cfd3404d007f"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T17:35:00Z",
+    "state": "pending",
+    "title": "Understanding Sinclair’s Law and Racial Progress",
     "topic_id": "world-news"
   },
   {
@@ -1867,6 +1892,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-23T17:48:41.578622Z",
+    "id": "t4bf97f8cf76f",
+    "item_ids": [
+      "3ffa5c39e01e3431"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T16:59:40Z",
+    "state": "pending",
+    "title": "Finding faster quantum algorithms with agents and formal verification",
+    "topic_id": "ai-news"
+  },
+  {
     "created_at": "2026-11-22T03:51:06.410293Z",
     "id": "t4c6594a954a2",
     "item_ids": [
@@ -2188,12 +2225,13 @@
       "ee30fe0868592daa",
       "d14d371c9eeeeafb",
       "fbe62532d644f942",
-      "13fda4e36f38058e"
+      "13fda4e36f38058e",
+      "7913699b10d16ea3"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-23T14:20:21Z",
+    "last_item_at": "2026-11-23T17:24:25Z",
     "state": "active",
-    "title": "COP31 · Deal · Climate · Talks",
+    "title": "Deal · Climate · COP31 · Talks",
     "topic_id": "world-news"
   },
   {
@@ -2591,6 +2629,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-23T17:48:41.578622Z",
+    "id": "t6c91a41495e4",
+    "item_ids": [
+      "5fdae9acc7f6d930"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T17:14:50Z",
+    "state": "pending",
+    "title": "Comedian impersonates Trump's dance moves, mocks trade talks at Canada press dinner",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "t6f8bd182d9c3",
     "item_ids": [
@@ -2845,6 +2895,18 @@
     "topic_id": "us-politics"
   },
   {
+    "created_at": "2026-11-23T17:48:41.578622Z",
+    "id": "t7e415e09ff10",
+    "item_ids": [
+      "8d83fbfc47ac58f7"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T16:13:12Z",
+    "state": "pending",
+    "title": "Ladybird Is Now in Alpha",
+    "topic_id": "ai-news"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "t7e65add1bfbf",
     "item_ids": [
@@ -2927,6 +2989,18 @@
     "last_item_at": "2026-11-22T12:00:00Z",
     "state": "pending",
     "title": "What We Don’t Know About the Iran War",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-23T17:48:41.578622Z",
+    "id": "t80458e3b8a17",
+    "item_ids": [
+      "44448d55bb451677"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T17:27:31Z",
+    "state": "pending",
+    "title": "Drone Attack Hits Colombian City as Unmanned Explosives Transform Conflict",
     "topic_id": "world-news"
   },
   {
@@ -3606,12 +3680,15 @@
       "4f65d63f78466896",
       "34ffdb14260fcca7",
       "41e3386b916ebd7e",
-      "a31a76959eaf330f"
+      "a31a76959eaf330f",
+      "87c6a5eccafc884a",
+      "2694922a08bd75e6",
+      "dc2f75bdb0006cbe"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-23T16:21:00Z",
+    "last_item_at": "2026-11-23T17:30:04Z",
     "state": "active",
-    "title": "China · Jensen · Huang · Nvidia",
+    "title": "Jensen · Huang · Nvidia · China",
     "topic_id": "us-politics"
   },
   {
@@ -4746,12 +4823,13 @@
     "created_at": "2026-11-23T12:48:37.980822Z",
     "id": "td9936a2263fa",
     "item_ids": [
-      "3a97db6e2683ee28"
+      "3a97db6e2683ee28",
+      "017670d5b731f0a3"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-23T12:00:00Z",
-    "state": "pending",
-    "title": "An Ode to Executive Assistants",
+    "last_item_at": "2026-11-23T17:33:00Z",
+    "state": "active",
+    "title": "Artificial Intelligence Can’t Replace a Doctor",
     "topic_id": "us-politics"
   },
   {
@@ -4808,12 +4886,13 @@
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "tddd6de296961",
     "item_ids": [
-      "ae5a204aaba705d5"
+      "ae5a204aaba705d5",
+      "d6fdac3c20f42b84"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-20T21:58:29Z",
-    "state": "pending",
-    "title": "Google rolls out new search homepage with AI chat history and no search button",
+    "last_item_at": "2026-11-23T17:00:00Z",
+    "state": "active",
+    "title": "Google · Search",
     "topic_id": "ai-news"
   },
   {
@@ -4927,6 +5006,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-23T17:48:41.578622Z",
+    "id": "tec0908083187",
+    "item_ids": [
+      "54b870a4c86e13f8"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T16:14:04Z",
+    "state": "pending",
+    "title": "Tech leaders are celebrating Jensen Huang’s return",
+    "topic_id": "ai-news"
+  },
+  {
     "created_at": "2026-11-22T12:34:08.686149Z",
     "id": "tec23ac8617b3",
     "item_ids": [
@@ -5008,10 +5099,11 @@
       "e6275d365c834ce9",
       "3af798269da269ef",
       "af91479be4c537a4",
-      "f55495a17ad2b67f"
+      "f55495a17ad2b67f",
+      "be2be26d12d432d1"
     ],
     "kind": "tracker",
-    "last_item_at": "2026-11-23T16:06:02Z",
+    "last_item_at": "2026-11-23T16:52:50Z",
     "state": "active",
     "title": "Phones",
     "topic_id": "tech-trackers"
@@ -5478,12 +5570,13 @@
     "item_ids": [
       "b0dd6261a508b939",
       "04b0c59a769f86d3",
-      "3b38f7127b86a94d"
+      "3b38f7127b86a94d",
+      "f5ab5067ad25840d"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-23T14:01:23Z",
+    "last_item_at": "2026-11-23T16:30:11Z",
     "state": "active",
-    "title": "Jensen · Huang · Nvidia",
+    "title": "Huang · Nvidia · Trump · Jensen",
     "topic_id": "ai-news"
   },
   {
