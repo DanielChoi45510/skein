@@ -3,10 +3,11 @@
     "created_at": "2026-11-23T10:43:53.978530Z",
     "id": "markets--comms",
     "item_ids": [
-      "4b55e9ad79027a0a"
+      "4b55e9ad79027a0a",
+      "8efce86d328d46c4"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-23T10:30:00Z",
+    "last_item_at": "2026-11-23T13:18:00Z",
     "state": "active",
     "title": "Communication Services",
     "topic_id": "markets"
@@ -64,10 +65,11 @@
       "7731da88903b10fb",
       "ac882ad6c0a8fe19",
       "6c992c3cf6f309e8",
-      "34dd0bfc6f38c1c2"
+      "34dd0bfc6f38c1c2",
+      "547e0916d06632a0"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-23T05:01:08Z",
+    "last_item_at": "2026-11-23T13:02:00Z",
     "state": "active",
     "title": "Energy",
     "topic_id": "markets"
@@ -110,10 +112,11 @@
       "bf901259d8518573",
       "897937e48e1bd80d",
       "cf91e1d3c3ccce4d",
-      "095b1fd1eb2d40a0"
+      "095b1fd1eb2d40a0",
+      "7251c0248171bb3b"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-23T02:00:00Z",
+    "last_item_at": "2026-11-23T13:13:00Z",
     "state": "active",
     "title": "Financials",
     "topic_id": "markets"
@@ -130,10 +133,11 @@
       "b5b50a58d2c8f278",
       "76afe3b6385720dc",
       "6d57ec4322daf073",
-      "2c45e78682146dd7"
+      "2c45e78682146dd7",
+      "b18f3c5cd1354273"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-23T03:00:00Z",
+    "last_item_at": "2026-11-23T12:52:00Z",
     "state": "active",
     "title": "Health Care",
     "topic_id": "markets"
@@ -197,10 +201,12 @@
       "fb7da4942988aa35",
       "ebd61e3c7d0376d9",
       "9d5053d54dcac672",
-      "c008aff4490fc788"
+      "c008aff4490fc788",
+      "a56f071d71c99a96",
+      "e9727474d80efe94"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-23T11:55:45Z",
+    "last_item_at": "2026-11-23T13:07:00Z",
     "state": "active",
     "title": "Materials",
     "topic_id": "markets"
@@ -4348,6 +4354,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-23T13:48:43.971327Z",
+    "id": "tcac59205e747",
+    "item_ids": [
+      "2e2009e2eae7a330"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T13:00:00Z",
+    "state": "pending",
+    "title": "Why I Changed My Mind About the Death Penalty",
+    "topic_id": "us-politics"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "tcb177871fb21",
     "item_ids": [
@@ -5322,6 +5340,18 @@
     "state": "cooling",
     "title": "Jensen · Huang · Nvidia",
     "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-23T13:48:43.971327Z",
+    "id": "tfc7bd1d5a682",
+    "item_ids": [
+      "8db86b8b1ebceddc"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T13:19:43Z",
+    "state": "pending",
+    "title": "Tajikistan becomes fourth country to withdraw from ICC since US diplomatic push",
+    "topic_id": "world-news"
   },
   {
     "created_at": "2026-11-22T09:09:42.410739Z",
