@@ -197,6 +197,8 @@ def test_move_between_threads() -> None:
     w.apply(op(1, type="move", item="a1", to="B"))
     assert w.threads["A"].item_ids == ["a2"] and w.threads["B"].item_ids == ["b1", "b2", "a1"]
     assert w.items["a1"].thread_id == "B"
+    assert w.items["a1"].owner_placed  # re-routing never undoes a hand placement
+    assert not w.items["a2"].owner_placed
     np.testing.assert_allclose(w.centroids["A"], vec("a2"))
 
 

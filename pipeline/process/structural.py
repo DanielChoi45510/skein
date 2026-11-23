@@ -172,6 +172,7 @@ def _move(op: MoveOp, items, threads, centroids, topics) -> set[str]:
         elif old.kind not in ("tracker", "fixed"):
             _delete(old, threads, centroids)
     _join(target, item.id, items)
+    item.owner_placed = True  # re-routing a tracker / fixed topic never undoes it (§6.5)
     return touched
 
 

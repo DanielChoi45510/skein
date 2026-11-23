@@ -87,3 +87,13 @@ def test_centroid_rows_must_match_ids(tmp_path: Path) -> None:
     write_json(tmp_path / CENTROID_IDS, ["t1", "t2"])
     with pytest.raises(ValueError, match="expected 2 rows"):
         State(tmp_path, NOW)
+
+
+def test_routing_fingerprints_round_trip_and_are_optional(tmp_path: Path) -> None:
+    state = State(tmp_path, NOW)
+    assert state.routing == {}
+    state.save()
+    assert not (tmp_path / "routing.json").exists()  # nothing to record yet
+    state.routing = {"markets": "abc123"}
+    state.save()
+    assert State(tmp_path, NOW).routing == {"markets": "abc123"}

@@ -80,6 +80,7 @@ type Item = {
   topic_id?: string; thread_id?: string;
   relevance?: number;         // 0–1 (§6.4); topic_id is the best-scoring topic
   thread_score?: number;      // similarity to the thread when attached (rescue, §6.5)
+  owner_placed: boolean;      // put in its thread by an owner `move`; re-routing leaves it (§6.5)
   // importance (§6.6) depends on the current time: computed at export, never stored
   extra: Record<string, unknown>;           // small source metadata (e.g. Reddit score, flair)
   labels: {
@@ -212,7 +213,13 @@ Mode-specific rules:
     - **Why:** with one-line descriptions and no floor, the Anthropic IPO and Nvidia stories filled Health Care, Financials and Major earnings surprises.
     - **Re-routing the 122 stored markets items (2026-11-24):** Health Care 10 → 2, Major earnings surprises 19 → 5, Information Technology 25 → 51 (that week's Nvidia and Anthropic news). 19 items fell to Market news, mostly stories that fit no sector (a cattle-supply story, a court ruling, currency moves).
     - **Choosing the floor:** at 0.62 correct sector items (Citi, Anthropic IPO explainers) start to fall through.
-    - **Limit:** broad-market stories ("S&P 500 futures rise") still score 0.60–0.67 against sectors and can land in one. A floor can't separate them; see the open question in the change notes.
+    - **Limit:** broad-market stories ("S&P 500 futures rise") still score 0.60–0.67 against sectors and can land in one. A floor can't separate them. Letting the catch-all compete with its own description catches them, but it also pulls in clear sector items (metals and oil news), so it's left out.
+  - **Re-routing after a config change:** assignment sets an item's thread once, so on its own a new description or `min_match` would only reach new items.
+    - **Fingerprint:** state keeps a fingerprint of each tracker / fixed topic's routing config (thread ids, titles, descriptions, catch-all, `min_match`, embedding model) in `routing.json`.
+    - **When it changes:** at the start of assignment, after owner ops, that topic's visible stored items in its threads are routed again with the current config, and the new fingerprint is recorded. Only the thread and `thread_score` change; history and the items themselves don't.
+    - **What's left alone:** items an owner moved (`owner_placed`, or named by an applied `move` op).
+    - **Idempotent:** an unchanged config re-routes nothing. A topic with no fingerprint yet (the first run after this shipped) is re-routed once.
+    - **On the real data (2026-11-24):** markets moved 57 of 122 stored items, matching the table above; tech-trackers moved 0 of 54.
 
 **Per run** (`pipeline/process/thread_assign.py`, after relevance scoring):
 - **Who gets assigned:** items in a threaded, question, tracker or fixed topic that are visible, within the topic's lookback, carried by an enabled source, not excluded by title, and not yet in a thread.
@@ -437,7 +444,7 @@ For each source: items fetched, shown, opened, hidden (by reason), last success 
 ## 10. Hosting, data and security
 
 ### 10.1 Storage
-- State lives on an orphan `data` branch as JSON/NDJSON: items partitioned by day, `threads.json` (sorted by id), thread centroids as float32 rows in `centroids.npy` named in order by `centroid_ids.json` (only threads that can still be matched), and an LLM cache.
+- State lives on an orphan `data` branch as JSON/NDJSON: items partitioned by day, `threads.json` (sorted by id), thread centroids as float32 rows in `centroids.npy` named in order by `centroid_ids.json` (only threads that can still be matched), `routing.json` (a fingerprint of each tracker / fixed topic's routing config, §6.5), and an LLM cache.
 - Fetch state: `http_cache.json` (ETag / Last-Modified per feed URL) and `source_health.json` (per source: last attempt, status, last success, item count, last error, consecutive failures, feed title). All state is written once at the end of a run, so a crashed run never saves validators for items it didn't store.
 - Item embeddings are **not** stored (decided 2026-11-22): ~10–20 MB of vectors rewritten by every hourly commit isn't worth it. New items are embedded anyway; any other item that needs a vector (e.g. the one-time thread backfill) is embedded again.
 - The `data` branch is squashed periodically (history isn't needed) so the repo stays small.
@@ -509,7 +516,7 @@ Code: `worker/` (TypeScript, `wrangler.toml`, one KV namespace bound as `SKEIN`)
       - **move:** one item leaves its thread, if any, and joins the target.
       - **Rules:** both sides in the same topic. Merge and split only in threaded and question topics: tracker and fixed topics hold only their configured threads, so `move` is the one op there. A thread left empty is deleted (configured threads excepted). A pending thread that receives items becomes active.
       - **Afterwards:** each affected automatic thread's centroid is recomputed as the plain mean of its loaded items (embedded again, only these), and its keyword title redone.
-      - Assignment never re-threads an item that has a thread, so manual placements stick.
+      - Assignment never re-threads an item that has a thread, so manual placements stick. A moved item is marked `owner_placed`, so re-routing a tracker or fixed topic after a config change (§6.5) leaves it too.
 - **Refresh** (`POST /refresh`):
   - Calls `workflow_dispatch` for `GITHUB_WORKFLOW` on `GITHUB_REF` and returns 202 `{dispatched_at, next_allowed_at}`.
   - **Cooldown:** 5 minutes (KV `refresh:last`); within it, 429 with `retry-after`.

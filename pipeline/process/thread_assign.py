@@ -19,7 +19,7 @@ from __future__ import annotations
 
 import datetime as dt
 import logging
-from collections.abc import Callable, Mapping, MutableMapping
+from collections.abc import Callable, Collection, Mapping, MutableMapping
 from dataclasses import dataclass
 
 import numpy as np
@@ -50,6 +50,7 @@ from .threads import (
     rescue,
     resolve_without_llm,
     route_predefined,
+    routing_fingerprint,
     thread_kind,
     update_centroid,
 )
@@ -66,6 +67,7 @@ class ThreadReport:
     rescued: int = 0  # below threshold, kept by an active thread
     backfilled: int = 0  # old items embedded again to be threaded
     pruned: int = 0
+    rerouted: int = 0  # stored tracker / fixed items moved after their routing config changed
     ops_applied: int = 0  # owner merge / split / move (structural.py)
     ops_skipped: int = 0
 
@@ -112,10 +114,12 @@ def assign_threads(
     t: Thresholds = DEFAULT,
     overrides: Overrides = EMPTY,
     applied_ops: MutableMapping[str, str] | None = None,
+    routing: MutableMapping[str, str] | None = None,
 ) -> ThreadReport:
-    """Apply owner ops, assign threads, advance the lifecycle.
+    """Apply owner ops, re-route changed tracker / fixed topics, assign threads, advance.
 
-    Mutates items, threads, centroids and `applied_ops` (op id → outcome).
+    Mutates items, threads, centroids, `applied_ops` (op id → outcome) and
+    `routing` (topic id → routing fingerprint; see `reroute_predefined`).
     """
     report = ThreadReport()
     sources: dict[str, Source] = {s.id: s for s in cfg.sources.sources}
@@ -142,6 +146,23 @@ def assign_threads(
         )  # fmt: skip
         report.ops_applied, report.ops_skipped = ops.applied, ops.skipped
 
+    anchor_cache: dict[str, np.ndarray] = {}
+
+    def get_anchors() -> dict[str, np.ndarray]:
+        if not anchor_cache:
+            anchor_cache.update(predefined_anchors(topics.values(), get_embedder()))
+        return anchor_cache
+
+    if routing is not None:
+        moved_by_owner = {
+            op.item
+            for op in overrides.ops
+            if op.type == "move" and (applied_ops or {}).get(op.id) == "applied"
+        }
+        report.rerouted = reroute_predefined(
+            items, threads, topics, routing, embed, get_anchors, skip=moved_by_owner
+        )
+
     to_assign, band = select(items, cfg, new_ids, now)
     pending = to_assign + band
     missing = [i for i in pending if i.id not in vecs]
@@ -151,7 +172,7 @@ def assign_threads(
         embed(missing)
     anchors: dict[str, np.ndarray] = {}
     if any(topics[i.topic_id or ""].mode in PREDEFINED_MODES for i in pending):
-        anchors = predefined_anchors(topics.values(), get_embedder())
+        anchors = get_anchors()
 
     ents: dict[str, frozenset[str]] = {}  # thread id → entities of its loaded titles
 
@@ -237,6 +258,84 @@ def assign_threads(
             retitle(threads[thread_id], items, title_of=title_of)
     report.pruned = len(prune(threads, centroids, loaded=items.keys()))
     return report
+
+
+def reroute_predefined(
+    items: Mapping[str, Item],
+    threads: dict[str, Thread],
+    topics: Mapping[str, Topic],
+    routing: MutableMapping[str, str],
+    embed: Callable[[list[Item]], Mapping[str, np.ndarray]],
+    get_anchors: Callable[[], Mapping[str, np.ndarray]],
+    *,
+    skip: Collection[str] = (),
+) -> int:
+    """Re-route a tracker / fixed topic's stored items when its routing config changed.
+
+    `routing` holds, per topic, the fingerprint of the config its items were
+    routed with (none yet: treated as changed, so the first run re-routes once).
+    Visible items in one of the topic's threads are routed again with the
+    current anchors, `min_match` and catch-all, except items an owner placed
+    (`owner_placed`, or named in `skip`). Returns how many changed thread.
+    Re-running with an unchanged config does nothing.
+    """
+    moved = 0
+    predefined = {tid: tp for tid, tp in topics.items() if tp.mode in PREDEFINED_MODES}
+    for stale in [tid for tid in routing if tid not in predefined]:
+        del routing[stale]
+    for topic in predefined.values():
+        fingerprint = routing_fingerprint(topic)
+        if routing.get(topic.id) == fingerprint:
+            continue
+        prefix = f"{topic.id}--"
+        members = sorted(
+            (
+                i
+                for i in items.values()
+                if i.visible
+                and i.topic_id == topic.id
+                and (i.thread_id or "").startswith(prefix)
+                and not i.owner_placed
+                and i.id not in skip
+            ),
+            key=lambda i: (i.published_at, i.id),
+        )
+        before = moved
+        if members:
+            vectors = embed(members)
+            own = {k: v for k, v in get_anchors().items() if k.startswith(prefix)}
+            catch_all = catch_all_thread_id(topic)
+            touched: set[str] = set()
+            for item in members:
+                routed = route_predefined(
+                    vectors[item.id], own, min_match=topic.min_match, catch_all=catch_all
+                )
+                item.thread_score = round(routed.score, 4)
+                if routed.thread_id == item.thread_id:
+                    continue
+                old = threads.get(item.thread_id or "")
+                if old is not None and item.id in old.item_ids:
+                    old.item_ids.remove(item.id)
+                    touched.add(old.id)
+                new = threads.get(routed.thread_id) or _predefined_thread(
+                    routed.thread_id, topic, item
+                )
+                threads[new.id] = new
+                new.item_ids.append(item.id)
+                item.thread_id = new.id
+                touched.add(new.id)
+                moved += 1
+            for thread_id in touched:
+                thread = threads[thread_id]
+                times = [items[i].published_at for i in thread.item_ids if i in items]
+                if times:
+                    thread.last_item_at = max(times)
+        log.info(
+            "re-routed %s with its current config: %d stored item(s), %d moved",
+            topic.id, len(members), moved - before,
+        )  # fmt: skip
+        routing[topic.id] = fingerprint
+    return moved
 
 
 def _predefined_thread(thread_id: str, topic: Topic, first: Item) -> Thread:

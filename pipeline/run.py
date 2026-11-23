@@ -157,8 +157,11 @@ def run(
         t=thresholds,
         overrides=state.overrides,
         applied_ops=state.applied_ops,
+        routing=state.routing,
     )
     t = report.threads
+    if t.rerouted:
+        log.info("routing config changed: %d stored tracker / fixed item(s) moved", t.rerouted)
     if t.ops_applied or t.ops_skipped:
         log.info("overrides: %d op(s) applied, %d skipped", t.ops_applied, t.ops_skipped)
     log.info(

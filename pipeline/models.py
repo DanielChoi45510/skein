@@ -52,6 +52,7 @@ class Item(BaseModel):
     relevance: float | None = None  # 0-1, set with topic_id (importance is computed at export)
     thread_id: str | None = None  # DESIGN §6.5; set once, by thread assignment
     thread_score: float | None = None  # similarity to the thread when attached (rescue, §6.5)
+    owner_placed: bool = False  # put in its thread by an owner `move`: re-routing leaves it (§6.5)
     extra: dict[str, Any] = {}  # small source metadata, e.g. Reddit score / flair
 
     @property

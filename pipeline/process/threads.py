@@ -28,6 +28,7 @@ from __future__ import annotations
 
 import datetime as dt
 import hashlib
+import json
 import re
 from collections.abc import Iterable, Mapping, Sequence
 from dataclasses import dataclass
@@ -36,7 +37,7 @@ import numpy as np
 
 from ..config.schema import PREDEFINED_MODES, Source, Topic, TopicsFile
 from ..models import Item, Thread, ThreadKind
-from .embed import Embedder
+from .embed import MODEL_NAME, Embedder
 from .relevance import passes_threshold, threshold_for
 
 RESCUE_BAND = 0.05  # below the relevance threshold (§6.5 "thread rescue")
@@ -320,6 +321,20 @@ def route_predefined(
     if min_match is not None and catch_all is not None and best < min_match:
         return Attach(catch_all, best)
     return Attach(best_id, best)
+
+
+def routing_fingerprint(topic: Topic) -> str:
+    """A hash of everything a tracker / fixed topic's routing depends on.
+
+    Thread ids, titles, descriptions and the catch-all, `min_match`, and the
+    embedding model. When it changes, the topic's stored items are re-routed.
+    """
+    spec = {
+        "model": MODEL_NAME,
+        "min_match": topic.min_match,
+        "threads": [[th.id, th.title, th.description, th.catch_all] for th in topic.threads or []],
+    }
+    return hashlib.sha256(json.dumps(spec, sort_keys=True).encode()).hexdigest()[:16]
 
 
 def catch_all_thread_id(topic: Topic) -> str | None:

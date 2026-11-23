@@ -74,7 +74,14 @@ class Run:
         self.loads += 1
         return self.embedder
 
-    def __call__(self, new: list[Item], now: dt.datetime = NOW, *, with_vectors: bool = True):
+    def __call__(
+        self,
+        new: list[Item],
+        now: dt.datetime = NOW,
+        *,
+        with_vectors: bool = True,
+        routing: dict[str, str] | None = None,
+    ):
         for i in new:
             self.items[i.id] = i
         vectors = {}
@@ -90,6 +97,7 @@ class Run:
             new_ids={i.id for i in new},
             vectors=vectors,
             get_embedder=self.get_embedder,
+            routing=routing,
         )
 
 
@@ -285,3 +293,67 @@ def test_select_orders_by_publication() -> None:
     assign, band = select(items, CFG, new_ids={"i03"}, now=NOW)
     assert [i.id for i in assign] == ["i02", "i01"]
     assert [i.id for i in band] == ["i03"]
+
+
+# ───────────────────────────── re-routing after a config change ─────────────────────────────
+
+
+def test_changed_routing_config_reroutes_stored_items_once() -> None:
+    from pipeline.process.threads import routing_fingerprint
+
+    routing: dict[str, str] = {}
+    run = Run()  # markets: energy and rates, no catch-all
+    run([item(1, "Energy prices", topic="markets"), item(2, "Stocks wobble", topic="markets")])
+    assert run.items["i02"].thread_id in ("markets--energy", "markets--rates")
+
+    # The owner adds a catch-all; stored items follow on the next run.
+    run.cfg = with_market_catch_all(0.5)
+    report = run([], routing=routing)
+    markets = next(t for t in run.cfg.topics.topics if t.id == "markets")
+    assert run.items["i01"].thread_id == "markets--energy"  # still the best match
+    assert run.items["i02"].thread_id == "markets--news"
+    assert "i02" in run.threads["markets--news"].item_ids
+    assert all("i02" not in t.item_ids for t in run.threads.values() if t.id != "markets--news")
+    assert report.rerouted == 1
+    assert routing["markets"] == routing_fingerprint(markets)
+    assert "trackers" in routing  # recorded too, nothing to move
+
+    # Unchanged config: nothing happens.
+    snapshot = {k: v.model_copy(deep=True) for k, v in run.items.items()}
+    assert run([], routing=routing).rerouted == 0
+    assert run.items == snapshot
+
+
+def test_rerouting_leaves_owner_placed_items_alone() -> None:
+    routing: dict[str, str] = {}
+    run = Run()
+    run([
+        item(1, "Stocks wobble", topic="markets", owner_placed=True),
+        item(2, "Stocks slide", topic="markets"),
+    ])  # fmt: skip
+    first = run.items["i01"].thread_id
+    run.cfg = with_market_catch_all(0.5)
+    run([], routing=routing)
+    assert run.items["i01"].thread_id == first
+    assert run.items["i02"].thread_id == "markets--news"
+
+
+def test_routing_fingerprint_tracks_what_routing_depends_on() -> None:
+    from pipeline.process.threads import routing_fingerprint
+
+    markets = next(t for t in CFG.topics.topics if t.id == "markets")
+    base = routing_fingerprint(markets)
+    assert routing_fingerprint(markets) == base
+    renamed = markets.model_copy(
+        update={
+            "threads": [
+                markets.threads[0].model_copy(update={"description": "Oil"}),
+                *markets.threads[1:],
+            ]
+        }
+    )
+    assert routing_fingerprint(renamed) != base
+    with_news = next(t for t in with_market_catch_all(0.5).topics.topics if t.id == "markets")
+    assert routing_fingerprint(with_news) != base
+    looser = with_news.model_copy(update={"min_match": 0.4})
+    assert routing_fingerprint(looser) != routing_fingerprint(with_news)

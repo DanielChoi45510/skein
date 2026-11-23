@@ -17,6 +17,10 @@ run used, so the next run can fall back to it if the Worker is unreachable.
 `overrides_applied.json` records each structural op's outcome (op id → "applied"
 or "skipped: …"), so an op is never applied twice.
 
+`routing.json` maps each tracker / fixed topic to a fingerprint of the routing
+config its stored items follow; when the config changes, they're re-routed
+(DESIGN §6.5).
+
 Threads (DESIGN §5, §6.5) live in `threads.json`, sorted by id. Their centroids
 are float32 rows in `centroids.npy`, named in order by `centroid_ids.json`; only
 threads that can still be matched have one. Item embeddings are not stored
@@ -49,6 +53,7 @@ CENTROIDS = "centroids.npy"
 CENTROID_IDS = "centroid_ids.json"
 OVERRIDES = "overrides.json"
 OVERRIDES_APPLIED = "overrides_applied.json"
+ROUTING = "routing.json"
 ITEM_WINDOW_DAYS = 30
 
 _cache_adapter = TypeAdapter(dict[str, CacheEntry])
@@ -73,6 +78,8 @@ class State:
         self.centroids: dict[str, np.ndarray] = load_centroids(root)
         self.overrides: Overrides = load_saved_overrides(root)
         self.applied_ops: dict[str, str] = read_json(root / OVERRIDES_APPLIED, {})
+        # Tracker / fixed topic id → fingerprint of the routing config its items follow.
+        self.routing: dict[str, str] = read_json(root / ROUTING, {})
 
     def save(self) -> None:
         self.root.mkdir(parents=True, exist_ok=True)
@@ -84,6 +91,8 @@ class State:
             write_json(self.root / OVERRIDES, self.overrides.model_dump(mode="json", by_alias=True))
         if self.applied_ops or (self.root / OVERRIDES_APPLIED).exists():
             write_json(self.root / OVERRIDES_APPLIED, self.applied_ops)
+        if self.routing or (self.root / ROUTING).exists():
+            write_json(self.root / ROUTING, self.routing)
         write_json(self.root / SOURCE_HEALTH, _health_adapter.dump_python(self.health, mode="json"))
         # Last: validators are only useful once the items they cover are on disk.
         write_json(self.root / HTTP_CACHE, _cache_adapter.dump_python(self.http_cache, mode="json"))
