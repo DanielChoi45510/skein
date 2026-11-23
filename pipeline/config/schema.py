@@ -54,10 +54,15 @@ class Group(StrictModel):
 
 
 class FixedThread(StrictModel):
-    """A predefined thread for `tracker` and `fixed` topics."""
+    """A predefined thread for `tracker` and `fixed` topics.
+
+    Items go to the nearest thread by similarity to `description` (else the
+    title). A bare title like "Phones" makes a weak anchor (DESIGN §6.5).
+    """
 
     id: Id
     title: NonEmptyStr
+    description: NonEmptyStr | None = None
     priority: Literal["low", "normal"] = "normal"
 
 

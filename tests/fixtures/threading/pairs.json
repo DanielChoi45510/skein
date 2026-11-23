@@ -1,0 +1,902 @@
+[
+  {
+    "topic_id": "world-news",
+    "a": {
+      "id": "3dca9d375e0800ac",
+      "title": "What Trump’s Summit in China Reveals",
+      "source_id": "the-atlantic",
+      "published_at": "2026-11-21T16:18:16+00:00"
+    },
+    "b": {
+      "id": "fa581b35a4482de2",
+      "title": "Pope Leo hit by flying rosary while waving to crowds in Peru",
+      "source_id": "bbc-latam",
+      "published_at": "2026-11-16T21:12:13+00:00"
+    },
+    "cosine": 0.4549,
+    "label": false,
+    "batch": 1
+  },
+  {
+    "topic_id": "us-politics",
+    "a": {
+      "id": "8cf7a61aa3082fa3",
+      "title": "Trump initially accepted the midterm results, but most GOP voters doubt they were fair",
+      "source_id": "npr-politics",
+      "published_at": "2026-11-20T17:00:00+00:00"
+    },
+    "b": {
+      "id": "da385e821ffe1490",
+      "title": "Anthropic's record IPO raises hopes for a charitable windfall that has nonprofits preparing to scale",
+      "source_id": "ap-us",
+      "published_at": "2026-11-22T13:07:06+00:00"
+    },
+    "cosine": 0.456,
+    "label": false,
+    "batch": 1
+  },
+  {
+    "topic_id": "ai-news",
+    "a": {
+      "id": "17b7a2b39f098895",
+      "title": "See PR scans in action",
+      "source_id": "openai-news",
+      "published_at": "2026-11-19T00:00:00+00:00"
+    },
+    "b": {
+      "id": "b331a244d62b8fc8",
+      "title": "Meta’s Muse Charm might cost $300",
+      "source_id": "verge-ai",
+      "published_at": "2026-11-19T20:22:17+00:00"
+    },
+    "cosine": 0.4596,
+    "label": false,
+    "batch": 1
+  },
+  {
+    "topic_id": "jobs-market",
+    "a": {
+      "id": "0d6609eafd66d0b2",
+      "title": "Inference engineering for software engineers",
+      "source_id": "pragmatic-engineer",
+      "published_at": "2026-11-17T16:11:23+00:00"
+    },
+    "b": {
+      "id": "3293eb0f037addf5",
+      "title": "Ask HN: I have been unemployed for 2y. 15 years of experience, US. What to do?",
+      "source_id": "hn-frontpage",
+      "published_at": "2026-11-20T23:18:32+00:00"
+    },
+    "cosine": 0.4676,
+    "label": false,
+    "batch": 1
+  },
+  {
+    "topic_id": "health-wellbeing",
+    "a": {
+      "id": "97000885946feb34",
+      "title": "Donald Hooton Sr., Who Crusaded Against Steroids in Sports, Has Died",
+      "source_id": "nyt-well",
+      "published_at": "2026-11-22T19:10:04+00:00"
+    },
+    "b": {
+      "id": "b3cfc4a6cd73070a",
+      "title": "What It Took for America to Wipe Out Measles",
+      "source_id": "nyt-well",
+      "published_at": "2026-11-16T16:31:27+00:00"
+    },
+    "cosine": 0.5238,
+    "label": false,
+    "batch": 1
+  },
+  {
+    "topic_id": "health-sleep",
+    "a": {
+      "id": "15e9283d2abd9ac1",
+      "title": "Will Salmon Sperm Make You Look Younger?",
+      "source_id": "nyt-well",
+      "published_at": "2026-11-20T11:29:08+00:00"
+    },
+    "b": {
+      "id": "5f78100ee7be37d2",
+      "title": "An Intriguing Approach to Slow Alzheimer’s Shows Mixed Results",
+      "source_id": "nyt-well",
+      "published_at": "2026-11-16T23:19:37+00:00"
+    },
+    "cosine": 0.5437,
+    "label": false,
+    "batch": 1
+  },
+  {
+    "topic_id": "health-wellbeing",
+    "a": {
+      "id": "386164a61a12f5c6",
+      "title": "What are the benefits and risks of treating endometrioma before women have fertility treatment?",
+      "source_id": "cochrane",
+      "published_at": "2026-11-22T09:09:42.410739+00:00"
+    },
+    "b": {
+      "id": "98bedd5c468710b5",
+      "title": "F.D.A. Rejects Closely Watched Lung Cancer Drug From China",
+      "source_id": "nyt-well",
+      "published_at": "2026-11-15T20:33:07+00:00"
+    },
+    "cosine": 0.5597,
+    "label": false,
+    "batch": 1
+  },
+  {
+    "topic_id": "health-sleep",
+    "a": {
+      "id": "0f7f40cc53f39292",
+      "title": "How to Stop Ruminating",
+      "source_id": "nyt-well",
+      "published_at": "2026-11-18T10:00:37+00:00"
+    },
+    "b": {
+      "id": "61d68d43ae3309d0",
+      "title": "I’m Sad That My Boyfriend Uses A.I. to Write Love Notes",
+      "source_id": "nyt-well",
+      "published_at": "2026-11-19T17:11:05+00:00"
+    },
+    "cosine": 0.5795,
+    "label": false,
+    "batch": 1
+  },
+  {
+    "topic_id": "us-politics",
+    "a": {
+      "id": "40a0d4e3b8cff0ee",
+      "title": "Judge Blocks Trump Administration’s Effort to Transform Homelessness Policy",
+      "source_id": "nyt-politics",
+      "published_at": "2026-11-22T00:03:40+00:00"
+    },
+    "b": {
+      "id": "69f1cf9d15217f92",
+      "title": "Elect for Education Freedom",
+      "source_id": "wsj-opinion",
+      "published_at": "2026-11-22T15:46:00+00:00"
+    },
+    "cosine": 0.6036,
+    "label": false,
+    "batch": 1
+  },
+  {
+    "topic_id": "health-training",
+    "a": {
+      "id": "66178202aadb083d",
+      "title": "How Much Does My Fitness Decline After a Break From Exercise?",
+      "source_id": "nyt-well",
+      "published_at": "2026-11-17T10:02:19+00:00"
+    },
+    "b": {
+      "id": "8cd621d4f3dc4333",
+      "title": "A Short Workout to Strengthen Your Neck",
+      "source_id": "nyt-well",
+      "published_at": "2026-11-22T00:09:47+00:00"
+    },
+    "cosine": 0.611,
+    "label": false,
+    "batch": 1
+  },
+  {
+    "topic_id": "ai-news",
+    "a": {
+      "id": "ae5a204aaba705d5",
+      "title": "Google rolls out new search homepage with AI chat history and no search button",
+      "source_id": "ars-ai",
+      "published_at": "2026-11-20T21:58:29+00:00"
+    },
+    "b": {
+      "id": "d25de4f029966643",
+      "title": "Will Wright's next simulation will use AI to mine content from your memories",
+      "source_id": "ars-ai",
+      "published_at": "2026-11-18T18:10:33+00:00"
+    },
+    "cosine": 0.6253,
+    "label": false,
+    "batch": 1
+  },
+  {
+    "topic_id": "jobs-market",
+    "a": {
+      "id": "6ab5d7679dc03dec",
+      "title": "Software engineering after code becomes cheap with Satya Nadella",
+      "source_id": "pragmatic-engineer",
+      "published_at": "2026-11-16T13:33:48+00:00"
+    },
+    "b": {
+      "id": "6bdd117d6a37820d",
+      "title": "The Pulse: Is Amazon’s writing culture collapsing because of AI?",
+      "source_id": "pragmatic-engineer",
+      "published_at": "2026-11-19T17:08:59+00:00"
+    },
+    "cosine": 0.6329,
+    "label": false,
+    "batch": 1
+  },
+  {
+    "topic_id": "world-news",
+    "a": {
+      "id": "4f65a194f0481a79",
+      "title": "Putin Exits Summit With Symbolic Win, Saying He and Trump Share ‘Values’",
+      "source_id": "nyt-world",
+      "published_at": "2026-11-20T13:56:56+00:00"
+    },
+    "b": {
+      "id": "a1ed121c68ba09d5",
+      "title": "At APEC Summit, U.S., China and Russia Vow to Increase Oil Supply Amid Global Energy Transition",
+      "source_id": "nyt-world",
+      "published_at": "2026-11-20T17:45:55+00:00"
+    },
+    "cosine": 0.6378,
+    "label": false,
+    "batch": 2
+  },
+  {
+    "topic_id": "us-politics",
+    "a": {
+      "id": "1c55d2e5eb91b4f0",
+      "title": "Issue with automation system causes Delta flight delays in Atlanta",
+      "source_id": "ap-us",
+      "published_at": "2026-11-22T17:41:23+00:00"
+    },
+    "b": {
+      "id": "73862c02427933b0",
+      "title": "US Army delays detonation of bomb-making chemicals in Iowa after public safety concerns raised",
+      "source_id": "ap-us",
+      "published_at": "2026-11-19T05:11:36+00:00"
+    },
+    "cosine": 0.652,
+    "label": false,
+    "batch": 1
+  },
+  {
+    "topic_id": "world-news",
+    "a": {
+      "id": "f21c70b8aa4668d0",
+      "title": "Unexpected Fallout From the Iran War",
+      "source_id": "nyt-world",
+      "published_at": "2026-11-19T21:40:38+00:00"
+    },
+    "b": {
+      "id": "f6b8858e945555be",
+      "title": "Iran strikes 3 tankers as it shows off missile launchers, and other Mideast news",
+      "source_id": "ap-top",
+      "published_at": "2026-11-21T17:21:53+00:00"
+    },
+    "cosine": 0.6528,
+    "label": false,
+    "batch": 1
+  },
+  {
+    "topic_id": "ai-news",
+    "a": {
+      "id": "0de6aadc71dab203",
+      "title": "Grok Bot took unapproved actions, ignored orders to stop, and then denied it",
+      "source_id": "ars-ai",
+      "published_at": "2026-11-17T14:00:29+00:00"
+    },
+    "b": {
+      "id": "ec8e761e0eb8542f",
+      "title": "The UN fails to agree on rules regulating ‘killer robots’",
+      "source_id": "verge-ai",
+      "published_at": "2026-11-21T20:03:37+00:00"
+    },
+    "cosine": 0.6548,
+    "label": false,
+    "batch": 2
+  },
+  {
+    "topic_id": "world-news",
+    "a": {
+      "id": "20063e9de7eb16b4",
+      "title": "In Choosing Shenzhen for Trump-Putin Summit, Xi Shows Off His Tech Ambitions",
+      "source_id": "wsj-world",
+      "published_at": "2026-11-18T12:07:00+00:00"
+    },
+    "b": {
+      "id": "9389c4f0235c607c",
+      "title": "Trump, Xi, Putin End Historic Summit With Denunciation of Nuclear War",
+      "source_id": "wsj-world",
+      "published_at": "2026-11-19T18:02:00+00:00"
+    },
+    "cosine": 0.669,
+    "label": true,
+    "batch": 2
+  },
+  {
+    "topic_id": "us-politics",
+    "a": {
+      "id": "06a402121aa1a33e",
+      "title": "Trump vs. America",
+      "source_id": "the-atlantic",
+      "published_at": "2026-11-20T21:36:56+00:00"
+    },
+    "b": {
+      "id": "23eeac525516e127",
+      "title": "Takeaways From Trump’s Post-Trip News Conference",
+      "source_id": "nyt-politics",
+      "published_at": "2026-11-21T02:15:29+00:00"
+    },
+    "cosine": 0.6692,
+    "label": false,
+    "batch": 2
+  },
+  {
+    "topic_id": "ai-news",
+    "a": {
+      "id": "b43ef08ac3ed4f7a",
+      "title": "Astra for Law leads in legal intelligence",
+      "source_id": "openai-news",
+      "published_at": "2026-11-17T00:00:00+00:00"
+    },
+    "b": {
+      "id": "d91fd06de7b8771e",
+      "title": "Science at the Frontier: How scientists use ChatGPT",
+      "source_id": "openai-news",
+      "published_at": "2026-11-16T12:00:00+00:00"
+    },
+    "cosine": 0.6695,
+    "label": false,
+    "batch": 1
+  },
+  {
+    "topic_id": "us-politics",
+    "a": {
+      "id": "495e6c52da73407c",
+      "title": "Will Campus Civics Programs Survive the Blue Wave?",
+      "source_id": "wsj-opinion",
+      "published_at": "2026-11-20T22:02:00+00:00"
+    },
+    "b": {
+      "id": "57a308ebc60d46ba",
+      "title": "Senator proposes select committee on AI as Democrats hope to move quickly to regulate it",
+      "source_id": "ap-us",
+      "published_at": "2026-11-20T22:07:01+00:00"
+    },
+    "cosine": 0.6788,
+    "label": false,
+    "batch": 2
+  },
+  {
+    "topic_id": "ai-news",
+    "a": {
+      "id": "68ddb817fe4001c0",
+      "title": "Advancing chip design with OpenAI models",
+      "source_id": "openai-news",
+      "published_at": "2026-11-18T00:00:00+00:00"
+    },
+    "b": {
+      "id": "b82b64ef90f76e66",
+      "title": "How Revolut raises ambition without lowering the bar",
+      "source_id": "openai-news",
+      "published_at": "2026-11-16T09:30:00+00:00"
+    },
+    "cosine": 0.686,
+    "label": false,
+    "batch": 2
+  },
+  {
+    "topic_id": "us-politics",
+    "a": {
+      "id": "7ce74b66eca4ae19",
+      "title": "Lame-Duck Senators Should Not Be Able to Block Good Judicial Nominees",
+      "source_id": "national-review",
+      "published_at": "2026-11-20T21:22:38+00:00"
+    },
+    "b": {
+      "id": "ee8b24b22cd3cc84",
+      "title": "How Much Will Republicans Get Done In Their Lame-Duck Sprint?",
+      "source_id": "wsj-opinion",
+      "published_at": "2026-11-18T14:08:00+00:00"
+    },
+    "cosine": 0.6941,
+    "label": false,
+    "batch": 2
+  },
+  {
+    "topic_id": "ai-news",
+    "a": {
+      "id": "9026aaa1d5288963",
+      "title": "Gemini 4 Hydrogen: a faster model for general purpose robotics",
+      "source_id": "google-ai-dev",
+      "published_at": "2026-11-17T00:00:00+00:00"
+    },
+    "b": {
+      "id": "95da0fde7d56c751",
+      "title": "Introducing Gemini 4 Neon",
+      "source_id": "deepmind-blog",
+      "published_at": "2026-11-18T21:35:43+00:00"
+    },
+    "cosine": 0.697,
+    "label": true,
+    "batch": 1
+  },
+  {
+    "topic_id": "health-wellbeing",
+    "a": {
+      "id": "459592c742b55f16",
+      "title": "5 Foods That Food Safety Experts Avoid",
+      "source_id": "nyt-well",
+      "published_at": "2026-11-19T10:00:12+00:00"
+    },
+    "b": {
+      "id": "69459e12f74757e7",
+      "title": "E.R. Doctors on Avoiding Thanksgiving Hazards",
+      "source_id": "nyt-well",
+      "published_at": "2026-11-20T10:04:08+00:00"
+    },
+    "cosine": 0.7053,
+    "label": false,
+    "batch": 1
+  },
+  {
+    "topic_id": "ai-news",
+    "a": {
+      "id": "58da586369f33999",
+      "title": "Research acceleration: The jagged frontier",
+      "source_id": "openai-news",
+      "published_at": "2026-11-18T08:00:00+00:00"
+    },
+    "b": {
+      "id": "9fe6d2ae73e55f52",
+      "title": "Our first phase of embedded assessments",
+      "source_id": "openai-news",
+      "published_at": "2026-11-16T08:00:00+00:00"
+    },
+    "cosine": 0.7092,
+    "label": false,
+    "batch": 2
+  },
+  {
+    "topic_id": "world-news",
+    "a": {
+      "id": "171b713574ec3350",
+      "title": "Hillary Clinton: What Trump Should Have Said to Putin",
+      "source_id": "nyt-opinion",
+      "published_at": "2026-11-20T17:55:48+00:00"
+    },
+    "b": {
+      "id": "e907693f218ea8d5",
+      "title": "The Latest: Trump says Putin wants to end war despite Russia rejecting Kushner’s claims of progress",
+      "source_id": "ap-top",
+      "published_at": "2026-11-20T18:10:58+00:00"
+    },
+    "cosine": 0.7166,
+    "label": true,
+    "batch": 1
+  },
+  {
+    "topic_id": "us-politics",
+    "a": {
+      "id": "30e9812bcc418604",
+      "title": "WSJ Opinion: Anthropic’s Record-Breaking IPO",
+      "source_id": "wsj-opinion",
+      "published_at": "2026-11-22T15:00:00+00:00"
+    },
+    "b": {
+      "id": "acb85e93db3b200b",
+      "title": "Anthropic worker claims to have solved a Holy Grail of math problems with the help of AI",
+      "source_id": "ap-top",
+      "published_at": "2026-11-21T04:55:24+00:00"
+    },
+    "cosine": 0.7172,
+    "label": false,
+    "batch": 1
+  },
+  {
+    "topic_id": "ai-news",
+    "a": {
+      "id": "7fbdbfd5cb782bea",
+      "title": "Google makes it easier to use Gemini without training AI on your data",
+      "source_id": "ars-ai",
+      "published_at": "2026-11-17T16:50:10+00:00"
+    },
+    "b": {
+      "id": "af7d30f58230f923",
+      "title": "Signal is blocking Gemini and Siri AI from reading your screen",
+      "source_id": "verge-ai",
+      "published_at": "2026-11-20T12:30:47+00:00"
+    },
+    "cosine": 0.7205,
+    "label": false,
+    "batch": 2
+  },
+  {
+    "topic_id": "us-politics",
+    "a": {
+      "id": "659eb247afabf6a0",
+      "title": "It’s a Permitting Miracle in the Senate",
+      "source_id": "wsj-opinion",
+      "published_at": "2026-11-20T22:54:00+00:00"
+    },
+    "b": {
+      "id": "9b343f510b010317",
+      "title": "Can Trump’s Agenda Survive the Blue Tsunami?",
+      "source_id": "national-review",
+      "published_at": "2026-11-20T11:00:00+00:00"
+    },
+    "cosine": 0.7282,
+    "label": false,
+    "batch": 2
+  },
+  {
+    "topic_id": "ai-news",
+    "a": {
+      "id": "2d7a5d6b20fff3cd",
+      "title": "Broadening access to AI for scientists",
+      "source_id": "openai-news",
+      "published_at": "2026-11-16T17:00:00+00:00"
+    },
+    "b": {
+      "id": "33b95c2112c46efd",
+      "title": "Our new blog for science",
+      "source_id": "openai-news",
+      "published_at": "2026-11-15T22:00:00+00:00"
+    },
+    "cosine": 0.7289,
+    "label": false,
+    "batch": 2
+  },
+  {
+    "topic_id": "world-news",
+    "a": {
+      "id": "a4d667a9cecfe165",
+      "title": "The Jensen Huang Saga Has Reinvigorated Washington’s China Hawks",
+      "source_id": "wsj-world",
+      "published_at": "2026-11-19T02:00:00+00:00"
+    },
+    "b": {
+      "id": "c726200f0d4f418f",
+      "title": "Opinion | Chips Aren’t a Magic Bullet for China Risks",
+      "source_id": "wsj-world",
+      "published_at": "2026-11-20T19:55:00+00:00"
+    },
+    "cosine": 0.7323,
+    "label": false,
+    "batch": 2
+  },
+  {
+    "topic_id": "us-politics",
+    "a": {
+      "id": "cd5a74b8cf857642",
+      "title": "Houston, We Have an Ongoing FAA Problem",
+      "source_id": "wsj-opinion",
+      "published_at": "2026-11-17T18:57:00+00:00"
+    },
+    "b": {
+      "id": "fe1538973bcdf48b",
+      "title": "WSJ Opinion: The FAA Ground Stop Blame Game",
+      "source_id": "wsj-opinion",
+      "published_at": "2026-11-22T15:01:00+00:00"
+    },
+    "cosine": 0.7406,
+    "label": true,
+    "batch": 1
+  },
+  {
+    "topic_id": "ai-news",
+    "a": {
+      "id": "3298713995b15316",
+      "title": "Can Anthropic afford to put safety first?",
+      "source_id": "verge-ai",
+      "published_at": "2026-11-21T15:00:00+00:00"
+    },
+    "b": {
+      "id": "fd109fdc361c3cd3",
+      "title": "Anthropic announces closing of initial public offering, including full exercise of underwriters’ option to purchase additional shares, and closing of concurrent private placement",
+      "source_id": "anthropic-news",
+      "published_at": "2026-11-20T00:00:00+00:00"
+    },
+    "cosine": 0.7582,
+    "label": false,
+    "batch": 1
+  },
+  {
+    "topic_id": "us-politics",
+    "a": {
+      "id": "4f7724848c27eb31",
+      "title": "Anthropic Has Gone Public. What Now?",
+      "source_id": "nyt-opinion",
+      "published_at": "2026-11-20T01:44:20+00:00"
+    },
+    "b": {
+      "id": "8b493afea548081f",
+      "title": "What the Anthropic IPO Means for the AI Future",
+      "source_id": "wsj-opinion",
+      "published_at": "2026-11-19T20:09:00+00:00"
+    },
+    "cosine": 0.7631,
+    "label": true,
+    "batch": 2
+  },
+  {
+    "topic_id": "us-politics",
+    "a": {
+      "id": "349acfab2f31b18c",
+      "title": "Jensen Huang’s Offense Wasn’t Infidelity",
+      "source_id": "wsj-opinion",
+      "published_at": "2026-11-17T22:33:00+00:00"
+    },
+    "b": {
+      "id": "cde7f5a4f7fa11ed",
+      "title": "Treasury secretary says no further restrictions are needed for Nvidia chip exports to China",
+      "source_id": "ap-us",
+      "published_at": "2026-11-20T22:36:47+00:00"
+    },
+    "cosine": 0.7666,
+    "label": false,
+    "batch": 2
+  },
+  {
+    "topic_id": "ai-news",
+    "a": {
+      "id": "7ad44f990f0c53ef",
+      "title": "Combatting adversarial distillation",
+      "source_id": "openai-news",
+      "published_at": "2026-11-20T10:00:00+00:00"
+    },
+    "b": {
+      "id": "99be0c0a7e074380",
+      "title": "Managing frontier AI risk: From training to deployment",
+      "source_id": "openai-news",
+      "published_at": "2026-11-18T06:00:00+00:00"
+    },
+    "cosine": 0.7718,
+    "label": false,
+    "batch": 2
+  },
+  {
+    "topic_id": "health-wellbeing",
+    "a": {
+      "id": "2660f3803c0bca14",
+      "title": "How RFK Jr. Upended a Group Guiding Health Care for All Americans",
+      "source_id": "nyt-well",
+      "published_at": "2026-11-18T18:04:47+00:00"
+    },
+    "b": {
+      "id": "9360eecd21f5ebad",
+      "title": "Powerful Health Panel Has Tumultuous First Meeting With RFK Jr’s Appointees",
+      "source_id": "nyt-well",
+      "published_at": "2026-11-20T22:29:07+00:00"
+    },
+    "cosine": 0.7737,
+    "label": true,
+    "batch": 1
+  },
+  {
+    "topic_id": "us-politics",
+    "a": {
+      "id": "0b83da30ea9c973a",
+      "title": "What’s So Important About Nvidia’s Chips?",
+      "source_id": "the-atlantic",
+      "published_at": "2026-11-20T18:00:00+00:00"
+    },
+    "b": {
+      "id": "e04fe2e77b1532dc",
+      "title": "Can Nvidia Thrive Without Jensen Huang?",
+      "source_id": "wsj-opinion",
+      "published_at": "2026-11-16T20:29:00+00:00"
+    },
+    "cosine": 0.7827,
+    "label": true,
+    "batch": 2
+  },
+  {
+    "topic_id": "ai-news",
+    "a": {
+      "id": "21e886491b30cfff",
+      "title": "More ways to move care forward with ChatGPT for Healthcare",
+      "source_id": "openai-news",
+      "published_at": "2026-11-16T06:00:00+00:00"
+    },
+    "b": {
+      "id": "3047d7657748ea76",
+      "title": "Introducing ChatGPT for Sales",
+      "source_id": "openai-news",
+      "published_at": "2026-11-17T08:00:00+00:00"
+    },
+    "cosine": 0.7874,
+    "label": true,
+    "batch": 1
+  },
+  {
+    "topic_id": "ai-news",
+    "a": {
+      "id": "a913764b1be35e0f",
+      "title": "[AINews] Gemini 4 Neon: GDM's Opus/Sol Contender",
+      "source_id": "ainews-smol",
+      "published_at": "2026-11-19T07:07:43+00:00"
+    },
+    "b": {
+      "id": "abadb4e0aaec88e9",
+      "title": "[AINews] Anthropic successfully completes largest IPO in history, valued at $1.5T",
+      "source_id": "ainews-smol",
+      "published_at": "2026-11-20T07:12:24+00:00"
+    },
+    "cosine": 0.7879,
+    "label": false,
+    "batch": 2
+  },
+  {
+    "topic_id": "ai-news",
+    "a": {
+      "id": "04b0c59a769f86d3",
+      "title": "“Trump was in bed with Jensen”: Critics balk at Huang’s wish to return to Nvidia",
+      "source_id": "ars-ai",
+      "published_at": "2026-11-17T20:32:55+00:00"
+    },
+    "b": {
+      "id": "b0dd6261a508b939",
+      "title": "Jensen Huang allies build a \"war room\" to get him back at Nvidia",
+      "source_id": "ars-ai",
+      "published_at": "2026-11-16T14:06:16+00:00"
+    },
+    "cosine": 0.7927,
+    "label": true,
+    "batch": 2
+  },
+  {
+    "topic_id": "world-news",
+    "a": {
+      "id": "3e17f7a4ac7d6cbd",
+      "title": "Opinion | Defining Genocide Down at the International Court of Justice",
+      "source_id": "wsj-world",
+      "published_at": "2026-11-21T21:19:00+00:00"
+    },
+    "b": {
+      "id": "64ac45562e39806c",
+      "title": "How the Myanmar Genocide Ruling Raises the Stakes for Israel",
+      "source_id": "wsj-world",
+      "published_at": "2026-11-20T20:22:00+00:00"
+    },
+    "cosine": 0.7958,
+    "label": true,
+    "batch": 2
+  },
+  {
+    "topic_id": "us-politics",
+    "a": {
+      "id": "28ce395ad6f72d6a",
+      "title": "S&P 500 sinks 3.7% and Nasdaq composite goes negative for the year as tech sell-off worsens",
+      "source_id": "ap-top",
+      "published_at": "2026-11-20T17:34:13+00:00"
+    },
+    "b": {
+      "id": "70afa686bee845ff",
+      "title": "A 10% drop for the stock market is unnerving, but it's not that unusual",
+      "source_id": "ap-top",
+      "published_at": "2026-11-21T14:01:57+00:00"
+    },
+    "cosine": 0.804,
+    "label": true,
+    "batch": 1
+  },
+  {
+    "topic_id": "us-politics",
+    "a": {
+      "id": "052b2598a31c5b4d",
+      "title": "What Is the Fantasy in <i>Grand Theft Auto</i> Really All About?",
+      "source_id": "national-review",
+      "published_at": "2026-11-22T11:00:00+00:00"
+    },
+    "b": {
+      "id": "12930deb1c86d082",
+      "title": "<em>Grand Theft Auto VI</em> Is Really Weird",
+      "source_id": "the-atlantic",
+      "published_at": "2026-11-19T22:56:38+00:00"
+    },
+    "cosine": 0.8044,
+    "label": true,
+    "batch": 1
+  },
+  {
+    "topic_id": "world-news",
+    "a": {
+      "id": "173bb0ef856a0f86",
+      "title": "Steve Rosenberg: Historic talks with Xi and Trump are a coup for Putin",
+      "source_id": "bbc-europe",
+      "published_at": "2026-11-18T10:53:21+00:00"
+    },
+    "b": {
+      "id": "a2d81e5e20163f1b",
+      "title": "BBC correspondents discuss what Trump, Xi and Putin got out of historic talks",
+      "source_id": "bbc-asia",
+      "published_at": "2026-11-19T17:23:29+00:00"
+    },
+    "cosine": 0.8086,
+    "label": true,
+    "batch": 1
+  },
+  {
+    "topic_id": "world-news",
+    "a": {
+      "id": "6465535f46cf573f",
+      "title": "Myanmar Committed Genocide Against the Rohingya, Top Global Court Finds",
+      "source_id": "nyt-world",
+      "published_at": "2026-11-20T01:37:20+00:00"
+    },
+    "b": {
+      "id": "6b25411317bb5a31",
+      "title": "Inside a Rohingya Camp After a Genocide Ruling",
+      "source_id": "nyt-world",
+      "published_at": "2026-11-19T16:10:44+00:00"
+    },
+    "cosine": 0.8256,
+    "label": true,
+    "batch": 1
+  },
+  {
+    "topic_id": "us-politics",
+    "a": {
+      "id": "e50507ce8f887cb6",
+      "title": "Trump Seems Untouchable. But That’s Changing.",
+      "source_id": "nyt-opinion",
+      "published_at": "2026-11-20T11:00:12+00:00"
+    },
+    "b": {
+      "id": "faeea5052b8e3ea7",
+      "title": "‘It Feels Corrupt Because It Likely Is’",
+      "source_id": "nyt-opinion",
+      "published_at": "2026-11-20T11:00:14+00:00"
+    },
+    "cosine": 0.8486,
+    "label": true,
+    "batch": 2
+  },
+  {
+    "topic_id": "ai-news",
+    "a": {
+      "id": "8f6af8c44a4a1bfb",
+      "title": "Introducing GPT-6.2 Astra and Sol",
+      "source_id": "openai-news",
+      "published_at": "2026-11-17T17:45:00+00:00"
+    },
+    "b": {
+      "id": "db9b81401cb73d7b",
+      "title": "[AINews] GPT-6.2 Astra, the #2 Frontier Model is better and 20%-600% cheaper, but has mixed reviews; 6.2 Sol likely main workhorse",
+      "source_id": "ainews-smol",
+      "published_at": "2026-11-18T10:19:04+00:00"
+    },
+    "cosine": 0.8654,
+    "label": true,
+    "batch": 1
+  },
+  {
+    "topic_id": "health-wellbeing",
+    "a": {
+      "id": "3c8bd49014502bb3",
+      "title": "Measles Is Officially Back in the United States. What Now?",
+      "source_id": "nyt-well",
+      "published_at": "2026-11-17T18:12:15+00:00"
+    },
+    "b": {
+      "id": "50ae360832f8f707",
+      "title": "U.S. Loses Its Measles Elimination Status, a Historic Setback for American Health",
+      "source_id": "nyt-well",
+      "published_at": "2026-11-17T20:52:05+00:00"
+    },
+    "cosine": 0.8723,
+    "label": true,
+    "batch": 1
+  },
+  {
+    "topic_id": "us-politics",
+    "a": {
+      "id": "8a5f41832ca081fe",
+      "title": "Democrats Clinch 258 House Seats, an Election-Year Record This Century",
+      "source_id": "nyt-politics",
+      "published_at": "2026-11-22T18:23:08+00:00"
+    },
+    "b": {
+      "id": "9ad3b6ed337fcbd6",
+      "title": "Democrats clinch a historic House majority of at least 258 seats, the largest since 1992",
+      "source_id": "ap-us",
+      "published_at": "2026-11-22T18:07:36+00:00"
+    },
+    "cosine": 0.9243,
+    "label": true,
+    "batch": 1
+  }
+]

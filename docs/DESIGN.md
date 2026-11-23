@@ -168,19 +168,24 @@ Canonicalize URLs (strip tracking params), parse dates to UTC, trim the excerpt 
 - Calibrate with `python -m pipeline.calibrate --state DIR`: scores stored items (instruction off and on) and prints per-topic percentiles, counts kept at candidate thresholds, and sample titles.
 - For job listings and gear trackers, the private profile adds an extra similarity term (§10.3).
 
-### 6.5 Thread assignment (threaded / question / tracker)
-For each relevant item in a threaded topic:
-1. Candidates: the topic's threads (any state except archived), ranked by cosine(item, thread centroid), with a boost for overlapping named entities.
-2. Top score ≥ `T_high` (start at 0.75) with a clear margin → attach.
-3. Between `T_low` (0.55) and `T_high` → ask the LLM to pick among the top 3 or "new thread". If the LLM is unavailable: attach if ≥ 0.65, else new.
+### 6.5 Thread assignment (threaded / question / tracker / fixed)
+Code: `pipeline/process/threads.py`. For each relevant item in a `threaded` or `question` topic (visible, within lookback, passing the relevance threshold), in (published_at, id) order:
+1. Candidates: the topic's threads that can still be matched: active, cooling and dormant, plus pending threads less than 72 h old. Never archived (§5). Score = cosine(item, thread centroid) + entity boost: +0.02 per named entity shared with the thread's item titles, capped at +0.06. Entities are rough: tokens with digits (GPT-5), acronyms (NATO), mixed case (OpenAI) and capitalized non-first words, minus common title-case words and bracketed feed tags ("[AINews]").
+2. Top score ≥ `T_high` (**0.82**) with a margin ≥ 0.05 over the second → attach.
+3. Between `T_low` (**0.65**) and `T_high`, or ≥ `T_high` without the margin → the gray zone: ask the LLM to pick among the top 3 or "new thread" (Phase 3). If the LLM is unavailable: attach if ≥ `fallback` (**0.80**), else new. Until Phase 3, `fallback` is the cut that actually decides attach vs. new.
 4. Otherwise → new `pending` thread.
-5. Update the centroid as a recency-weighted average.
+5. Update the centroid as a recency-weighted average: `c ← normalize((1−α)c + αv)`, α = max(1/n, 0.25).
 
 Mode-specific rules:
-- `tracker` and `fixed`: assign only to the predefined threads (nearest by similarity); never create new ones.
-- Thresholds are tuned against a small hand-labeled set in `tests/fixtures/threading/`.
+- `tracker` and `fixed`: assign every eligible item to the nearest predefined thread; never create new ones. Each thread's anchor is the embedding of its optional `description` in `topics.yaml`, else its title. A bare title is a weak anchor: with titles only, iPhone and AirPods items went to Wearables (2026-11-22).
 
-**Thread rescue** (Phase 2): an item scoring within 0.05 below its topic's relevance threshold (§6.4) is kept anyway if it attaches to an active thread with similarity ≥ `T_high`. Short or terse headlines that belong to a story already being followed shouldn't be lost to the threshold.
+**Tuning** (2026-11-22). Labeled set: 50 owner-labeled pairs of real stored items in `tests/fixtures/threading/pairs.json` (18 same thread, 32 different; recorded bge cosines, so tests need no model). Labels show the intended grain: a product line is a thread ("Gemini 4" models, ChatGPT products), while a company alone is not (Anthropic's IPO vs. its safety stance). `python -m pipeline.threadpairs pairs` samples new pairs; `evaluate` grid-searches `fallback` and the boost, ranking by F0.5 because a wrong merge is worse than a missed one.
+- `fallback` 0.80 with the 0.02 boost: no wrong merges, 13 of 18 true pairs joined. DESIGN's first guess of 0.65 merged 20 of the 32 different pairs. Without the boost, the best cut finds only 10 of 18.
+- `T_high` 0.82 sits above the best-scoring different pair (0.79); `T_low` 0.65 sits below the worst-scoring true pair (0.70).
+- The margin can't be measured on pairs (one candidate each), so the 0.05 guess stays.
+- Pairs stand in for item-vs-centroid scores: for a one-item pending thread they are the same. Check on real runs once threads exist.
+
+**Thread rescue** (Phase 2): an item scoring within 0.05 below its topic's relevance threshold (§6.4), for the most lenient source that carried it, is kept anyway if its best match is an **active** thread scoring ≥ `T_high`. It never creates a thread. The similarity is stored as `thread_score`, so the export can apply the rule from stored data. Short or terse headlines that belong to a story already being followed shouldn't be lost to the threshold.
 
 ### 6.6 Rank and cap
 `importance = relevance × source_weight × (1 + 0.3·ln(1 + corroborating_sources)) × freshness_decay`

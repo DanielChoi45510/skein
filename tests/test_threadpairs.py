@@ -141,3 +141,17 @@ def test_cli_writes_unlabeled_json(tmp_path: Path, capsys) -> None:
 def test_cli_without_items_fails(tmp_path: Path) -> None:
     args = ["--state", str(tmp_path), "--config-dir", str(FIXTURE_CONFIG), "--embedder", "hashing"]
     assert main(["pairs", *args]) == 1
+
+
+def test_cli_evaluate(tmp_path: Path, capsys) -> None:
+    side = {"id": "x", "title": "x", "source_id": "s", "published_at": "2026-11-22"}
+    pairs = [
+        {"topic_id": "w", "a": side, "b": side, "cosine": c, "label": lab}
+        for c, lab in ((0.9, True), (0.85, True), (0.7, False), (0.6, False))
+    ]
+    path = tmp_path / "pairs.json"
+    path.write_text(json.dumps(pairs))
+    assert main(["evaluate", "--pairs", str(path)]) == 0
+    assert "4 labeled pairs: 2 same thread, 2 different" in capsys.readouterr().out
+    path.write_text(json.dumps([pairs[0] | {"label": None}]))
+    assert main(["evaluate", "--pairs", str(path)]) == 1

@@ -98,6 +98,10 @@ def test_thread_kind_per_mode() -> None:
         ("Talks in Berlin stall over NATO spending", {"berlin", "nato"}),
         ("Apple Says New M5 MacBook Pro Is Faster", {"m5", "macbook", "pro", "faster"}),
         ("why the Fed held rates", {"fed"}),
+        (
+            "[AINews] Gemini 4 Neon: GDM's contender",
+            {"neon", "gdm"},
+        ),  # tag dropped; "Gemini" now leads
     ],
 )
 def test_entities(title: str, expected: set[str]) -> None:
@@ -139,29 +143,41 @@ def test_no_candidates_means_new() -> None:
     assert decide([]) == New()
 
 
+H, L, F, M = DEFAULT.high, DEFAULT.low, DEFAULT.fallback, DEFAULT.margin
+
+
+def test_tuned_thresholds_are_ordered() -> None:
+    assert L <= F <= H
+
+
 def test_high_with_clear_margin_attaches() -> None:
-    assert decide(scored(0.80, 0.70)) == Attach("t0", 0.80)
-    assert decide(scored(0.76)) == Attach("t0", 0.76)
+    assert decide(scored(H + 0.05, H + 0.05 - M)) == Attach("t0", H + 0.05)
+    assert decide(scored(H)) == Attach("t0", H)
 
 
 def test_high_without_margin_is_gray_zone() -> None:
-    d = decide(scored(0.80, 0.78, 0.60, 0.50))
+    d = decide(scored(H + 0.05, H + 0.04, L, L - 0.1))
     assert isinstance(d, AskLLM)
     assert [o.thread_id for o in d.options] == ["t0", "t1", "t2"]  # top 3 only
 
 
 def test_between_low_and_high_is_gray_zone() -> None:
-    assert isinstance(decide(scored(0.70)), AskLLM)
-    assert isinstance(decide(scored(DEFAULT.low)), AskLLM)
+    assert isinstance(decide(scored((L + H) / 2)), AskLLM)
+    assert isinstance(decide(scored(L)), AskLLM)
 
 
 def test_below_low_is_new() -> None:
-    assert decide(scored(0.54, 0.50)) == New()
+    assert decide(scored(L - 0.01, L - 0.05)) == New()
 
 
 @pytest.mark.parametrize(
     ("top", "expected"),
-    [(0.80, Attach("t0", 0.80)), (0.65, Attach("t0", 0.65)), (0.64, New()), (0.56, New())],
+    [
+        (H + 0.05, Attach("t0", H + 0.05)),  # high but no margin
+        (F, Attach("t0", F)),
+        (F - 0.01, New()),
+        (L, New()),
+    ],
 )
 def test_gray_zone_without_llm_attaches_at_fallback(top: float, expected) -> None:
     d = decide(scored(top, top - 0.01))
@@ -214,8 +230,8 @@ def test_threads_without_centroid_are_not_candidates() -> None:
 
 
 def test_rescue_attaches_to_active_thread_at_high() -> None:
-    ranked = scored(0.80, 0.79)  # no margin needed for rescue
-    assert rescue(ranked, {"t0": "active"}) == Attach("t0", 0.80)
+    ranked = scored(H, H - 0.01)  # no margin needed for rescue
+    assert rescue(ranked, {"t0": "active"}) == Attach("t0", H)
 
 
 @pytest.mark.parametrize("state", ["pending", "cooling", "dormant"])
@@ -224,13 +240,13 @@ def test_rescue_needs_an_active_thread(state: str) -> None:
 
 
 def test_rescue_needs_high_score() -> None:
-    assert rescue(scored(0.74), {"t0": "active"}) is None
+    assert rescue(scored(H - 0.01), {"t0": "active"}) is None
     assert rescue([], {}) is None
 
 
 def test_rescue_uses_best_match_only() -> None:
     # Best match is pending; a slightly worse active thread doesn't rescue it.
-    assert rescue(scored(0.85, 0.80), {"t0": "pending", "t1": "active"}) is None
+    assert rescue(scored(H + 0.05, H + 0.01), {"t0": "pending", "t1": "active"}) is None
 
 
 def item(relevance: float | None, source: str = "example-world", **kw) -> Item:
@@ -318,3 +334,27 @@ def test_route_predefined_always_attaches() -> None:
     assert route_predefined(unit(-1, 0.01), anchors).thread_id == "m--energy"
     with pytest.raises(ValueError):
         route_predefined(unit(1, 0), {})
+
+
+class RecordingEmbedder(HashingEmbedder):
+    def __init__(self) -> None:
+        super().__init__()
+        self.texts: list[str] = []
+
+    def embed(self, texts, kind):  # type: ignore[override]
+        self.texts += list(texts)
+        return super().embed(texts, kind)
+
+
+def test_predefined_anchor_uses_description_else_title() -> None:
+    trackers = next(t for t in CFG.topics.topics if t.id == "trackers")
+    assert trackers.threads is not None
+    phones, laptops = trackers.threads
+    described = trackers.model_copy(
+        update={
+            "threads": [phones.model_copy(update={"description": "Smartphones: iPhone"}), laptops]
+        }
+    )
+    embedder = RecordingEmbedder()
+    predefined_anchors([described], embedder)
+    assert embedder.texts == ["Smartphones: iPhone", "Laptops"]

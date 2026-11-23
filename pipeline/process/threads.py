@@ -12,7 +12,8 @@ Candidates are ranked by score. Then:
 - otherwise → a new pending thread.
 
 Tracker and fixed topics route every item to the nearest predefined thread,
-whose anchor is the embedding of its config title; they never create threads.
+whose anchor is the embedding of its config `description` (else its title);
+they never create threads.
 
 Rescue: an item just below its relevance threshold (within RESCUE_BAND) is kept
 only if its best match is an active thread scoring ≥ high. It never creates a
@@ -43,11 +44,21 @@ CENTROID_MIN_ALPHA = 0.25  # weight of the newest item in the centroid, once a t
 
 @dataclass(frozen=True)
 class Thresholds:
-    """Decision constants; starting values from DESIGN §6.5, tuned in step 4."""
+    """Decision constants (DESIGN §6.5).
 
-    high: float = 0.75
-    low: float = 0.55
-    fallback: float = 0.65  # gray zone without the LLM
+    Tuned 2026-11-22 on 50 hand-labeled pairs of real stored items
+    (tests/fixtures/threading/pairs.json; `python -m pipeline.threadpairs evaluate`):
+    - fallback 0.80 with a 0.02 boost: no wrong merges, 13 of 18 true pairs
+      joined (DESIGN's 0.65 merged 20 of 32 different pairs);
+    - high 0.82: above the best-scoring different pair (0.79); rescue relies on it;
+    - low 0.65: below the worst-scoring true pair (0.70), so the Phase 3 LLM
+      sees every borderline case;
+    - margin: not measurable on pairs (one candidate each); DESIGN's 0.05 kept.
+    """
+
+    high: float = 0.82
+    low: float = 0.65
+    fallback: float = 0.80  # gray zone without the LLM
     margin: float = 0.05  # top - second needed to attach outright at ≥ high
     entity_boost: float = 0.02  # per shared named entity
     entity_boost_max: float = 0.06
@@ -86,6 +97,7 @@ def thread_kind(mode: str) -> ThreadKind:
 _APOSTROPHES = "'\u2019"  # ASCII and typographic
 _TOKEN = re.compile(rf"[A-Za-z0-9][A-Za-z0-9.&{_APOSTROPHES}-]*[A-Za-z0-9]|[A-Za-z0-9]")
 _POSSESSIVE = re.compile(rf"[{_APOSTROPHES}]s$")
+_BRACKETED = re.compile(r"\[[^\]]*\]")  # "[AINews] ...": a feed's tag, not a name in the story
 # Capitalized words that title-case headlines use without naming anything.
 _COMMON_WORDS = """
 a about after again against all an and are as at be before but by can could
@@ -104,10 +116,11 @@ def entities(title: str) -> frozenset[str]:
     A token counts if it has a digit and a letter (GPT-5, M4), is an acronym
     (NATO, EU), is mixed-case (OpenAI, iPhone), or is capitalized and not the
     headline's first word (which is capitalized anyway, so a plain "Apple" in
-    first place is missed). Common title-case words ("Says", "New") are dropped.
+    first place is missed). Common title-case words ("Says", "New") and
+    bracketed feed tags ("[AINews]") are dropped.
     """
     out: set[str] = set()
-    for pos, raw in enumerate(_TOKEN.findall(title)):
+    for pos, raw in enumerate(_TOKEN.findall(_BRACKETED.sub(" ", title))):
         token = _POSSESSIVE.sub("", raw)
         low = token.lower()
         if low in _NOT_ENTITIES or len(token) < 2:
@@ -250,14 +263,14 @@ def update_centroid(centroid: np.ndarray | None, vector: np.ndarray, n_items: in
 
 
 def predefined_anchors(topics: Iterable[Topic], embedder: Embedder) -> dict[str, np.ndarray]:
-    """Thread id → anchor vector (its config title), for every tracker / fixed topic."""
+    """Thread id → anchor vector (config description, else title), for tracker / fixed topics."""
     ids, texts = [], []
     for topic in topics:
         if topic.mode not in PREDEFINED_MODES:
             continue
         for th in topic.threads or []:
             ids.append(predefined_thread_id(topic.id, th.id))
-            texts.append(th.title)
+            texts.append(th.description or th.title)
     if not texts:
         return {}
     return dict(zip(ids, embedder.embed(texts, "query"), strict=True))
