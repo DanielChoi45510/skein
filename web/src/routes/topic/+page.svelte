@@ -18,6 +18,7 @@
 		topicLatestFirstSeen,
 		topicNewCount
 	} from '$lib/readState';
+	import { readStateReady } from '$lib/sync.svelte';
 	import { isThreaded, topicLayout } from '$lib/topicView';
 	import type { ExportItem, FeedIndex, ThreadSummary, TopicFeed } from '$lib/types';
 
@@ -43,6 +44,7 @@
 		try {
 			const [idx, topic] = await Promise.all([fetchIndex(), fetchTopic(id)]);
 			if (firstLoad) {
+				await readStateReady(); // the owner's synced read state, if any
 				previousVisit = loadLastSeen()[id];
 				threadSeen = loadThreadSeen();
 				firstLoad = false;

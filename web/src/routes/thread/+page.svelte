@@ -8,6 +8,7 @@
 	import { poll } from '$lib/poll';
 	import { loadThreadOrder, saveThreadOrder } from '$lib/prefs';
 	import { isNew, latestFirstSeen, loadThreadSeen, markThreadSeen, newCount } from '$lib/readState';
+	import { readStateReady } from '$lib/sync.svelte';
 	import { relativeTime } from '$lib/time';
 	import type { ExportItem, FeedIndex, ThreadFeed } from '$lib/types';
 
@@ -32,6 +33,7 @@
 		try {
 			const [idx, t] = await Promise.all([fetchIndex(), fetchThread(id)]);
 			if (firstLoad) {
+				await readStateReady(); // the owner's synced read state, if any
 				previousVisit = loadThreadSeen()[id];
 				firstLoad = false;
 			}

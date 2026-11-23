@@ -50,12 +50,26 @@ function save(key: string, seen: LastSeen, store: Store): void {
 	}
 }
 
+// Local changes notify listeners (the owner's sync pushes them to the Worker).
+const listeners = new Set<() => void>();
+
+/** Called after every local change to read state; returns an unsubscribe function. */
+export function onReadStateChange(listener: () => void): () => void {
+	listeners.add(listener);
+	return () => listeners.delete(listener);
+}
+
+function changed(): void {
+	for (const listener of listeners) listener();
+}
+
 function mark(key: string, id: string, instant: string, store: Store): void {
 	const seen = load(key, store);
 	const prev = seen[id];
 	if (prev && Date.parse(prev) >= Date.parse(instant)) return; // never move backwards
 	seen[id] = instant;
 	save(key, seen, store);
+	changed();
 }
 
 export const loadLastSeen = (store: Store = safeStorage()) => load(KEY, store);
@@ -78,14 +92,61 @@ export function seedThreadSeen(
 ): void {
 	if (topicPreviousVisit === undefined) return;
 	const seen = load(THREAD_KEY, store);
-	let changed = false;
+	let added = false;
 	for (const id of threadIds) {
 		if (seen[id] === undefined) {
 			seen[id] = topicPreviousVisit;
-			changed = true;
+			added = true;
 		}
 	}
-	if (changed) save(THREAD_KEY, seen, store);
+	if (added) {
+		save(THREAD_KEY, seen, store);
+		changed();
+	}
+}
+
+// ───────────────────────────── sync (DESIGN §9.2) ─────────────────────────────
+
+/** Both stores, as the Worker's /read-state document. */
+export interface ReadStateDoc {
+	topics: LastSeen;
+	threads: LastSeen;
+}
+
+/** Later instant wins per id; never moves backwards (same rule as the Worker). */
+export function mergeSeen(a: LastSeen, b: LastSeen): LastSeen {
+	const out: LastSeen = { ...a };
+	for (const [id, instant] of Object.entries(b)) {
+		const t = Date.parse(instant);
+		if (Number.isNaN(t)) continue;
+		if (out[id] === undefined || t > Date.parse(out[id])) out[id] = instant;
+	}
+	return out;
+}
+
+/** Whether `local` has anything newer than `remote` (so the server should get it). */
+export function isAhead(local: LastSeen, remote: LastSeen): boolean {
+	return Object.entries(local).some(
+		([id, instant]) => remote[id] === undefined || Date.parse(instant) > Date.parse(remote[id])
+	);
+}
+
+export function localReadState(store: Store = safeStorage()): ReadStateDoc {
+	return { topics: load(KEY, store), threads: load(THREAD_KEY, store) };
+}
+
+/**
+ * Merge a document from the Worker into this browser's stores. Doesn't notify
+ * listeners (it came from the server). Returns whether this browser is ahead of
+ * the server and should push.
+ */
+export function mergeRemote(remote: ReadStateDoc, store: Store = safeStorage()): { ahead: boolean } {
+	const local = localReadState(store);
+	save(KEY, mergeSeen(local.topics, remote.topics ?? {}), store);
+	save(THREAD_KEY, mergeSeen(local.threads, remote.threads ?? {}), store);
+	return {
+		ahead: isAhead(local.topics, remote.topics ?? {}) || isAhead(local.threads, remote.threads ?? {})
+	};
 }
 
 /** New = first seen by the pipeline after the topic was last opened (or never opened). */

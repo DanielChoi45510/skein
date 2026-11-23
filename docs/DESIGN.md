@@ -353,7 +353,10 @@ SvelteKit static app, installable PWA, dark mode first, responsive from phone to
   - **Per topic:** opening a topic marks everything in it seen, its threads' items included. This drives the home page's "N new".
   - **Per thread:** opening a thread marks it seen.
   - **Seeding:** when a topic page loads, threads never opened inherit the topic's previous visit. So a thread card's "N new" and the thread page's "N updates since your last visit" agree.
-  - Phase 2b syncs both through the Worker.
+- **Sync** (Phase 2b, `web/src/lib/readSync.ts`; owner devices only) keeps both stores in step with the Worker's `/read-state`. Later instants win everywhere, so devices never conflict.
+  - **Pull:** on app start, and when a tab comes back after a minute. Pages wait for the first pull (at most 2.5 s) before reading "last visit", so reading done on another device shows on the first load. If this device has newer entries, it pushes them right after.
+  - **Push:** the whole local state, 3 s after local changes. When the tab is hidden or closed, a pending push goes out at once with `keepalive`.
+  - **Failures** (offline, Worker down) are quiet: local read state keeps working and the next pull or push catches up. Visitors never sync and never wait.
 
 ### 9.3 Refresh
 The app re-fetches the feed JSON every few minutes while open. "Refresh now" (owner) → Worker → GitHub `workflow_dispatch` → about a minute later the new feed appears.

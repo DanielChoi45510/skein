@@ -3,8 +3,15 @@
 	import { resolve } from '$app/paths';
 	import OwnerBar from '$lib/components/OwnerBar.svelte';
 	import { owner } from '$lib/owner.svelte';
+	import { startOwnerSync, stopOwnerSync } from '$lib/sync.svelte';
 
 	let { children } = $props();
+
+	// Owner read-state sync follows the token (signing in or out on /settings/).
+	$effect(() => {
+		if (owner.signedIn) startOwnerSync();
+		else stopOwnerSync();
+	});
 </script>
 
 <a class="skip" href="#main">Skip to content</a>
