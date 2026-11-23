@@ -295,3 +295,52 @@ def test_run_survives_an_unreachable_worker(tmp_path: Path, monkeypatch) -> None
                  transport=FakeWeb().serve_fixtures().transport, sleep=FakeClock().sleep,
                  embedder=HashingEmbedder())  # fmt: skip
     assert report.new_item_ids  # the run finished normally
+
+
+def test_run_applies_ops_once_and_reruns_are_byte_identical(tmp_path: Path, monkeypatch) -> None:
+    import shutil
+
+    import yaml
+
+    from pipeline.process.embed import HashingEmbedder
+    from pipeline.run import run
+    from pipeline.state import OVERRIDES_APPLIED
+
+    from .conftest import FakeClock, FakeWeb
+
+    monkeypatch.delenv("WORKER_URL", raising=False)
+    monkeypatch.delenv("WORKER_PIPELINE_TOKEN", raising=False)
+    # Hashing-embedder scores are meaningless: threshold 0 so items get threads.
+    config = tmp_path / "config"
+    shutil.copytree(FIXTURE_CONFIG, config)
+    topics = yaml.safe_load((config / "topics.yaml").read_text())
+    topics["defaults"]["relevance_threshold"] = 0.0
+    (config / "topics.yaml").write_text(yaml.safe_dump(topics, sort_keys=False))
+    tmp_path = tmp_path / "state"
+    tmp_path.mkdir()
+
+    def once(now: dt.datetime):
+        return run(tmp_path, config_dir=config, now=now,
+                   transport=FakeWeb().serve_fixtures().transport, sleep=FakeClock().sleep,
+                   embedder=HashingEmbedder())  # fmt: skip
+
+    once(NOW)
+    first = State(tmp_path, NOW)
+    world = sorted((t for t in first.threads.values() if t.topic_id == "world"), key=lambda t: t.id)
+    target, other = world[0], world[1]
+    moving = other.item_ids[0]
+    doc = {"ops": [{"id": "op-1", "at": "2026-11-21T12:30:00Z", "type": "move",
+                    "item": moving, "to": target.id}]}  # fmt: skip
+    (tmp_path / OVERRIDES).write_text(json.dumps(doc))
+
+    report = once(NOW + H)
+    assert (report.threads.ops_applied, report.threads.ops_skipped) == (1, 0)
+    after = State(tmp_path, NOW + H)
+    assert after.items[moving].thread_id == target.id
+    assert after.threads[target.id].state == "active"
+    assert json.loads((tmp_path / OVERRIDES_APPLIED).read_text()) == {"op-1": "applied"}
+
+    snapshot = {p.name: p.read_bytes() for p in tmp_path.iterdir() if p.is_file()}
+    report = once(NOW + H)
+    assert report.threads.ops_applied == 0
+    assert {p.name: p.read_bytes() for p in tmp_path.iterdir() if p.is_file()} == snapshot

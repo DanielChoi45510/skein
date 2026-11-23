@@ -428,6 +428,13 @@ Code: `worker/` (TypeScript, `wrangler.toml`, one KV namespace bound as `SKEIN`)
     - **Rename:** changes the exported title only, so removing it restores the automatic title.
     - **Pin:** lists the thread first, and it never archives (it stops at dormant).
     - **Mute:** keeps the thread a match candidate, so new items about the story join it and stay hidden. The thread isn't listed and none of its items are exported, for every visitor. The topic file lists it under `muted` so the owner can unmute.
+    - **Structural ops** (`pipeline/process/structural.py`) run at the start of thread assignment, so the run's new items see the result. Each op not yet in `overrides_applied.json` (on `data`) runs once, in (`at`, `id`) order, and its outcome is recorded as `applied` or `skipped: <reason>`. Skipped ops aren't retried (the owner can redo the action), and ids the Worker no longer lists are forgotten.
+      - **merge:** the target takes all items; the source is deleted.
+      - **split:** a new thread (`new_id`) with the listed items that are in the thread.
+      - **move:** one item leaves its thread, if any, and joins the target.
+      - **Rules:** both sides in the same topic. Merge and split only in threaded and question topics: tracker and fixed topics hold only their configured threads, so `move` is the one op there. A thread left empty is deleted (configured threads excepted). A pending thread that receives items becomes active.
+      - **Afterwards:** each affected automatic thread's centroid is recomputed as the plain mean of its loaded items (embedded again, only these), and its keyword title redone.
+      - Assignment never re-threads an item that has a thread, so manual placements stick.
 - **Refresh** (`POST /refresh`):
   - Calls `workflow_dispatch` for `GITHUB_WORKFLOW` on `GITHUB_REF` and returns 202 `{dispatched_at, next_allowed_at}`.
   - **Cooldown:** 5 minutes (KV `refresh:last`); within it, 429 with `retry-after`.

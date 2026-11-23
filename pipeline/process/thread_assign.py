@@ -19,7 +19,7 @@ from __future__ import annotations
 
 import datetime as dt
 import logging
-from collections.abc import Callable, Mapping
+from collections.abc import Callable, Mapping, MutableMapping
 from dataclasses import dataclass
 
 import numpy as np
@@ -32,6 +32,7 @@ from .embed import Embedder
 from .lifecycle import advance, prune, retitle
 from .normalize import display_title, excluded_by_title
 from .relevance import item_text, passes_threshold
+from .structural import apply_ops, prune_applied
 from .threads import (
     DEFAULT,
     Attach,
@@ -64,6 +65,8 @@ class ThreadReport:
     rescued: int = 0  # below threshold, kept by an active thread
     backfilled: int = 0  # old items embedded again to be threaded
     pruned: int = 0
+    ops_applied: int = 0  # owner merge / split / move (structural.py)
+    ops_skipped: int = 0
 
 
 def select(
@@ -107,8 +110,12 @@ def assign_threads(
     get_embedder: Callable[[], Embedder],
     t: Thresholds = DEFAULT,
     overrides: Overrides = EMPTY,
+    applied_ops: MutableMapping[str, str] | None = None,
 ) -> ThreadReport:
-    """Assign threads, then advance the lifecycle. Mutates items, threads and centroids."""
+    """Apply owner ops, assign threads, advance the lifecycle.
+
+    Mutates items, threads, centroids and `applied_ops` (op id → outcome).
+    """
     report = ThreadReport()
     sources: dict[str, Source] = {s.id: s for s in cfg.sources.sources}
     topics: dict[str, Topic] = {tp.id: tp for tp in cfg.topics.topics}
@@ -116,15 +123,31 @@ def assign_threads(
     def title_of(item: Item) -> str:
         return display_title(item, sources)
 
+    vecs = dict(vectors)
+
+    def embed(needed: list[Item]) -> dict[str, np.ndarray]:
+        missing = [i for i in needed if i.id not in vecs]
+        if missing:
+            out = get_embedder().embed([item_text(i) for i in missing], "passage")
+            vecs.update(zip([i.id for i in missing], out, strict=True))
+        return vecs
+
+    # Owner merge / split / move first, so this run's new items see the result.
+    if applied_ops is not None:
+        prune_applied(applied_ops, overrides.ops)
+        ops = apply_ops(
+            overrides.ops, applied_ops, items, threads, centroids, topics,
+            embed=embed, title_of=title_of,
+        )  # fmt: skip
+        report.ops_applied, report.ops_skipped = ops.applied, ops.skipped
+
     to_assign, band = select(items, cfg, new_ids, now)
     pending = to_assign + band
-    vecs = dict(vectors)
     missing = [i for i in pending if i.id not in vecs]
     if missing:
         report.backfilled = len(missing)
         log.info("embedding %d stored item(s) to thread them", len(missing))
-        out = get_embedder().embed([item_text(i) for i in missing], "passage")
-        vecs.update(zip([i.id for i in missing], out, strict=True))
+        embed(missing)
     anchors: dict[str, np.ndarray] = {}
     if any(topics[i.topic_id or ""].mode in PREDEFINED_MODES for i in pending):
         anchors = predefined_anchors(topics.values(), get_embedder())

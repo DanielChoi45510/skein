@@ -14,6 +14,8 @@ loaded window is dropped by normalization before it could be re-added.)
 
 The owner's overrides (DESIGN §10.2) are kept in `overrides.json`: the copy the
 run used, so the next run can fall back to it if the Worker is unreachable.
+`overrides_applied.json` records each structural op's outcome (op id → "applied"
+or "skipped: …"), so an op is never applied twice.
 
 Threads (DESIGN §5, §6.5) live in `threads.json`, sorted by id. Their centroids
 are float32 rows in `centroids.npy`, named in order by `centroid_ids.json`; only
@@ -46,6 +48,7 @@ THREADS = "threads.json"
 CENTROIDS = "centroids.npy"
 CENTROID_IDS = "centroid_ids.json"
 OVERRIDES = "overrides.json"
+OVERRIDES_APPLIED = "overrides_applied.json"
 ITEM_WINDOW_DAYS = 30
 
 _cache_adapter = TypeAdapter(dict[str, CacheEntry])
@@ -69,6 +72,7 @@ class State:
         }
         self.centroids: dict[str, np.ndarray] = load_centroids(root)
         self.overrides: Overrides = load_saved_overrides(root)
+        self.applied_ops: dict[str, str] = read_json(root / OVERRIDES_APPLIED, {})
 
     def save(self) -> None:
         self.root.mkdir(parents=True, exist_ok=True)
@@ -78,6 +82,8 @@ class State:
         save_centroids(self.root, self.centroids)
         if self.overrides != EMPTY or (self.root / OVERRIDES).exists():
             write_json(self.root / OVERRIDES, self.overrides.model_dump(mode="json", by_alias=True))
+        if self.applied_ops or (self.root / OVERRIDES_APPLIED).exists():
+            write_json(self.root / OVERRIDES_APPLIED, self.applied_ops)
         write_json(self.root / SOURCE_HEALTH, _health_adapter.dump_python(self.health, mode="json"))
         # Last: validators are only useful once the items they cover are on disk.
         write_json(self.root / HTTP_CACHE, _cache_adapter.dump_python(self.http_cache, mode="json"))

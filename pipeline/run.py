@@ -152,8 +152,11 @@ def run(
         get_embedder=get_embedder,
         t=thresholds,
         overrides=state.overrides,
+        applied_ops=state.applied_ops,
     )
     t = report.threads
+    if t.ops_applied or t.ops_skipped:
+        log.info("overrides: %d op(s) applied, %d skipped", t.ops_applied, t.ops_skipped)
     log.info(
         "threads: %d item(s) assigned (%d joined, %d new pending, %d tracker/fixed, "
         "%d rescued, %d backfilled); %d thread(s) pruned",
