@@ -35,10 +35,11 @@
       "992ef491a25b9821",
       "7731da88903b10fb",
       "ac882ad6c0a8fe19",
-      "6c992c3cf6f309e8"
+      "6c992c3cf6f309e8",
+      "34dd0bfc6f38c1c2"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-23T00:41:00Z",
+    "last_item_at": "2026-11-23T05:01:08Z",
     "state": "active",
     "title": "Energy",
     "topic_id": "markets"
@@ -1727,12 +1728,13 @@
     "item_ids": [
       "73862c02427933b0",
       "978649e19fc49d9d",
-      "56b568e2582b3376"
+      "56b568e2582b3376",
+      "b3ebe78783befbf7"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-21T02:20:16Z",
+    "last_item_at": "2026-11-23T03:42:01Z",
     "state": "active",
-    "title": "Army · Bomb-making · Safety · Iowa",
+    "title": "Army · Bomb-making · Chemicals · Iowa",
     "topic_id": "us-politics"
   },
   {
@@ -2023,6 +2025,18 @@
     "last_item_at": "2026-11-21T19:58:02Z",
     "state": "pending",
     "title": "International Student Enrollment Plunged. Schools Are Bracing for More Losses.",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-23T06:48:41.327764Z",
+    "id": "t61f23c5b7f1b",
+    "item_ids": [
+      "4f4c89095ae908d4"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T06:38:02Z",
+    "state": "pending",
+    "title": "Democrats Must Defund Trump’s War in Iran",
     "topic_id": "us-politics"
   },
   {
@@ -2490,10 +2504,11 @@
       "aced56439e665105",
       "3dca9d375e0800ac",
       "df95222c573bf7e2",
-      "00f6f848d231b94e"
+      "00f6f848d231b94e",
+      "2f88a776f506ef12"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-22T22:00:00Z",
+    "last_item_at": "2026-11-23T06:01:00Z",
     "state": "active",
     "title": "Trump · Putin · Summit · Xi",
     "topic_id": "world-news"
@@ -2986,6 +3001,18 @@
     "topic_id": "us-politics"
   },
   {
+    "created_at": "2026-11-23T06:48:41.327764Z",
+    "id": "t9d3f4440a410",
+    "item_ids": [
+      "b63aac09bfa5471a"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T06:02:00Z",
+    "state": "pending",
+    "title": "Export Controls Are Easy to Implement, Harder to Enforce",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "t9f492d3d7aeb",
     "item_ids": [
@@ -3328,6 +3355,18 @@
     "state": "pending",
     "title": "Will Salmon Sperm Make You Look Younger?",
     "topic_id": "health-sleep"
+  },
+  {
+    "created_at": "2026-11-23T06:48:41.327764Z",
+    "id": "tb02a59dc8375",
+    "item_ids": [
+      "0ca7de2b60d19c16"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T06:01:00Z",
+    "state": "pending",
+    "title": "Skewing the Voters’ Views on Tariffs",
+    "topic_id": "world-news"
   },
   {
     "created_at": "2026-11-22T09:09:42.410739Z",
