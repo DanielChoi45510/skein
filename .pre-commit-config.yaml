@@ -59,6 +59,14 @@ repos:
         files: ^web/
         pass_filenames: false
 
+      # Needs Node and `npm ci` in worker/. CI runs these in its own job.
+      - id: worker
+        name: worker (tsc + vitest)
+        language: system
+        entry: bash -c 'cd worker && npm run --silent check && npm test --silent'
+        files: ^worker/
+        pass_filenames: false
+
       - id: pytest
         name: pytest
         language: python

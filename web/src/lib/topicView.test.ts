@@ -77,8 +77,26 @@ describe('topicLayout', () => {
 		expect(layout.moreItems.map((i) => i.id)).toEqual(['capped-high', 'capped-low']);
 	});
 
+	it('puts pinned threads first, whatever their state', () => {
+		const pinned = (t: ThreadSummary): ThreadSummary => ({ ...t, pinned: true });
+		const f2 = feed(
+			'threaded',
+			[
+				pinned(thread('pin-dormant', 'dormant', '2026-11-01T00:00:00Z')),
+				pinned(thread('pin-active', 'active', '2026-11-21T06:00:00Z')),
+				thread('active', 'active', '2026-11-21T11:00:00Z')
+			],
+			[]
+		);
+		const l = topicLayout(f2);
+		expect(l.pinned.map((t) => t.id)).toEqual(['pin-active', 'pin-dormant']);
+		expect(l.live.map((e) => e.id)).toEqual(['active']);
+		expect(l.dormant).toEqual([]);
+	});
+
 	it('handles a topic with nothing in it', () => {
 		expect(topicLayout(feed('threaded', [], []))).toEqual({
+			pinned: [],
 			live: [],
 			moreItems: [],
 			cooling: [],

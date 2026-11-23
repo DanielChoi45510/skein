@@ -50,6 +50,10 @@ jobs:
         env:
           # With the model cached, don't contact the Hugging Face Hub at all.
           HF_HUB_OFFLINE: ${{ steps.model-cache.outputs.cache-hit == 'true' && '1' || '0' }}
+          # Owner overrides (DESIGN §10.2). The token can only read them. If either is
+          # unset or the Worker is down, the run uses the overrides saved on `data`.
+          WORKER_URL: ${{ vars.WORKER_URL }}
+          WORKER_PIPELINE_TOKEN: ${{ secrets.WORKER_PIPELINE_TOKEN }}
 
       - name: Save state
         run: .github/scripts/state.sh commit state
@@ -85,6 +89,8 @@ jobs:
         run: npm run build
         env:
           BASE_PATH: /${{ github.event.repository.name }}
+          # Owner features (DESIGN §9.2). Unset: the site is built without them.
+          PUBLIC_WORKER_URL: ${{ vars.WORKER_URL }}
 
       - uses: actions/download-artifact@v8
         with:

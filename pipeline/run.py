@@ -26,6 +26,7 @@ from .config.validate import DEFAULT_CONFIG_DIR
 from .export import export_feed
 from .fetch import FeedParseError, FetchError, FetchOutcome, HttpFetcher, fetch_source
 from .models import RawEntry, SourceHealth
+from .overrides import load_overrides
 from .process.dedupe import NEAR_DUP_WINDOW, mark_near_duplicates, merge_exact
 from .process.embed import Embedder, SentenceTransformerEmbedder
 from .process.normalize import normalize
@@ -69,6 +70,14 @@ def run(
     now = now or dt.datetime.now(dt.UTC)
     state = State(state_dir, now)
     report = RunReport()
+    # Owner overrides first (DESIGN §10.2): the Worker's copy, else the last saved one.
+    state.overrides, origin = load_overrides(state.overrides)
+    o = state.overrides
+    log.info(
+        "overrides (%s): %d renamed, %d pinned, %d muted, %d op(s)",
+        origin, sum(1 for s in o.threads.values() if s.title), len(o.pinned), len(o.muted),
+        len(o.ops),
+    )  # fmt: skip
 
     enabled = [s for s in cfg.sources.sources if s.status != "disabled"]
     with HttpFetcher(state.http_cache, transport=transport, sleep=sleep) as http:
@@ -142,8 +151,12 @@ def run(
         vectors=vectors,
         get_embedder=get_embedder,
         t=thresholds,
+        overrides=state.overrides,
+        applied_ops=state.applied_ops,
     )
     t = report.threads
+    if t.ops_applied or t.ops_skipped:
+        log.info("overrides: %d op(s) applied, %d skipped", t.ops_applied, t.ops_skipped)
     log.info(
         "threads: %d item(s) assigned (%d joined, %d new pending, %d tracker/fixed, "
         "%d rescued, %d backfilled); %d thread(s) pruned",
@@ -153,7 +166,13 @@ def run(
     state.save()
     if out_dir is not None:
         index = export_feed(
-            out_dir, cfg, state.items.values(), state.health, now, threads=state.threads
+            out_dir,
+            cfg,
+            state.items.values(),
+            state.health,
+            now,
+            threads=state.threads,
+            overrides=state.overrides,
         )
         shown = sum(t.visible_count for g in index.groups for t in g.topics)
         log.info("exported %d visible item(s) to %s", shown, out_dir / "feed")

@@ -4,6 +4,7 @@
 	import { FeedError, fetchIndex, fetchTopic } from '$lib/feed';
 	import { poll } from '$lib/poll';
 	import { loadLastSeen, topicNewCount } from '$lib/readState';
+	import { readStateReady } from '$lib/sync.svelte';
 	import { relativeTime } from '$lib/time';
 	import type { FeedIndex, TopicSummary } from '$lib/types';
 
@@ -14,7 +15,7 @@
 
 	async function load() {
 		try {
-			const idx = await fetchIndex();
+			const [idx] = await Promise.all([fetchIndex(), readStateReady()]);
 			const seen = loadLastSeen();
 			const next: Record<string, number> = {};
 			const toFetch: TopicSummary[] = [];

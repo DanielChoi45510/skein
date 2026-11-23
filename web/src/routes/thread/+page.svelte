@@ -3,13 +3,16 @@
 	import { page } from '$app/state';
 	import { resolve } from '$app/paths';
 	import DayList from '$lib/components/DayList.svelte';
-	import { FeedError, fetchIndex, fetchThread } from '$lib/feed';
+	import ThreadOwnerPanel from '$lib/components/ThreadOwnerPanel.svelte';
+	import { FeedError, fetchIndex, fetchThread, fetchTopic } from '$lib/feed';
+	import { owner } from '$lib/owner.svelte';
 	import { allItems, groupByLocalDay, inTimeOrder, type Order } from '$lib/group';
 	import { poll } from '$lib/poll';
 	import { loadThreadOrder, saveThreadOrder } from '$lib/prefs';
 	import { isNew, latestFirstSeen, loadThreadSeen, markThreadSeen, newCount } from '$lib/readState';
+	import { readStateReady } from '$lib/sync.svelte';
 	import { relativeTime } from '$lib/time';
-	import type { ExportItem, FeedIndex, ThreadFeed } from '$lib/types';
+	import type { ExportItem, FeedIndex, ThreadFeed, ThreadSummary } from '$lib/types';
 
 	// The thread comes from ?id= so one prerendered page serves every thread.
 	const id = $derived(page.url.searchParams.get('id') ?? '');
@@ -23,6 +26,17 @@
 	let previousVisit = $state<string | undefined>(undefined);
 	let firstLoad = true;
 	let order = $state<Order>('newest');
+	// Owner tools: the topic's other threads (merge / move targets) and a selection.
+	let targets = $state<ThreadSummary[]>([]);
+	let selecting = $state(false);
+	let selected = $state<string[]>([]);
+	const select = {
+		has: (itemId: string) => selected.includes(itemId),
+		toggle: (itemId: string) =>
+			(selected = selected.includes(itemId)
+				? selected.filter((i) => i !== itemId)
+				: [...selected, itemId])
+	};
 
 	async function load() {
 		if (!id) {
@@ -32,6 +46,7 @@
 		try {
 			const [idx, t] = await Promise.all([fetchIndex(), fetchThread(id)]);
 			if (firstLoad) {
+				await readStateReady(); // the owner's synced read state, if any
 				previousVisit = loadThreadSeen()[id];
 				firstLoad = false;
 			}
@@ -40,6 +55,10 @@
 			error = null;
 			const latest = latestFirstSeen(allItems(t.days));
 			if (latest) markThreadSeen(id, latest);
+			if (owner.signedIn) {
+				const topic = await fetchTopic(t.topic_id).catch(() => null);
+				targets = (topic?.threads ?? []).filter((other) => other.id !== t.id);
+			}
 		} catch (e) {
 			if (e instanceof FeedError && e.message === 'Not found.') {
 				error = 'This thread is no longer in the feed.';
@@ -109,7 +128,20 @@
 		</button>
 	</div>
 
-	<DayList {days} {sources} isNew={showNew} {now} />
+	{#if owner.signedIn}
+		<ThreadOwnerPanel
+			{thread}
+			{targets}
+			bind:selecting
+			{selected}
+			onClearSelection={() => {
+				selected = [];
+				selecting = false;
+			}}
+		/>
+	{/if}
+
+	<DayList {days} {sources} isNew={showNew} {now} select={selecting ? select : undefined} />
 	<p class="caught-up">You're all caught up.</p>
 {:else if !error}
 	<p class="muted">Loading…</p>

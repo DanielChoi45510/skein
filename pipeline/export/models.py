@@ -52,6 +52,14 @@ class ThreadSummary(_Out):
     latest_first_seen_at: dt.datetime  # for "N new" hints
     first_seen: list[dt.datetime]  # first_seen_at of every shown (not collapsed) item, newest first
     latest: ExportItem  # the newest item, for a preview line
+    pinned: bool = False  # owner override: listed first
+
+
+class MutedThread(_Out):
+    """A thread the owner muted: not listed and its items not exported (DESIGN §10.2)."""
+
+    id: str
+    title: str
 
 
 class TopicFeed(_Out):
@@ -60,8 +68,9 @@ class TopicFeed(_Out):
     name: str
     group: str
     mode: str
-    threads: list[ThreadSummary]  # newest update first; empty for unthreaded modes
+    threads: list[ThreadSummary]  # pinned first, then newest update; empty for unthreaded modes
     days: list[Day]  # newest first; in threaded modes only items not in a listed thread
+    muted: list[MutedThread] = []  # so the owner can unmute; by title
 
 
 class ThreadFeed(_Out):

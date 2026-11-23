@@ -12,6 +12,11 @@ last ITEM_WINDOW_DAYS days of partitions are loaded; older ones are left alone.
 (Lookback windows are ≤ 30 days, so an entry old enough to fall outside the
 loaded window is dropped by normalization before it could be re-added.)
 
+The owner's overrides (DESIGN §10.2) are kept in `overrides.json`: the copy the
+run used, so the next run can fall back to it if the Worker is unreachable.
+`overrides_applied.json` records each structural op's outcome (op id → "applied"
+or "skipped: …"), so an op is never applied twice.
+
 Threads (DESIGN §5, §6.5) live in `threads.json`, sorted by id. Their centroids
 are float32 rows in `centroids.npy`, named in order by `centroid_ids.json`; only
 threads that can still be matched have one. Item embeddings are not stored
@@ -23,6 +28,7 @@ from __future__ import annotations
 import datetime as dt
 import io
 import json
+import logging
 import os
 import tempfile
 from collections.abc import Iterable
@@ -30,9 +36,10 @@ from pathlib import Path
 from typing import Any
 
 import numpy as np
-from pydantic import TypeAdapter
+from pydantic import TypeAdapter, ValidationError
 
 from .models import CacheEntry, Item, SourceHealth, Thread
+from .overrides import EMPTY, Overrides
 
 HTTP_CACHE = "http_cache.json"
 SOURCE_HEALTH = "source_health.json"
@@ -40,11 +47,14 @@ ITEMS_DIR = "items"
 THREADS = "threads.json"
 CENTROIDS = "centroids.npy"
 CENTROID_IDS = "centroid_ids.json"
+OVERRIDES = "overrides.json"
+OVERRIDES_APPLIED = "overrides_applied.json"
 ITEM_WINDOW_DAYS = 30
 
 _cache_adapter = TypeAdapter(dict[str, CacheEntry])
 _health_adapter = TypeAdapter(dict[str, SourceHealth])
 _threads_adapter = TypeAdapter(list[Thread])
+log = logging.getLogger(__name__)
 
 
 class State:
@@ -61,6 +71,8 @@ class State:
             t.id: t for t in _threads_adapter.validate_python(read_json(root / THREADS, []))
         }
         self.centroids: dict[str, np.ndarray] = load_centroids(root)
+        self.overrides: Overrides = load_saved_overrides(root)
+        self.applied_ops: dict[str, str] = read_json(root / OVERRIDES_APPLIED, {})
 
     def save(self) -> None:
         self.root.mkdir(parents=True, exist_ok=True)
@@ -68,6 +80,10 @@ class State:
         threads = sorted(self.threads.values(), key=lambda t: t.id)
         write_json(self.root / THREADS, _threads_adapter.dump_python(threads, mode="json"))
         save_centroids(self.root, self.centroids)
+        if self.overrides != EMPTY or (self.root / OVERRIDES).exists():
+            write_json(self.root / OVERRIDES, self.overrides.model_dump(mode="json", by_alias=True))
+        if self.applied_ops or (self.root / OVERRIDES_APPLIED).exists():
+            write_json(self.root / OVERRIDES_APPLIED, self.applied_ops)
         write_json(self.root / SOURCE_HEALTH, _health_adapter.dump_python(self.health, mode="json"))
         # Last: validators are only useful once the items they cover are on disk.
         write_json(self.root / HTTP_CACHE, _cache_adapter.dump_python(self.http_cache, mode="json"))
@@ -104,6 +120,15 @@ def save_items(items_dir: Path, items: Iterable[Item]) -> None:
             for i in sorted(rows, key=lambda i: i.id)
         ]
         write_text_atomic(items_dir / partition_name(day), "\n".join(lines) + "\n")
+
+
+def load_saved_overrides(root: Path) -> Overrides:
+    """The last run's overrides; empty (logged) if the file is missing or unreadable."""
+    try:
+        return Overrides.model_validate(read_json(root / OVERRIDES, {}))
+    except (ValidationError, json.JSONDecodeError):
+        log.warning("%s is unreadable; starting without saved overrides", OVERRIDES)
+        return EMPTY
 
 
 def load_centroids(root: Path) -> dict[str, np.ndarray]:

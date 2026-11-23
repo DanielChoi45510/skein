@@ -139,7 +139,7 @@ Code: `pipeline/process/lifecycle.py`, run every pipeline run, so states follow 
 
 **Titles** (until Phase 3 names threads with the LLM): a promoted thread is titled with up to 4 words its headlines share, as "A · B · C". Words used by more headlines come first, named entities win ties, and the order and spelling follow the newest headline, e.g. "GPT-6.2 · Astra · Sol" or "Trump · Xi · Putin · Historic". With fewer than two shared words, the newest headline is the title. Pending threads use their item's headline; tracker and fixed threads keep their config title. Titles are recomputed whenever items attach.
 
-**Owner overrides** (Phase 2b; stored by the Worker, applied at the start of each pipeline run): rename, pin, mute, merge two threads, split items out to a new thread, move an item to another thread.
+**Owner overrides** (Phase 2b; stored by the Worker, applied at the start of each pipeline run): rename, pin, mute, merge two threads, split items out to a new thread, move an item to another thread. Contract: §10.2 "Overrides".
 
 ## 6. Pipeline
 
@@ -246,6 +246,7 @@ The contract is `pipeline/export/models.py` (`schema_version` **2** since Phase 
 - `feed/index.json`: `generated_at`; groups → topics `{id, name, mode, has_sources, visible_count, collapsed_count, latest_first_seen_at}` (thread items counted too); sources `{id, name, type, status, lean, kind, paywall}`.
 - `feed/topics/<id>.json`:
   - `threads`: the topic's **listed** threads (active, cooling, dormant; not pending or archived) with at least one exported item, newest update first. Each summary is `{id, title, kind, state, last_item_at, item_count, collapsed_count, latest_first_seen_at, first_seen, latest}`. `first_seen` lists the shown items' `first_seen_at` (for "N new"); `latest` is the newest item, for a preview. Not limited to the lookback, so dormant threads still list.
+  - Owner overrides (§10.2) add `pinned` to summaries (pinned threads list first) and `muted: [{id, title}]` to the topic. These fields are additive, so `schema_version` stays 2.
   - `days`: the other items within the topic's lookback, grouped by UTC day of publication (newest first) and ranked by importance. For flat topics that's every item; for threaded ones, pending single items and unthreaded ones.
 - `feed/threads/<id>.json`: `{id, topic_id, title, kind, state, created_at, last_item_at, days}` with every exported item of the thread among the loaded items (≈ 30 days), by UTC day, ranked by importance. Stale topic and thread files are removed.
 - Days are UTC in the export; the frontend regroups items by the viewer's local day for display. Per-day caps still count UTC days, so a local day can show slightly more than one day's cap.
@@ -339,7 +340,21 @@ SvelteKit static app, installable PWA, dark mode first, responsive from phone to
 - **Item card:** title, source, time, labels and badges (🔒 for `paywall: partial | full`), excerpt. Tap → opens the original article. On an installed PWA, out-of-scope links open in the system's in-app browser sheet; on desktop, a new tab.
 - **Hidden items:** filtered items with their reasons.
 - **Sources:** per-source health and usefulness (§9.4).
-- **Settings:** paste the owner token (once per device).
+- **Settings** (`/settings/`, reached by URL only, so visitors see no link to it): paste the owner token once per device.
+  - **Checking:** the token is verified with `GET /auth`, then kept in this browser's localStorage (`skein.owner.v1`), never shown or put in a URL. A 401 from the Worker forgets it, so a rotated token can't linger.
+  - **Owner bar:** with a token, the header shows "Refresh now" (it shows the remaining wait during the 5-minute cooldown) and a Settings link. "Forget token on this device" returns to visitor mode.
+- **Owner tools** (Phase 2b; collapsed "Owner tools" sections, only with the token). Every change is an override (§10.2) that takes effect on the next pipeline run; each save says so and offers Refresh.
+  - **Thread page:**
+    - Rename, or go back to the automatic title. A rename saved since the last update shows in the field.
+    - Pin or unpin, mute or unmute, reflecting the Worker's current settings.
+    - Merge into another listed thread of the topic, after an in-page confirm.
+    - Select stories → split into a new thread, with an optional title (sent as a split, then a rename of the new id), or move to another thread.
+    - In tracker and fixed topics, only pin, mute and move are offered.
+  - **Topic page:**
+    - Select single stories → move into a thread (fixes missed joins).
+    - The "Muted (N)" list with Unmute.
+  - Pinned threads list first for everyone, in a "Pinned" group.
+  - **Worker URL:** comes from `PUBLIC_WORKER_URL` at build time (the `WORKER_URL` repo variable in the pipeline). Without it, owner features are absent entirely.
 
 ### 9.2 Owner vs visitor
 - Everyone sees the same public, read-only site.
@@ -349,7 +364,10 @@ SvelteKit static app, installable PWA, dark mode first, responsive from phone to
   - **Per topic:** opening a topic marks everything in it seen, its threads' items included. This drives the home page's "N new".
   - **Per thread:** opening a thread marks it seen.
   - **Seeding:** when a topic page loads, threads never opened inherit the topic's previous visit. So a thread card's "N new" and the thread page's "N updates since your last visit" agree.
-  - Phase 2b syncs both through the Worker.
+- **Sync** (Phase 2b, `web/src/lib/readSync.ts`; owner devices only) keeps both stores in step with the Worker's `/read-state`. Later instants win everywhere, so devices never conflict.
+  - **Pull:** on app start, and when a tab comes back after a minute. Pages wait for the first pull (at most 2.5 s) before reading "last visit", so reading done on another device shows on the first load. If this device has newer entries, it pushes them right after.
+  - **Push:** the whole local state, 3 s after local changes. When the tab is hidden or closed, a pending push goes out at once with `keepalive`.
+  - **Failures** (offline, Worker down) are quiet: local read state keeps working and the next pull or push catches up. Visitors never sync and never wait.
 
 ### 9.3 Refresh
 The app re-fetches the feed JSON every few minutes while open. "Refresh now" (owner) → Worker → GitHub `workflow_dispatch` → about a minute later the new feed appears.
@@ -370,13 +388,86 @@ For each source: items fetched, shown, opened, hidden (by reason), last success 
 - Jobs and permissions: `run` (`contents: write`) → `build` (`contents: read`; site built with `BASE_PATH=/<repo>`, feed copied into `build/feed`) → `deploy` (`pages: write`, `id-token: write`). If `run` fails (e.g. invalid config), nothing is deployed and the site keeps the last feed.
 
 ### 10.2 Owner Worker (Cloudflare Worker + KV, free tier)
-| Endpoint | Purpose |
-|---|---|
-| `GET/PUT /read-state` | Last-seen timestamps per thread/topic, synced across devices |
-| `POST /refresh` | Calls GitHub `workflow_dispatch` using a fine-grained token stored as a Worker secret |
-| `GET/POST /overrides` | Thread mute/pin/rename/merge/split/move; read by the pipeline at the start of each run |
+Code: `worker/` (TypeScript, `wrangler.toml`, one KV namespace bound as `SKEIN`). The owner deploys it with `npx wrangler deploy`; no Cloudflare credentials are stored in GitHub.
 
-Auth: a long random bearer token. CORS limited to the site's origin.
+| Endpoint | Token | Purpose | Since |
+|---|---|---|---|
+| `GET /auth` | owner | 204 if the token is valid (the Settings screen checks a pasted token with it) | 2b.1 |
+| `GET/PUT /read-state` | owner | Last-seen instants per topic and thread, synced across devices; PUT merges (later instant wins) | 2b.2 |
+| `POST /refresh` | owner | GitHub `workflow_dispatch` for the pipeline, 5-minute cooldown | 2b.3 |
+| `GET /overrides` | owner, pipeline | Thread overrides; the pipeline reads them at the start of each run | 2b.4 |
+| `POST /overrides` | owner | One override action (rename, pin, unpin, mute, unmute, merge, split, move) | 2b.4 |
+| cron (hourly, :47) | — | Backup trigger: dispatches the pipeline if no run is active and none started in the last 50 min | 2b.3 |
+
+- **Tokens** (bearer, long random strings, Worker secrets):
+  - `OWNER_TOKEN` can do everything.
+  - `PIPELINE_TOKEN` can only read overrides. It is also an Actions secret, so a leak can't change anything.
+  - Tokens are compared as SHA-256 digests with a timing-safe comparison. A role whose secret is unset matches nothing (fail closed).
+- **CORS:**
+  - Only origins in `ALLOWED_ORIGINS` get CORS headers, on every response including errors, so the app can read them.
+  - Preflight needs no token.
+  - Requests without an `Origin` (curl, the pipeline) work; the token protects every route.
+- **Rate limiting:**
+  - Per IP: 120 requests a minute.
+  - After 10 failed sign-ins in a minute, the IP gets 429 until the minute ends, even with the right token.
+  - The default is an in-memory window per Worker instance: free, best-effort, and with 256-bit tokens brute force is out of reach anyway.
+  - The optional Cloudflare rate-limiting binding (commented out in `wrangler.toml`; free-plan availability unconfirmed) replaces the per-IP request limit.
+  - KV is never used for counters (eventually consistent, 1,000 free writes a day).
+- **Read state** (KV key `read-state`): `{"topics": {id: instant}, "threads": {id: instant}}`.
+  - **PUT merges:** for each id the later instant wins, so a lagging device never moves state backwards and devices never conflict. The response is the merged document, so a client syncs in one round trip.
+  - **Limits:** at most 5,000 entries per section, 256 KB per body, no instants more than a day ahead.
+  - **Pruning:** entries older than 90 days are dropped.
+  - **Writes:** KV is written only when something changed.
+  - **Races:** two simultaneous PUTs from different devices can race (KV is last-write-wins); the losing device's entries return with its next PUT, since clients send their whole state.
+- **Overrides** (KV key `overrides`; `worker/src/overrides.ts`; mirrored in Python in Phase 2b step 5):
+  ```
+  {"version": 1, "updated_at": instant | null,
+   "threads": {<thread id>: {"title"?: str, "pinned"?: true, "muted"?: true}},
+   "ops": [{"id", "at", "type": "merge", "from", "into"}
+         | {"id", "at", "type": "split", "thread", "items": [item ids], "new_id"}
+         | {"id", "at", "type": "move", "item", "to"}]}
+  ```
+  - **Settings** (`threads`): applied on every run. An entry left empty is removed.
+  - **Ops:** structural one-shot changes. The pipeline applies each once, in `at` order, and records the applied ids on the `data` branch.
+  - **`POST /overrides` takes exactly one action:**
+    - `rename {thread, title}`: 1–120 characters; `title: null` goes back to the automatic title.
+    - `pin`, `unpin`, `mute`, `unmute` `{thread}`.
+    - `merge {from, into}`: also drops the merged-away thread's settings.
+    - `split {thread, items}`: 1–50 items. The Worker assigns `new_id = u<12 hex>`, which never collides with the pipeline's `t…` and `topic--…` ids.
+    - `move {item, to}`.
+
+    It returns the whole document.
+  - **Limits:** ops expire after 30 days; at most 500 ops and 2,000 thread settings.
+  - **Validity:** the Worker doesn't know which threads and items exist. The pipeline skips and logs ops that point at something gone.
+  - **In the pipeline** (`pipeline/overrides.py`):
+    - **Fetch:** at the start of each run, `GET {WORKER_URL}/overrides` with `WORKER_PIPELINE_TOKEN` (repo variable and Actions secret).
+    - **Fallback:** on any failure (unreachable, HTTP error, malformed document), or with those unset (forks, local runs), the run uses the copy saved on `data` (`overrides.json`) and logs why, never the token. The run never fails because of the Worker.
+    - **Rename:** changes the exported title only, so removing it restores the automatic title.
+    - **Pin:** lists the thread first, and it never archives (it stops at dormant).
+    - **Mute:** keeps the thread a match candidate, so new items about the story join it and stay hidden. The thread isn't listed and none of its items are exported, for every visitor. The topic file lists it under `muted` so the owner can unmute.
+    - **Structural ops** (`pipeline/process/structural.py`) run at the start of thread assignment, so the run's new items see the result. Each op not yet in `overrides_applied.json` (on `data`) runs once, in (`at`, `id`) order, and its outcome is recorded as `applied` or `skipped: <reason>`. Skipped ops aren't retried (the owner can redo the action), and ids the Worker no longer lists are forgotten.
+      - **merge:** the target takes all items; the source is deleted.
+      - **split:** a new thread (`new_id`) with the listed items that are in the thread.
+      - **move:** one item leaves its thread, if any, and joins the target.
+      - **Rules:** both sides in the same topic. Merge and split only in threaded and question topics: tracker and fixed topics hold only their configured threads, so `move` is the one op there. A thread left empty is deleted (configured threads excepted). A pending thread that receives items becomes active.
+      - **Afterwards:** each affected automatic thread's centroid is recomputed as the plain mean of its loaded items (embedded again, only these), and its keyword title redone.
+      - Assignment never re-threads an item that has a thread, so manual placements stick.
+- **Refresh** (`POST /refresh`):
+  - Calls `workflow_dispatch` for `GITHUB_WORKFLOW` on `GITHUB_REF` and returns 202 `{dispatched_at, next_allowed_at}`.
+  - **Cooldown:** 5 minutes (KV `refresh:last`); within it, 429 with `retry-after`.
+  - **GitHub errors:** 502 with GitHub's status only.
+  - **No GitHub settings:** 503.
+- **Backup cron** (`src/cron.ts`, `[triggers]` in `wrangler.toml`): GitHub's `schedule` trigger can be late or skipped, so at :47 the Worker lists the workflow's recent runs. It dispatches only if none is queued or running and none started in the last 50 minutes.
+  - Why 50 and not 60+: the Worker's own dispatch an hour earlier must not count as recent, or it would skip every other hour.
+  - A GitHub-scheduled run at :17 is 30 minutes old at :47, so the backup stays quiet while GitHub's schedule works.
+  - If GitHub can't list runs, it does nothing (never dispatches blind).
+- **GitHub token:** a fine-grained personal access token for this repository only, with **Actions: read and write** (dispatch and list runs). Nothing else.
+- **Errors:** `{"error": {"code", "message"}}` with an HTTP status. Responses are never cached (`cache-control: no-store`), and internals are never echoed.
+- **Per-deployment settings** are not committed, so the repo carries no account details:
+  - `ALLOWED_ORIGINS` (the Pages origin) and `GITHUB_REPO` (`owner/name`) are set like secrets: `npx wrangler secret put <NAME>`.
+  - `GITHUB_WORKFLOW` and `GITHUB_REF` default in `wrangler.toml`.
+  - Local dev reads `worker/.dev.vars` (gitignored; see `.dev.vars.example`).
+- **Tests:** Vitest with `@cloudflare/vitest-plugin`, run inside workerd with local KV (`cd worker && npm test`); a `worker` CI job and pre-commit hook.
 
 ### 10.3 Private profile
 - `config/profile.example.yaml` documents the shape. The real content lives in the `PROFILE_YAML` Actions secret (and in a local, gitignored `profile.yaml` for dev).

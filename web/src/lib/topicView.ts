@@ -14,6 +14,7 @@ export type Entry =
 	| { kind: 'item'; id: string; at: string; item: ExportItem };
 
 export interface TopicLayout {
+	pinned: ThreadSummary[]; // owner-pinned threads, any state, newest update first (DESIGN §10.2)
 	live: Entry[]; // active threads and single items, newest update first
 	moreItems: ExportItem[]; // single items over the topic's cap ("+N more"), by importance
 	cooling: ThreadSummary[]; // newest update first
@@ -32,8 +33,9 @@ export function isThreaded(feed: TopicFeed): boolean {
 
 export function topicLayout(feed: TopicFeed): TopicLayout {
 	const items = allItems(feed.days);
+	const unpinned = feed.threads.filter((t) => !t.pinned);
 	const live: Entry[] = [
-		...feed.threads
+		...unpinned
 			.filter((t) => t.state === 'active')
 			.map((t): Entry => ({ kind: 'thread', id: t.id, at: t.last_item_at, thread: t })),
 		...items
@@ -41,9 +43,10 @@ export function topicLayout(feed: TopicFeed): TopicLayout {
 			.map((i): Entry => ({ kind: 'item', id: i.id, at: i.published_at, item: i }))
 	].sort(newestFirst);
 	return {
+		pinned: feed.threads.filter((t) => t.pinned).sort(byUpdate),
 		live,
 		moreItems: items.filter((i) => i.collapsed).sort((a, b) => b.importance - a.importance),
-		cooling: feed.threads.filter((t) => t.state === 'cooling').sort(byUpdate),
-		dormant: feed.threads.filter((t) => t.state === 'dormant').sort(byUpdate)
+		cooling: unpinned.filter((t) => t.state === 'cooling').sort(byUpdate),
+		dormant: unpinned.filter((t) => t.state === 'dormant').sort(byUpdate)
 	};
 }

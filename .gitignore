@@ -5,6 +5,8 @@
 .env*
 profile.yaml
 *.local.*
+.dev.vars
+!.dev.vars.example
 
 # Python
 __pycache__/
@@ -22,3 +24,7 @@ web/node_modules/
 web/.svelte-kit/
 web/build/
 web/static/feed/
+
+# Worker (Cloudflare)
+worker/node_modules/
+worker/.wrangler/
