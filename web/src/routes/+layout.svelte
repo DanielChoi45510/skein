@@ -1,17 +1,24 @@
 <script lang="ts">
 	import '../app.css';
 	import { resolve } from '$app/paths';
+	import { page } from '$app/state';
 
 	let { children } = $props();
+	// The design lab (/lab/) draws its own full-width chrome.
+	const bare = $derived(page.route.id?.startsWith('/lab') ?? false);
 </script>
 
-<a class="skip" href="#main">Skip to content</a>
-<header>
-	<a class="brand" href={resolve('/')}>Skein</a>
-</header>
-<main id="main">
+{#if bare}
 	{@render children()}
-</main>
+{:else}
+	<a class="skip" href="#main">Skip to content</a>
+	<header>
+		<a class="brand" href={resolve('/')}>Skein</a>
+	</header>
+	<main id="main">
+		{@render children()}
+	</main>
+{/if}
 
 <style>
 	header {
