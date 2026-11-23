@@ -128,12 +128,16 @@ pending ──(2+ items or high importance)──▶ active ──(no items N da
                                               └──────── new matching item ◀────────────┘
 ```
 
-- **pending:** a new thread with one item. Shown inline as a single item and only promoted to a thread when a second item arrives within 72 h, or when the first item's importance is very high. This prevents a flood of one-item threads. After 72 h a pending thread can no longer be matched (its centroid is dropped); its item stays a single item.
+- **pending:** a new thread with one item. Shown inline as a single item and only promoted to a thread when a second item arrives within 72 h, or when the first item's importance is very high: in practice, at least 2 other sources carried it (`also_covered_by`), since importance itself depends on the time of export. This prevents a flood of one-item threads. After 72 h a pending thread can no longer be matched (its centroid is dropped); its item stays a single item.
 - **cooling:** sinks in the topic list.
 - **dormant:** grayed out and collapsed at the bottom of the topic.
 - **archived:** hidden; searchable. Its centroid is dropped, so it is never matched again (§6.5).
 - A cooling or dormant thread **revives** (back to active) when a new item matches it, keeping its full history. Archived threads don't revive: a new item starts a new thread. When an archived story resurfaces, the owner joins the new thread to the old one with the **merge** override (Phase 2b, below); the pipeline never does this on its own.
 - Timings are per topic, counted from the thread's last item: `cooling_after_days`, `dormant_after_days`, `archive_after_days` (topic override, else `defaults`). The validator requires cooling < dormant < archive, and rejects these keys on tracker and fixed topics. Defaults: cooling 3 days (health questions 30); dormant: politics 10, world and jobs 14, AI 21, health 120. Tracker and fixed threads never cool, go dormant or archive.
+
+Code: `pipeline/process/lifecycle.py`, run every pipeline run, so states follow the clock even without new items. Threads whose topic left the config or stopped being threaded, and predefined threads removed from the config, are archived. Pending and archived threads none of whose items are still loaded (the 30-day item window) are deleted from `threads.json`.
+
+**Titles** (until Phase 3 names threads with the LLM): a promoted thread is titled with up to 4 words its headlines share, as "A · B · C". Words used by more headlines come first, named entities win ties, and the order and spelling follow the newest headline, e.g. "GPT-6.2 · Astra · Sol" or "Trump · Xi · Putin · Historic". With fewer than two shared words, the newest headline is the title. Pending threads use their item's headline; tracker and fixed threads keep their config title. Titles are recomputed whenever items attach.
 
 **Owner overrides** (Phase 2b; stored by the Worker, applied at the start of each pipeline run): rename, pin, mute, merge two threads, split items out to a new thread, move an item to another thread.
 

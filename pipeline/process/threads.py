@@ -94,12 +94,12 @@ def thread_kind(mode: str) -> ThreadKind:
 
 # ───────────────────────────── named entities ─────────────────────────────
 
-_APOSTROPHES = "'\u2019"  # ASCII and typographic
-_TOKEN = re.compile(rf"[A-Za-z0-9][A-Za-z0-9.&{_APOSTROPHES}-]*[A-Za-z0-9]|[A-Za-z0-9]")
-_POSSESSIVE = re.compile(rf"[{_APOSTROPHES}]s$")
+APOSTROPHES = "'\u2019"  # ASCII and typographic
+_TOKEN = re.compile(rf"[A-Za-z0-9][A-Za-z0-9.&{APOSTROPHES}-]*[A-Za-z0-9]|[A-Za-z0-9]")
+_POSSESSIVE = re.compile(rf"[{APOSTROPHES}]s$")
 _BRACKETED = re.compile(r"\[[^\]]*\]")  # "[AINews] ...": a feed's tag, not a name in the story
 # Capitalized words that title-case headlines use without naming anything.
-_COMMON_WORDS = """
+COMMON_WORDS = """
 a about after again against all an and are as at be before but by can could
 did do does for from has have he her his how if in into is it its just more
 most new news no not now of off on or our out over report says said she so
@@ -107,7 +107,7 @@ than that the their them then there these they this to too under up us vs
 was we what when where which who why will with without would you your
 first last next year years week weeks day days month months today
 """
-_NOT_ENTITIES = frozenset(_COMMON_WORDS.split())
+_NOT_ENTITIES = frozenset(COMMON_WORDS.split())
 
 
 def entities(title: str) -> frozenset[str]:
