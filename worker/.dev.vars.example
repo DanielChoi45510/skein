@@ -1,0 +1,8 @@
+# Local development only: copy to worker/.dev.vars (gitignored) and run `npx wrangler dev`.
+# These are throwaway values for your machine; the deployed Worker's secrets are set
+# with `npx wrangler secret put <NAME>` and never written to a file.
+OWNER_TOKEN=dev-owner-token-change-me
+PIPELINE_TOKEN=dev-pipeline-token-change-me
+GITHUB_TOKEN=
+ALLOWED_ORIGINS=http://localhost:5173
+GITHUB_REPO=owner/repo

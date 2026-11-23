@@ -1,0 +1,28 @@
+# Skein owner API (DESIGN §10.2). Deployed by the owner: `npx wrangler deploy`.
+#
+# Not in this file (set per deployment, so the repo stays free of account details):
+#   secrets   OWNER_TOKEN, PIPELINE_TOKEN, GITHUB_TOKEN    npx wrangler secret put <NAME>
+#   settings  ALLOWED_ORIGINS (the Pages origin), GITHUB_REPO ("owner/name"),
+#             also set with `npx wrangler secret put` (a [vars] entry would
+#             conflict with them, and they'd put account details in the repo)
+# Local dev reads all of these from worker/.dev.vars (gitignored).
+name = "skein-owner"
+main = "src/index.ts"
+compatibility_date = "2026-11-01"
+
+[vars]
+GITHUB_WORKFLOW = "pipeline.yml"
+GITHUB_REF = "main"
+
+# Created once with `npx wrangler kv namespace create SKEIN`; paste the printed id
+# here. A namespace id is not a credential (it only works with your account's login).
+[[kv_namespaces]]
+binding = "SKEIN"
+id = "REPLACE_WITH_KV_NAMESPACE_ID"
+
+# Optional, if your plan includes it: Cloudflare's rate-limiting binding replaces the
+# built-in per-instance limiter for the per-IP request limit.
+# [[ratelimits]]
+# name = "RATE_LIMITER"
+# namespace_id = "1001"
+# simple = { limit = 120, period = 60 }

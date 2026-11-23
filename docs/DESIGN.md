@@ -370,13 +370,37 @@ For each source: items fetched, shown, opened, hidden (by reason), last success 
 - Jobs and permissions: `run` (`contents: write`) → `build` (`contents: read`; site built with `BASE_PATH=/<repo>`, feed copied into `build/feed`) → `deploy` (`pages: write`, `id-token: write`). If `run` fails (e.g. invalid config), nothing is deployed and the site keeps the last feed.
 
 ### 10.2 Owner Worker (Cloudflare Worker + KV, free tier)
-| Endpoint | Purpose |
-|---|---|
-| `GET/PUT /read-state` | Last-seen timestamps per thread/topic, synced across devices |
-| `POST /refresh` | Calls GitHub `workflow_dispatch` using a fine-grained token stored as a Worker secret |
-| `GET/POST /overrides` | Thread mute/pin/rename/merge/split/move; read by the pipeline at the start of each run |
+Code: `worker/` (TypeScript, `wrangler.toml`, one KV namespace bound as `SKEIN`). The owner deploys it with `npx wrangler deploy`; no Cloudflare credentials are stored in GitHub.
 
-Auth: a long random bearer token. CORS limited to the site's origin.
+| Endpoint | Token | Purpose | Since |
+|---|---|---|---|
+| `GET /auth` | owner | 204 if the token is valid (the Settings screen checks a pasted token with it) | 2b.1 |
+| `GET/PUT /read-state` | owner | Last-seen instants per topic and thread, synced across devices; PUT merges (later instant wins) | 2b.2 |
+| `POST /refresh` | owner | GitHub `workflow_dispatch` for the pipeline, 5-minute cooldown | 2b.3 |
+| `GET /overrides` | owner, pipeline | Thread overrides; the pipeline reads them at the start of each run | 2b.4 |
+| `POST /overrides` | owner | One override action (rename, pin, unpin, mute, unmute, merge, split, move) | 2b.4 |
+| cron (hourly) | — | Backup trigger: dispatches the pipeline if no run started in the last ~70 min | 2b.3 |
+
+- **Tokens** (bearer, long random strings, Worker secrets):
+  - `OWNER_TOKEN` can do everything.
+  - `PIPELINE_TOKEN` can only read overrides. It is also an Actions secret, so a leak can't change anything.
+  - Tokens are compared as SHA-256 digests with a timing-safe comparison. A role whose secret is unset matches nothing (fail closed).
+- **CORS:**
+  - Only origins in `ALLOWED_ORIGINS` get CORS headers, on every response including errors, so the app can read them.
+  - Preflight needs no token.
+  - Requests without an `Origin` (curl, the pipeline) work; the token protects every route.
+- **Rate limiting:**
+  - Per IP: 120 requests a minute.
+  - After 10 failed sign-ins in a minute, the IP gets 429 until the minute ends, even with the right token.
+  - The default is an in-memory window per Worker instance: free, best-effort, and with 256-bit tokens brute force is out of reach anyway.
+  - The optional Cloudflare rate-limiting binding (commented out in `wrangler.toml`; free-plan availability unconfirmed) replaces the per-IP request limit.
+  - KV is never used for counters (eventually consistent, 1,000 free writes a day).
+- **Errors:** `{"error": {"code", "message"}}` with an HTTP status. Responses are never cached (`cache-control: no-store`), and internals are never echoed.
+- **Per-deployment settings** are not committed, so the repo carries no account details:
+  - `ALLOWED_ORIGINS` (the Pages origin) and `GITHUB_REPO` (`owner/name`) are set like secrets: `npx wrangler secret put <NAME>`.
+  - `GITHUB_WORKFLOW` and `GITHUB_REF` default in `wrangler.toml`.
+  - Local dev reads `worker/.dev.vars` (gitignored; see `.dev.vars.example`).
+- **Tests:** Vitest with `@cloudflare/vitest-plugin`, run inside workerd with local KV (`cd worker && npm test`); a `worker` CI job and pre-commit hook.
 
 ### 10.3 Private profile
 - `config/profile.example.yaml` documents the shape. The real content lives in the `PROFILE_YAML` Actions secret (and in a local, gitignored `profile.yaml` for dev).

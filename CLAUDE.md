@@ -72,7 +72,15 @@ npm run check && npm test                       # svelte-check + vitest
 BASE_PATH=/skein npm run build                  # static site in web/build (feed/ is copied in at deploy)
 ```
 
-CI (`.github/workflows/ci.yml`) runs the validator, tests and pre-commit, plus a web job (check, test, build), on every push to `main` and every PR.
+```sh
+# owner Worker (Node ≥ 22.12; from worker/)
+npm ci
+npm run check && npm test                       # tsc + vitest (inside workerd, local KV)
+cp .dev.vars.example .dev.vars && npx wrangler dev   # local Worker on http://localhost:8787
+npx wrangler deploy                             # owner only; secrets via `npx wrangler secret put`
+```
+
+CI (`.github/workflows/ci.yml`) runs the validator, tests and pre-commit, plus web (check, test, build) and worker (check, test) jobs, on every push to `main` and every PR.
 
 The hourly pipeline (`.github/workflows/pipeline.yml`) runs on `main` only: fetch → export → push state to the `data` branch (`.github/scripts/state.sh`) → build → deploy to GitHub Pages. Run it by hand from the Actions tab (workflow_dispatch). Workflows are linted by actionlint in pre-commit.
 
