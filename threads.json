@@ -44,10 +44,11 @@
       "1dc15dc702f1c81b",
       "56aa0bd5222a93c8",
       "a982dd94ed97e04a",
-      "95c927307cd733b7"
+      "95c927307cd733b7",
+      "2766d048a14dcc22"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-23T11:04:36Z",
+    "last_item_at": "2026-11-23T15:09:43Z",
     "state": "active",
     "title": "Major earnings surprises",
     "topic_id": "markets"
@@ -276,6 +277,18 @@
     "state": "pending",
     "title": "Give Thanks to Inverse Billionaires",
     "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-23T15:48:33.493735Z",
+    "id": "t02a8a3aa92f9",
+    "item_ids": [
+      "b3e2f5f033c1e42d"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T14:50:58Z",
+    "state": "pending",
+    "title": "US business activity growth eases further in November, survey shows",
+    "topic_id": "world-news"
   },
   {
     "created_at": "2026-11-22T09:09:42.410739Z",
@@ -820,6 +833,18 @@
     "state": "pending",
     "title": "Donald Hooton Sr., Who Crusaded Against Steroids in Sports, Has Died",
     "topic_id": "health-wellbeing"
+  },
+  {
+    "created_at": "2026-11-23T15:48:33.493735Z",
+    "id": "t1d7faf813b57",
+    "item_ids": [
+      "57622550e55a118f"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T13:44:14Z",
+    "state": "pending",
+    "title": "States sue Musk companies over flood of sexualized images made with AI chatbot Grok",
+    "topic_id": "us-politics"
   },
   {
     "created_at": "2026-11-22T09:09:42.410739Z",
@@ -2183,6 +2208,18 @@
     "topic_id": "ai-news"
   },
   {
+    "created_at": "2026-11-23T15:48:33.493735Z",
+    "id": "t5d44ebc559e2",
+    "item_ids": [
+      "0dc775c77843807a"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T15:39:44Z",
+    "state": "pending",
+    "title": "Panama government, First Quantum restart negotiations on Cobre Panama mine",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-23T11:48:25.998267Z",
     "id": "t5d777a6c79e2",
     "item_ids": [
@@ -2282,6 +2319,18 @@
     "state": "pending",
     "title": "International Student Enrollment Plunged. Schools Are Bracing for More Losses.",
     "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-23T15:48:33.493735Z",
+    "id": "t616f518b93e8",
+    "item_ids": [
+      "a8c8f9a99304c11d"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T15:00:03Z",
+    "state": "pending",
+    "title": "EXCLUSIVE: US discussing military training for Syrian forces",
+    "topic_id": "world-news"
   },
   {
     "created_at": "2026-11-23T06:48:41.327764Z",
@@ -2656,7 +2705,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-20T15:20:14Z",
-    "state": "active",
+    "state": "cooling",
     "title": "Inside COP31: Part Trade Show, Part Climate Therapy Session",
     "topic_id": "world-news"
   },
@@ -3255,12 +3304,13 @@
       "b29fd3556edb63a7",
       "3e5e3e24a0f6aa63",
       "fc898244b0296dcc",
-      "ac9b4c74ae248913"
+      "ac9b4c74ae248913",
+      "a4d40e8a7d2893fa"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-23T11:34:10Z",
+    "last_item_at": "2026-11-23T14:46:29Z",
     "state": "active",
-    "title": "Ukraine · Strikes · Russian · Bridge",
+    "title": "Ukraine · Strikes · Attack · Russian",
     "topic_id": "world-news"
   },
   {
@@ -3539,12 +3589,14 @@
       "349acfab2f31b18c",
       "1f3fed02a0c96e9a",
       "fea8a8674624f72e",
-      "4f65d63f78466896"
+      "4f65d63f78466896",
+      "34ffdb14260fcca7",
+      "41e3386b916ebd7e"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-23T11:03:59Z",
+    "last_item_at": "2026-11-23T14:51:24Z",
     "state": "active",
-    "title": "Jensen · Nvidia · China · Huang",
+    "title": "China · Jensen · Huang · Nvidia",
     "topic_id": "us-politics"
   },
   {
@@ -4446,12 +4498,13 @@
     "item_ids": [
       "b3cfc4a6cd73070a",
       "3c8bd49014502bb3",
-      "50ae360832f8f707"
+      "50ae360832f8f707",
+      "b4d06c6113855fc6"
     ],
     "kind": "question",
-    "last_item_at": "2026-11-17T20:52:05Z",
+    "last_item_at": "2026-11-23T15:42:57Z",
     "state": "active",
-    "title": "U.S. Loses Its Measles Elimination Status, a Historic Setback for American Health",
+    "title": "Measles · United · States",
     "topic_id": "health-wellbeing"
   },
   {
@@ -5232,6 +5285,18 @@
     "state": "pending",
     "title": "‘The Tuners’: The Hidden Contest at the International Chopin Piano Competition",
     "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-23T15:48:33.493735Z",
+    "id": "tf629e7ec676a",
+    "item_ids": [
+      "4d5cf54f3d50a76b"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T14:50:50Z",
+    "state": "pending",
+    "title": "Trump will address a Justice Department transformed by his pursuit of political adversaries",
+    "topic_id": "us-politics"
   },
   {
     "created_at": "2026-11-22T09:09:42.410739Z",
