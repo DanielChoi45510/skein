@@ -1,7 +1,10 @@
-"""One pipeline run. Phase 1 so far:
+"""One pipeline run:
 
-fetch → normalize → exact dedupe → embed → near-dup → relevance scores → save state
-      → export (thresholds, ranking, caps)
+fetch → normalize → exact dedupe → embed → near-dup → relevance scores → threads
+      → save state → export (thresholds, ranking, caps)
+
+The embedding model is loaded at most once, and only when something needs a
+vector: new items, stored items still to be threaded, or tracker / fixed anchors.
 
 A source that fails is recorded in source health and skipped; it never fails the
 run. Everything is written to the state dir once, at the end (see state.py).
@@ -27,6 +30,7 @@ from .process.dedupe import NEAR_DUP_WINDOW, mark_near_duplicates, merge_exact
 from .process.embed import Embedder, SentenceTransformerEmbedder
 from .process.normalize import normalize
 from .process.relevance import assign_topics
+from .process.thread_assign import ThreadReport, assign_threads
 from .state import State
 
 log = logging.getLogger(__name__)
@@ -37,6 +41,7 @@ class RunReport:
     outcomes: dict[str, FetchOutcome] = field(default_factory=dict)
     errors: dict[str, str] = field(default_factory=dict)
     new_item_ids: list[str] = field(default_factory=list)
+    threads: ThreadReport = field(default_factory=ThreadReport)
 
     @property
     def entries(self) -> list[RawEntry]:
@@ -98,8 +103,16 @@ def run(
     report.new_item_ids = merge_exact(state.items, candidates, weights)
     log.info("%d new item(s) from %d entries", len(report.new_item_ids), len(report.entries))
 
+    model: list[Embedder] = [embedder] if embedder else []
+
+    def get_embedder() -> Embedder:
+        if not model:
+            model.append(SentenceTransformerEmbedder())
+        return model[0]
+
+    vectors = {}
     if report.new_item_ids:
-        embedder = embedder or SentenceTransformerEmbedder()
+        embedder = get_embedder()
         new_items = [state.items[i] for i in report.new_item_ids]
 
         # Near-duplicates: compare titles with every visible item that could be in range.
@@ -114,8 +127,25 @@ def run(
         )
         dups = mark_near_duplicates(state.items, report.new_item_ids, vectors, weights)
 
-        assign_topics([i for i in new_items if i.visible], sources, cfg.topics, embedder)
+        vectors = assign_topics([i for i in new_items if i.visible], sources, cfg.topics, embedder)
         log.info("%d near-duplicate(s)", len(dups))
+
+    report.threads = assign_threads(
+        state.items,
+        state.threads,
+        state.centroids,
+        cfg,
+        now,
+        new_ids=set(report.new_item_ids),
+        vectors=vectors,
+        get_embedder=get_embedder,
+    )
+    t = report.threads
+    log.info(
+        "threads: %d item(s) assigned (%d joined, %d new pending, %d tracker/fixed, "
+        "%d rescued, %d backfilled); %d thread(s) pruned",
+        t.assigned, t.attached, t.created, t.predefined, t.rescued, t.backfilled, t.pruned,
+    )  # fmt: skip
 
     state.save()
     if out_dir is not None:

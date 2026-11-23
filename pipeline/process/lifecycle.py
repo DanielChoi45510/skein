@@ -10,7 +10,8 @@
   again (§6.5). The owner's merge override (Phase 2b) joins a resurfacing story.
 - A pending thread that isn't promoted within 72 h stays pending (its item
   shows as a single item) but drops its centroid: it can no longer be matched.
-- Tracker and fixed threads (`lifecycle()` is None) are always active.
+- Tracker and fixed threads (`lifecycle()` is None) are always active and keep
+  their config title (renaming one in topics.yaml renames the thread).
 - Threads whose topic or predefined thread left the config are archived.
 
 `prune` deletes pending and archived threads none of whose items are loaded
@@ -69,6 +70,11 @@ def advance(
         life = lifecycle(topic, topics.defaults)
         if life is None:  # tracker / fixed: never cools, goes dormant or archives
             thread.state = "active"
+            thread.title = next(
+                th.title
+                for th in topic.threads or []
+                if predefined_thread_id(topic.id, th.id) == thread.id
+            )
             continue
         if thread.state == "archived":
             centroids.pop(thread.id, None)

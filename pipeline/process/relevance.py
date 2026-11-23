@@ -107,10 +107,13 @@ def assign_topics(
     sources: Mapping[str, Source],
     topics: TopicsFile,
     embedder: Embedder,
-) -> None:
-    """Set topic_id (best-scoring topic of the item's source) and relevance on each item."""
+) -> dict[str, np.ndarray]:
+    """Set topic_id (best-scoring topic of the item's source) and relevance on each item.
+
+    Returns the item vectors (title + excerpt) by id, for thread assignment.
+    """
     if not items:
-        return
+        return {}
     by_id = {t.id: t for t in topics.topics}
     needed = {tid for i in items for tid in sources[i.source_id].topics if tid in by_id}
     anchors = build_anchors((by_id[t] for t in sorted(needed)), embedder)
@@ -122,3 +125,4 @@ def assign_topics(
         best_score, best_topic = max(scored, key=lambda st: st[0])
         item.topic_id = best_topic
         item.relevance = round(best_score, 4)
+    return {i.id: v for i, v in zip(items, vectors, strict=True)}

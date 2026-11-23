@@ -188,6 +188,15 @@ Code: `pipeline/process/threads.py`. For each relevant item in a `threaded` or `
 Mode-specific rules:
 - `tracker` and `fixed`: assign every eligible item to the nearest predefined thread; never create new ones. Each thread's anchor is the embedding of its optional `description` in `topics.yaml`, else its title. A bare title is a weak anchor: with titles only, iPhone and AirPods items went to Wearables (2026-11-22).
 
+**Per run** (`pipeline/process/thread_assign.py`, after relevance scoring):
+- **Who gets assigned:** items in a threaded, question, tracker or fixed topic that are visible, within the topic's lookback, carried by an enabled source, not excluded by title, and not yet in a thread.
+  - Items that pass the relevance threshold are assigned.
+  - Items in the rescue band are tried only in the run that first stores them, so a near-miss isn't re-embedded every hour.
+- **Backfill:** passing items with no thread (all stored items on the first Phase 2a run, or more after a threshold is lowered) are embedded again and assigned.
+- **Order and deps:** items go in (published_at, id) order, so later items can join threads that earlier ones in the same run started. The model is loaded only when something needs a vector.
+- **New threads:** a new pending thread's `created_at` is its item's `first_seen_at`, and its founding item gets `thread_score` 1.0. Tracker and fixed thread records are created when their first item arrives.
+- **Wrap-up:** then the lifecycle runs (§5), threads that changed are retitled, and unused threads are pruned.
+
 **Tuning** (2026-11-22). Labeled set: 50 owner-labeled pairs of real stored items in `tests/fixtures/threading/pairs.json` (18 same thread, 32 different; recorded bge cosines, so tests need no model). Labels show the intended grain: a product line is a thread ("Gemini 4" models, ChatGPT products), while a company alone is not (Anthropic's IPO vs. its safety stance). `python -m pipeline.threadpairs pairs` samples new pairs; `evaluate` grid-searches `fallback` and the boost, ranking by F0.5 because a wrong merge is worse than a missed one.
 - `fallback` 0.80 with the 0.02 boost: no wrong merges, 13 of 18 true pairs joined. DESIGN's first guess of 0.65 merged 20 of the 32 different pairs. Without the boost, the best cut finds only 10 of 18.
 - `T_high` 0.82 sits above the best-scoring different pair (0.79); `T_low` 0.65 sits below the worst-scoring true pair (0.70).

@@ -351,3 +351,34 @@ def test_threshold_change_applies_on_next_run_without_new_items(tmp_path: Path) 
     assert lenient == sum(  # every non-duplicate stored item is exported
         1 for i in read_items(tmp_path / "state").values() if i["hidden_reason"] is None
     )
+
+
+# ───────────────────────────── threads ─────────────────────────────
+
+
+def test_run_threads_eligible_items(tmp_path: Path) -> None:
+    report = do_run(tmp_path, FakeWeb().serve_fixtures())
+    items = read_items(tmp_path)
+    threads = {t["id"]: t for t in read(tmp_path, "threads.json")}
+    modes = {"world": "threaded", "politics": "threaded", "trackers": "tracker", "gadgets": "flat"}
+    for i in items.values():
+        passes = i["hidden_reason"] is None and (i["relevance"] or 0) >= 0.30
+        if modes.get(i["topic_id"]) in ("threaded", "tracker") and passes:
+            assert i["thread_id"] in threads, i["title"]
+            assert i["id"] in threads[i["thread_id"]]["item_ids"]
+        elif modes.get(i["topic_id"]) == "flat":
+            assert i["thread_id"] is None
+    for t in threads.values():
+        if t["topic_id"] == "trackers":
+            assert t["id"].startswith("trackers--") and t["state"] == "active"
+    assert report.threads.assigned == sum(1 for i in items.values() if i["thread_id"])
+    assert set(read(tmp_path, "centroid_ids.json")) <= set(threads)
+
+
+def test_rerun_without_new_items_leaves_threads_unchanged(tmp_path: Path) -> None:
+    do_run(tmp_path, FakeWeb().serve_fixtures())
+    before = snapshot(tmp_path)
+    report = do_run(tmp_path, FakeWeb().serve_fixtures(), now=LATER)
+    assert report.threads.assigned == 0
+    for name in ("threads.json", "centroids.npy", "centroid_ids.json"):
+        assert snapshot(tmp_path)[name] == before[name]
