@@ -45,10 +45,11 @@
       "56aa0bd5222a93c8",
       "a982dd94ed97e04a",
       "95c927307cd733b7",
-      "2766d048a14dcc22"
+      "2766d048a14dcc22",
+      "c710fcbeda59730e"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-23T15:09:43Z",
+    "last_item_at": "2026-11-23T21:45:00Z",
     "state": "active",
     "title": "Major earnings surprises",
     "topic_id": "markets"
@@ -67,10 +68,11 @@
       "ac882ad6c0a8fe19",
       "6c992c3cf6f309e8",
       "34dd0bfc6f38c1c2",
-      "547e0916d06632a0"
+      "547e0916d06632a0",
+      "835c9cf5195f32c9"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-23T13:02:00Z",
+    "last_item_at": "2026-11-23T21:08:00Z",
     "state": "active",
     "title": "Energy",
     "topic_id": "markets"
@@ -117,10 +119,11 @@
       "7251c0248171bb3b",
       "f10c09ecedead20a",
       "67a996cc5dfb1d5d",
-      "1d4f6b6783652841"
+      "1d4f6b6783652841",
+      "051f91077dc69ef9"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-23T19:00:00Z",
+    "last_item_at": "2026-11-23T21:12:00Z",
     "state": "active",
     "title": "Financials",
     "topic_id": "markets"
@@ -173,10 +176,11 @@
       "7c2cdff92f5740e3",
       "70a4e471ba6bb9a2",
       "a3e1759d367a3ca9",
-      "908f38f7dff39f7e"
+      "908f38f7dff39f7e",
+      "e95ca05a87585dcd"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-23T20:21:44Z",
+    "last_item_at": "2026-11-23T21:22:00Z",
     "state": "active",
     "title": "Information Technology",
     "topic_id": "markets"
@@ -190,10 +194,11 @@
       "295795a537947d04",
       "c2811254f14da10f",
       "7c9d37856a45b0d6",
-      "4d4efe6a83bcdcba"
+      "4d4efe6a83bcdcba",
+      "e6af0b3a2e40c497"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-23T08:33:43Z",
+    "last_item_at": "2026-11-23T21:26:51Z",
     "state": "active",
     "title": "Inflation & jobs reports",
     "topic_id": "markets"
@@ -888,6 +893,18 @@
     "topic_id": "health-wellbeing"
   },
   {
+    "created_at": "2026-11-23T21:48:40.140351Z",
+    "id": "t1ae26ecdc3aa",
+    "item_ids": [
+      "b5129d6fc89af52d"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T00:00:00Z",
+    "state": "pending",
+    "title": "Introducing Claude Ship",
+    "topic_id": "ai-news"
+  },
+  {
     "created_at": "2026-11-23T18:48:42.826335Z",
     "id": "t1ba42751f10c",
     "item_ids": [
@@ -1054,7 +1071,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-20T21:22:38Z",
-    "state": "active",
+    "state": "cooling",
     "title": "Lame-Duck Senators Should Not Be Able to Block Good Judicial Nominees",
     "topic_id": "us-politics"
   },
@@ -1190,6 +1207,18 @@
     "state": "pending",
     "title": "Opinion | America Hits the Brakes on AI",
     "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-23T21:48:40.140351Z",
+    "id": "t2de4e638610b",
+    "item_ids": [
+      "1259b534687dd8b3"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T08:00:00Z",
+    "state": "pending",
+    "title": "Richpanel helps companies automate 50% of support in 30 days",
+    "topic_id": "ai-news"
   },
   {
     "created_at": "2026-11-22T09:09:42.410739Z",
@@ -1890,7 +1919,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-20T21:00:00Z",
-    "state": "active",
+    "state": "cooling",
     "title": "Silicon · Valley",
     "topic_id": "us-politics"
   },
@@ -3543,12 +3572,14 @@
       "3e5e3e24a0f6aa63",
       "fc898244b0296dcc",
       "ac9b4c74ae248913",
-      "a4d40e8a7d2893fa"
+      "a4d40e8a7d2893fa",
+      "e8e113b8ffa1b68b",
+      "a017e507be7e1241"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-23T14:46:29Z",
+    "last_item_at": "2026-11-23T21:45:00Z",
     "state": "active",
-    "title": "Ukraine · Strikes · Attack · Russian",
+    "title": "Attack · Russian · Strikes · Ukraine",
     "topic_id": "world-news"
   },
   {
@@ -3627,12 +3658,13 @@
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "t9b5aed59253d",
     "item_ids": [
-      "b56239a4da2ec66c"
+      "b56239a4da2ec66c",
+      "28cc1ec33c3bad07"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-17T21:00:00Z",
-    "state": "pending",
-    "title": "See what 5 builders are making with Gemini 4 Carbon",
+    "last_item_at": "2026-11-23T18:00:00Z",
+    "state": "active",
+    "title": "See · Builders · Making · Gemini",
     "topic_id": "ai-news"
   },
   {
@@ -3848,10 +3880,13 @@
       "dc2f75bdb0006cbe",
       "9497f550831e4347",
       "ed6ad9e1aea09542",
-      "9c8cfec0d3131d57"
+      "9c8cfec0d3131d57",
+      "742679a10b1dc2ca",
+      "21db08f197663db9",
+      "5c04090732f29702"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-23T20:09:33Z",
+    "last_item_at": "2026-11-23T21:41:30Z",
     "state": "active",
     "title": "Trump · Jensen · Huang · Nvidia",
     "topic_id": "us-politics"
@@ -4147,6 +4182,18 @@
     "state": "pending",
     "title": "D.N.C. Plans 12 Debates for the 2028 Presidential Primary, Starting in June",
     "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-23T21:48:40.140351Z",
+    "id": "tb1ba5476150d",
+    "item_ids": [
+      "33e622215f09e704"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T21:21:53Z",
+    "state": "pending",
+    "title": "The Woman Who Took Canada to Court Over Genocide",
+    "topic_id": "world-news"
   },
   {
     "created_at": "2026-11-22T09:09:42.410739Z",
@@ -4681,12 +4728,13 @@
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "tc3ec1ea900fb",
     "item_ids": [
-      "85d0c5a4a983edfb"
+      "85d0c5a4a983edfb",
+      "b6aa410db677fb56"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-20T21:47:10Z",
-    "state": "pending",
-    "title": "Meta reconsiders 2030 net-zero goal amid record emissions from AI data centers",
+    "last_item_at": "2026-11-23T21:09:37Z",
+    "state": "active",
+    "title": "AI · Data · Centers",
     "topic_id": "ai-news"
   },
   {
@@ -5509,7 +5557,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-20T21:43:22Z",
-    "state": "active",
+    "state": "cooling",
     "title": "UK-EU · Deal · Mean",
     "topic_id": "world-news"
   },
@@ -5680,6 +5728,18 @@
     "last_item_at": "2026-11-23T01:23:04Z",
     "state": "pending",
     "title": "More remains recovered in the search for 34 workers missing after an Indonesian candy factory fire",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-23T21:48:40.140351Z",
+    "id": "tf92f7a38b6dc",
+    "item_ids": [
+      "66b54e4c12fd6174"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-20T20:36:00Z",
+    "state": "pending",
+    "title": "What Happened This Year That You’re Grateful For?",
     "topic_id": "world-news"
   },
   {
