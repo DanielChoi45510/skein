@@ -18,7 +18,7 @@ GITHUB_REF = "main"
 # here. A namespace id is not a credential (it only works with your account's login).
 [[kv_namespaces]]
 binding = "SKEIN"
-id = "REPLACE_WITH_KV_NAMESPACE_ID"
+id = "c33359b3bbb94905bb4eea6a4a6384f1"
 
 # Backup trigger for the pipeline (src/cron.ts): dispatches only if no run started
 # in the last 50 min. Free plans allow up to 5 cron triggers.
