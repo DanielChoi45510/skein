@@ -120,10 +120,11 @@
       "f10c09ecedead20a",
       "67a996cc5dfb1d5d",
       "1d4f6b6783652841",
-      "051f91077dc69ef9"
+      "051f91077dc69ef9",
+      "82ce3021d7084914"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-23T21:12:00Z",
+    "last_item_at": "2026-11-23T22:15:00Z",
     "state": "active",
     "title": "Financials",
     "topic_id": "markets"
@@ -215,10 +216,11 @@
       "c008aff4490fc788",
       "a56f071d71c99a96",
       "e9727474d80efe94",
-      "f02b6e5db3612470"
+      "f02b6e5db3612470",
+      "ffb8f6a9dc4458a7"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-23T14:36:59Z",
+    "last_item_at": "2026-11-23T22:25:00Z",
     "state": "active",
     "title": "Materials",
     "topic_id": "markets"
@@ -582,6 +584,18 @@
     "state": "pending",
     "title": "It’s a Permitting Miracle in the Senate",
     "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-23T22:38:09.702477Z",
+    "id": "t0c8161605e3b",
+    "item_ids": [
+      "a3ec37bc11832126"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T21:55:00Z",
+    "state": "pending",
+    "title": "Opinion | Anchors Aweigh on the SS United States",
+    "topic_id": "world-news"
   },
   {
     "created_at": "2026-11-22T09:09:42.410739Z",
@@ -2866,6 +2880,18 @@
     "topic_id": "health-sleep"
   },
   {
+    "created_at": "2026-11-23T22:38:09.702477Z",
+    "id": "t723bca88e57e",
+    "item_ids": [
+      "111cb8227502200b"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T21:57:00Z",
+    "state": "pending",
+    "title": "The GOP’s Post-Trump Future",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-23T07:48:38.314750Z",
     "id": "t730459894953",
     "item_ids": [
@@ -3125,10 +3151,11 @@
       "3dca9d375e0800ac",
       "df95222c573bf7e2",
       "00f6f848d231b94e",
-      "2f88a776f506ef12"
+      "2f88a776f506ef12",
+      "1c5e8fb8dcbf4f6a"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-23T06:01:00Z",
+    "last_item_at": "2026-11-23T21:56:00Z",
     "state": "active",
     "title": "Trump · Putin · Summit · Xi",
     "topic_id": "world-news"
@@ -4209,12 +4236,14 @@
       "10d8e4311cc852dc",
       "005ab5a941284f6b",
       "7b117f0fbba33258",
-      "bcfdecf2d6eb951f"
+      "bcfdecf2d6eb951f",
+      "2e63b1850ce02bc4",
+      "3c53179623c8254a"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-23T11:00:00Z",
+    "last_item_at": "2026-11-23T22:15:26Z",
     "state": "active",
-    "title": "China · Nvidia · Xi · Scandal",
+    "title": "China · Xi · Nvidia · Scandal",
     "topic_id": "world-news"
   },
   {
@@ -4808,6 +4837,18 @@
     "state": "pending",
     "title": "Cost of living protests sweep across Europe",
     "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-23T22:38:09.702477Z",
+    "id": "tcb8a5f83859f",
+    "item_ids": [
+      "b0689cf87ab570a4"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T21:20:00Z",
+    "state": "pending",
+    "title": "OpenAI and Cisco introduce Shirudo",
+    "topic_id": "ai-news"
   },
   {
     "created_at": "2026-11-22T20:20:33.012568Z",
@@ -5455,12 +5496,13 @@
     "created_at": "2026-11-22T03:51:06.410293Z",
     "id": "tf0ed2fbf2eea",
     "item_ids": [
-      "6de15d8bbbb2c91f"
+      "6de15d8bbbb2c91f",
+      "291ac92f825a2742"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-19T10:03:10Z",
-    "state": "pending",
-    "title": "Colombia’s President Is Acquiring a Reputation for Courting Controversy",
+    "last_item_at": "2026-11-23T21:54:00Z",
+    "state": "active",
+    "title": "Cocaine Gangs Batter Colombian Security Forces in Wave of Attacks",
     "topic_id": "world-news"
   },
   {
@@ -5834,12 +5876,14 @@
       "b0dd6261a508b939",
       "04b0c59a769f86d3",
       "3b38f7127b86a94d",
-      "f5ab5067ad25840d"
+      "f5ab5067ad25840d",
+      "4ce697c6dbd75e8a",
+      "fa9136539de5ecb7"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-23T16:30:11Z",
+    "last_item_at": "2026-11-23T22:25:12Z",
     "state": "active",
-    "title": "Huang · Nvidia · Trump · Jensen",
+    "title": "Trump · Nvidia · Jensen · Huang",
     "topic_id": "ai-news"
   },
   {
