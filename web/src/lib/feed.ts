@@ -1,5 +1,5 @@
 import { resolve } from '$app/paths';
-import { SCHEMA_VERSION, type FeedIndex, type TopicFeed } from './types';
+import { SCHEMA_VERSION, type FeedIndex, type ThreadFeed, type TopicFeed } from './types';
 
 // The feed JSON is written next to the built site at deploy time (it isn't in
 // static/ at build time), so its URL is built from the site root.
@@ -30,3 +30,5 @@ async function getJson<T extends { schema_version: number }>(path: string): Prom
 
 export const fetchIndex = () => getJson<FeedIndex>('index.json');
 export const fetchTopic = (id: string) => getJson<TopicFeed>(`topics/${encodeURIComponent(id)}.json`);
+export const fetchThread = (id: string) =>
+	getJson<ThreadFeed>(`threads/${encodeURIComponent(id)}.json`);

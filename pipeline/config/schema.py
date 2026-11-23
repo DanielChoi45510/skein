@@ -8,6 +8,8 @@ Every model forbids unknown keys so a typo fails validation instead of being ign
 from __future__ import annotations
 
 import datetime as dt
+import re
+from dataclasses import dataclass
 from typing import Annotated, Any, Literal
 
 from pydantic import BaseModel, ConfigDict, Field, HttpUrl, StringConstraints, model_validator
@@ -40,6 +42,7 @@ class StrictModel(BaseModel):
 
 class Defaults(StrictModel):
     daily_cap_per_thread: PositiveInt
+    cooling_after_days: PositiveInt  # thread lifecycle (DESIGN §5): active → cooling
     dormant_after_days: PositiveInt
     archive_after_days: PositiveInt
     lookback_days: PositiveInt
@@ -52,10 +55,15 @@ class Group(StrictModel):
 
 
 class FixedThread(StrictModel):
-    """A predefined thread for `tracker` and `fixed` topics."""
+    """A predefined thread for `tracker` and `fixed` topics.
+
+    Items go to the nearest thread by similarity to `description` (else the
+    title). A bare title like "Phones" makes a weak anchor (DESIGN §6.5).
+    """
 
     id: Id
     title: NonEmptyStr
+    description: NonEmptyStr | None = None
     priority: Literal["low", "normal"] = "normal"
 
 
@@ -96,6 +104,7 @@ class Topic(StrictModel):
 
     # Overrides of `defaults`
     daily_cap_per_thread: PositiveInt | None = None
+    cooling_after_days: PositiveInt | None = None
     dormant_after_days: PositiveInt | None = None
     archive_after_days: PositiveInt | None = None
     lookback_days: PositiveInt | None = None
@@ -204,6 +213,12 @@ class Source(StrictModel):
     verified: bool = False
     excerpt: bool = True  # false: drop the feed's description (e.g. when it's boilerplate)
     relevance: SourceRelevance | None = None
+    # Regexes (case-insensitive, re.search): entries whose title matches are dropped,
+    # and stored ones hidden, e.g. stock-quote pages in a search feed (DESIGN §6.2).
+    title_exclude: list[NonEmptyStr] = []
+    # Regexes (case-insensitive) whose matches are removed from titles, e.g. a
+    # " - Reuters" suffix the card already shows as the source. After title_exclude.
+    title_strip: list[NonEmptyStr] = []
     options: dict[str, Any] = {}
 
     @model_validator(mode="after")
@@ -228,6 +243,12 @@ class Source(StrictModel):
                 )
         if self.lean is not None and self.kind not in LEAN_KINDS:
             raise ValueError("`lean` is only allowed with kind reporting, analysis or opinion")
+        for key in ("title_exclude", "title_strip"):
+            for n, pattern in enumerate(getattr(self, key)):
+                try:
+                    re.compile(pattern)
+                except re.error as e:
+                    raise ValueError(f"{key}[{n}] is not a valid regex: {e}") from e
         if self.relevance and self.relevance.skip and len(self.topics) != 1:
             raise ValueError("`relevance: {skip: true}` needs exactly one topic to route items to")
         return self
@@ -274,6 +295,33 @@ class Profile(PrivateModel):
 
 
 # ───────────────────────────── helpers ─────────────────────────────
+
+
+THREADED_MODES = frozenset({"threaded", "question", "tracker", "fixed"})  # DESIGN §6.5
+PREDEFINED_MODES = frozenset({"tracker", "fixed"})  # only the threads listed in config
+
+
+@dataclass(frozen=True)
+class Lifecycle:
+    """A topic's effective thread timings in days (DESIGN §5): topic override, else default."""
+
+    cooling: int
+    dormant: int
+    archive: int
+
+
+LIFECYCLE_FIELDS = ("cooling_after_days", "dormant_after_days", "archive_after_days")
+
+
+def lifecycle(topic: Topic, defaults: Defaults) -> Lifecycle | None:
+    """None for tracker and fixed topics: their threads never cool, go dormant or archive."""
+    if topic.mode in PREDEFINED_MODES:
+        return None
+    return Lifecycle(
+        cooling=topic.cooling_after_days or defaults.cooling_after_days,
+        dormant=topic.dormant_after_days or defaults.dormant_after_days,
+        archive=topic.archive_after_days or defaults.archive_after_days,
+    )
 
 
 def duplicates(ids: list[str]) -> list[str]:

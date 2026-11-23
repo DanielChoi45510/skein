@@ -1,0 +1,376 @@
+[
+  {
+    "topic_id": "us-politics",
+    "thread_id": "t176b7dc766e7",
+    "thread_before": [
+      "The latest from Trump's press conference",
+      "Takeaways From Trump’s Post-Trip News Conference"
+    ],
+    "item": {
+      "id": "bb96c010511f1120",
+      "title": "Week in Politics: Trump returns from Asia; hails trip as one of best in history",
+      "source_id": "npr-politics",
+      "published_at": "2026-11-21T12:40:15+00:00"
+    },
+    "score": 0.801,
+    "group": "multi",
+    "label": true
+  },
+  {
+    "topic_id": "world-news",
+    "thread_id": "ta33d97e12264",
+    "thread_before": [
+      "Why Neither Trump Nor Xi Is Likely to Raise Nvidia at Their Summit",
+      "As Trump and Xi meet, China's AI dreams face an unexpected hurdle: the Nvidia spy scandal",
+      "American State Capitalism Helped Produce the Nvidia Scandal"
+    ],
+    "item": {
+      "id": "c726200f0d4f418f",
+      "title": "Opinion | Chips Aren’t a Magic Bullet for China Risks",
+      "source_id": "wsj-world",
+      "published_at": "2026-11-20T19:55:00+00:00"
+    },
+    "score": 0.8049,
+    "group": "multi",
+    "label": true
+  },
+  {
+    "topic_id": "world-news",
+    "thread_id": "t15db7a30982c",
+    "thread_before": [
+      "The EU that Burnham is eyeing up is very different to the one Britain left",
+      "After Brexit, Britain’s Government Floats ‘Breturn’"
+    ],
+    "item": {
+      "id": "5dd9171adbe58784",
+      "title": "What does the new Brexit deal mean for Northern Ireland?",
+      "source_id": "bbc-europe",
+      "published_at": "2026-11-20T14:41:53+00:00"
+    },
+    "score": 0.8059,
+    "group": "multi",
+    "label": true
+  },
+  {
+    "topic_id": "world-news",
+    "thread_id": "t2f99063a760e",
+    "thread_before": [
+      "Steve Rosenberg: Historic talks with Xi and Trump are a coup for Putin",
+      "Trump’s Nuclear Gambit with Xi and Putin"
+    ],
+    "item": {
+      "id": "d771595d0adedb38",
+      "title": "How Trump Can Avoid a Global Nuclear Arms Race",
+      "source_id": "nyt-opinion",
+      "published_at": "2026-11-19T00:00:05+00:00"
+    },
+    "score": 0.8121,
+    "group": "multi",
+    "label": false
+  },
+  {
+    "topic_id": "world-news",
+    "thread_id": "t5ff5c6480d79",
+    "thread_before": [
+      "Ukrainian Strike Severs Part of Russia’s Crimean Bridge",
+      "Why Ukraine’s Kerch Bridge Strike Matters",
+      "Russia targets Kyiv crossings days after Ukraine hits Crimean Bridge",
+      "Russia Steps Up Attacks on Kyiv’s Bridges",
+      "What we know about the latest Russian missile strikes on Ukraine",
+      "Zelensky says Crimean Bridge strikes 'fair response' as he meets UK's Streeting"
+    ],
+    "item": {
+      "id": "fa30b29d765c8b1e",
+      "title": "Ballistic missile attack on Zelenskyy's hometown in central Ukraine kills 2 and wounds scores",
+      "source_id": "ap-top",
+      "published_at": "2026-11-21T16:35:34+00:00"
+    },
+    "score": 0.8251,
+    "group": "multi",
+    "label": true
+  },
+  {
+    "topic_id": "world-news",
+    "thread_id": "ta33d97e12264",
+    "thread_before": [
+      "Why Neither Trump Nor Xi Is Likely to Raise Nvidia at Their Summit",
+      "As Trump and Xi meet, China's AI dreams face an unexpected hurdle: the Nvidia spy scandal"
+    ],
+    "item": {
+      "id": "582f3699c33479e1",
+      "title": "American State Capitalism Helped Produce the Nvidia Scandal",
+      "source_id": "wsj-world",
+      "published_at": "2026-11-20T17:08:00+00:00"
+    },
+    "score": 0.827,
+    "group": "multi",
+    "label": true
+  },
+  {
+    "topic_id": "world-news",
+    "thread_id": "t5cfcf0d0ff32",
+    "thread_before": [
+      "UN climate talk negotiators go into second day of overtime while at odds over fossil fuels",
+      "New draft deal aims to avert collapse of talks at COP31 climate summit"
+    ],
+    "item": {
+      "id": "ca280e82c6b6ff3d",
+      "title": "COP31 fails to reach major climate deal as talks expose deep divisions",
+      "source_id": "bbc-world",
+      "published_at": "2026-11-22T18:17:59+00:00"
+    },
+    "score": 0.829,
+    "group": "multi",
+    "label": true
+  },
+  {
+    "topic_id": "world-news",
+    "thread_id": "t2f99063a760e",
+    "thread_before": [
+      "Steve Rosenberg: Historic talks with Xi and Trump are a coup for Putin",
+      "Trump’s Nuclear Gambit with Xi and Putin",
+      "How Trump Can Avoid a Global Nuclear Arms Race",
+      "This is a remarkable diplomatic moment for China's Xi - but it comes with pitfalls",
+      "Behind Trump Meeting, Xi and Putin Share a Vision of Usurping U.S. Power",
+      "Putin, Trump and Xi Condemn Nuclear War as Europe Watches Closely",
+      "At Summit With Xi and Putin, Trump Seeks to Project Power Abroad While Sharing It at Home",
+      "BBC correspondents discuss what Trump, Xi and Putin got out of historic talks",
+      "Trump, Xi, Putin End Historic Summit With Denunciation of Nuclear War",
+      "Xi Jinping’s Say-Nothing Summit",
+      "Trump-Xi Summit Shows Putin’s Powerful Friendships Have Their Limits",
+      "Opinion | Nuclear Peace in Our Time. Not",
+      "An Overhyped Trilateral Summit",
+      "Putin Exits Summit With Symbolic Win, Saying He and Trump Share ‘Values’",
+      "At APEC Summit, U.S., China and Russia Vow to Increase Oil Supply Amid Global Energy Transition",
+      "The Latest: Trump says Putin wants to end war despite Russia rejecting Kushner’s claims of progress",
+      "Trump defends calling Putin a friend but says he ‘can’t speak’ to whether he's a friend to the US",
+      "Trump Flaunts Camaraderie With Xi and Putin but Has Little to Show for It",
+      "Zelensky says Putin is a 'killer' after Trump calls Russian leader a friend",
+      "What Trump’s Summit in China Reveals",
+      "Opinion | Vladimir Putin’s Existential Fight for Ukraine"
+    ],
+    "item": {
+      "id": "00f6f848d231b94e",
+      "title": "Opinion | Excusing ‘My Friend’ Vladimir",
+      "source_id": "wsj-world",
+      "published_at": "2026-11-22T22:00:00+00:00"
+    },
+    "score": 0.8299,
+    "group": "multi",
+    "label": false
+  },
+  {
+    "topic_id": "world-news",
+    "thread_id": "t877953abeed0",
+    "thread_before": [
+      "The Return of Measles: Tracing the Cause",
+      "RFK Jr. and the U.S. Measles Revival"
+    ],
+    "item": {
+      "id": "40ffaa0deb1f5a0d",
+      "title": "WSJ Opinion: How Can the U.S. Regain ‘Measles Elimination Status’?",
+      "source_id": "wsj-opinion",
+      "published_at": "2026-11-20T23:58:00+00:00"
+    },
+    "score": 0.8421,
+    "group": "multi",
+    "label": true
+  },
+  {
+    "topic_id": "us-politics",
+    "thread_id": "tfab21411b566",
+    "thread_before": [
+      "Democrats clinch a historic House majority of at least 258 seats, the largest since 1992",
+      "Democrats Clinch 258 House Seats, an Election-Year Record This Century"
+    ],
+    "item": {
+      "id": "122b9b962e31a498",
+      "title": "North Carolina win gives Democrats biggest US House majority since early 1990s",
+      "source_id": "reuters-world",
+      "published_at": "2026-11-22T22:04:25+00:00"
+    },
+    "score": 0.8435,
+    "group": "multi",
+    "label": true
+  },
+  {
+    "topic_id": "world-news",
+    "thread_id": "t15db7a30982c",
+    "thread_before": [
+      "The EU that Burnham is eyeing up is very different to the one Britain left",
+      "After Brexit, Britain’s Government Floats ‘Breturn’",
+      "What does the new Brexit deal mean for Northern Ireland?",
+      "Britain Announces Brexit Reset Deal at E.U. Summit: What to Know"
+    ],
+    "item": {
+      "id": "03eb8dde151d689a",
+      "title": "Britain and Brussels Have Begun a Brexit Rollback. How Far Will It Go?",
+      "source_id": "nyt-world",
+      "published_at": "2026-11-20T20:22:14+00:00"
+    },
+    "score": 0.8495,
+    "group": "multi",
+    "label": true
+  },
+  {
+    "topic_id": "us-politics",
+    "thread_id": "t3c6fc61241e9",
+    "thread_before": [
+      "Congrats on Your Anthropic Shares",
+      "What the Anthropic IPO Means for the AI Future",
+      "The Astonishing Wealth of Anthropic",
+      "Anthropic's IPO caps an explosive growth period for the AI startup, filled with contradictions",
+      "The Anthropic I.P.O. Will Change the Future of A.I."
+    ],
+    "item": {
+      "id": "9664dc95dbab756f",
+      "title": "EXCLUSIVE: Like SpaceX, Anthropic ran an unusual IPO process, chafing some bankers",
+      "source_id": "reuters-world",
+      "published_at": "2026-11-22T11:10:45+00:00"
+    },
+    "score": 0.8512,
+    "group": "multi",
+    "label": true
+  },
+  {
+    "topic_id": "world-news",
+    "thread_id": "ta33d97e12264",
+    "thread_before": [
+      "Why Neither Trump Nor Xi Is Likely to Raise Nvidia at Their Summit",
+      "As Trump and Xi meet, China's AI dreams face an unexpected hurdle: the Nvidia spy scandal",
+      "American State Capitalism Helped Produce the Nvidia Scandal",
+      "Opinion | Chips Aren’t a Magic Bullet for China Risks",
+      "Giving Howard Lutnick His Due: China Is a Hard Problem"
+    ],
+    "item": {
+      "id": "005ab5a941284f6b",
+      "title": "China’s Spies Set Sights on A.I. Chips Years Before Nvidia Scandal",
+      "source_id": "nyt-world",
+      "published_at": "2026-11-22T04:28:43+00:00"
+    },
+    "score": 0.8686,
+    "group": "multi",
+    "label": true
+  },
+  {
+    "topic_id": "world-news",
+    "thread_id": "t2f99063a760e",
+    "thread_before": [
+      "Steve Rosenberg: Historic talks with Xi and Trump are a coup for Putin",
+      "Trump’s Nuclear Gambit with Xi and Putin",
+      "How Trump Can Avoid a Global Nuclear Arms Race",
+      "This is a remarkable diplomatic moment for China's Xi - but it comes with pitfalls",
+      "Behind Trump Meeting, Xi and Putin Share a Vision of Usurping U.S. Power",
+      "Putin, Trump and Xi Condemn Nuclear War as Europe Watches Closely"
+    ],
+    "item": {
+      "id": "2db3d6e535316793",
+      "title": "At Summit With Xi and Putin, Trump Seeks to Project Power Abroad While Sharing It at Home",
+      "source_id": "nyt-world",
+      "published_at": "2026-11-19T17:05:18+00:00"
+    },
+    "score": 0.8711,
+    "group": "multi",
+    "label": true
+  },
+  {
+    "topic_id": "us-politics",
+    "thread_id": "t3c6fc61241e9",
+    "thread_before": [
+      "Congrats on Your Anthropic Shares",
+      "What the Anthropic IPO Means for the AI Future",
+      "The Astonishing Wealth of Anthropic"
+    ],
+    "item": {
+      "id": "288a7346dc293145",
+      "title": "Anthropic's IPO caps an explosive growth period for the AI startup, filled with contradictions",
+      "source_id": "ap-us",
+      "published_at": "2026-11-20T05:01:06+00:00"
+    },
+    "score": 0.8764,
+    "group": "multi",
+    "label": true
+  },
+  {
+    "topic_id": "us-politics",
+    "thread_id": "ta557c7c0234e",
+    "thread_before": [
+      "Can Nvidia Thrive Without Jensen Huang?",
+      "Jensen Huang’s Offense Wasn’t Infidelity",
+      "Alice Huang, Accused of Spying on Nvidia’s CEO, Is Linked to Firms With Ties to China’s Military"
+    ],
+    "item": {
+      "id": "fea8a8674624f72e",
+      "title": "U.S. Tracked Alice Huang’s Contacts With China Spy Agency During Nvidia Affair",
+      "source_id": "nyt-politics",
+      "published_at": "2026-11-23T00:05:50+00:00"
+    },
+    "score": 0.8776,
+    "group": "multi",
+    "label": true
+  },
+  {
+    "topic_id": "world-news",
+    "thread_id": "ta33d97e12264",
+    "thread_before": [
+      "Why Neither Trump Nor Xi Is Likely to Raise Nvidia at Their Summit"
+    ],
+    "item": {
+      "id": "a0216c6ea54c79d5",
+      "title": "As Trump and Xi meet, China's AI dreams face an unexpected hurdle: the Nvidia spy scandal",
+      "source_id": "bbc-asia",
+      "published_at": "2026-11-17T23:02:12+00:00"
+    },
+    "score": 0.803,
+    "group": "single",
+    "label": true
+  },
+  {
+    "topic_id": "world-news",
+    "thread_id": "t7ae8f89369f4",
+    "thread_before": [
+      "Hegseth Cements New Military Deal in Visit to Venezuela"
+    ],
+    "item": {
+      "id": "c8ed71db85d33cab",
+      "title": "Venezuela signs military deal with US less than a year after Maduro's removal",
+      "source_id": "bbc-latam",
+      "published_at": "2026-11-19T13:31:23+00:00"
+    },
+    "score": 0.8047,
+    "group": "single",
+    "label": true
+  },
+  {
+    "topic_id": "world-news",
+    "thread_id": "t5cfcf0d0ff32",
+    "thread_before": [
+      "UN climate talk negotiators go into second day of overtime while at odds over fossil fuels"
+    ],
+    "item": {
+      "id": "b60ea2405000155d",
+      "title": "New draft deal aims to avert collapse of talks at COP31 climate summit",
+      "source_id": "bbc-world",
+      "published_at": "2026-11-22T06:54:06+00:00"
+    },
+    "score": 0.8322,
+    "group": "single",
+    "label": true
+  },
+  {
+    "topic_id": "ai-news",
+    "thread_id": "tfc446d87b4c9",
+    "thread_before": [
+      "Jensen Huang allies build a \"war room\" to get him back at Nvidia"
+    ],
+    "item": {
+      "id": "04b0c59a769f86d3",
+      "title": "“Trump was in bed with Jensen”: Critics balk at Huang’s wish to return to Nvidia",
+      "source_id": "ars-ai",
+      "published_at": "2026-11-17T20:32:55+00:00"
+    },
+    "score": 0.8327,
+    "group": "single",
+    "label": true
+  }
+]

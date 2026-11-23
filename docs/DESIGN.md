@@ -61,6 +61,8 @@ type Source = {
   verified: boolean;                        // returned a valid feed in a real run (default false)
   excerpt: boolean;                         // default true; false drops the feed's description (boilerplate feeds)
   relevance?: { threshold: number } | { skip: true };  // §6.4
+  title_exclude?: string[];                 // regexes (case-insensitive): matching titles are dropped / hidden (§6.2)
+  title_strip?: string[];                   // regexes (case-insensitive): matching text is removed from titles (§6.2)
   options?: Record<string, unknown>;        // e.g. reddit min_score; region (§8.4); Phase 4 type settings
 };
 
@@ -75,6 +77,7 @@ type Item = {
   duplicate_of?: string;      // set with hidden_reason "duplicate"
   topic_id?: string; thread_id?: string;
   relevance?: number;         // 0–1 (§6.4); topic_id is the best-scoring topic
+  thread_score?: number;      // similarity to the thread when attached (rescue, §6.5)
   // importance (§6.6) depends on the current time: computed at export, never stored
   extra: Record<string, unknown>;           // small source metadata (e.g. Reddit score, flair)
   labels: {
@@ -88,14 +91,15 @@ type Item = {
   study_card?: StudyCard;     // §8.2
 };
 
+// Stored in threads.json; see pipeline/models.py.
 type Thread = {
   id: string; topic_id: string;
-  kind: "story" | "tracker" | "question" | "patch" | "fixed";
-  title: string;              // LLM-named, or keyword fallback
+  kind: "story" | "tracker" | "question" | "fixed";   // from the topic's mode ("patch" is parked, §16)
+  title: string;              // LLM-named, or keyword fallback; config title for tracker/fixed threads
   state: "pending" | "active" | "cooling" | "dormant" | "archived";
-  created_at: string; last_item_at: string;
-  centroid: number[];         // embedding centroid (stored separately, §10.1)
-  item_ids: string[];
+  created_at: string; last_item_at: string;           // last_item_at: newest item's published_at
+  // centroid: stored separately (centroids.npy, §10.1), only while the thread can be matched
+  item_ids: string[];         // in attach order
   primer?: { text: string; sources: string[]; generated_at: string };   // §8.5
   region?: string;
   pinned?: boolean; muted?: boolean;          // owner overrides
@@ -124,14 +128,18 @@ pending ──(2+ items or high importance)──▶ active ──(no items N da
                                               └──────── new matching item ◀────────────┘
 ```
 
-- **pending:** a new thread with one item. Shown inline as a single item and only promoted to a thread when a second item arrives within 72 h, or when the first item's importance is very high. This prevents a flood of one-item threads.
+- **pending:** a new thread with one item. Shown inline as a single item and only promoted to a thread when a second item arrives within 72 h, or when the first item's importance is very high: in practice, at least 2 other sources carried it (`also_covered_by`), since importance itself depends on the time of export. This prevents a flood of one-item threads. After 72 h a pending thread can no longer be matched (its centroid is dropped); its item stays a single item.
 - **cooling:** sinks in the topic list.
 - **dormant:** grayed out and collapsed at the bottom of the topic.
-- **archived:** hidden; searchable.
-- A dormant or archived thread **revives** when a new item matches it, keeping its full history.
-- Timings are per topic (`dormant_after_days`, `archive_after_days`). Defaults: politics 7–14 days; AI ~21; trackers and fixed threads never.
+- **archived:** hidden; searchable. Its centroid is dropped, so it is never matched again (§6.5).
+- A cooling or dormant thread **revives** (back to active) when a new item matches it, keeping its full history. Archived threads don't revive: a new item starts a new thread. When an archived story resurfaces, the owner joins the new thread to the old one with the **merge** override (Phase 2b, below); the pipeline never does this on its own.
+- Timings are per topic, counted from the thread's last item: `cooling_after_days`, `dormant_after_days`, `archive_after_days` (topic override, else `defaults`). The validator requires cooling < dormant < archive, and rejects these keys on tracker and fixed topics. Defaults: cooling 3 days (health questions 30); dormant: politics 10, world and jobs 14, AI 21, health 120. Tracker and fixed threads never cool, go dormant or archive.
 
-**Owner overrides** (stored by the Worker, applied at the start of each pipeline run): rename, pin, mute, merge two threads, split items out to a new thread, move an item to another thread.
+Code: `pipeline/process/lifecycle.py`, run every pipeline run, so states follow the clock even without new items. Threads whose topic left the config or stopped being threaded, and predefined threads removed from the config, are archived. Pending and archived threads none of whose items are still loaded (the 30-day item window) are deleted from `threads.json`.
+
+**Titles** (until Phase 3 names threads with the LLM): a promoted thread is titled with up to 4 words its headlines share, as "A · B · C". Words used by more headlines come first, named entities win ties, and the order and spelling follow the newest headline, e.g. "GPT-6.2 · Astra · Sol" or "Trump · Xi · Putin · Historic". With fewer than two shared words, the newest headline is the title. Pending threads use their item's headline; tracker and fixed threads keep their config title. Titles are recomputed whenever items attach.
+
+**Owner overrides** (Phase 2b; stored by the Worker, applied at the start of each pipeline run): rename, pin, mute, merge two threads, split items out to a new thread, move an item to another thread.
 
 ## 6. Pipeline
 
@@ -151,6 +159,9 @@ fetch → normalize → dedupe → embed → relevance → classify/filter → a
 
 ### 6.2 Normalize
 Canonicalize URLs (strip tracking params), parse dates to UTC, trim the excerpt to ≤300 chars, and drop items older than the topic's lookback window.
+- **Titles** are cleaned: inline formatting tags (`<i>`, `<em>`, `<b>`, `<a>`, `<span>` …) are removed and entities decoded, because some feeds double-encode markup. Other angle-bracket text stays: a literal "<canvas>" in a headline is text. The export cleans titles again, so items stored before this rule display the same.
+- **`title_exclude`** (per source, `sources.yaml`): entries whose cleaned title matches any pattern are dropped. Stored items are checked again at export and before threading, so a new pattern also hides what the source already delivered. An item stays if another source that carried it doesn't exclude it (as with thresholds, §6.4). First use: the Reuters markets search feed returns stock-quote pages ("Nutrien Ltd (NTR.TO) | Stock Price & Latest News - Reuters"): 94 of its first 96 items (2026-11-22).
+- **`title_strip`** (per source): matching text is then removed from the title, e.g. the " - Reuters" that Google News appends; the card already shows the source. It runs after `title_exclude`, so exclude patterns see the title as sent. It never strips a title to nothing, and the export applies it again for titles stored before.
 
 ### 6.3 Dedupe
 1. Exact: canonical URL hash (tracking params like `utm_*`, `smid`, `fbclid` stripped; fragment dropped; params sorted). A second source adds itself to `also_covered_by`; a strictly higher-weight source takes the item over.
@@ -166,19 +177,43 @@ Canonicalize URLs (strip tracking params), parse dates to UTC, trim the excerpt 
 - Calibrate with `python -m pipeline.calibrate --state DIR`: scores stored items (instruction off and on) and prints per-topic percentiles, counts kept at candidate thresholds, and sample titles.
 - For job listings and gear trackers, the private profile adds an extra similarity term (§10.3).
 
-### 6.5 Thread assignment (threaded / question / tracker)
-For each relevant item in a threaded topic:
-1. Candidates: the topic's threads (any state except archived), ranked by cosine(item, thread centroid), with a boost for overlapping named entities.
-2. Top score ≥ `T_high` (start at 0.75) with a clear margin → attach.
-3. Between `T_low` (0.55) and `T_high` → ask the LLM to pick among the top 3 or "new thread". If the LLM is unavailable: attach if ≥ 0.65, else new.
+### 6.5 Thread assignment (threaded / question / tracker / fixed)
+Code: `pipeline/process/threads.py`. For each relevant item in a `threaded` or `question` topic (visible, within lookback, passing the relevance threshold), in (published_at, id) order:
+1. Candidates: the topic's threads that can still be matched: active, cooling and dormant, plus pending threads less than 72 h old. Never archived (§5). Score = cosine(item, thread centroid) + entity boost: +0.02 per named entity shared with the thread's item titles, capped at +0.06. Entities are rough: tokens with digits (GPT-5), acronyms (NATO), mixed case (OpenAI) and capitalized non-first words, minus common title-case words and bracketed feed tags ("[AINews]").
+2. Top score ≥ `T_high` (**0.82**) with a margin ≥ 0.05 over the second → attach.
+3. Between `T_low` (**0.65**) and `T_high`, or ≥ `T_high` without the margin → the gray zone: ask the LLM to pick among the top 3 or "new thread" (Phase 3). If the LLM is unavailable, attach if the score reaches the cut, else new:
+   - `fallback` (**0.68**) for a one-item (pending) thread;
+   - `grown` (**0.80**) for a thread that already has 2+ items.
+
+   Until Phase 3, these two cuts are what actually decide attach vs. new.
 4. Otherwise → new `pending` thread.
-5. Update the centroid as a recency-weighted average.
+5. Update the centroid as a recency-weighted average: `c ← normalize((1−α)c + αv)`, α = max(1/n, 0.25).
 
 Mode-specific rules:
-- `tracker` and `fixed`: assign only to the predefined threads (nearest by similarity); never create new ones.
-- Thresholds are tuned against a small hand-labeled set in `tests/fixtures/threading/`.
+- `tracker` and `fixed`: assign every eligible item to the nearest predefined thread; never create new ones. Each thread's anchor is the embedding of its optional `description` in `topics.yaml`, else its title. A bare title is a weak anchor: with titles only, iPhone and AirPods items went to Wearables (2026-11-22).
 
-**Thread rescue** (Phase 2): an item scoring within 0.05 below its topic's relevance threshold (§6.4) is kept anyway if it attaches to an active thread with similarity ≥ `T_high`. Short or terse headlines that belong to a story already being followed shouldn't be lost to the threshold.
+**Per run** (`pipeline/process/thread_assign.py`, after relevance scoring):
+- **Who gets assigned:** items in a threaded, question, tracker or fixed topic that are visible, within the topic's lookback, carried by an enabled source, not excluded by title, and not yet in a thread.
+  - Items that pass the relevance threshold are assigned.
+  - Items in the rescue band are tried only in the run that first stores them, so a near-miss isn't re-embedded every hour.
+- **Backfill:** passing items with no thread (all stored items on the first Phase 2a run, or more after a threshold is lowered) are embedded again and assigned.
+- **Order and deps:** items go in (published_at, id) order, so later items can join threads that earlier ones in the same run started. The model is loaded only when something needs a vector.
+- **New threads:** a new pending thread's `created_at` is its item's `first_seen_at`, and its founding item gets `thread_score` 1.0. Tracker and fixed thread records are created when their first item arrives.
+- **Wrap-up:** then the lifecycle runs (§5), threads that changed are retitled, and unused threads are pruned.
+
+**Tuning** (2026-11-22). Labeled set: 50 owner-labeled pairs of real stored items in `tests/fixtures/threading/pairs.json` (18 same thread, 32 different; recorded bge cosines, so tests need no model). **Thread grain** (owner rubric, `tests/fixtures/threading/README.md`): a thread is **one subject** the news keeps coming back to, with its developments, consequences and commentary. That can be a company (Nvidia: scandal, chips and exports together), a product line (Gemini), a war (Ukraine), or an event and its aftermath (the Trump–Xi–Putin summit). Topics are the umbrellas above threads. Group by what a story is about, not who it mentions: Trump in US politics doesn't make two stories one subject. Different subjects that only share a theme stay apart. `python -m pipeline.threadpairs pairs` samples new pairs; `evaluate` grid-searches `fallback` and the boost, ranking by F0.5 because a wrong merge is worse than a missed one.
+- **`fallback` 0.68** with the 0.02 boost, at the subject grain (31 same, 19 different): 28 of 31 joined, 3 of 19 merged (precision and recall 0.90). At the first, narrower grain the best cut was 0.80.
+- `T_high` 0.82 sits above the best-scoring different pair (0.79); `T_low` 0.65 sits at or below the worst-scoring true pair (0.653).
+- The margin can't be measured on pairs (one candidate each), so the 0.05 guess stays.
+- Pairs stand in for item-vs-centroid scores: for a one-item pending thread they are the same. Joins to grown threads score higher, because a centroid is an average and so more generic.
+- **Real joins** (`joins.json`, 20 joins from the first full run, cut 0.80): 18 of 20 belong. At 0.83 the two wrong joins go, but so do 8 of the 18 right ones.
+- **Why grown threads need their own cut.** At 0.68 for every thread, a re-run of the first full run chained: an op-ed seeded a 78-item catch-all of US politics opinion (45% of the topic). Each loose join made the centroid more generic, and so the next join easier. Sweeping the grown cut (0.68 / 0.72 / 0.75 / 0.78 / 0.80):
+  - **0.75:** the largest US politics thread is still a generic "Republicans · Democrats · Senate" mix (17 items).
+  - **0.78:** a 9-item chain of post-midterm op-eds remains.
+  - **0.80:** no catch-alls (largest: the Anthropic IPO, 9 items). The Ukraine war (13 items), the summit (23) and the Nvidia scandal (10) each form one thread.
+- No "too-common name" rule is needed: the entity boost is capped at +0.06, and the grown cut alone stops the Trump catch-all.
+
+**Thread rescue** (Phase 2): an item scoring within 0.05 below its topic's relevance threshold (§6.4), for the most lenient source that carried it, is kept anyway if its best match is an **active** thread scoring ≥ `T_high`. It never creates a thread. The similarity is stored as `thread_score`, so the export can apply the rule from stored data. Short or terse headlines that belong to a story already being followed shouldn't be lost to the threshold.
 
 ### 6.6 Rank and cap
 `importance = relevance × source_weight × (1 + 0.3·ln(1 + corroborating_sources)) × freshness_decay`
@@ -202,11 +237,22 @@ The LLM client takes a provider list (`github_models` → fallbacks). Calls use 
 ### 6.8 Export and deploy
 Write the static JSON the site reads (`feed/index.json`, `feed/topics/<id>.json`, `feed/threads/<id>.json`). Build the SvelteKit site and deploy to GitHub Pages in the same workflow.
 
-The contract is `pipeline/export/models.py` (`schema_version` 1):
-- `feed/index.json`: `generated_at`; groups → topics `{id, name, mode, has_sources, visible_count, collapsed_count, latest_first_seen_at}`; sources `{id, name, type, status, lean, kind, paywall}`.
-- `feed/topics/<id>.json` (Phase 1: every topic as a flat ranked list): items within the topic's lookback, grouped by UTC day of publication (newest first), ranked by importance; each item `{id, title, url, source_id, published_at, first_seen_at, excerpt, importance, also_covered_by, collapsed}`. Hidden items are never exported, and neither are items carried only by disabled or removed sources: disabling a source hides its stored items on the next run.
+The contract is `pipeline/export/models.py` (`schema_version` **2** since Phase 2a; the app refuses a feed of another version and asks for a reload):
+- **Exported items:**
+  - Visible, routed to a topic, and carried by an enabled source: disabling a source hides its stored items on the next run.
+  - Not title-excluded by every source that carried them (`title_exclude`, §6.2).
+  - Passing the relevance threshold, or **rescued**: in the rescue band and attached to a listed thread with `thread_score ≥ T_high` (§6.5). A thread that cools keeps what it rescued.
+  - Each item `{id, title, url, source_id, published_at, first_seen_at, excerpt, importance, also_covered_by, collapsed}`; titles cleaned and stripped by the item's own source's `title_strip` (§6.2).
+- `feed/index.json`: `generated_at`; groups → topics `{id, name, mode, has_sources, visible_count, collapsed_count, latest_first_seen_at}` (thread items counted too); sources `{id, name, type, status, lean, kind, paywall}`.
+- `feed/topics/<id>.json`:
+  - `threads`: the topic's **listed** threads (active, cooling, dormant; not pending or archived) with at least one exported item, newest update first. Each summary is `{id, title, kind, state, last_item_at, item_count, collapsed_count, latest_first_seen_at, first_seen, latest}`. `first_seen` lists the shown items' `first_seen_at` (for "N new"); `latest` is the newest item, for a preview. Not limited to the lookback, so dormant threads still list.
+  - `days`: the other items within the topic's lookback, grouped by UTC day of publication (newest first) and ranked by importance. For flat topics that's every item; for threaded ones, pending single items and unthreaded ones.
+- `feed/threads/<id>.json`: `{id, topic_id, title, kind, state, created_at, last_item_at, days}` with every exported item of the thread among the loaded items (≈ 30 days), by UTC day, ranked by importance. Stale topic and thread files are removed.
 - Days are UTC in the export; the frontend regroups items by the viewer's local day for display. Per-day caps still count UTC days, so a local day can show slightly more than one day's cap.
-- Phase 1 caps: `max_per_day` per day; `max_per_week` / `target_per_week` over the trailing 7 days, `max_per_month` over 30; otherwise `defaults.daily_cap_per_thread` per day. Over-cap items are exported with `collapsed: true`.
+- **Caps:**
+  - Topic `days`: `max_per_day` per day; `max_per_week` / `target_per_week` over the trailing 7 days, `max_per_month` over 30; otherwise `defaults.daily_cap_per_thread` per day.
+  - Thread files: the per-thread daily cap, `daily_cap_per_thread` (topic override, else default 5).
+  - Over-cap items are exported with `collapsed: true` and never dropped.
 
 ## 7. Filters and labels
 
@@ -281,7 +327,15 @@ SvelteKit static app, installable PWA, dark mode first, responsive from phone to
 ### 9.1 Views
 - **Home:** topic groups with "N new" counts per topic; ends with "You're all caught up."
 - **Topic:** threads sorted by last update; cooling threads lower; dormant threads grayed and collapsed at the bottom. Flat topics show a ranked list.
+  - **Threaded modes** (threaded, question, tracker, fixed):
+    - Active threads and single items (pending threads and unthreaded items) interleave by last update. Single items over the topic's cap sit behind "+N more single stories".
+    - Cooling threads follow under "Quiet lately". Dormant threads are behind "Show N dormant threads", grayed.
+    - A thread card shows its title, the number of updates, the last update, "N new" since the last visit, and the newest headline, which links out to the article.
+  - **"N new"** for a topic counts its single items and the shown items of its threads.
 - **Thread (catch-up view):** "N updates since <your last visit>", newest first, with a toggle for chronological; primer at the top when applicable; per-day groups with the cap and "+N more".
+  - Since Phase 2a: "First visit · N updates" when never opened.
+  - "Newest first" / "Oldest first" orders days and the items within them by time. The export's per-thread cap still decides what sits behind "+N more".
+  - The chosen order is remembered per browser.
 - **Item card:** title, source, time, labels and badges (🔒 for `paywall: partial | full`), excerpt. Tap → opens the original article. On an installed PWA, out-of-scope links open in the system's in-app browser sheet; on desktop, a new tab.
 - **Hidden items:** filtered items with their reasons.
 - **Sources:** per-source health and usefulness (§9.4).
@@ -291,6 +345,11 @@ SvelteKit static app, installable PWA, dark mode first, responsive from phone to
 - Everyone sees the same public, read-only site.
 - With the owner token present, read state syncs through the Worker, and owner controls appear: refresh now, mute, pin, rename, merge, split, move item.
 - Visitors' read marks stay in their own browser only and affect nothing.
+- **Phase 2a read state** (`web/src/lib/readState.ts`, localStorage, this browser only) has two stores:
+  - **Per topic:** opening a topic marks everything in it seen, its threads' items included. This drives the home page's "N new".
+  - **Per thread:** opening a thread marks it seen.
+  - **Seeding:** when a topic page loads, threads never opened inherit the topic's previous visit. So a thread card's "N new" and the thread page's "N updates since your last visit" agree.
+  - Phase 2b syncs both through the Worker.
 
 ### 9.3 Refresh
 The app re-fetches the feed JSON every few minutes while open. "Refresh now" (owner) → Worker → GitHub `workflow_dispatch` → about a minute later the new feed appears.
@@ -302,9 +361,9 @@ For each source: items fetched, shown, opened, hidden (by reason), last success 
 ## 10. Hosting, data and security
 
 ### 10.1 Storage
-- State lives on an orphan `data` branch as JSON/NDJSON: items partitioned by day, `threads.json`, centroids as `.npy`, and an LLM cache.
+- State lives on an orphan `data` branch as JSON/NDJSON: items partitioned by day, `threads.json` (sorted by id), thread centroids as float32 rows in `centroids.npy` named in order by `centroid_ids.json` (only threads that can still be matched), and an LLM cache.
 - Fetch state: `http_cache.json` (ETag / Last-Modified per feed URL) and `source_health.json` (per source: last attempt, status, last success, item count, last error, consecutive failures, feed title). All state is written once at the end of a run, so a crashed run never saves validators for items it didn't store.
-- Only the last ~30 days of item embeddings are kept.
+- Item embeddings are **not** stored (decided 2026-11-22): ~10–20 MB of vectors rewritten by every hourly commit isn't worth it. New items are embedded anyway; any other item that needs a vector (e.g. the one-time thread backfill) is embedded again.
 - The `data` branch is squashed periodically (history isn't needed) so the repo stays small.
 - Each run checks out `data`, updates it, commits and pushes. Concurrency: workflow-level `concurrency` group so runs never overlap.
 - Implementation: `.github/workflows/pipeline.yml` (hourly at :17 + `workflow_dispatch`) uses `.github/scripts/state.sh` to check `data` out as a git worktree (the first run creates the orphan branch) and to commit and push. Pushes are never forced: a run that somehow missed the existing branch is rejected instead of replacing state. Source health timestamps change every run, so `data` gets about one commit per hour until squashing exists.
@@ -357,7 +416,7 @@ Only build the current phase.
 |---|---|
 | **0. Setup** | Repo, `.gitignore`, pre-commit (secret scan, lint), `AGENTS.md` symlink, config schemas + validator (pydantic), CI running tests + validator. |
 | **1. MVP feed** | RSS + Reddit fetch → normalize → dedupe → embed → relevance → **flat** ranked lists per topic → JSON export → SvelteKit PWA on GitHub Pages, hourly. No LLM. Genshin source stays disabled. |
-| **2. Threads** | Thread assignment + lifecycle, per-thread caps, catch-up view, owner Worker (read sync, refresh, overrides). |
+| **2. Threads** | **2a:** thread assignment + lifecycle, per-thread caps, catch-up view (read state in localStorage). **2b:** owner Worker (read sync, refresh, overrides incl. merge). |
 | **3. LLM layer** | Content-kind labels, filter checks, thread titles, primers, opinion balance. |
 | **4. Special lanes** | Study cards, tech trackers with gear comparison, job listings, world weekly roundup, reading list, source report, Hidden screen. |
 | **5. Polish & open source** | Setup docs for forkers, demo mode with sample data, performance and accessibility pass. |

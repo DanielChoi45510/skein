@@ -48,11 +48,34 @@ class Item(BaseModel):
     hidden_reason: HiddenReason | None = None
     topic_id: str | None = None  # best-scoring topic, also kept for hidden items
     relevance: float | None = None  # 0-1, set with topic_id (importance is computed at export)
+    thread_id: str | None = None  # DESIGN §6.5; set once, by thread assignment
+    thread_score: float | None = None  # similarity to the thread when attached (rescue, §6.5)
     extra: dict[str, Any] = {}  # small source metadata, e.g. Reddit score / flair
 
     @property
     def visible(self) -> bool:
         return self.hidden_reason is None
+
+
+ThreadKind = Literal["story", "question", "tracker", "fixed"]
+ThreadState = Literal["pending", "active", "cooling", "dormant", "archived"]
+
+
+class Thread(BaseModel):
+    """A story thread inside a topic (DESIGN §3.1, §5), stored in `threads.json`.
+
+    Centroids are stored separately (`centroids.npy`, rows named by
+    `centroid_ids.json`): only threads that can still be matched have one.
+    """
+
+    id: str
+    topic_id: str
+    kind: ThreadKind
+    title: str  # keyword title (§6.5), or the config title for predefined threads
+    state: ThreadState
+    created_at: dt.datetime
+    last_item_at: dt.datetime  # newest published_at among its items
+    item_ids: list[str] = []  # in the order they were attached
 
 
 FetchStatus = Literal["ok", "unchanged", "error"]

@@ -10,6 +10,7 @@
 
 defaults:
   daily_cap_per_thread: 5        # overflow collapses behind "+N more", never dropped
+  cooling_after_days: 3          # thread lifecycle (DESIGN §5): active → cooling → dormant → archived
   dormant_after_days: 14
   archive_after_days: 60
   lookback_days: 7               # ignore items older than this on first sight
@@ -79,12 +80,23 @@ topics:
     group: tech
     mode: tracker
     compare_with_profile: gear     # compare against the private gear list
+    # Items go to the thread whose `description` (else title) they're most similar to.
     threads:
-      - { id: phones,      title: Phones }
-      - { id: laptops,     title: Laptops }
-      - { id: audio,       title: Headphones & earbuds }
-      - { id: wearables,   title: Wearables }
-      - { id: tablets,     title: Tablets }
+      - id: phones
+        title: Phones
+        description: "Smartphones: iPhone, Pixel, Galaxy and other phone launches, reviews and software updates"
+      - id: laptops
+        title: Laptops
+        description: "Laptops: MacBook, Windows and Chromebook laptop launches and reviews"
+      - id: audio
+        title: Headphones & earbuds
+        description: "Headphones and earbuds: AirPods, wireless earbuds, over-ear headphones, reviews"
+      - id: wearables
+        title: Wearables
+        description: "Wearables: smartwatches, Apple Watch, fitness trackers, smart rings, smart glasses"
+      - id: tablets
+        title: Tablets
+        description: "Tablets: iPad, Android tablets, Galaxy Tab, reviews"
     description: >
       New releases, in-depth reviews with real testing, and major updates for phones,
       laptops, headphones and earbuds, wearables and tablets. Emphasis on how new
@@ -120,7 +132,9 @@ topics:
     evidence: articles_about_studies
     study_cards: true
     max_per_week: 4
+    cooling_after_days: 30
     dormant_after_days: 120
+    archive_after_days: 365        # must exceed dormant_after_days
     description: >
       Exercise science on resistance training for hypertrophy (volume, frequency,
       rep ranges, proximity to failure, rest periods) and on cardio for improving
@@ -136,7 +150,9 @@ topics:
     evidence: articles_about_studies
     study_cards: true
     max_per_week: 2
+    cooling_after_days: 30
     dormant_after_days: 120
+    archive_after_days: 365        # must exceed dormant_after_days
     description: >
       Sleep science and evidence-backed techniques for better sleep quality and
       consistency: timing, environment, light exposure, caffeine, naps.
@@ -148,7 +164,9 @@ topics:
     evidence: articles_about_studies
     study_cards: true
     max_per_week: 2
+    cooling_after_days: 30
     dormant_after_days: 120
+    archive_after_days: 365        # must exceed dormant_after_days
     description: >
       Evidence on nutrient-dense, cost-effective foods and grocery planning, and on
       steady, sustainable weight loss while keeping enough protein for muscle.
@@ -163,7 +181,9 @@ topics:
     evidence: articles_about_studies
     study_cards: true
     max_per_week: 2
+    cooling_after_days: 30
     dormant_after_days: 120
+    archive_after_days: 365        # must exceed dormant_after_days
     description: >
       Evidence on avoiding illness, mental health, and long-term health and
       longevity, with specific, actionable findings.
@@ -221,24 +241,54 @@ topics:
     panel:
       provider: fred
       series: [SP500, NASDAQCOM, DJIA]   # daily closes; Phase 4
-    threads:
+    threads:                       # items go to the nearest `description` (else title)
       # 11 GICS sectors
-      - { id: it,            title: Information Technology }
-      - { id: comms,         title: Communication Services }
-      - { id: discretionary, title: Consumer Discretionary }
-      - { id: staples,       title: Consumer Staples }
-      - { id: health-care,   title: Health Care }
-      - { id: financials,    title: Financials }
-      - { id: industrials,   title: Industrials (incl. aerospace & defense) }
-      - { id: energy,        title: Energy }
-      - { id: utilities,     title: Utilities }
-      - { id: materials,     title: Materials }
-      - { id: real-estate,   title: Real Estate }
+      - id: it
+        title: Information Technology
+        description: "Information technology sector: software, semiconductors, chipmakers, cloud and tech company stocks"
+      - id: comms
+        title: Communication Services
+        description: "Communication services sector: telecom, media, social networks, advertising and streaming stocks"
+      - id: discretionary
+        title: Consumer Discretionary
+        description: "Consumer discretionary sector: retailers, automakers, restaurants, travel and consumer spending"
+      - id: staples
+        title: Consumer Staples
+        description: "Consumer staples sector: food, beverages, household products and grocery companies"
+      - id: health-care
+        title: Health Care
+        description: "Health care sector: pharmaceutical, biotech, medical device and insurer stocks"
+      - id: financials
+        title: Financials
+        description: "Financials sector: banks, insurers, asset managers, brokerages and fintech"
+      - id: industrials
+        title: Industrials (incl. aerospace & defense)
+        description: "Industrials sector: aerospace, defense, airlines, railroads, machinery and manufacturing"
+      - id: energy
+        title: Energy
+        description: "Energy sector: oil, natural gas, OPEC, crude prices and energy companies"
+      - id: utilities
+        title: Utilities
+        description: "Utilities sector: electric and gas utilities, power grid and electricity demand"
+      - id: materials
+        title: Materials
+        description: "Materials sector: mining, metals, chemicals, gold and copper prices"
+      - id: real-estate
+        title: Real Estate
+        description: "Real estate sector: REITs, housing market, mortgages and commercial property"
       # economy-wide
-      - { id: fed-rates,     title: Fed & interest rates }
-      - { id: macro-data,    title: Inflation & jobs reports }
-      - { id: trade,         title: Trade & tariffs }
-      - { id: earnings,      title: Major earnings surprises }
+      - id: fed-rates
+        title: Fed & interest rates
+        description: "Federal Reserve and interest rates: Fed meetings, rate cuts and hikes, bond yields"
+      - id: macro-data
+        title: Inflation & jobs reports
+        description: "Economic data: inflation CPI reports, jobs reports, unemployment, GDP"
+      - id: trade
+        title: Trade & tariffs
+        description: "Trade and tariffs: tariff announcements, trade deals, import and export policy"
+      - id: earnings
+        title: Major earnings surprises
+        description: "Major earnings surprises: quarterly results that beat or miss expectations, guidance"
     description: >
       Broad stock-market and economic news across all sectors: big moves, earnings,
       sector trends, the Federal Reserve, inflation, jobs data and trade policy.

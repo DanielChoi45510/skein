@@ -15,6 +15,7 @@ import pytest
 import yaml
 
 from pipeline.config import ConfigError, load_config
+from pipeline.config.schema import Lifecycle, lifecycle
 from pipeline.config.validate import main
 
 from .conftest import FIXTURE_CONFIG, REPO_CONFIG
@@ -140,11 +141,69 @@ def test_local_profile_is_validated_when_present(config_dir: Path) -> None:
             "String should match pattern",
             id="bad-id",
         ),
+        pytest.param(
+            lambda d: d["defaults"].pop("cooling_after_days"),
+            "defaults.cooling_after_days: Field required",
+            id="cooling-default-required",
+        ),
+        pytest.param(
+            lambda d: topic(d, "world").update(dormant_after_days=90),
+            "topic 'world': thread timings must satisfy cooling_after_days < "
+            "dormant_after_days < archive_after_days (effective: 3, 90, 60)",
+            id="dormant-after-archive",
+        ),
+        pytest.param(
+            lambda d: topic(d, "world").update(cooling_after_days=14),
+            "topic 'world': thread timings must satisfy",
+            id="cooling-not-before-dormant",
+        ),
     ],
 )
 def test_invalid_topics(config_dir: Path, mutate: Callable, expected: str) -> None:
     edit(config_dir, "topics.yaml", mutate)
     assert expected in errors_for(config_dir)
+
+
+def test_topic_lifecycle_overrides_defaults(config_dir: Path) -> None:
+    edit(
+        config_dir,
+        "topics.yaml",
+        lambda d: topic(d, "world").update(
+            cooling_after_days=30, dormant_after_days=120, archive_after_days=365
+        ),
+    )
+    cfg = load_config(config_dir)
+    world = next(t for t in cfg.topics.topics if t.id == "world")
+    politics = next(t for t in cfg.topics.topics if t.id == "politics")
+    assert lifecycle(world, cfg.topics.defaults) == Lifecycle(30, 120, 365)
+    assert lifecycle(politics, cfg.topics.defaults) == Lifecycle(3, 14, 60)
+
+
+@pytest.mark.parametrize("topic_id", ["trackers", "markets"])
+def test_tracker_and_fixed_topics_have_no_lifecycle(config_dir: Path, topic_id: str) -> None:
+    """DESIGN §5: tracker and fixed threads never cool, go dormant or archive."""
+    cfg = load_config(config_dir)
+    t = next(t for t in cfg.topics.topics if t.id == topic_id)
+    assert t.mode in ("tracker", "fixed")
+    assert lifecycle(t, cfg.topics.defaults) is None
+
+
+@pytest.mark.parametrize("topic_id", ["trackers", "markets"])
+@pytest.mark.parametrize(
+    "field", ["cooling_after_days", "dormant_after_days", "archive_after_days"]
+)
+def test_tracker_and_fixed_topics_reject_lifecycle_timings(
+    config_dir: Path, topic_id: str, field: str
+) -> None:
+    edit(config_dir, "topics.yaml", lambda d: topic(d, topic_id).update({field: 30}))
+    assert f"topic '{topic_id}': `{field}` is not allowed for mode" in errors_for(config_dir)
+
+
+def test_committed_tracker_and_fixed_topics_have_no_lifecycle(tmp_path: Path) -> None:
+    cfg = load_config(copy_config(REPO_CONFIG, tmp_path))
+    predefined = [t for t in cfg.topics.topics if t.mode in ("tracker", "fixed")]
+    assert predefined
+    assert all(lifecycle(t, cfg.topics.defaults) is None for t in predefined)
 
 
 # ───────────────────────────── sources.yaml ─────────────────────────────
@@ -393,3 +452,22 @@ def test_profile_yaml_syntax_error_never_echoes_line(config_dir: Path) -> None:
     out = errors_for(config_dir)
     assert "profile.yaml: invalid YAML at line" in out
     assert SECRET not in out
+
+
+@pytest.mark.parametrize("key", ["title_exclude", "title_strip"])
+def test_title_patterns_must_be_valid_regex(config_dir: Path, key: str) -> None:
+    edit(
+        config_dir,
+        "sources.yaml",
+        lambda d: source(d, "example-world").update({key: ["ok", "(unclosed"]}),
+    )
+    assert f"{key}[1] is not a valid regex" in errors_for(config_dir)
+
+
+def test_title_exclude_valid(config_dir: Path) -> None:
+    edit(
+        config_dir,
+        "sources.yaml",
+        lambda d: source(d, "example-world").update(title_exclude=[r"\| Stock Price$"]),
+    )
+    load_config(config_dir)

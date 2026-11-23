@@ -2,9 +2,8 @@
 	import { onMount } from 'svelte';
 	import { resolve } from '$app/paths';
 	import { FeedError, fetchIndex, fetchTopic } from '$lib/feed';
-	import { allItems } from '$lib/group';
 	import { poll } from '$lib/poll';
-	import { loadLastSeen, newCount } from '$lib/readState';
+	import { loadLastSeen, topicNewCount } from '$lib/readState';
 	import { relativeTime } from '$lib/time';
 	import type { FeedIndex, TopicSummary } from '$lib/types';
 
@@ -28,7 +27,7 @@
 			const feeds = await Promise.all(toFetch.map((t) => fetchTopic(t.id).catch(() => null)));
 			toFetch.forEach((t, i) => {
 				const feed = feeds[i];
-				next[t.id] = feed ? newCount(allItems(feed.days), seen[t.id]) : 0;
+				next[t.id] = feed ? topicNewCount(feed, seen[t.id]) : 0;
 			});
 			index = idx;
 			counts = next;

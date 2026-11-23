@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { groupByLocalDay } from './group';
+import { groupByLocalDay, inTimeOrder } from './group';
 import type { Day, ExportItem } from './types';
 
 function item(id: string, published_at: string, importance: number, collapsed = false): ExportItem {
@@ -52,5 +52,43 @@ describe('groupByLocalDay', () => {
 
 	it('handles an empty feed', () => {
 		expect(groupByLocalDay([])).toEqual([]);
+	});
+});
+
+describe('inTimeOrder', () => {
+	const days = groupByLocalDay(
+		[
+			{
+				date: '2026-11-21',
+				items: [
+					item('noon', '2026-11-21T12:00:00Z', 0.9),
+					item('morning', '2026-11-21T08:00:00Z', 0.5),
+					item('capped-late', '2026-11-21T15:00:00Z', 0.1, true),
+					item('capped-early', '2026-11-21T07:00:00Z', 0.2, true)
+				]
+			},
+			{ date: '2026-11-20', items: [item('yesterday', '2026-11-20T10:00:00Z', 0.4)] }
+		],
+		'UTC'
+	);
+
+	it('newest first: days and items newest first', () => {
+		const out = inTimeOrder(days, 'newest');
+		expect(out.map((d) => d.key)).toEqual(['2026-11-21', '2026-11-20']);
+		expect(out[0].shown.map((i) => i.id)).toEqual(['noon', 'morning']);
+		expect(out[0].more.map((i) => i.id)).toEqual(['capped-late', 'capped-early']);
+	});
+
+	it('chronological: oldest day first, items in time order', () => {
+		const out = inTimeOrder(days, 'chronological');
+		expect(out.map((d) => d.key)).toEqual(['2026-11-20', '2026-11-21']);
+		expect(out[1].shown.map((i) => i.id)).toEqual(['morning', 'noon']);
+		expect(out[1].more.map((i) => i.id)).toEqual(['capped-early', 'capped-late']);
+	});
+
+	it('never changes which items are capped, nor the input', () => {
+		const before = JSON.stringify(days);
+		inTimeOrder(days, 'chronological');
+		expect(JSON.stringify(days)).toBe(before);
 	});
 });
