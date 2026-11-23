@@ -34,6 +34,13 @@ export interface ThreadSummary {
 	latest_first_seen_at: string;
 	first_seen: string[]; // first_seen_at of every shown item, newest first
 	latest: ExportItem; // newest item, for a preview line
+	pinned?: boolean; // owner override (Phase 2b): listed first; absent in older feeds
+}
+
+/** A thread the owner muted: hidden from the feed, listed so it can be unmuted. */
+export interface MutedThread {
+	id: string;
+	title: string;
 }
 
 export interface TopicFeed {
@@ -44,6 +51,7 @@ export interface TopicFeed {
 	mode: string;
 	threads: ThreadSummary[]; // newest update first; empty for unthreaded modes
 	days: Day[]; // in threaded modes only items not in a listed thread
+	muted?: MutedThread[]; // owner overrides (Phase 2b); absent in older feeds
 }
 
 export interface ThreadFeed {

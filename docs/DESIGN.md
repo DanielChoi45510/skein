@@ -246,6 +246,7 @@ The contract is `pipeline/export/models.py` (`schema_version` **2** since Phase 
 - `feed/index.json`: `generated_at`; groups → topics `{id, name, mode, has_sources, visible_count, collapsed_count, latest_first_seen_at}` (thread items counted too); sources `{id, name, type, status, lean, kind, paywall}`.
 - `feed/topics/<id>.json`:
   - `threads`: the topic's **listed** threads (active, cooling, dormant; not pending or archived) with at least one exported item, newest update first. Each summary is `{id, title, kind, state, last_item_at, item_count, collapsed_count, latest_first_seen_at, first_seen, latest}`. `first_seen` lists the shown items' `first_seen_at` (for "N new"); `latest` is the newest item, for a preview. Not limited to the lookback, so dormant threads still list.
+  - Owner overrides (§10.2) add `pinned` to summaries (pinned threads list first) and `muted: [{id, title}]` to the topic. These fields are additive, so `schema_version` stays 2.
   - `days`: the other items within the topic's lookback, grouped by UTC day of publication (newest first) and ranked by importance. For flat topics that's every item; for threaded ones, pending single items and unthreaded ones.
 - `feed/threads/<id>.json`: `{id, topic_id, title, kind, state, created_at, last_item_at, days}` with every exported item of the thread among the loaded items (≈ 30 days), by UTC day, ranked by importance. Stale topic and thread files are removed.
 - Days are UTC in the export; the frontend regroups items by the viewer's local day for display. Per-day caps still count UTC days, so a local day can show slightly more than one day's cap.
@@ -421,6 +422,12 @@ Code: `worker/` (TypeScript, `wrangler.toml`, one KV namespace bound as `SKEIN`)
     It returns the whole document.
   - **Limits:** ops expire after 30 days; at most 500 ops and 2,000 thread settings.
   - **Validity:** the Worker doesn't know which threads and items exist. The pipeline skips and logs ops that point at something gone.
+  - **In the pipeline** (`pipeline/overrides.py`):
+    - **Fetch:** at the start of each run, `GET {WORKER_URL}/overrides` with `WORKER_PIPELINE_TOKEN` (repo variable and Actions secret).
+    - **Fallback:** on any failure (unreachable, HTTP error, malformed document), or with those unset (forks, local runs), the run uses the copy saved on `data` (`overrides.json`) and logs why, never the token. The run never fails because of the Worker.
+    - **Rename:** changes the exported title only, so removing it restores the automatic title.
+    - **Pin:** lists the thread first, and it never archives (it stops at dormant).
+    - **Mute:** keeps the thread a match candidate, so new items about the story join it and stay hidden. The thread isn't listed and none of its items are exported, for every visitor. The topic file lists it under `muted` so the owner can unmute.
 - **Refresh** (`POST /refresh`):
   - Calls `workflow_dispatch` for `GITHUB_WORKFLOW` on `GITHUB_REF` and returns 202 `{dispatched_at, next_allowed_at}`.
   - **Cooldown:** 5 minutes (KV `refresh:last`); within it, 429 with `retry-after`.

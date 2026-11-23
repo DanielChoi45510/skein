@@ -10,6 +10,8 @@
   again (§6.5). The owner's merge override (Phase 2b) joins a resurfacing story.
 - A pending thread that isn't promoted within 72 h stays pending (its item
   shows as a single item) but drops its centroid: it can no longer be matched.
+- A thread the owner pinned (overrides, DESIGN §10.2) never archives: it stops at
+  dormant, so it stays listed.
 - Tracker and fixed threads (`lifecycle()` is None) are always active and keep
   their config title (renaming one in topics.yaml renames the thread).
 - Threads whose topic or predefined thread left the config are archived.
@@ -59,6 +61,7 @@ def advance(
     now: dt.datetime,
     *,
     title_of: TitleOf = _default_title,
+    pinned: frozenset[str] = frozenset(),
 ) -> None:
     """Move every thread to the state its items and `now` call for."""
     by_id = {t.id: t for t in topics.topics}
@@ -88,6 +91,8 @@ def advance(
                     centroids.pop(thread.id, None)
                 continue
         thread.state = _state_for_age(now - thread.last_item_at, life)
+        if thread.state == "archived" and thread.id in pinned:
+            thread.state = "dormant"
         if thread.state == "archived":
             centroids.pop(thread.id, None)
 

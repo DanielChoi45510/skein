@@ -22,6 +22,11 @@ Thread files (`threads/<id>.json`): every exported item of the thread among the
 loaded items (≈ 30 days), by UTC day, ranked by importance, with the per-thread
 daily cap (`daily_cap_per_thread`).
 
+Owner overrides (DESIGN §10.2): a renamed thread is exported with its new title;
+pinned threads list first (`pinned: true`); muted threads aren't listed, none of
+their items are exported, and the topic file names them in `muted` so the owner
+can unmute.
+
 Items over a cap are exported with `collapsed: true` ("+N more"), never dropped.
 Titles are cleaned and stripped on the way out (`display_title`). Stale topic
 and thread files are removed.
@@ -37,6 +42,7 @@ from pathlib import Path
 from ..config.schema import Source, Topic, TopicsFile
 from ..config.validate import Config
 from ..models import Item, SourceHealth, Thread
+from ..overrides import EMPTY, Overrides
 from ..process.normalize import display_title, excluded_by_title
 from ..process.rank import importance
 from ..process.relevance import passes_threshold
@@ -47,6 +53,7 @@ from .models import (
     ExportItem,
     FeedIndex,
     GroupSummary,
+    MutedThread,
     SourceSummary,
     ThreadFeed,
     ThreadSummary,
@@ -72,6 +79,7 @@ def export_feed(
     health: Mapping[str, SourceHealth],
     now: dt.datetime,
     threads: Mapping[str, Thread] | None = None,
+    overrides: Overrides = EMPTY,
 ) -> FeedIndex:
     """Write feed/index.json, feed/topics/<id>.json and feed/threads/<id>.json."""
     threads = threads or {}
@@ -83,10 +91,14 @@ def export_feed(
     all_sources = {s.id: s for s in cfg.sources.sources}  # display rules apply to any source
     enabled_topics = {t for s in enabled.values() for t in s.topics}
 
+    muted = overrides.muted
     by_topic: dict[str, list[Item]] = {}
-    below = no_source = excluded = rescued = 0
+    below = no_source = excluded = rescued = hidden = 0
     for item in items:
         if not item.visible or item.topic_id is None:
+            continue
+        if item.thread_id in muted:
+            hidden += 1
             continue
         if not any(sid in enabled for sid in (item.source_id, *item.also_covered_by)):
             no_source += 1
@@ -100,6 +112,8 @@ def export_feed(
         else:
             below += 1
     log.info("%d stored item(s) below their relevance threshold, not exported", below)
+    if hidden:
+        log.info("%d item(s) in muted threads, not exported", hidden)
     if rescued:
         log.info("%d item(s) below their threshold kept by an active thread (rescue)", rescued)
     if excluded:
@@ -113,7 +127,7 @@ def export_feed(
         listed = {
             th.id: th
             for th in threads.values()
-            if th.topic_id == topic.id and th.state in LISTED_STATES
+            if th.topic_id == topic.id and th.state in LISTED_STATES and th.id not in muted
         }
         loose, grouped = [], {}
         for item in by_topic.get(topic.id, []):
@@ -124,13 +138,22 @@ def export_feed(
         feed = build_topic_feed(topic, loose, cfg.topics, weights, now, sources=all_sources)
         summaries = []
         for thread_id, members in grouped.items():
+            thread = listed[thread_id]
             tf = build_thread_feed(
-                listed[thread_id], members, topic, cfg.topics, weights, now, sources=all_sources
-            )
+                thread, members, topic, cfg.topics, weights, now, sources=all_sources
+            ).model_copy(update={"title": overrides.title(thread_id, thread.title)})
             thread_feeds[thread_id] = tf
-            summaries.append(_thread_summary(tf))
-        summaries.sort(key=lambda s: (-s.last_item_at.timestamp(), s.id))
-        feeds[topic.id] = feed.model_copy(update={"threads": summaries})
+            summaries.append(_thread_summary(tf, pinned=thread_id in overrides.pinned))
+        summaries.sort(key=lambda s: (not s.pinned, -s.last_item_at.timestamp(), s.id))
+        muted_here = sorted(
+            (
+                MutedThread(id=th.id, title=overrides.title(th.id, th.title))
+                for th in threads.values()
+                if th.topic_id == topic.id and th.id in muted and th.state != "archived"
+            ),
+            key=lambda m: (m.title.lower(), m.id),
+        )
+        feeds[topic.id] = feed.model_copy(update={"threads": summaries, "muted": muted_here})
 
     index = FeedIndex(
         generated_at=now,
@@ -306,7 +329,7 @@ def _collapsed_ids(topic: Topic, topics: TopicsFile, ranked: Scored, now: dt.dat
     return collapsed
 
 
-def _thread_summary(feed: ThreadFeed) -> ThreadSummary:
+def _thread_summary(feed: ThreadFeed, *, pinned: bool = False) -> ThreadSummary:
     items = [i for d in feed.days for i in d.items]
     latest = max(items, key=lambda i: (i.published_at, i.id))
     shown = sorted((i.first_seen_at for i in items if not i.collapsed), reverse=True)
@@ -321,6 +344,7 @@ def _thread_summary(feed: ThreadFeed) -> ThreadSummary:
         latest_first_seen_at=max(i.first_seen_at for i in items),
         first_seen=shown,
         latest=latest,
+        pinned=pinned,
     )
 
 

@@ -27,6 +27,7 @@ import numpy as np
 from ..config.schema import PREDEFINED_MODES, THREADED_MODES, Source, Topic
 from ..config.validate import Config
 from ..models import Item, Thread
+from ..overrides import EMPTY, Overrides
 from .embed import Embedder
 from .lifecycle import advance, prune, retitle
 from .normalize import display_title, excluded_by_title
@@ -105,6 +106,7 @@ def assign_threads(
     vectors: Mapping[str, np.ndarray],
     get_embedder: Callable[[], Embedder],
     t: Thresholds = DEFAULT,
+    overrides: Overrides = EMPTY,
 ) -> ThreadReport:
     """Assign threads, then advance the lifecycle. Mutates items, threads and centroids."""
     report = ThreadReport()
@@ -201,7 +203,9 @@ def assign_threads(
             attach(item, thread, 1.0, centroid=True)
             report.created += 1
 
-    advance(threads, centroids, items, cfg.topics, now, title_of=title_of)
+    # Muted threads stay match candidates on purpose: new items about a muted story
+    # join it and stay hidden (the export leaves muted threads out).
+    advance(threads, centroids, items, cfg.topics, now, title_of=title_of, pinned=overrides.pinned)
     for thread_id in sorted(changed):
         if thread_id in threads:
             retitle(threads[thread_id], items, title_of=title_of)
