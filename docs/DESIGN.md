@@ -343,6 +343,17 @@ SvelteKit static app, installable PWA, dark mode first, responsive from phone to
 - **Settings** (`/settings/`, reached by URL only, so visitors see no link to it): paste the owner token once per device.
   - **Checking:** the token is verified with `GET /auth`, then kept in this browser's localStorage (`skein.owner.v1`), never shown or put in a URL. A 401 from the Worker forgets it, so a rotated token can't linger.
   - **Owner bar:** with a token, the header shows "Refresh now" (it shows the remaining wait during the 5-minute cooldown) and a Settings link. "Forget token on this device" returns to visitor mode.
+- **Owner tools** (Phase 2b; collapsed "Owner tools" sections, only with the token). Every change is an override (§10.2) that takes effect on the next pipeline run; each save says so and offers Refresh.
+  - **Thread page:**
+    - Rename, or go back to the automatic title. A rename saved since the last update shows in the field.
+    - Pin or unpin, mute or unmute, reflecting the Worker's current settings.
+    - Merge into another listed thread of the topic, after an in-page confirm.
+    - Select stories → split into a new thread, with an optional title (sent as a split, then a rename of the new id), or move to another thread.
+    - In tracker and fixed topics, only pin, mute and move are offered.
+  - **Topic page:**
+    - Select single stories → move into a thread (fixes missed joins).
+    - The "Muted (N)" list with Unmute.
+  - Pinned threads list first for everyone, in a "Pinned" group.
   - **Worker URL:** comes from `PUBLIC_WORKER_URL` at build time (the `WORKER_URL` repo variable in the pipeline). Without it, owner features are absent entirely.
 
 ### 9.2 Owner vs visitor

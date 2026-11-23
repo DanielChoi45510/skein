@@ -5,6 +5,8 @@
 	import DayList from '$lib/components/DayList.svelte';
 	import ItemCard from '$lib/components/ItemCard.svelte';
 	import ThreadCard from '$lib/components/ThreadCard.svelte';
+	import TopicOwnerPanel from '$lib/components/TopicOwnerPanel.svelte';
+	import { owner } from '$lib/owner.svelte';
 	import { FeedError, fetchIndex, fetchTopic } from '$lib/feed';
 	import { groupByLocalDay } from '$lib/group';
 	import { poll } from '$lib/poll';
@@ -35,6 +37,17 @@
 	let firstLoad = true;
 	let showMoreItems = $state(false);
 	let showDormant = $state(false);
+	// Owner: select single stories to move into a thread.
+	let selecting = $state(false);
+	let selected = $state<string[]>([]);
+	const toggle = (itemId: string) =>
+		(selected = selected.includes(itemId)
+			? selected.filter((i) => i !== itemId)
+			: [...selected, itemId]);
+	const selectProps = (itemId: string) =>
+		selecting
+			? { selected: selected.includes(itemId), onToggle: () => toggle(itemId) }
+			: {};
 
 	async function load() {
 		if (!id) {
@@ -77,7 +90,10 @@
 	const fresh = $derived(feed ? topicNewCount(feed, previousVisit) : 0);
 	const empty = $derived(
 		layout
-			? !layout.live.length && !layout.cooling.length && !layout.dormant.length
+			? !layout.pinned.length &&
+				!layout.live.length &&
+				!layout.cooling.length &&
+				!layout.dormant.length
 			: !days.length
 	);
 	// No "New" badges on a first visit: there's nothing to compare against.
@@ -111,7 +127,37 @@
 		{/if}
 	</p>
 
+	{#if owner.signedIn && layout}
+		<TopicOwnerPanel
+			{feed}
+			bind:selecting
+			{selected}
+			onClearSelection={() => {
+				selected = [];
+				selecting = false;
+			}}
+		/>
+	{/if}
+
 	{#if layout}
+		{#if layout.pinned.length}
+			<section aria-labelledby="pinned">
+				<h2 id="pinned">Pinned</h2>
+				<ul class="cards">
+					{#each layout.pinned as thread (thread.id)}
+						<li>
+							<ThreadCard
+								{thread}
+								{sources}
+								href={threadHref(thread.id)}
+								fresh={threadFresh(thread)}
+								{now}
+							/>
+						</li>
+					{/each}
+				</ul>
+			</section>
+		{/if}
 		{#if layout.live.length}
 			<ul class="cards">
 				{#each layout.live as entry (entry.id)}
@@ -125,13 +171,21 @@
 								{now}
 							/>
 						{:else}
-							<ItemCard item={entry.item} {sources} isNew={showNew(entry.item)} {now} />
+							<ItemCard
+								item={entry.item}
+								{sources}
+								isNew={showNew(entry.item)}
+								{now}
+								{...selectProps(entry.item.id)}
+							/>
 						{/if}
 					</li>
 				{/each}
 				{#if showMoreItems}
 					{#each layout.moreItems as item (item.id)}
-						<li><ItemCard {item} {sources} isNew={showNew(item)} {now} /></li>
+						<li>
+							<ItemCard {item} {sources} isNew={showNew(item)} {now} {...selectProps(item.id)} />
+						</li>
 					{/each}
 				{/if}
 			</ul>

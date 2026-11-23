@@ -38,3 +38,29 @@ class Owner {
 }
 
 export const owner = new Owner();
+
+/** "Refresh now", shared by the header and the owner panels so the cooldown is one. */
+class Refresher {
+	sending = $state(false);
+	until = $state(0); // cooldown end, ms
+	status = $state<string | null>(null);
+
+	async refresh(): Promise<void> {
+		this.sending = true;
+		this.status = null;
+		try {
+			const res = await owner.call('/refresh', { method: 'POST' });
+			const body = (await res.json()) as { next_allowed_at: string };
+			this.until = Date.parse(body.next_allowed_at);
+			this.status = 'Update started. The new feed shows up in about a minute.';
+		} catch (e) {
+			if (e instanceof WorkerError && e.kind === 'rate_limited' && e.retryAfter) {
+				this.until = Date.now() + e.retryAfter * 1000;
+			}
+			this.status = e instanceof WorkerError ? e.message : 'Refresh failed.';
+		}
+		this.sending = false;
+	}
+}
+
+export const refresher = new Refresher();

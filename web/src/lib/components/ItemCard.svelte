@@ -8,8 +8,11 @@
 		sources: Map<string, SourceSummary>;
 		isNew: boolean;
 		now: number;
+		/** Owner selection (move / split); no checkbox unless given. */
+		selected?: boolean;
+		onToggle?: () => void;
 	}
-	let { item, sources, isNew, now }: Props = $props();
+	let { item, sources, isNew, now, selected, onToggle }: Props = $props();
 
 	const source = $derived(sources.get(item.source_id));
 	const kind = $derived(kindLabel(source?.kind ?? null));
@@ -18,7 +21,13 @@
 	const also = $derived(item.also_covered_by.map((id) => sources.get(id)?.name ?? id));
 </script>
 
-<article class:new={isNew}>
+<article class:new={isNew} class:selected>
+	{#if onToggle}
+		<label class="select">
+			<input type="checkbox" checked={selected} onchange={onToggle} />
+			<span class="visually-hidden">Select “{item.title}”</span>
+		</label>
+	{/if}
 	<h3>
 		<!-- Link out, never embed (CLAUDE.md principle 3). -->
 		<a href={item.url} target="_blank" rel="noopener noreferrer">{item.title}</a>
@@ -52,6 +61,27 @@
 	}
 	article.new {
 		border-left: 4px solid var(--new);
+	}
+	article {
+		position: relative;
+	}
+	article.selected {
+		outline: 2px solid var(--accent);
+	}
+	.select {
+		float: right;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		min-width: 44px;
+		min-height: 44px;
+		margin: -0.5rem -0.6rem 0 0.25rem;
+		cursor: pointer;
+	}
+	.select input {
+		width: 1.2rem;
+		height: 1.2rem;
+		accent-color: var(--accent);
 	}
 	h3 {
 		margin: 0;

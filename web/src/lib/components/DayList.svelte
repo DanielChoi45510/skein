@@ -9,8 +9,10 @@
 		sources: Map<string, SourceSummary>;
 		isNew: (item: ExportItem) => boolean;
 		now: number;
+		/** Owner selection: checkboxes on every card when given. */
+		select?: { has: (id: string) => boolean; toggle: (id: string) => void };
 	}
-	let { days, sources, isNew, now }: Props = $props();
+	let { days, sources, isNew, now, select }: Props = $props();
 
 	// "+N more" per day, collapsed by default.
 	let expanded = $state<Record<string, boolean>>({});
@@ -20,14 +22,18 @@
 	<section aria-labelledby="day-{day.key}">
 		<h2 id="day-{day.key}">{dayLabel(day.key, now)}</h2>
 		<ul>
-			{#each day.shown as item (item.id)}
-				<li><ItemCard {item} {sources} isNew={isNew(item)} {now} /></li>
+			{#each [...day.shown, ...(expanded[day.key] ? day.more : [])] as item (item.id)}
+				<li>
+					<ItemCard
+						{item}
+						{sources}
+						isNew={isNew(item)}
+						{now}
+						selected={select?.has(item.id)}
+						onToggle={select ? () => select.toggle(item.id) : undefined}
+					/>
+				</li>
 			{/each}
-			{#if expanded[day.key]}
-				{#each day.more as item (item.id)}
-					<li><ItemCard {item} {sources} isNew={isNew(item)} {now} /></li>
-				{/each}
-			{/if}
 		</ul>
 		{#if day.more.length}
 			<button
