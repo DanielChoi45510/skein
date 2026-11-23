@@ -70,6 +70,7 @@ python -m pipeline.sample --out web/static      # (from the repo root) offline s
 npm run dev                                     # http://localhost:5173
 npm run check && npm test                       # svelte-check + vitest
 BASE_PATH=/skein npm run build                  # static site in web/build (feed/ is copied in at deploy)
+PUBLIC_WORKER_URL=http://localhost:8787 npm run dev   # owner features against a local `wrangler dev`
 ```
 
 ```sh

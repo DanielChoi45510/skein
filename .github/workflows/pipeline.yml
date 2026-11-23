@@ -89,6 +89,8 @@ jobs:
         run: npm run build
         env:
           BASE_PATH: /${{ github.event.repository.name }}
+          # Owner features (DESIGN §9.2). Unset: the site is built without them.
+          PUBLIC_WORKER_URL: ${{ vars.WORKER_URL }}
 
       - uses: actions/download-artifact@v8
         with:

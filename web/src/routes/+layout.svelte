@@ -1,6 +1,8 @@
 <script lang="ts">
 	import '../app.css';
 	import { resolve } from '$app/paths';
+	import OwnerBar from '$lib/components/OwnerBar.svelte';
+	import { owner } from '$lib/owner.svelte';
 
 	let { children } = $props();
 </script>
@@ -8,6 +10,7 @@
 <a class="skip" href="#main">Skip to content</a>
 <header>
 	<a class="brand" href={resolve('/')}>Skein</a>
+	{#if owner.signedIn}<OwnerBar />{/if}
 </header>
 <main id="main">
 	{@render children()}
@@ -15,6 +18,11 @@
 
 <style>
 	header {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
+		gap: 0.5rem;
 		max-width: var(--measure);
 		margin: 0 auto;
 		padding: max(0.75rem, env(safe-area-inset-top)) 1rem 0.25rem;

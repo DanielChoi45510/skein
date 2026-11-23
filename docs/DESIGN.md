@@ -340,7 +340,10 @@ SvelteKit static app, installable PWA, dark mode first, responsive from phone to
 - **Item card:** title, source, time, labels and badges (🔒 for `paywall: partial | full`), excerpt. Tap → opens the original article. On an installed PWA, out-of-scope links open in the system's in-app browser sheet; on desktop, a new tab.
 - **Hidden items:** filtered items with their reasons.
 - **Sources:** per-source health and usefulness (§9.4).
-- **Settings:** paste the owner token (once per device).
+- **Settings** (`/settings/`, reached by URL only, so visitors see no link to it): paste the owner token once per device.
+  - **Checking:** the token is verified with `GET /auth`, then kept in this browser's localStorage (`skein.owner.v1`), never shown or put in a URL. A 401 from the Worker forgets it, so a rotated token can't linger.
+  - **Owner bar:** with a token, the header shows "Refresh now" (it shows the remaining wait during the 5-minute cooldown) and a Settings link. "Forget token on this device" returns to visitor mode.
+  - **Worker URL:** comes from `PUBLIC_WORKER_URL` at build time (the `WORKER_URL` repo variable in the pipeline). Without it, owner features are absent entirely.
 
 ### 9.2 Owner vs visitor
 - Everyone sees the same public, read-only site.
