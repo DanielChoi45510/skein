@@ -56,10 +56,12 @@
       "c0c4ef66e0d9307c",
       "92235eb6cfa85e0d",
       "cacb977714398141",
-      "39b5ca4e43f90028"
+      "39b5ca4e43f90028",
+      "81995218f768b392",
+      "865d364a72d4cefa"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-22T13:00:02Z",
+    "last_item_at": "2026-11-23T09:25:00Z",
     "state": "active",
     "title": "Fed & interest rates",
     "topic_id": "markets"
@@ -133,10 +135,11 @@
       "e6eeee40505bc31d",
       "d1fd56c023d68f5f",
       "6c9f6a138c014817",
-      "7c2cdff92f5740e3"
+      "7c2cdff92f5740e3",
+      "70a4e471ba6bb9a2"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-22T17:55:31Z",
+    "last_item_at": "2026-11-23T08:29:18Z",
     "state": "active",
     "title": "Information Technology",
     "topic_id": "markets"
@@ -149,10 +152,11 @@
       "d866193457004aff",
       "295795a537947d04",
       "c2811254f14da10f",
-      "7c9d37856a45b0d6"
+      "7c9d37856a45b0d6",
+      "4d4efe6a83bcdcba"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-22T10:01:46Z",
+    "last_item_at": "2026-11-23T08:33:43Z",
     "state": "active",
     "title": "Inflation & jobs reports",
     "topic_id": "markets"
@@ -1166,12 +1170,13 @@
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "t371b45fb7d74",
     "item_ids": [
-      "4e5feab1cd671f18"
+      "4e5feab1cd671f18",
+      "b6064af7e8dad09b"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-22T02:00:00Z",
-    "state": "pending",
-    "title": "How Kim Jong Un Gets Away With Building Nukes and Ghosting Trump",
+    "last_item_at": "2026-11-23T09:26:00Z",
+    "state": "active",
+    "title": "Kim · Jong · Un",
     "topic_id": "world-news"
   },
   {
@@ -1776,6 +1781,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-23T09:48:40.518489Z",
+    "id": "t507e8728a4ee",
+    "item_ids": [
+      "ef8e6c17f931f636"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T09:24:09Z",
+    "state": "pending",
+    "title": "Gulf bourses open higher, buoyed by diplomatic momentum",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-23T07:48:38.314750Z",
     "id": "t54985eb194ef",
     "item_ids": [
@@ -1813,6 +1830,19 @@
     "state": "pending",
     "title": "Elon Musk Has Regrets",
     "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-23T09:48:40.518489Z",
+    "id": "t55add53a1967",
+    "item_ids": [
+      "f57224010c1010e6",
+      "b3732aec3760dc62"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T09:25:52Z",
+    "state": "active",
+    "title": "Who is behind the recent street protests in France?",
+    "topic_id": "world-news"
   },
   {
     "created_at": "2026-11-22T09:09:42.410739Z",
@@ -1944,12 +1974,13 @@
       "ca280e82c6b6ff3d",
       "f17097afc77ae539",
       "ee30fe0868592daa",
-      "d14d371c9eeeeafb"
+      "d14d371c9eeeeafb",
+      "fbe62532d644f942"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-22T20:12:18Z",
+    "last_item_at": "2026-11-23T06:33:50Z",
     "state": "active",
-    "title": "Deal · COP31 · Climate · Talks",
+    "title": "Deal · Climate · Talks · COP31",
     "topic_id": "world-news"
   },
   {
@@ -2480,6 +2511,18 @@
     "topic_id": "us-politics"
   },
   {
+    "created_at": "2026-11-23T09:48:40.518489Z",
+    "id": "t792ddb793f1d",
+    "item_ids": [
+      "248d5bd0a0e16f5d"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-22T19:42:33Z",
+    "state": "pending",
+    "title": "Police: 3 killed and 1 wounded in shooting at Ohio baby shower; 1 man in custody",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "t79d6beaed71d",
     "item_ids": [
@@ -2832,6 +2875,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-23T09:48:40.518489Z",
+    "id": "t8ecd8839f265",
+    "item_ids": [
+      "8e3d0180b6e26146"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T08:25:43Z",
+    "state": "pending",
+    "title": "Hedge funds post worst week since April 2025, sparks defensive shift",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-22T03:51:06.410293Z",
     "id": "t8fc15885ea92",
     "item_ids": [
@@ -3004,6 +3059,18 @@
     "last_item_at": "2026-11-19T22:18:00Z",
     "state": "pending",
     "title": "How I Survived the Blue Tsunami",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-23T09:48:40.518489Z",
+    "id": "t9a5b9916738a",
+    "item_ids": [
+      "2b1dff03c65008cd"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T09:38:45Z",
+    "state": "pending",
+    "title": "Iran says it will use all its tools to confront US naval blockade",
     "topic_id": "world-news"
   },
   {
@@ -4024,6 +4091,18 @@
     "state": "pending",
     "title": "What are the benefits and risks of turmeric (Curcuma longa) supplements for people with osteoarthritis?",
     "topic_id": "health-wellbeing"
+  },
+  {
+    "created_at": "2026-11-23T09:48:40.518489Z",
+    "id": "tca654bae4236",
+    "item_ids": [
+      "77c50f0c8d35e694"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T08:18:00Z",
+    "state": "pending",
+    "title": "European TTF Gas Climbs on Colder Weather, Low Storage",
+    "topic_id": "world-news"
   },
   {
     "created_at": "2026-11-22T09:09:42.410739Z",
