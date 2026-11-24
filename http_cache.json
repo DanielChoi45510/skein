@@ -1,30 +1,30 @@
 {
   "https://9to5mac.com/feed/": {
-    "etag": "W/\"690bb182d43e4f5c2f587d71ce6a5749\"",
-    "last_modified": "Tue, 24 Nov 2026 21:11:32 GMT"
+    "etag": "W/\"3549adc229cb42d0fff09c51997550ba\"",
+    "last_modified": "Tue, 24 Nov 2026 22:24:55 GMT"
   },
   "https://antigravity.google/blog/rss.xml": {
     "etag": null,
     "last_modified": "Tue, 24 Nov 2026 21:23:00 GMT"
   },
   "https://arstechnica.com/ai/feed/": {
-    "etag": "\"e5951cc04b69490d1f467d4a2af080b5\"",
-    "last_modified": "Tue, 24 Nov 2026 21:24:37 GMT"
+    "etag": "\"381d019b920bd9f41f1a264346ef7c42\"",
+    "last_modified": "Tue, 24 Nov 2026 22:36:28 GMT"
   },
   "https://deepmind.google/blog/rss.xml": {
-    "etag": "\"ZeSJkw\"",
+    "etag": "\"EteRGA\"",
     "last_modified": null
   },
   "https://feeds.content.dowjones.io/public/rss/RSSMarketsMain": {
-    "etag": "W/\"9c6c-rIeVKi0YaPywOFIs64nZjD/Q1qA\"",
+    "etag": "W/\"9e91-HQy2gLbQBYvCt9i7jkQdRyBZ/PA\"",
     "last_modified": null
   },
   "https://feeds.content.dowjones.io/public/rss/RSSOpinion": {
-    "etag": "W/\"f932-V4nas0c/0o5rsX6T0Q4YD1jAup0\"",
+    "etag": "W/\"f975-HfYyBOdjSaRTEni/2i26k3UHyP8\"",
     "last_modified": null
   },
   "https://feeds.content.dowjones.io/public/rss/RSSWorldNews": {
-    "etag": "W/\"cda7-MwGR0ztZ7rBJa41l1xVQKVEbZrA\"",
+    "etag": "W/\"cd6e-6nxHXxqfc0FjWBEjbW6jFiSOB9E\"",
     "last_modified": null
   },
   "https://fivebooks.com/feed/": {
@@ -32,19 +32,23 @@
     "last_modified": "Tue, 24 Nov 2026 16:38:29 GMT"
   },
   "https://flipboard.com/@associatedpress/top-stories-u7govdf1z.rss": {
-    "etag": "W/\"b3b8-XluNRcJKbFqkWxPkI6Odk7S6SHQ\"",
+    "etag": "W/\"b3bc-5MypVhxRjy4vUzfSUsTc7k44ZWU\"",
     "last_modified": null
   },
   "https://flipboard.com/@associatedpress/u.s.-news-lhl4uphvz.rss": {
-    "etag": "W/\"b385-qX/7UtZVakVh9NKRx7ju8jwC9wE\"",
+    "etag": "W/\"b391-CIyrJuS48EG+UYfmIuoXRiNMbjg\"",
     "last_modified": null
   },
   "https://hnrss.org/frontpage?points=200": {
     "etag": null,
-    "last_modified": "Tue, 24 Nov 2026 16:32:17 GMT"
+    "last_modified": "Tue, 24 Nov 2026 20:08:03 GMT"
+  },
+  "https://latent.space/feeds/news.xml": {
+    "etag": null,
+    "last_modified": "Tue, 24 Nov 2026 22:44:02 GMT"
   },
   "https://newsletter.pragmaticengineer.com/feed": {
-    "etag": "W/\"b1495-thV8qL7FoGmdgNgcj3yQbLvv9oo\"",
+    "etag": "W/\"b284a-eoXLWTaOCEVM4mkj7flKJ/hs5Zo\"",
     "last_modified": null
   },
   "https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_anthropic_news.xml": {
@@ -80,15 +84,15 @@
     "last_modified": "Tue, 24 Nov 2026 19:00:17 GMT"
   },
   "https://www.nationalreview.com/feed/": {
-    "etag": "W/\"5c90a5d5d68caa34ac7127a37a477d8d52cea20694d1a1b21e8e2cc16b4e75e0\"",
+    "etag": "W/\"314583cafb3efc5adef67eafdcb5dd9b6003ff207b1c64151e780f19b538564d\"",
     "last_modified": null
   },
   "https://www.notebookcheck.net/RSS-Feed-Notebook-Reviews.8156.0.html": {
     "etag": null,
-    "last_modified": "Tue, 24 Nov 2026 21:48:47 GMT"
+    "last_modified": "Tue, 24 Nov 2026 22:48:52 GMT"
   },
   "https://www.oneusefulthing.org/feed": {
-    "etag": "W/\"e0f01-XsyNrMSk4hxlT/uxUGQt9VNHtEU\"",
+    "etag": "W/\"e0f01-F36KsD1XBREgdMafD8FWThMB7Mk\"",
     "last_modified": null
   },
   "https://www.rtings.com/latest-rss.xml": {
@@ -101,18 +105,18 @@
   },
   "https://www.theatlantic.com/feed/all/": {
     "etag": null,
-    "last_modified": "Tue, 24 Nov 2026 21:46:32 GMT"
+    "last_modified": "Tue, 24 Nov 2026 22:45:02 GMT"
   },
   "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml": {
-    "etag": "W/\"357d2e5e4276aaa495d9b41ad9ba23d4\"",
+    "etag": "W/\"9a39c701db3b155c704619a281c54c96\"",
     "last_modified": null
   },
   "https://www.theverge.com/rss/installer-newsletter/index.xml": {
-    "etag": "W/\"9ebd579f5f5d0027086b9dead038e0e4\"",
+    "etag": "W/\"9a39c701db3b155c704619a281c54c96\"",
     "last_modified": null
   },
   "https://www.theverge.com/rss/reviews/index.xml": {
-    "etag": "W/\"9ebd579f5f5d0027086b9dead038e0e4\"",
+    "etag": "W/\"9a39c701db3b155c704619a281c54c96\"",
     "last_modified": null
   }
 }

@@ -4,10 +4,11 @@
     "id": "markets--comms",
     "item_ids": [
       "4b55e9ad79027a0a",
-      "8efce86d328d46c4"
+      "8efce86d328d46c4",
+      "7e77f56783aa3faa"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-23T13:18:00Z",
+    "last_item_at": "2026-11-24T22:07:00Z",
     "state": "active",
     "title": "Communication Services",
     "topic_id": "markets"
@@ -229,10 +230,11 @@
       "c2811254f14da10f",
       "7c9d37856a45b0d6",
       "4d4efe6a83bcdcba",
-      "e6af0b3a2e40c497"
+      "e6af0b3a2e40c497",
+      "aea4af9cb7be6dcb"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-23T21:26:51Z",
+    "last_item_at": "2026-11-24T22:33:51Z",
     "state": "active",
     "title": "Inflation & jobs reports",
     "topic_id": "markets"
@@ -1703,6 +1705,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-24T22:48:41.692861Z",
+    "id": "t31ce0bd9b2d6",
+    "item_ids": [
+      "82745f87c33d1446"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-24T22:21:00Z",
+    "state": "pending",
+    "title": "Opinion | American Exceptionalism Will Win AI",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "t332599a383ce",
     "item_ids": [
@@ -2407,6 +2421,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-24T22:48:41.692861Z",
+    "id": "t48bd17d70cbe",
+    "item_ids": [
+      "f618027363c1d2f9"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-24T22:22:00Z",
+    "state": "pending",
+    "title": "Black Political Power Won’t Fix Social Inequality",
+    "topic_id": "us-politics"
+  },
+  {
     "created_at": "2026-11-23T11:48:25.998267Z",
     "id": "t48fdbfd9f882",
     "item_ids": [
@@ -2683,6 +2709,18 @@
     "state": "pending",
     "title": "Oil Prices Rebound as Shipping Risks Persist",
     "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-24T22:48:41.692861Z",
+    "id": "t552089c034d3",
+    "item_ids": [
+      "7c11ccf61bf18ec6"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-24T22:00:00Z",
+    "state": "pending",
+    "title": "Make America Build Again? The Senate Passes a Bipartisan Permitting Bill",
+    "topic_id": "us-politics"
   },
   {
     "created_at": "2026-11-23T09:48:40.518489Z",
@@ -4251,6 +4289,18 @@
     "topic_id": "ai-news"
   },
   {
+    "created_at": "2026-11-24T22:48:41.692861Z",
+    "id": "t929e8c5bf064",
+    "item_ids": [
+      "dcaa48a1a6492511"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-24T22:25:00Z",
+    "state": "pending",
+    "title": "And the Fair Land",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "t934bd43ddc62",
     "item_ids": [
@@ -4794,7 +4844,8 @@
       "b7e4dc7f4250d265",
       "c3a101642e4abaa3",
       "4d2f94a40e7bcf8c",
-      "0ebf04e84acf8cc8"
+      "0ebf04e84acf8cc8",
+      "b9c24ac86ae2f76b"
     ],
     "kind": "story",
     "last_item_at": "2026-11-24T12:12:25Z",
@@ -5069,6 +5120,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-24T22:48:41.692861Z",
+    "id": "taf34a0fcd905",
+    "item_ids": [
+      "647419a718373b48"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-24T22:00:50Z",
+    "state": "pending",
+    "title": "Why Entitlement Reform Is Easier Abroad Than in America",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-24T17:48:45.483947Z",
     "id": "taf4b3c82869d",
     "item_ids": [
@@ -5110,12 +5173,14 @@
     "item_ids": [
       "fbe87aecef197dd2",
       "bbde5766c7216552",
-      "0b83da30ea9c973a"
+      "0b83da30ea9c973a",
+      "081c68f2f73557bf",
+      "ec5014e5ceb8b5be"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-20T18:00:00Z",
-    "state": "cooling",
-    "title": "What’s So Important About Nvidia’s Chips?",
+    "last_item_at": "2026-11-24T22:15:20Z",
+    "state": "active",
+    "title": "Great · Chips · Heist · Nvidia",
     "topic_id": "us-politics"
   },
   {
@@ -5196,12 +5261,14 @@
       "4bf94abcc72c6568",
       "814c119a5cc419e2",
       "67b0dcf8740b7f7f",
-      "59cb00ad211b9d29"
+      "59cb00ad211b9d29",
+      "773622be1af6701d",
+      "e692f867f12a01e2"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-24T20:40:47Z",
+    "last_item_at": "2026-11-24T22:24:33Z",
     "state": "active",
-    "title": "Huang · China · Nvidia · Jensen",
+    "title": "Nvidia · Jensen · Huang · China",
     "topic_id": "world-news"
   },
   {
@@ -6942,6 +7009,18 @@
     "state": "pending",
     "title": "A Short Workout to Strengthen Your Neck",
     "topic_id": "health-training"
+  },
+  {
+    "created_at": "2026-11-24T22:48:41.692861Z",
+    "id": "tf3db47c5cf7e",
+    "item_ids": [
+      "ea845689686aa155"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-24T22:26:00Z",
+    "state": "pending",
+    "title": "The Desolate Wilderness",
+    "topic_id": "us-politics"
   },
   {
     "created_at": "2026-11-22T09:09:42.410739Z",
