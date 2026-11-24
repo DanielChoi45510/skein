@@ -180,10 +180,11 @@
       "70a4e471ba6bb9a2",
       "a3e1759d367a3ca9",
       "908f38f7dff39f7e",
-      "e95ca05a87585dcd"
+      "e95ca05a87585dcd",
+      "b7b89b000c95f57a"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-23T21:22:00Z",
+    "last_item_at": "2026-11-24T00:48:00Z",
     "state": "active",
     "title": "Information Technology",
     "topic_id": "markets"
@@ -219,10 +220,12 @@
       "a56f071d71c99a96",
       "e9727474d80efe94",
       "f02b6e5db3612470",
-      "ffb8f6a9dc4458a7"
+      "ffb8f6a9dc4458a7",
+      "ee57adffa5fb83c9",
+      "f1dedd715d5e51ea"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-23T22:25:00Z",
+    "last_item_at": "2026-11-24T01:04:00Z",
     "state": "active",
     "title": "Materials",
     "topic_id": "markets"
@@ -586,6 +589,18 @@
     "state": "pending",
     "title": "It’s a Permitting Miracle in the Senate",
     "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-24T01:48:34.521603Z",
+    "id": "t0c11382295ff",
+    "item_ids": [
+      "cf7a30606b1f19e3"
+    ],
+    "kind": "question",
+    "last_item_at": "2026-11-24T01:31:14Z",
+    "state": "pending",
+    "title": "How a Scientist Behind the Mediterranean Diet Got Caught in Trump’s War on Harvard",
+    "topic_id": "health-wellbeing"
   },
   {
     "created_at": "2026-11-23T22:38:09.702477Z",
@@ -3965,12 +3980,14 @@
       "5c04090732f29702",
       "10f0d48cba269a1d",
       "4cf839c6aa7ed738",
-      "83ec24c083c2ae44"
+      "83ec24c083c2ae44",
+      "7d1a5f88e8e57138",
+      "ad54544f3749b52f"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-24T00:40:00Z",
+    "last_item_at": "2026-11-24T01:34:03Z",
     "state": "active",
-    "title": "Trump · Nvidia · Jensen · Huang",
+    "title": "Jensen · Trump · Huang · Nvidia",
     "topic_id": "us-politics"
   },
   {
