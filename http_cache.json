@@ -12,19 +12,19 @@
     "last_modified": "Mon, 23 Nov 2026 22:28:58 GMT"
   },
   "https://deepmind.google/blog/rss.xml": {
-    "etag": "\"YdyQfw\"",
+    "etag": "\"skVfNg\"",
     "last_modified": null
   },
   "https://feeds.content.dowjones.io/public/rss/RSSMarketsMain": {
-    "etag": "W/\"9d4c-5jYgRPGOKsDaPKdEoP95Rj2OMM8\"",
+    "etag": "W/\"9d71-A9aTDiIuC1KelLit/fiDy+JHQ9c\"",
     "last_modified": null
   },
   "https://feeds.content.dowjones.io/public/rss/RSSOpinion": {
-    "etag": "W/\"fb3d-mPjo1ZQFcU7nkuhKwGTQTUX8Y/w\"",
+    "etag": "W/\"fb3d-81XEmuYTcDIaCz7Vdo/KpP64GT4\"",
     "last_modified": null
   },
   "https://feeds.content.dowjones.io/public/rss/RSSWorldNews": {
-    "etag": "W/\"cac3-xpTf4N48UyQSXKsrF+JMPF003OI\"",
+    "etag": "W/\"ca74-Xt6TQQ8Ej7kvAa9Cl8THS9ayvi4\"",
     "last_modified": null
   },
   "https://fivebooks.com/feed/": {
@@ -41,10 +41,10 @@
   },
   "https://hnrss.org/frontpage?points=200": {
     "etag": null,
-    "last_modified": "Mon, 23 Nov 2026 22:09:10 GMT"
+    "last_modified": "Mon, 23 Nov 2026 23:11:38 GMT"
   },
   "https://newsletter.pragmaticengineer.com/feed": {
-    "etag": "W/\"a212e-hGqZPgl+FZri1S4kd4Kao6SJFTw\"",
+    "etag": "W/\"a212e-0PgAXf2yaBbEfky1r9PTPgy9fMY\"",
     "last_modified": null
   },
   "https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_anthropic_news.xml": {
@@ -72,8 +72,8 @@
     "last_modified": "Mon, 23 Nov 2026 22:48:06 GMT"
   },
   "https://www.cochrane.org/evidence/rss": {
-    "etag": "\"1795481715-gzip\"",
-    "last_modified": "Tue, 24 Nov 2026 00:55:15 GMT"
+    "etag": "\"1795487408-gzip\"",
+    "last_modified": "Tue, 24 Nov 2026 02:30:08 GMT"
   },
   "https://www.federalreserve.gov/feeds/press_monetary.xml": {
     "etag": "W/\"56329db8f77dd1:0\"",
@@ -85,10 +85,10 @@
   },
   "https://www.notebookcheck.net/RSS-Feed-Notebook-Reviews.8156.0.html": {
     "etag": null,
-    "last_modified": "Tue, 24 Nov 2026 01:48:42 GMT"
+    "last_modified": "Tue, 24 Nov 2026 02:48:50 GMT"
   },
   "https://www.oneusefulthing.org/feed": {
-    "etag": "W/\"e0f01-mxaHDYvEBMKWriZmcIsGC8Bj4sY\"",
+    "etag": "W/\"e0f01-Ei9BYr+iY61DSyq2P2UkeCZqGkI\"",
     "last_modified": null
   },
   "https://www.rtings.com/latest-rss.xml": {

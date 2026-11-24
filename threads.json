@@ -341,12 +341,13 @@
       "6465535f46cf573f",
       "64ac45562e39806c",
       "3e17f7a4ac7d6cbd",
-      "6ed905091a48d8d9"
+      "6ed905091a48d8d9",
+      "9c6888a38b690165"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-22T20:35:19Z",
+    "last_item_at": "2026-11-23T21:03:34Z",
     "state": "active",
-    "title": "Myanmar · Genocide · Ruling · Court",
+    "title": "Myanmar · Court · Genocide · Ruling",
     "topic_id": "world-news"
   },
   {
@@ -399,6 +400,18 @@
     "state": "pending",
     "title": "Ukraine Is Racing to Keep Its Booming Defense Industry From Stalling",
     "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-24T02:48:43.862619Z",
+    "id": "t075129a40438",
+    "item_ids": [
+      "4b96978daecc4817"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T22:32:29Z",
+    "state": "pending",
+    "title": "Stalwart is now a drop-in replacement for Microsoft Exchange",
+    "topic_id": "ai-news"
   },
   {
     "created_at": "2026-11-22T09:09:42.410739Z",
@@ -2207,12 +2220,13 @@
     "id": "t54985eb194ef",
     "item_ids": [
       "3d5bd26e53efb1ec",
-      "b3e8eb0f4fd596c8"
+      "b3e8eb0f4fd596c8",
+      "624a875d3097c22a"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-23T01:59:38Z",
+    "last_item_at": "2026-11-23T22:59:07Z",
     "state": "active",
-    "title": "Seattle · Airport · ICE",
+    "title": "ICE · Arrest · Seattle · Airport",
     "topic_id": "world-news"
   },
   {
@@ -2254,6 +2268,18 @@
     "state": "active",
     "title": "Who is behind the recent street protests in France?",
     "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-24T02:48:43.862619Z",
+    "id": "t55d7e85e0964",
+    "item_ids": [
+      "9601ca6537ac9ea9"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-24T02:27:00Z",
+    "state": "pending",
+    "title": "Singapore investigating Nvidia-linked Megaspeed after US blacklisting",
+    "topic_id": "us-politics"
   },
   {
     "created_at": "2026-11-22T09:09:42.410739Z",
@@ -2770,12 +2796,13 @@
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "t69c7cd07fd80",
     "item_ids": [
-      "20764b914590be9e"
+      "20764b914590be9e",
+      "04c37937c5ee63b7"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-21T08:10:03Z",
-    "state": "pending",
-    "title": "Trafalgar Square Christmas tree felled in Norway",
+    "last_item_at": "2026-11-23T18:49:19Z",
+    "state": "active",
+    "title": "Christmas · Tree",
     "topic_id": "world-news"
   },
   {
@@ -2909,6 +2936,18 @@
     "state": "pending",
     "title": "Connected intelligence for in-house legal",
     "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-24T02:48:43.862619Z",
+    "id": "t71462a294f0e",
+    "item_ids": [
+      "3af28e87626eba89"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T23:04:00Z",
+    "state": "pending",
+    "title": "Australia's Pauline Hanson faces biggest test as debt and anger align in state vote",
+    "topic_id": "us-politics"
   },
   {
     "created_at": "2026-11-22T09:09:42.410739Z",
@@ -4311,12 +4350,14 @@
       "7b117f0fbba33258",
       "bcfdecf2d6eb951f",
       "2e63b1850ce02bc4",
-      "3c53179623c8254a"
+      "3c53179623c8254a",
+      "c146aadfc847854c",
+      "7f25714d235fab2a"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-23T22:15:26Z",
+    "last_item_at": "2026-11-24T02:00:00Z",
     "state": "active",
-    "title": "China · Xi · Nvidia · Scandal",
+    "title": "Nvidia · Huang · China · Scandal",
     "topic_id": "world-news"
   },
   {
