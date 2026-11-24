@@ -166,6 +166,18 @@
     "topic_id": "markets"
   },
   {
+    "created_at": "2026-11-24T15:48:51.224435Z",
+    "id": "markets--industrials",
+    "item_ids": [
+      "65f1ce930456a87c"
+    ],
+    "kind": "fixed",
+    "last_item_at": "2026-11-24T15:11:11Z",
+    "state": "active",
+    "title": "Industrials (incl. aerospace & defense)",
+    "topic_id": "markets"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "markets--it",
     "item_ids": [
@@ -1006,12 +1018,13 @@
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "t18285b9632d8",
     "item_ids": [
-      "58702748c231afcc"
+      "58702748c231afcc",
+      "3c35c858d8c7974e"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-20T15:58:27Z",
-    "state": "pending",
-    "title": "(Not) up in the air: Travelers' trepidations spike as Thanksgiving nears and tech hiccups abound",
+    "last_item_at": "2026-11-23T21:32:36Z",
+    "state": "active",
+    "title": "Thanksgiving travel could be messy with storms coming after a week filled with airline glitches",
     "topic_id": "world-news"
   },
   {
@@ -2069,6 +2082,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-24T15:48:51.224435Z",
+    "id": "t40ae751156d9",
+    "item_ids": [
+      "9340d763e8ad9b66"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-24T14:46:34Z",
+    "state": "pending",
+    "title": "Trump will give Medal of Freedom to Giuliani, a fierce political ally who led New York through 9/11",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "t40b1f2b2a170",
     "item_ids": [
@@ -2141,6 +2166,18 @@
     "last_item_at": "2026-11-21T12:00:06Z",
     "state": "cooling",
     "title": "The Midterms Were Epic. What Comes Next?",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-24T15:48:51.224435Z",
+    "id": "t43e4eb5b1c59",
+    "item_ids": [
+      "941bdb781452e9b3"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-24T15:17:28Z",
+    "state": "pending",
+    "title": "Land mine casualties soar in Syria, two years after war",
     "topic_id": "world-news"
   },
   {
@@ -2406,6 +2443,18 @@
     "topic_id": "us-politics"
   },
   {
+    "created_at": "2026-11-24T15:48:51.224435Z",
+    "id": "t4dffc85da572",
+    "item_ids": [
+      "9fafeb77db46fde1"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T17:17:24Z",
+    "state": "pending",
+    "title": "US rapper Don Toliver postpones London show after Manchester gig evacuation",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-23T01:41:04.329483Z",
     "id": "t4e164b6bbfe8",
     "item_ids": [
@@ -2621,12 +2670,13 @@
     "id": "t5982932a54e8",
     "item_ids": [
       "28ce395ad6f72d6a",
-      "70afa686bee845ff"
+      "70afa686bee845ff",
+      "d9e3d3d835351e1a"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-21T14:01:57Z",
-    "state": "cooling",
-    "title": "A 10% drop for the stock market is unnerving, but it's not that unusual",
+    "last_item_at": "2026-11-24T14:42:47Z",
+    "state": "active",
+    "title": "Wall Street's sugar high quickly disappears as Nvidia and other AI stocks tumble again",
     "topic_id": "us-politics"
   },
   {
@@ -2713,12 +2763,13 @@
       "d14d371c9eeeeafb",
       "fbe62532d644f942",
       "13fda4e36f38058e",
-      "7913699b10d16ea3"
+      "7913699b10d16ea3",
+      "a3caef95d7db3590"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-23T17:24:25Z",
+    "last_item_at": "2026-11-24T02:08:04Z",
     "state": "active",
-    "title": "Deal · Climate · COP31 · Talks",
+    "title": "Deal · COP31 · Climate · Talks",
     "topic_id": "world-news"
   },
   {
@@ -4058,6 +4109,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-24T15:48:51.224435Z",
+    "id": "t98731abec917",
+    "item_ids": [
+      "0b8075e78694c896"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-24T15:03:45Z",
+    "state": "pending",
+    "title": "Brazil's tax revenue extends record run in October, buoyed by higher oil prices",
+    "topic_id": "us-politics"
+  },
+  {
     "created_at": "2026-11-23T20:48:27.182294Z",
     "id": "t98a11b00cabe",
     "item_ids": [
@@ -4093,12 +4156,13 @@
       "ac9b4c74ae248913",
       "a4d40e8a7d2893fa",
       "e8e113b8ffa1b68b",
-      "a017e507be7e1241"
+      "a017e507be7e1241",
+      "1b88f66fadd7ab02"
     ],
     "kind": "story",
     "last_item_at": "2026-11-23T21:45:00Z",
     "state": "active",
-    "title": "Attack · Russian · Strikes · Ukraine",
+    "title": "Attack · Russian · Ukraine · Libya",
     "topic_id": "world-news"
   },
   {
@@ -4337,12 +4401,13 @@
     "created_at": "2026-11-24T10:48:41.839815Z",
     "id": "ta22f0be232e8",
     "item_ids": [
-      "2ea454409599cb65"
+      "2ea454409599cb65",
+      "f39d1f8a7ef0b598"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-24T10:00:00Z",
-    "state": "pending",
-    "title": "Democrats probe whether Trump Jr.-aligned businesses benefit from government access",
+    "last_item_at": "2026-11-24T13:32:26Z",
+    "state": "active",
+    "title": "House Democrat expands investigation into Donald Trump Jr.'s investment firm",
     "topic_id": "us-politics"
   },
   {
@@ -4474,7 +4539,8 @@
       "23832976df176467",
       "b7e4dc7f4250d265",
       "c3a101642e4abaa3",
-      "4d2f94a40e7bcf8c"
+      "4d2f94a40e7bcf8c",
+      "0ebf04e84acf8cc8"
     ],
     "kind": "story",
     "last_item_at": "2026-11-24T12:12:25Z",
@@ -5384,12 +5450,13 @@
     "created_at": "2026-11-22T03:51:06.410293Z",
     "id": "tc3d6b0745652",
     "item_ids": [
-      "5468ed6efa238620"
+      "5468ed6efa238620",
+      "bd8b7ae1d181c0b8"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-21T12:53:05Z",
-    "state": "pending",
-    "title": "Chinese-Born Neuroscientist Is Detained by ICE While Traveling From Conference",
+    "last_item_at": "2026-11-23T23:27:24Z",
+    "state": "active",
+    "title": "Neuroscientist · ICE",
     "topic_id": "world-news"
   },
   {
@@ -5801,12 +5868,13 @@
     "created_at": "2026-11-23T20:48:27.182294Z",
     "id": "td8648796d8cb",
     "item_ids": [
-      "98911c842df0025c"
+      "98911c842df0025c",
+      "adf5cf7e5302a33e"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-23T20:19:34Z",
-    "state": "pending",
-    "title": "Explainer: What to know about US Army plans to blow up a stockpile of lead azide in Iowa",
+    "last_item_at": "2026-11-24T14:57:37Z",
+    "state": "active",
+    "title": "Army · Iowa",
     "topic_id": "world-news"
   },
   {
@@ -5997,6 +6065,18 @@
     "topic_id": "us-politics"
   },
   {
+    "created_at": "2026-11-24T15:48:51.224435Z",
+    "id": "te66445097ac1",
+    "item_ids": [
+      "1038afb4e1888cee"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-24T15:24:48Z",
+    "state": "pending",
+    "title": "Explainer: Libya's messy frozen conflict",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-24T06:57:39.203346Z",
     "id": "te6c0acde1083",
     "item_ids": [
@@ -6026,12 +6106,13 @@
     "item_ids": [
       "8497404ed00af944",
       "2184d4a63135e4ee",
-      "06c62e91f9c2cbb7"
+      "06c62e91f9c2cbb7",
+      "0475b9c8a2958ccd"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-20T01:42:00Z",
-    "state": "cooling",
-    "title": "Houthi · Attack · Saudi · Tower",
+    "last_item_at": "2026-11-24T15:36:00Z",
+    "state": "active",
+    "title": "Yemen · Attack · Tower · Saudi",
     "topic_id": "world-news"
   },
   {
@@ -6145,10 +6226,11 @@
       "be2be26d12d432d1",
       "df89f2d5da1b413f",
       "12f84b10f89b11f4",
-      "321b8334cb9b103e"
+      "321b8334cb9b103e",
+      "6583733fa08938a0"
     ],
     "kind": "tracker",
-    "last_item_at": "2026-11-24T13:19:08Z",
+    "last_item_at": "2026-11-24T15:05:11Z",
     "state": "active",
     "title": "Phones",
     "topic_id": "tech-trackers"
@@ -6433,12 +6515,13 @@
     "created_at": "2026-11-22T20:20:33.012568Z",
     "id": "tf5cf1d7c0239",
     "item_ids": [
-      "6996b6ed493ce699"
+      "6996b6ed493ce699",
+      "a8113f9a519250f1"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-22T17:02:29Z",
-    "state": "pending",
-    "title": "Live updates: A shuffle is on deck in the AP Top 25 after losses by UCLA and Indiana",
+    "last_item_at": "2026-11-24T01:00:07Z",
+    "state": "active",
+    "title": "AP · Top · 25",
     "topic_id": "us-politics"
   },
   {
@@ -6494,12 +6577,13 @@
     "id": "tf72da37af9c8",
     "item_ids": [
       "a4ac370dc415a9e0",
-      "4719a0041c742b81"
+      "4719a0041c742b81",
+      "96bfb8622ab98254"
     ],
     "kind": "story",
     "last_item_at": "2026-11-24T12:23:00Z",
     "state": "active",
-    "title": "Russian Warplanes Trigger Alarm Among U.S. Partners in Asia",
+    "title": "Russian · South · Korea · Aircraft",
     "topic_id": "world-news"
   },
   {
@@ -6657,10 +6741,11 @@
       "3b38f7127b86a94d",
       "f5ab5067ad25840d",
       "4ce697c6dbd75e8a",
-      "fa9136539de5ecb7"
+      "fa9136539de5ecb7",
+      "1881b895e965b033"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-23T22:25:12Z",
+    "last_item_at": "2026-11-24T14:56:50Z",
     "state": "active",
     "title": "Trump · Nvidia · Jensen · Huang",
     "topic_id": "ai-news"
@@ -6675,6 +6760,18 @@
     "last_item_at": "2026-11-23T13:19:43Z",
     "state": "pending",
     "title": "Tajikistan becomes fourth country to withdraw from ICC since US diplomatic push",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-24T15:48:51.224435Z",
+    "id": "tfd035d8e0f3b",
+    "item_ids": [
+      "6b23624ea316c8a6"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T19:46:35Z",
+    "state": "pending",
+    "title": "FIFA picks US to co-host 2031 Women's World Cup and UK for 2035 edition",
     "topic_id": "world-news"
   },
   {
