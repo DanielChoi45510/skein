@@ -542,6 +542,18 @@
     "topic_id": "us-politics"
   },
   {
+    "created_at": "2026-11-24T14:48:27.880946Z",
+    "id": "t095c9740cc5e",
+    "item_ids": [
+      "c5c878fd9460dcc0"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-24T14:43:45Z",
+    "state": "pending",
+    "title": "Venezuela unveils long-awaited economic framework, puts debt at $237.5 billion",
+    "topic_id": "us-politics"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "t0a053169ecc5",
     "item_ids": [
@@ -727,6 +739,18 @@
     "state": "pending",
     "title": "Here’s the latest.",
     "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-24T14:48:27.880946Z",
+    "id": "t0f3b8b624e40",
+    "item_ids": [
+      "c9797fc7d7882ac4"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-24T14:00:12Z",
+    "state": "pending",
+    "title": "Was a Drug Lord’s Killing in Ecuador Not What It Seemed?",
+    "topic_id": "world-news"
   },
   {
     "created_at": "2026-11-23T17:48:41.578622Z",
@@ -1042,12 +1066,13 @@
     "created_at": "2026-11-24T13:48:36.047221Z",
     "id": "t1b2591acc25e",
     "item_ids": [
-      "32c63d1205433a82"
+      "32c63d1205433a82",
+      "1bb8ecbd5606b57f"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-24T13:02:31Z",
-    "state": "pending",
-    "title": "China Investigates Chen Jining, Shanghai’s Party Leader, as Xi’s Purges Expand",
+    "last_item_at": "2026-11-24T14:45:00Z",
+    "state": "active",
+    "title": "China · Shanghai · Party · Leader",
     "topic_id": "world-news"
   },
   {
@@ -1786,6 +1811,18 @@
     "topic_id": "us-politics"
   },
   {
+    "created_at": "2026-11-24T14:48:27.880946Z",
+    "id": "t38588800ae65",
+    "item_ids": [
+      "923c0e4c62bee184"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-24T12:40:15Z",
+    "state": "pending",
+    "title": "LLM agents work for their parent companies, not for you",
+    "topic_id": "ai-news"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "t38b9445be9e3",
     "item_ids": [
@@ -1833,7 +1870,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-21T13:58:04Z",
-    "state": "active",
+    "state": "cooling",
     "title": "Can a Country Be Guilty of Genocide? Finally, the Answer Is Yes.",
     "topic_id": "us-politics"
   },
@@ -2588,7 +2625,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-21T14:01:57Z",
-    "state": "active",
+    "state": "cooling",
     "title": "A 10% drop for the stock market is unnerving, but it's not that unusual",
     "topic_id": "us-politics"
   },
@@ -2937,12 +2974,13 @@
     "created_at": "2026-11-23T20:48:27.182294Z",
     "id": "t65a67d9cc525",
     "item_ids": [
-      "51e4eb10a0f20f8c"
+      "51e4eb10a0f20f8c",
+      "f9aaa50a66ad629d"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-23T20:30:51Z",
-    "state": "pending",
-    "title": "The Economy Is a Hostage Situation",
+    "last_item_at": "2026-11-24T14:40:36Z",
+    "state": "active",
+    "title": "The Limits of the Great Man Theory of Business",
     "topic_id": "us-politics"
   },
   {
@@ -5688,12 +5726,13 @@
     "created_at": "2026-11-23T12:48:37.980822Z",
     "id": "td3bb9cc5a81f",
     "item_ids": [
-      "392e64f8c0231d11"
+      "392e64f8c0231d11",
+      "596cc50988815b56"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-23T11:56:41Z",
-    "state": "pending",
-    "title": "Morocco and Senegal await Afcon final verdict after court case",
+    "last_item_at": "2026-11-24T14:46:20Z",
+    "state": "active",
+    "title": "Senegal · Afcon · Court",
     "topic_id": "world-news"
   },
   {
@@ -6135,10 +6174,11 @@
       "061bef60130ecc64",
       "a6f1adebd025a4d2",
       "b5b2890766e5da55",
-      "4f80b6053e3636eb"
+      "4f80b6053e3636eb",
+      "1d1ef54d613131b5"
     ],
     "kind": "tracker",
-    "last_item_at": "2026-11-20T20:25:35Z",
+    "last_item_at": "2026-11-24T13:52:23Z",
     "state": "active",
     "title": "Wearables",
     "topic_id": "tech-trackers"
