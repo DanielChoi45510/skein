@@ -135,10 +135,11 @@
       "105bf162fa2a333c",
       "6dbcaf3ed6164991",
       "71225a4081f9bb16",
-      "c0504a3e0a03997d"
+      "c0504a3e0a03997d",
+      "a692c01023fdec02"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-24T12:07:00Z",
+    "last_item_at": "2026-11-24T13:35:25Z",
     "state": "active",
     "title": "Financials",
     "topic_id": "markets"
@@ -1036,6 +1037,18 @@
     "state": "pending",
     "title": "Introducing Claude Ship",
     "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-24T13:48:36.047221Z",
+    "id": "t1b2591acc25e",
+    "item_ids": [
+      "32c63d1205433a82"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-24T13:02:31Z",
+    "state": "pending",
+    "title": "China Investigates Chen Jining, Shanghai’s Party Leader, as Xi’s Purges Expand",
+    "topic_id": "world-news"
   },
   {
     "created_at": "2026-11-23T18:48:42.826335Z",
@@ -2346,12 +2359,13 @@
       "73862c02427933b0",
       "978649e19fc49d9d",
       "56b568e2582b3376",
-      "b3ebe78783befbf7"
+      "b3ebe78783befbf7",
+      "501a09a9fc063235"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-23T03:42:01Z",
+    "last_item_at": "2026-11-24T03:24:58Z",
     "state": "active",
-    "title": "Army · Bomb-making · Chemicals · Iowa",
+    "title": "Army · Bomb-making · Iowa · Chemicals",
     "topic_id": "us-politics"
   },
   {
@@ -2819,6 +2833,18 @@
     "state": "pending",
     "title": "International Student Enrollment Plunged. Schools Are Bracing for More Losses.",
     "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-24T13:48:36.047221Z",
+    "id": "t60ef1444aedb",
+    "item_ids": [
+      "8eee8c99cf2ea390"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-24T10:26:20Z",
+    "state": "pending",
+    "title": "German Ifo business sentiment rises for the seventh consecutive month",
+    "topic_id": "world-news"
   },
   {
     "created_at": "2026-11-23T15:48:33.493735Z",
@@ -4439,7 +4465,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-21T13:00:00Z",
-    "state": "active",
+    "state": "cooling",
     "title": "Our Best Stuff on the Spate of Tech Outages",
     "topic_id": "us-politics"
   },
@@ -5093,7 +5119,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-21T12:54:44Z",
-    "state": "active",
+    "state": "cooling",
     "title": "On the Trail With Spain’s Prime Minister, as He Tries to Pull Out a Win",
     "topic_id": "world-news"
   },
@@ -5156,6 +5182,18 @@
     "state": "pending",
     "title": "Colombia Marks 10 Years Since FARC Peace Deal: In Photos",
     "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-24T13:48:36.047221Z",
+    "id": "tbe20814c2851",
+    "item_ids": [
+      "73ea10ae7a2a28ad"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-24T13:08:39Z",
+    "state": "pending",
+    "title": "Number of EU laws has more than doubled since 2010, study shows",
+    "topic_id": "us-politics"
   },
   {
     "created_at": "2026-11-22T09:09:42.410739Z",
@@ -6067,10 +6105,11 @@
       "f55495a17ad2b67f",
       "be2be26d12d432d1",
       "df89f2d5da1b413f",
-      "12f84b10f89b11f4"
+      "12f84b10f89b11f4",
+      "321b8334cb9b103e"
     ],
     "kind": "tracker",
-    "last_item_at": "2026-11-24T00:31:59Z",
+    "last_item_at": "2026-11-24T13:19:08Z",
     "state": "active",
     "title": "Phones",
     "topic_id": "tech-trackers"
