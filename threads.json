@@ -73,10 +73,11 @@
       "547e0916d06632a0",
       "835c9cf5195f32c9",
       "4c98bc46eb20d7db",
-      "1380ab10f07ec3ae"
+      "1380ab10f07ec3ae",
+      "2d9a94b82f23bb4f"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-24T08:27:00Z",
+    "last_item_at": "2026-11-24T08:54:00Z",
     "state": "active",
     "title": "Energy",
     "topic_id": "markets"
@@ -992,6 +993,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-24T09:48:40.359719Z",
+    "id": "t1cae0d3d935e",
+    "item_ids": [
+      "00ea4afdb99630c1"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-24T09:32:54Z",
+    "state": "pending",
+    "title": "Norway and Ukraine to expand cooperation on anti-drone system",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-23T15:48:33.493735Z",
     "id": "t1d7faf813b57",
     "item_ids": [
@@ -1272,6 +1285,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-24T09:48:40.359719Z",
+    "id": "t2c00e6c5f03b",
+    "item_ids": [
+      "9cc649a44c6423f7"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-24T06:03:00Z",
+    "state": "pending",
+    "title": "West Africa's rush to refine its own gold unleashes flood of capacity",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "t2d1f83fe7a9a",
     "item_ids": [
@@ -1281,6 +1306,18 @@
     "last_item_at": "2026-11-19T22:51:55Z",
     "state": "pending",
     "title": "The Global Crackdown on Press Freedom",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-24T09:48:40.359719Z",
+    "id": "t2d543ec3923c",
+    "item_ids": [
+      "998153134d2671dc"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-24T09:24:00Z",
+    "state": "pending",
+    "title": "Tiny Bahrain Is Paying a Big Price for Its Ties to the U.S.",
     "topic_id": "world-news"
   },
   {
@@ -4498,12 +4535,13 @@
       "7f25714d235fab2a",
       "07193efeb38e94ad",
       "d72fb7d85705e2a8",
-      "db1a116a7a49230b"
+      "db1a116a7a49230b",
+      "e923624272ca5ea7"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-24T07:29:00Z",
+    "last_item_at": "2026-11-24T08:39:27Z",
     "state": "active",
-    "title": "China · Jensen · Huang · Nvidia",
+    "title": "Nvidia · China · Jensen · Huang",
     "topic_id": "world-news"
   },
   {
@@ -4774,12 +4812,13 @@
       "8a04e8c5d17abf94",
       "ab5aea15d1cea03d",
       "74d24e1c69c84114",
-      "39e73ac6f1b3bdc2"
+      "39e73ac6f1b3bdc2",
+      "bd0c015a586be17e"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-24T03:00:00Z",
+    "last_item_at": "2026-11-24T09:09:41Z",
     "state": "active",
-    "title": "Mexico · Top · Drug · Captured",
+    "title": "Mexico · Top · Captured · Drug",
     "topic_id": "world-news"
   },
   {
@@ -5135,6 +5174,18 @@
     "state": "pending",
     "title": "Plastic surgeon convicted of killing lawyer in Florida is sentenced to death",
     "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-24T09:48:40.359719Z",
+    "id": "tccbf61aeea44",
+    "item_ids": [
+      "c0135ae7fbe95a05"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-24T09:30:10Z",
+    "state": "pending",
+    "title": "EU sets limits on hybrid vehicle imports from China and other countries",
+    "topic_id": "world-news"
   },
   {
     "created_at": "2026-11-24T07:48:38.063668Z",
