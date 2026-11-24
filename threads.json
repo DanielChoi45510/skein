@@ -47,10 +47,11 @@
       "95c927307cd733b7",
       "2766d048a14dcc22",
       "c710fcbeda59730e",
-      "1490d31272c6106e"
+      "1490d31272c6106e",
+      "ad86734713d0d566"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-23T23:54:00Z",
+    "last_item_at": "2026-11-24T07:10:00Z",
     "state": "active",
     "title": "Major earnings surprises",
     "topic_id": "markets"
@@ -71,10 +72,11 @@
       "34dd0bfc6f38c1c2",
       "547e0916d06632a0",
       "835c9cf5195f32c9",
-      "4c98bc46eb20d7db"
+      "4c98bc46eb20d7db",
+      "1380ab10f07ec3ae"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-23T23:38:00Z",
+    "last_item_at": "2026-11-24T08:27:00Z",
     "state": "active",
     "title": "Energy",
     "topic_id": "markets"
@@ -224,10 +226,11 @@
       "f02b6e5db3612470",
       "ffb8f6a9dc4458a7",
       "ee57adffa5fb83c9",
-      "f1dedd715d5e51ea"
+      "f1dedd715d5e51ea",
+      "7631267b504af1d1"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-24T01:04:00Z",
+    "last_item_at": "2026-11-24T08:05:00Z",
     "state": "active",
     "title": "Materials",
     "topic_id": "markets"
@@ -895,12 +898,13 @@
       "4996853303fb0e04",
       "107e25b02fde2e76",
       "f2db6b5d7760f744",
-      "03eb8dde151d689a"
+      "03eb8dde151d689a",
+      "eded6eec7dbd1fd8"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-20T20:22:14Z",
-    "state": "cooling",
-    "title": "Britain · Brexit",
+    "last_item_at": "2026-11-24T00:45:53Z",
+    "state": "active",
+    "title": "Britain · Burnham · Brexit · EU",
     "topic_id": "world-news"
   },
   {
@@ -1118,6 +1122,18 @@
     "last_item_at": "2026-11-20T18:51:23Z",
     "state": "cooling",
     "title": "Trump · Data · Centers · Abroad",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-24T08:48:33.505341Z",
+    "id": "t2445e51ead75",
+    "item_ids": [
+      "75f1e95850c60b3b"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-24T08:15:28Z",
+    "state": "pending",
+    "title": "Japan accelerates ICC funding as US sanctions threaten court",
     "topic_id": "us-politics"
   },
   {
@@ -2545,6 +2561,18 @@
     "state": "pending",
     "title": "Search and rescue teams race against time after Nigeria boat tragedy",
     "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-24T08:48:33.505341Z",
+    "id": "t5d7eed6559ab",
+    "item_ids": [
+      "29ca39f7f53cc854"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-24T08:00:00Z",
+    "state": "pending",
+    "title": "Why We Can’t Have Nice Things",
+    "topic_id": "us-politics"
   },
   {
     "created_at": "2026-11-22T09:09:42.410739Z",
