@@ -432,6 +432,18 @@
     "topic_id": "us-politics"
   },
   {
+    "created_at": "2026-11-24T20:48:44.254125Z",
+    "id": "t06f8b2132960",
+    "item_ids": [
+      "d2cce6cbb351c005"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-24T18:50:19Z",
+    "state": "pending",
+    "title": "POLL Bruised S&P 500 seen gaining more than 12% by end-2027: Reuters poll",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "t07144af29043",
     "item_ids": [
@@ -2445,12 +2457,13 @@
     "created_at": "2026-11-23T17:48:41.578622Z",
     "id": "t4bf97f8cf76f",
     "item_ids": [
-      "3ffa5c39e01e3431"
+      "3ffa5c39e01e3431",
+      "d0e234682f9b6d75"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-23T16:59:40Z",
-    "state": "pending",
-    "title": "Finding faster quantum algorithms with agents and formal verification",
+    "last_item_at": "2026-11-24T20:34:53Z",
+    "state": "active",
+    "title": "What's going on with the Riemann hypothesis?",
     "topic_id": "ai-news"
   },
   {
@@ -3116,12 +3129,13 @@
     "id": "t65a67d9cc525",
     "item_ids": [
       "51e4eb10a0f20f8c",
-      "f9aaa50a66ad629d"
+      "f9aaa50a66ad629d",
+      "571fb16af3cdada5"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-24T14:40:36Z",
+    "last_item_at": "2026-11-24T20:35:00Z",
     "state": "active",
-    "title": "The Limits of the Great Man Theory of Business",
+    "title": "Nvidia and Federal Intervention",
     "topic_id": "us-politics"
   },
   {
@@ -4554,12 +4568,13 @@
     "item_ids": [
       "e308a84a77ae00d8",
       "fd109fdc361c3cd3",
-      "abadb4e0aaec88e9"
+      "abadb4e0aaec88e9",
+      "0ea66ddcc209eef8"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-20T07:12:24Z",
-    "state": "cooling",
-    "title": "Anthropic · Initial · Public · Offering",
+    "last_item_at": "2026-11-24T13:23:47Z",
+    "state": "active",
+    "title": "Anthropic · Initial · IPO · Public",
     "topic_id": "ai-news"
   },
   {
@@ -4848,6 +4863,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-24T20:48:44.254125Z",
+    "id": "ta97326b763a5",
+    "item_ids": [
+      "41acf21ff4b62f4d"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-24T20:19:47Z",
+    "state": "pending",
+    "title": "‘The Digital Deficit Has Come Due’",
+    "topic_id": "us-politics"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "taa5289816ccf",
     "item_ids": [
@@ -5129,12 +5156,14 @@
       "414b41cd2dc9fbd4",
       "a1eb3619d0b2880a",
       "4bf94abcc72c6568",
-      "814c119a5cc419e2"
+      "814c119a5cc419e2",
+      "67b0dcf8740b7f7f",
+      "59cb00ad211b9d29"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-24T17:04:20Z",
+    "last_item_at": "2026-11-24T20:40:47Z",
     "state": "active",
-    "title": "Nvidia · China · Jensen · Huang",
+    "title": "Huang · China · Nvidia · Jensen",
     "topic_id": "world-news"
   },
   {
@@ -6511,6 +6540,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-24T20:48:44.254125Z",
+    "id": "tec790f0fbbaa",
+    "item_ids": [
+      "84a229d288741d97"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-24T19:55:45Z",
+    "state": "pending",
+    "title": "US CIA, ODNI suffer cybersecurity breach of some unclassified information, NYT reports",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-24T10:48:41.839815Z",
     "id": "tec9a816c5e6a",
     "item_ids": [
@@ -6602,10 +6643,11 @@
       "12f84b10f89b11f4",
       "321b8334cb9b103e",
       "6583733fa08938a0",
-      "8a304e5e6e927e00"
+      "8a304e5e6e927e00",
+      "00daa865a6a141fe"
     ],
     "kind": "tracker",
-    "last_item_at": "2026-11-24T16:41:59Z",
+    "last_item_at": "2026-11-24T20:44:37Z",
     "state": "active",
     "title": "Phones",
     "topic_id": "tech-trackers"
