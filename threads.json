@@ -930,12 +930,13 @@
       "e76d9d98faa1c176",
       "9ad3b6ed337fcbd6",
       "8a5f41832ca081fe",
-      "105d8c8463a32652"
+      "105d8c8463a32652",
+      "2d29c896af95865c"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-23T12:42:03Z",
+    "last_item_at": "2026-11-24T17:26:40Z",
     "state": "active",
-    "title": "Democrats · Clinch · House · Seats",
+    "title": "Clinch · House · Democrats · Largest",
     "topic_id": "us-politics"
   },
   {
@@ -1428,7 +1429,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-21T17:00:00Z",
-    "state": "active",
+    "state": "cooling",
     "title": "The U.A.E. Is Shuttling Oil Past Iran in Risky Hormuz Operation",
     "topic_id": "world-news"
   },
@@ -2293,6 +2294,18 @@
     "topic_id": "us-politics"
   },
   {
+    "created_at": "2026-11-24T17:48:45.483947Z",
+    "id": "t46e43505a667",
+    "item_ids": [
+      "f55e8be233bba771"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-24T16:00:00Z",
+    "state": "pending",
+    "title": "What It Means to Secure Elections",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-23T01:41:04.329483Z",
     "id": "t47068fb10c9c",
     "item_ids": [
@@ -2932,7 +2945,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-21T17:14:17Z",
-    "state": "active",
+    "state": "cooling",
     "title": "In France’s Angry Autumn, TV News Channels Are Accused of Stirring the Pot",
     "topic_id": "world-news"
   },
@@ -3014,12 +3027,13 @@
     "id": "t621f3356fa53",
     "item_ids": [
       "26675f5799290efa",
-      "3798f1051f80c23d"
+      "3798f1051f80c23d",
+      "3b8d4bc60ab11cad"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-22T00:10:37Z",
+    "last_item_at": "2026-11-24T17:47:00Z",
     "state": "active",
-    "title": "Nigerian youth have shown their power in the past - why aren't they shaping this election?",
+    "title": "Global · Youth",
     "topic_id": "world-news"
   },
   {
@@ -4001,6 +4015,18 @@
     "topic_id": "health-wellbeing"
   },
   {
+    "created_at": "2026-11-24T17:48:45.483947Z",
+    "id": "t8d92c45f7e73",
+    "item_ids": [
+      "d3a4d489fadb99dc"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-24T17:08:00Z",
+    "state": "pending",
+    "title": "I Went Inside Chornobyl as Ukraine Races to Secure It",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "t8e51bd340404",
     "item_ids": [
@@ -4355,10 +4381,11 @@
     "id": "t9b5aed59253d",
     "item_ids": [
       "b56239a4da2ec66c",
-      "28cc1ec33c3bad07"
+      "28cc1ec33c3bad07",
+      "4aad2bdf1fe7ed5f"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-23T18:00:00Z",
+    "last_item_at": "2026-11-24T16:00:00Z",
     "state": "active",
     "title": "See · Builders · Making · Gemini",
     "topic_id": "ai-news"
@@ -4904,6 +4931,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-24T17:48:45.483947Z",
+    "id": "taf4b3c82869d",
+    "item_ids": [
+      "1d9725cef860c9c9"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-24T17:07:09Z",
+    "state": "pending",
+    "title": "Hugh Hewitt’s Amnesty",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "taf69b5bbbe8f",
     "item_ids": [
@@ -5016,12 +5055,13 @@
       "27bd8b9ff02591bc",
       "414b41cd2dc9fbd4",
       "a1eb3619d0b2880a",
-      "4bf94abcc72c6568"
+      "4bf94abcc72c6568",
+      "814c119a5cc419e2"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-24T12:36:00Z",
+    "last_item_at": "2026-11-24T17:04:20Z",
     "state": "active",
-    "title": "Huang · Jensen · China · Nvidia",
+    "title": "Nvidia · China · Jensen · Huang",
     "topic_id": "world-news"
   },
   {
@@ -5325,6 +5365,18 @@
     "state": "active",
     "title": "Mexico · Top · Captured · Drug",
     "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-24T17:48:45.483947Z",
+    "id": "tbbbe08ada5c3",
+    "item_ids": [
+      "e612b5415dc5213a"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-24T17:34:34Z",
+    "state": "pending",
+    "title": "Tidal announces ban on AI-generated music; 27 million tracks will be deleted",
+    "topic_id": "ai-news"
   },
   {
     "created_at": "2026-11-22T09:09:42.410739Z",
@@ -5940,6 +5992,18 @@
     "topic_id": "health-training"
   },
   {
+    "created_at": "2026-11-24T17:48:45.483947Z",
+    "id": "td49664950b34",
+    "item_ids": [
+      "0290cd3e97744559"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-24T02:08:09Z",
+    "state": "pending",
+    "title": "GTA 6 Recomp (Leonida) banned from GitHub while lead dev was in school",
+    "topic_id": "ai-news"
+  },
+  {
     "created_at": "2026-11-23T11:48:25.998267Z",
     "id": "td509988d8c1c",
     "item_ids": [
@@ -6000,6 +6064,18 @@
     "last_item_at": "2026-11-24T14:57:37Z",
     "state": "active",
     "title": "Army · Iowa",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-24T17:48:45.483947Z",
+    "id": "td880c6639958",
+    "item_ids": [
+      "41ef93e4f4b77381"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-24T17:04:00Z",
+    "state": "pending",
+    "title": "Zimbabwean convicted in South Africa of trying to fight in Ukraine",
     "topic_id": "world-news"
   },
   {
@@ -6064,6 +6140,18 @@
     "last_item_at": "2026-11-23T10:02:07Z",
     "state": "active",
     "title": "Electoral · College",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-24T17:48:45.483947Z",
+    "id": "tdc891d706b6d",
+    "item_ids": [
+      "d437f29364e80944"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-24T15:54:50Z",
+    "state": "pending",
+    "title": "What are the disputes between Iraq's federal government and Kurdistan region?",
     "topic_id": "us-politics"
   },
   {
@@ -6175,6 +6263,18 @@
     "state": "pending",
     "title": "How OpenAI’s Performance Factory keeps ChatGPT fast",
     "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-24T17:48:45.483947Z",
+    "id": "te543fd76aefa",
+    "item_ids": [
+      "0c337f539835b412"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-24T17:44:00Z",
+    "state": "pending",
+    "title": "Opinion | Taiwan Is the West Berlin of Our Time",
+    "topic_id": "world-news"
   },
   {
     "created_at": "2026-11-22T09:09:42.410739Z",
