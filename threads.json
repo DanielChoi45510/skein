@@ -98,10 +98,12 @@
       "39b5ca4e43f90028",
       "81995218f768b392",
       "865d364a72d4cefa",
-      "d421eca4c0eb3a50"
+      "d421eca4c0eb3a50",
+      "86afbbc1e67dab4a",
+      "b8253bc9837fed5d"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-24T03:00:00Z",
+    "last_item_at": "2026-11-24T11:10:00Z",
     "state": "active",
     "title": "Fed & interest rates",
     "topic_id": "markets"
@@ -131,10 +133,11 @@
       "051f91077dc69ef9",
       "82ce3021d7084914",
       "105bf162fa2a333c",
-      "6dbcaf3ed6164991"
+      "6dbcaf3ed6164991",
+      "71225a4081f9bb16"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-24T10:30:00Z",
+    "last_item_at": "2026-11-24T11:25:00Z",
     "state": "active",
     "title": "Financials",
     "topic_id": "markets"
@@ -573,6 +576,18 @@
     "state": "pending",
     "title": "Gerald Ford, Thanksgiving and Friendship",
     "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-24T11:48:45.891620Z",
+    "id": "t0a4d92283e4c",
+    "item_ids": [
+      "ce1b203005016f7f"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-24T11:42:20Z",
+    "state": "pending",
+    "title": "Rep. Raja Krishnamoorthi, D-Ill., on Trump's involvement in the stock market",
+    "topic_id": "us-politics"
   },
   {
     "created_at": "2026-11-23T18:48:42.826335Z",
@@ -1594,6 +1609,18 @@
     "last_item_at": "2026-11-19T12:08:19Z",
     "state": "pending",
     "title": "China Bars Bloomberg Reporter From Trilateral Talks for Asking a Question",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-24T11:48:45.891620Z",
+    "id": "t34faa50729cb",
+    "item_ids": [
+      "389770f6aa8340d9"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-24T11:13:00Z",
+    "state": "pending",
+    "title": "China to Suspend Some Critical-Material Export Curbs to U.S. Until January",
     "topic_id": "world-news"
   },
   {
@@ -2738,7 +2765,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-21T11:00:00Z",
-    "state": "active",
+    "state": "cooling",
     "title": "JD Vance Should Not Be Finger-Pointing in the Midst of War",
     "topic_id": "world-news"
   },
@@ -3226,6 +3253,18 @@
     "last_item_at": "2026-11-24T10:03:18Z",
     "state": "pending",
     "title": "There’s a Good Reason Some Environmentalists Hate This Bill",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-24T11:48:45.891620Z",
+    "id": "t7492b45e66b3",
+    "item_ids": [
+      "fb51b0e2815dd720"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-24T11:00:00Z",
+    "state": "pending",
+    "title": "A George Floyd Musical: What Could Go Wrong?",
     "topic_id": "us-politics"
   },
   {
@@ -3971,6 +4010,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-24T11:48:45.891620Z",
+    "id": "t98e73cf76cf7",
+    "item_ids": [
+      "b830e68158e478c0"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-24T11:00:00Z",
+    "state": "pending",
+    "title": "What We Leave Out When We Talk About Sexism in Science",
+    "topic_id": "us-politics"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "t98f390262cba",
     "item_ids": [
@@ -4127,6 +4178,18 @@
     "state": "pending",
     "title": "Lina Khan’s Grand Theft Antitrust",
     "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-24T11:48:45.891620Z",
+    "id": "t9e1b65710924",
+    "item_ids": [
+      "4e85746d5ec08abb"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-24T09:50:19Z",
+    "state": "pending",
+    "title": "German minister 'shocked' by Trump's intervention on Nvidia",
+    "topic_id": "world-news"
   },
   {
     "created_at": "2026-11-22T09:09:42.410739Z",
@@ -4677,12 +4740,13 @@
       "d72fb7d85705e2a8",
       "db1a116a7a49230b",
       "e923624272ca5ea7",
-      "27bd8b9ff02591bc"
+      "27bd8b9ff02591bc",
+      "414b41cd2dc9fbd4"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-24T09:52:00Z",
+    "last_item_at": "2026-11-24T11:48:23Z",
     "state": "active",
-    "title": "Nvidia · China · Jensen · Huang",
+    "title": "Huang · China · Jensen · Nvidia",
     "topic_id": "world-news"
   },
   {
@@ -5244,6 +5308,18 @@
     "state": "pending",
     "title": "Why Democrat Abdul El-Sayed is Talking Up ‘TrumpCare’",
     "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-24T11:48:45.891620Z",
+    "id": "tc9a18f6f0213",
+    "item_ids": [
+      "b7a132c1d7b64971"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-24T10:37:03Z",
+    "state": "pending",
+    "title": "US envoy 'not certain' military aid to Israel will end this year as Trump promised",
+    "topic_id": "world-news"
   },
   {
     "created_at": "2026-11-22T09:09:42.410739Z",
