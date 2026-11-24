@@ -5477,6 +5477,18 @@
     "topic_id": "us-politics"
   },
   {
+    "created_at": "2026-11-24T06:57:39.203346Z",
+    "id": "te6c0acde1083",
+    "item_ids": [
+      "0386d86e596acc2d"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T20:52:54Z",
+    "state": "pending",
+    "title": "GPUI is getting its own repository",
+    "topic_id": "ai-news"
+  },
+  {
     "created_at": "2026-11-22T20:20:33.012568Z",
     "id": "te7fbb70efc77",
     "item_ids": [
