@@ -18,10 +18,11 @@
     "id": "markets--discretionary",
     "item_ids": [
       "6ebe73ccea0316a3",
-      "bc236c0a7f0e7b56"
+      "bc236c0a7f0e7b56",
+      "89ff4aed36131433"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-24T10:03:26Z",
+    "last_item_at": "2026-11-24T23:03:18Z",
     "state": "active",
     "title": "Consumer Discretionary",
     "topic_id": "markets"
@@ -102,10 +103,11 @@
       "865d364a72d4cefa",
       "d421eca4c0eb3a50",
       "86afbbc1e67dab4a",
-      "b8253bc9837fed5d"
+      "b8253bc9837fed5d",
+      "45f7ae1cfdfee1f9"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-24T11:10:00Z",
+    "last_item_at": "2026-11-24T22:57:53Z",
     "state": "active",
     "title": "Fed & interest rates",
     "topic_id": "markets"
@@ -138,10 +140,11 @@
       "6dbcaf3ed6164991",
       "71225a4081f9bb16",
       "c0504a3e0a03997d",
-      "a692c01023fdec02"
+      "a692c01023fdec02",
+      "600e053a9a897925"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-24T13:35:25Z",
+    "last_item_at": "2026-11-24T22:56:20Z",
     "state": "active",
     "title": "Financials",
     "topic_id": "markets"
@@ -160,10 +163,11 @@
       "6d57ec4322daf073",
       "2c45e78682146dd7",
       "b18f3c5cd1354273",
-      "c226238599fb7244"
+      "c226238599fb7244",
+      "c1b0c64a9570186d"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-24T21:23:00Z",
+    "last_item_at": "2026-11-24T22:58:36Z",
     "state": "active",
     "title": "Health Care",
     "topic_id": "markets"
@@ -231,10 +235,11 @@
       "7c9d37856a45b0d6",
       "4d4efe6a83bcdcba",
       "e6af0b3a2e40c497",
-      "aea4af9cb7be6dcb"
+      "aea4af9cb7be6dcb",
+      "38541f86ff66d40e"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-24T22:33:51Z",
+    "last_item_at": "2026-11-24T23:01:20Z",
     "state": "active",
     "title": "Inflation & jobs reports",
     "topic_id": "markets"
@@ -1558,6 +1563,18 @@
     "topic_id": "ai-news"
   },
   {
+    "created_at": "2026-11-24T23:48:31.030224Z",
+    "id": "t2de77fbb431b",
+    "item_ids": [
+      "5aff716cafb04290"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-24T22:54:01Z",
+    "state": "pending",
+    "title": "Moving to Florida may become a choice of some Republicans after midterms",
+    "topic_id": "us-politics"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "t2df113b2d114",
     "item_ids": [
@@ -1803,6 +1820,18 @@
     "state": "pending",
     "title": "‘Melania: The Series’ is a Bloodless, Instantly Dated Travelogue of Power",
     "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-24T23:48:31.030224Z",
+    "id": "t35f8b2463a54",
+    "item_ids": [
+      "a3c9028eefd69cfd"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-24T00:00:00Z",
+    "state": "pending",
+    "title": "Clay helps sales teams win with Codex and ChatGPT",
+    "topic_id": "ai-news"
   },
   {
     "created_at": "2026-11-22T09:09:42.410739Z",
@@ -3194,12 +3223,13 @@
     "item_ids": [
       "51e4eb10a0f20f8c",
       "f9aaa50a66ad629d",
-      "571fb16af3cdada5"
+      "571fb16af3cdada5",
+      "d4c26b0fef85de44"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-24T20:35:00Z",
+    "last_item_at": "2026-11-24T23:16:36Z",
     "state": "active",
-    "title": "Nvidia and Federal Intervention",
+    "title": "The Devil’s Bargain",
     "topic_id": "us-politics"
   },
   {
@@ -4275,6 +4305,18 @@
     "state": "active",
     "title": "Korea · Education · Minister · Resigns",
     "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-24T23:48:31.030224Z",
+    "id": "t922f27bd170f",
+    "item_ids": [
+      "01a4bfee30b8afb1"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-24T23:00:25Z",
+    "state": "pending",
+    "title": "DealBook Summit 2026: After the Upheaval From the Midterm Elections, Who Has the Edge in 2028?",
+    "topic_id": "us-politics"
   },
   {
     "created_at": "2026-11-22T03:51:06.410293Z",
