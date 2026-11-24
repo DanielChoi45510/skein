@@ -1,30 +1,30 @@
 {
   "https://9to5mac.com/feed/": {
-    "etag": "W/\"bc5ae0868b4e2ed4e76f51b190083830\"",
-    "last_modified": "Mon, 23 Nov 2026 22:35:21 GMT"
+    "etag": "W/\"d4f95cf857222f093fbb7c1a35eb6f96\"",
+    "last_modified": "Tue, 24 Nov 2026 00:38:12 GMT"
   },
   "https://antigravity.google/blog/rss.xml": {
     "etag": null,
-    "last_modified": "Mon, 23 Nov 2026 23:28:41 GMT"
+    "last_modified": "Tue, 24 Nov 2026 00:03:39 GMT"
   },
   "https://arstechnica.com/ai/feed/": {
     "etag": "\"017affcf7372303671f9e0df0adab43e\"",
     "last_modified": "Mon, 23 Nov 2026 22:28:58 GMT"
   },
   "https://deepmind.google/blog/rss.xml": {
-    "etag": "\"w8uLHw\"",
+    "etag": "\"VIQOMQ\"",
     "last_modified": null
   },
   "https://feeds.content.dowjones.io/public/rss/RSSMarketsMain": {
-    "etag": "W/\"9e58-bvd9m8kJVIeB2nXahDSy+9XPi6E\"",
+    "etag": "W/\"9ed5-hCA+lIvN/K34m5PzsDu2yQsIxBo\"",
     "last_modified": null
   },
   "https://feeds.content.dowjones.io/public/rss/RSSOpinion": {
-    "etag": "W/\"fb3d-MUjZcQQglqX/rjgFpY5b4Iq51sA\"",
+    "etag": "W/\"fb3d-Bl1FhPiaXsa6bSUOAs9AaLU4mHQ\"",
     "last_modified": null
   },
   "https://feeds.content.dowjones.io/public/rss/RSSWorldNews": {
-    "etag": "W/\"ca5e-Cy1jI4qxjz6sNwKa6xsFjKAaK24\"",
+    "etag": "W/\"cac3-ZdPr15pbj3OsRIRS4hxKywAFaRg\"",
     "last_modified": null
   },
   "https://fivebooks.com/feed/": {
@@ -32,11 +32,11 @@
     "last_modified": "Sun, 22 Nov 2026 23:06:03 GMT"
   },
   "https://flipboard.com/@associatedpress/top-stories-u7govdf1z.rss": {
-    "etag": "W/\"b43f-ewoD/97evuVUpN/yC5n1OyQSiE4\"",
+    "etag": "W/\"b43c-JD6RxTjiBnQ2/xeWIxbucEdqJ88\"",
     "last_modified": null
   },
   "https://flipboard.com/@associatedpress/u.s.-news-lhl4uphvz.rss": {
-    "etag": "W/\"b344-BOpZW9ztQBi+PhLpifMWgCs4f2c\"",
+    "etag": "W/\"b126-bGodZOAMzl4+n9wR5B2VyKSddLw\"",
     "last_modified": null
   },
   "https://hnrss.org/frontpage?points=200": {
@@ -44,7 +44,7 @@
     "last_modified": "Mon, 23 Nov 2026 19:17:55 GMT"
   },
   "https://newsletter.pragmaticengineer.com/feed": {
-    "etag": "W/\"a212e-7ZqBbnWqRnqjS6CFWeJfiJVEU60\"",
+    "etag": "W/\"a212e-J4KxgEv14GSs9HWnJdquEI0YfpQ\"",
     "last_modified": null
   },
   "https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_anthropic_news.xml": {
@@ -61,7 +61,7 @@
   },
   "https://simonwillison.net/atom/everything/": {
     "etag": null,
-    "last_modified": "Mon, 23 Nov 2026 21:46:35 GMT"
+    "last_modified": "Mon, 23 Nov 2026 23:40:49 GMT"
   },
   "https://sweatscience.substack.com/feed": {
     "etag": "W/\"34740-oHc3yVfXFTsUrabFb7vvZigxKP0\"",
@@ -80,15 +80,15 @@
     "last_modified": "Wed, 18 Nov 2026 19:00:14 GMT"
   },
   "https://www.nationalreview.com/feed/": {
-    "etag": "W/\"72eea73745b9d841e21e012b31b6f3491403e6648990566a5ec43042a2d5738d\"",
+    "etag": "W/\"8b145408f8622fa5eaf716b9e28d13ec3f310aed8f013d1949f5c55e73e8525f\"",
     "last_modified": null
   },
   "https://www.notebookcheck.net/RSS-Feed-Notebook-Reviews.8156.0.html": {
     "etag": null,
-    "last_modified": "Mon, 23 Nov 2026 23:49:00 GMT"
+    "last_modified": "Tue, 24 Nov 2026 00:48:58 GMT"
   },
   "https://www.oneusefulthing.org/feed": {
-    "etag": "W/\"e0f01-xwctmMjNRDvYrFj9k6PJ+gZTPI0\"",
+    "etag": "W/\"e0f01-ReZydFJSVMUL3vj2MyTeMzeviNM\"",
     "last_modified": null
   },
   "https://www.rtings.com/latest-rss.xml": {
@@ -104,15 +104,15 @@
     "last_modified": "Mon, 23 Nov 2026 23:08:14 GMT"
   },
   "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml": {
-    "etag": "W/\"8f0dccbeb06ebd6f7bb706455b23bb53\"",
+    "etag": "W/\"9ebd579f5f5d0027086b9dead038e0e4\"",
     "last_modified": null
   },
   "https://www.theverge.com/rss/installer-newsletter/index.xml": {
-    "etag": "W/\"f9c528e196c695d6d91a5c386677e25e\"",
+    "etag": "W/\"b7cefb79d1d939fca94c39877e20d27a\"",
     "last_modified": null
   },
   "https://www.theverge.com/rss/reviews/index.xml": {
-    "etag": "W/\"c95839b6e97b90195fcf07305bb74c15\"",
+    "etag": "W/\"b7cefb79d1d939fca94c39877e20d27a\"",
     "last_modified": null
   }
 }
