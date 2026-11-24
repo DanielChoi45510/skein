@@ -1,42 +1,42 @@
 {
   "https://9to5mac.com/feed/": {
-    "etag": "W/\"ee14c15639f3b2e221172612cfb6b271\"",
-    "last_modified": "Tue, 24 Nov 2026 15:41:51 GMT"
+    "etag": "W/\"bcb23eaf8725b84a063b7854a5a6c2b8\"",
+    "last_modified": "Tue, 24 Nov 2026 16:42:31 GMT"
   },
   "https://antigravity.google/blog/rss.xml": {
     "etag": null,
     "last_modified": "Tue, 24 Nov 2026 02:05:14 GMT"
   },
   "https://arstechnica.com/ai/feed/": {
-    "etag": "\"742f008f0b4884075e7b0931d208d577\"",
-    "last_modified": "Tue, 24 Nov 2026 15:22:32 GMT"
+    "etag": "\"99e4c6e7faddc96761c70d9a4d649b94\"",
+    "last_modified": "Tue, 24 Nov 2026 16:31:08 GMT"
   },
   "https://deepmind.google/blog/rss.xml": {
-    "etag": "\"6exMyg\"",
+    "etag": "\"yt2xNA\"",
     "last_modified": null
   },
   "https://feeds.content.dowjones.io/public/rss/RSSMarketsMain": {
-    "etag": "W/\"9ba6-Gfikve/6NAvM5JfpZU+rEVFhBJ8\"",
+    "etag": "W/\"9c3b-wdcYWbTcW3t5xWGeLjG6bOwj7+s\"",
     "last_modified": null
   },
   "https://feeds.content.dowjones.io/public/rss/RSSOpinion": {
-    "etag": "W/\"fa3d-cxoot3vU3H2VhwVNtGXw2Lh1ozc\"",
+    "etag": "W/\"f8ba-d9+dxcfry5TgzW1AW42LXgx9TpQ\"",
     "last_modified": null
   },
   "https://feeds.content.dowjones.io/public/rss/RSSWorldNews": {
-    "etag": "W/\"ce13-8cr+WAD27iDDIClsjevZz5SGbKI\"",
+    "etag": "W/\"ce13-FPlskjWCsIufCA4fzg6viQN6iWg\"",
     "last_modified": null
   },
   "https://fivebooks.com/feed/": {
-    "etag": "W/\"8f37c24dd13785cd914f6e0b24f5ca10\"",
-    "last_modified": "Tue, 24 Nov 2026 15:48:30 GMT"
+    "etag": "W/\"07fdccd642f08497d7c30a6f671b0f5a\"",
+    "last_modified": "Tue, 24 Nov 2026 16:38:29 GMT"
   },
   "https://flipboard.com/@associatedpress/top-stories-u7govdf1z.rss": {
-    "etag": "W/\"b4d0-xetPxrb0lm2fwEItNOUMfwGXloA\"",
+    "etag": "W/\"b41b-HGN62K7epc6zRe5IOu6dTQp87ns\"",
     "last_modified": null
   },
   "https://flipboard.com/@associatedpress/u.s.-news-lhl4uphvz.rss": {
-    "etag": "W/\"b36c-/0a4XTUfeikM+0jKv5tZ/aKJDcw\"",
+    "etag": "W/\"b36c-OEkyDtw825Hv11ajJjFZ4JAw3sk\"",
     "last_modified": null
   },
   "https://hnrss.org/frontpage?points=200": {
@@ -44,7 +44,7 @@
     "last_modified": "Tue, 24 Nov 2026 12:40:15 GMT"
   },
   "https://newsletter.pragmaticengineer.com/feed": {
-    "etag": "W/\"a212e-8pJrC5Kx0iGJiOWGnGwgPS3D/dk\"",
+    "etag": "W/\"a212e-7Hje5JeusWtMw6Desr7IXqktMDg\"",
     "last_modified": null
   },
   "https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_anthropic_news.xml": {
@@ -72,8 +72,8 @@
     "last_modified": "Tue, 24 Nov 2026 15:06:54 GMT"
   },
   "https://www.cochrane.org/evidence/rss": {
-    "etag": "\"1795533353-gzip\"",
-    "last_modified": "Tue, 24 Nov 2026 15:15:53 GMT"
+    "etag": "\"1795537813-gzip\"",
+    "last_modified": "Tue, 24 Nov 2026 16:30:13 GMT"
   },
   "https://www.federalreserve.gov/feeds/press_monetary.xml": {
     "etag": "W/\"56329db8f77dd1:0\"",
@@ -85,10 +85,10 @@
   },
   "https://www.notebookcheck.net/RSS-Feed-Notebook-Reviews.8156.0.html": {
     "etag": null,
-    "last_modified": "Tue, 24 Nov 2026 15:48:59 GMT"
+    "last_modified": "Tue, 24 Nov 2026 16:49:14 GMT"
   },
   "https://www.oneusefulthing.org/feed": {
-    "etag": "W/\"e0f01-baP0Hzf3t03b+bR4LU2lyq73CiY\"",
+    "etag": "W/\"e0f01-lMXAq5pz+wNASDDBDVAguholAlw\"",
     "last_modified": null
   },
   "https://www.rtings.com/latest-rss.xml": {
@@ -101,18 +101,18 @@
   },
   "https://www.theatlantic.com/feed/all/": {
     "etag": null,
-    "last_modified": "Tue, 24 Nov 2026 14:58:34 GMT"
+    "last_modified": "Tue, 24 Nov 2026 16:40:52 GMT"
   },
   "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml": {
-    "etag": "W/\"b9e79b2ff3e68081fa6ce1fbf1e56200\"",
+    "etag": "W/\"8d0c0139728c1996ed40530bb0ec9924\"",
     "last_modified": null
   },
   "https://www.theverge.com/rss/installer-newsletter/index.xml": {
-    "etag": "W/\"5d33220ae95798ddb437a10f747301b7\"",
+    "etag": "W/\"8d0c0139728c1996ed40530bb0ec9924\"",
     "last_modified": null
   },
   "https://www.theverge.com/rss/reviews/index.xml": {
-    "etag": "W/\"b9e79b2ff3e68081fa6ce1fbf1e56200\"",
+    "etag": "W/\"8d0c0139728c1996ed40530bb0ec9924\"",
     "last_modified": null
   }
 }
