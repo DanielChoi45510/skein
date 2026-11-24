@@ -2845,6 +2845,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-24T05:48:25.381856Z",
+    "id": "t6a2b993bed34",
+    "item_ids": [
+      "2c731212ce3927e2"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-24T05:32:00Z",
+    "state": "pending",
+    "title": "Huang is back, so is the rally",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "t6a5e85b52221",
     "item_ids": [
@@ -3559,6 +3571,18 @@
     "last_item_at": "2026-11-20T17:20:55Z",
     "state": "pending",
     "title": "Fake forests hiding locations in Russia",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-24T05:48:25.381856Z",
+    "id": "t8e8b823d497b",
+    "item_ids": [
+      "b3b3dcaafeb3421d"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-24T04:48:00Z",
+    "state": "pending",
+    "title": "Solomon Islands plans to replace China security pact with Australia treaty, report says",
     "topic_id": "world-news"
   },
   {
@@ -4586,6 +4610,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-24T05:48:25.381856Z",
+    "id": "tb86d71fd0b9b",
+    "item_ids": [
+      "0d1d656ad5b41fba"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-24T05:01:05Z",
+    "state": "pending",
+    "title": "Radio Offers Russian Troops Classic Rock, Nostalgia — and Pleas to Surrender",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "tb8fe9c66409c",
     "item_ids": [
@@ -4626,10 +4662,11 @@
     "id": "tbac510b3f3a4",
     "item_ids": [
       "2614a9bd98e3bf13",
-      "98668531e5be1d68"
+      "98668531e5be1d68",
+      "e30fe84cc23e9392"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-21T05:00:00Z",
+    "last_item_at": "2026-11-24T05:00:00Z",
     "state": "active",
     "title": "Pepper · Salt",
     "topic_id": "us-politics"
