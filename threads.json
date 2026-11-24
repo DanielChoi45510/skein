@@ -182,10 +182,11 @@
       "a3e1759d367a3ca9",
       "908f38f7dff39f7e",
       "e95ca05a87585dcd",
-      "b7b89b000c95f57a"
+      "b7b89b000c95f57a",
+      "64226c1f8b8429e7"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-24T00:48:00Z",
+    "last_item_at": "2026-11-24T04:42:00Z",
     "state": "active",
     "title": "Information Technology",
     "topic_id": "markets"
@@ -724,6 +725,19 @@
     "state": "pending",
     "title": "Review: The Asus ProArt P16 offers a glimpse of a future powered by local AI",
     "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-24T04:48:41.211473Z",
+    "id": "t12bd6b156fde",
+    "item_ids": [
+      "76477f356c01ca8f",
+      "05025eb8b78f9e3e"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-24T03:57:00Z",
+    "state": "active",
+    "title": "Taiwan · Elections",
+    "topic_id": "world-news"
   },
   {
     "created_at": "2026-11-23T18:48:42.826335Z",
@@ -2180,6 +2194,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-24T04:48:41.211473Z",
+    "id": "t4ef3e74c0c38",
+    "item_ids": [
+      "89be47622d1f2155"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-24T04:14:16Z",
+    "state": "pending",
+    "title": "[AINews] Jensen Is Back! and OpenAI Shows Its Pretraining Curve, joined by Microsoft",
+    "topic_id": "ai-news"
+  },
+  {
     "created_at": "2026-11-23T11:48:25.998267Z",
     "id": "t4f494769778b",
     "item_ids": [
@@ -3327,6 +3353,18 @@
     "state": "pending",
     "title": "Gig Work Is Good Work",
     "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-24T04:48:41.211473Z",
+    "id": "t83c0ef4209dc",
+    "item_ids": [
+      "18c286d6b8091fc0"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-24T02:15:59Z",
+    "state": "pending",
+    "title": "Nato chief vows defence against space threat after Russian nuclear satellite reports",
+    "topic_id": "world-news"
   },
   {
     "created_at": "2026-11-22T09:09:42.410739Z",
