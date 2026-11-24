@@ -6140,6 +6140,18 @@
     "topic_id": "us-politics"
   },
   {
+    "created_at": "2026-11-24T18:53:25.372040Z",
+    "id": "td97e26bd7c84",
+    "item_ids": [
+      "949a815f425dc11c"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-24T18:47:57Z",
+    "state": "pending",
+    "title": "FAA opens probe after Amazon delivery drone clips cable, crashes into garage",
+    "topic_id": "ai-news"
+  },
+  {
     "created_at": "2026-11-23T12:48:37.980822Z",
     "id": "td9936a2263fa",
     "item_ids": [
