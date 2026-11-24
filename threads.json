@@ -158,10 +158,11 @@
       "76afe3b6385720dc",
       "6d57ec4322daf073",
       "2c45e78682146dd7",
-      "b18f3c5cd1354273"
+      "b18f3c5cd1354273",
+      "c226238599fb7244"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-23T12:52:00Z",
+    "last_item_at": "2026-11-24T21:23:00Z",
     "state": "active",
     "title": "Health Care",
     "topic_id": "markets"
@@ -209,10 +210,11 @@
       "e95ca05a87585dcd",
       "b7b89b000c95f57a",
       "64226c1f8b8429e7",
-      "b1e5c93576aa28ea"
+      "b1e5c93576aa28ea",
+      "6dc8999a78bf2e20"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-24T10:13:00Z",
+    "last_item_at": "2026-11-24T21:32:00Z",
     "state": "active",
     "title": "Information Technology",
     "topic_id": "markets"
@@ -1286,6 +1288,18 @@
     "topic_id": "ai-news"
   },
   {
+    "created_at": "2026-11-24T21:48:40.851210Z",
+    "id": "t21f7388994ac",
+    "item_ids": [
+      "d53fd2a2d29f3feb"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-24T21:08:08Z",
+    "state": "pending",
+    "title": "Senator Grassley Should Heed His Own Warning",
+    "topic_id": "us-politics"
+  },
+  {
     "created_at": "2026-11-22T20:20:33.012568Z",
     "id": "t220cc9c5f727",
     "item_ids": [
@@ -1419,6 +1433,18 @@
     "state": "pending",
     "title": "Genie 4 is now available",
     "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-24T21:48:40.851210Z",
+    "id": "t293905aa3c92",
+    "item_ids": [
+      "8d87b7e066a3c9f9"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-24T21:04:50Z",
+    "state": "pending",
+    "title": "The U.S. government is investigating Iranian ties to as many as 50 hacked commercial vessels",
+    "topic_id": "us-politics"
   },
   {
     "created_at": "2026-11-22T03:51:06.410293Z",
@@ -4262,6 +4288,18 @@
     "topic_id": "ai-news"
   },
   {
+    "created_at": "2026-11-24T21:48:40.851210Z",
+    "id": "t95f45f5ff7dc",
+    "item_ids": [
+      "ac2f786b30f6d457"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-24T13:00:00Z",
+    "state": "pending",
+    "title": "GPT-6 models demonstrate intrinsic protein-design capabilities",
+    "topic_id": "ai-news"
+  },
+  {
     "created_at": "2026-11-23T05:03:30.236987Z",
     "id": "t964976d9f473",
     "item_ids": [
@@ -6255,6 +6293,18 @@
     "topic_id": "us-politics"
   },
   {
+    "created_at": "2026-11-24T21:48:40.851210Z",
+    "id": "td9d141fc22a2",
+    "item_ids": [
+      "b6a55ea95f9cd6af"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-24T20:54:00Z",
+    "state": "pending",
+    "title": "China’s Huawei Convicted of Fraud in U.S. Criminal Trial",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "tda69ef7c50ca",
     "item_ids": [
@@ -7161,12 +7211,13 @@
       "4ce697c6dbd75e8a",
       "fa9136539de5ecb7",
       "1881b895e965b033",
-      "9b7f0538ab934225"
+      "9b7f0538ab934225",
+      "555529a69b5d605c"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-24T16:30:00Z",
+    "last_item_at": "2026-11-24T20:02:03Z",
     "state": "active",
-    "title": "Jensen · Trump · Huang · Nvidia",
+    "title": "Jensen · Huang · Nvidia · Trump",
     "topic_id": "ai-news"
   },
   {
