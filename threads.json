@@ -16,10 +16,11 @@
     "created_at": "2026-11-23T11:48:25.998267Z",
     "id": "markets--discretionary",
     "item_ids": [
-      "6ebe73ccea0316a3"
+      "6ebe73ccea0316a3",
+      "bc236c0a7f0e7b56"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-23T11:25:00Z",
+    "last_item_at": "2026-11-24T10:03:26Z",
     "state": "active",
     "title": "Consumer Discretionary",
     "topic_id": "markets"
@@ -48,10 +49,11 @@
       "2766d048a14dcc22",
       "c710fcbeda59730e",
       "1490d31272c6106e",
-      "ad86734713d0d566"
+      "ad86734713d0d566",
+      "f8700ac0024e4b75"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-24T07:10:00Z",
+    "last_item_at": "2026-11-24T09:53:51Z",
     "state": "active",
     "title": "Major earnings surprises",
     "topic_id": "markets"
@@ -127,10 +129,12 @@
       "67a996cc5dfb1d5d",
       "1d4f6b6783652841",
       "051f91077dc69ef9",
-      "82ce3021d7084914"
+      "82ce3021d7084914",
+      "105bf162fa2a333c",
+      "6dbcaf3ed6164991"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-23T22:15:00Z",
+    "last_item_at": "2026-11-24T10:30:00Z",
     "state": "active",
     "title": "Financials",
     "topic_id": "markets"
@@ -186,10 +190,11 @@
       "908f38f7dff39f7e",
       "e95ca05a87585dcd",
       "b7b89b000c95f57a",
-      "64226c1f8b8429e7"
+      "64226c1f8b8429e7",
+      "b1e5c93576aa28ea"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-24T04:42:00Z",
+    "last_item_at": "2026-11-24T10:13:00Z",
     "state": "active",
     "title": "Information Technology",
     "topic_id": "markets"
@@ -367,6 +372,18 @@
     "state": "pending",
     "title": "The Right’s Absurd Misreading of Orwell",
     "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-24T10:48:41.839815Z",
+    "id": "t0695fd976b44",
+    "item_ids": [
+      "3fb90005281d1954"
+    ],
+    "kind": "question",
+    "last_item_at": "2026-11-24T10:00:41Z",
+    "state": "pending",
+    "title": "Is There Such a Thing as Too Much Sleep?",
+    "topic_id": "health-sleep"
   },
   {
     "created_at": "2026-11-22T09:09:42.410739Z",
@@ -671,6 +688,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-24T10:48:41.839815Z",
+    "id": "t0e2c585433e2",
+    "item_ids": [
+      "336e75642f750b50"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-24T10:02:08Z",
+    "state": "pending",
+    "title": "Harry and Meghan’s Life as ‘Nonroyal Royals’ in the UK",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-22T03:51:06.410293Z",
     "id": "t0ec94106416c",
     "item_ids": [
@@ -693,6 +722,18 @@
     "state": "pending",
     "title": "Government Gets a Tax Windfall From Anthropic",
     "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-24T10:48:41.839815Z",
+    "id": "t0fc210638267",
+    "item_ids": [
+      "996dae25eb0021bf"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-24T10:01:44Z",
+    "state": "pending",
+    "title": "A U.N. Leader Focuses on the Deadly Problem of Road Safety",
+    "topic_id": "world-news"
   },
   {
     "created_at": "2026-11-22T12:34:08.686149Z",
@@ -996,12 +1037,13 @@
     "created_at": "2026-11-24T09:48:40.359719Z",
     "id": "t1cae0d3d935e",
     "item_ids": [
-      "00ea4afdb99630c1"
+      "00ea4afdb99630c1",
+      "27428eb2e88b34ff"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-24T09:32:54Z",
-    "state": "pending",
-    "title": "Norway and Ukraine to expand cooperation on anti-drone system",
+    "last_item_at": "2026-11-24T10:15:43Z",
+    "state": "active",
+    "title": "Norway · Ukraine",
     "topic_id": "world-news"
   },
   {
@@ -1160,6 +1202,18 @@
     "state": "pending",
     "title": "New Satellite Photos Show Expansion of North Korean Uranium-Enrichment Plant",
     "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-24T10:48:41.839815Z",
+    "id": "t24f9673c92d7",
+    "item_ids": [
+      "fd2e53944623c363"
+    ],
+    "kind": "question",
+    "last_item_at": "2026-11-24T10:01:57Z",
+    "state": "pending",
+    "title": "Why So Many of Us Have Chronic Back Pain, and Why It Won’t Go Away",
+    "topic_id": "health-training"
   },
   {
     "created_at": "2026-11-22T09:09:42.410739Z",
@@ -1552,6 +1606,18 @@
     "last_item_at": "2026-11-19T17:25:00Z",
     "state": "pending",
     "title": "Rural Americans Deserve a Seat at the Table",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-24T10:48:41.839815Z",
+    "id": "t352fb2e336b8",
+    "item_ids": [
+      "53741edfb2fd7354"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-24T10:03:55Z",
+    "state": "pending",
+    "title": "‘Melania: The Series’ is a Bloodless, Instantly Dated Travelogue of Power",
     "topic_id": "us-politics"
   },
   {
@@ -3138,6 +3204,31 @@
     "topic_id": "ai-news"
   },
   {
+    "created_at": "2026-11-24T10:48:41.839815Z",
+    "id": "t73ba0142d2dc",
+    "item_ids": [
+      "45a89b6387c52489",
+      "414edac5a8e22e94"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-24T10:00:29Z",
+    "state": "active",
+    "title": "Wolf · Suburbs",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-24T10:48:41.839815Z",
+    "id": "t73fcc3423aaf",
+    "item_ids": [
+      "1eb7a35b81551dcb"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-24T10:03:18Z",
+    "state": "pending",
+    "title": "There’s a Good Reason Some Environmentalists Hate This Bill",
+    "topic_id": "us-politics"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "t760715ab73af",
     "item_ids": [
@@ -3404,6 +3495,18 @@
     "last_item_at": "2026-11-23T17:27:31Z",
     "state": "pending",
     "title": "Drone Attack Hits Colombian City as Unmanned Explosives Transform Conflict",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-24T10:48:41.839815Z",
+    "id": "t81b489a4207b",
+    "item_ids": [
+      "1a2c401bc9a89c1b"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-24T10:00:11Z",
+    "state": "pending",
+    "title": "An Arctic Way of Life Fades as Norway Closes Its Last Coal Mine",
     "topic_id": "world-news"
   },
   {
@@ -4040,6 +4143,18 @@
     "topic_id": "ai-news"
   },
   {
+    "created_at": "2026-11-24T10:48:41.839815Z",
+    "id": "t9f8eee4b2e30",
+    "item_ids": [
+      "a9c56d12d300d5c6"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-24T06:30:33Z",
+    "state": "pending",
+    "title": "2035 Came Early",
+    "topic_id": "ai-news"
+  },
+  {
     "created_at": "2026-11-22T12:34:08.686149Z",
     "id": "ta1a2a3819b19",
     "item_ids": [
@@ -4062,6 +4177,18 @@
     "state": "pending",
     "title": "The Rise and Fall of the Telephone Century",
     "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-24T10:48:41.839815Z",
+    "id": "ta22f0be232e8",
+    "item_ids": [
+      "2ea454409599cb65"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-24T10:00:00Z",
+    "state": "pending",
+    "title": "Democrats probe whether Trump Jr.-aligned businesses benefit from government access",
+    "topic_id": "us-politics"
   },
   {
     "created_at": "2026-11-22T09:09:42.410739Z",
@@ -4189,12 +4316,13 @@
       "dbbc858f03f04795",
       "8f17f7a0d5b086c1",
       "fdf2349553987e2e",
-      "23832976df176467"
+      "23832976df176467",
+      "b7e4dc7f4250d265"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-24T06:02:00Z",
+    "last_item_at": "2026-11-24T10:00:00Z",
     "state": "active",
-    "title": "Jensen · Trump · Huang · Nvidia",
+    "title": "Trump · Jensen · Huang · Nvidia",
     "topic_id": "us-politics"
   },
   {
@@ -4416,6 +4544,18 @@
     "topic_id": "us-politics"
   },
   {
+    "created_at": "2026-11-24T10:48:41.839815Z",
+    "id": "taece77536fbb",
+    "item_ids": [
+      "f8b8857b1b3309f4"
+    ],
+    "kind": "question",
+    "last_item_at": "2026-11-24T10:02:48Z",
+    "state": "active",
+    "title": "Medicare Hospice Caps Leave Patients Without Care",
+    "topic_id": "health-wellbeing"
+  },
+  {
     "created_at": "2026-11-24T06:48:39.808632Z",
     "id": "taed9ad99c106",
     "item_ids": [
@@ -4536,10 +4676,11 @@
       "07193efeb38e94ad",
       "d72fb7d85705e2a8",
       "db1a116a7a49230b",
-      "e923624272ca5ea7"
+      "e923624272ca5ea7",
+      "27bd8b9ff02591bc"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-24T08:39:27Z",
+    "last_item_at": "2026-11-24T09:52:00Z",
     "state": "active",
     "title": "Nvidia · China · Jensen · Huang",
     "topic_id": "world-news"
@@ -4657,12 +4798,13 @@
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "tb5c91f233585",
     "item_ids": [
-      "d1c951d7ba7ad9c7"
+      "d1c951d7ba7ad9c7",
+      "90a2fa83f954ebbc"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-20T16:50:00Z",
-    "state": "pending",
-    "title": "The Benefits of Reading Are Incalculable",
+    "last_item_at": "2026-11-24T10:02:22Z",
+    "state": "active",
+    "title": "I Was Disabled in Middle Age. It Opened Up the World.",
     "topic_id": "us-politics"
   },
   {
@@ -5239,6 +5381,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-24T10:48:41.839815Z",
+    "id": "tce7fad5092dc",
+    "item_ids": [
+      "b85af7af8aaa322d"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-24T10:03:44Z",
+    "state": "pending",
+    "title": "The ‘Everywhere, All at Once’ Cybersecurity Crisis",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-22T20:20:33.012568Z",
     "id": "tcf3979c52b73",
     "item_ids": [
@@ -5359,6 +5513,18 @@
     "state": "pending",
     "title": "Morocco and Senegal await Afcon final verdict after court case",
     "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-24T10:48:41.839815Z",
+    "id": "td41e536c0ffa",
+    "item_ids": [
+      "81a7a4cd3efe0c92"
+    ],
+    "kind": "question",
+    "last_item_at": "2026-11-24T10:00:20Z",
+    "state": "active",
+    "title": "6 Craft Retreats Offer Knitting, Pottery and More for All Skill Levels",
+    "topic_id": "health-training"
   },
   {
     "created_at": "2026-11-23T11:48:25.998267Z",
@@ -5669,6 +5835,18 @@
     "last_item_at": "2026-11-22T11:00:23Z",
     "state": "pending",
     "title": "Would You Buy a Used Civilization From This Man?",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-24T10:48:41.839815Z",
+    "id": "tec9a816c5e6a",
+    "item_ids": [
+      "c69a68fb5d1c537a"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-24T10:35:29Z",
+    "state": "pending",
+    "title": "Japan’s Leader, in Break with U.S., Defends International Criminal Court",
     "topic_id": "world-news"
   },
   {
