@@ -5,10 +5,11 @@
     "item_ids": [
       "4b55e9ad79027a0a",
       "8efce86d328d46c4",
-      "7e77f56783aa3faa"
+      "7e77f56783aa3faa",
+      "29a0c4c48a41c90d"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-24T22:07:00Z",
+    "last_item_at": "2026-11-25T08:54:00Z",
     "state": "active",
     "title": "Communication Services",
     "topic_id": "markets"
@@ -219,10 +220,11 @@
       "b1e5c93576aa28ea",
       "6dc8999a78bf2e20",
       "64c42a9b69b43862",
-      "06cf838f3471fdc8"
+      "06cf838f3471fdc8",
+      "b030a48461f3cf27"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-25T02:53:00Z",
+    "last_item_at": "2026-11-25T09:36:00Z",
     "state": "active",
     "title": "Information Technology",
     "topic_id": "markets"
@@ -998,12 +1000,13 @@
       "9ad3b6ed337fcbd6",
       "8a5f41832ca081fe",
       "105d8c8463a32652",
-      "2d29c896af95865c"
+      "2d29c896af95865c",
+      "f77e1d8f315657dd"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-24T17:26:40Z",
+    "last_item_at": "2026-11-25T09:40:19Z",
     "state": "active",
-    "title": "Clinch · House · Democrats · Largest",
+    "title": "House · Democrats · Largest · Majority",
     "topic_id": "us-politics"
   },
   {
@@ -4475,7 +4478,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-22T09:20:45Z",
-    "state": "active",
+    "state": "cooling",
     "title": "Korea · Education · Minister · Resigns",
     "topic_id": "world-news"
   },
