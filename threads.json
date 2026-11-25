@@ -57,10 +57,11 @@
       "ad86734713d0d566",
       "f8700ac0024e4b75",
       "9e80f1098e24f02c",
-      "826465d103bf03a5"
+      "826465d103bf03a5",
+      "0196540f2ec4c66f"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-25T10:30:00Z",
+    "last_item_at": "2026-11-25T21:23:00Z",
     "state": "active",
     "title": "Major earnings surprises",
     "topic_id": "markets"
@@ -239,10 +240,11 @@
       "bfe3294ab23698ee",
       "1908686a75796fb0",
       "3dc7aee55f092f0a",
-      "a6f37c5e91a3202e"
+      "a6f37c5e91a3202e",
+      "2dee6d26ce5c5da0"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-25T20:40:45Z",
+    "last_item_at": "2026-11-25T21:31:00Z",
     "state": "active",
     "title": "Information Technology",
     "topic_id": "markets"
@@ -388,6 +390,18 @@
     "state": "pending",
     "title": "Give Thanks to Inverse Billionaires",
     "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-25T21:48:23.001305Z",
+    "id": "t01fffbe3fa64",
+    "item_ids": [
+      "1c77d68f32679395"
+    ],
+    "kind": "question",
+    "last_item_at": "2026-11-25T21:18:45Z",
+    "state": "pending",
+    "title": "The Good List: 5 Things to Add Delight to Your Day",
+    "topic_id": "health-sleep"
   },
   {
     "created_at": "2026-11-23T15:48:33.493735Z",
@@ -1599,6 +1613,18 @@
     "last_item_at": "2026-11-24T08:15:28Z",
     "state": "pending",
     "title": "Japan accelerates ICC funding as US sanctions threaten court",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-25T21:48:23.001305Z",
+    "id": "t2492b097a0cc",
+    "item_ids": [
+      "612533e29dd47a8d"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T21:46:00Z",
+    "state": "pending",
+    "title": "Thanksgiving vs. Socialism",
     "topic_id": "us-politics"
   },
   {
@@ -3512,6 +3538,18 @@
     "topic_id": "us-politics"
   },
   {
+    "created_at": "2026-11-25T21:48:23.001305Z",
+    "id": "t5e5043ffd781",
+    "item_ids": [
+      "3432bb06daebe909"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T21:10:22Z",
+    "state": "pending",
+    "title": "Are You Estranged From a Family Member?",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "t5f406846781d",
     "item_ids": [
@@ -3738,6 +3776,18 @@
     "last_item_at": "2026-11-20T18:08:27Z",
     "state": "pending",
     "title": "The Rot of Youth Sports Is Spreading",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-25T21:48:23.001305Z",
+    "id": "t663f45017bf0",
+    "item_ids": [
+      "2cb8db916d527b8e"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T16:47:00Z",
+    "state": "pending",
+    "title": "NEWSLETTER: Where are the Gulf's pledged trillions?",
     "topic_id": "world-news"
   },
   {
@@ -5096,6 +5146,18 @@
     "state": "pending",
     "title": "California AG Bonta filed lawsuit against OpenAI over model security, public safety",
     "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-25T21:48:23.001305Z",
+    "id": "t96d1a027d507",
+    "item_ids": [
+      "09f5ed44f4ab506f"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T14:59:45Z",
+    "state": "pending",
+    "title": "Ecuador minister says talks with US focused on reviewing operations in the country",
+    "topic_id": "world-news"
   },
   {
     "created_at": "2026-11-24T07:48:38.063668Z",
@@ -8024,6 +8086,18 @@
     "topic_id": "us-politics"
   },
   {
+    "created_at": "2026-11-25T21:48:23.001305Z",
+    "id": "tf0e439293302",
+    "item_ids": [
+      "206758d5c1ec31e8"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T21:41:37Z",
+    "state": "pending",
+    "title": "We Are Watching Pandemic Backlash on Tape Delay",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "tf0ecd858d6e1",
     "item_ids": [
@@ -8114,12 +8188,13 @@
     "id": "tf235710f805b",
     "item_ids": [
       "fd2593a31b066d9f",
-      "2c1d902c2e1a6e7b"
+      "2c1d902c2e1a6e7b",
+      "65ea1dd9d99d3138"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-16T20:12:00Z",
-    "state": "cooling",
-    "title": "The Window to Achieve Immigration Reform",
+    "last_item_at": "2026-11-25T21:47:00Z",
+    "state": "active",
+    "title": "America Is Past Peak Trump. Your Move, GOP",
     "topic_id": "us-politics"
   },
   {
@@ -8314,6 +8389,18 @@
     "last_item_at": "2026-11-20T22:16:00Z",
     "state": "pending",
     "title": "Trump Case Against the New York Times Advances",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-25T21:48:23.001305Z",
+    "id": "tf6f58ecc4c30",
+    "item_ids": [
+      "64f8c80ca4131109"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T21:37:07Z",
+    "state": "pending",
+    "title": "Road Fire Near Cairo Kills Dozens After Petroleum-Laden Truck Crashes",
     "topic_id": "world-news"
   },
   {
