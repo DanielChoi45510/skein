@@ -241,10 +241,11 @@
       "1908686a75796fb0",
       "3dc7aee55f092f0a",
       "a6f37c5e91a3202e",
-      "2dee6d26ce5c5da0"
+      "2dee6d26ce5c5da0",
+      "726ae319c38c26df"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-25T21:31:00Z",
+    "last_item_at": "2026-11-25T21:48:00Z",
     "state": "active",
     "title": "Information Technology",
     "topic_id": "markets"
@@ -264,10 +265,11 @@
       "38541f86ff66d40e",
       "d63b543661f327dc",
       "bee21752dcf7dc46",
-      "02e9e737217b576c"
+      "02e9e737217b576c",
+      "d01e008c240c22ea"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-25T07:44:00Z",
+    "last_item_at": "2026-11-25T22:27:00Z",
     "state": "active",
     "title": "Inflation & jobs reports",
     "topic_id": "markets"
@@ -1004,6 +1006,18 @@
     "state": "pending",
     "title": "Trump Ballroom and Other Projects Got $300 Million Donation Boost",
     "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-25T22:30:20.916182Z",
+    "id": "t1135951f98a9",
+    "item_ids": [
+      "c91a30b4e6522b01"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T21:51:26Z",
+    "state": "pending",
+    "title": "Google’s patent for custom AI video feeds paints a bleak picture of entertainment’s future",
+    "topic_id": "ai-news"
   },
   {
     "created_at": "2026-11-22T12:34:08.686149Z",
@@ -4105,6 +4119,18 @@
     "topic_id": "us-politics"
   },
   {
+    "created_at": "2026-11-25T22:30:20.916182Z",
+    "id": "t715bb78946b8",
+    "item_ids": [
+      "b58c3749bf11706c"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T22:28:00Z",
+    "state": "pending",
+    "title": "Brace for the Trump-Warren Credit Card",
+    "topic_id": "us-politics"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "t717dcd042f2c",
     "item_ids": [
@@ -6046,12 +6072,13 @@
       "bbde5766c7216552",
       "0b83da30ea9c973a",
       "081c68f2f73557bf",
-      "ec5014e5ceb8b5be"
+      "ec5014e5ceb8b5be",
+      "ade3eaa824625fd3"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-24T22:15:20Z",
+    "last_item_at": "2026-11-25T19:39:56Z",
     "state": "active",
-    "title": "Great · Chips · Heist · Nvidia",
+    "title": "Great · China · Nvidia · Chips",
     "topic_id": "us-politics"
   },
   {
@@ -7280,12 +7307,13 @@
     "id": "td3bb9cc5a81f",
     "item_ids": [
       "392e64f8c0231d11",
-      "596cc50988815b56"
+      "596cc50988815b56",
+      "a2ffc72d8fea86ff"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-24T14:46:20Z",
+    "last_item_at": "2026-11-25T17:32:30Z",
     "state": "active",
-    "title": "Senegal · Afcon · Court",
+    "title": "Senegal · Afcon · Final · Court",
     "topic_id": "world-news"
   },
   {
