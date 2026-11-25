@@ -300,6 +300,18 @@
     "topic_id": "markets"
   },
   {
+    "created_at": "2026-11-25T01:48:37.057578Z",
+    "id": "markets--trade",
+    "item_ids": [
+      "ff84d4085b135204"
+    ],
+    "kind": "fixed",
+    "last_item_at": "2026-11-25T01:39:00Z",
+    "state": "active",
+    "title": "Trade & tariffs",
+    "topic_id": "markets"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "t008cd710c09c",
     "item_ids": [
@@ -3758,6 +3770,18 @@
     "topic_id": "us-politics"
   },
   {
+    "created_at": "2026-11-25T01:48:37.057578Z",
+    "id": "t78df7d8e3e7d",
+    "item_ids": [
+      "fc2918b082a39a38"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T01:34:24Z",
+    "state": "pending",
+    "title": "U.S. Misrepresented to Court the Views of the House’s Top Lawyer About Omar Search",
+    "topic_id": "us-politics"
+  },
+  {
     "created_at": "2026-11-23T09:48:40.518489Z",
     "id": "t792ddb793f1d",
     "item_ids": [
@@ -7203,6 +7227,18 @@
     "state": "pending",
     "title": "How safe and effective is mifepristone when used for emergency contraception?",
     "topic_id": "health-sleep"
+  },
+  {
+    "created_at": "2026-11-25T01:48:37.057578Z",
+    "id": "tf8a28a382f57",
+    "item_ids": [
+      "49cbfd83dabfadda"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T01:02:13Z",
+    "state": "pending",
+    "title": "The rising cost of putting food on the table in India",
+    "topic_id": "world-news"
   },
   {
     "created_at": "2026-11-22T09:09:42.410739Z",
