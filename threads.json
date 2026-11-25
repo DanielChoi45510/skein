@@ -238,10 +238,11 @@
       "d22b97055668272d",
       "bfe3294ab23698ee",
       "1908686a75796fb0",
-      "3dc7aee55f092f0a"
+      "3dc7aee55f092f0a",
+      "a6f37c5e91a3202e"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-25T15:43:55Z",
+    "last_item_at": "2026-11-25T20:40:45Z",
     "state": "active",
     "title": "Information Technology",
     "topic_id": "markets"
@@ -2003,6 +2004,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-25T20:48:40.987096Z",
+    "id": "t314691bdcc58",
+    "item_ids": [
+      "c38f09864b6b0af2"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T19:11:27Z",
+    "state": "pending",
+    "title": "Holy shit holy shit holy shit holy shit: The magnitude of what’s now happening",
+    "topic_id": "jobs-market"
+  },
+  {
     "created_at": "2026-11-24T22:48:41.692861Z",
     "id": "t31ce0bd9b2d6",
     "item_ids": [
@@ -2324,6 +2337,18 @@
     "last_item_at": "2026-11-23T23:35:54Z",
     "state": "active",
     "title": "Trump Toasted a Troubled Boxer as a V.I.P. at Crypto Gala",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-25T20:48:40.987096Z",
+    "id": "t3b72639fcb84",
+    "item_ids": [
+      "fc9288e060a3fbf8"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T20:19:48Z",
+    "state": "pending",
+    "title": "Border Barrier Cannot be Removed for Decades, Texas Republicans and D.O.J. Agree",
     "topic_id": "us-politics"
   },
   {
@@ -3058,6 +3083,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-25T20:48:40.987096Z",
+    "id": "t53e5c855dcae",
+    "item_ids": [
+      "ac278251b3adffd8"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T20:23:36Z",
+    "state": "pending",
+    "title": "Strategic Depth for Thee, Not for Me?",
+    "topic_id": "us-politics"
+  },
+  {
     "created_at": "2026-11-23T07:48:38.314750Z",
     "id": "t54985eb194ef",
     "item_ids": [
@@ -3605,10 +3642,11 @@
     "item_ids": [
       "26675f5799290efa",
       "3798f1051f80c23d",
-      "3b8d4bc60ab11cad"
+      "3b8d4bc60ab11cad",
+      "57bc2b63ca6d3cbb"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-24T17:47:00Z",
+    "last_item_at": "2026-11-25T20:38:48Z",
     "state": "active",
     "title": "Global · Youth",
     "topic_id": "world-news"
@@ -8067,7 +8105,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-22T19:52:50Z",
-    "state": "active",
+    "state": "cooling",
     "title": "Explosion on Russian ship at Libya port caused by suspected drone attack, officials say",
     "topic_id": "world-news"
   },
