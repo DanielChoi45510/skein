@@ -114,10 +114,11 @@
       "b8253bc9837fed5d",
       "45f7ae1cfdfee1f9",
       "904d4bbe95ce0bdc",
-      "9c780f42d06ba206"
+      "9c780f42d06ba206",
+      "04c6f82fe3265459"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-25T13:34:11Z",
+    "last_item_at": "2026-11-25T17:22:00Z",
     "state": "active",
     "title": "Fed & interest rates",
     "topic_id": "markets"
@@ -553,6 +554,18 @@
     "state": "pending",
     "title": "Ukraine Is Racing to Keep Its Booming Defense Industry From Stalling",
     "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-25T17:48:40.108094Z",
+    "id": "t071505507f79",
+    "item_ids": [
+      "612c6e9d47a4a1e2"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T17:07:23Z",
+    "state": "pending",
+    "title": "How Our Reporters Navigate Politics at Thanksgiving",
+    "topic_id": "us-politics"
   },
   {
     "created_at": "2026-11-24T02:48:43.862619Z",
@@ -1817,6 +1830,18 @@
     "topic_id": "ai-news"
   },
   {
+    "created_at": "2026-11-25T17:48:40.108094Z",
+    "id": "t2e81d785b8ee",
+    "item_ids": [
+      "cbbac7c3e4543d8e"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T17:31:32Z",
+    "state": "pending",
+    "title": "How Anthropic builds software in 2026 with Katelyn Lesse",
+    "topic_id": "jobs-market"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "t2eb04ed3bc21",
     "item_ids": [
@@ -2956,6 +2981,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-25T17:48:40.108094Z",
+    "id": "t5132ff4623d9",
+    "item_ids": [
+      "5170e91085edca95"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T17:48:09Z",
+    "state": "pending",
+    "title": "US stocks fall further as fears over AI intensify",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-23T07:48:38.314750Z",
     "id": "t54985eb194ef",
     "item_ids": [
@@ -3081,6 +3118,18 @@
     "last_item_at": "2026-11-24T01:00:55Z",
     "state": "pending",
     "title": "Federal appeals court gives President Donald Trump a path to erasing hush money conviction",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-25T17:48:40.108094Z",
+    "id": "t5690ee94652a",
+    "item_ids": [
+      "3d7bdc6afaebf6c9"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T17:16:27Z",
+    "state": "pending",
+    "title": "Reflections on the River of Life",
     "topic_id": "us-politics"
   },
   {
@@ -4207,6 +4256,18 @@
     "topic_id": "ai-news"
   },
   {
+    "created_at": "2026-11-25T17:48:40.108094Z",
+    "id": "t7e4933bcf8f6",
+    "item_ids": [
+      "10ef75306f1db512"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-24T13:07:53Z",
+    "state": "pending",
+    "title": "From spectrum to structure: Identifying molecules with Mass Spec Skills for Google Antigravity",
+    "topic_id": "ai-news"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "t7e65add1bfbf",
     "item_ids": [
@@ -4342,6 +4403,18 @@
     "state": "pending",
     "title": "An Arctic Way of Life Fades as Norway Closes Its Last Coal Mine",
     "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-25T17:48:40.108094Z",
+    "id": "t827379300b2c",
+    "item_ids": [
+      "17929128d139e3d0"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T17:44:51Z",
+    "state": "pending",
+    "title": "FCC signs off on SpaceX’s plan to put up to 1 million data center satellites into space",
+    "topic_id": "ai-news"
   },
   {
     "created_at": "2026-11-22T09:09:42.410739Z",
@@ -5374,10 +5447,11 @@
       "b9c24ac86ae2f76b",
       "56aba13d50d393d0",
       "bf98da8ab9b8a33f",
-      "16ee6e93c40fbd01"
+      "16ee6e93c40fbd01",
+      "e60a4b00bb73328e"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-25T06:00:00Z",
+    "last_item_at": "2026-11-25T11:50:05Z",
     "state": "active",
     "title": "Trump · Jensen · Huang · Nvidia",
     "topic_id": "us-politics"
@@ -6442,7 +6516,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-22T16:59:00Z",
-    "state": "active",
+    "state": "cooling",
     "title": "U.N · Climate · Talks · Fossil",
     "topic_id": "world-news"
   },
