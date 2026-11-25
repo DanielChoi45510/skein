@@ -1,7 +1,7 @@
 {
   "https://9to5mac.com/feed/": {
-    "etag": "W/\"016eca822b9efa384a77064f2def750a\"",
-    "last_modified": "Wed, 25 Nov 2026 01:08:39 GMT"
+    "etag": "W/\"a61733ac6bd227a0075b7393487495c0\"",
+    "last_modified": "Wed, 25 Nov 2026 11:24:01 GMT"
   },
   "https://antigravity.google/blog/rss.xml": {
     "etag": null,
@@ -12,19 +12,19 @@
     "last_modified": "Tue, 24 Nov 2026 22:50:11 GMT"
   },
   "https://deepmind.google/blog/rss.xml": {
-    "etag": "\"l-LkyA\"",
+    "etag": "\"JdfF5Q\"",
     "last_modified": null
   },
   "https://feeds.content.dowjones.io/public/rss/RSSMarketsMain": {
-    "etag": "W/\"a0ef-Z8rZJFSG5MEkqQmoPeUbpUAhk0k\"",
+    "etag": "W/\"a159-uD8wnhppq4dm6GcOEkwvOq+phg0\"",
     "last_modified": null
   },
   "https://feeds.content.dowjones.io/public/rss/RSSOpinion": {
-    "etag": "W/\"f8e2-QzlqnGdCNEuF2UFCzGO5mCdhL+4\"",
+    "etag": "W/\"f8e2-diiT6MIw6EPYdwGnn2LOVRbejS0\"",
     "last_modified": null
   },
   "https://feeds.content.dowjones.io/public/rss/RSSWorldNews": {
-    "etag": "W/\"cd97-jCFWOlTMQQzB9X727ExoGDkImFE\"",
+    "etag": "W/\"cd97-sKnl9n1plzZiWL1+9KDUJZQct8w\"",
     "last_modified": null
   },
   "https://fivebooks.com/feed/": {
@@ -36,7 +36,7 @@
     "last_modified": null
   },
   "https://flipboard.com/@associatedpress/u.s.-news-lhl4uphvz.rss": {
-    "etag": "W/\"b421-2W0H3skN28xnemAFug3HvZrHQ40\"",
+    "etag": "W/\"b40f-MJ4+ceF/OxvGVraqxR1lLfVYdDU\"",
     "last_modified": null
   },
   "https://hnrss.org/frontpage?points=200": {
@@ -44,7 +44,7 @@
     "last_modified": "Wed, 25 Nov 2026 03:23:07 GMT"
   },
   "https://newsletter.pragmaticengineer.com/feed": {
-    "etag": "W/\"b284a-CEHCZILyik0C93yIxeii/dDH090\"",
+    "etag": "W/\"b284a-PrkLLm+seUCzZfznbbN9bMMy8A0\"",
     "last_modified": null
   },
   "https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_anthropic_news.xml": {
@@ -68,27 +68,27 @@
     "last_modified": null
   },
   "https://thedispatch.com/feed/": {
-    "etag": "W/\"49f7ba2983e3ded2a4fab9e649afec48\"",
-    "last_modified": "Wed, 25 Nov 2026 10:23:22 GMT"
+    "etag": "W/\"9d1e0f0525d5faad048a9d6af34fe787\"",
+    "last_modified": "Wed, 25 Nov 2026 11:48:18 GMT"
   },
   "https://www.cochrane.org/evidence/rss": {
-    "etag": "\"1795601724-gzip\"",
-    "last_modified": "Wed, 25 Nov 2026 10:15:24 GMT"
+    "etag": "\"1795607113-gzip\"",
+    "last_modified": "Wed, 25 Nov 2026 11:45:13 GMT"
   },
   "https://www.federalreserve.gov/feeds/press_monetary.xml": {
     "etag": "W/\"de8654b467cdd1:0\"",
     "last_modified": "Tue, 24 Nov 2026 19:00:17 GMT"
   },
   "https://www.nationalreview.com/feed/": {
-    "etag": "W/\"3ba2d6360a111c23c3f83adfbe2222ed6949fa177df5fb99ccff805ca2299253\"",
+    "etag": "W/\"eb2459848e3ec38ddae70737a3f6380beb800acb69ba74141c3f1d846d93f64d\"",
     "last_modified": null
   },
   "https://www.notebookcheck.net/RSS-Feed-Notebook-Reviews.8156.0.html": {
     "etag": null,
-    "last_modified": "Wed, 25 Nov 2026 10:48:53 GMT"
+    "last_modified": "Wed, 25 Nov 2026 11:48:54 GMT"
   },
   "https://www.oneusefulthing.org/feed": {
-    "etag": "W/\"e0f01-aeyM2SPHDJiE1G4eINAB0bEdIWI\"",
+    "etag": "W/\"e0f01-kW9/O639IpfXhNO5AmRiPcmdE1M\"",
     "last_modified": null
   },
   "https://www.rtings.com/latest-rss.xml": {
@@ -101,18 +101,18 @@
   },
   "https://www.theatlantic.com/feed/all/": {
     "etag": null,
-    "last_modified": "Wed, 25 Nov 2026 10:00:56 GMT"
+    "last_modified": "Wed, 25 Nov 2026 11:00:56 GMT"
   },
   "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml": {
-    "etag": "W/\"8943a0427e6d655ae08c13710b972bd0\"",
+    "etag": "W/\"868a130cecca4f404def7ec84dbeed9a\"",
     "last_modified": null
   },
   "https://www.theverge.com/rss/installer-newsletter/index.xml": {
-    "etag": "W/\"8943a0427e6d655ae08c13710b972bd0\"",
+    "etag": "W/\"868a130cecca4f404def7ec84dbeed9a\"",
     "last_modified": null
   },
   "https://www.theverge.com/rss/reviews/index.xml": {
-    "etag": "W/\"8943a0427e6d655ae08c13710b972bd0\"",
+    "etag": "W/\"96a3caf369feb98d1620c1eee328d070\"",
     "last_modified": null
   }
 }

@@ -20,10 +20,11 @@
     "item_ids": [
       "6ebe73ccea0316a3",
       "bc236c0a7f0e7b56",
-      "89ff4aed36131433"
+      "89ff4aed36131433",
+      "aca31400fc4deb34"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-24T23:03:18Z",
+    "last_item_at": "2026-11-25T11:02:00Z",
     "state": "active",
     "title": "Consumer Discretionary",
     "topic_id": "markets"
@@ -107,10 +108,11 @@
       "d421eca4c0eb3a50",
       "86afbbc1e67dab4a",
       "b8253bc9837fed5d",
-      "45f7ae1cfdfee1f9"
+      "45f7ae1cfdfee1f9",
+      "904d4bbe95ce0bdc"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-24T22:57:53Z",
+    "last_item_at": "2026-11-25T11:01:04Z",
     "state": "active",
     "title": "Fed & interest rates",
     "topic_id": "markets"
@@ -223,10 +225,11 @@
       "64c42a9b69b43862",
       "06cf838f3471fdc8",
       "b030a48461f3cf27",
-      "46f71f6c69520ace"
+      "46f71f6c69520ace",
+      "d22b97055668272d"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-25T09:56:46Z",
+    "last_item_at": "2026-11-25T10:50:09Z",
     "state": "active",
     "title": "Information Technology",
     "topic_id": "markets"
@@ -273,10 +276,11 @@
       "7631267b504af1d1",
       "4b18b17ec7dfd1ad",
       "fb1060fe9833fa4a",
-      "d9e72775a1abacf0"
+      "d9e72775a1abacf0",
+      "670df7bef5541d4f"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-25T08:27:46Z",
+    "last_item_at": "2026-11-25T11:03:00Z",
     "state": "active",
     "title": "Materials",
     "topic_id": "markets"
@@ -479,6 +483,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-25T11:48:47.899841Z",
+    "id": "t070a28ee0f6f",
+    "item_ids": [
+      "08523ea18f175343"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T11:00:00Z",
+    "state": "pending",
+    "title": "SEC Proposes Reforms to Shareholder Democracy",
+    "topic_id": "us-politics"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "t07144af29043",
     "item_ids": [
@@ -624,7 +640,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-22T11:00:00Z",
-    "state": "active",
+    "state": "cooling",
     "title": "Grand · Theft · Auto · VI",
     "topic_id": "us-politics"
   },
@@ -1116,16 +1132,29 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-25T11:48:47.899841Z",
+    "id": "t17f2cfe30757",
+    "item_ids": [
+      "4811e7788f08ff7a"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T11:00:00Z",
+    "state": "pending",
+    "title": "For ‘Denuclearization,’ Trump Should Build Up to Build Down",
+    "topic_id": "us-politics"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "t18285b9632d8",
     "item_ids": [
       "58702748c231afcc",
-      "3c35c858d8c7974e"
+      "3c35c858d8c7974e",
+      "ec508751daf53189"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-23T21:32:36Z",
+    "last_item_at": "2026-11-25T11:04:50Z",
     "state": "active",
-    "title": "Thanksgiving travel could be messy with storms coming after a week filled with airline glitches",
+    "title": "Thanksgiving · Travel",
     "topic_id": "world-news"
   },
   {
@@ -1298,6 +1327,18 @@
     "last_item_at": "2026-11-23T18:19:26Z",
     "state": "pending",
     "title": "A.I.-Powered Fake Personas Target Taiwan’s Elections",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-25T11:48:47.899841Z",
+    "id": "t1efd60a31d36",
+    "item_ids": [
+      "17808b06c2761f11"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T11:00:00Z",
+    "state": "pending",
+    "title": "On College Campuses, Nothing Is Free from Antisemitism",
     "topic_id": "us-politics"
   },
   {
@@ -2296,12 +2337,13 @@
     "created_at": "2026-11-24T15:48:51.224435Z",
     "id": "t40ae751156d9",
     "item_ids": [
-      "9340d763e8ad9b66"
+      "9340d763e8ad9b66",
+      "c39ad6a5399e0603"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-24T14:46:34Z",
-    "state": "pending",
-    "title": "Trump will give Medal of Freedom to Giuliani, a fierce political ally who led New York through 9/11",
+    "last_item_at": "2026-11-25T11:45:25Z",
+    "state": "active",
+    "title": "Happy Thanksgiving!",
     "topic_id": "world-news"
   },
   {
@@ -2469,12 +2511,13 @@
     "created_at": "2026-11-25T10:48:44.901744Z",
     "id": "t460eec35b57b",
     "item_ids": [
-      "d42c22d23182cc47"
+      "d42c22d23182cc47",
+      "4132ce33a54cdc2f"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-25T10:04:06Z",
-    "state": "pending",
-    "title": "Losses Mount for Yemeni Government as Houthi Militia Advances",
+    "last_item_at": "2026-11-25T11:20:25Z",
+    "state": "active",
+    "title": "Defending Aden, Yemen’s Holdout Against the Houthis",
     "topic_id": "world-news"
   },
   {
@@ -4351,12 +4394,13 @@
     "created_at": "2026-11-25T10:48:44.901744Z",
     "id": "t8aa9c591bff1",
     "item_ids": [
-      "69ffc340b29d0b33"
+      "69ffc340b29d0b33",
+      "f4fc15a9728feea9"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-25T10:00:00Z",
-    "state": "pending",
-    "title": "What Is Chris Van Hollen Doing?",
+    "last_item_at": "2026-11-25T11:00:00Z",
+    "state": "active",
+    "title": "Chris · Van · Hollen",
     "topic_id": "world-news"
   },
   {
@@ -4506,6 +4550,18 @@
     "state": "pending",
     "title": "See how New York Times photographers covered the aftermath of Myanmar’s 2017 attacks on the Rohingya.",
     "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-25T11:48:47.899841Z",
+    "id": "t9010d187ec58",
+    "item_ids": [
+      "f98e51c137258cbb"
+    ],
+    "kind": "question",
+    "last_item_at": "2026-11-25T11:48:47.899841Z",
+    "state": "pending",
+    "title": "What are the benefits and risks of planning for future care (advance care planning) for children with life-limiting and life-threatening conditions?",
+    "topic_id": "health-wellbeing"
   },
   {
     "created_at": "2026-11-22T09:09:42.410739Z",
@@ -6567,6 +6623,18 @@
     "state": "cooling",
     "title": "Broadening access to AI for scientists",
     "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-25T11:48:47.899841Z",
+    "id": "td2a9b630598e",
+    "item_ids": [
+      "927fbe3c7e47390f"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T11:00:00Z",
+    "state": "pending",
+    "title": "Even Putin Is a ’90s Nostalgist",
+    "topic_id": "world-news"
   },
   {
     "created_at": "2026-11-25T04:48:48.459198Z",
