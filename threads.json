@@ -216,10 +216,11 @@
       "b7b89b000c95f57a",
       "64226c1f8b8429e7",
       "b1e5c93576aa28ea",
-      "6dc8999a78bf2e20"
+      "6dc8999a78bf2e20",
+      "64c42a9b69b43862"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-24T21:32:00Z",
+    "last_item_at": "2026-11-25T00:21:00Z",
     "state": "active",
     "title": "Information Technology",
     "topic_id": "markets"
@@ -236,10 +237,11 @@
       "4d4efe6a83bcdcba",
       "e6af0b3a2e40c497",
       "aea4af9cb7be6dcb",
-      "38541f86ff66d40e"
+      "38541f86ff66d40e",
+      "d63b543661f327dc"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-24T23:01:20Z",
+    "last_item_at": "2026-11-25T00:24:00Z",
     "state": "active",
     "title": "Inflation & jobs reports",
     "topic_id": "markets"
@@ -791,12 +793,13 @@
     "created_at": "2026-11-24T14:48:27.880946Z",
     "id": "t0f3b8b624e40",
     "item_ids": [
-      "c9797fc7d7882ac4"
+      "c9797fc7d7882ac4",
+      "ce61bcdb759ffd06"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-24T14:00:12Z",
-    "state": "pending",
-    "title": "Was a Drug Lord’s Killing in Ecuador Not What It Seemed?",
+    "last_item_at": "2026-11-25T00:42:52Z",
+    "state": "active",
+    "title": "Trump Administration Pauses Joint Operations With Ecuador",
     "topic_id": "world-news"
   },
   {
@@ -2811,6 +2814,18 @@
     "state": "pending",
     "title": "Federal appeals court gives President Donald Trump a path to erasing hush money conviction",
     "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-25T00:48:46.481692Z",
+    "id": "t573e433d8147",
+    "item_ids": [
+      "c967f6e8c1d41a2e"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-24T21:00:00Z",
+    "state": "pending",
+    "title": "Leveling up game development for a good cause",
+    "topic_id": "ai-news"
   },
   {
     "created_at": "2026-11-23T07:48:38.314750Z",
@@ -4837,7 +4852,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-22T00:03:40Z",
-    "state": "active",
+    "state": "cooling",
     "title": "Judge · Blocks · Trump",
     "topic_id": "us-politics"
   },
@@ -4887,12 +4902,13 @@
       "c3a101642e4abaa3",
       "4d2f94a40e7bcf8c",
       "0ebf04e84acf8cc8",
-      "b9c24ac86ae2f76b"
+      "b9c24ac86ae2f76b",
+      "56aba13d50d393d0"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-24T12:12:25Z",
+    "last_item_at": "2026-11-24T23:59:28Z",
     "state": "active",
-    "title": "Jensen · Trump · Huang · Nvidia",
+    "title": "Huang · Jensen · Trump · Nvidia",
     "topic_id": "us-politics"
   },
   {
@@ -6803,10 +6819,11 @@
       "321b8334cb9b103e",
       "6583733fa08938a0",
       "8a304e5e6e927e00",
-      "00daa865a6a141fe"
+      "00daa865a6a141fe",
+      "0239ccf94ec86c3c"
     ],
     "kind": "tracker",
-    "last_item_at": "2026-11-24T20:44:37Z",
+    "last_item_at": "2026-11-24T23:56:12Z",
     "state": "active",
     "title": "Phones",
     "topic_id": "tech-trackers"
