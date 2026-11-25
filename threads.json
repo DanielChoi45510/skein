@@ -232,10 +232,11 @@
       "46f71f6c69520ace",
       "d22b97055668272d",
       "bfe3294ab23698ee",
-      "1908686a75796fb0"
+      "1908686a75796fb0",
+      "3dc7aee55f092f0a"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-25T12:53:55Z",
+    "last_item_at": "2026-11-25T15:43:55Z",
     "state": "active",
     "title": "Information Technology",
     "topic_id": "markets"
@@ -791,6 +792,18 @@
     "topic_id": "health-wellbeing"
   },
   {
+    "created_at": "2026-11-25T15:49:13.573524Z",
+    "id": "t0c360aa1cda9",
+    "item_ids": [
+      "fcd4e03d57836c6f"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T15:00:05Z",
+    "state": "pending",
+    "title": "Why Aren’t the Midterms Over in Louisiana? Ask the Supreme Court.",
+    "topic_id": "us-politics"
+  },
+  {
     "created_at": "2026-11-24T16:48:53.011391Z",
     "id": "t0c794278b554",
     "item_ids": [
@@ -1214,6 +1227,18 @@
     "state": "active",
     "title": "Thanksgiving · Travel",
     "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-25T15:49:13.573524Z",
+    "id": "t18628b80b9eb",
+    "item_ids": [
+      "da50709caf929b76"
+    ],
+    "kind": "question",
+    "last_item_at": "2026-11-25T15:49:13.573524Z",
+    "state": "pending",
+    "title": "What are the benefits and risks of autologous stem cell transplantation for mature T-cell lymphomas?",
+    "topic_id": "health-wellbeing"
   },
   {
     "created_at": "2026-11-22T09:09:42.410739Z",
@@ -2238,7 +2263,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-22T15:00:00Z",
-    "state": "active",
+    "state": "cooling",
     "title": "Anthropic · IPO · Future · AI",
     "topic_id": "us-politics"
   },
@@ -2520,12 +2545,13 @@
     "id": "t4537874e8277",
     "item_ids": [
       "cfb885e4436a4ad6",
-      "e8eb596f5f26ccaf"
+      "e8eb596f5f26ccaf",
+      "86f0c698c3afea0d"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-18T15:45:00Z",
-    "state": "cooling",
-    "title": "BOE’s Bailey Sees Length of Iran War as Key to Rate Path",
+    "last_item_at": "2026-11-25T15:24:00Z",
+    "state": "active",
+    "title": "BOE · Bailey · Sees · Inflation",
     "topic_id": "world-news"
   },
   {
@@ -5419,12 +5445,14 @@
     "created_at": "2026-11-24T20:48:44.254125Z",
     "id": "ta97326b763a5",
     "item_ids": [
-      "41acf21ff4b62f4d"
+      "41acf21ff4b62f4d",
+      "5acc2beaa4cb2d5a",
+      "b5ae2166f6cebf56"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-24T20:19:47Z",
-    "state": "pending",
-    "title": "‘The Digital Deficit Has Come Due’",
+    "last_item_at": "2026-11-25T15:40:38Z",
+    "state": "active",
+    "title": "Do This to Protect Your Data",
     "topic_id": "us-politics"
   },
   {
@@ -7423,10 +7451,11 @@
       "38baecee86582e1b",
       "0b05e2ba44afe23a",
       "735f0cdcb5707bf3",
-      "de1356c6b8b13c50"
+      "de1356c6b8b13c50",
+      "2b30bac26105e537"
     ],
     "kind": "tracker",
-    "last_item_at": "2026-11-25T13:40:50Z",
+    "last_item_at": "2026-11-25T15:45:39Z",
     "state": "active",
     "title": "Laptops",
     "topic_id": "tech-trackers"
@@ -7471,10 +7500,11 @@
       "6583733fa08938a0",
       "8a304e5e6e927e00",
       "00daa865a6a141fe",
-      "0239ccf94ec86c3c"
+      "0239ccf94ec86c3c",
+      "07105e27aa40b888"
     ],
     "kind": "tracker",
-    "last_item_at": "2026-11-24T23:56:12Z",
+    "last_item_at": "2026-11-25T15:32:08Z",
     "state": "active",
     "title": "Phones",
     "topic_id": "tech-trackers"
