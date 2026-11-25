@@ -84,10 +84,11 @@
       "1380ab10f07ec3ae",
       "2d9a94b82f23bb4f",
       "54b161a3e7472c2e",
-      "464c369e856c7998"
+      "464c369e856c7998",
+      "5ece23e3538637b2"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-25T13:09:00Z",
+    "last_item_at": "2026-11-25T14:01:00Z",
     "state": "active",
     "title": "Energy",
     "topic_id": "markets"
@@ -423,12 +424,13 @@
     "created_at": "2026-11-25T13:48:31.796423Z",
     "id": "t042b78ac40bb",
     "item_ids": [
-      "37c7a7583c99d494"
+      "37c7a7583c99d494",
+      "59dc965b8bead3bb"
     ],
     "kind": "story",
     "last_item_at": "2026-11-25T13:30:00Z",
-    "state": "pending",
-    "title": "The Friendship Model of Politics",
+    "state": "active",
+    "title": "‘A Human Being Is Far More Valuable Than His Opinions’",
     "topic_id": "us-politics"
   },
   {
@@ -679,12 +681,13 @@
     "created_at": "2026-11-23T05:03:30.236987Z",
     "id": "t0a053b33b0aa",
     "item_ids": [
-      "e5200c986e39f593"
+      "e5200c986e39f593",
+      "8d52a12b7febba69"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-23T01:33:00Z",
-    "state": "pending",
-    "title": "Foreign inflows lend support to rupee, bonds; oil in focus",
+    "last_item_at": "2026-11-25T10:35:43Z",
+    "state": "active",
+    "title": "Rupee · Foreign",
     "topic_id": "world-news"
   },
   {
@@ -4143,11 +4146,12 @@
     "id": "t7e65add1bfbf",
     "item_ids": [
       "77b871659814b034",
-      "b331a244d62b8fc8"
+      "b331a244d62b8fc8",
+      "8309588c20e1138e"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-19T20:22:17Z",
-    "state": "cooling",
+    "last_item_at": "2026-11-25T14:12:33Z",
+    "state": "active",
     "title": "Meta · Muse",
     "topic_id": "ai-news"
   },
@@ -4444,6 +4448,18 @@
     "state": "pending",
     "title": "What Will Democrats Do With the Gavel?",
     "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-25T14:48:56.624988Z",
+    "id": "t88aece1b14a7",
+    "item_ids": [
+      "745a5032df28c59f"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T12:52:35Z",
+    "state": "pending",
+    "title": "Xi's graft probe of Shanghai rising star upends traditional path to power in China",
+    "topic_id": "world-news"
   },
   {
     "created_at": "2026-11-22T09:09:42.410739Z",
@@ -4842,12 +4858,13 @@
       "a017e507be7e1241",
       "1b88f66fadd7ab02",
       "63390e89bf9ee6a3",
-      "56f3b2f16d81e5f8"
+      "56f3b2f16d81e5f8",
+      "28366c256bc34d4f"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-25T13:25:15Z",
+    "last_item_at": "2026-11-25T14:46:41Z",
     "state": "active",
-    "title": "Ukraine · Attack · Russian · Libya",
+    "title": "Russian · Attack · Libya · Ukraine",
     "topic_id": "world-news"
   },
   {
@@ -4976,12 +4993,13 @@
     "created_at": "2026-11-25T04:48:48.459198Z",
     "id": "t9bd35cc47fcf",
     "item_ids": [
-      "9121917f87f40b61"
+      "9121917f87f40b61",
+      "a279a61d80e00f54"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-24T15:03:40Z",
-    "state": "pending",
-    "title": "A training engine for your local model, using your idle compute",
+    "last_item_at": "2026-11-25T02:34:21Z",
+    "state": "active",
+    "title": "Models Can Communicate via Inference Servers Despite Being Sandboxed",
     "topic_id": "ai-news"
   },
   {
@@ -5311,6 +5329,18 @@
     "state": "cooling",
     "title": "Our Best Stuff on the Spate of Tech Outages",
     "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-25T14:48:56.624988Z",
+    "id": "ta6ccdc836a68",
+    "item_ids": [
+      "15e34a69585b0226"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T12:52:28Z",
+    "state": "pending",
+    "title": "UK moving military aircraft to hangars at night over possible drone threats, media reports say",
+    "topic_id": "world-news"
   },
   {
     "created_at": "2026-11-22T09:09:42.410739Z",
@@ -6463,12 +6493,13 @@
     "created_at": "2026-11-25T04:48:48.459198Z",
     "id": "tc8ac423211b8",
     "item_ids": [
-      "9d7afa1fa0df2b0b"
+      "9d7afa1fa0df2b0b",
+      "35dfbb320ec42171"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-25T03:54:43Z",
-    "state": "pending",
-    "title": "Kilmar Ábrego García leaving US for Spain, ending Trump deportation battle",
+    "last_item_at": "2026-11-25T13:54:12Z",
+    "state": "active",
+    "title": "Kilmar · Spain",
     "topic_id": "world-news"
   },
   {
@@ -6926,6 +6957,18 @@
     "topic_id": "us-politics"
   },
   {
+    "created_at": "2026-11-25T14:48:56.624988Z",
+    "id": "td94169f964a9",
+    "item_ids": [
+      "5becf842e21ea243"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T13:02:14Z",
+    "state": "pending",
+    "title": "Russian attack damages Ukraine's energy and gas sites, cuts power in five regions",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-24T18:53:25.372040Z",
     "id": "td97e26bd7c84",
     "item_ids": [
@@ -7035,6 +7078,19 @@
     "state": "pending",
     "title": "The Week: The Three Amigos Summit",
     "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-25T14:48:56.624988Z",
+    "id": "tdd529bf5d191",
+    "item_ids": [
+      "b24a1e423eb45b03",
+      "1ac09a398b6e2ac9"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T04:31:48Z",
+    "state": "active",
+    "title": "Show HN: Old Nvidia and ATI tech demos, running again in the browser",
+    "topic_id": "ai-news"
   },
   {
     "created_at": "2026-11-22T09:09:42.410739Z",
@@ -7835,6 +7891,18 @@
     "state": "pending",
     "title": "How safe and effective is mifepristone when used for emergency contraception?",
     "topic_id": "health-sleep"
+  },
+  {
+    "created_at": "2026-11-25T14:48:56.624988Z",
+    "id": "tf85ca36c06c0",
+    "item_ids": [
+      "1fc2dc3bf2640f3a"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T12:40:08Z",
+    "state": "pending",
+    "title": "An Italian folding bicycle design that fits into a suitcase",
+    "topic_id": "ai-news"
   },
   {
     "created_at": "2026-11-25T02:48:33.522719Z",
