@@ -153,10 +153,11 @@
       "c0504a3e0a03997d",
       "a692c01023fdec02",
       "600e053a9a897925",
-      "190fc660e88393a7"
+      "190fc660e88393a7",
+      "2abf465b0e97df79"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-25T13:15:00Z",
+    "last_item_at": "2026-11-25T19:33:00Z",
     "state": "active",
     "title": "Financials",
     "topic_id": "markets"
@@ -2646,6 +2647,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-25T19:48:39.350743Z",
+    "id": "t456b414e81f8",
+    "item_ids": [
+      "b61ec559bbcda65e"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T19:28:00Z",
+    "state": "pending",
+    "title": "With Melania, We See Nothing",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "t458277e94222",
     "item_ids": [
@@ -4079,12 +4092,13 @@
     "created_at": "2026-11-25T07:48:38.321733Z",
     "id": "t73728fc655ac",
     "item_ids": [
-      "3feca075a3a7f153"
+      "3feca075a3a7f153",
+      "bbcd262e8bbb7435"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-25T07:29:43Z",
-    "state": "pending",
-    "title": "North Korea Kicks Out Swiss Diplomats in Spat Linked to Ukraine War",
+    "last_item_at": "2026-11-25T19:19:06Z",
+    "state": "active",
+    "title": "North · Korea · Swiss",
     "topic_id": "world-news"
   },
   {
@@ -4734,7 +4748,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-22T19:44:32Z",
-    "state": "active",
+    "state": "cooling",
     "title": "Court · Law · Pregnant · Workers",
     "topic_id": "us-politics"
   },
@@ -4985,6 +4999,18 @@
     "topic_id": "us-politics"
   },
   {
+    "created_at": "2026-11-25T19:48:39.350743Z",
+    "id": "t935921fb1b0f",
+    "item_ids": [
+      "35bc826191956a7f"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T19:44:00Z",
+    "state": "pending",
+    "title": "‘The Most Important Fact About Human History’",
+    "topic_id": "us-politics"
+  },
+  {
     "created_at": "2026-11-23T18:48:42.826335Z",
     "id": "t939600038124",
     "item_ids": [
@@ -5110,12 +5136,13 @@
       "1b88f66fadd7ab02",
       "63390e89bf9ee6a3",
       "56f3b2f16d81e5f8",
-      "28366c256bc34d4f"
+      "28366c256bc34d4f",
+      "477ea34b4f6c5cf0"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-25T14:46:41Z",
+    "last_item_at": "2026-11-25T16:26:09Z",
     "state": "active",
-    "title": "Russian · Attack · Libya · Ukraine",
+    "title": "Russian · Libya · Ukraine · Attack",
     "topic_id": "world-news"
   },
   {
@@ -7254,12 +7281,13 @@
       "98911c842df0025c",
       "adf5cf7e5302a33e",
       "f11a55e25f073528",
-      "3fdc49337b57b3b0"
+      "3fdc49337b57b3b0",
+      "0b063b2e3d51819d"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-25T18:02:07Z",
+    "last_item_at": "2026-11-25T19:23:03Z",
     "state": "active",
-    "title": "Lead · Azide · Iowa · Army",
+    "title": "Army · Lead · Azide · Iowa",
     "topic_id": "world-news"
   },
   {
@@ -7842,10 +7870,11 @@
       "00daa865a6a141fe",
       "0239ccf94ec86c3c",
       "07105e27aa40b888",
-      "8ed3eee63fbc46b8"
+      "8ed3eee63fbc46b8",
+      "deedf392dfc87b6d"
     ],
     "kind": "tracker",
-    "last_item_at": "2026-11-25T18:32:29Z",
+    "last_item_at": "2026-11-25T19:38:33Z",
     "state": "active",
     "title": "Phones",
     "topic_id": "tech-trackers"
@@ -8078,6 +8107,18 @@
     "state": "pending",
     "title": "Adults fight loneliness by playing board games with strangers",
     "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-25T19:48:39.350743Z",
+    "id": "tf2833b3740a3",
+    "item_ids": [
+      "7a328ae43592cb33"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T19:28:55Z",
+    "state": "pending",
+    "title": "USMCA, Trade, and the Character Issue",
+    "topic_id": "us-politics"
   },
   {
     "created_at": "2026-11-22T09:09:42.410739Z",
