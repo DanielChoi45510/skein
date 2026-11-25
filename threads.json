@@ -176,10 +176,11 @@
       "2c45e78682146dd7",
       "b18f3c5cd1354273",
       "c226238599fb7244",
-      "c1b0c64a9570186d"
+      "c1b0c64a9570186d",
+      "792b6d077f801296"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-24T22:58:36Z",
+    "last_item_at": "2026-11-25T18:26:00Z",
     "state": "active",
     "title": "Health Care",
     "topic_id": "markets"
@@ -477,6 +478,18 @@
     "last_item_at": "2026-11-23T12:00:00Z",
     "state": "pending",
     "title": "The Right’s Absurd Misreading of Orwell",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-25T18:48:30.856667Z",
+    "id": "t0661ed3f6c12",
+    "item_ids": [
+      "66e7e31051f824d8"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-24T21:38:56Z",
+    "state": "pending",
+    "title": "CDC director draws doubts from employees and ire from legislators",
     "topic_id": "us-politics"
   },
   {
@@ -1119,7 +1132,8 @@
       "8a5f41832ca081fe",
       "105d8c8463a32652",
       "2d29c896af95865c",
-      "f77e1d8f315657dd"
+      "f77e1d8f315657dd",
+      "a8bec43c4a555382"
     ],
     "kind": "story",
     "last_item_at": "2026-11-25T09:40:19Z",
@@ -1150,6 +1164,18 @@
     "state": "pending",
     "title": "US declassifies more UFO footage filmed in the Middle East",
     "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-25T18:48:30.856667Z",
+    "id": "t15f369943c57",
+    "item_ids": [
+      "90af623726060850"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T15:08:44Z",
+    "state": "pending",
+    "title": "Rumors swirling that labs might have cracked Factoring in P",
+    "topic_id": "ai-news"
   },
   {
     "created_at": "2026-11-22T20:20:33.012568Z",
@@ -1247,12 +1273,13 @@
     "item_ids": [
       "58702748c231afcc",
       "3c35c858d8c7974e",
-      "ec508751daf53189"
+      "ec508751daf53189",
+      "f8d75161a5606ebc"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-25T11:04:50Z",
+    "last_item_at": "2026-11-25T15:42:30Z",
     "state": "active",
-    "title": "Thanksgiving · Travel",
+    "title": "Travelers · Thanksgiving · Travel",
     "topic_id": "world-news"
   },
   {
@@ -1450,6 +1477,18 @@
     "state": "pending",
     "title": "On College Campuses, Nothing Is Free from Antisemitism",
     "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-25T18:48:30.856667Z",
+    "id": "t1fc145cc02f7",
+    "item_ids": [
+      "26edd2903a1435fb"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-24T21:18:44Z",
+    "state": "pending",
+    "title": "Armed men take hostages in Cartagena, one of Colombia's top tourist destinations",
+    "topic_id": "world-news"
   },
   {
     "created_at": "2026-11-22T09:09:42.410739Z",
@@ -1827,6 +1866,18 @@
     "last_item_at": "2026-11-20T18:50:19Z",
     "state": "cooling",
     "title": "Trump threatens ‘tremendous tax’ for moving AI data centers outside the US",
+    "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-25T18:48:30.856667Z",
+    "id": "t2e380b5aa247",
+    "item_ids": [
+      "ed1a27f016b63d5a"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T04:27:55Z",
+    "state": "pending",
+    "title": "Taking over US Treasury subdomains for $3 each",
     "topic_id": "ai-news"
   },
   {
@@ -2660,12 +2711,13 @@
     "created_at": "2026-11-24T16:48:53.011391Z",
     "id": "t466ddda3d7c1",
     "item_ids": [
-      "af3d38de98dc94d9"
+      "af3d38de98dc94d9",
+      "891c2af98efa22c2"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-24T16:20:20Z",
-    "state": "pending",
-    "title": "Trump administration set to unveil new tariffs after probe on excess factory capacity, sources say",
+    "last_item_at": "2026-11-25T17:14:34Z",
+    "state": "active",
+    "title": "US plans to hike tariffs on China, EU, Brazil and others over subsidized factories",
     "topic_id": "us-politics"
   },
   {
@@ -3210,12 +3262,13 @@
     "item_ids": [
       "28ce395ad6f72d6a",
       "70afa686bee845ff",
-      "d9e3d3d835351e1a"
+      "d9e3d3d835351e1a",
+      "8ba70ac3827d8148"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-24T14:42:47Z",
+    "last_item_at": "2026-11-25T17:34:51Z",
     "state": "active",
-    "title": "Wall Street's sugar high quickly disappears as Nvidia and other AI stocks tumble again",
+    "title": "AI · Wall · Street · S&P",
     "topic_id": "us-politics"
   },
   {
@@ -3710,6 +3763,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-25T18:48:30.856667Z",
+    "id": "t6957ed5da574",
+    "item_ids": [
+      "f56247e70a1f78e2"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T18:19:11Z",
+    "state": "pending",
+    "title": "Dozens of countries call on Russia to halt alleged use of riot agent in Ukraine war",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "t6961f88da7a1",
     "item_ids": [
@@ -3816,6 +3881,18 @@
     "last_item_at": "2026-11-20T01:41:18Z",
     "state": "pending",
     "title": "Andrey Zvyagintsev Showed Us What Russia Is, and We Didn’t Realize",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-25T18:48:30.856667Z",
+    "id": "t6c507103ebf4",
+    "item_ids": [
+      "6165fa30b7e98d1a"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T08:43:44Z",
+    "state": "pending",
+    "title": "Dutch government working to prevent passing of US MATCH bill, minister says",
     "topic_id": "world-news"
   },
   {
@@ -4193,6 +4270,30 @@
     "state": "pending",
     "title": "The Fate of Jensen Huang",
     "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-25T18:48:30.856667Z",
+    "id": "t79eef4c71616",
+    "item_ids": [
+      "65dd37c2f3c505c7"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T17:53:33Z",
+    "state": "pending",
+    "title": "Major League Baseball sues players' union, asking court to declare lockout is legal",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-25T18:48:30.856667Z",
+    "id": "t7a1eb96c9991",
+    "item_ids": [
+      "7500ad3712c1e5f9"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T18:12:36Z",
+    "state": "pending",
+    "title": "Opposition Makes Progress Toward Ousting Netanyahu, Party Leader Says",
+    "topic_id": "world-news"
   },
   {
     "created_at": "2026-11-22T09:09:42.410739Z",
@@ -5185,7 +5286,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-22T18:26:06Z",
-    "state": "active",
+    "state": "cooling",
     "title": "North · Carolina",
     "topic_id": "us-politics"
   },
@@ -5229,12 +5330,13 @@
     "created_at": "2026-11-24T19:48:37.851435Z",
     "id": "t9ed67608826d",
     "item_ids": [
-      "a49d6fcbb25cd20f"
+      "a49d6fcbb25cd20f",
+      "cdb2f28a850e9635"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-24T19:33:18Z",
-    "state": "pending",
-    "title": "U.S. Spy Agencies Suffer Breach of Some Unclassified Information",
+    "last_item_at": "2026-11-24T22:55:15Z",
+    "state": "active",
+    "title": "An unclassified CIA system was breached in a cyberattack, AP source says",
     "topic_id": "us-politics"
   },
   {
@@ -5448,7 +5550,8 @@
       "56aba13d50d393d0",
       "bf98da8ab9b8a33f",
       "16ee6e93c40fbd01",
-      "e60a4b00bb73328e"
+      "e60a4b00bb73328e",
+      "a84d6dc135a4b2b9"
     ],
     "kind": "story",
     "last_item_at": "2026-11-25T11:50:05Z",
@@ -6314,6 +6417,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-25T18:48:30.856667Z",
+    "id": "tbc42195ac518",
+    "item_ids": [
+      "d53e27812601925f"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T16:56:34Z",
+    "state": "pending",
+    "title": "Inflation remains uncomfortably high despite a retreat in gas prices as challenges mount for the Fed",
+    "topic_id": "us-politics"
+  },
+  {
     "created_at": "2026-11-22T20:20:33.012568Z",
     "id": "tbc5742cfa54d",
     "item_ids": [
@@ -6619,6 +6734,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-25T18:48:30.856667Z",
+    "id": "tc4b1b8391087",
+    "item_ids": [
+      "2fcc0c7eceaf2111"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T00:01:11Z",
+    "state": "pending",
+    "title": "A federal grand jury indicts Thomas Markle on child sex abuse material charges",
+    "topic_id": "us-politics"
+  },
+  {
     "created_at": "2026-11-25T10:48:44.901744Z",
     "id": "tc539c323bd83",
     "item_ids": [
@@ -6659,13 +6786,26 @@
     "id": "tc8ac423211b8",
     "item_ids": [
       "9d7afa1fa0df2b0b",
-      "35dfbb320ec42171"
+      "35dfbb320ec42171",
+      "2b169d519d86aa7d"
     ],
     "kind": "story",
     "last_item_at": "2026-11-25T13:54:12Z",
     "state": "active",
-    "title": "Kilmar · Spain",
+    "title": "Salvadoran · Garc · Kilmar · Spain",
     "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-25T18:48:30.856667Z",
+    "id": "tc8d863ee8e79",
+    "item_ids": [
+      "865f9656ed3f7b31"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-24T22:50:43Z",
+    "state": "pending",
+    "title": "Chinese tech giant Huawei is guilty of conspiracy to steal trade secrets, US jury finds",
+    "topic_id": "us-politics"
   },
   {
     "created_at": "2026-11-24T11:48:45.891620Z",
@@ -6678,6 +6818,18 @@
     "state": "pending",
     "title": "US envoy 'not certain' military aid to Israel will end this year as Trump promised",
     "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-25T18:48:30.856667Z",
+    "id": "tc9aa80ff8e02",
+    "item_ids": [
+      "525b3a3590ed40f2"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T17:57:50Z",
+    "state": "pending",
+    "title": "C.I.A. Waterboarded More Detainees Than It Admitted, F.B.I. Interview Suggests",
+    "topic_id": "us-politics"
   },
   {
     "created_at": "2026-11-22T09:09:42.410739Z",
@@ -6860,6 +7012,18 @@
     "last_item_at": "2026-11-22T15:47:38Z",
     "state": "pending",
     "title": "The World’s Biggest Climate Conference Just Fell Apart",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-25T18:48:30.856667Z",
+    "id": "tcf619c7d2690",
+    "item_ids": [
+      "d83b3e5f4f224560"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T10:02:38Z",
+    "state": "pending",
+    "title": "The return of the wolf divides the densely populated Netherlands",
     "topic_id": "world-news"
   },
   {
@@ -7088,12 +7252,14 @@
     "id": "td8648796d8cb",
     "item_ids": [
       "98911c842df0025c",
-      "adf5cf7e5302a33e"
+      "adf5cf7e5302a33e",
+      "f11a55e25f073528",
+      "3fdc49337b57b3b0"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-24T14:57:37Z",
+    "last_item_at": "2026-11-25T18:02:07Z",
     "state": "active",
-    "title": "Army · Iowa",
+    "title": "Lead · Azide · Iowa · Army",
     "topic_id": "world-news"
   },
   {
@@ -7106,6 +7272,18 @@
     "last_item_at": "2026-11-24T17:04:00Z",
     "state": "active",
     "title": "Zimbabwean convicted in South Africa of trying to fight in Ukraine",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-25T18:48:30.856667Z",
+    "id": "td899276da6a3",
+    "item_ids": [
+      "9dbc290e81b49b67"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T01:17:02Z",
+    "state": "pending",
+    "title": "US ready to slap tariffs on China, EU and others over subsidized production, AP sources say",
     "topic_id": "world-news"
   },
   {
@@ -7353,6 +7531,18 @@
     "state": "pending",
     "title": "Treasury secretary says no further restrictions are needed for Nvidia chip exports to China",
     "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-25T18:48:30.856667Z",
+    "id": "te05f3f8f1ca8",
+    "item_ids": [
+      "196b141c15db0287"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T18:17:00Z",
+    "state": "pending",
+    "title": "Black Friday Is Becoming a Battle of the Bots",
+    "topic_id": "world-news"
   },
   {
     "created_at": "2026-11-24T19:48:37.851435Z",
@@ -7651,10 +7841,11 @@
       "8a304e5e6e927e00",
       "00daa865a6a141fe",
       "0239ccf94ec86c3c",
-      "07105e27aa40b888"
+      "07105e27aa40b888",
+      "8ed3eee63fbc46b8"
     ],
     "kind": "tracker",
-    "last_item_at": "2026-11-25T15:32:08Z",
+    "last_item_at": "2026-11-25T18:32:29Z",
     "state": "active",
     "title": "Phones",
     "topic_id": "tech-trackers"
@@ -7825,6 +8016,18 @@
     "last_item_at": "2026-11-20T18:48:48Z",
     "state": "pending",
     "title": "Miami or Vice City? Tour the real-world inspiration for GTA 6",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-25T18:48:30.856667Z",
+    "id": "tf1dc1063c668",
+    "item_ids": [
+      "7403440163c3efc3"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-24T17:59:17Z",
+    "state": "pending",
+    "title": "Will wind ground your favorite balloon in the Macy's Thanksgiving Parade?",
     "topic_id": "world-news"
   },
   {
