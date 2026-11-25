@@ -79,10 +79,11 @@
       "835c9cf5195f32c9",
       "4c98bc46eb20d7db",
       "1380ab10f07ec3ae",
-      "2d9a94b82f23bb4f"
+      "2d9a94b82f23bb4f",
+      "54b161a3e7472c2e"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-24T08:54:00Z",
+    "last_item_at": "2026-11-25T02:00:00Z",
     "state": "active",
     "title": "Energy",
     "topic_id": "markets"
@@ -238,10 +239,11 @@
       "e6af0b3a2e40c497",
       "aea4af9cb7be6dcb",
       "38541f86ff66d40e",
-      "d63b543661f327dc"
+      "d63b543661f327dc",
+      "bee21752dcf7dc46"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-25T00:24:00Z",
+    "last_item_at": "2026-11-25T02:00:00Z",
     "state": "active",
     "title": "Inflation & jobs reports",
     "topic_id": "markets"
@@ -4274,12 +4276,13 @@
     "created_at": "2026-11-24T05:48:25.381856Z",
     "id": "t8e8b823d497b",
     "item_ids": [
-      "b3b3dcaafeb3421d"
+      "b3b3dcaafeb3421d",
+      "44088e7faf8cbca7"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-24T04:48:00Z",
-    "state": "pending",
-    "title": "Solomon Islands plans to replace China security pact with Australia treaty, report says",
+    "last_item_at": "2026-11-25T02:44:00Z",
+    "state": "active",
+    "title": "China’s Military Ambitions in the Pacific Suffer Setback",
     "topic_id": "world-news"
   },
   {
@@ -7227,6 +7230,18 @@
     "state": "pending",
     "title": "How safe and effective is mifepristone when used for emergency contraception?",
     "topic_id": "health-sleep"
+  },
+  {
+    "created_at": "2026-11-25T02:48:33.522719Z",
+    "id": "tf8710fc38e4b",
+    "item_ids": [
+      "40c018f0f7e21f7f"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T01:50:00Z",
+    "state": "pending",
+    "title": "Stocks retreat as AI rebound stumbles, tariff threats loom",
+    "topic_id": "us-politics"
   },
   {
     "created_at": "2026-11-25T01:48:37.057578Z",
