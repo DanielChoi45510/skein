@@ -21,10 +21,11 @@
       "6ebe73ccea0316a3",
       "bc236c0a7f0e7b56",
       "89ff4aed36131433",
-      "aca31400fc4deb34"
+      "aca31400fc4deb34",
+      "60ee51a3238329bf"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-25T11:02:00Z",
+    "last_item_at": "2026-11-25T16:43:21Z",
     "state": "active",
     "title": "Consumer Discretionary",
     "topic_id": "markets"
@@ -85,10 +86,11 @@
       "2d9a94b82f23bb4f",
       "54b161a3e7472c2e",
       "464c369e856c7998",
-      "5ece23e3538637b2"
+      "5ece23e3538637b2",
+      "3494bbabe3e89ada"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-25T14:01:00Z",
+    "last_item_at": "2026-11-25T16:29:00Z",
     "state": "active",
     "title": "Energy",
     "topic_id": "markets"
@@ -346,6 +348,18 @@
     "state": "pending",
     "title": "Trump initially accepted the midterm results, but most GOP voters doubt they were fair",
     "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-25T16:48:43.548621Z",
+    "id": "t019cd83614cc",
+    "item_ids": [
+      "be8029cb86cb4ad4"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T15:50:28Z",
+    "state": "pending",
+    "title": "Vance to GOP: Don’t Get Any Ideas About Amnesty",
+    "topic_id": "world-news"
   },
   {
     "created_at": "2026-11-22T09:09:42.410739Z",
@@ -610,7 +624,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-22T16:42:00Z",
-    "state": "active",
+    "state": "cooling",
     "title": "Stephen · Miller",
     "topic_id": "us-politics"
   },
@@ -1915,12 +1929,13 @@
     "created_at": "2026-11-24T22:48:41.692861Z",
     "id": "t31ce0bd9b2d6",
     "item_ids": [
-      "82745f87c33d1446"
+      "82745f87c33d1446",
+      "628fb3112974cebb"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-24T22:21:00Z",
-    "state": "pending",
-    "title": "Opinion | American Exceptionalism Will Win AI",
+    "last_item_at": "2026-11-25T15:48:00Z",
+    "state": "active",
+    "title": "Opinion | Why We Must Defeat China",
     "topic_id": "world-news"
   },
   {
@@ -3093,6 +3108,18 @@
     "topic_id": "ai-news"
   },
   {
+    "created_at": "2026-11-25T16:48:43.548621Z",
+    "id": "t57fbaba63b51",
+    "item_ids": [
+      "65529694165302b5"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T15:53:44Z",
+    "state": "pending",
+    "title": "How to Celebrate Thanksgiving as an Expat",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-23T07:48:38.314750Z",
     "id": "t581c45a8445f",
     "item_ids": [
@@ -4144,6 +4171,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-25T16:48:43.548621Z",
+    "id": "t7bc6aea86cd9",
+    "item_ids": [
+      "16897180a11890cc"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T14:43:04Z",
+    "state": "pending",
+    "title": "US FinCEN takes some systems offline after cyber incident, official says",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "t7db4f1910d2c",
     "item_ids": [
@@ -4649,6 +4688,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-25T16:48:43.548621Z",
+    "id": "t8ed9ef26b22c",
+    "item_ids": [
+      "2d0b5be3b3afe198"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-23T05:33:34Z",
+    "state": "pending",
+    "title": "The short age of dragon riders",
+    "topic_id": "ai-news"
+  },
+  {
     "created_at": "2026-11-22T03:51:06.410293Z",
     "id": "t8fc15885ea92",
     "item_ids": [
@@ -4682,7 +4733,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-22T16:43:00Z",
-    "state": "active",
+    "state": "cooling",
     "title": "Opinion | Iran Doubles Down on Its Nuclear Ambitions",
     "topic_id": "world-news"
   },
@@ -6047,6 +6098,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-25T16:48:43.548621Z",
+    "id": "tb8e470f175c4",
+    "item_ids": [
+      "9356857d8215eab4"
+    ],
+    "kind": "question",
+    "last_item_at": "2026-11-25T16:43:26Z",
+    "state": "pending",
+    "title": "Tiny Love Stories: ‘You Don’t Want to Marry Me?’",
+    "topic_id": "health-sleep"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "tb8fe9c66409c",
     "item_ids": [
@@ -7108,6 +7171,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-25T16:48:43.548621Z",
+    "id": "tdcf5ab0eb835",
+    "item_ids": [
+      "82cb41d85e39faff"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T16:00:05Z",
+    "state": "pending",
+    "title": "Too Many People Are Cutting Off Family Over Politics",
+    "topic_id": "us-politics"
+  },
+  {
     "created_at": "2026-11-25T14:48:56.624988Z",
     "id": "tdd529bf5d191",
     "item_ids": [
@@ -7452,10 +7527,11 @@
       "0b05e2ba44afe23a",
       "735f0cdcb5707bf3",
       "de1356c6b8b13c50",
-      "2b30bac26105e537"
+      "2b30bac26105e537",
+      "6211b12e687e5fba"
     ],
     "kind": "tracker",
-    "last_item_at": "2026-11-25T15:45:39Z",
+    "last_item_at": "2026-11-25T16:34:01Z",
     "state": "active",
     "title": "Laptops",
     "topic_id": "tech-trackers"
@@ -7902,12 +7978,13 @@
     "created_at": "2026-11-25T06:48:33.824621Z",
     "id": "tf75af9ebe345",
     "item_ids": [
-      "1574415970b25b18"
+      "1574415970b25b18",
+      "b6155670f0768bc6"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-25T06:41:18Z",
-    "state": "pending",
-    "title": "Court to rule on South African president's bid to set aside 'Farmgate' report",
+    "last_item_at": "2026-11-25T16:22:17Z",
+    "state": "active",
+    "title": "South · African · President · Farmgate",
     "topic_id": "world-news"
   },
   {
@@ -8047,12 +8124,13 @@
     "created_at": "2026-11-23T19:48:48.163077Z",
     "id": "tfb06b067cb83",
     "item_ids": [
-      "f878ab62338f7472"
+      "f878ab62338f7472",
+      "927dd6b10beb1b95"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-23T19:04:52Z",
-    "state": "pending",
-    "title": "Nothing’s upcoming Ear Note is a pair of earbuds with AI transcription",
+    "last_item_at": "2026-11-25T16:00:59Z",
+    "state": "active",
+    "title": "Nothing · AI · Earbuds",
     "topic_id": "ai-news"
   },
   {
@@ -8147,6 +8225,18 @@
     "state": "pending",
     "title": "How to Stop Ruminating",
     "topic_id": "health-sleep"
+  },
+  {
+    "created_at": "2026-11-25T16:48:43.548621Z",
+    "id": "tfd80d3b6550e",
+    "item_ids": [
+      "361ff3dcd8aee7d0"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T16:47:14Z",
+    "state": "pending",
+    "title": "Ars Live recap: Don’t expect military attacks on data centers to stop",
+    "topic_id": "ai-news"
   },
   {
     "created_at": "2026-11-22T09:09:42.410739Z",
