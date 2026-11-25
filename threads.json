@@ -306,10 +306,11 @@
     "created_at": "2026-11-25T01:48:37.057578Z",
     "id": "markets--trade",
     "item_ids": [
-      "ff84d4085b135204"
+      "ff84d4085b135204",
+      "fb49d53e419d760c"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-25T01:39:00Z",
+    "last_item_at": "2026-11-25T05:24:00Z",
     "state": "active",
     "title": "Trade & tariffs",
     "topic_id": "markets"
@@ -1159,12 +1160,13 @@
     "id": "t1b2591acc25e",
     "item_ids": [
       "32c63d1205433a82",
-      "1bb8ecbd5606b57f"
+      "1bb8ecbd5606b57f",
+      "2de2ae6c15c7443a"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-24T14:45:00Z",
+    "last_item_at": "2026-11-25T05:37:25Z",
     "state": "active",
-    "title": "China · Shanghai · Party · Leader",
+    "title": "Xi · Shanghai · Party · Leader",
     "topic_id": "world-news"
   },
   {
@@ -1851,6 +1853,18 @@
     "state": "pending",
     "title": "Clay helps sales teams win with Codex and ChatGPT",
     "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-25T05:48:35.625575Z",
+    "id": "t3647a9be16aa",
+    "item_ids": [
+      "651f47626d97ccbd"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T05:01:14Z",
+    "state": "pending",
+    "title": "Hungary Threw Open Its Secret Police Files. Let the Finger Pointing Begin.",
+    "topic_id": "world-news"
   },
   {
     "created_at": "2026-11-22T09:09:42.410739Z",
@@ -3148,6 +3162,18 @@
     "state": "pending",
     "title": "Where in the World Is Mark Carney? Five Continents and 32 Countries in 113 Days",
     "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-25T05:48:35.625575Z",
+    "id": "t606083ce5277",
+    "item_ids": [
+      "fb425221f51a58ac"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T05:19:00Z",
+    "state": "pending",
+    "title": "EU plans €50 billion tech fund to challenge US and China, FT reports",
+    "topic_id": "us-politics"
   },
   {
     "created_at": "2026-11-22T03:51:06.410293Z",
