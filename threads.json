@@ -54,10 +54,11 @@
       "1490d31272c6106e",
       "ad86734713d0d566",
       "f8700ac0024e4b75",
-      "9e80f1098e24f02c"
+      "9e80f1098e24f02c",
+      "826465d103bf03a5"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-24T16:01:00Z",
+    "last_item_at": "2026-11-25T10:30:00Z",
     "state": "active",
     "title": "Major earnings surprises",
     "topic_id": "markets"
@@ -221,10 +222,11 @@
       "6dc8999a78bf2e20",
       "64c42a9b69b43862",
       "06cf838f3471fdc8",
-      "b030a48461f3cf27"
+      "b030a48461f3cf27",
+      "46f71f6c69520ace"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-25T09:36:00Z",
+    "last_item_at": "2026-11-25T09:56:46Z",
     "state": "active",
     "title": "Information Technology",
     "topic_id": "markets"
@@ -270,10 +272,11 @@
       "f1dedd715d5e51ea",
       "7631267b504af1d1",
       "4b18b17ec7dfd1ad",
-      "fb1060fe9833fa4a"
+      "fb1060fe9833fa4a",
+      "d9e72775a1abacf0"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-25T05:06:00Z",
+    "last_item_at": "2026-11-25T08:27:46Z",
     "state": "active",
     "title": "Materials",
     "topic_id": "markets"
@@ -376,7 +379,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-22T10:02:15Z",
-    "state": "active",
+    "state": "cooling",
     "title": "Is Annie Andrews Too Real for the Senate? South Carolinians Are About to Find Out.",
     "topic_id": "us-politics"
   },
@@ -454,12 +457,13 @@
       "6265549d52d9093d",
       "6d91545fde4cf2c0",
       "69f1cf9d15217f92",
-      "efcaf0cb2767be5e"
+      "efcaf0cb2767be5e",
+      "99b982dd918488d1"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-23T10:02:21Z",
+    "last_item_at": "2026-11-25T10:02:08Z",
     "state": "active",
-    "title": "This Is How the Democrats Win MAHA Voters",
+    "title": "First, Kill the Filibuster",
     "topic_id": "us-politics"
   },
   {
@@ -711,6 +715,18 @@
     "state": "pending",
     "title": "It’s a Permitting Miracle in the Senate",
     "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-25T10:48:44.901744Z",
+    "id": "t0bc2e6616b31",
+    "item_ids": [
+      "5ea79dd19bf67395"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T10:04:00Z",
+    "state": "pending",
+    "title": "EU Lays out Plan to Boost Quantum Technology",
+    "topic_id": "world-news"
   },
   {
     "created_at": "2026-11-24T01:48:34.521603Z",
@@ -2450,6 +2466,18 @@
     "topic_id": "health-wellbeing"
   },
   {
+    "created_at": "2026-11-25T10:48:44.901744Z",
+    "id": "t460eec35b57b",
+    "item_ids": [
+      "d42c22d23182cc47"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T10:04:06Z",
+    "state": "pending",
+    "title": "Losses Mount for Yemeni Government as Houthi Militia Advances",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "t464c6a8a0f0a",
     "item_ids": [
@@ -2900,6 +2928,18 @@
     "state": "pending",
     "title": "Federal appeals court gives President Donald Trump a path to erasing hush money conviction",
     "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-25T10:48:44.901744Z",
+    "id": "t572c103af69b",
+    "item_ids": [
+      "11eddcd4094fc1da"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T10:00:48Z",
+    "state": "pending",
+    "title": "Island Paradise of Mauritius Has Sun, Beaches and Too Many Dogs",
+    "topic_id": "world-news"
   },
   {
     "created_at": "2026-11-25T00:48:46.481692Z",
@@ -4101,6 +4141,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-25T10:48:44.901744Z",
+    "id": "t80aae370bc0b",
+    "item_ids": [
+      "2729cefe78ba4c43"
+    ],
+    "kind": "question",
+    "last_item_at": "2026-11-25T10:00:33Z",
+    "state": "pending",
+    "title": "How Fitness Experts Make Time to Exercise Over the Holidays",
+    "topic_id": "health-training"
+  },
+  {
     "created_at": "2026-11-24T10:48:41.839815Z",
     "id": "t81b489a4207b",
     "item_ids": [
@@ -4294,6 +4346,18 @@
     "state": "pending",
     "title": "Asian American women feel the impact of Nvidia CEO affair scandal and 'spy' accusations",
     "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-25T10:48:44.901744Z",
+    "id": "t8aa9c591bff1",
+    "item_ids": [
+      "69ffc340b29d0b33"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T10:00:00Z",
+    "state": "pending",
+    "title": "What Is Chris Van Hollen Doing?",
+    "topic_id": "world-news"
   },
   {
     "created_at": "2026-11-22T03:51:06.410293Z",
@@ -4653,12 +4717,13 @@
       "a4d40e8a7d2893fa",
       "e8e113b8ffa1b68b",
       "a017e507be7e1241",
-      "1b88f66fadd7ab02"
+      "1b88f66fadd7ab02",
+      "63390e89bf9ee6a3"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-23T21:45:00Z",
+    "last_item_at": "2026-11-25T10:29:43Z",
     "state": "active",
-    "title": "Attack · Russian · Ukraine · Libya",
+    "title": "Attack · Ukraine · Russian · Libya",
     "topic_id": "world-news"
   },
   {
@@ -5490,6 +5555,18 @@
     "topic_id": "us-politics"
   },
   {
+    "created_at": "2026-11-25T10:48:44.901744Z",
+    "id": "tb192944279c3",
+    "item_ids": [
+      "07eca9901437ec0b"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T10:03:47Z",
+    "state": "pending",
+    "title": "Trapped on the Tarmac: 3-Hour Flight Delays Spike Under Trump",
+    "topic_id": "us-politics"
+  },
+  {
     "created_at": "2026-11-23T21:48:40.140351Z",
     "id": "tb1ba5476150d",
     "item_ids": [
@@ -6199,6 +6276,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-25T10:48:44.901744Z",
+    "id": "tc539c323bd83",
+    "item_ids": [
+      "9bff877782be7a46"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T10:04:15Z",
+    "state": "pending",
+    "title": "How Did This Bunch of New Yorkers End Up Running the Country?",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-24T18:48:44.911441Z",
     "id": "tc593c4478b25",
     "item_ids": [
@@ -6529,6 +6618,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-25T10:48:44.901744Z",
+    "id": "td40e7ac28acf",
+    "item_ids": [
+      "4eb3dc3e9cb96039"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T10:04:19Z",
+    "state": "pending",
+    "title": "Mexico Investigates Prosecutor Who Aided the C.I.A. Over Cartel Collusion",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-24T10:48:41.839815Z",
     "id": "td41e536c0ffa",
     "item_ids": [
@@ -6789,6 +6890,30 @@
     "topic_id": "us-politics"
   },
   {
+    "created_at": "2026-11-25T10:48:44.901744Z",
+    "id": "tde33901f488e",
+    "item_ids": [
+      "0ac0db42228e4310"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T10:01:45Z",
+    "state": "pending",
+    "title": "Here’s How Democrats Should Investigate Trump’s Corruption",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-25T10:48:44.901744Z",
+    "id": "tdfff0adcb193",
+    "item_ids": [
+      "bf7e2505e482a1cb"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T10:04:21Z",
+    "state": "pending",
+    "title": "Donate This Holiday Season: Build Health International Needs Your Help",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "te002a1ebeba8",
     "item_ids": [
@@ -6847,6 +6972,18 @@
     "last_item_at": "2026-11-23T23:13:02Z",
     "state": "active",
     "title": "Mexico nabs yet another top drug lord, but history of 'Kingpin Strategy' mixed",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-25T10:48:44.901744Z",
+    "id": "te37363189275",
+    "item_ids": [
+      "0a1d394ede29843a"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T10:02:03Z",
+    "state": "pending",
+    "title": "The Nine Circles of Holiday Travel Hell",
     "topic_id": "us-politics"
   },
   {
