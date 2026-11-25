@@ -906,12 +906,13 @@
     "created_at": "2026-11-23T18:48:42.826335Z",
     "id": "t12cb787e84a3",
     "item_ids": [
-      "faf2bac6aa5b36a3"
+      "faf2bac6aa5b36a3",
+      "f09c7d99e35640ac"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-23T18:23:57Z",
-    "state": "pending",
-    "title": "Over 700,000 Russian Soldiers Have Died in Ukraine, Analysis Indicates",
+    "last_item_at": "2026-11-25T00:56:51Z",
+    "state": "active",
+    "title": "000 · Ukraine",
     "topic_id": "world-news"
   },
   {
@@ -2725,12 +2726,13 @@
       "9026aaa1d5288963",
       "5ca24160586a5219",
       "95da0fde7d56c751",
-      "a913764b1be35e0f"
+      "a913764b1be35e0f",
+      "bee434900b5ec6c4"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-19T07:07:43Z",
-    "state": "cooling",
-    "title": "Gemini · 4 · Neon",
+    "last_item_at": "2026-11-25T04:29:07Z",
+    "state": "active",
+    "title": "Gemini · 4 · Neon · GDM",
     "topic_id": "ai-news"
   },
   {
@@ -3008,6 +3010,18 @@
     "state": "pending",
     "title": "Patient Marks One Year Living With Pig Kidney, a Transplant Milestone",
     "topic_id": "health-wellbeing"
+  },
+  {
+    "created_at": "2026-11-25T04:48:48.459198Z",
+    "id": "t5d124ce6f7a0",
+    "item_ids": [
+      "5ba5a5acaa7dc18b"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T00:38:01Z",
+    "state": "pending",
+    "title": "US preparing to unveil plan for new tariffs on global trading partners",
+    "topic_id": "world-news"
   },
   {
     "created_at": "2026-11-22T09:09:42.410739Z",
@@ -3490,6 +3504,18 @@
     "last_item_at": "2026-11-24T15:55:00Z",
     "state": "pending",
     "title": "Social Security Can Be Saved",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-25T04:48:48.459198Z",
+    "id": "t6d3801cf2add",
+    "item_ids": [
+      "1a52d039f027f843"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-24T23:05:11Z",
+    "state": "pending",
+    "title": "China-linked network using AI fakes to smear Taiwan election candidates, BBC Verify finds",
     "topic_id": "world-news"
   },
   {
@@ -4278,12 +4304,14 @@
     "id": "t8e8b823d497b",
     "item_ids": [
       "b3b3dcaafeb3421d",
-      "44088e7faf8cbca7"
+      "44088e7faf8cbca7",
+      "eec82a9a28ab89dc",
+      "470bd6e9e76348f1"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-25T02:44:00Z",
+    "last_item_at": "2026-11-25T04:31:18Z",
     "state": "active",
-    "title": "China’s Military Ambitions in the Pacific Suffer Setback",
+    "title": "Islands · Security · Treaty · China",
     "topic_id": "world-news"
   },
   {
@@ -4651,6 +4679,18 @@
     "topic_id": "ai-news"
   },
   {
+    "created_at": "2026-11-25T04:48:48.459198Z",
+    "id": "t9bd35cc47fcf",
+    "item_ids": [
+      "9121917f87f40b61"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-24T15:03:40Z",
+    "state": "pending",
+    "title": "A training engine for your local model, using your idle compute",
+    "topic_id": "ai-news"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "t9bf886ed4f2c",
     "item_ids": [
@@ -4734,6 +4774,18 @@
     "state": "pending",
     "title": "U.S. Spy Agencies Suffer Breach of Some Unclassified Information",
     "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-25T04:48:48.459198Z",
+    "id": "t9f3e41cf6e12",
+    "item_ids": [
+      "ef6e53c691e2449e"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T01:19:00Z",
+    "state": "pending",
+    "title": "Dollar takes breather ahead of US data on Fed path; Aussie jumps on CPI",
+    "topic_id": "world-news"
   },
   {
     "created_at": "2026-11-22T09:09:42.410739Z",
@@ -4931,10 +4983,11 @@
       "4d2f94a40e7bcf8c",
       "0ebf04e84acf8cc8",
       "b9c24ac86ae2f76b",
-      "56aba13d50d393d0"
+      "56aba13d50d393d0",
+      "bf98da8ab9b8a33f"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-24T23:59:28Z",
+    "last_item_at": "2026-11-25T03:15:54Z",
     "state": "active",
     "title": "Huang · Jensen · Trump · Nvidia",
     "topic_id": "us-politics"
@@ -5215,6 +5268,18 @@
     "last_item_at": "2026-11-24T22:00:50Z",
     "state": "pending",
     "title": "Why Entitlement Reform Is Easier Abroad Than in America",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-25T04:48:48.459198Z",
+    "id": "taf493bf607c5",
+    "item_ids": [
+      "61552cfe41f8321a"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T00:58:34Z",
+    "state": "pending",
+    "title": "Clashing political visions reflect a divided Spain ahead of election",
     "topic_id": "world-news"
   },
   {
@@ -5818,6 +5883,18 @@
     "topic_id": "ai-news"
   },
   {
+    "created_at": "2026-11-25T04:48:48.459198Z",
+    "id": "tc01d2940b160",
+    "item_ids": [
+      "c28d5ac3872430b1"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T00:54:13Z",
+    "state": "pending",
+    "title": "My family died in Ukraine. My mum blamed Zelensky's troops - the truth is complicated",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-23T07:48:38.314750Z",
     "id": "tc0220c4baa28",
     "item_ids": [
@@ -6025,6 +6102,18 @@
     "state": "pending",
     "title": "Why Democrat Abdul El-Sayed is Talking Up ‘TrumpCare’",
     "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-25T04:48:48.459198Z",
+    "id": "tc8ac423211b8",
+    "item_ids": [
+      "9d7afa1fa0df2b0b"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T03:54:43Z",
+    "state": "pending",
+    "title": "Kilmar Ábrego García leaving US for Spain, ending Trump deportation battle",
+    "topic_id": "world-news"
   },
   {
     "created_at": "2026-11-24T11:48:45.891620Z",
@@ -6270,6 +6359,18 @@
     "state": "cooling",
     "title": "Broadening access to AI for scientists",
     "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-25T04:48:48.459198Z",
+    "id": "td30511c52478",
+    "item_ids": [
+      "fcdc0a5d74e92c56"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T01:00:36Z",
+    "state": "pending",
+    "title": "Shot in the face at 15: The lives shattered by Cameroon's decade of conflict",
+    "topic_id": "world-news"
   },
   {
     "created_at": "2026-11-22T20:20:33.012568Z",
