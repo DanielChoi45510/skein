@@ -6699,6 +6699,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-25T08:48:31.062520Z",
+    "id": "tdbabcdbd8966",
+    "item_ids": [
+      "29365b35e36b941e"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T08:00:00Z",
+    "state": "pending",
+    "title": "Woodward and Bernstein Syndrome | Interview: Chris Stirewalt",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "tdc0eb12c1e4c",
     "item_ids": [
@@ -7196,12 +7208,13 @@
     "id": "tf0ed2fbf2eea",
     "item_ids": [
       "6de15d8bbbb2c91f",
-      "291ac92f825a2742"
+      "291ac92f825a2742",
+      "e242a324ac5ae26a"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-23T21:54:00Z",
+    "last_item_at": "2026-11-25T08:05:15Z",
     "state": "active",
-    "title": "Cocaine Gangs Batter Colombian Security Forces in Wave of Attacks",
+    "title": "Colombia’s Leader Blames ‘Terrorist Attack’ for Power Outages",
     "topic_id": "world-news"
   },
   {
