@@ -266,10 +266,11 @@
       "ee57adffa5fb83c9",
       "f1dedd715d5e51ea",
       "7631267b504af1d1",
-      "4b18b17ec7dfd1ad"
+      "4b18b17ec7dfd1ad",
+      "fb1060fe9833fa4a"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-24T14:32:08Z",
+    "last_item_at": "2026-11-25T05:06:00Z",
     "state": "active",
     "title": "Materials",
     "topic_id": "markets"
@@ -792,6 +793,18 @@
     "state": "pending",
     "title": "Harry and Meghan’s Life as ‘Nonroyal Royals’ in the UK",
     "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-25T06:48:33.824621Z",
+    "id": "t0ec5442f04a5",
+    "item_ids": [
+      "aa4d5c6f6cf7545b"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T06:00:00Z",
+    "state": "pending",
+    "title": "After the Midterms, a Challenge Awaits Us",
+    "topic_id": "us-politics"
   },
   {
     "created_at": "2026-11-22T03:51:06.410293Z",
@@ -1855,6 +1868,18 @@
     "topic_id": "ai-news"
   },
   {
+    "created_at": "2026-11-25T06:48:33.824621Z",
+    "id": "t3607184be151",
+    "item_ids": [
+      "affd9ac06c3746d1"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T06:01:00Z",
+    "state": "pending",
+    "title": "Welcome to the Anti-Libertarian Moment",
+    "topic_id": "us-politics"
+  },
+  {
     "created_at": "2026-11-25T05:48:35.625575Z",
     "id": "t3647a9be16aa",
     "item_ids": [
@@ -2581,6 +2606,18 @@
     "topic_id": "ai-news"
   },
   {
+    "created_at": "2026-11-25T06:48:33.824621Z",
+    "id": "t4c5f9ba1d267",
+    "item_ids": [
+      "86f916fed73fab5a"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T05:16:00Z",
+    "state": "pending",
+    "title": "US shelves plans for business deals with Russia to end Ukraine war, FT says",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-22T03:51:06.410293Z",
     "id": "t4c6594a954a2",
     "item_ids": [
@@ -2638,10 +2675,11 @@
       "978649e19fc49d9d",
       "56b568e2582b3376",
       "b3ebe78783befbf7",
-      "501a09a9fc063235"
+      "501a09a9fc063235",
+      "5625dfaad99025a5"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-24T03:24:58Z",
+    "last_item_at": "2026-11-25T05:00:36Z",
     "state": "active",
     "title": "Army · Bomb-making · Iowa · Chemicals",
     "topic_id": "us-politics"
@@ -5010,12 +5048,13 @@
       "0ebf04e84acf8cc8",
       "b9c24ac86ae2f76b",
       "56aba13d50d393d0",
-      "bf98da8ab9b8a33f"
+      "bf98da8ab9b8a33f",
+      "16ee6e93c40fbd01"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-25T03:15:54Z",
+    "last_item_at": "2026-11-25T06:00:00Z",
     "state": "active",
-    "title": "Huang · Jensen · Trump · Nvidia",
+    "title": "Trump · Jensen · Huang · Nvidia",
     "topic_id": "us-politics"
   },
   {
@@ -5361,6 +5400,18 @@
     "topic_id": "us-politics"
   },
   {
+    "created_at": "2026-11-25T06:48:33.824621Z",
+    "id": "tb0c0a289c3d6",
+    "item_ids": [
+      "4769688f547f6c51"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T05:04:28Z",
+    "state": "pending",
+    "title": "Pentagon hires conservative contractors to audit military base schools and pilot 'classical' PE",
+    "topic_id": "us-politics"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "tb0ce6c6ae471",
     "item_ids": [
@@ -5440,12 +5491,13 @@
       "67b0dcf8740b7f7f",
       "59cb00ad211b9d29",
       "773622be1af6701d",
-      "e692f867f12a01e2"
+      "e692f867f12a01e2",
+      "56897c41f3da0291"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-24T22:24:33Z",
+    "last_item_at": "2026-11-25T01:03:05Z",
     "state": "active",
-    "title": "Nvidia · Jensen · Huang · China",
+    "title": "Huang · Jensen · China · Nvidia",
     "topic_id": "world-news"
   },
   {
@@ -7237,6 +7289,18 @@
     "topic_id": "us-politics"
   },
   {
+    "created_at": "2026-11-25T06:48:33.824621Z",
+    "id": "tf434575f441a",
+    "item_ids": [
+      "e43f3d4dc872b078"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T06:13:00Z",
+    "state": "pending",
+    "title": "South African rand eases, with US inflation data in focus",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "tf4d74d60f552",
     "item_ids": [
@@ -7345,6 +7409,18 @@
     "last_item_at": "2026-11-24T12:23:00Z",
     "state": "active",
     "title": "Russian · South · Korea · Aircraft",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-25T06:48:33.824621Z",
+    "id": "tf75af9ebe345",
+    "item_ids": [
+      "1574415970b25b18"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T06:41:18Z",
+    "state": "pending",
+    "title": "Court to rule on South African president's bid to set aside 'Farmgate' report",
     "topic_id": "world-news"
   },
   {
