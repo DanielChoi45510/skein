@@ -226,10 +226,11 @@
       "06cf838f3471fdc8",
       "b030a48461f3cf27",
       "46f71f6c69520ace",
-      "d22b97055668272d"
+      "d22b97055668272d",
+      "bfe3294ab23698ee"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-25T10:50:09Z",
+    "last_item_at": "2026-11-25T12:36:06Z",
     "state": "active",
     "title": "Information Technology",
     "topic_id": "markets"
@@ -1086,9 +1087,21 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-22T12:00:00Z",
-    "state": "active",
+    "state": "cooling",
     "title": "The Rising Religious Left May Buoy Conservative Christians Too",
     "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-25T12:48:38.475626Z",
+    "id": "t16c77080ce8d",
+    "item_ids": [
+      "5f071a5fc3a63b13"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T12:00:28Z",
+    "state": "pending",
+    "title": "AI may soon change what it means to be a theoretical physicist",
+    "topic_id": "ai-news"
   },
   {
     "created_at": "2026-11-22T09:09:42.410739Z",
@@ -2793,6 +2806,18 @@
     "last_item_at": "2026-11-23T01:26:59Z",
     "state": "pending",
     "title": "Is Mexico Stepping Up in the War on Drugs?",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-25T12:48:38.475626Z",
+    "id": "t4e7f8bce89da",
+    "item_ids": [
+      "7ef8237b4050ce8a"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T12:35:00Z",
+    "state": "pending",
+    "title": "Inside the Scramble to Avert Conflict With Russia in the Baltic",
     "topic_id": "world-news"
   },
   {
@@ -5462,6 +5487,18 @@
     "topic_id": "us-politics"
   },
   {
+    "created_at": "2026-11-25T12:48:38.475626Z",
+    "id": "tae5cc0cff175",
+    "item_ids": [
+      "f2eff9c011eba419"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T12:00:00Z",
+    "state": "pending",
+    "title": "The Misguided Democratic Opposition to Permitting Reform",
+    "topic_id": "us-politics"
+  },
+  {
     "created_at": "2026-11-24T10:48:41.839815Z",
     "id": "taece77536fbb",
     "item_ids": [
@@ -6123,6 +6160,18 @@
     "topic_id": "health-nutrition"
   },
   {
+    "created_at": "2026-11-25T12:48:38.475626Z",
+    "id": "tbf36bc4b8241",
+    "item_ids": [
+      "7db2d74274b11b7c"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T12:30:00Z",
+    "state": "pending",
+    "title": "The Great American Tradition",
+    "topic_id": "us-politics"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "tbf48eb93b26c",
     "item_ids": [
@@ -6416,6 +6465,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-25T12:48:38.475626Z",
+    "id": "tca9cc0f73379",
+    "item_ids": [
+      "7c354888933fd83d"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T12:03:43Z",
+    "state": "pending",
+    "title": "In Lebanon, the opening of a second airport reflects political shifts",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-23T13:48:43.971327Z",
     "id": "tcac59205e747",
     "item_ids": [
@@ -6513,6 +6574,18 @@
     "state": "active",
     "title": "Measles · United · States",
     "topic_id": "health-wellbeing"
+  },
+  {
+    "created_at": "2026-11-25T12:48:38.475626Z",
+    "id": "tce3f50c49773",
+    "item_ids": [
+      "cd253614b10720ee"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T12:00:00Z",
+    "state": "pending",
+    "title": "Beware the Gangs of Marauding Wild Turkeys in a City Near You",
+    "topic_id": "world-news"
   },
   {
     "created_at": "2026-11-22T09:09:42.410739Z",
