@@ -3062,6 +3062,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-25T23:48:45.220720Z",
+    "id": "t4eef658388fa",
+    "item_ids": [
+      "3a81b9c781287c90"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T23:37:44Z",
+    "state": "pending",
+    "title": "For Trump, doubling down on tariffs is about power, not popularity",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-24T04:48:41.211473Z",
     "id": "t4ef3e74c0c38",
     "item_ids": [
@@ -3410,6 +3422,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-25T23:48:45.220720Z",
+    "id": "t5bd3a1ee9d48",
+    "item_ids": [
+      "8a1a947c399040b8"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T22:52:35Z",
+    "state": "pending",
+    "title": "Brazil announces new credit rules to curb household indebtedness",
+    "topic_id": "us-politics"
+  },
+  {
     "created_at": "2026-11-23T10:43:53.978530Z",
     "id": "t5c0c1c7b620b",
     "item_ids": [
@@ -3486,7 +3510,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-25T00:38:01Z",
-    "state": "pending",
+    "state": "active",
     "title": "US preparing to unveil plan for new tariffs on global trading partners",
     "topic_id": "world-news"
   },
@@ -5135,6 +5159,18 @@
     "state": "pending",
     "title": "Zero data retention with Enterprise Frontier Safeguards is now in beta",
     "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-25T23:48:45.220720Z",
+    "id": "t94193303f5a5",
+    "item_ids": [
+      "a57a90beb7944294"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T22:28:00Z",
+    "state": "pending",
+    "title": "Post-Election Message: More Tariffs",
+    "topic_id": "us-politics"
   },
   {
     "created_at": "2026-11-22T09:09:42.410739Z",
