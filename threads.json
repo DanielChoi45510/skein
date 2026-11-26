@@ -23,10 +23,11 @@
       "bc236c0a7f0e7b56",
       "89ff4aed36131433",
       "aca31400fc4deb34",
-      "60ee51a3238329bf"
+      "60ee51a3238329bf",
+      "79af71bc59b20ad7"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-25T16:43:21Z",
+    "last_item_at": "2026-11-26T10:02:11Z",
     "state": "active",
     "title": "Consumer Discretionary",
     "topic_id": "markets"
@@ -248,10 +249,11 @@
       "a6f37c5e91a3202e",
       "2dee6d26ce5c5da0",
       "726ae319c38c26df",
-      "9e0f61dff81204b0"
+      "9e0f61dff81204b0",
+      "8795e9d3c3e28090"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-26T00:19:00Z",
+    "last_item_at": "2026-11-26T10:01:56Z",
     "state": "active",
     "title": "Information Technology",
     "topic_id": "markets"
@@ -450,6 +452,18 @@
     "state": "pending",
     "title": "The Surprising Pleasures of Aging Gracefully",
     "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-26T10:48:29.270946Z",
+    "id": "t0306be47c196",
+    "item_ids": [
+      "94cdbd22cc216418"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T10:03:47Z",
+    "state": "pending",
+    "title": "Bipartisan Desire to Regulate A.I. Faces Obstacles in Congress",
+    "topic_id": "us-politics"
   },
   {
     "created_at": "2026-11-22T09:09:42.410739Z",
@@ -1018,6 +1032,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-26T10:48:29.270946Z",
+    "id": "t0f9305076990",
+    "item_ids": [
+      "dacb3a91f7984948"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T10:02:02Z",
+    "state": "pending",
+    "title": "The Giant Batteries Revolutionizing America’s Power Supply",
+    "topic_id": "us-politics"
+  },
+  {
     "created_at": "2026-11-23T17:48:41.578622Z",
     "id": "t0f961df50327",
     "item_ids": [
@@ -1131,12 +1157,13 @@
     "created_at": "2026-11-24T07:48:38.063668Z",
     "id": "t12cb85bae770",
     "item_ids": [
-      "777330efba0acd54"
+      "777330efba0acd54",
+      "6a00c4d39cda78ad"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-24T05:03:48Z",
-    "state": "pending",
-    "title": "Trump to offer Thanksgiving pardons for turkeys Freedom and Feather at the White House",
+    "last_item_at": "2026-11-26T10:04:03Z",
+    "state": "active",
+    "title": "How a Thanksgiving Tradition Connects to Presidential Powers",
     "topic_id": "us-politics"
   },
   {
@@ -1544,6 +1571,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-26T10:48:29.270946Z",
+    "id": "t1d998ff0cb78",
+    "item_ids": [
+      "28306be1cbf83521"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T10:04:17Z",
+    "state": "pending",
+    "title": "El Salvador’s Nayib Bukele Elates Haiti With Fight Against Gangs",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-23T10:43:53.978530Z",
     "id": "t1de2488c3e35",
     "item_ids": [
@@ -1870,6 +1909,18 @@
     "state": "pending",
     "title": "KPMG's Todd Lohr on AI when your data is also your clients' data",
     "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-26T10:48:29.270946Z",
+    "id": "t2a637b47e0c4",
+    "item_ids": [
+      "509015f327e10422"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T10:04:18Z",
+    "state": "pending",
+    "title": "The E.R. Closed at 5 P.M. A Dying Woman Showed Up 11 Minutes Too Late.",
+    "topic_id": "world-news"
   },
   {
     "created_at": "2026-11-22T09:09:42.410739Z",
@@ -5170,6 +5221,18 @@
     "topic_id": "health-wellbeing"
   },
   {
+    "created_at": "2026-11-26T10:48:29.270946Z",
+    "id": "t8d7430094b1e",
+    "item_ids": [
+      "00c54c0acf4de188"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T10:14:08Z",
+    "state": "pending",
+    "title": "Hamas political official and wife among eight Palestinians killed in Israeli strikes on Gaza",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-24T17:48:45.483947Z",
     "id": "t8d92c45f7e73",
     "item_ids": [
@@ -5478,6 +5541,18 @@
     "topic_id": "us-politics"
   },
   {
+    "created_at": "2026-11-26T10:48:29.270946Z",
+    "id": "t966d2ecec7a7",
+    "item_ids": [
+      "e51b021662e92d60"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T09:54:40Z",
+    "state": "pending",
+    "title": "42 state AGs are trying to stop Character.AI from selling users’ chats",
+    "topic_id": "ai-news"
+  },
+  {
     "created_at": "2026-11-25T21:48:23.001305Z",
     "id": "t96d1a027d507",
     "item_ids": [
@@ -5499,6 +5574,18 @@
     "last_item_at": "2026-11-23T22:35:22Z",
     "state": "pending",
     "title": "States sue HUD over a rule that could cut off housing aid for mixed-status families",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-26T10:48:29.270946Z",
+    "id": "t97bb60125395",
+    "item_ids": [
+      "a81dc0af00a24667"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T10:02:32Z",
+    "state": "pending",
+    "title": "Trump Lost My Brother!",
     "topic_id": "us-politics"
   },
   {
@@ -6091,6 +6178,18 @@
     "topic_id": "ai-news"
   },
   {
+    "created_at": "2026-11-26T10:48:29.270946Z",
+    "id": "ta754cdd5b63b",
+    "item_ids": [
+      "001535c747dc9030"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T10:02:53Z",
+    "state": "pending",
+    "title": "After Cyberattacks and Bomb Threats Hit Europe, Survivalism Goes Mainstream",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-22T03:51:06.410293Z",
     "id": "ta772f96ca0ce",
     "item_ids": [
@@ -6483,6 +6582,18 @@
     "last_item_at": "2026-11-23T21:21:53Z",
     "state": "pending",
     "title": "The Woman Who Took Canada to Court Over Genocide",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-26T10:48:29.270946Z",
+    "id": "tb1d272bffd63",
+    "item_ids": [
+      "9f4184cc29c9c4ea"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T10:38:00Z",
+    "state": "pending",
+    "title": "The big fat wedding of politician's daughter making headlines in India",
     "topic_id": "world-news"
   },
   {
@@ -7439,6 +7550,18 @@
     "topic_id": "us-politics"
   },
   {
+    "created_at": "2026-11-26T10:48:29.270946Z",
+    "id": "tcc90ed53d98a",
+    "item_ids": [
+      "05958ee3911dd392"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T09:44:20Z",
+    "state": "pending",
+    "title": "Court lets Puerto Rico governor fire firm that runs the island's troubled power grid",
+    "topic_id": "us-politics"
+  },
+  {
     "created_at": "2026-11-24T09:48:40.359719Z",
     "id": "tccbf61aeea44",
     "item_ids": [
@@ -7582,7 +7705,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-23T10:01:58Z",
-    "state": "active",
+    "state": "cooling",
     "title": "China · A.I",
     "topic_id": "world-news"
   },
@@ -7758,6 +7881,19 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-26T10:48:29.270946Z",
+    "id": "td580b84eb765",
+    "item_ids": [
+      "6af8b8f6bda6b236",
+      "6faf07219563d3dd"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T10:00:12Z",
+    "state": "active",
+    "title": "Duped · Fighting · Russia",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "td61646383e6a",
     "item_ids": [
@@ -7842,12 +7978,13 @@
       "9dbc290e81b49b67",
       "76214a449e0fbdc6",
       "d11836686722af10",
-      "bbbd66974821df38"
+      "bbbd66974821df38",
+      "bb9d84c3ad2bac9d"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-26T08:42:00Z",
+    "last_item_at": "2026-11-26T09:33:45Z",
     "state": "active",
-    "title": "Tariffs · Trump · China · Trade",
+    "title": "Trump · China · Tariffs · Trade",
     "topic_id": "world-news"
   },
   {
@@ -7970,7 +8107,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-23T10:02:07Z",
-    "state": "active",
+    "state": "cooling",
     "title": "Electoral · College",
     "topic_id": "us-politics"
   },
@@ -8228,6 +8365,18 @@
     "state": "pending",
     "title": "How OpenAI’s Performance Factory keeps ChatGPT fast",
     "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-26T10:48:29.270946Z",
+    "id": "te52ecc7291d4",
+    "item_ids": [
+      "af9866a023b97d1f"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T10:02:41Z",
+    "state": "pending",
+    "title": "The Next Fed Leader Should Be a Bot",
+    "topic_id": "us-politics"
   },
   {
     "created_at": "2026-11-24T17:48:45.483947Z",
@@ -8687,12 +8836,13 @@
     "item_ids": [
       "fd2593a31b066d9f",
       "2c1d902c2e1a6e7b",
-      "65ea1dd9d99d3138"
+      "65ea1dd9d99d3138",
+      "85ba8db2afd4b9a9"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-25T21:47:00Z",
+    "last_item_at": "2026-11-26T10:03:58Z",
     "state": "active",
-    "title": "America Is Past Peak Trump. Your Move, GOP",
+    "title": "Move · Trump",
     "topic_id": "us-politics"
   },
   {
