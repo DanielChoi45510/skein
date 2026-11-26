@@ -351,10 +351,12 @@
       "fb49d53e419d760c",
       "54270503d7251b7c",
       "718c2cad438e90d7",
-      "dea8db699a2da803"
+      "dea8db699a2da803",
+      "231b8e639d2f9fbc",
+      "d29aa5360372da17"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-26T12:04:01Z",
+    "last_item_at": "2026-11-26T14:00:33Z",
     "state": "active",
     "title": "Trade & tariffs",
     "topic_id": "markets"
@@ -1804,6 +1806,18 @@
     "state": "pending",
     "title": "Why So Many of Us Have Chronic Back Pain, and Why It Won’t Go Away",
     "topic_id": "health-training"
+  },
+  {
+    "created_at": "2026-11-26T14:48:40.987353Z",
+    "id": "t252b887fa2ed",
+    "item_ids": [
+      "e4a5a4ecf807cb61"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T14:40:00Z",
+    "state": "pending",
+    "title": "Europe Has Picked a New Central Bank Chief. He’s in for a Bumpy Ride.",
+    "topic_id": "world-news"
   },
   {
     "created_at": "2026-11-22T09:09:42.410739Z",
@@ -5041,6 +5055,18 @@
     "last_item_at": "2026-11-16T22:37:00Z",
     "state": "pending",
     "title": "Gig Work Is Good Work",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-26T14:48:40.987353Z",
+    "id": "t837c020e6c5a",
+    "item_ids": [
+      "1ad9e5fec98b7594"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T14:00:00Z",
+    "state": "pending",
+    "title": "A Little The Crucible. A Little The Craft. A Lot of Catholic Guilt.",
     "topic_id": "us-politics"
   },
   {
@@ -8521,6 +8547,18 @@
     "topic_id": "us-politics"
   },
   {
+    "created_at": "2026-11-26T14:48:40.987353Z",
+    "id": "te3aebe179de6",
+    "item_ids": [
+      "97abc0a12124d525"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T14:00:00Z",
+    "state": "pending",
+    "title": "2026 Close-Up Photographer of the Year: Shortlisted Images",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-25T13:48:31.796423Z",
     "id": "te3f0df4a5332",
     "item_ids": [
@@ -8682,6 +8720,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-26T14:48:40.987353Z",
+    "id": "tec51ead2d1de",
+    "item_ids": [
+      "bacc22a43cefe406"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T14:00:06Z",
+    "state": "pending",
+    "title": "Ways to Say ‘We’re Sorry’ to Canada",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-24T20:48:44.254125Z",
     "id": "tec790f0fbbaa",
     "item_ids": [
@@ -8757,10 +8807,11 @@
       "de1356c6b8b13c50",
       "2b30bac26105e537",
       "6211b12e687e5fba",
-      "36ca65000a8a27fe"
+      "36ca65000a8a27fe",
+      "939b7e9e3e5683da"
     ],
     "kind": "tracker",
-    "last_item_at": "2026-11-26T12:38:00Z",
+    "last_item_at": "2026-11-26T14:06:00Z",
     "state": "active",
     "title": "Laptops",
     "topic_id": "tech-trackers"
@@ -8809,10 +8860,11 @@
       "07105e27aa40b888",
       "8ed3eee63fbc46b8",
       "deedf392dfc87b6d",
-      "9501254b49634706"
+      "9501254b49634706",
+      "7d44ae29e9ecfcc4"
     ],
     "kind": "tracker",
-    "last_item_at": "2026-11-26T12:03:10Z",
+    "last_item_at": "2026-11-26T14:00:25Z",
     "state": "active",
     "title": "Phones",
     "topic_id": "tech-trackers"
@@ -9384,12 +9436,13 @@
     "created_at": "2026-11-23T21:48:40.140351Z",
     "id": "tf92f7a38b6dc",
     "item_ids": [
-      "66b54e4c12fd6174"
+      "66b54e4c12fd6174",
+      "8af177998028189a"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-20T20:36:00Z",
-    "state": "pending",
-    "title": "What Happened This Year That You’re Grateful For?",
+    "last_item_at": "2026-11-26T14:30:00Z",
+    "state": "active",
+    "title": "WSJ Opinion: What Are You Thankful For?",
     "topic_id": "world-news"
   },
   {
