@@ -163,10 +163,11 @@
       "190fc660e88393a7",
       "2abf465b0e97df79",
       "a0b4c39e6d77a46d",
-      "bbf61241a90bba59"
+      "bbf61241a90bba59",
+      "f0fc2097d21cb8d5"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-26T16:29:52Z",
+    "last_item_at": "2026-11-26T19:55:00Z",
     "state": "active",
     "title": "Financials",
     "topic_id": "markets"
@@ -2580,7 +2581,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-23T20:22:18Z",
-    "state": "active",
+    "state": "cooling",
     "title": "Gen · Z-ers · Rising · Mayor",
     "topic_id": "world-news"
   },
@@ -4694,6 +4695,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-26T20:48:35.961706Z",
+    "id": "t760474964154",
+    "item_ids": [
+      "7cd21860c67a0506"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T17:41:43Z",
+    "state": "pending",
+    "title": "Turkish elections to be held in 2028, ruling alliance agrees on Erdogan candidacy, vice president says",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "t760715ab73af",
     "item_ids": [
@@ -4714,7 +4727,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-23T20:00:00Z",
-    "state": "active",
+    "state": "cooling",
     "title": "Claude AI can review pull requests and ship fixes on its own now",
     "topic_id": "ai-news"
   },
@@ -9054,10 +9067,11 @@
       "deedf392dfc87b6d",
       "9501254b49634706",
       "7d44ae29e9ecfcc4",
-      "ddb908aba4420132"
+      "ddb908aba4420132",
+      "305c0dd18870f599"
     ],
     "kind": "tracker",
-    "last_item_at": "2026-11-26T18:04:57Z",
+    "last_item_at": "2026-11-26T20:30:32Z",
     "state": "active",
     "title": "Phones",
     "topic_id": "tech-trackers"
@@ -9760,12 +9774,13 @@
     "created_at": "2026-11-26T01:48:38.580251Z",
     "id": "tfcf1ab85a59a",
     "item_ids": [
-      "cdc876128e23a33b"
+      "cdc876128e23a33b",
+      "59b25d2b8e233edf"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-26T01:22:55Z",
-    "state": "pending",
-    "title": "California warned of potential Thanksgiving flooding as storms threaten US coasts",
+    "last_item_at": "2026-11-26T19:26:16Z",
+    "state": "active",
+    "title": "Watch: Roofs torn off and streets under water as severe weather hits US",
     "topic_id": "world-news"
   },
   {
