@@ -6,10 +6,11 @@
       "4b55e9ad79027a0a",
       "8efce86d328d46c4",
       "7e77f56783aa3faa",
-      "29a0c4c48a41c90d"
+      "29a0c4c48a41c90d",
+      "20c5775f189aefaa"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-25T08:54:00Z",
+    "last_item_at": "2026-11-26T05:00:17Z",
     "state": "active",
     "title": "Communication Services",
     "topic_id": "markets"
@@ -1231,12 +1232,13 @@
     "id": "t16713e66703b",
     "item_ids": [
       "603b5b3a9a99f4b1",
-      "ab10e0b13048fd79"
+      "ab10e0b13048fd79",
+      "c33817265957a248"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-22T12:00:00Z",
-    "state": "cooling",
-    "title": "The Rising Religious Left May Buoy Conservative Christians Too",
+    "last_item_at": "2026-11-26T06:00:04Z",
+    "state": "active",
+    "title": "The Spanish Bulwark of Progressivism May Be Crumbling",
     "topic_id": "us-politics"
   },
   {
@@ -1390,6 +1392,18 @@
     "state": "pending",
     "title": "Donald Hooton Sr., Who Crusaded Against Steroids in Sports, Has Died",
     "topic_id": "health-wellbeing"
+  },
+  {
+    "created_at": "2026-11-26T06:48:30.348408Z",
+    "id": "t1a30cf05d154",
+    "item_ids": [
+      "aa93b949730b4314"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T05:23:18Z",
+    "state": "pending",
+    "title": "U.S. Judge rules FCC violated ABC's free speech rights to please Trump",
+    "topic_id": "us-politics"
   },
   {
     "created_at": "2026-11-23T21:48:40.140351Z",
@@ -2119,12 +2133,13 @@
     "created_at": "2026-11-24T00:48:44.170362Z",
     "id": "t3416b9c2b634",
     "item_ids": [
-      "d26bd4b314a87a65"
+      "d26bd4b314a87a65",
+      "e0577f40419a647d"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-23T00:37:20Z",
-    "state": "pending",
-    "title": "datasette-charts 0.1a0",
+    "last_item_at": "2026-11-25T18:16:50Z",
+    "state": "active",
+    "title": "datasette-charts 0.3a0",
     "topic_id": "ai-news"
   },
   {
@@ -5868,6 +5883,18 @@
     "topic_id": "us-politics"
   },
   {
+    "created_at": "2026-11-26T06:48:30.348408Z",
+    "id": "ta63d4e4d0ba4",
+    "item_ids": [
+      "362ab5732dad5d38"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T06:01:00Z",
+    "state": "pending",
+    "title": "Unexpected Forces Closing ’Round You",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "ta6b0aa711826",
     "item_ids": [
@@ -6216,12 +6243,13 @@
       "0b83da30ea9c973a",
       "081c68f2f73557bf",
       "ec5014e5ceb8b5be",
-      "ade3eaa824625fd3"
+      "ade3eaa824625fd3",
+      "0866f51516d59b56"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-25T19:39:56Z",
+    "last_item_at": "2026-11-26T06:16:00Z",
     "state": "active",
-    "title": "Great · China · Nvidia · Chips",
+    "title": "Great · AI · Nvidia · Chips",
     "topic_id": "us-politics"
   },
   {
@@ -6606,6 +6634,18 @@
     "state": "pending",
     "title": "Software factories and code reviews with Harjot Gill",
     "topic_id": "jobs-market"
+  },
+  {
+    "created_at": "2026-11-26T06:48:30.348408Z",
+    "id": "tb9380468f77a",
+    "item_ids": [
+      "c572e0badd5c12b9"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T05:01:11Z",
+    "state": "pending",
+    "title": "London Banning Noise and Capping Fares for Its Pedicabs",
+    "topic_id": "world-news"
   },
   {
     "created_at": "2026-11-22T09:09:42.410739Z",
@@ -7078,6 +7118,18 @@
     "state": "pending",
     "title": "How iFood scales coding agents across 15,000 repositories",
     "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-26T06:48:30.348408Z",
+    "id": "tc6644cf72e73",
+    "item_ids": [
+      "6f8fbe0a39818d0d"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T05:00:18Z",
+    "state": "pending",
+    "title": "The Unbearable Heat of Delhi’s Summer Nights",
+    "topic_id": "world-news"
   },
   {
     "created_at": "2026-11-23T01:41:04.329483Z",
@@ -7748,6 +7800,18 @@
     "topic_id": "us-politics"
   },
   {
+    "created_at": "2026-11-26T06:48:30.348408Z",
+    "id": "tdc142dc7b00e",
+    "item_ids": [
+      "2d5e4fa6115e5985"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T00:43:34Z",
+    "state": "pending",
+    "title": "Tell HN: Lots of Ask HNs again",
+    "topic_id": "jobs-market"
+  },
+  {
     "created_at": "2026-11-26T00:48:38.780474Z",
     "id": "tdc634debb4ad",
     "item_ids": [
@@ -8119,12 +8183,13 @@
     "created_at": "2026-11-24T10:48:41.839815Z",
     "id": "tec9a816c5e6a",
     "item_ids": [
-      "c69a68fb5d1c537a"
+      "c69a68fb5d1c537a",
+      "579a1f1e4c3825b5"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-24T10:35:29Z",
-    "state": "pending",
-    "title": "Japan’s Leader, in Break with U.S., Defends International Criminal Court",
+    "last_item_at": "2026-11-26T05:01:04Z",
+    "state": "active",
+    "title": "Was Japan Prime Minister Takaichi Snubbed at China’s Big Summit?",
     "topic_id": "world-news"
   },
   {
@@ -8732,7 +8797,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-25T01:02:13Z",
-    "state": "pending",
+    "state": "active",
     "title": "The rising cost of putting food on the table in India",
     "topic_id": "world-news"
   },
