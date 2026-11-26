@@ -58,10 +58,11 @@
       "f8700ac0024e4b75",
       "9e80f1098e24f02c",
       "826465d103bf03a5",
-      "0196540f2ec4c66f"
+      "0196540f2ec4c66f",
+      "8fc8b0f209591c91"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-25T21:23:00Z",
+    "last_item_at": "2026-11-26T00:03:00Z",
     "state": "active",
     "title": "Major earnings surprises",
     "topic_id": "markets"
@@ -242,10 +243,11 @@
       "3dc7aee55f092f0a",
       "a6f37c5e91a3202e",
       "2dee6d26ce5c5da0",
-      "726ae319c38c26df"
+      "726ae319c38c26df",
+      "9e0f61dff81204b0"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-25T21:48:00Z",
+    "last_item_at": "2026-11-26T00:19:00Z",
     "state": "active",
     "title": "Information Technology",
     "topic_id": "markets"
@@ -295,10 +297,11 @@
       "fb1060fe9833fa4a",
       "d9e72775a1abacf0",
       "670df7bef5541d4f",
-      "82565c35db835e7a"
+      "82565c35db835e7a",
+      "d0fadceecc6a4209"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-25T13:24:00Z",
+    "last_item_at": "2026-11-26T00:24:00Z",
     "state": "active",
     "title": "Materials",
     "topic_id": "markets"
@@ -2897,6 +2900,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-26T00:48:38.780474Z",
+    "id": "t4a4d1fa3a0fd",
+    "item_ids": [
+      "6019c1e320ed9ff6"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T00:24:25Z",
+    "state": "pending",
+    "title": "The US pastor who wants to see women's right to vote overturned",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "t4a60303e4833",
     "item_ids": [
@@ -3594,12 +3609,13 @@
       "b43ef08ac3ed4f7a",
       "8f6af8c44a4a1bfb",
       "db9b81401cb73d7b",
-      "8145fefb47ff1ca9"
+      "8145fefb47ff1ca9",
+      "812322b76008ba03"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-20T00:00:00Z",
+    "last_item_at": "2026-11-22T16:44:48Z",
     "state": "cooling",
-    "title": "GPT-6.2 · Astra · Sol",
+    "title": "GPT-6.2 · Astra · Model · Sol",
     "topic_id": "ai-news"
   },
   {
@@ -4755,6 +4771,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-26T00:48:38.780474Z",
+    "id": "t84fefd67bfee",
+    "item_ids": [
+      "f2f0d50a4eab786b"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T16:42:11Z",
+    "state": "pending",
+    "title": "Trump's accounts traded Nvidia shares 44 times this year, records show",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "t86c11b0104bb",
     "item_ids": [
@@ -4779,6 +4807,18 @@
     "state": "cooling",
     "title": "U.S · Measles",
     "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-26T00:48:38.780474Z",
+    "id": "t878302e19210",
+    "item_ids": [
+      "d0f4230142583401"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T21:48:10Z",
+    "state": "pending",
+    "title": "Much shorter version of GRH Lean verification from Anthropic",
+    "topic_id": "ai-news"
   },
   {
     "created_at": "2026-11-22T20:20:33.012568Z",
@@ -5740,10 +5780,11 @@
       "bf98da8ab9b8a33f",
       "16ee6e93c40fbd01",
       "e60a4b00bb73328e",
-      "a84d6dc135a4b2b9"
+      "a84d6dc135a4b2b9",
+      "52945e4afe3324e0"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-25T11:50:05Z",
+    "last_item_at": "2026-11-26T00:35:37Z",
     "state": "active",
     "title": "Trump · Jensen · Huang · Nvidia",
     "topic_id": "us-politics"
@@ -6598,12 +6639,13 @@
     "id": "tbbee5718a561",
     "item_ids": [
       "d0919cc954d57cde",
-      "60d7e8a4e20cab41"
+      "60d7e8a4e20cab41",
+      "027803ccc23e9ec0"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-21T12:54:44Z",
-    "state": "cooling",
-    "title": "On the Trail With Spain’s Prime Minister, as He Tries to Pull Out a Win",
+    "last_item_at": "2026-11-26T00:23:49Z",
+    "state": "active",
+    "title": "Spanish elections: What you need to know and what's at stake",
     "topic_id": "world-news"
   },
   {
@@ -7130,6 +7172,18 @@
     "topic_id": "us-politics"
   },
   {
+    "created_at": "2026-11-26T00:48:38.780474Z",
+    "id": "tcce42cf59fbf",
+    "item_ids": [
+      "6b96f3eaa3e79602"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T00:11:25Z",
+    "state": "pending",
+    "title": "Africa C.D.C. Chief Faces Turmoil Over Management Amid Ebola Crisis",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-23T01:41:04.329483Z",
     "id": "tcd8581599ef4",
     "item_ids": [
@@ -7470,12 +7524,13 @@
     "created_at": "2026-11-25T18:48:30.856667Z",
     "id": "td899276da6a3",
     "item_ids": [
-      "9dbc290e81b49b67"
+      "9dbc290e81b49b67",
+      "76214a449e0fbdc6"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-25T01:17:02Z",
-    "state": "pending",
-    "title": "US ready to slap tariffs on China, EU and others over subsidized production, AP sources say",
+    "last_item_at": "2026-11-25T19:38:05Z",
+    "state": "active",
+    "title": "What we know about Trump's Thanksgiving tariffs",
     "topic_id": "world-news"
   },
   {
@@ -7589,6 +7644,18 @@
     "state": "active",
     "title": "Electoral · College",
     "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-26T00:48:38.780474Z",
+    "id": "tdc634debb4ad",
+    "item_ids": [
+      "e9b5c484d04cebb6"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T00:22:18Z",
+    "state": "pending",
+    "title": "Has global jihadism failed, or is it simply changing shape?",
+    "topic_id": "world-news"
   },
   {
     "created_at": "2026-11-24T17:48:45.483947Z",
@@ -8227,12 +8294,13 @@
     "created_at": "2026-11-25T18:48:30.856667Z",
     "id": "tf1dc1063c668",
     "item_ids": [
-      "7403440163c3efc3"
+      "7403440163c3efc3",
+      "5833e94dd3221108"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-24T17:59:17Z",
-    "state": "pending",
-    "title": "Will wind ground your favorite balloon in the Macy's Thanksgiving Parade?",
+    "last_item_at": "2026-11-25T23:57:03Z",
+    "state": "active",
+    "title": "Macy · Thanksgiving · Parade",
     "topic_id": "world-news"
   },
   {
@@ -8296,6 +8364,18 @@
     "state": "pending",
     "title": "USMCA, Trade, and the Character Issue",
     "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-26T00:48:38.780474Z",
+    "id": "tf284c265e5df",
+    "item_ids": [
+      "859f3552b52d757c"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T00:23:27Z",
+    "state": "pending",
+    "title": "France's political mainstream risks presidential vote debacle with no clear candidate",
+    "topic_id": "world-news"
   },
   {
     "created_at": "2026-11-22T09:09:42.410739Z",
