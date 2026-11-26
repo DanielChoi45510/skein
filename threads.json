@@ -355,6 +355,18 @@
     "topic_id": "markets"
   },
   {
+    "created_at": "2026-11-26T08:48:38.242191Z",
+    "id": "t007888a554f2",
+    "item_ids": [
+      "f3ae0cd86f8ecfe8"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T08:31:47Z",
+    "state": "pending",
+    "title": "Attack Blamed on ISIS Kills 2 Syrian Security Force Members",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "t008cd710c09c",
     "item_ids": [
@@ -956,6 +968,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-26T08:48:38.242191Z",
+    "id": "t0e55208e00a4",
+    "item_ids": [
+      "a71c9f477bed72a8"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T05:01:00Z",
+    "state": "pending",
+    "title": "China, Japan, South Korea and ASEAN launch talks on digital payments across borders",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-25T06:48:33.824621Z",
     "id": "t0ec5442f04a5",
     "item_ids": [
@@ -1333,6 +1357,18 @@
     "state": "active",
     "title": "Travelers · Thanksgiving · Travel",
     "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-26T08:48:38.242191Z",
+    "id": "t1853c9ffcbf0",
+    "item_ids": [
+      "b2601396bc7fd63f"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T05:59:00Z",
+    "state": "pending",
+    "title": "India's top court tightens food warning labels in new setback for industry",
+    "topic_id": "us-politics"
   },
   {
     "created_at": "2026-11-25T15:49:13.573524Z",
@@ -1748,6 +1784,19 @@
     "state": "pending",
     "title": "The UN fails to agree on rules regulating ‘killer robots’",
     "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-26T08:48:38.242191Z",
+    "id": "t26aa551626df",
+    "item_ids": [
+      "629f4609b059a2f4",
+      "00bc4d71a7d55999"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T08:08:21Z",
+    "state": "active",
+    "title": "Hong Kong Grieves Fire Victims Under Watchful Eye of Authorities",
+    "topic_id": "world-news"
   },
   {
     "created_at": "2026-11-23T20:48:27.182294Z",
@@ -3005,6 +3054,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-26T08:48:38.242191Z",
+    "id": "t4ba7e5d6653e",
+    "item_ids": [
+      "8e4f0b6c952c5bfe"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T08:30:12Z",
+    "state": "pending",
+    "title": "Two screenings of Pakistani TV show cancelled in India after backlash",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-23T17:48:41.578622Z",
     "id": "t4bf97f8cf76f",
     "item_ids": [
@@ -3131,6 +3192,18 @@
     "state": "pending",
     "title": "Inside the Scramble to Avert Conflict With Russia in the Baltic",
     "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-26T08:48:38.242191Z",
+    "id": "t4ed6687bbae3",
+    "item_ids": [
+      "7bfc74c3b3bb8704"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T08:00:00Z",
+    "state": "pending",
+    "title": "Thanksgiving Re-Run: Getting Into Law School with Miriam Ingber and Kristi Jobson",
+    "topic_id": "us-politics"
   },
   {
     "created_at": "2026-11-25T23:48:45.220720Z",
@@ -5171,6 +5244,18 @@
     "topic_id": "ai-news"
   },
   {
+    "created_at": "2026-11-26T08:48:38.242191Z",
+    "id": "t8fb0c749618f",
+    "item_ids": [
+      "d9b0db7bfd1d5cde"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T05:03:00Z",
+    "state": "pending",
+    "title": "Spain's economic gains miss voters' wallets as Sanchez seeks reelection",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-22T03:51:06.410293Z",
     "id": "t8fc15885ea92",
     "item_ids": [
@@ -5342,6 +5427,18 @@
     "state": "cooling",
     "title": "The vibe-coding revolution is coming to all the gadgets",
     "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-26T08:48:38.242191Z",
+    "id": "t955171fa3ccc",
+    "item_ids": [
+      "62363c3d7a0bb3d0"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T05:09:00Z",
+    "state": "pending",
+    "title": "Nvidia halts server shipments to four Southeast Asian countries, FT reports",
+    "topic_id": "world-news"
   },
   {
     "created_at": "2026-11-24T21:48:40.851210Z",
@@ -5547,6 +5644,18 @@
     "last_item_at": "2026-11-24T15:58:00Z",
     "state": "pending",
     "title": "Learning About Democracy Without Living It",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-26T08:48:38.242191Z",
+    "id": "t9af5a9bdcaa6",
+    "item_ids": [
+      "5277d8d82858bb2b"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T06:54:00Z",
+    "state": "pending",
+    "title": "Kenya breached constitution in building US-backed Ebola quarantine site, court says",
     "topic_id": "us-politics"
   },
   {
@@ -6281,12 +6390,13 @@
       "081c68f2f73557bf",
       "ec5014e5ceb8b5be",
       "ade3eaa824625fd3",
-      "0866f51516d59b56"
+      "0866f51516d59b56",
+      "17592ef682e98806"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-26T06:16:00Z",
+    "last_item_at": "2026-11-26T07:19:00Z",
     "state": "active",
-    "title": "Great · AI · Nvidia · Chips",
+    "title": "Nvidia · Chinese · Chips · AI",
     "topic_id": "us-politics"
   },
   {
@@ -7701,16 +7811,30 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-26T08:48:38.242191Z",
+    "id": "td887e2b62667",
+    "item_ids": [
+      "5512f8ba8e112192"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T00:07:51Z",
+    "state": "pending",
+    "title": "US approves SpaceX plan to send a million data satellites to space",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-25T18:48:30.856667Z",
     "id": "td899276da6a3",
     "item_ids": [
       "9dbc290e81b49b67",
-      "76214a449e0fbdc6"
+      "76214a449e0fbdc6",
+      "d11836686722af10",
+      "bbbd66974821df38"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-25T19:38:05Z",
+    "last_item_at": "2026-11-26T08:42:00Z",
     "state": "active",
-    "title": "What we know about Trump's Thanksgiving tariffs",
+    "title": "Tariffs · Trump · China · Trade",
     "topic_id": "world-news"
   },
   {
