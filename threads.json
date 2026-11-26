@@ -2867,6 +2867,18 @@
     "topic_id": "health-wellbeing"
   },
   {
+    "created_at": "2026-11-26T19:48:35.215793Z",
+    "id": "t41659daa9ca4",
+    "item_ids": [
+      "526a9267c2e1ba28"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T18:25:33Z",
+    "state": "pending",
+    "title": "Trump uses Thanksgiving message to lash out at political foes, immigrants, federal government",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-23T23:48:50.044707Z",
     "id": "t419afc71183f",
     "item_ids": [
@@ -4083,6 +4095,18 @@
     "topic_id": "ai-news"
   },
   {
+    "created_at": "2026-11-26T19:48:35.215793Z",
+    "id": "t6465c37d13c5",
+    "item_ids": [
+      "ae9a556c4bf694ed"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T19:04:00Z",
+    "state": "pending",
+    "title": "Opinion | Russia Escalates Attacks on Europe",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "t649dc144bd6e",
     "item_ids": [
@@ -4289,7 +4313,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-23T18:49:19Z",
-    "state": "active",
+    "state": "cooling",
     "title": "Christmas · Tree",
     "topic_id": "world-news"
   },
@@ -8250,7 +8274,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-23T18:49:56Z",
-    "state": "active",
+    "state": "cooling",
     "title": "South · Africa",
     "topic_id": "world-news"
   },
@@ -8396,6 +8420,18 @@
     "state": "pending",
     "title": "China’s Huawei Convicted of Fraud in U.S. Criminal Trial",
     "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-26T19:48:35.215793Z",
+    "id": "tda631f6d446c",
+    "item_ids": [
+      "f0529285b7a6c9f3"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T19:05:00Z",
+    "state": "pending",
+    "title": "Zohran Mamdani Has a Nvidia Revelation",
+    "topic_id": "us-politics"
   },
   {
     "created_at": "2026-11-22T09:09:42.410739Z",
@@ -8825,6 +8861,18 @@
     "last_item_at": "2026-11-24T19:18:15Z",
     "state": "active",
     "title": "Attack · Saudi · Capital · Tower",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-26T19:48:35.215793Z",
+    "id": "te89aec16e817",
+    "item_ids": [
+      "f39ddab0b265296a"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-24T20:52:00Z",
+    "state": "pending",
+    "title": "Gen Z Is Riding High on WhimZ After the Midterms",
     "topic_id": "world-news"
   },
   {
