@@ -162,10 +162,11 @@
       "600e053a9a897925",
       "190fc660e88393a7",
       "2abf465b0e97df79",
-      "a0b4c39e6d77a46d"
+      "a0b4c39e6d77a46d",
+      "bbf61241a90bba59"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-26T02:00:00Z",
+    "last_item_at": "2026-11-26T16:29:52Z",
     "state": "active",
     "title": "Financials",
     "topic_id": "markets"
@@ -335,10 +336,11 @@
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "markets--staples",
     "item_ids": [
-      "c4ff3195c3d8cde0"
+      "c4ff3195c3d8cde0",
+      "d77348f11814633d"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-19T18:51:49Z",
+    "last_item_at": "2026-11-26T16:30:58Z",
     "state": "active",
     "title": "Consumer Staples",
     "topic_id": "markets"
@@ -359,6 +361,18 @@
     "last_item_at": "2026-11-26T14:00:33Z",
     "state": "active",
     "title": "Trade & tariffs",
+    "topic_id": "markets"
+  },
+  {
+    "created_at": "2026-11-26T16:48:49.717627Z",
+    "id": "markets--utilities",
+    "item_ids": [
+      "35a215f2cdc89527"
+    ],
+    "kind": "fixed",
+    "last_item_at": "2026-11-26T15:12:12Z",
+    "state": "active",
+    "title": "Utilities",
     "topic_id": "markets"
   },
   {
@@ -2972,7 +2986,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-23T15:49:46Z",
-    "state": "active",
+    "state": "cooling",
     "title": "China · Trade",
     "topic_id": "world-news"
   },
@@ -3019,12 +3033,13 @@
     "item_ids": [
       "af3d38de98dc94d9",
       "891c2af98efa22c2",
-      "058d83d6e59a3359"
+      "058d83d6e59a3359",
+      "afd1f365ec23a283"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-26T11:43:47Z",
+    "last_item_at": "2026-11-26T14:46:54Z",
     "state": "active",
-    "title": "Trump · Administration · Tariffs",
+    "title": "Administration · Trump · Tariffs",
     "topic_id": "us-politics"
   },
   {
@@ -3374,6 +3389,18 @@
     "state": "cooling",
     "title": "U.S. Consortium Wins Bid to Prospect at $62 Billion Kenyan Rare-Earth Deposit",
     "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-26T16:48:49.717627Z",
+    "id": "t4f8e78931e15",
+    "item_ids": [
+      "acd1839cbac010dd"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T22:15:34Z",
+    "state": "pending",
+    "title": "Bare Metal Qwen",
+    "topic_id": "ai-news"
   },
   {
     "created_at": "2026-11-23T09:48:40.518489Z",
@@ -4257,12 +4284,13 @@
     "created_at": "2026-11-24T19:48:37.851435Z",
     "id": "t6a04c40ae6a9",
     "item_ids": [
-      "fbc43e3dbb0b331e"
+      "fbc43e3dbb0b331e",
+      "dec2ba74c83f5ed8"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-24T19:25:38Z",
-    "state": "pending",
-    "title": "Democrats aim to reverse Trump's slashes to US food aid, but path unclear",
+    "last_item_at": "2026-11-26T15:44:53Z",
+    "state": "active",
+    "title": "Trump Administration’s Cuts to SNAP Threaten Free School Meals",
     "topic_id": "us-politics"
   },
   {
@@ -4550,7 +4578,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-24T16:09:23Z",
-    "state": "pending",
+    "state": "active",
     "title": "The New York Times warns photographers not to update Photoshop over AI features",
     "topic_id": "ai-news"
   },
@@ -5625,12 +5653,13 @@
     "created_at": "2026-11-26T08:48:38.242191Z",
     "id": "t955171fa3ccc",
     "item_ids": [
-      "62363c3d7a0bb3d0"
+      "62363c3d7a0bb3d0",
+      "ff9f760fb48f5c3f"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-26T05:09:00Z",
-    "state": "pending",
-    "title": "Nvidia halts server shipments to four Southeast Asian countries, FT reports",
+    "last_item_at": "2026-11-26T16:04:00Z",
+    "state": "active",
+    "title": "Nvidia · Shipments · Southeast",
     "topic_id": "world-news"
   },
   {
@@ -7221,12 +7250,13 @@
     "item_ids": [
       "d0919cc954d57cde",
       "60d7e8a4e20cab41",
-      "027803ccc23e9ec0"
+      "027803ccc23e9ec0",
+      "223d361362a1a30b"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-26T00:23:49Z",
+    "last_item_at": "2026-11-26T16:01:43Z",
     "state": "active",
-    "title": "Spanish elections: What you need to know and what's at stake",
+    "title": "Spain · Election",
     "topic_id": "world-news"
   },
   {
@@ -7658,6 +7688,18 @@
     "topic_id": "us-politics"
   },
   {
+    "created_at": "2026-11-26T16:48:49.717627Z",
+    "id": "tc9d1a6cea1d2",
+    "item_ids": [
+      "cbbd6160d360f9e2"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T16:04:27Z",
+    "state": "pending",
+    "title": "Trump demands probe of GDP data released before midterms",
+    "topic_id": "us-politics"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "tc9dc00df4195",
     "item_ids": [
@@ -7799,6 +7841,18 @@
     "last_item_at": "2026-11-22T22:48:02Z",
     "state": "pending",
     "title": "We haven’t seen the last of the major tech outages",
+    "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-26T16:48:49.717627Z",
+    "id": "tcdc8a81bd2f5",
+    "item_ids": [
+      "4299a3ba81334a44"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T11:50:49Z",
+    "state": "pending",
+    "title": "Euro-Office comes to your desktop with the Nextcloud Office Desktop app",
     "topic_id": "ai-news"
   },
   {

@@ -1,7 +1,7 @@
 {
   "https://9to5mac.com/feed/": {
-    "etag": "W/\"785fb7c591f14daabb9c95a8d997151e\"",
-    "last_modified": "Thu, 26 Nov 2026 14:08:42 GMT"
+    "etag": "W/\"72d5048a0a42ddc475438aed3ab86686\"",
+    "last_modified": "Thu, 26 Nov 2026 16:29:42 GMT"
   },
   "https://antigravity.google/blog/rss.xml": {
     "etag": null,
@@ -12,19 +12,19 @@
     "last_modified": "Thu, 26 Nov 2026 12:49:35 GMT"
   },
   "https://deepmind.google/blog/rss.xml": {
-    "etag": "\"KkSKlA\"",
+    "etag": "\"sisJfg\"",
     "last_modified": null
   },
   "https://feeds.content.dowjones.io/public/rss/RSSMarketsMain": {
-    "etag": "W/\"9ec4-mdisid9X1kn8B1Wv8QN5HbDk8sk\"",
+    "etag": "W/\"9e62-4rWKjeL1XFi04KZIgLUHq+rOJ4k\"",
     "last_modified": null
   },
   "https://feeds.content.dowjones.io/public/rss/RSSOpinion": {
-    "etag": "W/\"f826-ucuSSg36/PT1NdRUg5x0IfHyx1w\"",
+    "etag": "W/\"f826-90/NPJmepmW+t9SXeROuw0ZZ2eA\"",
     "last_modified": null
   },
   "https://feeds.content.dowjones.io/public/rss/RSSWorldNews": {
-    "etag": "W/\"ca2e-lExiKqvijxVBkBXwF0gjLvHz8gw\"",
+    "etag": "W/\"ccf9-ML6KywaCC50Nxlq1nGR/IZZWcBw\"",
     "last_modified": null
   },
   "https://fivebooks.com/feed/": {
@@ -32,19 +32,19 @@
     "last_modified": "Wed, 25 Nov 2026 15:58:30 GMT"
   },
   "https://flipboard.com/@associatedpress/top-stories-u7govdf1z.rss": {
-    "etag": "W/\"b34b-vtyLbGr5X/61A0OnLfFoPM32IxA\"",
+    "etag": "W/\"b0de-/nY8VZTO8rCPK8m9y5earRhTdww\"",
     "last_modified": null
   },
   "https://flipboard.com/@associatedpress/u.s.-news-lhl4uphvz.rss": {
-    "etag": "W/\"b468-tiDd2q9dMaUBo1k3rAHQucoLbWg\"",
+    "etag": "W/\"b444-xR5LWlJ5C6amapM0yKfBgh/27No\"",
     "last_modified": null
   },
   "https://hnrss.org/frontpage?points=200": {
     "etag": null,
-    "last_modified": "Thu, 26 Nov 2026 10:11:01 GMT"
+    "last_modified": "Thu, 26 Nov 2026 14:26:54 GMT"
   },
   "https://newsletter.pragmaticengineer.com/feed": {
-    "etag": "W/\"b69b3-CmvrEp9lsa+JgcPb4K0xKKOIwik\"",
+    "etag": "W/\"b69b3-iwpzDAJ+gEri8cUFQz4GtyUlYdk\"",
     "last_modified": null
   },
   "https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_anthropic_news.xml": {
@@ -61,7 +61,7 @@
   },
   "https://simonwillison.net/atom/everything/": {
     "etag": null,
-    "last_modified": "Thu, 26 Nov 2026 06:08:25 GMT"
+    "last_modified": "Thu, 26 Nov 2026 15:09:31 GMT"
   },
   "https://sweatscience.substack.com/feed": {
     "etag": "W/\"34740-Avs8vNAoYnTDhfsoGLKgnaq8Zc4\"",
@@ -72,8 +72,8 @@
     "last_modified": "Thu, 26 Nov 2026 12:01:06 GMT"
   },
   "https://www.cochrane.org/evidence/rss": {
-    "etag": "\"1795703158-gzip\"",
-    "last_modified": "Thu, 26 Nov 2026 14:25:58 GMT"
+    "etag": "\"1795707574-gzip\"",
+    "last_modified": "Thu, 26 Nov 2026 15:39:34 GMT"
   },
   "https://www.federalreserve.gov/feeds/press_monetary.xml": {
     "etag": "W/\"de8654b467cdd1:0\"",
@@ -85,10 +85,10 @@
   },
   "https://www.notebookcheck.net/RSS-Feed-Notebook-Reviews.8156.0.html": {
     "etag": null,
-    "last_modified": "Thu, 26 Nov 2026 15:11:22 GMT"
+    "last_modified": "Thu, 26 Nov 2026 16:48:57 GMT"
   },
   "https://www.oneusefulthing.org/feed": {
-    "etag": "W/\"e0f01-jpxl9XFzkbQG+ltxYndzAY1cqbQ\"",
+    "etag": "W/\"e0f01-oXYbL7wOK0WxGP901rjgHUw6R4U\"",
     "last_modified": null
   },
   "https://www.rtings.com/latest-rss.xml": {
@@ -104,15 +104,15 @@
     "last_modified": "Thu, 26 Nov 2026 14:40:01 GMT"
   },
   "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml": {
-    "etag": "W/\"a6e640a864eac39884c7611366092107\"",
+    "etag": "W/\"16e1e385321305c9efc856164dfb2b89\"",
     "last_modified": null
   },
   "https://www.theverge.com/rss/installer-newsletter/index.xml": {
-    "etag": "W/\"466cdef4b7192e3c29acb80e86b35d39\"",
+    "etag": "W/\"16e1e385321305c9efc856164dfb2b89\"",
     "last_modified": null
   },
   "https://www.theverge.com/rss/reviews/index.xml": {
-    "etag": "W/\"aa64b4cf635088458068dcb34d37718b\"",
+    "etag": "W/\"ad91b0f142dcc9f11892937460ef539c\"",
     "last_modified": null
   }
 }
