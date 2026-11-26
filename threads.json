@@ -2389,6 +2389,18 @@
     "topic_id": "us-politics"
   },
   {
+    "created_at": "2026-11-26T21:48:44.228305Z",
+    "id": "t357228781498",
+    "item_ids": [
+      "f7e705e01dfe92d0"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T05:12:59Z",
+    "state": "pending",
+    "title": "Lions' Commentary on Unix: Why It Was Secretly Copied for 20 Years",
+    "topic_id": "jobs-market"
+  },
+  {
     "created_at": "2026-11-24T23:48:31.030224Z",
     "id": "t35f8b2463a54",
     "item_ids": [
@@ -3943,6 +3955,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-26T21:48:44.228305Z",
+    "id": "t5e92300dd447",
+    "item_ids": [
+      "e2ac2e209969c35f"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T06:32:48Z",
+    "state": "pending",
+    "title": "Moat: OpenRouter replacement",
+    "topic_id": "ai-news"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "t5f406846781d",
     "item_ids": [
@@ -4094,6 +4118,18 @@
     "state": "pending",
     "title": "Jev is probably Qwen3.5-35B-A3B",
     "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-26T21:48:44.228305Z",
+    "id": "t63c0daa190be",
+    "item_ids": [
+      "cf655313cf4f62da"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T21:40:09Z",
+    "state": "pending",
+    "title": "U.K. Releases Files on Peter Mandelson, Ambassador Tied to Jeffrey Epstein",
+    "topic_id": "world-news"
   },
   {
     "created_at": "2026-11-26T19:48:35.215793Z",
@@ -7676,7 +7712,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-23T21:09:37Z",
-    "state": "active",
+    "state": "cooling",
     "title": "AI · Data · Centers",
     "topic_id": "ai-news"
   },
