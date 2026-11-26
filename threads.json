@@ -545,12 +545,13 @@
       "3e17f7a4ac7d6cbd",
       "6ed905091a48d8d9",
       "9c6888a38b690165",
-      "113393952529e006"
+      "113393952529e006",
+      "58a7259b16c0f55c"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-26T10:25:51Z",
+    "last_item_at": "2026-11-26T16:55:00Z",
     "state": "active",
-    "title": "Myanmar · Court · Genocide · Ruling",
+    "title": "Myanmar · Genocide · Israel · Ruling",
     "topic_id": "world-news"
   },
   {
@@ -864,7 +865,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-23T17:32:00Z",
-    "state": "active",
+    "state": "cooling",
     "title": "Don’t · FAA · Air · Ground",
     "topic_id": "us-politics"
   },
@@ -1664,6 +1665,18 @@
     "topic_id": "us-politics"
   },
   {
+    "created_at": "2026-11-26T17:48:40.240159Z",
+    "id": "t1f500782aa57",
+    "item_ids": [
+      "4c67ed6bd916f597"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T16:55:00Z",
+    "state": "pending",
+    "title": "American Civics Classes Are Worth Protecting",
+    "topic_id": "us-politics"
+  },
+  {
     "created_at": "2026-11-25T18:48:30.856667Z",
     "id": "t1fc145cc02f7",
     "item_ids": [
@@ -1697,6 +1710,18 @@
     "last_item_at": "2026-11-21T16:41:58Z",
     "state": "pending",
     "title": "FBI investigating apparent hack of its key national criminal justice database, AP source says",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-26T17:48:40.240159Z",
+    "id": "t20c57c62d370",
+    "item_ids": [
+      "4310c57c7cac40a0"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T16:53:00Z",
+    "state": "pending",
+    "title": "Don’t Extend the 2032 Social Security Reckoning",
     "topic_id": "us-politics"
   },
   {
@@ -2762,7 +2787,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-23T17:00:00Z",
-    "state": "active",
+    "state": "cooling",
     "title": "Expanding the Antigravity Plugin Ecosystem",
     "topic_id": "ai-news"
   },
@@ -4399,6 +4424,18 @@
     "last_item_at": "2026-11-24T23:05:11Z",
     "state": "pending",
     "title": "China-linked network using AI fakes to smear Taiwan election candidates, BBC Verify finds",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-26T17:48:40.240159Z",
+    "id": "t6eb3aa6181cf",
+    "item_ids": [
+      "e5e0f8e941765e24"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T16:31:40Z",
+    "state": "pending",
+    "title": "Trump says he asked Putin to 'pull back' military aggression throughout Europe",
     "topic_id": "world-news"
   },
   {
@@ -6436,6 +6473,18 @@
     "topic_id": "us-politics"
   },
   {
+    "created_at": "2026-11-26T17:48:40.240159Z",
+    "id": "ta9ff8baad52a",
+    "item_ids": [
+      "e90cf9d5d495902d"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T17:00:00Z",
+    "state": "pending",
+    "title": "As Another Wartime Winter Sets In, Kyiv Residents Weigh Finally Leaving",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "taa5289816ccf",
     "item_ids": [
@@ -7317,6 +7366,18 @@
     "last_item_at": "2026-11-22T11:00:08Z",
     "state": "pending",
     "title": "A California billionaire tax proposal faced a major setback despite big wins for progressives",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-26T17:48:40.240159Z",
+    "id": "tbdf8a9ffbd7b",
+    "item_ids": [
+      "20a41d538fc9a04f"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T16:52:00Z",
+    "state": "pending",
+    "title": "The Climate Debate Shutout",
     "topic_id": "us-politics"
   },
   {
@@ -8291,7 +8352,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-23T17:33:00Z",
-    "state": "active",
+    "state": "cooling",
     "title": "Artificial Intelligence Can’t Replace a Doctor",
     "topic_id": "us-politics"
   },
@@ -8463,7 +8524,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-23T17:00:00Z",
-    "state": "active",
+    "state": "cooling",
     "title": "Google · Search",
     "topic_id": "ai-news"
   },
