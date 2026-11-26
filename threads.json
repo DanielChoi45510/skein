@@ -89,10 +89,11 @@
       "54b161a3e7472c2e",
       "464c369e856c7998",
       "5ece23e3538637b2",
-      "3494bbabe3e89ada"
+      "3494bbabe3e89ada",
+      "97eac82962c094eb"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-25T16:29:00Z",
+    "last_item_at": "2026-11-26T01:27:00Z",
     "state": "active",
     "title": "Energy",
     "topic_id": "markets"
@@ -298,10 +299,11 @@
       "d9e72775a1abacf0",
       "670df7bef5541d4f",
       "82565c35db835e7a",
-      "d0fadceecc6a4209"
+      "d0fadceecc6a4209",
+      "ca12a21db5383ac2"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-26T00:24:00Z",
+    "last_item_at": "2026-11-26T01:39:00Z",
     "state": "active",
     "title": "Materials",
     "topic_id": "markets"
@@ -3464,12 +3466,13 @@
     "created_at": "2026-11-23T05:03:30.236987Z",
     "id": "t5c2acf3135b7",
     "item_ids": [
-      "e791d852b86644ce"
+      "e791d852b86644ce",
+      "72cf606e7e725150"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-23T04:55:00Z",
-    "state": "pending",
-    "title": "Asian Regulators Step Up Efforts to Calm AI-Driven Market Turmoil",
+    "last_item_at": "2026-11-26T01:35:00Z",
+    "state": "active",
+    "title": "Asia shares bounce, AI and tariffs lurk in background",
     "topic_id": "world-news"
   },
   {
@@ -3742,6 +3745,18 @@
     "state": "active",
     "title": "Global · Youth",
     "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-26T01:48:38.580251Z",
+    "id": "t6363825a15b5",
+    "item_ids": [
+      "1de64629ab8b75e5"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T22:57:04Z",
+    "state": "pending",
+    "title": "Jev is probably Qwen3.5-35B-A3B",
+    "topic_id": "ai-news"
   },
   {
     "created_at": "2026-11-22T09:09:42.410739Z",
@@ -4916,6 +4931,18 @@
     "state": "active",
     "title": "Chris · Van · Hollen",
     "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-26T01:48:38.580251Z",
+    "id": "t8ad5a62a7fb4",
+    "item_ids": [
+      "4c7d152a762eb410"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T01:06:16Z",
+    "state": "pending",
+    "title": "Good Points, Palmer Luckey",
+    "topic_id": "us-politics"
   },
   {
     "created_at": "2026-11-22T03:51:06.410293Z",
@@ -8787,6 +8814,18 @@
     "last_item_at": "2026-11-23T13:19:43Z",
     "state": "pending",
     "title": "Tajikistan becomes fourth country to withdraw from ICC since US diplomatic push",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-26T01:48:38.580251Z",
+    "id": "tfcf1ab85a59a",
+    "item_ids": [
+      "cdc876128e23a33b"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T01:22:55Z",
+    "state": "pending",
+    "title": "California warned of potential Thanksgiving flooding as storms threaten US coasts",
     "topic_id": "world-news"
   },
   {
