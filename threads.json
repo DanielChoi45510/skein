@@ -272,10 +272,11 @@
       "d63b543661f327dc",
       "bee21752dcf7dc46",
       "02e9e737217b576c",
-      "d01e008c240c22ea"
+      "d01e008c240c22ea",
+      "427ee8b401578355"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-25T22:27:00Z",
+    "last_item_at": "2026-11-26T06:54:00Z",
     "state": "active",
     "title": "Inflation & jobs reports",
     "topic_id": "markets"
@@ -462,6 +463,18 @@
     "state": "cooling",
     "title": "Hakeem · Jeffries",
     "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-26T07:48:33.797897Z",
+    "id": "t03e564ffc470",
+    "item_ids": [
+      "8b39007d4091127e"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T07:24:39Z",
+    "state": "pending",
+    "title": "DR Congo demands answers over Ugandan general's threats",
+    "topic_id": "world-news"
   },
   {
     "created_at": "2026-11-25T13:48:31.796423Z",
@@ -2001,6 +2014,18 @@
     "last_item_at": "2026-11-16T21:12:13Z",
     "state": "pending",
     "title": "Pope Leo hit by flying rosary while waving to crowds in Peru",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-26T07:48:33.797897Z",
+    "id": "t2f55cd11516b",
+    "item_ids": [
+      "d6263f3b62689d32"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T05:00:27Z",
+    "state": "pending",
+    "title": "Watch: BBC confronts German man suspected of supplying migrant gangs with small boats",
     "topic_id": "world-news"
   },
   {
@@ -5294,6 +5319,18 @@
     "topic_id": "us-politics"
   },
   {
+    "created_at": "2026-11-26T07:48:33.797897Z",
+    "id": "t945eb9c58ebc",
+    "item_ids": [
+      "4d2c577c61990dcf"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T07:40:04Z",
+    "state": "pending",
+    "title": "New UK-EU treaty has 10-year termination clause, BBC understands",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "t9548eb4404f3",
     "item_ids": [
@@ -6890,12 +6927,13 @@
     "created_at": "2026-11-25T04:48:48.459198Z",
     "id": "tc01d2940b160",
     "item_ids": [
-      "c28d5ac3872430b1"
+      "c28d5ac3872430b1",
+      "87af3cc316aeeac7"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-25T00:54:13Z",
-    "state": "pending",
-    "title": "My family died in Ukraine. My mum blamed Zelensky's troops - the truth is complicated",
+    "last_item_at": "2026-11-25T13:27:36Z",
+    "state": "active",
+    "title": "Watch: How the Russia-Ukraine war tore my family apart",
     "topic_id": "world-news"
   },
   {
