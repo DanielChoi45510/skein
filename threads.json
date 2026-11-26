@@ -1902,12 +1902,13 @@
     "id": "t26aa551626df",
     "item_ids": [
       "629f4609b059a2f4",
-      "00bc4d71a7d55999"
+      "00bc4d71a7d55999",
+      "d3151c08b4d9a94a"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-26T08:08:21Z",
+    "last_item_at": "2026-11-26T23:03:16Z",
     "state": "active",
-    "title": "Hong Kong Grieves Fire Victims Under Watchful Eye of Authorities",
+    "title": "Died · Hong · Kong · Fire",
     "topic_id": "world-news"
   },
   {
@@ -2631,7 +2632,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-23T23:35:54Z",
-    "state": "active",
+    "state": "cooling",
     "title": "Trump Toasted a Troubled Boxer as a V.I.P. at Crypto Gala",
     "topic_id": "us-politics"
   },
@@ -2837,7 +2838,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-23T22:49:00Z",
-    "state": "active",
+    "state": "cooling",
     "title": "West · Bank",
     "topic_id": "world-news"
   },
@@ -3510,7 +3511,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-23T22:59:07Z",
-    "state": "active",
+    "state": "cooling",
     "title": "ICE · Arrest · Seattle · Airport",
     "topic_id": "world-news"
   },
@@ -5066,10 +5067,12 @@
       "2f88a776f506ef12",
       "1c5e8fb8dcbf4f6a",
       "ef70e50f72f0fe0e",
-      "0eb77b09926dee00"
+      "0eb77b09926dee00",
+      "02bf04f4da3628ff",
+      "ff492375fb2018d3"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-26T18:08:00Z",
+    "last_item_at": "2026-11-26T22:49:27Z",
     "state": "active",
     "title": "Trump · Putin · Summit · Xi",
     "topic_id": "world-news"
@@ -5627,6 +5630,18 @@
     "topic_id": "us-politics"
   },
   {
+    "created_at": "2026-11-26T23:48:46.402939Z",
+    "id": "t91c433087bbf",
+    "item_ids": [
+      "2d51dd164fd1d38f"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T07:33:12Z",
+    "state": "pending",
+    "title": "OpenAI may be in cost control mode",
+    "topic_id": "ai-news"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "t92001617da45",
     "item_ids": [
@@ -5637,6 +5652,18 @@
     "last_item_at": "2026-11-22T09:20:45Z",
     "state": "cooling",
     "title": "Korea · Education · Minister · Resigns",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-26T23:48:46.402939Z",
+    "id": "t9206e3d67c21",
+    "item_ids": [
+      "94c2cdd5c58e9f87"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T21:29:03Z",
+    "state": "pending",
+    "title": "US, Qatar to help Venezuela clear regional development bank arrears, sources say",
     "topic_id": "world-news"
   },
   {
@@ -6125,6 +6152,18 @@
     "last_item_at": "2026-11-22T18:26:06Z",
     "state": "cooling",
     "title": "North · Carolina",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-26T23:48:46.402939Z",
+    "id": "t9d1145e4197c",
+    "item_ids": [
+      "0c4d557c40c2413d"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T23:06:14Z",
+    "state": "pending",
+    "title": "After Democrats' midterm wins, some hope attacks on DEI will ease",
     "topic_id": "us-politics"
   },
   {
@@ -6973,12 +7012,13 @@
       "773622be1af6701d",
       "e692f867f12a01e2",
       "56897c41f3da0291",
-      "08a1b8764e52cecd"
+      "08a1b8764e52cecd",
+      "b20f27120b84b303"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-26T12:42:00Z",
+    "last_item_at": "2026-11-26T23:08:12Z",
     "state": "active",
-    "title": "Huang · Jensen · China · Nvidia",
+    "title": "Huang · Jensen · Nvidia · China",
     "topic_id": "world-news"
   },
   {
@@ -7687,7 +7727,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-23T23:27:24Z",
-    "state": "active",
+    "state": "cooling",
     "title": "Neuroscientist · ICE",
     "topic_id": "world-news"
   },
@@ -8759,7 +8799,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-23T23:13:02Z",
-    "state": "active",
+    "state": "cooling",
     "title": "Mexico nabs yet another top drug lord, but history of 'Kingpin Strategy' mixed",
     "topic_id": "us-politics"
   },
