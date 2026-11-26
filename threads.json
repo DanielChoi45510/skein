@@ -157,10 +157,11 @@
       "a692c01023fdec02",
       "600e053a9a897925",
       "190fc660e88393a7",
-      "2abf465b0e97df79"
+      "2abf465b0e97df79",
+      "a0b4c39e6d77a46d"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-25T19:33:00Z",
+    "last_item_at": "2026-11-26T02:00:00Z",
     "state": "active",
     "title": "Financials",
     "topic_id": "markets"
@@ -4479,6 +4480,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-26T02:48:24.631999Z",
+    "id": "t7a58e02ae68d",
+    "item_ids": [
+      "f69ae86806efd2ec"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T02:00:00Z",
+    "state": "pending",
+    "title": "Chinese firms pose growing competitive threat to Japanese firms, JETRO survey shows",
+    "topic_id": "us-politics"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "t7a85acc235dd",
     "item_ids": [
@@ -6259,6 +6272,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-26T02:48:24.631999Z",
+    "id": "tb26adf20cf3c",
+    "item_ids": [
+      "d16b951887f3db04"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T02:09:00Z",
+    "state": "pending",
+    "title": "Uber appoints outsider Rakesh Ranjan as president for India and South Asia",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "tb2aafcc0dfc0",
     "item_ids": [
@@ -7633,6 +7658,18 @@
     "state": "pending",
     "title": "Houston, We Have an Ongoing FAA Problem",
     "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-26T02:48:24.631999Z",
+    "id": "tda787c9d719a",
+    "item_ids": [
+      "a63460d0a418bb6e"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T02:06:10Z",
+    "state": "pending",
+    "title": "As foreign troops withdraw from Somalia, could al-Shabab take over?",
+    "topic_id": "world-news"
   },
   {
     "created_at": "2026-11-22T03:51:06.410293Z",
