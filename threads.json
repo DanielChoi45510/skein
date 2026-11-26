@@ -349,10 +349,11 @@
       "ff84d4085b135204",
       "fb49d53e419d760c",
       "54270503d7251b7c",
-      "718c2cad438e90d7"
+      "718c2cad438e90d7",
+      "dea8db699a2da803"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-26T09:47:00Z",
+    "last_item_at": "2026-11-26T12:04:01Z",
     "state": "active",
     "title": "Trade & tariffs",
     "topic_id": "markets"
@@ -526,10 +527,11 @@
       "64ac45562e39806c",
       "3e17f7a4ac7d6cbd",
       "6ed905091a48d8d9",
-      "9c6888a38b690165"
+      "9c6888a38b690165",
+      "113393952529e006"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-23T21:03:34Z",
+    "last_item_at": "2026-11-26T10:25:51Z",
     "state": "active",
     "title": "Myanmar · Court · Genocide · Ruling",
     "topic_id": "world-news"
@@ -1475,12 +1477,13 @@
     "created_at": "2026-11-26T06:48:30.348408Z",
     "id": "t1a30cf05d154",
     "item_ids": [
-      "aa93b949730b4314"
+      "aa93b949730b4314",
+      "e700f81f3624ed92"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-26T05:23:18Z",
-    "state": "pending",
-    "title": "U.S. Judge rules FCC violated ABC's free speech rights to please Trump",
+    "last_item_at": "2026-11-26T12:24:29Z",
+    "state": "active",
+    "title": "FCC · Violated · ABC · Judge",
     "topic_id": "us-politics"
   },
   {
@@ -2566,6 +2569,18 @@
     "topic_id": "us-politics"
   },
   {
+    "created_at": "2026-11-26T12:48:42.229036Z",
+    "id": "t3b2d7f4d6854",
+    "item_ids": [
+      "e217ce92147fe106"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T05:38:18Z",
+    "state": "pending",
+    "title": "King tides and strong waves destroy part of Pacifica pier as officials warn of coastal flooding",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-25T20:48:40.987096Z",
     "id": "t3b72639fcb84",
     "item_ids": [
@@ -2819,6 +2834,18 @@
     "last_item_at": "2026-11-24T16:24:05Z",
     "state": "pending",
     "title": "Brazil crime-fighting AI startup Pax expanding to three more regions",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-26T12:48:42.229036Z",
+    "id": "t41de2ba8fc33",
+    "item_ids": [
+      "373647ada9c8cd0c"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T23:44:58Z",
+    "state": "pending",
+    "title": "Plane crash off the coast of Mississippi kills extended family of 6 on fishing trip",
     "topic_id": "world-news"
   },
   {
@@ -4840,7 +4867,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-23T12:36:00Z",
-    "state": "active",
+    "state": "cooling",
     "title": "The Morning Risk Report: Fugitives Seek New Hideouts as UAE Begins Extraditing",
     "topic_id": "world-news"
   },
@@ -5897,6 +5924,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-26T12:48:42.229036Z",
+    "id": "t9c0b4d8867e6",
+    "item_ids": [
+      "8c9459425fd005db"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T08:45:48Z",
+    "state": "pending",
+    "title": "Ebola outbreak in Congo reaches 12,000 cases as violence forces some responders to evacuate",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "t9c7ec2fed169",
     "item_ids": [
@@ -6183,12 +6222,13 @@
       "16ee6e93c40fbd01",
       "e60a4b00bb73328e",
       "a84d6dc135a4b2b9",
-      "52945e4afe3324e0"
+      "52945e4afe3324e0",
+      "ba67a1faca0f2ef0"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-26T00:35:37Z",
+    "last_item_at": "2026-11-26T00:53:37Z",
     "state": "active",
-    "title": "Trump · Jensen · Huang · Nvidia",
+    "title": "Nvidia · Trump · Jensen · Huang",
     "topic_id": "us-politics"
   },
   {
@@ -6397,6 +6437,18 @@
     "last_item_at": "2026-11-20T14:58:02Z",
     "state": "pending",
     "title": "The Tuners",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-26T12:48:42.229036Z",
+    "id": "tac371aafdedb",
+    "item_ids": [
+      "688711aea5efe0f7"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T02:55:01Z",
+    "state": "pending",
+    "title": "Judge declines to issue a long-term ban on taxpayer-funded, pro-Trump ads critics called propaganda",
     "topic_id": "us-politics"
   },
   {
@@ -6672,6 +6724,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-26T12:48:42.229036Z",
+    "id": "tb264e03c1d05",
+    "item_ids": [
+      "c9b8b671c60f4808"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T06:00:06Z",
+    "state": "pending",
+    "title": "EU leaders divided over budget spending as they weigh a $49 billion loan to Ukraine",
+    "topic_id": "us-politics"
+  },
+  {
     "created_at": "2026-11-26T02:48:24.631999Z",
     "id": "tb26adf20cf3c",
     "item_ids": [
@@ -6715,10 +6779,11 @@
       "59cb00ad211b9d29",
       "773622be1af6701d",
       "e692f867f12a01e2",
-      "56897c41f3da0291"
+      "56897c41f3da0291",
+      "08a1b8764e52cecd"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-25T01:03:05Z",
+    "last_item_at": "2026-11-26T12:42:00Z",
     "state": "active",
     "title": "Huang · Jensen · China · Nvidia",
     "topic_id": "world-news"
@@ -6944,6 +7009,19 @@
     "state": "pending",
     "title": "Lock of former US President George Washington's hair sells for $4,000",
     "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-26T12:48:42.229036Z",
+    "id": "tb8195f855391",
+    "item_ids": [
+      "21b546898eb362a8",
+      "aed7379b3ee92da1"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T11:11:53Z",
+    "state": "active",
+    "title": "Least · Fire",
+    "topic_id": "us-politics"
   },
   {
     "created_at": "2026-11-24T05:48:25.381856Z",
@@ -8026,7 +8104,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-23T12:00:00Z",
-    "state": "active",
+    "state": "cooling",
     "title": "How the Blue Wave Missed Florida",
     "topic_id": "world-news"
   },
@@ -8677,10 +8755,11 @@
       "735f0cdcb5707bf3",
       "de1356c6b8b13c50",
       "2b30bac26105e537",
-      "6211b12e687e5fba"
+      "6211b12e687e5fba",
+      "36ca65000a8a27fe"
     ],
     "kind": "tracker",
-    "last_item_at": "2026-11-25T16:34:01Z",
+    "last_item_at": "2026-11-26T12:38:00Z",
     "state": "active",
     "title": "Laptops",
     "topic_id": "tech-trackers"
@@ -8728,10 +8807,11 @@
       "0239ccf94ec86c3c",
       "07105e27aa40b888",
       "8ed3eee63fbc46b8",
-      "deedf392dfc87b6d"
+      "deedf392dfc87b6d",
+      "9501254b49634706"
     ],
     "kind": "tracker",
-    "last_item_at": "2026-11-25T19:38:33Z",
+    "last_item_at": "2026-11-26T12:03:10Z",
     "state": "active",
     "title": "Phones",
     "topic_id": "tech-trackers"
@@ -9042,6 +9122,18 @@
     "topic_id": "health-training"
   },
   {
+    "created_at": "2026-11-26T12:48:42.229036Z",
+    "id": "tf367d118fe0f",
+    "item_ids": [
+      "b0c2af713fdcc5e0"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T09:22:34Z",
+    "state": "pending",
+    "title": "Watch: Alaskan flying team airdrops Thanksgiving turkeys to remote communities",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-24T22:48:41.692861Z",
     "id": "tf3db47c5cf7e",
     "item_ids": [
@@ -9166,12 +9258,13 @@
     "created_at": "2026-11-25T21:48:23.001305Z",
     "id": "tf6f58ecc4c30",
     "item_ids": [
-      "64f8c80ca4131109"
+      "64f8c80ca4131109",
+      "89f4635f98fcd374"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-25T21:37:07Z",
-    "state": "pending",
-    "title": "Road Fire Near Cairo Kills Dozens After Petroleum-Laden Truck Crashes",
+    "last_item_at": "2026-11-26T09:09:49Z",
+    "state": "active",
+    "title": "Fire · Cairo · Dozens",
     "topic_id": "world-news"
   },
   {
