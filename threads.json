@@ -346,10 +346,11 @@
     "item_ids": [
       "ff84d4085b135204",
       "fb49d53e419d760c",
-      "54270503d7251b7c"
+      "54270503d7251b7c",
+      "718c2cad438e90d7"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-25T13:24:29Z",
+    "last_item_at": "2026-11-26T09:47:00Z",
     "state": "active",
     "title": "Trade & tariffs",
     "topic_id": "markets"
@@ -2346,7 +2347,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-23T09:26:00Z",
-    "state": "active",
+    "state": "cooling",
     "title": "Kim · Jong · Un",
     "topic_id": "world-news"
   },
@@ -3061,7 +3062,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-26T08:30:12Z",
-    "state": "pending",
+    "state": "active",
     "title": "Two screenings of Pakistani TV show cancelled in India after backlash",
     "topic_id": "world-news"
   },
@@ -3111,7 +3112,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-23T09:45:06Z",
-    "state": "active",
+    "state": "cooling",
     "title": "Republicans · Debate",
     "topic_id": "us-politics"
   },
@@ -3366,7 +3367,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-23T09:25:52Z",
-    "state": "active",
+    "state": "cooling",
     "title": "Who is behind the recent street protests in France?",
     "topic_id": "world-news"
   },
@@ -4946,6 +4947,18 @@
     "last_item_at": "2026-11-25T16:42:11Z",
     "state": "pending",
     "title": "Trump's accounts traded Nvidia shares 44 times this year, records show",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-26T09:48:36.356682Z",
+    "id": "t8589ec4cc938",
+    "item_ids": [
+      "cf5c3df98b3039d6"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T08:50:09Z",
+    "state": "pending",
+    "title": "Most Gulf markets muted on Saudi energy strikes, maritime dangers",
     "topic_id": "world-news"
   },
   {
@@ -8303,6 +8316,18 @@
     "last_item_at": "2026-11-24T19:18:15Z",
     "state": "active",
     "title": "Attack · Saudi · Capital · Tower",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-26T09:48:36.356682Z",
+    "id": "teaee57a7165a",
+    "item_ids": [
+      "ee99e153fc0855fd"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T08:45:23Z",
+    "state": "pending",
+    "title": "Pakistan, Saudi, Turkey to hold Mecca alliance meeting in Islamabad Nov 27-28, sources say",
     "topic_id": "world-news"
   },
   {
