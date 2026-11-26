@@ -7784,6 +7784,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-26T05:00:54.883483Z",
+    "id": "tdcdd856e9c0a",
+    "item_ids": [
+      "ae0eafd9bdc6dd1a"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T03:38:00Z",
+    "state": "pending",
+    "title": "EXCLUSIVE: US officials divided over Chinese spying allegations following Jensen Huang's return",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-25T16:48:43.548621Z",
     "id": "tdcf5ab0eb835",
     "item_ids": [
