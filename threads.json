@@ -4992,10 +4992,11 @@
       "00f6f848d231b94e",
       "2f88a776f506ef12",
       "1c5e8fb8dcbf4f6a",
-      "ef70e50f72f0fe0e"
+      "ef70e50f72f0fe0e",
+      "0eb77b09926dee00"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-24T16:13:40Z",
+    "last_item_at": "2026-11-26T18:08:00Z",
     "state": "active",
     "title": "Trump · Putin · Summit · Xi",
     "topic_id": "world-news"
@@ -5792,7 +5793,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-23T18:03:00Z",
-    "state": "active",
+    "state": "cooling",
     "title": "Making · Crisis",
     "topic_id": "world-news"
   },
@@ -6316,10 +6317,12 @@
       "e60a4b00bb73328e",
       "a84d6dc135a4b2b9",
       "52945e4afe3324e0",
-      "ba67a1faca0f2ef0"
+      "ba67a1faca0f2ef0",
+      "b04ba6c29797159e",
+      "291eec9f66e9f955"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-26T00:53:37Z",
+    "last_item_at": "2026-11-26T18:10:00Z",
     "state": "active",
     "title": "Nvidia · Trump · Jensen · Huang",
     "topic_id": "us-politics"
@@ -6711,6 +6714,18 @@
     "state": "pending",
     "title": "Will Salmon Sperm Make You Look Younger?",
     "topic_id": "health-sleep"
+  },
+  {
+    "created_at": "2026-11-26T18:48:42.594948Z",
+    "id": "tafa7f90f84ad",
+    "item_ids": [
+      "89705f4cad695794"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T18:07:00Z",
+    "state": "pending",
+    "title": "Notable & Quotable: Progressives’ Math",
+    "topic_id": "us-politics"
   },
   {
     "created_at": "2026-11-23T06:48:41.327764Z",
@@ -7300,12 +7315,13 @@
       "d0919cc954d57cde",
       "60d7e8a4e20cab41",
       "027803ccc23e9ec0",
-      "223d361362a1a30b"
+      "223d361362a1a30b",
+      "ee0e388866212e9f"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-26T16:01:43Z",
+    "last_item_at": "2026-11-26T18:03:00Z",
     "state": "active",
-    "title": "Spain · Election",
+    "title": "Election · Spain",
     "topic_id": "world-news"
   },
   {
@@ -7372,12 +7388,13 @@
     "created_at": "2026-11-26T17:48:40.240159Z",
     "id": "tbdf8a9ffbd7b",
     "item_ids": [
-      "20a41d538fc9a04f"
+      "20a41d538fc9a04f",
+      "005f271c9334ad5f"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-26T16:52:00Z",
-    "state": "pending",
-    "title": "The Climate Debate Shutout",
+    "last_item_at": "2026-11-26T18:03:00Z",
+    "state": "active",
+    "title": "Bad Math Could Fuel Climate Lawsuits",
     "topic_id": "us-politics"
   },
   {
@@ -7476,6 +7493,18 @@
     "state": "pending",
     "title": "llm-gemini 0.38.1",
     "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-26T18:48:42.594948Z",
+    "id": "tc0e98cfcefa5",
+    "item_ids": [
+      "e9d819d34f877d39"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T17:14:09Z",
+    "state": "pending",
+    "title": "Guinea-Bissau delays elections, extending military-led transition a year after coup",
+    "topic_id": "world-news"
   },
   {
     "created_at": "2026-11-22T03:51:06.410293Z",
@@ -8976,10 +9005,11 @@
       "8ed3eee63fbc46b8",
       "deedf392dfc87b6d",
       "9501254b49634706",
-      "7d44ae29e9ecfcc4"
+      "7d44ae29e9ecfcc4",
+      "ddb908aba4420132"
     ],
     "kind": "tracker",
-    "last_item_at": "2026-11-26T14:00:25Z",
+    "last_item_at": "2026-11-26T18:04:57Z",
     "state": "active",
     "title": "Phones",
     "topic_id": "tech-trackers"
