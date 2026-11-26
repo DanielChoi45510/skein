@@ -2663,7 +2663,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-23T04:35:25Z",
-    "state": "active",
+    "state": "cooling",
     "title": "How Homeowners Are Powering Vietnam’s E-Bike Surge",
     "topic_id": "world-news"
   },
@@ -7407,6 +7407,18 @@
     "last_item_at": "2026-11-20T22:02:00Z",
     "state": "pending",
     "title": "Opinion | Germany’s ‘Green’ Energy Policies Fuel the AfD’s Rise",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-26T04:48:33.202253Z",
+    "id": "td23cff52963c",
+    "item_ids": [
+      "22f1707c747225e7"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T03:27:33Z",
+    "state": "pending",
+    "title": "FedEx plane overshoots Miami runway, with flights briefly suspended at airport",
     "topic_id": "world-news"
   },
   {
