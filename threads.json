@@ -1339,12 +1339,13 @@
       "107e25b02fde2e76",
       "f2db6b5d7760f744",
       "03eb8dde151d689a",
-      "eded6eec7dbd1fd8"
+      "eded6eec7dbd1fd8",
+      "bd723ffb69fa57e9"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-24T00:45:53Z",
+    "last_item_at": "2026-11-26T11:00:00Z",
     "state": "active",
-    "title": "Britain · Burnham · Brexit · EU",
+    "title": "Britain · Burnham · Reset · Brexit",
     "topic_id": "world-news"
   },
   {
@@ -1532,6 +1533,18 @@
     "state": "pending",
     "title": "Asian Stocks Rise as Investors Shrug Off U.S. Tariff Plan",
     "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-26T11:48:42.917402Z",
+    "id": "t1c9c0625d71f",
+    "item_ids": [
+      "a5d4af533788be88"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T11:00:00Z",
+    "state": "pending",
+    "title": "Paying People to Quit Smoking Is a Real Drag",
+    "topic_id": "us-politics"
   },
   {
     "created_at": "2026-11-24T09:48:40.359719Z",
@@ -1755,12 +1768,13 @@
     "created_at": "2026-11-25T21:48:23.001305Z",
     "id": "t2492b097a0cc",
     "item_ids": [
-      "612533e29dd47a8d"
+      "612533e29dd47a8d",
+      "e1f33f89cc98a20f"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-25T21:46:00Z",
-    "state": "pending",
-    "title": "Thanksgiving vs. Socialism",
+    "last_item_at": "2026-11-26T11:00:00Z",
+    "state": "active",
+    "title": "Gratitude Is the Taproot of American Identity",
     "topic_id": "us-politics"
   },
   {
@@ -2488,6 +2502,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-26T11:48:42.917402Z",
+    "id": "t38dbb15b1ee5",
+    "item_ids": [
+      "b97c80b735ab8091"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T11:00:00Z",
+    "state": "pending",
+    "title": "Thanksgiving 1863 and the Changing Art Vibe in That Pivotal Year",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "t3915651da431",
     "item_ids": [
@@ -2950,12 +2976,13 @@
     "id": "t466ddda3d7c1",
     "item_ids": [
       "af3d38de98dc94d9",
-      "891c2af98efa22c2"
+      "891c2af98efa22c2",
+      "058d83d6e59a3359"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-25T17:14:34Z",
+    "last_item_at": "2026-11-26T11:43:47Z",
     "state": "active",
-    "title": "US plans to hike tariffs on China, EU, Brazil and others over subsidized factories",
+    "title": "Trump · Administration · Tariffs",
     "topic_id": "us-politics"
   },
   {
@@ -3077,7 +3104,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-23T11:00:00Z",
-    "state": "active",
+    "state": "cooling",
     "title": "Free · Speech",
     "topic_id": "world-news"
   },
@@ -3331,6 +3358,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-26T11:48:42.917402Z",
+    "id": "t5141926c1150",
+    "item_ids": [
+      "651069f4348630d4"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T10:54:14Z",
+    "state": "pending",
+    "title": "Net Migration to U.K. Falls to Lowest Level Since 1997, Excluding Pandemic",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-25T20:48:40.987096Z",
     "id": "t53e5c855dcae",
     "item_ids": [
@@ -3445,6 +3484,18 @@
     "state": "pending",
     "title": "Apple is hiring engineers to build its own AI agent",
     "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-26T11:48:42.917402Z",
+    "id": "t5625eaf766ed",
+    "item_ids": [
+      "cc4c870b34140cc4"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T11:00:00Z",
+    "state": "pending",
+    "title": "Measles, MAHA, and the Future of Disease in America",
+    "topic_id": "us-politics"
   },
   {
     "created_at": "2026-11-22T09:09:42.410739Z",
@@ -5420,6 +5471,18 @@
     "topic_id": "ai-news"
   },
   {
+    "created_at": "2026-11-26T11:48:42.917402Z",
+    "id": "t92840ba7a480",
+    "item_ids": [
+      "6e6c2a5e0552de10"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T11:00:07Z",
+    "state": "pending",
+    "title": "Johnny Depp’s “Ebenezer” is Rich Guy Propaganda",
+    "topic_id": "us-politics"
+  },
+  {
     "created_at": "2026-11-24T22:48:41.692861Z",
     "id": "t929e8c5bf064",
     "item_ids": [
@@ -5574,6 +5637,18 @@
     "last_item_at": "2026-11-23T22:35:22Z",
     "state": "pending",
     "title": "States sue HUD over a rule that could cut off housing aid for mixed-status families",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-26T11:48:42.917402Z",
+    "id": "t97b9adf1aa78",
+    "item_ids": [
+      "0ca1de5a84525e6f"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T11:00:00Z",
+    "state": "pending",
+    "title": "The Scandinavian Compromise",
     "topic_id": "us-politics"
   },
   {
@@ -6931,6 +7006,18 @@
     "topic_id": "us-politics"
   },
   {
+    "created_at": "2026-11-26T11:48:42.917402Z",
+    "id": "tba7e0107d8d2",
+    "item_ids": [
+      "b9015824daeb7ed8"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T11:43:10Z",
+    "state": "pending",
+    "title": "Sen. Tim Kaine, D-Va., shares why he opposes Trump's proposed tariffs",
+    "topic_id": "us-politics"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "tbab7b3698dfe",
     "item_ids": [
@@ -7869,6 +7956,18 @@
     "topic_id": "ai-news"
   },
   {
+    "created_at": "2026-11-26T11:48:42.917402Z",
+    "id": "td4eb4a8d0040",
+    "item_ids": [
+      "4acab45ff00a9704"
+    ],
+    "kind": "question",
+    "last_item_at": "2026-11-26T11:48:42.917402Z",
+    "state": "pending",
+    "title": "Which hormones are most effective for stimulating the ovaries in women undergoing in vitro fertilisation (IVF)?",
+    "topic_id": "health-sleep"
+  },
+  {
     "created_at": "2026-11-23T11:48:25.998267Z",
     "id": "td509988d8c1c",
     "item_ids": [
@@ -8526,6 +8625,18 @@
     "last_item_at": "2026-11-26T05:01:04Z",
     "state": "active",
     "title": "Was Japan Prime Minister Takaichi Snubbed at China’s Big Summit?",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-26T11:48:42.917402Z",
+    "id": "tecef7d0cab96",
+    "item_ids": [
+      "d1f9986621de337e"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T11:37:00Z",
+    "state": "pending",
+    "title": "BOE Warns Scale and Breadth Of AI Financing Poses Threat to Financial Stability",
     "topic_id": "world-news"
   },
   {
