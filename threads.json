@@ -118,10 +118,11 @@
       "45f7ae1cfdfee1f9",
       "904d4bbe95ce0bdc",
       "9c780f42d06ba206",
-      "04c6f82fe3265459"
+      "04c6f82fe3265459",
+      "4f169f627531ca81"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-25T17:22:00Z",
+    "last_item_at": "2026-11-26T01:15:00Z",
     "state": "active",
     "title": "Fed & interest rates",
     "topic_id": "markets"
@@ -1427,6 +1428,18 @@
     "last_item_at": "2026-11-24T12:00:00Z",
     "state": "active",
     "title": "‘Our History Is Better Than Anybody Else’s’",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-26T03:48:47.077467Z",
+    "id": "t1baf4d823527",
+    "item_ids": [
+      "3f94118ccde0b644"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T03:09:00Z",
+    "state": "pending",
+    "title": "Asian Stocks Rise as Investors Shrug Off U.S. Tariff Plan",
     "topic_id": "world-news"
   },
   {
@@ -4322,6 +4335,18 @@
     "topic_id": "us-politics"
   },
   {
+    "created_at": "2026-11-26T03:48:47.077467Z",
+    "id": "t754296c678a9",
+    "item_ids": [
+      "393046c4b07d08c0"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T03:00:00Z",
+    "state": "pending",
+    "title": "Behind France’s Unrest Lies a Historic Decline in Spending Power",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "t760715ab73af",
     "item_ids": [
@@ -5135,12 +5160,13 @@
     "item_ids": [
       "cc869be6dce057aa",
       "32c0ee762a9375ba",
-      "ca386817a4f5b69d"
+      "ca386817a4f5b69d",
+      "84a574fc4aa6534c"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-22T16:43:00Z",
-    "state": "cooling",
-    "title": "Opinion | Iran Doubles Down on Its Nuclear Ambitions",
+    "last_item_at": "2026-11-26T03:00:00Z",
+    "state": "active",
+    "title": "War · Iran",
     "topic_id": "world-news"
   },
   {
