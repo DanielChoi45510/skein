@@ -92,10 +92,11 @@
       "464c369e856c7998",
       "5ece23e3538637b2",
       "3494bbabe3e89ada",
-      "97eac82962c094eb"
+      "97eac82962c094eb",
+      "814257e1bc9536a6"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-26T01:27:00Z",
+    "last_item_at": "2026-11-27T01:48:00Z",
     "state": "active",
     "title": "Energy",
     "topic_id": "markets"
@@ -2760,6 +2761,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-27T01:48:35.580742Z",
+    "id": "t3e2a261254f7",
+    "item_ids": [
+      "6fbf2480a7e2c0b5"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-27T00:47:43Z",
+    "state": "active",
+    "title": "Death-sentenced Sheikh Hasina's planned return puts Bangladesh on edge - and India in a bind",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "t3e636cb2bcbd",
     "item_ids": [
@@ -4575,6 +4588,18 @@
     "state": "pending",
     "title": "Connected intelligence for in-house legal",
     "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-27T01:48:35.580742Z",
+    "id": "t711b1f81f9a2",
+    "item_ids": [
+      "ca9613d4445ade3d"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-27T01:46:00Z",
+    "state": "pending",
+    "title": "New Zealand Election Ends in Deadlock, Turns Outsider Into Kingmaker",
+    "topic_id": "world-news"
   },
   {
     "created_at": "2026-11-24T02:48:43.862619Z",
@@ -8458,12 +8483,13 @@
       "76214a449e0fbdc6",
       "d11836686722af10",
       "bbbd66974821df38",
-      "bb9d84c3ad2bac9d"
+      "bb9d84c3ad2bac9d",
+      "884d8191bee678b7"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-26T09:33:45Z",
+    "last_item_at": "2026-11-26T19:55:58Z",
     "state": "active",
-    "title": "Trump · China · Tariffs · Trade",
+    "title": "China · Trump · Tariffs · Trade",
     "topic_id": "world-news"
   },
   {
@@ -9580,7 +9606,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-24T01:00:07Z",
-    "state": "active",
+    "state": "cooling",
     "title": "AP · Top · 25",
     "topic_id": "us-politics"
   },
