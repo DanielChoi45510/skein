@@ -1958,6 +1958,18 @@
     "topic_id": "health-training"
   },
   {
+    "created_at": "2026-11-27T17:48:40.558263Z",
+    "id": "t2525e300730e",
+    "item_ids": [
+      "50a0c4869eb8329a"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-27T12:54:11Z",
+    "state": "pending",
+    "title": "US Air Force's cloud computing platform hacked",
+    "topic_id": "ai-news"
+  },
+  {
     "created_at": "2026-11-26T14:48:40.987353Z",
     "id": "t252b887fa2ed",
     "item_ids": [
@@ -2445,6 +2457,18 @@
     "state": "pending",
     "title": "Holy shit holy shit holy shit holy shit: The magnitude of what’s now happening",
     "topic_id": "jobs-market"
+  },
+  {
+    "created_at": "2026-11-27T17:48:40.558263Z",
+    "id": "t31c1dd833a1e",
+    "item_ids": [
+      "c27f1232873dcaef"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-27T09:25:22Z",
+    "state": "pending",
+    "title": "CPTPP to start talks on accession of UAE, Indonesia, Philippines",
+    "topic_id": "world-news"
   },
   {
     "created_at": "2026-11-24T22:48:41.692861Z",
@@ -3497,6 +3521,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-27T17:48:40.558263Z",
+    "id": "t4bb8b0a0f42f",
+    "item_ids": [
+      "047bb9228064600e"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-27T17:41:49Z",
+    "state": "pending",
+    "title": "Spanish Police Find a Vast Marijuana Bunker Beneath a Backyard Playground",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-23T17:48:41.578622Z",
     "id": "t4bf97f8cf76f",
     "item_ids": [
@@ -3531,6 +3567,18 @@
     "last_item_at": "2026-11-20T18:33:14Z",
     "state": "pending",
     "title": "Hurried Announcement: Alessandro Masullo GRH",
+    "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-27T17:48:40.558263Z",
+    "id": "t4c9b2382706d",
+    "item_ids": [
+      "ff46556d3568b911"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-27T15:01:50Z",
+    "state": "pending",
+    "title": "Show HN: bouncemarket – a live prediction market game for a bouncing ball",
     "topic_id": "ai-news"
   },
   {
@@ -4056,6 +4104,18 @@
     "last_item_at": "2026-11-18T07:34:53Z",
     "state": "pending",
     "title": "Venezuelan ex-world boxing champion Linares in ICE detention",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-27T17:48:40.558263Z",
+    "id": "t5b4c4508b05f",
+    "item_ids": [
+      "d327af6494468501"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-27T17:37:00Z",
+    "state": "pending",
+    "title": "Opinion | A ‘Free-Speech Refugee’ From Britain",
     "topic_id": "world-news"
   },
   {
@@ -7322,6 +7382,18 @@
     "topic_id": "us-politics"
   },
   {
+    "created_at": "2026-11-27T17:48:40.558263Z",
+    "id": "tafd134b6525a",
+    "item_ids": [
+      "3cf781ebc03ad410"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-27T17:12:00Z",
+    "state": "pending",
+    "title": "Inside China’s $4 Billion Secondhand Luxury Boom",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-23T06:48:41.327764Z",
     "id": "tb02a59dc8375",
     "item_ids": [
@@ -8988,7 +9060,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-24T17:04:00Z",
-    "state": "active",
+    "state": "cooling",
     "title": "Zimbabwean convicted in South Africa of trying to fight in Ukraine",
     "topic_id": "world-news"
   },
@@ -9729,10 +9801,11 @@
       "58882ca7e617a2db",
       "b842d21ffa31c9be",
       "dcdbf01a13cd369c",
-      "0955bc4afcfd8da1"
+      "0955bc4afcfd8da1",
+      "48dd6b9f4e8078fe"
     ],
     "kind": "tracker",
-    "last_item_at": "2026-11-27T16:29:25Z",
+    "last_item_at": "2026-11-27T16:53:06Z",
     "state": "active",
     "title": "Laptops",
     "topic_id": "tech-trackers"
@@ -9787,10 +9860,11 @@
       "305c0dd18870f599",
       "a05b42cdceea66b0",
       "67f9c802d8da70e6",
-      "e96c9a2e1ab7fd99"
+      "e96c9a2e1ab7fd99",
+      "8d46129f0f90b26c"
     ],
     "kind": "tracker",
-    "last_item_at": "2026-11-27T15:31:52Z",
+    "last_item_at": "2026-11-27T17:00:00Z",
     "state": "active",
     "title": "Phones",
     "topic_id": "tech-trackers"
@@ -10210,6 +10284,18 @@
     "last_item_at": "2026-11-17T18:32:00Z",
     "state": "pending",
     "title": "Beware Socialism’s Moderate Makeover",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-27T17:48:40.558263Z",
+    "id": "tf5b70df078cc",
+    "item_ids": [
+      "35acfd98b08e49d0"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-27T17:38:00Z",
+    "state": "pending",
+    "title": "How to Narrow America’s Racial Wealth Gap",
     "topic_id": "us-politics"
   },
   {
