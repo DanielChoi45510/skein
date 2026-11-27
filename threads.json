@@ -123,10 +123,11 @@
       "9c780f42d06ba206",
       "04c6f82fe3265459",
       "4f169f627531ca81",
-      "5186745e68617870"
+      "5186745e68617870",
+      "16b75e4f5750b378"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-26T12:50:56Z",
+    "last_item_at": "2026-11-27T07:36:00Z",
     "state": "active",
     "title": "Fed & interest rates",
     "topic_id": "markets"
@@ -366,10 +367,11 @@
       "dea8db699a2da803",
       "231b8e639d2f9fbc",
       "d29aa5360372da17",
-      "51140be56a347d72"
+      "51140be56a347d72",
+      "7f6f5e67b3974ec5"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-27T02:27:00Z",
+    "last_item_at": "2026-11-27T07:15:00Z",
     "state": "active",
     "title": "Trade & tariffs",
     "topic_id": "markets"
@@ -1640,6 +1642,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-27T07:48:39.696066Z",
+    "id": "t1da40bae40b3",
+    "item_ids": [
+      "79240ac63e4d8bac"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-27T07:22:00Z",
+    "state": "pending",
+    "title": "Chinese Shares Lifted as Beijing Signals More Market Support",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-23T10:43:53.978530Z",
     "id": "t1de2488c3e35",
     "item_ids": [
@@ -1961,12 +1975,13 @@
     "created_at": "2026-11-27T03:48:41.308049Z",
     "id": "t28f2eaf8b3b5",
     "item_ids": [
-      "347b681bda8a6f2a"
+      "347b681bda8a6f2a",
+      "440aa02d5fbf30c3"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-27T03:00:00Z",
-    "state": "pending",
-    "title": "No Homes to Rent, No Way to Evict: Inside Spain’s Housing Crisis",
+    "last_item_at": "2026-11-27T06:03:39Z",
+    "state": "active",
+    "title": "Spain · Housing",
     "topic_id": "world-news"
   },
   {
@@ -5700,6 +5715,18 @@
     "topic_id": "ai-news"
   },
   {
+    "created_at": "2026-11-27T07:48:39.696066Z",
+    "id": "t8f5926d820c0",
+    "item_ids": [
+      "b98284121bba0e91"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-27T06:32:00Z",
+    "state": "pending",
+    "title": "China to strengthen defense against imported risks in capital markets",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-26T08:48:38.242191Z",
     "id": "t8fb0c749618f",
     "item_ids": [
@@ -6198,6 +6225,18 @@
     "state": "pending",
     "title": "Kenya breached constitution in building US-backed Ebola quarantine site, court says",
     "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-27T07:48:39.696066Z",
+    "id": "t9affadd0acb8",
+    "item_ids": [
+      "e7b589be90d527b7"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-27T06:07:00Z",
+    "state": "pending",
+    "title": "Taiwan local election campaigns enter final day; China sends warplanes",
+    "topic_id": "world-news"
   },
   {
     "created_at": "2026-11-22T09:09:42.410739Z",
@@ -7941,6 +7980,18 @@
     "topic_id": "us-politics"
   },
   {
+    "created_at": "2026-11-27T07:48:39.696066Z",
+    "id": "tc501fd610d41",
+    "item_ids": [
+      "26572d3d48e2d842"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-27T06:58:00Z",
+    "state": "pending",
+    "title": "EXCLUSIVE: India's election body website flaw exposing voter data fixed after Reuters findings",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-25T10:48:44.901744Z",
     "id": "tc539c323bd83",
     "item_ids": [
@@ -9094,12 +9145,13 @@
       "2184d4a63135e4ee",
       "06c62e91f9c2cbb7",
       "0475b9c8a2958ccd",
-      "38d03ba2e3bd0970"
+      "38d03ba2e3bd0970",
+      "20483f433c207d56"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-24T19:18:15Z",
+    "last_item_at": "2026-11-27T06:04:51Z",
     "state": "active",
-    "title": "Attack · Saudi · Capital · Tower",
+    "title": "Saudi · Attack · Houthi · Capital",
     "topic_id": "world-news"
   },
   {
