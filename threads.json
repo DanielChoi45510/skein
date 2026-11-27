@@ -61,10 +61,11 @@
       "9e80f1098e24f02c",
       "826465d103bf03a5",
       "0196540f2ec4c66f",
-      "8fc8b0f209591c91"
+      "8fc8b0f209591c91",
+      "5c68e4c7171891ec"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-26T00:03:00Z",
+    "last_item_at": "2026-11-27T08:22:13Z",
     "state": "active",
     "title": "Major earnings surprises",
     "topic_id": "markets"
@@ -259,10 +260,11 @@
       "726ae319c38c26df",
       "9e0f61dff81204b0",
       "8795e9d3c3e28090",
-      "de1ff291eddd7949"
+      "de1ff291eddd7949",
+      "8234c4721cb10646"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-27T02:13:00Z",
+    "last_item_at": "2026-11-27T09:34:00Z",
     "state": "active",
     "title": "Information Technology",
     "topic_id": "markets"
@@ -285,10 +287,12 @@
       "02e9e737217b576c",
       "d01e008c240c22ea",
       "427ee8b401578355",
-      "29222340ded6cebc"
+      "29222340ded6cebc",
+      "d43cb54503e0b6af",
+      "fca44b556370d52f"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-26T23:43:43Z",
+    "last_item_at": "2026-11-27T09:03:45Z",
     "state": "active",
     "title": "Inflation & jobs reports",
     "topic_id": "markets"
@@ -319,10 +323,11 @@
       "ca12a21db5383ac2",
       "be1c6d4bbadb28f8",
       "999ce3c06b2f45d8",
-      "990fb6e60564e66c"
+      "990fb6e60564e66c",
+      "33d4667d036411cb"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-27T06:23:00Z",
+    "last_item_at": "2026-11-27T08:25:12Z",
     "state": "active",
     "title": "Materials",
     "topic_id": "markets"
@@ -2313,6 +2318,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-27T09:48:41.326343Z",
+    "id": "t311bca76d6f8",
+    "item_ids": [
+      "e228ffb90105a8c7"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-27T06:06:00Z",
+    "state": "pending",
+    "title": "Poland's Russia-friendly party creates conundrum for conservatives ahead of 2027 vote",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "t314285daee18",
     "item_ids": [
@@ -2520,6 +2537,18 @@
     "last_item_at": "2026-11-18T22:56:00Z",
     "state": "pending",
     "title": "Extreme Poverty Is a Thing of the Past in India",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-27T09:48:41.326343Z",
+    "id": "t36cdcdcecf8c",
+    "item_ids": [
+      "067cd71670184835"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-27T08:39:43Z",
+    "state": "pending",
+    "title": "Spain election: what the main parties are proposing",
     "topic_id": "us-politics"
   },
   {
@@ -3647,12 +3676,13 @@
     "id": "t5505d7af7bcb",
     "item_ids": [
       "baf99b77affac207",
-      "b38e7ad00a394275"
+      "b38e7ad00a394275",
+      "10b473beff74287b"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-25T07:18:00Z",
+    "last_item_at": "2026-11-27T08:27:00Z",
     "state": "active",
-    "title": "Oil · Prices",
+    "title": "Oil · Prices · Middle · East",
     "topic_id": "world-news"
   },
   {
@@ -7592,7 +7622,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-24T09:09:41Z",
-    "state": "active",
+    "state": "cooling",
     "title": "Mexico · Top · Captured · Drug",
     "topic_id": "world-news"
   },
@@ -7811,12 +7841,13 @@
     "created_at": "2026-11-26T18:48:42.594948Z",
     "id": "tc0e98cfcefa5",
     "item_ids": [
-      "e9d819d34f877d39"
+      "e9d819d34f877d39",
+      "8fa774ca5a62ad7a"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-26T17:14:09Z",
-    "state": "pending",
-    "title": "Guinea-Bissau delays elections, extending military-led transition a year after coup",
+    "last_item_at": "2026-11-27T08:58:08Z",
+    "state": "active",
+    "title": "Guinea-Bissau's military leaders delay return to civilian rule until 2028",
     "topic_id": "world-news"
   },
   {
