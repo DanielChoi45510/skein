@@ -1580,7 +1580,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-24T12:00:00Z",
-    "state": "active",
+    "state": "cooling",
     "title": "‘Our History Is Better Than Anybody Else’s’",
     "topic_id": "world-news"
   },
@@ -2348,7 +2348,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-24T12:05:47Z",
-    "state": "active",
+    "state": "cooling",
     "title": "Slide · Tech",
     "topic_id": "world-news"
   },
@@ -4814,12 +4814,13 @@
     "created_at": "2026-11-27T01:48:35.580742Z",
     "id": "t711b1f81f9a2",
     "item_ids": [
-      "ca9613d4445ade3d"
+      "ca9613d4445ade3d",
+      "40249e842ae915ff"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-27T01:46:00Z",
-    "state": "pending",
-    "title": "New Zealand Election Ends in Deadlock, Turns Outsider Into Kingmaker",
+    "last_item_at": "2026-11-27T04:52:00Z",
+    "state": "active",
+    "title": "Zealand · Election",
     "topic_id": "world-news"
   },
   {
@@ -8865,6 +8866,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-27T12:48:47.740249Z",
+    "id": "td96fa33aefab",
+    "item_ids": [
+      "e62be8e2342e84da"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-27T12:00:00Z",
+    "state": "pending",
+    "title": "The YIMBY Movement’s Greatest Success",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-24T18:53:25.372040Z",
     "id": "td97e26bd7c84",
     "item_ids": [
@@ -9939,12 +9952,13 @@
     "created_at": "2026-11-27T00:48:37.877410Z",
     "id": "tf445d4a4f7e4",
     "item_ids": [
-      "4310d52f844e567f"
+      "4310d52f844e567f",
+      "73c151c7fa94a5af"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-26T20:28:47Z",
-    "state": "pending",
-    "title": "Necessities join gifts in Black Friday shopping carts as AI and higher costs steer spending",
+    "last_item_at": "2026-11-27T12:00:00Z",
+    "state": "active",
+    "title": "Gift Guide for the AI Apocalypse",
     "topic_id": "us-politics"
   },
   {
@@ -10067,7 +10081,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-24T12:23:00Z",
-    "state": "active",
+    "state": "cooling",
     "title": "Russian · South · Korea · Aircraft",
     "topic_id": "world-news"
   },
@@ -10143,6 +10157,18 @@
     "state": "pending",
     "title": "Can AI help scientists identify promising drug candidates?",
     "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-27T12:48:47.740249Z",
+    "id": "tf8cd81e62380",
+    "item_ids": [
+      "bddedb789ec7c62d"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-27T12:29:43Z",
+    "state": "pending",
+    "title": "Foreign investors to gain wider access to Indian commodity markets from June 2027",
+    "topic_id": "world-news"
   },
   {
     "created_at": "2026-11-22T09:09:42.410739Z",
