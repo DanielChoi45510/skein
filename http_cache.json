@@ -1,7 +1,7 @@
 {
   "https://9to5mac.com/feed/": {
-    "etag": "W/\"dd3350535dfe902c7c64abacc3e354f8\"",
-    "last_modified": "Fri, 27 Nov 2026 19:30:05 GMT"
+    "etag": "W/\"55de97e020afdefc328db134f7e648d8\"",
+    "last_modified": "Fri, 27 Nov 2026 20:45:01 GMT"
   },
   "https://antigravity.google/blog/rss.xml": {
     "etag": null,
@@ -12,19 +12,19 @@
     "last_modified": "Fri, 27 Nov 2026 17:24:11 GMT"
   },
   "https://deepmind.google/blog/rss.xml": {
-    "etag": "\"DTe4xA\"",
+    "etag": "\"r6Ugjw\"",
     "last_modified": null
   },
   "https://feeds.content.dowjones.io/public/rss/RSSMarketsMain": {
-    "etag": "W/\"9da8-4EF+eFj9fsMMXOkODS5X9+7tOO4\"",
+    "etag": "W/\"9dbd-PvO5WAbBM9gmm8WoKSirw1hiVS8\"",
     "last_modified": null
   },
   "https://feeds.content.dowjones.io/public/rss/RSSOpinion": {
-    "etag": "W/\"f6bd-vLOjBiJLJFSpjnxd98+bOzuFlw4\"",
+    "etag": "W/\"f6bd-2ItyZmsjMDfrc8HrJyKNqcfwNoY\"",
     "last_modified": null
   },
   "https://feeds.content.dowjones.io/public/rss/RSSWorldNews": {
-    "etag": "W/\"d22d-51yI0nnGLYQ8vMbY3xnbETkol4U\"",
+    "etag": "W/\"cfbc-+z1RL1FHE6x+wL7R2yRqiohenV0\"",
     "last_modified": null
   },
   "https://fivebooks.com/feed/": {
@@ -32,23 +32,19 @@
     "last_modified": "Wed, 25 Nov 2026 15:58:30 GMT"
   },
   "https://flipboard.com/@associatedpress/top-stories-u7govdf1z.rss": {
-    "etag": "W/\"b27f-/zjM/j+SyAWdzlhGIcuybr1v7fY\"",
+    "etag": "W/\"b4ab-p8FBVD2veu9eldNhDhoWupyYfe8\"",
     "last_modified": null
   },
   "https://flipboard.com/@associatedpress/u.s.-news-lhl4uphvz.rss": {
-    "etag": "W/\"b53e-EOPkUjD10k7bIAQjWuQ6nrG5FMQ\"",
+    "etag": "W/\"b544-dJYFr/RjGMXk/7V3JxOPoPirSlg\"",
     "last_modified": null
   },
   "https://hnrss.org/frontpage?points=200": {
     "etag": null,
     "last_modified": "Fri, 27 Nov 2026 15:40:31 GMT"
   },
-  "https://latent.space/feeds/news.xml": {
-    "etag": null,
-    "last_modified": "Fri, 27 Nov 2026 19:44:44 GMT"
-  },
   "https://newsletter.pragmaticengineer.com/feed": {
-    "etag": "W/\"b69b3-y19CVS9WX+Yoxvh2fLCuJS7bcj0\"",
+    "etag": "W/\"b69b3-GabwuGq2mGnIQQy7jxyqX6RBjg8\"",
     "last_modified": null
   },
   "https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_anthropic_news.xml": {
@@ -84,15 +80,15 @@
     "last_modified": "Tue, 24 Nov 2026 19:00:17 GMT"
   },
   "https://www.nationalreview.com/feed/": {
-    "etag": "W/\"613d6e661a73a2da42b8f22d900d07ebbbecde0bea767708bb19823b8761d587\"",
+    "etag": "W/\"0eef84f8fad6a32c2136b6cf43591fcdbe5b8e5c27cecc4404dc831d28944bd9\"",
     "last_modified": null
   },
   "https://www.notebookcheck.net/RSS-Feed-Notebook-Reviews.8156.0.html": {
     "etag": null,
-    "last_modified": "Fri, 27 Nov 2026 19:48:47 GMT"
+    "last_modified": "Fri, 27 Nov 2026 20:48:58 GMT"
   },
   "https://www.oneusefulthing.org/feed": {
-    "etag": "W/\"e0f01-dEywPpYCBCvE0kTR8AJpA+F3YdI\"",
+    "etag": "W/\"e0f01-nAiOEN3k2AlJ6h9hsPrSr1W4aGA\"",
     "last_modified": null
   },
   "https://www.rtings.com/latest-rss.xml": {
@@ -108,15 +104,15 @@
     "last_modified": "Fri, 27 Nov 2026 19:06:03 GMT"
   },
   "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml": {
-    "etag": "W/\"2e64d5722ca0560acf6e18a65b77a895\"",
+    "etag": "W/\"d9f899998fdc8faf5d791b5b8bc32907\"",
     "last_modified": null
   },
   "https://www.theverge.com/rss/installer-newsletter/index.xml": {
-    "etag": "W/\"4d7adcbec4a33850bd74689eb233c053\"",
+    "etag": "W/\"61c1e07912269cca4dd828677f4801fb\"",
     "last_modified": null
   },
   "https://www.theverge.com/rss/reviews/index.xml": {
-    "etag": "W/\"2e64d5722ca0560acf6e18a65b77a895\"",
+    "etag": "W/\"d9f899998fdc8faf5d791b5b8bc32907\"",
     "last_modified": null
   }
 }

@@ -3566,7 +3566,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-24T20:34:53Z",
-    "state": "active",
+    "state": "cooling",
     "title": "What's going on with the Riemann hypothesis?",
     "topic_id": "ai-news"
   },
@@ -10677,7 +10677,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-24T20:02:03Z",
-    "state": "active",
+    "state": "cooling",
     "title": "Jensen · Huang · Nvidia · Trump",
     "topic_id": "ai-news"
   },
