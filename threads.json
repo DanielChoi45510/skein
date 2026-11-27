@@ -6343,6 +6343,18 @@
     "topic_id": "us-politics"
   },
   {
+    "created_at": "2026-11-27T21:48:24.880078Z",
+    "id": "t971f263e7539",
+    "item_ids": [
+      "3b57682e69cccb09"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-27T21:46:00Z",
+    "state": "pending",
+    "title": "Opinion | Treasury Aims at China, Hits American Cancer Patients",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-26T11:48:42.917402Z",
     "id": "t97b9adf1aa78",
     "item_ids": [
@@ -9826,10 +9838,11 @@
       "53a0eb555864ac46",
       "addc32967419ca84",
       "451daa45791e6204",
-      "9bc86ee69b219913"
+      "9bc86ee69b219913",
+      "7b217c03ed138544"
     ],
     "kind": "tracker",
-    "last_item_at": "2026-11-27T18:49:13Z",
+    "last_item_at": "2026-11-27T20:58:22Z",
     "state": "active",
     "title": "Headphones & earbuds",
     "topic_id": "tech-trackers"
