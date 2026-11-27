@@ -16,15 +16,15 @@
     "last_modified": null
   },
   "https://feeds.content.dowjones.io/public/rss/RSSMarketsMain": {
-    "etag": "W/\"9da8-OuUJoeLbL2zkBuGew3W3+N0dgWQ\"",
+    "etag": "W/\"9da8-ukG2S+/vjZ0gV0U0gIQOc1mAH9w\"",
     "last_modified": null
   },
   "https://feeds.content.dowjones.io/public/rss/RSSOpinion": {
-    "etag": "W/\"f6bd-G0QCFCudvXbHFOESgnmyZL1e0Ao\"",
+    "etag": "W/\"f6bd-1Y9Bs/LEfe1SxR6RjUyX26e/7C0\"",
     "last_modified": null
   },
   "https://feeds.content.dowjones.io/public/rss/RSSWorldNews": {
-    "etag": "W/\"d2aa-50LNKlCYIdzeEIaHmQb1S3zqdq0\"",
+    "etag": "W/\"d2aa-Uoo193jRcw+HcESMUb2GeaFKD+4\"",
     "last_modified": null
   },
   "https://fivebooks.com/feed/": {
@@ -32,7 +32,7 @@
     "last_modified": "Wed, 25 Nov 2026 15:58:30 GMT"
   },
   "https://flipboard.com/@associatedpress/top-stories-u7govdf1z.rss": {
-    "etag": "W/\"b4ab-p8FBVD2veu9eldNhDhoWupyYfe8\"",
+    "etag": "W/\"b27f-/zjM/j+SyAWdzlhGIcuybr1v7fY\"",
     "last_modified": null
   },
   "https://flipboard.com/@associatedpress/u.s.-news-lhl4uphvz.rss": {
@@ -44,7 +44,7 @@
     "last_modified": "Fri, 27 Nov 2026 15:01:50 GMT"
   },
   "https://newsletter.pragmaticengineer.com/feed": {
-    "etag": "W/\"b69b3-WtY8RiGJMMkuNOajEoVLbqZQ8lw\"",
+    "etag": "W/\"b69b3-lrPp80o+/3FkvT2R6OHnNJ1viwQ\"",
     "last_modified": null
   },
   "https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_anthropic_news.xml": {
@@ -80,19 +80,19 @@
     "last_modified": "Tue, 24 Nov 2026 19:00:17 GMT"
   },
   "https://www.nationalreview.com/feed/": {
-    "etag": "W/\"7bf8f5cafc8174744e3bb969742a4670c97783b807dadd44a484487d843af54f\"",
+    "etag": "W/\"9059eb3a789c3e64d4a63bbd3c48ef4395f3661f686baffc3cc59b3df9940de2\"",
     "last_modified": null
   },
   "https://www.notebookcheck.net/RSS-Feed-Notebook-Reviews.8156.0.html": {
     "etag": null,
-    "last_modified": "Fri, 27 Nov 2026 18:48:43 GMT"
+    "last_modified": "Fri, 27 Nov 2026 18:57:35 GMT"
   },
   "https://www.oneusefulthing.org/feed": {
     "etag": "W/\"e0f01-r3ZY47LYZvGvOpvPSwslme9vGyY\"",
     "last_modified": null
   },
   "https://www.rtings.com/latest-rss.xml": {
-    "etag": "W/\"cd56d15dbe16426b2658d566fdfdc711\"",
+    "etag": "W/\"6de37c1991bd7b8cad2447f6a3999cd1\"",
     "last_modified": null
   },
   "https://www.strongerbyscience.com/feed/": {
@@ -112,7 +112,7 @@
     "last_modified": null
   },
   "https://www.theverge.com/rss/reviews/index.xml": {
-    "etag": "W/\"bc04404d97de26cb0e6bfd4fe1826c1a\"",
+    "etag": "W/\"b83b71f707c1cdf52184b190dae1b73b\"",
     "last_modified": null
   }
 }
