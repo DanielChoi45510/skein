@@ -97,10 +97,11 @@
       "5ece23e3538637b2",
       "3494bbabe3e89ada",
       "97eac82962c094eb",
-      "814257e1bc9536a6"
+      "814257e1bc9536a6",
+      "7a68bc6140c21510"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-27T01:48:00Z",
+    "last_item_at": "2026-11-27T14:35:00Z",
     "state": "active",
     "title": "Energy",
     "topic_id": "markets"
@@ -337,7 +338,8 @@
       "33d4667d036411cb",
       "d64a1996074ed6a8",
       "c50e35a00a88a520",
-      "e1f301116bd61209"
+      "e1f301116bd61209",
+      "d0860cd544d04ff4"
     ],
     "kind": "fixed",
     "last_item_at": "2026-11-27T10:57:43Z",
@@ -643,12 +645,13 @@
       "6d91545fde4cf2c0",
       "69f1cf9d15217f92",
       "efcaf0cb2767be5e",
-      "99b982dd918488d1"
+      "99b982dd918488d1",
+      "c3e470eb3f2ed285"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-25T10:02:08Z",
+    "last_item_at": "2026-11-26T14:35:00Z",
     "state": "active",
-    "title": "First, Kill the Filibuster",
+    "title": "A Coming Democratic Push for Medicare for All",
     "topic_id": "us-politics"
   },
   {
@@ -1600,6 +1603,18 @@
     "state": "pending",
     "title": "Asian Stocks Rise as Investors Shrug Off U.S. Tariff Plan",
     "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-27T14:48:31.834302Z",
+    "id": "t1c398530e982",
+    "item_ids": [
+      "f941db374741ec44"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-27T14:00:07Z",
+    "state": "pending",
+    "title": "Attacks on Science: A Tragedy in Many Acts",
+    "topic_id": "us-politics"
   },
   {
     "created_at": "2026-11-26T11:48:42.917402Z",
@@ -3519,6 +3534,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-27T14:48:31.834302Z",
+    "id": "t4d330d5ca689",
+    "item_ids": [
+      "4116686948d5f6ae"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-27T14:42:00Z",
+    "state": "pending",
+    "title": "BAE Systems Secures $6 Billion in Combat-Vehicle Contracts For Several European Nations",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-23T01:41:04.329483Z",
     "id": "t4d3db5e2743c",
     "item_ids": [
@@ -4360,6 +4387,18 @@
     "state": "active",
     "title": "Global · Youth",
     "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-27T14:48:31.834302Z",
+    "id": "t630fd0a01cd3",
+    "item_ids": [
+      "1d140bb3b26b0663"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-27T14:00:00Z",
+    "state": "pending",
+    "title": "Android’s DIY widgets are a bit of vibe-coding fun",
+    "topic_id": "ai-news"
   },
   {
     "created_at": "2026-11-26T01:48:38.580251Z",
@@ -8411,12 +8450,13 @@
     "created_at": "2026-11-27T08:25:14.654408Z",
     "id": "tcbd3c9287077",
     "item_ids": [
-      "c40c78193e3966df"
+      "c40c78193e3966df",
+      "bd45fdec51f09a1b"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-27T08:00:00Z",
-    "state": "pending",
-    "title": "The 2028 Presidential Race Has Already Begun",
+    "last_item_at": "2026-11-27T14:33:04Z",
+    "state": "active",
+    "title": "2028 · Presidential · Race",
     "topic_id": "us-politics"
   },
   {
@@ -9237,6 +9277,18 @@
     "topic_id": "us-politics"
   },
   {
+    "created_at": "2026-11-27T14:48:31.834302Z",
+    "id": "te24d466ff3a1",
+    "item_ids": [
+      "2077ca36b788cd5f"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-27T12:54:55Z",
+    "state": "pending",
+    "title": "Explainer: What is Modi's automated takedown law, which has embroiled Meta in a political storm?",
+    "topic_id": "us-politics"
+  },
+  {
     "created_at": "2026-11-24T16:48:53.011391Z",
     "id": "te2d5547b9f6f",
     "item_ids": [
@@ -9585,10 +9637,11 @@
       "6211b12e687e5fba",
       "36ca65000a8a27fe",
       "939b7e9e3e5683da",
-      "58882ca7e617a2db"
+      "58882ca7e617a2db",
+      "b842d21ffa31c9be"
     ],
     "kind": "tracker",
-    "last_item_at": "2026-11-27T08:02:08Z",
+    "last_item_at": "2026-11-27T14:45:30Z",
     "state": "active",
     "title": "Laptops",
     "topic_id": "tech-trackers"
