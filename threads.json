@@ -315,10 +315,11 @@
       "82565c35db835e7a",
       "d0fadceecc6a4209",
       "ca12a21db5383ac2",
-      "be1c6d4bbadb28f8"
+      "be1c6d4bbadb28f8",
+      "999ce3c06b2f45d8"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-27T00:25:00Z",
+    "last_item_at": "2026-11-27T04:21:00Z",
     "state": "active",
     "title": "Materials",
     "topic_id": "markets"
@@ -1164,7 +1165,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-24T03:57:00Z",
-    "state": "active",
+    "state": "cooling",
     "title": "Taiwan · Elections",
     "topic_id": "world-news"
   },
@@ -6098,6 +6099,18 @@
     "state": "pending",
     "title": "Learning About Democracy Without Living It",
     "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-27T04:48:44.339544Z",
+    "id": "t9ad03909ea1e",
+    "item_ids": [
+      "e4041d5225ba0559"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-27T00:43:03Z",
+    "state": "pending",
+    "title": "Australia's sandpapergate probe to also include 2017-18 Ashes",
+    "topic_id": "world-news"
   },
   {
     "created_at": "2026-11-26T08:48:38.242191Z",

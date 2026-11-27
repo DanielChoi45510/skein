@@ -12,19 +12,19 @@
     "last_modified": "Fri, 27 Nov 2026 00:07:29 GMT"
   },
   "https://deepmind.google/blog/rss.xml": {
-    "etag": "\"vBbm4Q\"",
+    "etag": "\"eDmIpQ\"",
     "last_modified": null
   },
   "https://feeds.content.dowjones.io/public/rss/RSSMarketsMain": {
-    "etag": "W/\"9bcc-yQof+chsaLacJAw/oS2nD5e0bdU\"",
+    "etag": "W/\"9c61-e6QiFsUy7bt4HKlLTVmcB4hKa9I\"",
     "last_modified": null
   },
   "https://feeds.content.dowjones.io/public/rss/RSSOpinion": {
-    "etag": "W/\"fa4c-UHQgncxwEBxDtNdZYs+F2f4p+tg\"",
+    "etag": "W/\"fa4c-YrpfHRDHiQolrVKiDB9Xf9HAIiA\"",
     "last_modified": null
   },
   "https://feeds.content.dowjones.io/public/rss/RSSWorldNews": {
-    "etag": "W/\"c8dc-RmFdeIcLNHAn/Gt0rgoXRoB8Lks\"",
+    "etag": "W/\"c8dc-hZUeYNubqt9wBq3yArIaNq7x8cM\"",
     "last_modified": null
   },
   "https://fivebooks.com/feed/": {
@@ -43,8 +43,12 @@
     "etag": null,
     "last_modified": "Thu, 26 Nov 2026 21:47:45 GMT"
   },
+  "https://latent.space/feeds/news.xml": {
+    "etag": null,
+    "last_modified": "Fri, 27 Nov 2026 04:45:34 GMT"
+  },
   "https://newsletter.pragmaticengineer.com/feed": {
-    "etag": "W/\"b69b3-locLEisoBnUDiumbFif9qwsG18Y\"",
+    "etag": "W/\"b69b3-g1oU4LwtyBF0cbZC50D/YhfJdzg\"",
     "last_modified": null
   },
   "https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_anthropic_news.xml": {
@@ -72,8 +76,8 @@
     "last_modified": "Thu, 26 Nov 2026 12:01:06 GMT"
   },
   "https://www.cochrane.org/evidence/rss": {
-    "etag": "\"1795751105-gzip\"",
-    "last_modified": "Fri, 27 Nov 2026 03:45:05 GMT"
+    "etag": "\"1795752003-gzip\"",
+    "last_modified": "Fri, 27 Nov 2026 04:00:03 GMT"
   },
   "https://www.federalreserve.gov/feeds/press_monetary.xml": {
     "etag": "W/\"de8654b467cdd1:0\"",
@@ -85,10 +89,10 @@
   },
   "https://www.notebookcheck.net/RSS-Feed-Notebook-Reviews.8156.0.html": {
     "etag": null,
-    "last_modified": "Fri, 27 Nov 2026 03:48:48 GMT"
+    "last_modified": "Fri, 27 Nov 2026 04:48:50 GMT"
   },
   "https://www.oneusefulthing.org/feed": {
-    "etag": "W/\"e0f01-xHFlk0Fr/523aJGE49DQZUVTc+w\"",
+    "etag": "W/\"e0f01-eqGzxrwZxS7e1kd1rg0DVP29fa0\"",
     "last_modified": null
   },
   "https://www.rtings.com/latest-rss.xml": {
