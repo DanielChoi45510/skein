@@ -166,10 +166,11 @@
       "a0b4c39e6d77a46d",
       "bbf61241a90bba59",
       "f0fc2097d21cb8d5",
-      "6702bd48e0994ddf"
+      "6702bd48e0994ddf",
+      "531d4d6dcb183cd8"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-27T00:18:00Z",
+    "last_item_at": "2026-11-27T02:19:00Z",
     "state": "active",
     "title": "Financials",
     "topic_id": "markets"
@@ -255,10 +256,11 @@
       "2dee6d26ce5c5da0",
       "726ae319c38c26df",
       "9e0f61dff81204b0",
-      "8795e9d3c3e28090"
+      "8795e9d3c3e28090",
+      "de1ff291eddd7949"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-26T10:01:56Z",
+    "last_item_at": "2026-11-27T02:13:00Z",
     "state": "active",
     "title": "Information Technology",
     "topic_id": "markets"
@@ -360,10 +362,11 @@
       "718c2cad438e90d7",
       "dea8db699a2da803",
       "231b8e639d2f9fbc",
-      "d29aa5360372da17"
+      "d29aa5360372da17",
+      "51140be56a347d72"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-26T14:00:33Z",
+    "last_item_at": "2026-11-27T02:27:00Z",
     "state": "active",
     "title": "Trade & tariffs",
     "topic_id": "markets"
@@ -3871,7 +3874,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-24T02:08:04Z",
-    "state": "active",
+    "state": "cooling",
     "title": "Deal · COP31 · Climate · Talks",
     "topic_id": "world-news"
   },
@@ -4521,12 +4524,13 @@
     "created_at": "2026-11-26T17:48:40.240159Z",
     "id": "t6eb3aa6181cf",
     "item_ids": [
-      "e5e0f8e941765e24"
+      "e5e0f8e941765e24",
+      "3ced48759cada343"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-26T16:31:40Z",
-    "state": "pending",
-    "title": "Trump says he asked Putin to 'pull back' military aggression throughout Europe",
+    "last_item_at": "2026-11-27T00:35:00Z",
+    "state": "active",
+    "title": "Trump · Putin",
     "topic_id": "world-news"
   },
   {
@@ -9468,12 +9472,13 @@
     "created_at": "2026-11-26T00:48:38.780474Z",
     "id": "tf284c265e5df",
     "item_ids": [
-      "859f3552b52d757c"
+      "859f3552b52d757c",
+      "ec9581ae7ed8b595"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-26T00:23:27Z",
-    "state": "pending",
-    "title": "France's political mainstream risks presidential vote debacle with no clear candidate",
+    "last_item_at": "2026-11-26T15:34:04Z",
+    "state": "active",
+    "title": "France · Presidential",
     "topic_id": "world-news"
   },
   {

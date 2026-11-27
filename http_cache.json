@@ -12,19 +12,19 @@
     "last_modified": "Fri, 27 Nov 2026 00:07:29 GMT"
   },
   "https://deepmind.google/blog/rss.xml": {
-    "etag": "\"0br6lg\"",
+    "etag": "\"LhFbfA\"",
     "last_modified": null
   },
   "https://feeds.content.dowjones.io/public/rss/RSSMarketsMain": {
-    "etag": "W/\"9c78-xlIZnSgx2oIZyQsT227GSK2ZwRA\"",
+    "etag": "W/\"9bc6-Xa/Wyr0oVwbRJ/fJcQAgtpBe7A8\"",
     "last_modified": null
   },
   "https://feeds.content.dowjones.io/public/rss/RSSOpinion": {
-    "etag": "W/\"fa4c-ZSSLruPqGgBBeV2VdQ5eOOMYAik\"",
+    "etag": "W/\"fa4c-csjXv/R9guvtiRvZnXiKHBPmcN4\"",
     "last_modified": null
   },
   "https://feeds.content.dowjones.io/public/rss/RSSWorldNews": {
-    "etag": "W/\"cd1b-m4LA6kdfTnA8/XDTsVUp5Na6JB4\"",
+    "etag": "W/\"cc12-mmcN+eLLWvYjCgsOz5Z9B2KrAbc\"",
     "last_modified": null
   },
   "https://fivebooks.com/feed/": {
@@ -32,19 +32,23 @@
     "last_modified": "Wed, 25 Nov 2026 15:58:30 GMT"
   },
   "https://flipboard.com/@associatedpress/top-stories-u7govdf1z.rss": {
-    "etag": "W/\"b48f-FgeY1FT7bgkXkKjpd9apZoZkgp0\"",
+    "etag": "W/\"b26d-2vlpdIVSA/74mIxNSwMcZ4fUoYk\"",
     "last_modified": null
   },
   "https://flipboard.com/@associatedpress/u.s.-news-lhl4uphvz.rss": {
-    "etag": "W/\"b015-xZ80HjIHsdZS1eP/RhA7y1SxcvE\"",
+    "etag": "W/\"b473-wn+fJH/JPaYMQd0bxRARoZOOir4\"",
     "last_modified": null
   },
   "https://hnrss.org/frontpage?points=200": {
     "etag": null,
     "last_modified": "Thu, 26 Nov 2026 21:47:45 GMT"
   },
+  "https://latent.space/feeds/news.xml": {
+    "etag": null,
+    "last_modified": "Fri, 27 Nov 2026 02:44:17 GMT"
+  },
   "https://newsletter.pragmaticengineer.com/feed": {
-    "etag": "W/\"b69b3-9CZ2UO51HO/cYV2UasHzx+Me5A4\"",
+    "etag": "W/\"b69b3-qKp8sl+Blm+YifkUkq0HiOjzo/A\"",
     "last_modified": null
   },
   "https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_anthropic_news.xml": {
@@ -72,8 +76,8 @@
     "last_modified": "Thu, 26 Nov 2026 12:01:06 GMT"
   },
   "https://www.cochrane.org/evidence/rss": {
-    "etag": "\"1795740902-gzip\"",
-    "last_modified": "Fri, 27 Nov 2026 00:55:02 GMT"
+    "etag": "\"1795744805-gzip\"",
+    "last_modified": "Fri, 27 Nov 2026 02:00:05 GMT"
   },
   "https://www.federalreserve.gov/feeds/press_monetary.xml": {
     "etag": "W/\"de8654b467cdd1:0\"",
@@ -85,10 +89,10 @@
   },
   "https://www.notebookcheck.net/RSS-Feed-Notebook-Reviews.8156.0.html": {
     "etag": null,
-    "last_modified": "Fri, 27 Nov 2026 01:48:42 GMT"
+    "last_modified": "Fri, 27 Nov 2026 02:48:47 GMT"
   },
   "https://www.oneusefulthing.org/feed": {
-    "etag": "W/\"e0f01-pkMhHmO5qYqw26uKuhupaDswf3E\"",
+    "etag": "W/\"e0f01-GJIqz22mfcohJG9NndRZgACHNgU\"",
     "last_modified": null
   },
   "https://www.rtings.com/latest-rss.xml": {
