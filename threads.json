@@ -1943,6 +1943,18 @@
     "topic_id": "ai-news"
   },
   {
+    "created_at": "2026-11-27T03:48:41.308049Z",
+    "id": "t28f2eaf8b3b5",
+    "item_ids": [
+      "347b681bda8a6f2a"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-27T03:00:00Z",
+    "state": "pending",
+    "title": "No Homes to Rent, No Way to Evict: Inside Spain’s Housing Crisis",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "t291e3ffd54f3",
     "item_ids": [
@@ -7059,10 +7071,11 @@
       "e692f867f12a01e2",
       "56897c41f3da0291",
       "08a1b8764e52cecd",
-      "b20f27120b84b303"
+      "b20f27120b84b303",
+      "687e7a216ba2326b"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-26T23:08:12Z",
+    "last_item_at": "2026-11-27T03:00:00Z",
     "state": "active",
     "title": "Huang · Jensen · Nvidia · China",
     "topic_id": "world-news"
