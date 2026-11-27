@@ -987,6 +987,18 @@
     "topic_id": "us-politics"
   },
   {
+    "created_at": "2026-11-27T05:48:38.526791Z",
+    "id": "t0dae622be922",
+    "item_ids": [
+      "2b5981cd6f6f470f"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-27T05:00:39Z",
+    "state": "pending",
+    "title": "The Threat to a Sanctuary for Children of North Korean Defectors",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "t0df79e817286",
     "item_ids": [
@@ -2337,6 +2349,18 @@
     "topic_id": "ai-news"
   },
   {
+    "created_at": "2026-11-27T05:48:38.526791Z",
+    "id": "t33892597adea",
+    "item_ids": [
+      "cc032371e29e1cf4"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-27T01:13:49Z",
+    "state": "pending",
+    "title": "Hard Drive pricing has gotten bad",
+    "topic_id": "jobs-market"
+  },
+  {
     "created_at": "2026-11-23T01:41:04.329483Z",
     "id": "t338b45615c27",
     "item_ids": [
@@ -3124,6 +3148,18 @@
     "state": "active",
     "title": "Administration · Trump · Tariffs",
     "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-27T05:48:38.526791Z",
+    "id": "t4693c2be0bff",
+    "item_ids": [
+      "ce1216521d8786e0"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T20:49:49Z",
+    "state": "pending",
+    "title": "Company Culture = Slack Emoji ÷ √Headcount",
+    "topic_id": "ai-news"
   },
   {
     "created_at": "2026-11-24T17:48:45.483947Z",
@@ -7418,10 +7454,11 @@
     "item_ids": [
       "2614a9bd98e3bf13",
       "98668531e5be1d68",
-      "e30fe84cc23e9392"
+      "e30fe84cc23e9392",
+      "efb5aa0b0999e234"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-24T05:00:00Z",
+    "last_item_at": "2026-11-27T05:00:00Z",
     "state": "active",
     "title": "Pepper · Salt",
     "topic_id": "us-politics"
