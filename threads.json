@@ -164,10 +164,11 @@
       "2abf465b0e97df79",
       "a0b4c39e6d77a46d",
       "bbf61241a90bba59",
-      "f0fc2097d21cb8d5"
+      "f0fc2097d21cb8d5",
+      "6702bd48e0994ddf"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-26T19:55:00Z",
+    "last_item_at": "2026-11-27T00:18:00Z",
     "state": "active",
     "title": "Financials",
     "topic_id": "markets"
@@ -310,10 +311,11 @@
       "670df7bef5541d4f",
       "82565c35db835e7a",
       "d0fadceecc6a4209",
-      "ca12a21db5383ac2"
+      "ca12a21db5383ac2",
+      "be1c6d4bbadb28f8"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-26T01:39:00Z",
+    "last_item_at": "2026-11-27T00:25:00Z",
     "state": "active",
     "title": "Materials",
     "topic_id": "markets"
@@ -3337,12 +3339,13 @@
       "56b568e2582b3376",
       "b3ebe78783befbf7",
       "501a09a9fc063235",
-      "5625dfaad99025a5"
+      "5625dfaad99025a5",
+      "1911b31a8fad7278"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-25T05:00:36Z",
+    "last_item_at": "2026-11-26T23:31:06Z",
     "state": "active",
-    "title": "Army · Bomb-making · Iowa · Chemicals",
+    "title": "Army · Iowa · Bomb-making · Detonation",
     "topic_id": "us-politics"
   },
   {
@@ -4440,6 +4443,18 @@
     "state": "pending",
     "title": "Andrey Zvyagintsev Showed Us What Russia Is, and We Didn’t Realize",
     "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-27T00:48:37.877410Z",
+    "id": "t6c35aacf6075",
+    "item_ids": [
+      "9846b4add4b606bf"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-27T00:25:00Z",
+    "state": "pending",
+    "title": "Trump says Wednesday's market had him briefly 'concerned' before stocks recovered",
+    "topic_id": "us-politics"
   },
   {
     "created_at": "2026-11-25T18:48:30.856667Z",
@@ -6432,7 +6447,8 @@
       "52945e4afe3324e0",
       "ba67a1faca0f2ef0",
       "b04ba6c29797159e",
-      "291eec9f66e9f955"
+      "291eec9f66e9f955",
+      "fb9acb1fdf4c6b31"
     ],
     "kind": "story",
     "last_item_at": "2026-11-26T18:10:00Z",
@@ -6892,7 +6908,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-24T00:18:00Z",
-    "state": "active",
+    "state": "cooling",
     "title": "US eyes Iran as possible culprit in dozens of new cyberattacks against ships, WSJ reports",
     "topic_id": "world-news"
   },
@@ -7895,12 +7911,13 @@
     "created_at": "2026-11-26T16:48:49.717627Z",
     "id": "tc9d1a6cea1d2",
     "item_ids": [
-      "cbbd6160d360f9e2"
+      "cbbd6160d360f9e2",
+      "764631fe50e5e70f"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-26T16:04:27Z",
-    "state": "pending",
-    "title": "Trump demands probe of GDP data released before midterms",
+    "last_item_at": "2026-11-26T16:55:46Z",
+    "state": "active",
+    "title": "Trump · GDP · Demands",
     "topic_id": "us-politics"
   },
   {
@@ -8966,6 +8983,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-27T00:48:37.877410Z",
+    "id": "te8b4069e8b93",
+    "item_ids": [
+      "216eea52a5732c90"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T22:42:09Z",
+    "state": "pending",
+    "title": "Heavy rain, wind and flooding plague much of the US on Thanksgiving",
+    "topic_id": "us-politics"
+  },
+  {
     "created_at": "2026-11-26T09:48:36.356682Z",
     "id": "teaee57a7165a",
     "item_ids": [
@@ -9495,6 +9524,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-27T00:48:37.877410Z",
+    "id": "tf445d4a4f7e4",
+    "item_ids": [
+      "4310d52f844e567f"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T20:28:47Z",
+    "state": "pending",
+    "title": "Necessities join gifts in Black Friday shopping carts as AI and higher costs steer spending",
+    "topic_id": "us-politics"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "tf4d74d60f552",
     "item_ids": [
@@ -9728,6 +9769,18 @@
     "state": "active",
     "title": "WSJ Opinion: What Are You Thankful For?",
     "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-27T00:48:37.877410Z",
+    "id": "tf9749d0d9e3b",
+    "item_ids": [
+      "13154b0830506822"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-25T16:04:44Z",
+    "state": "pending",
+    "title": "A timeline of key events in Kilmar Ábrego García's fight with the Trump administration",
+    "topic_id": "us-politics"
   },
   {
     "created_at": "2026-11-23T11:48:25.998267Z",
