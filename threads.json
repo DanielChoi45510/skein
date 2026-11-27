@@ -24,10 +24,11 @@
       "89ff4aed36131433",
       "aca31400fc4deb34",
       "60ee51a3238329bf",
-      "79af71bc59b20ad7"
+      "79af71bc59b20ad7",
+      "aebb8dc1c8ddcec3"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-26T10:02:11Z",
+    "last_item_at": "2026-11-27T10:02:41Z",
     "state": "active",
     "title": "Consumer Discretionary",
     "topic_id": "markets"
@@ -62,10 +63,11 @@
       "826465d103bf03a5",
       "0196540f2ec4c66f",
       "8fc8b0f209591c91",
-      "5c68e4c7171891ec"
+      "5c68e4c7171891ec",
+      "ca4c98bda71f2060"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-27T08:22:13Z",
+    "last_item_at": "2026-11-27T10:03:51Z",
     "state": "active",
     "title": "Major earnings surprises",
     "topic_id": "markets"
@@ -169,10 +171,11 @@
       "bbf61241a90bba59",
       "f0fc2097d21cb8d5",
       "6702bd48e0994ddf",
-      "531d4d6dcb183cd8"
+      "531d4d6dcb183cd8",
+      "1dd2f671138b6a91"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-27T02:19:00Z",
+    "last_item_at": "2026-11-27T10:02:08Z",
     "state": "active",
     "title": "Financials",
     "topic_id": "markets"
@@ -289,7 +292,8 @@
       "427ee8b401578355",
       "29222340ded6cebc",
       "d43cb54503e0b6af",
-      "fca44b556370d52f"
+      "fca44b556370d52f",
+      "199c55078ef345e1"
     ],
     "kind": "fixed",
     "last_item_at": "2026-11-27T09:03:45Z",
@@ -324,10 +328,12 @@
       "be1c6d4bbadb28f8",
       "999ce3c06b2f45d8",
       "990fb6e60564e66c",
-      "33d4667d036411cb"
+      "33d4667d036411cb",
+      "d64a1996074ed6a8",
+      "c50e35a00a88a520"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-27T08:25:12Z",
+    "last_item_at": "2026-11-27T10:30:00Z",
     "state": "active",
     "title": "Materials",
     "topic_id": "markets"
@@ -340,10 +346,12 @@
       "8f0a351a515a272b",
       "cc10264994523507",
       "fe7108dad77de006",
-      "0a0b3831ef3c5d38"
+      "0a0b3831ef3c5d38",
+      "80c7f08d4f1dd896",
+      "f689b3faa8d6e4a3"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-20T21:50:00Z",
+    "last_item_at": "2026-11-27T10:16:00Z",
     "state": "active",
     "title": "Real Estate",
     "topic_id": "markets"
@@ -1606,7 +1614,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-24T10:15:43Z",
-    "state": "active",
+    "state": "cooling",
     "title": "Norway · Ukraine",
     "topic_id": "world-news"
   },
@@ -1693,6 +1701,18 @@
     "state": "pending",
     "title": "A.I.-Powered Fake Personas Target Taiwan’s Elections",
     "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-27T10:48:43.377378Z",
+    "id": "t1edbcd0675c4",
+    "item_ids": [
+      "2295e31ce9b3be27"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-27T10:42:02Z",
+    "state": "pending",
+    "title": "Puma Shen, Critic of China, Could be the Next Mayor of Taipei",
+    "topic_id": "world-news"
   },
   {
     "created_at": "2026-11-25T11:48:47.899841Z",
@@ -2060,6 +2080,18 @@
     "state": "pending",
     "title": "Marsha Linehan Has Died. She Transformed Treatment for Personality Disorder.",
     "topic_id": "health-wellbeing"
+  },
+  {
+    "created_at": "2026-11-27T10:48:43.377378Z",
+    "id": "t2acf986d75f7",
+    "item_ids": [
+      "7def290894053fa6"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-27T10:01:07Z",
+    "state": "pending",
+    "title": "India busts cyberfraud and trafficking network rescuing 164 foreigners",
+    "topic_id": "world-news"
   },
   {
     "created_at": "2026-11-22T09:09:42.410739Z",
@@ -4881,7 +4913,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-24T10:00:29Z",
-    "state": "active",
+    "state": "cooling",
     "title": "Wolf · Suburbs",
     "topic_id": "world-news"
   },
@@ -5918,6 +5950,19 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-27T10:48:43.377378Z",
+    "id": "t931484273953",
+    "item_ids": [
+      "566692629946a9f1",
+      "12d58a1b8e1915ea"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-27T10:00:10Z",
+    "state": "active",
+    "title": "Plaque by Plaque, Russia Erases the Memory of the Gulag’s Horrors",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "t934bd43ddc62",
     "item_ids": [
@@ -6802,6 +6847,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-27T10:48:43.377378Z",
+    "id": "ta959a0567798",
+    "item_ids": [
+      "f348230bb96943b8"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-27T10:00:00Z",
+    "state": "pending",
+    "title": "Trump effectively ended asylum. Advocates look to the Supreme Court to restore it",
+    "topic_id": "us-politics"
+  },
+  {
     "created_at": "2026-11-24T20:48:44.254125Z",
     "id": "ta97326b763a5",
     "item_ids": [
@@ -7380,7 +7437,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-24T10:02:22Z",
-    "state": "active",
+    "state": "cooling",
     "title": "I Was Disabled in Middle Age. It Opened Up the World.",
     "topic_id": "us-politics"
   },
@@ -7659,12 +7716,13 @@
       "60d7e8a4e20cab41",
       "027803ccc23e9ec0",
       "223d361362a1a30b",
-      "ee0e388866212e9f"
+      "ee0e388866212e9f",
+      "cc6f1b92e33952b8"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-26T18:03:00Z",
+    "last_item_at": "2026-11-27T10:02:12Z",
     "state": "active",
-    "title": "Election · Spain",
+    "title": "Spain · Election",
     "topic_id": "world-news"
   },
   {
@@ -8058,6 +8116,18 @@
     "state": "pending",
     "title": "How iFood scales coding agents across 15,000 repositories",
     "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-27T10:48:43.377378Z",
+    "id": "tc627c3a74696",
+    "item_ids": [
+      "57900cc27ddc54e0"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-27T10:17:22Z",
+    "state": "pending",
+    "title": "Downfall of Shanghai Party chief opens route to pinnacle of politics",
+    "topic_id": "us-politics"
   },
   {
     "created_at": "2026-11-26T06:48:30.348408Z",
@@ -9247,6 +9317,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-27T10:48:43.377378Z",
+    "id": "tebb078905c5f",
+    "item_ids": [
+      "292fa45e71f489a0"
+    ],
+    "kind": "question",
+    "last_item_at": "2026-11-27T10:00:46Z",
+    "state": "pending",
+    "title": "It’s Safe to Cry on the Carousel of Happiness",
+    "topic_id": "health-wellbeing"
+  },
+  {
     "created_at": "2026-11-23T17:48:41.578622Z",
     "id": "tec0908083187",
     "item_ids": [
@@ -10147,12 +10229,13 @@
     "id": "tfcf1ab85a59a",
     "item_ids": [
       "cdc876128e23a33b",
-      "59b25d2b8e233edf"
+      "59b25d2b8e233edf",
+      "6af81f6bdcce3c70"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-26T19:26:16Z",
+    "last_item_at": "2026-11-27T10:26:28Z",
     "state": "active",
-    "title": "Watch: Roofs torn off and streets under water as severe weather hits US",
+    "title": "Storms · Thanksgiving",
     "topic_id": "world-news"
   },
   {
