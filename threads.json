@@ -191,10 +191,11 @@
       "b18f3c5cd1354273",
       "c226238599fb7244",
       "c1b0c64a9570186d",
-      "792b6d077f801296"
+      "792b6d077f801296",
+      "b73889353b3f4328"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-25T18:26:00Z",
+    "last_item_at": "2026-11-27T06:24:00Z",
     "state": "active",
     "title": "Health Care",
     "topic_id": "markets"
@@ -316,10 +317,11 @@
       "d0fadceecc6a4209",
       "ca12a21db5383ac2",
       "be1c6d4bbadb28f8",
-      "999ce3c06b2f45d8"
+      "999ce3c06b2f45d8",
+      "990fb6e60564e66c"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-27T04:21:00Z",
+    "last_item_at": "2026-11-27T06:23:00Z",
     "state": "active",
     "title": "Materials",
     "topic_id": "markets"
@@ -2738,6 +2740,18 @@
     "topic_id": "us-politics"
   },
   {
+    "created_at": "2026-11-27T06:48:41.542781Z",
+    "id": "t3c97de8a8f3d",
+    "item_ids": [
+      "5c4e056fb17d1eab"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-27T05:12:00Z",
+    "state": "pending",
+    "title": "Iran warns on Gulf military presence as South Korea readies expanded naval role",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "t3cf98acda0dc",
     "item_ids": [
@@ -3723,6 +3737,18 @@
     "topic_id": "us-politics"
   },
   {
+    "created_at": "2026-11-27T06:48:41.542781Z",
+    "id": "t56f521f90078",
+    "item_ids": [
+      "f7ea90cf49902768"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-27T06:29:26Z",
+    "state": "pending",
+    "title": "Why Is the Trump Administration So Focused on the Threat of Far-Left Terror?",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-25T10:48:44.901744Z",
     "id": "t572c103af69b",
     "item_ids": [
@@ -4091,6 +4117,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-27T06:48:41.542781Z",
+    "id": "t604c9dadae3d",
+    "item_ids": [
+      "6d694547ace81be5"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-27T06:09:31Z",
+    "state": "pending",
+    "title": "Could housing decide Spain's general election?",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "t605d85159269",
     "item_ids": [
@@ -4270,12 +4308,13 @@
       "51e4eb10a0f20f8c",
       "f9aaa50a66ad629d",
       "571fb16af3cdada5",
-      "d4c26b0fef85de44"
+      "d4c26b0fef85de44",
+      "bb802224487765a9"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-24T23:16:36Z",
+    "last_item_at": "2026-11-27T06:01:00Z",
     "state": "active",
-    "title": "The Devil’s Bargain",
+    "title": "The Nvidia Scandal Exposes a Bigger Failure",
     "topic_id": "us-politics"
   },
   {
