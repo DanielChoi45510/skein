@@ -99,10 +99,11 @@
       "3494bbabe3e89ada",
       "97eac82962c094eb",
       "814257e1bc9536a6",
-      "7a68bc6140c21510"
+      "7a68bc6140c21510",
+      "ab08edfbf091f238"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-27T14:35:00Z",
+    "last_item_at": "2026-11-27T18:22:00Z",
     "state": "active",
     "title": "Energy",
     "topic_id": "markets"
@@ -853,6 +854,18 @@
     "last_item_at": "2026-11-25T10:35:43Z",
     "state": "active",
     "title": "Rupee · Foreign",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-27T18:48:36.561992Z",
+    "id": "t0a1294696678",
+    "item_ids": [
+      "f4a3363dc328d6a0"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-27T18:01:19Z",
+    "state": "pending",
+    "title": "With Dancing Robots, Russia Projects a Future Shaped by A.I., Not War",
     "topic_id": "world-news"
   },
   {
@@ -6406,10 +6419,11 @@
       "63390e89bf9ee6a3",
       "56f3b2f16d81e5f8",
       "28366c256bc34d4f",
-      "477ea34b4f6c5cf0"
+      "477ea34b4f6c5cf0",
+      "410af38005ff49c8"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-25T16:26:09Z",
+    "last_item_at": "2026-11-27T17:55:53Z",
     "state": "active",
     "title": "Russian · Libya · Ukraine · Attack",
     "topic_id": "world-news"
@@ -8017,6 +8031,18 @@
     "state": "pending",
     "title": "Inflation remains uncomfortably high despite a retreat in gas prices as challenges mount for the Fed",
     "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-27T18:48:36.561992Z",
+    "id": "tbc433b0e496d",
+    "item_ids": [
+      "1321e95cce41844b"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-27T18:00:00Z",
+    "state": "pending",
+    "title": "Israeli Report on Soldiers Using Palestinians as Human Shields Ignites National Backlash",
+    "topic_id": "world-news"
   },
   {
     "created_at": "2026-11-22T20:20:33.012568Z",
@@ -9773,10 +9799,11 @@
       "67a0c310cd6124af",
       "eeecbd868c6e76d5",
       "53a0eb555864ac46",
-      "addc32967419ca84"
+      "addc32967419ca84",
+      "451daa45791e6204"
     ],
     "kind": "tracker",
-    "last_item_at": "2026-11-27T15:55:08Z",
+    "last_item_at": "2026-11-27T18:03:10Z",
     "state": "active",
     "title": "Headphones & earbuds",
     "topic_id": "tech-trackers"
@@ -9861,10 +9888,11 @@
       "a05b42cdceea66b0",
       "67f9c802d8da70e6",
       "e96c9a2e1ab7fd99",
-      "8d46129f0f90b26c"
+      "8d46129f0f90b26c",
+      "b6ee6677400bc75d"
     ],
     "kind": "tracker",
-    "last_item_at": "2026-11-27T17:00:00Z",
+    "last_item_at": "2026-11-27T17:57:23Z",
     "state": "active",
     "title": "Phones",
     "topic_id": "tech-trackers"
