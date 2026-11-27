@@ -4513,6 +4513,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-27T23:48:47.559623Z",
+    "id": "t624abe6a203d",
+    "item_ids": [
+      "f3e7c026cbbb2922"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-27T23:24:27Z",
+    "state": "pending",
+    "title": "Police Link Release of Substance at Don Toliver Concert to Robbery Attempts",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-27T14:48:31.834302Z",
     "id": "t630fd0a01cd3",
     "item_ids": [
@@ -5272,6 +5284,18 @@
     "state": "pending",
     "title": "Let Congress Keep Doing Its Job With the FAA",
     "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-27T23:48:47.559623Z",
+    "id": "t786b195db390",
+    "item_ids": [
+      "a9998ca690b4344f"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-27T23:02:35Z",
+    "state": "pending",
+    "title": "Behind China's spectacular rise, voices who defied it say they are being drowned out",
+    "topic_id": "world-news"
   },
   {
     "created_at": "2026-11-22T20:20:33.012568Z",
@@ -6768,7 +6792,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-24T22:55:15Z",
-    "state": "active",
+    "state": "cooling",
     "title": "An unclassified CIA system was breached in a cyberattack, AP source says",
     "topic_id": "us-politics"
   },
@@ -10053,12 +10077,13 @@
       "ac25d442b8560428",
       "202a51f4b75954e1",
       "26c04bb70cbae03c",
-      "789ad182ca9dea07"
+      "789ad182ca9dea07",
+      "908a5a2ceb5600e7"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-27T15:47:57Z",
+    "last_item_at": "2026-11-27T23:39:47Z",
     "state": "active",
-    "title": "Democrats · Trump · Federal · Contractors",
+    "title": "Democrats · Federal · Contractors · Trump",
     "topic_id": "us-politics"
   },
   {
