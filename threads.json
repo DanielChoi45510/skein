@@ -1983,6 +1983,18 @@
     "topic_id": "ai-news"
   },
   {
+    "created_at": "2026-11-27T19:48:40.898196Z",
+    "id": "t2526123b7257",
+    "item_ids": [
+      "6899f81d13d183f1"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-27T19:23:46Z",
+    "state": "pending",
+    "title": "PETA’s Ridiculous Protest During the Rockettes’ Christmas Spectacular",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-26T14:48:40.987353Z",
     "id": "t252b887fa2ed",
     "item_ids": [
@@ -6065,12 +6077,13 @@
       "32c0ee762a9375ba",
       "ca386817a4f5b69d",
       "84a574fc4aa6534c",
-      "dd340761d3366efc"
+      "dd340761d3366efc",
+      "7c01422624a1fc02"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-27T11:00:00Z",
+    "last_item_at": "2026-11-27T19:07:00Z",
     "state": "active",
-    "title": "Iran · War",
+    "title": "U.S · War · Blockade · Iran",
     "topic_id": "world-news"
   },
   {
@@ -8140,6 +8153,18 @@
     "state": "pending",
     "title": "Can inositol (a supplement that helps control blood sugar and hormones) help women with polycystic ovary syndrome (a common hormone condition that affects fertility) have a baby?",
     "topic_id": "health-nutrition"
+  },
+  {
+    "created_at": "2026-11-27T19:48:40.898196Z",
+    "id": "tbf17da1674fe",
+    "item_ids": [
+      "bdeda64528db82e7"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-27T19:03:18Z",
+    "state": "pending",
+    "title": "New satellite data shows how fast some African cities are sinking",
+    "topic_id": "world-news"
   },
   {
     "created_at": "2026-11-25T12:48:38.475626Z",
