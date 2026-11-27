@@ -64,10 +64,11 @@
       "0196540f2ec4c66f",
       "8fc8b0f209591c91",
       "5c68e4c7171891ec",
-      "ca4c98bda71f2060"
+      "ca4c98bda71f2060",
+      "db9f915a2e257b18"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-27T10:03:51Z",
+    "last_item_at": "2026-11-27T11:32:59Z",
     "state": "active",
     "title": "Major earnings surprises",
     "topic_id": "markets"
@@ -264,10 +265,11 @@
       "9e0f61dff81204b0",
       "8795e9d3c3e28090",
       "de1ff291eddd7949",
-      "8234c4721cb10646"
+      "8234c4721cb10646",
+      "cb3d9ebf7366cd42"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-27T09:34:00Z",
+    "last_item_at": "2026-11-27T11:35:00Z",
     "state": "active",
     "title": "Information Technology",
     "topic_id": "markets"
@@ -330,10 +332,11 @@
       "990fb6e60564e66c",
       "33d4667d036411cb",
       "d64a1996074ed6a8",
-      "c50e35a00a88a520"
+      "c50e35a00a88a520",
+      "e1f301116bd61209"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-27T10:30:00Z",
+    "last_item_at": "2026-11-27T10:57:43Z",
     "state": "active",
     "title": "Materials",
     "topic_id": "markets"
@@ -1703,6 +1706,18 @@
     "topic_id": "us-politics"
   },
   {
+    "created_at": "2026-11-27T11:48:38.683149Z",
+    "id": "t1ebf965fd54e",
+    "item_ids": [
+      "5240c0f1d84f0b0a"
+    ],
+    "kind": "question",
+    "last_item_at": "2026-11-27T11:48:38.683149Z",
+    "state": "pending",
+    "title": "Are concentrated antibodies from people who have recovered from COVID-19, or from animals, a beneficial treatment for people with COVID-19?",
+    "topic_id": "health-wellbeing"
+  },
+  {
     "created_at": "2026-11-27T10:48:43.377378Z",
     "id": "t1edbcd0675c4",
     "item_ids": [
@@ -2705,6 +2720,18 @@
     "state": "pending",
     "title": "Thanksgiving 1863 and the Changing Art Vibe in That Pivotal Year",
     "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-27T11:48:38.683149Z",
+    "id": "t38dfd66ba2bf",
+    "item_ids": [
+      "170960c8596f7e46"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-27T11:00:10Z",
+    "state": "pending",
+    "title": "I Prosecuted Government Corruption. We’re in Trouble.",
+    "topic_id": "us-politics"
   },
   {
     "created_at": "2026-11-22T09:09:42.410739Z",
@@ -4141,6 +4168,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-27T11:48:38.683149Z",
+    "id": "t5e6f14f490f1",
+    "item_ids": [
+      "5de4f1c218c185d7"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-27T10:24:24Z",
+    "state": "pending",
+    "title": "Clashes mar European games as Macron condemns violence",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-26T21:48:44.228305Z",
     "id": "t5e92300dd447",
     "item_ids": [
@@ -5321,7 +5360,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-24T11:45:52Z",
-    "state": "active",
+    "state": "cooling",
     "title": "Colombian · City",
     "topic_id": "world-news"
   },
@@ -5844,12 +5883,13 @@
       "cc869be6dce057aa",
       "32c0ee762a9375ba",
       "ca386817a4f5b69d",
-      "84a574fc4aa6534c"
+      "84a574fc4aa6534c",
+      "dd340761d3366efc"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-26T03:00:00Z",
+    "last_item_at": "2026-11-27T11:00:00Z",
     "state": "active",
-    "title": "War · Iran",
+    "title": "Iran · War",
     "topic_id": "world-news"
   },
   {
@@ -7380,6 +7420,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-27T11:48:38.683149Z",
+    "id": "tb455c8097f1b",
+    "item_ids": [
+      "5f338aef304c6f13"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-27T11:14:36Z",
+    "state": "pending",
+    "title": "EXCLUSIVE: Volkswagen drags rivals Mercedes, BMW into $1.2 billion India tax fight",
+    "topic_id": "us-politics"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "tb4f35750ad1d",
     "item_ids": [
@@ -8694,6 +8746,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-27T11:48:38.683149Z",
+    "id": "td67f2a70a7f9",
+    "item_ids": [
+      "7110b65ae2433b51"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-27T11:00:15Z",
+    "state": "pending",
+    "title": "What to Do About the Epidemic of Bad Dogs",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "td78da3dc794c",
     "item_ids": [
@@ -9305,6 +9369,18 @@
     "topic_id": "us-politics"
   },
   {
+    "created_at": "2026-11-27T11:48:38.683149Z",
+    "id": "te9b16ef2f19a",
+    "item_ids": [
+      "40e2b1d30a3d7d8f"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-27T11:00:00Z",
+    "state": "pending",
+    "title": "An Anticommunist’s Long Road to U.S. Citizenship",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-26T09:48:36.356682Z",
     "id": "teaee57a7165a",
     "item_ids": [
@@ -9810,6 +9886,18 @@
     "state": "pending",
     "title": "A Short Workout to Strengthen Your Neck",
     "topic_id": "health-training"
+  },
+  {
+    "created_at": "2026-11-27T11:48:38.683149Z",
+    "id": "tf32448880cbd",
+    "item_ids": [
+      "632e65e98f44df84"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-27T11:00:14Z",
+    "state": "pending",
+    "title": "Religion Is a Solution to the Problems of Our Tech Age",
+    "topic_id": "us-politics"
   },
   {
     "created_at": "2026-11-26T12:48:42.229036Z",
