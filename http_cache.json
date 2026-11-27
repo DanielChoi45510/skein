@@ -1,7 +1,7 @@
 {
   "https://9to5mac.com/feed/": {
-    "etag": "W/\"7c77064148e2dd700b057478c1b3195a\"",
-    "last_modified": "Fri, 27 Nov 2026 14:42:23 GMT"
+    "etag": "W/\"9ccceddeac26b021f8b0d753bd3a7b36\"",
+    "last_modified": "Fri, 27 Nov 2026 15:31:54 GMT"
   },
   "https://antigravity.google/blog/rss.xml": {
     "etag": null,
@@ -12,19 +12,19 @@
     "last_modified": "Fri, 27 Nov 2026 12:05:01 GMT"
   },
   "https://deepmind.google/blog/rss.xml": {
-    "etag": "\"AcGQAw\"",
+    "etag": "\"T8IPIw\"",
     "last_modified": null
   },
   "https://feeds.content.dowjones.io/public/rss/RSSMarketsMain": {
-    "etag": "W/\"9ddd-VMXtCdetm9dQQKqTRiGpIYWPkBg\"",
+    "etag": "W/\"9e19-5i9jiAG2zDzq9nPjYPsAQkjMJlI\"",
     "last_modified": null
   },
   "https://feeds.content.dowjones.io/public/rss/RSSOpinion": {
-    "etag": "W/\"f951-29N1JMV2vcim4H+s0StvF5Ps2Eg\"",
+    "etag": "W/\"f951-XokImAtwVTAYpwAQE8KeybeARRY\"",
     "last_modified": null
   },
   "https://feeds.content.dowjones.io/public/rss/RSSWorldNews": {
-    "etag": "W/\"ccb5-8qFXZcXmAi7zOBB0ZQn8aLdFMl4\"",
+    "etag": "W/\"ccd0-e8UybOD5RiBRPV6+3guKOLqwrsI\"",
     "last_modified": null
   },
   "https://fivebooks.com/feed/": {
@@ -32,23 +32,19 @@
     "last_modified": "Wed, 25 Nov 2026 15:58:30 GMT"
   },
   "https://flipboard.com/@associatedpress/top-stories-u7govdf1z.rss": {
-    "etag": "W/\"b2b0-h7L5Ra8XKKRJsywk2An/yZ2Yx1g\"",
+    "etag": "W/\"b4ab-+3twmzw2bZ5sqez8j/O35Jofkw4\"",
     "last_modified": null
   },
   "https://flipboard.com/@associatedpress/u.s.-news-lhl4uphvz.rss": {
-    "etag": "W/\"b2f7-Q+r2t7nuSkKqFRECGADPf++rwmc\"",
+    "etag": "W/\"b52e-hfK4VArBwiAvQBH6FlhrKG7Yom8\"",
     "last_modified": null
   },
   "https://hnrss.org/frontpage?points=200": {
     "etag": null,
     "last_modified": "Fri, 27 Nov 2026 06:44:34 GMT"
   },
-  "https://latent.space/feeds/news.xml": {
-    "etag": null,
-    "last_modified": "Fri, 27 Nov 2026 14:44:49 GMT"
-  },
   "https://newsletter.pragmaticengineer.com/feed": {
-    "etag": "W/\"b69b3-yET8siA1AXKR85GsXd5OVj9ab/s\"",
+    "etag": "W/\"b69b3-A5yyJxVnhW+5s8RzIIjw1Hze22o\"",
     "last_modified": null
   },
   "https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_anthropic_news.xml": {
@@ -72,8 +68,8 @@
     "last_modified": null
   },
   "https://thedispatch.com/feed/": {
-    "etag": "W/\"94d122853761cad8bf5d0eabc52458dd\"",
-    "last_modified": "Fri, 27 Nov 2026 12:01:06 GMT"
+    "etag": "W/\"8f4007cb1952c420a061706c2f2c205e\"",
+    "last_modified": "Fri, 27 Nov 2026 15:06:15 GMT"
   },
   "https://www.cochrane.org/evidence/rss": {
     "etag": "\"1795789876-gzip\"",
@@ -84,15 +80,15 @@
     "last_modified": "Tue, 24 Nov 2026 19:00:17 GMT"
   },
   "https://www.nationalreview.com/feed/": {
-    "etag": "W/\"588fb0d32e01bb50d91a5a199eb4704c2556abe07eb7089f5853c5b7cfbac5a4\"",
+    "etag": "W/\"8239bc25515a65479c4b5ef8fd40a61c750a2c33ef8792d1eec24640d4ce4aac\"",
     "last_modified": null
   },
   "https://www.notebookcheck.net/RSS-Feed-Notebook-Reviews.8156.0.html": {
     "etag": null,
-    "last_modified": "Fri, 27 Nov 2026 14:48:37 GMT"
+    "last_modified": "Fri, 27 Nov 2026 15:48:35 GMT"
   },
   "https://www.oneusefulthing.org/feed": {
-    "etag": "W/\"e0f01-PUEmuC0yd5CEQDPHYvjAJf9UvS8\"",
+    "etag": "W/\"e0f01-YTu+oPAWHjNAm2+aIEI3fYbBduM\"",
     "last_modified": null
   },
   "https://www.rtings.com/latest-rss.xml": {
@@ -105,18 +101,18 @@
   },
   "https://www.theatlantic.com/feed/all/": {
     "etag": null,
-    "last_modified": "Fri, 27 Nov 2026 14:22:14 GMT"
+    "last_modified": "Fri, 27 Nov 2026 15:37:21 GMT"
   },
   "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml": {
-    "etag": "W/\"464f0ac3777e4193bd55879c2b9cac18\"",
+    "etag": "W/\"f2b6f89767e8edb8209e162ceae8233a\"",
     "last_modified": null
   },
   "https://www.theverge.com/rss/installer-newsletter/index.xml": {
-    "etag": "W/\"ec2b7019d893b5cb3296ba8ac70ee7ef\"",
+    "etag": "W/\"f2b6f89767e8edb8209e162ceae8233a\"",
     "last_modified": null
   },
   "https://www.theverge.com/rss/reviews/index.xml": {
-    "etag": "W/\"464f0ac3777e4193bd55879c2b9cac18\"",
+    "etag": "W/\"ef09d071d5623b57f150c09f7418230f\"",
     "last_modified": null
   }
 }

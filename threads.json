@@ -7,10 +7,11 @@
       "8efce86d328d46c4",
       "7e77f56783aa3faa",
       "29a0c4c48a41c90d",
-      "20c5775f189aefaa"
+      "20c5775f189aefaa",
+      "38e98e84f3626b0f"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-26T05:00:17Z",
+    "last_item_at": "2026-11-27T15:29:05Z",
     "state": "active",
     "title": "Communication Services",
     "topic_id": "markets"
@@ -177,10 +178,11 @@
       "1dd2f671138b6a91",
       "52c34bdba055bda6",
       "de197f9a9b56943f",
-      "32404e58e044cd5b"
+      "32404e58e044cd5b",
+      "e92b4a39a2201618"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-27T13:03:00Z",
+    "last_item_at": "2026-11-27T15:30:00Z",
     "state": "active",
     "title": "Financials",
     "topic_id": "markets"
@@ -3084,6 +3086,18 @@
     "state": "active",
     "title": "E.R. Doctors on Avoiding Thanksgiving Hazards",
     "topic_id": "health-wellbeing"
+  },
+  {
+    "created_at": "2026-11-27T15:48:29.653356Z",
+    "id": "t413d3567a58e",
+    "item_ids": [
+      "b2d1a44a47eddc66"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-27T15:33:51Z",
+    "state": "pending",
+    "title": "What Elizabeth Holmes Got Right",
+    "topic_id": "us-politics"
   },
   {
     "created_at": "2026-11-26T19:48:35.215793Z",
@@ -6998,12 +7012,13 @@
     "created_at": "2026-11-26T17:48:40.240159Z",
     "id": "ta9ff8baad52a",
     "item_ids": [
-      "e90cf9d5d495902d"
+      "e90cf9d5d495902d",
+      "85176b19ca80062a"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-26T17:00:00Z",
-    "state": "pending",
-    "title": "As Another Wartime Winter Sets In, Kyiv Residents Weigh Finally Leaving",
+    "last_item_at": "2026-11-27T15:18:51Z",
+    "state": "active",
+    "title": "John Simpson: Ukraine is bowed but still unbroken as freezing weather sets in",
     "topic_id": "world-news"
   },
   {
@@ -7041,6 +7056,18 @@
     "state": "pending",
     "title": "‘Look at Me’ Review: He’s Talkin’ Here",
     "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-27T15:48:29.653356Z",
+    "id": "taae2af0c9abf",
+    "item_ids": [
+      "487d14be71e2cc1b"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-27T15:18:58Z",
+    "state": "pending",
+    "title": "Climate Talks Imploded, but the ‘Age of Electricity’ Rolls On, Energy Chief Says",
+    "topic_id": "world-news"
   },
   {
     "created_at": "2026-11-22T09:09:42.410739Z",
@@ -7161,6 +7188,18 @@
     "state": "pending",
     "title": "The New Right Can’t Win Without Godzilla",
     "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-27T15:48:29.653356Z",
+    "id": "tae545d394898",
+    "item_ids": [
+      "112ce0f1d35d97a0"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-27T15:38:13Z",
+    "state": "pending",
+    "title": "Canada's top court largely upholds Quebec ban on religious symbols for public servants",
+    "topic_id": "world-news"
   },
   {
     "created_at": "2026-11-25T12:48:38.475626Z",
@@ -8607,6 +8646,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-27T15:48:29.653356Z",
+    "id": "tcfb6ff262523",
+    "item_ids": [
+      "7869a894951a8cff"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-27T15:00:00Z",
+    "state": "pending",
+    "title": "How Trump Could’ve Saved His Legacy",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-22T03:51:06.410293Z",
     "id": "tcfdd985c08de",
     "item_ids": [
@@ -9612,10 +9663,11 @@
       "972ac392068227a9",
       "2ed86bf0a7a8814e",
       "67a0c310cd6124af",
-      "eeecbd868c6e76d5"
+      "eeecbd868c6e76d5",
+      "53a0eb555864ac46"
     ],
     "kind": "tracker",
-    "last_item_at": "2026-11-25T13:16:25Z",
+    "last_item_at": "2026-11-27T15:03:06Z",
     "state": "active",
     "title": "Headphones & earbuds",
     "topic_id": "tech-trackers"
@@ -9694,10 +9746,12 @@
       "7d44ae29e9ecfcc4",
       "ddb908aba4420132",
       "305c0dd18870f599",
-      "a05b42cdceea66b0"
+      "a05b42cdceea66b0",
+      "67f9c802d8da70e6",
+      "e96c9a2e1ab7fd99"
     ],
     "kind": "tracker",
-    "last_item_at": "2026-11-27T13:26:05Z",
+    "last_item_at": "2026-11-27T15:31:52Z",
     "state": "active",
     "title": "Phones",
     "topic_id": "tech-trackers"
@@ -9887,10 +9941,11 @@
     "id": "tf1dc1063c668",
     "item_ids": [
       "7403440163c3efc3",
-      "5833e94dd3221108"
+      "5833e94dd3221108",
+      "8b5af438bcfe1ded"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-25T23:57:03Z",
+    "last_item_at": "2026-11-27T15:15:19Z",
     "state": "active",
     "title": "Macy · Thanksgiving · Parade",
     "topic_id": "world-news"
