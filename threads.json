@@ -173,10 +173,13 @@
       "f0fc2097d21cb8d5",
       "6702bd48e0994ddf",
       "531d4d6dcb183cd8",
-      "1dd2f671138b6a91"
+      "1dd2f671138b6a91",
+      "52c34bdba055bda6",
+      "de197f9a9b56943f",
+      "32404e58e044cd5b"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-27T10:02:08Z",
+    "last_item_at": "2026-11-27T13:03:00Z",
     "state": "active",
     "title": "Financials",
     "topic_id": "markets"
@@ -295,10 +298,11 @@
       "29222340ded6cebc",
       "d43cb54503e0b6af",
       "fca44b556370d52f",
-      "199c55078ef345e1"
+      "199c55078ef345e1",
+      "78d9a82c7a52749b"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-27T09:03:45Z",
+    "last_item_at": "2026-11-27T12:51:00Z",
     "state": "active",
     "title": "Inflation & jobs reports",
     "topic_id": "markets"
@@ -1537,12 +1541,13 @@
     "id": "t1a30cf05d154",
     "item_ids": [
       "aa93b949730b4314",
-      "e700f81f3624ed92"
+      "e700f81f3624ed92",
+      "6d1942a5f4468805"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-26T12:24:29Z",
+    "last_item_at": "2026-11-26T13:30:17Z",
     "state": "active",
-    "title": "FCC · Violated · ABC · Judge",
+    "title": "Judge · FCC · Violated · ABC",
     "topic_id": "us-politics"
   },
   {
@@ -2046,6 +2051,18 @@
     "last_item_at": "2026-11-24T21:04:50Z",
     "state": "pending",
     "title": "The U.S. government is investigating Iranian ties to as many as 50 hacked commercial vessels",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-27T13:48:31.049103Z",
+    "id": "t29989184b538",
+    "item_ids": [
+      "f223f967bbb478d5"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-27T13:44:17Z",
+    "state": "pending",
+    "title": "Taiwan's economy expected to grow at its fastest rate in nearly 50 years due to AI demand",
     "topic_id": "us-politics"
   },
   {
@@ -4507,6 +4524,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-27T13:48:31.049103Z",
+    "id": "t67e437c3ff2e",
+    "item_ids": [
+      "79848323da958091"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-27T10:25:10Z",
+    "state": "pending",
+    "title": "Global equity funds log biggest weekly outflow in 14 months",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-23T14:48:38.783438Z",
     "id": "t67ecdca0f3e6",
     "item_ids": [
@@ -4986,12 +5015,13 @@
     "created_at": "2026-11-26T03:48:47.077467Z",
     "id": "t754296c678a9",
     "item_ids": [
-      "393046c4b07d08c0"
+      "393046c4b07d08c0",
+      "6f0fa67e833da175"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-26T03:00:00Z",
-    "state": "pending",
-    "title": "Behind France’s Unrest Lies a Historic Decline in Spending Power",
+    "last_item_at": "2026-11-27T13:39:00Z",
+    "state": "active",
+    "title": "French Economy Slips Into Recession as Exports Sag",
     "topic_id": "world-news"
   },
   {
@@ -5753,6 +5783,18 @@
     "state": "pending",
     "title": "I Went Inside Chornobyl as Ukraine Races to Secure It",
     "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-27T13:48:31.049103Z",
+    "id": "t8e25a372269d",
+    "item_ids": [
+      "edf7a4f6159c1146"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-27T05:01:06Z",
+    "state": "pending",
+    "title": "As Google threatens to cut schools' search access, Los Angeles blocks AI features",
+    "topic_id": "us-politics"
   },
   {
     "created_at": "2026-11-22T09:09:42.410739Z",
@@ -6551,7 +6593,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-24T13:23:47Z",
-    "state": "active",
+    "state": "cooling",
     "title": "Anthropic · Initial · IPO · Public",
     "topic_id": "ai-news"
   },
@@ -6600,7 +6642,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-24T13:32:26Z",
-    "state": "active",
+    "state": "cooling",
     "title": "House Democrat expands investigation into Donald Trump Jr.'s investment firm",
     "topic_id": "us-politics"
   },
@@ -6948,6 +6990,18 @@
     "state": "pending",
     "title": "Advancing chip design with OpenAI models",
     "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-27T13:48:31.049103Z",
+    "id": "taacd69df15e8",
+    "item_ids": [
+      "a242ac8a1b1c1420"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-27T13:00:00Z",
+    "state": "pending",
+    "title": "‘Look at Me’ Review: He’s Talkin’ Here",
+    "topic_id": "us-politics"
   },
   {
     "created_at": "2026-11-22T09:09:42.410739Z",
@@ -9586,10 +9640,11 @@
       "9501254b49634706",
       "7d44ae29e9ecfcc4",
       "ddb908aba4420132",
-      "305c0dd18870f599"
+      "305c0dd18870f599",
+      "a05b42cdceea66b0"
     ],
     "kind": "tracker",
-    "last_item_at": "2026-11-26T20:30:32Z",
+    "last_item_at": "2026-11-27T13:26:05Z",
     "state": "active",
     "title": "Phones",
     "topic_id": "tech-trackers"
