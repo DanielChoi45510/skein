@@ -3238,12 +3238,13 @@
     "id": "t43aca31d232c",
     "item_ids": [
       "5071cad85fccd006",
-      "8ded4bccf2111a44"
+      "8ded4bccf2111a44",
+      "0f7967f6adbaf52f"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-21T12:00:06Z",
-    "state": "cooling",
-    "title": "The Midterms Were Epic. What Comes Next?",
+    "last_item_at": "2026-11-27T21:48:00Z",
+    "state": "active",
+    "title": "Why Democrats Should Pursue Air-Traffic Reform",
     "topic_id": "world-news"
   },
   {
@@ -3321,6 +3322,18 @@
     "state": "cooling",
     "title": "China · Trade",
     "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-27T22:48:27.815057Z",
+    "id": "t45b2cdf1fe4b",
+    "item_ids": [
+      "5b5b3e091dd22d2b"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-27T22:20:33Z",
+    "state": "pending",
+    "title": "With Abbott out, what does the future look like for data centers in Texas?",
+    "topic_id": "us-politics"
   },
   {
     "created_at": "2026-11-22T09:09:42.410739Z",
@@ -4857,6 +4870,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-27T22:48:27.815057Z",
+    "id": "t6baa222f786c",
+    "item_ids": [
+      "7ad18c8050204927"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-27T19:31:01Z",
+    "state": "pending",
+    "title": "Michael Nielsen took down his book on neural nets",
+    "topic_id": "ai-news"
+  },
+  {
     "created_at": "2026-11-27T00:48:37.877410Z",
     "id": "t6c35aacf6075",
     "item_ids": [
@@ -5512,10 +5537,11 @@
       "ef70e50f72f0fe0e",
       "0eb77b09926dee00",
       "02bf04f4da3628ff",
-      "ff492375fb2018d3"
+      "ff492375fb2018d3",
+      "58a5e641d971db9d"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-26T22:49:27Z",
+    "last_item_at": "2026-11-27T21:48:00Z",
     "state": "active",
     "title": "Trump · Putin · Summit · Xi",
     "topic_id": "world-news"
@@ -6478,6 +6504,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-27T22:48:27.815057Z",
+    "id": "t9909da0e747e",
+    "item_ids": [
+      "c1dbfb9f7235ad0f"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-27T22:37:00Z",
+    "state": "pending",
+    "title": "The Times That Tried Men’s Souls",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-22T20:20:33.012568Z",
     "id": "t9962143f4518",
     "item_ids": [
@@ -7229,6 +7267,18 @@
     "topic_id": "us-politics"
   },
   {
+    "created_at": "2026-11-27T22:48:27.815057Z",
+    "id": "tac653dce166e",
+    "item_ids": [
+      "55c9e5e36c4d5a80"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-27T21:58:19Z",
+    "state": "pending",
+    "title": "Postmortem of AI ads",
+    "topic_id": "us-politics"
+  },
+  {
     "created_at": "2026-11-24T12:48:39.386490Z",
     "id": "tacb1dcc0864a",
     "item_ids": [
@@ -7298,6 +7348,18 @@
     "last_item_at": "2026-11-20T22:53:36Z",
     "state": "pending",
     "title": "The New Right Can’t Win Without Godzilla",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-27T22:48:27.815057Z",
+    "id": "tae241aa0bb96",
+    "item_ids": [
+      "6f4ba473e518c6c9"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-27T21:49:00Z",
+    "state": "pending",
+    "title": "The False Claims Act and the Constitution",
     "topic_id": "us-politics"
   },
   {
@@ -7607,12 +7669,13 @@
       "56897c41f3da0291",
       "08a1b8764e52cecd",
       "b20f27120b84b303",
-      "687e7a216ba2326b"
+      "687e7a216ba2326b",
+      "a2c7a0e2d782b16a"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-27T03:00:00Z",
+    "last_item_at": "2026-11-27T21:52:00Z",
     "state": "active",
-    "title": "Huang · Jensen · Nvidia · China",
+    "title": "Nvidia · Huang · Jensen · China",
     "topic_id": "world-news"
   },
   {
@@ -7787,6 +7850,18 @@
     "state": "cooling",
     "title": "Trump · Conference",
     "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-27T22:48:27.815057Z",
+    "id": "tb701761c7ecb",
+    "item_ids": [
+      "793e364067c52cf6"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-27T22:08:00Z",
+    "state": "pending",
+    "title": "S&P Revises Outlook on France’s Credit Rating to Negative From Stable",
+    "topic_id": "world-news"
   },
   {
     "created_at": "2026-11-24T19:48:37.851435Z",
@@ -9296,12 +9371,13 @@
     "item_ids": [
       "a48b5e5df1cd9dc9",
       "b1f12833e221941f",
-      "6d9618f3b48dc4c9"
+      "6d9618f3b48dc4c9",
+      "10d5dc85a2ceb160"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-23T10:02:07Z",
-    "state": "cooling",
-    "title": "Electoral · College",
+    "last_item_at": "2026-11-27T21:50:00Z",
+    "state": "active",
+    "title": "Plot · Electoral · College",
     "topic_id": "us-politics"
   },
   {
@@ -9928,10 +10004,12 @@
       "67f9c802d8da70e6",
       "e96c9a2e1ab7fd99",
       "8d46129f0f90b26c",
-      "b6ee6677400bc75d"
+      "b6ee6677400bc75d",
+      "e507b20348abbae3",
+      "c60451fe77ccc504"
     ],
     "kind": "tracker",
-    "last_item_at": "2026-11-27T17:57:23Z",
+    "last_item_at": "2026-11-27T22:30:06Z",
     "state": "active",
     "title": "Phones",
     "topic_id": "tech-trackers"
@@ -10712,12 +10790,13 @@
     "item_ids": [
       "cdc876128e23a33b",
       "59b25d2b8e233edf",
-      "6af81f6bdcce3c70"
+      "6af81f6bdcce3c70",
+      "fa2d72d573071fad"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-27T10:26:28Z",
+    "last_item_at": "2026-11-27T16:46:47Z",
     "state": "active",
-    "title": "Storms · Thanksgiving",
+    "title": "Severe · Thanksgiving · Storms",
     "topic_id": "world-news"
   },
   {
