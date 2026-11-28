@@ -180,10 +180,11 @@
       "52c34bdba055bda6",
       "de197f9a9b56943f",
       "32404e58e044cd5b",
-      "e92b4a39a2201618"
+      "e92b4a39a2201618",
+      "53689786f16ca58c"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-27T15:30:00Z",
+    "last_item_at": "2026-11-28T00:00:00Z",
     "state": "active",
     "title": "Financials",
     "topic_id": "markets"
@@ -535,6 +536,18 @@
     "topic_id": "us-politics"
   },
   {
+    "created_at": "2026-11-28T00:48:35.466642Z",
+    "id": "t03d100218aa9",
+    "item_ids": [
+      "e531207f26e90212"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T13:32:53Z",
+    "state": "pending",
+    "title": "Trump heads to Arizona next week for a high-stakes expansion of TSMC's computer chip factories",
+    "topic_id": "us-politics"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "t03d275fe8859",
     "item_ids": [
@@ -716,6 +729,18 @@
     "state": "pending",
     "title": "Stalwart is now a drop-in replacement for Microsoft Exchange",
     "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-28T00:48:35.466642Z",
+    "id": "t07ab550c8704",
+    "item_ids": [
+      "a2b266775e8e2478"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T18:25:42Z",
+    "state": "pending",
+    "title": "Leaders choose Spain's former central bank head as next European Central Bank president",
+    "topic_id": "us-politics"
   },
   {
     "created_at": "2026-11-22T09:09:42.410739Z",
@@ -1110,7 +1135,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-25T00:42:52Z",
-    "state": "active",
+    "state": "cooling",
     "title": "Trump Administration Pauses Joint Operations With Ecuador",
     "topic_id": "world-news"
   },
@@ -1215,12 +1240,13 @@
     "id": "t12bd6b156fde",
     "item_ids": [
       "76477f356c01ca8f",
-      "05025eb8b78f9e3e"
+      "05025eb8b78f9e3e",
+      "85dfcb49ec463a20"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-24T03:57:00Z",
-    "state": "cooling",
-    "title": "Taiwan · Elections",
+    "last_item_at": "2026-11-28T00:01:00Z",
+    "state": "active",
+    "title": "Taiwan · Local · Elections · China",
     "topic_id": "world-news"
   },
   {
@@ -1623,12 +1649,25 @@
     "created_at": "2026-11-26T03:48:47.077467Z",
     "id": "t1baf4d823527",
     "item_ids": [
-      "3f94118ccde0b644"
+      "3f94118ccde0b644",
+      "eb53c4af0bf3becc"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-26T03:09:00Z",
+    "last_item_at": "2026-11-27T19:59:51Z",
+    "state": "active",
+    "title": "Stocks jump to close out an erratic week that was also Wall Street's best in more than a year",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-28T00:48:35.466642Z",
+    "id": "t1bb568a9e48a",
+    "item_ids": [
+      "c4e69601a5e6ae6c"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-27T14:52:41Z",
     "state": "pending",
-    "title": "Asian Stocks Rise as Investors Shrug Off U.S. Tariff Plan",
+    "title": "Longtime AP journalist Geir Moulson, the heart of its Berlin bureau, dies at 54",
     "topic_id": "world-news"
   },
   {
@@ -2509,6 +2548,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-28T00:48:35.466642Z",
+    "id": "t32d989a120cf",
+    "item_ids": [
+      "524b1f976e0635f0"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T20:09:25Z",
+    "state": "pending",
+    "title": "Israeli strikes kill 10 in Gaza as Iranian drones kill 2 Italians in Kuwait, and other Mideast news",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "t332599a383ce",
     "item_ids": [
@@ -2553,12 +2604,13 @@
     "id": "t3416b9c2b634",
     "item_ids": [
       "d26bd4b314a87a65",
-      "e0577f40419a647d"
+      "e0577f40419a647d",
+      "bedee2e9acb0a56a"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-25T18:16:50Z",
+    "last_item_at": "2026-11-27T23:57:17Z",
     "state": "active",
-    "title": "datasette-charts 0.3a0",
+    "title": "datasette-charts 0.4a0",
     "topic_id": "ai-news"
   },
   {
@@ -3379,12 +3431,13 @@
       "af3d38de98dc94d9",
       "891c2af98efa22c2",
       "058d83d6e59a3359",
-      "afd1f365ec23a283"
+      "afd1f365ec23a283",
+      "f369ea64ceaa2ef7"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-26T14:46:54Z",
+    "last_item_at": "2026-11-27T12:30:50Z",
     "state": "active",
-    "title": "Administration · Trump · Tariffs",
+    "title": "Administration · Tariffs · Trump",
     "topic_id": "us-politics"
   },
   {
@@ -3679,10 +3732,11 @@
       "b3ebe78783befbf7",
       "501a09a9fc063235",
       "5625dfaad99025a5",
-      "1911b31a8fad7278"
+      "1911b31a8fad7278",
+      "955194b999e7e8ef"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-26T23:31:06Z",
+    "last_item_at": "2026-11-27T22:45:30Z",
     "state": "active",
     "title": "Army · Iowa · Bomb-making · Detonation",
     "topic_id": "us-politics"
@@ -4258,7 +4312,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-25T00:38:01Z",
-    "state": "active",
+    "state": "cooling",
     "title": "US preparing to unveil plan for new tariffs on global trading partners",
     "topic_id": "world-news"
   },
@@ -4333,6 +4387,18 @@
     "last_item_at": "2026-11-25T21:10:22Z",
     "state": "pending",
     "title": "Are You Estranged From a Family Member?",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-28T00:48:35.466642Z",
+    "id": "t5e68550f6de9",
+    "item_ids": [
+      "03e45b2da0aee61e"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-27T12:15:55Z",
+    "state": "pending",
+    "title": "French politician who stood up to Bush over the invasion of Iraq is back to stop Le Pen",
     "topic_id": "world-news"
   },
   {
@@ -4673,6 +4739,18 @@
     "state": "pending",
     "title": "NEWSLETTER: Where are the Gulf's pledged trillions?",
     "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-28T00:48:35.466642Z",
+    "id": "t66809f70cf25",
+    "item_ids": [
+      "4f504ab04cf94ae9"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-28T00:43:25Z",
+    "state": "pending",
+    "title": "Supreme Court Rulings Cheered by Republicans Wound Up Hurting Them",
+    "topic_id": "us-politics"
   },
   {
     "created_at": "2026-11-22T09:09:42.410739Z",
@@ -5562,12 +5640,14 @@
       "0eb77b09926dee00",
       "02bf04f4da3628ff",
       "ff492375fb2018d3",
-      "58a5e641d971db9d"
+      "58a5e641d971db9d",
+      "5f96e607b56ae8a1",
+      "0ad42cc470ec465f"
     ],
     "kind": "story",
     "last_item_at": "2026-11-27T21:48:00Z",
     "state": "active",
-    "title": "Trump · Putin · Summit · Xi",
+    "title": "Putin · Summit · Xi · Trump",
     "topic_id": "world-news"
   },
   {
@@ -5751,6 +5831,18 @@
     "state": "pending",
     "title": "Most Gulf markets muted on Saudi energy strikes, maritime dangers",
     "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-28T00:48:35.466642Z",
+    "id": "t85e06afaae5f",
+    "item_ids": [
+      "527fd5cf6f573952"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-27T15:22:55Z",
+    "state": "pending",
+    "title": "Deadlocked final result in New Zealand's election leaves a centrist newcomer as the decider",
+    "topic_id": "us-politics"
   },
   {
     "created_at": "2026-11-22T09:09:42.410739Z",
@@ -6158,6 +6250,18 @@
     "last_item_at": "2026-11-26T07:33:12Z",
     "state": "pending",
     "title": "OpenAI may be in cost control mode",
+    "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-28T00:48:35.466642Z",
+    "id": "t91c46002b300",
+    "item_ids": [
+      "cb9c58904170486c"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-27T00:26:17Z",
+    "state": "pending",
+    "title": "datasette-mcp 0.4",
     "topic_id": "ai-news"
   },
   {
@@ -6748,6 +6852,18 @@
     "topic_id": "us-politics"
   },
   {
+    "created_at": "2026-11-28T00:48:35.466642Z",
+    "id": "t9d3d39160fce",
+    "item_ids": [
+      "bd3d48dfaeeacc1c"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-27T16:10:08Z",
+    "state": "pending",
+    "title": "Sales for Biden memoir fall far short of books by Obama, Clinton",
+    "topic_id": "us-politics"
+  },
+  {
     "created_at": "2026-11-23T06:48:41.327764Z",
     "id": "t9d3f4440a410",
     "item_ids": [
@@ -7020,6 +7136,19 @@
     "state": "active",
     "title": "Nvidia · Trump · Jensen · Huang",
     "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-28T00:48:35.466642Z",
+    "id": "ta559556b01b3",
+    "item_ids": [
+      "72c706aaba4323eb",
+      "f775264d13c2f59f"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-27T21:26:28Z",
+    "state": "active",
+    "title": "Military · Disabled · Ship · Breach",
+    "topic_id": "world-news"
   },
   {
     "created_at": "2026-11-23T11:48:25.998267Z",
@@ -8136,12 +8265,13 @@
       "027803ccc23e9ec0",
       "223d361362a1a30b",
       "ee0e388866212e9f",
-      "cc6f1b92e33952b8"
+      "cc6f1b92e33952b8",
+      "8683e10a2141ff98"
     ],
     "kind": "story",
     "last_item_at": "2026-11-27T10:02:12Z",
     "state": "active",
-    "title": "Spain · Election",
+    "title": "Spain · Election · Change",
     "topic_id": "world-news"
   },
   {
@@ -8179,6 +8309,18 @@
     "state": "pending",
     "title": "Binding of Isaac developer removes AI music from Repentance Plus",
     "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-28T00:48:35.466642Z",
+    "id": "tbcfb703b81c4",
+    "item_ids": [
+      "34ab8a971b7ebdd8"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-28T00:00:00Z",
+    "state": "pending",
+    "title": "WSJ Opinion: A World Without Youth: The Economics of a Shrinking World",
+    "topic_id": "us-politics"
   },
   {
     "created_at": "2026-11-22T09:09:42.410739Z",
@@ -8355,12 +8497,13 @@
     "id": "tc0e98cfcefa5",
     "item_ids": [
       "e9d819d34f877d39",
-      "8fa774ca5a62ad7a"
+      "8fa774ca5a62ad7a",
+      "f771c71c2a684d4f"
     ],
     "kind": "story",
     "last_item_at": "2026-11-27T08:58:08Z",
     "state": "active",
-    "title": "Guinea-Bissau's military leaders delay return to civilian rule until 2028",
+    "title": "Guinea-Bissau · Military · Elections · Extending",
     "topic_id": "world-news"
   },
   {
@@ -8620,6 +8763,18 @@
     "last_item_at": "2026-11-25T13:54:12Z",
     "state": "active",
     "title": "Salvadoran · Garc · Kilmar · Spain",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-28T00:48:35.466642Z",
+    "id": "tc8ca8d37abd6",
+    "item_ids": [
+      "40d855982f71c350"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-27T16:51:44Z",
+    "state": "pending",
+    "title": "AP Exclusive: Lebanon's prime minister says a proposal is underway to have UN peacekeepers stay on",
     "topic_id": "world-news"
   },
   {
@@ -9247,7 +9402,8 @@
       "d11836686722af10",
       "bbbd66974821df38",
       "bb9d84c3ad2bac9d",
-      "884d8191bee678b7"
+      "884d8191bee678b7",
+      "4d3e9dd329671495"
     ],
     "kind": "story",
     "last_item_at": "2026-11-26T19:55:58Z",
@@ -9777,12 +9933,13 @@
       "06c62e91f9c2cbb7",
       "0475b9c8a2958ccd",
       "38d03ba2e3bd0970",
-      "20483f433c207d56"
+      "20483f433c207d56",
+      "c3dfc40043e14821"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-27T06:04:51Z",
+    "last_item_at": "2026-11-27T17:09:19Z",
     "state": "active",
-    "title": "Saudi · Attack · Houthi · Capital",
+    "title": "Attack · Saudi · Capital · Houthi",
     "topic_id": "world-news"
   },
   {
@@ -10816,12 +10973,13 @@
       "cdc876128e23a33b",
       "59b25d2b8e233edf",
       "6af81f6bdcce3c70",
-      "fa2d72d573071fad"
+      "fa2d72d573071fad",
+      "2511789410705c2a"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-27T16:46:47Z",
+    "last_item_at": "2026-11-27T23:11:19Z",
     "state": "active",
-    "title": "Severe · Thanksgiving · Storms",
+    "title": "Severe · Storms · Power · Thanksgiving",
     "topic_id": "world-news"
   },
   {
