@@ -4227,6 +4227,18 @@
     "topic_id": "ai-news"
   },
   {
+    "created_at": "2026-11-28T17:48:45.948540Z",
+    "id": "t577ae0f6eb70",
+    "item_ids": [
+      "5e066773ba710bdf"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-28T17:30:19Z",
+    "state": "pending",
+    "title": "United Fidelity Bank seized in biggest US bank failure since 2024",
+    "topic_id": "us-politics"
+  },
+  {
     "created_at": "2026-11-25T16:48:43.548621Z",
     "id": "t57fbaba63b51",
     "item_ids": [
@@ -4285,7 +4297,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-25T17:34:51Z",
-    "state": "active",
+    "state": "cooling",
     "title": "AI · Wall · Street · S&P",
     "topic_id": "us-politics"
   },
@@ -7175,6 +7187,18 @@
     "topic_id": "ai-news"
   },
   {
+    "created_at": "2026-11-28T17:48:45.948540Z",
+    "id": "ta10cb06a70b9",
+    "item_ids": [
+      "478e06973cbb54bb"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-28T17:01:43Z",
+    "state": "pending",
+    "title": "Turnout down sharply at largely peaceful marches across France",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-22T12:34:08.686149Z",
     "id": "ta1a2a3819b19",
     "item_ids": [
@@ -9499,7 +9523,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-25T17:32:30Z",
-    "state": "active",
+    "state": "cooling",
     "title": "Senegal · Afcon · Final · Court",
     "topic_id": "world-news"
   },
@@ -10252,6 +10276,18 @@
     "topic_id": "ai-news"
   },
   {
+    "created_at": "2026-11-28T17:48:45.948540Z",
+    "id": "te897d9ee57f4",
+    "item_ids": [
+      "44fbf2ee280a0384"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-28T16:53:20Z",
+    "state": "pending",
+    "title": "Dozens killed in Myanmar military strikes on wedding venue and school",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-26T19:48:35.215793Z",
     "id": "te89aec16e817",
     "item_ids": [
@@ -10419,10 +10455,11 @@
       "451daa45791e6204",
       "9bc86ee69b219913",
       "7b217c03ed138544",
-      "98cb1220faa01178"
+      "98cb1220faa01178",
+      "77b6dfdbdd2a5469"
     ],
     "kind": "tracker",
-    "last_item_at": "2026-11-28T03:07:04Z",
+    "last_item_at": "2026-11-28T17:18:44Z",
     "state": "active",
     "title": "Headphones & earbuds",
     "topic_id": "tech-trackers"
