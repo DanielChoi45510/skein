@@ -3979,6 +3979,18 @@
     "topic_id": "us-politics"
   },
   {
+    "created_at": "2026-11-28T08:48:32.236766Z",
+    "id": "t54dc77955a65",
+    "item_ids": [
+      "b9e86c3e54743156"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T17:20:27Z",
+    "state": "pending",
+    "title": "The Balatro Timeline",
+    "topic_id": "ai-news"
+  },
+  {
     "created_at": "2026-11-24T12:48:39.386490Z",
     "id": "t5505d7af7bcb",
     "item_ids": [
@@ -10017,6 +10029,18 @@
     "state": "active",
     "title": "Attack · Saudi · Capital · Houthi",
     "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-28T08:48:32.236766Z",
+    "id": "te88555b30267",
+    "item_ids": [
+      "f879ffca2b443204"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-26T17:24:37Z",
+    "state": "pending",
+    "title": "First images of the impact of DART asteroid deflection experiment",
+    "topic_id": "ai-news"
   },
   {
     "created_at": "2026-11-26T19:48:35.215793Z",
