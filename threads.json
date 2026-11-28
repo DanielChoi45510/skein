@@ -181,10 +181,11 @@
       "de197f9a9b56943f",
       "32404e58e044cd5b",
       "e92b4a39a2201618",
-      "53689786f16ca58c"
+      "53689786f16ca58c",
+      "ef59eb2e545dbfd8"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-28T00:00:00Z",
+    "last_item_at": "2026-11-28T02:00:00Z",
     "state": "active",
     "title": "Financials",
     "topic_id": "markets"
@@ -6786,7 +6787,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-25T02:34:21Z",
-    "state": "active",
+    "state": "cooling",
     "title": "Models Can Communicate via Inference Servers Despite Being Sandboxed",
     "topic_id": "ai-news"
   },
