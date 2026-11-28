@@ -5445,7 +5445,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-25T19:19:06Z",
-    "state": "active",
+    "state": "cooling",
     "title": "North · Korea · Swiss",
     "topic_id": "world-news"
   },
@@ -5516,12 +5516,13 @@
     "created_at": "2026-11-26T20:48:35.961706Z",
     "id": "t760474964154",
     "item_ids": [
-      "7cd21860c67a0506"
+      "7cd21860c67a0506",
+      "a7a552f6f931b6b1"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-26T17:41:43Z",
-    "state": "pending",
-    "title": "Turkish elections to be held in 2028, ruling alliance agrees on Erdogan candidacy, vice president says",
+    "last_item_at": "2026-11-28T19:30:30Z",
+    "state": "active",
+    "title": "Eight countries urge Palestinian Authority to hold elections by early 2027",
     "topic_id": "world-news"
   },
   {
@@ -6805,6 +6806,18 @@
     "topic_id": "us-politics"
   },
   {
+    "created_at": "2026-11-28T19:48:41.199813Z",
+    "id": "t987ef4748fc3",
+    "item_ids": [
+      "bac1777f48c1ef94"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-28T18:54:58Z",
+    "state": "pending",
+    "title": "Samsung is testing a feature that changes the angle of photos you’ve already taken",
+    "topic_id": "ai-news"
+  },
+  {
     "created_at": "2026-11-23T20:48:27.182294Z",
     "id": "t98a11b00cabe",
     "item_ids": [
@@ -7493,6 +7506,18 @@
     "state": "pending",
     "title": "Greenland Pulls Closer to the U.S. — by an Hour",
     "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-28T19:48:41.199813Z",
+    "id": "ta788e3f11693",
+    "item_ids": [
+      "0911cae9dbb8d9b0"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-28T17:53:02Z",
+    "state": "pending",
+    "title": "Donald Knuth suspends error bounties due to an influx of AI-generated reports",
+    "topic_id": "ai-news"
   },
   {
     "created_at": "2026-11-22T03:51:06.410293Z",
@@ -9698,7 +9723,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-25T19:23:03Z",
-    "state": "active",
+    "state": "cooling",
     "title": "Army · Lead · Azide · Iowa",
     "topic_id": "world-news"
   },
@@ -10559,10 +10584,11 @@
       "8d46129f0f90b26c",
       "b6ee6677400bc75d",
       "e507b20348abbae3",
-      "c60451fe77ccc504"
+      "c60451fe77ccc504",
+      "79b9cb849b3eb4d7"
     ],
     "kind": "tracker",
-    "last_item_at": "2026-11-27T22:30:06Z",
+    "last_item_at": "2026-11-28T19:44:43Z",
     "state": "active",
     "title": "Phones",
     "topic_id": "tech-trackers"
