@@ -857,6 +857,18 @@
     "topic_id": "us-politics"
   },
   {
+    "created_at": "2026-11-28T14:48:34.559104Z",
+    "id": "t09789001141b",
+    "item_ids": [
+      "8bd749fd1c070e03"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-28T14:00:00Z",
+    "state": "pending",
+    "title": "The Forecast for Christmas Is Muddy",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "t0a053169ecc5",
     "item_ids": [
@@ -5764,7 +5776,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-25T14:12:33Z",
-    "state": "active",
+    "state": "cooling",
     "title": "Meta · Muse",
     "topic_id": "ai-news"
   },
@@ -8997,7 +9009,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-25T13:54:12Z",
-    "state": "active",
+    "state": "cooling",
     "title": "Salvadoran · Garc · Kilmar · Spain",
     "topic_id": "world-news"
   },
