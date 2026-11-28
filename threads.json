@@ -4013,6 +4013,18 @@
     "topic_id": "us-politics"
   },
   {
+    "created_at": "2026-11-28T18:48:39.793940Z",
+    "id": "t543e5d4922b9",
+    "item_ids": [
+      "ccbba792834f2d30"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-28T15:55:54Z",
+    "state": "pending",
+    "title": "Silently degrading the model's capabilities IS sabotage",
+    "topic_id": "ai-news"
+  },
+  {
     "created_at": "2026-11-23T07:48:38.314750Z",
     "id": "t54985eb194ef",
     "item_ids": [
