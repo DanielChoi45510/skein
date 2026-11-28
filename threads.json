@@ -583,7 +583,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-25T13:30:00Z",
-    "state": "active",
+    "state": "cooling",
     "title": "‘A Human Being Is Far More Valuable Than His Opinions’",
     "topic_id": "us-politics"
   },
@@ -3809,12 +3809,13 @@
       "501a09a9fc063235",
       "5625dfaad99025a5",
       "1911b31a8fad7278",
-      "955194b999e7e8ef"
+      "955194b999e7e8ef",
+      "e12fcb41ff83c98b"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-27T22:45:30Z",
+    "last_item_at": "2026-11-28T13:12:19Z",
     "state": "active",
-    "title": "Army · Iowa · Bomb-making · Detonation",
+    "title": "Army · Bomb-making · Detonation · Iowa",
     "topic_id": "us-politics"
   },
   {
@@ -4151,6 +4152,18 @@
     "state": "pending",
     "title": "Reflections on the River of Life",
     "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-28T13:48:30.413540Z",
+    "id": "t569266273c3d",
+    "item_ids": [
+      "6883534b81e937fb"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-28T11:42:26Z",
+    "state": "pending",
+    "title": "Farewell",
+    "topic_id": "ai-news"
   },
   {
     "created_at": "2026-11-27T06:48:41.542781Z",
@@ -5680,6 +5693,18 @@
     "state": "cooling",
     "title": "Venezuela · Military · Deal",
     "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-28T13:48:30.413540Z",
+    "id": "t7b18ab46c3d5",
+    "item_ids": [
+      "5e4f0d4d005721e4"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-28T12:43:42Z",
+    "state": "pending",
+    "title": "The Supreme Court will decide whether assault weapons bans violate the Second Amendment",
+    "topic_id": "us-politics"
   },
   {
     "created_at": "2026-11-25T16:48:43.548621Z",
@@ -8663,7 +8688,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-25T13:27:36Z",
-    "state": "active",
+    "state": "cooling",
     "title": "Watch: How the Russia-Ukraine war tore my family apart",
     "topic_id": "world-news"
   },
@@ -10973,6 +10998,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-28T13:48:30.413540Z",
+    "id": "tf710d6150520",
+    "item_ids": [
+      "b2cd52bce68a021d"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-28T12:51:08Z",
+    "state": "pending",
+    "title": "Voters delivered a rebuke. But Trump is sticking to his agenda",
+    "topic_id": "us-politics"
+  },
+  {
     "created_at": "2026-11-23T23:48:50.044707Z",
     "id": "tf72da37af9c8",
     "item_ids": [
@@ -11146,6 +11183,18 @@
     "topic_id": "us-politics"
   },
   {
+    "created_at": "2026-11-28T13:48:30.413540Z",
+    "id": "tfa1652c696c5",
+    "item_ids": [
+      "523caa4c9a4070ab"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-27T03:10:19Z",
+    "state": "pending",
+    "title": "Citroën Hydraulic System",
+    "topic_id": "ai-news"
+  },
+  {
     "created_at": "2026-11-23T01:41:04.329483Z",
     "id": "tfa2b1a09598f",
     "item_ids": [
@@ -11262,6 +11311,18 @@
     "state": "pending",
     "title": "Week in Politics: Trump's Thanksgiving messaging; Congress' pre-holiday to-do list",
     "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-28T13:48:30.413540Z",
+    "id": "tfcc6cbc5a9e1",
+    "item_ids": [
+      "4177e3c8df78a0a2"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-28T13:00:00Z",
+    "state": "pending",
+    "title": "The Familiar Strangeness of Home",
+    "topic_id": "world-news"
   },
   {
     "created_at": "2026-11-26T01:48:38.580251Z",
