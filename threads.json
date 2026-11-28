@@ -879,7 +879,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-25T10:35:43Z",
-    "state": "active",
+    "state": "cooling",
     "title": "Rupee · Foreign",
     "topic_id": "world-news"
   },
@@ -1139,6 +1139,18 @@
     "state": "pending",
     "title": "Here’s the latest.",
     "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-28T11:48:23.043049Z",
+    "id": "t0eebc4ba9461",
+    "item_ids": [
+      "86bb0c3836df3b60"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-28T11:00:08Z",
+    "state": "pending",
+    "title": "Behind the Story: Canada’s Border Rules Are Splitting Up Haitian Families",
+    "topic_id": "world-news"
   },
   {
     "created_at": "2026-11-24T14:48:27.880946Z",
@@ -3210,7 +3222,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-25T11:45:25Z",
-    "state": "active",
+    "state": "cooling",
     "title": "Happy Thanksgiving!",
     "topic_id": "world-news"
   },
@@ -3447,7 +3459,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-25T11:20:25Z",
-    "state": "active",
+    "state": "cooling",
     "title": "Defending Aden, Yemen’s Holdout Against the Houthis",
     "topic_id": "world-news"
   },
@@ -6063,7 +6075,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-25T11:00:00Z",
-    "state": "active",
+    "state": "cooling",
     "title": "Chris · Van · Hollen",
     "topic_id": "world-news"
   },
@@ -7867,12 +7879,13 @@
     "created_at": "2026-11-28T10:23:02.528772Z",
     "id": "tb24955b0d85c",
     "item_ids": [
-      "a65a807e025efbd7"
+      "a65a807e025efbd7",
+      "29a33a6163eff4bb"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-28T10:14:37Z",
-    "state": "pending",
-    "title": "Seven students killed and nearly 100 injured in explosion in Afghanistan, official says",
+    "last_item_at": "2026-11-28T10:23:59Z",
+    "state": "active",
+    "title": "Explosion · Afghanistan",
     "topic_id": "world-news"
   },
   {
@@ -9402,6 +9415,18 @@
     "state": "pending",
     "title": "GTA 6 Recomp (Leonida) banned from GitHub while lead dev was in school",
     "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-28T11:48:23.043049Z",
+    "id": "td4d9f07feb3d",
+    "item_ids": [
+      "1cd8a7e7bcb61291"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-28T11:00:00Z",
+    "state": "pending",
+    "title": "News Quiz for Nov. 28, 2026",
+    "topic_id": "world-news"
   },
   {
     "created_at": "2026-11-26T11:48:42.917402Z",

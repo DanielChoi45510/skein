@@ -12,19 +12,19 @@
     "last_modified": "Fri, 27 Nov 2026 21:53:41 GMT"
   },
   "https://deepmind.google/blog/rss.xml": {
-    "etag": "\"LLlZaA\"",
+    "etag": "\"5FcFjw\"",
     "last_modified": null
   },
   "https://feeds.content.dowjones.io/public/rss/RSSMarketsMain": {
-    "etag": "W/\"9e7d-x7/x7fnW5HqfcAV13mZzMV3wSZ0\"",
+    "etag": "W/\"9e7d-TSbn9wyxpsc8cPetvTW5qVPoqtg\"",
     "last_modified": null
   },
   "https://feeds.content.dowjones.io/public/rss/RSSOpinion": {
-    "etag": "W/\"f4ad-CQQ1rZlY+tWPF8MhfzZcQimAUjM\"",
+    "etag": "W/\"f4ad-aSSJJpF3kgquiYperNujTGlcmfQ\"",
     "last_modified": null
   },
   "https://feeds.content.dowjones.io/public/rss/RSSWorldNews": {
-    "etag": "W/\"d11b-J1qds1AjI08+msp4Q+wbMjw8zyU\"",
+    "etag": "W/\"cdb5-GrjHxQVYFljrT2pHNEAlz4joxfY\"",
     "last_modified": null
   },
   "https://fivebooks.com/feed/": {
@@ -32,7 +32,7 @@
     "last_modified": "Wed, 25 Nov 2026 15:58:30 GMT"
   },
   "https://flipboard.com/@associatedpress/top-stories-u7govdf1z.rss": {
-    "etag": "W/\"b604-xCbGLqgu8J001eUDQPWB2FmOr/U\"",
+    "etag": "W/\"b590-of4TQTATfWZ497BZ7tvOfTj9E1I\"",
     "last_modified": null
   },
   "https://flipboard.com/@associatedpress/u.s.-news-lhl4uphvz.rss": {
@@ -43,8 +43,12 @@
     "etag": null,
     "last_modified": "Sat, 28 Nov 2026 03:19:20 GMT"
   },
+  "https://latent.space/feeds/news.xml": {
+    "etag": null,
+    "last_modified": "Sat, 28 Nov 2026 11:45:32 GMT"
+  },
   "https://newsletter.pragmaticengineer.com/feed": {
-    "etag": "W/\"b69b3-riD+0zVV5/Tn+edfJoWOG4veIk4\"",
+    "etag": "W/\"b69b3-EBdSMKEc5oy/7e5IrxoRO6nj/VA\"",
     "last_modified": null
   },
   "https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_anthropic_news.xml": {
@@ -80,15 +84,15 @@
     "last_modified": "Tue, 24 Nov 2026 19:00:17 GMT"
   },
   "https://www.nationalreview.com/feed/": {
-    "etag": "W/\"c112b5d15aa2e4a4c1e49a41c01a174331e5c9350ab6f7ed376215c6f4fb4c3b\"",
+    "etag": "W/\"15d0a8de9e3ea60675259eaef2912ca7af27cd0f61de42ea04ff1ecb4baaf81e\"",
     "last_modified": null
   },
   "https://www.notebookcheck.net/RSS-Feed-Notebook-Reviews.8156.0.html": {
     "etag": null,
-    "last_modified": "Sat, 28 Nov 2026 10:23:14 GMT"
+    "last_modified": "Sat, 28 Nov 2026 11:48:28 GMT"
   },
   "https://www.oneusefulthing.org/feed": {
-    "etag": "W/\"e0f01-clDt+ogvxprbC8F9n6Swxbf2CJc\"",
+    "etag": "W/\"e0f01-x3r5ZVdA2l2P0So9kIPX9HSmg0M\"",
     "last_modified": null
   },
   "https://www.rtings.com/latest-rss.xml": {
