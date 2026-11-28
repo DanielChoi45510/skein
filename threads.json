@@ -3949,7 +3949,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-25T04:29:07Z",
-    "state": "active",
+    "state": "cooling",
     "title": "Gemini · 4 · Neon · GDM",
     "topic_id": "ai-news"
   },
@@ -6160,7 +6160,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-25T04:31:18Z",
-    "state": "active",
+    "state": "cooling",
     "title": "Islands · Security · Treaty · China",
     "topic_id": "world-news"
   },
@@ -9690,7 +9690,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-25T04:31:48Z",
-    "state": "active",
+    "state": "cooling",
     "title": "Show HN: Old Nvidia and ATI tech demos, running again in the browser",
     "topic_id": "ai-news"
   },
@@ -11080,6 +11080,18 @@
     "state": "pending",
     "title": "Trump Meets With the Anti-U.S. Axis",
     "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-28T04:48:35.820629Z",
+    "id": "tfec01a0eae33",
+    "item_ids": [
+      "990f58ceeb055fd1"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-27T23:06:29Z",
+    "state": "pending",
+    "title": "Google's DeepCrossAttention achieves comparable model quality up to 3x faster",
+    "topic_id": "ai-news"
   },
   {
     "created_at": "2026-11-22T09:09:42.410739Z",
