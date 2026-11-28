@@ -12,19 +12,19 @@
     "last_modified": "Fri, 27 Nov 2026 21:53:41 GMT"
   },
   "https://deepmind.google/blog/rss.xml": {
-    "etag": "\"VUJDcg\"",
+    "etag": "\"SHo4AQ\"",
     "last_modified": null
   },
   "https://feeds.content.dowjones.io/public/rss/RSSMarketsMain": {
-    "etag": "W/\"9e9f-SoXnc6Z8hNrpHA2TCQDKY7jTwS0\"",
+    "etag": "W/\"9e9f-TM1dlZY1WN3UMqVtLoBsy1p8PKg\"",
     "last_modified": null
   },
   "https://feeds.content.dowjones.io/public/rss/RSSOpinion": {
-    "etag": "W/\"f4ad-ml+Upq13BIx88v8W1B+Ceidp+Lw\"",
+    "etag": "W/\"f4ad-6Zhmn3aDQhhhMVCOrQo/2wsNSfc\"",
     "last_modified": null
   },
   "https://feeds.content.dowjones.io/public/rss/RSSWorldNews": {
-    "etag": "W/\"d11b-O6vGtVP10KyRHevvnKej0XZYs6E\"",
+    "etag": "W/\"d11b-JIJnE6WAO0ixIsYCU/0756/Yza0\"",
     "last_modified": null
   },
   "https://fivebooks.com/feed/": {
@@ -32,7 +32,7 @@
     "last_modified": "Wed, 25 Nov 2026 15:58:30 GMT"
   },
   "https://flipboard.com/@associatedpress/top-stories-u7govdf1z.rss": {
-    "etag": "W/\"b622-Df+OcjGiWkFIMBoFdZakj28AjyA\"",
+    "etag": "W/\"b3f2-iVsprF2nzS5nf7TR7Z++fGURTaw\"",
     "last_modified": null
   },
   "https://flipboard.com/@associatedpress/u.s.-news-lhl4uphvz.rss": {
@@ -43,12 +43,8 @@
     "etag": null,
     "last_modified": "Sat, 28 Nov 2026 03:19:20 GMT"
   },
-  "https://latent.space/feeds/news.xml": {
-    "etag": null,
-    "last_modified": "Sat, 28 Nov 2026 08:44:10 GMT"
-  },
   "https://newsletter.pragmaticengineer.com/feed": {
-    "etag": "W/\"b69b3-3pluI+bwieyrzunahU6Az/fXcrI\"",
+    "etag": "W/\"b69b3-3DUn6doE68dj+/w+rElLj5DefsQ\"",
     "last_modified": null
   },
   "https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_anthropic_news.xml": {
@@ -89,10 +85,10 @@
   },
   "https://www.notebookcheck.net/RSS-Feed-Notebook-Reviews.8156.0.html": {
     "etag": null,
-    "last_modified": "Sat, 28 Nov 2026 08:48:40 GMT"
+    "last_modified": "Sat, 28 Nov 2026 09:48:37 GMT"
   },
   "https://www.oneusefulthing.org/feed": {
-    "etag": "W/\"e0f01-SoYY1GdgQviRZugSE6uKupLO3kQ\"",
+    "etag": "W/\"e0f01-dwwgKpoHohRJTDtZQM0rM941UFw\"",
     "last_modified": null
   },
   "https://www.rtings.com/latest-rss.xml": {

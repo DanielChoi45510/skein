@@ -1375,7 +1375,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-25T09:40:19Z",
-    "state": "active",
+    "state": "cooling",
     "title": "House · Democrats · Largest · Majority",
     "topic_id": "us-politics"
   },
@@ -8814,6 +8814,18 @@
     "state": "pending",
     "title": "The Unbearable Heat of Delhi’s Summer Nights",
     "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-28T09:48:30.232082Z",
+    "id": "tc7eb430bd74b",
+    "item_ids": [
+      "faa93bd648758e92"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-28T09:05:43Z",
+    "state": "pending",
+    "title": "Weather, supply uncertainties may accelerate India inflation, report says",
+    "topic_id": "us-politics"
   },
   {
     "created_at": "2026-11-23T01:41:04.329483Z",
