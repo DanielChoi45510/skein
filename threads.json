@@ -1280,12 +1280,13 @@
       "76477f356c01ca8f",
       "05025eb8b78f9e3e",
       "85dfcb49ec463a20",
-      "46ef955fb84061a4"
+      "46ef955fb84061a4",
+      "f9556af68a1860b4"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-28T03:14:47Z",
+    "last_item_at": "2026-11-28T15:39:19Z",
     "state": "active",
-    "title": "Taiwan · Elections · Local · China",
+    "title": "Elections · Taiwan · Local · China",
     "topic_id": "world-news"
   },
   {
@@ -1555,7 +1556,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-25T15:42:30Z",
-    "state": "active",
+    "state": "cooling",
     "title": "Travelers · Thanksgiving · Travel",
     "topic_id": "world-news"
   },
@@ -2598,6 +2599,18 @@
     "topic_id": "jobs-market"
   },
   {
+    "created_at": "2026-11-28T15:48:36.867713Z",
+    "id": "t316d3d1db706",
+    "item_ids": [
+      "e24eb3e8a9131a1c"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-28T13:50:28Z",
+    "state": "pending",
+    "title": "Live Spain election results",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-27T17:48:40.558263Z",
     "id": "t31c1dd833a1e",
     "item_ids": [
@@ -2618,7 +2631,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-25T15:48:00Z",
-    "state": "active",
+    "state": "cooling",
     "title": "Opinion | Why We Must Defeat China",
     "topic_id": "world-news"
   },
@@ -7516,7 +7529,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-25T15:40:38Z",
-    "state": "active",
+    "state": "cooling",
     "title": "Do This to Protect Your Data",
     "topic_id": "us-politics"
   },
