@@ -16,15 +16,15 @@
     "last_modified": null
   },
   "https://feeds.content.dowjones.io/public/rss/RSSMarketsMain": {
-    "etag": "W/\"9ef4-RlM5BRNygwfiBNytmwIgWBK5iA4\"",
+    "etag": "W/\"9ef4-LctRxpVcZ6XDWtCyOBGYl6qYaWU\"",
     "last_modified": null
   },
   "https://feeds.content.dowjones.io/public/rss/RSSOpinion": {
-    "etag": "W/\"f64c-zB1dYEV6CTJk+ueKktdj5ntGV5A\"",
+    "etag": "W/\"f64c-hOMgThpAHAOVtaTBDJmklz1PIs0\"",
     "last_modified": null
   },
   "https://feeds.content.dowjones.io/public/rss/RSSWorldNews": {
-    "etag": "W/\"d0cc-wv/I3UbHgnvHG2AXzGLwKB0tnFs\"",
+    "etag": "W/\"d0cc-uc5FWxuGmbp2RE67WFWTWvbd7A4\"",
     "last_modified": null
   },
   "https://fivebooks.com/feed/": {
@@ -32,11 +32,11 @@
     "last_modified": "Wed, 25 Nov 2026 15:58:30 GMT"
   },
   "https://flipboard.com/@associatedpress/top-stories-u7govdf1z.rss": {
-    "etag": "W/\"af95-+JJmPAd1iTI9aunmOEQHzpzSwAs\"",
+    "etag": "W/\"b3ea-+PPzEV5JbSGPy3k4slAQ4jleBbI\"",
     "last_modified": null
   },
   "https://flipboard.com/@associatedpress/u.s.-news-lhl4uphvz.rss": {
-    "etag": "W/\"b164-vszBfL/39+MGqGT28Q0teKEZf4U\"",
+    "etag": "W/\"b397-FdduzpNsvnTnb40O6YtiKQiy1FU\"",
     "last_modified": null
   },
   "https://hnrss.org/frontpage?points=200": {
@@ -44,7 +44,7 @@
     "last_modified": "Fri, 27 Nov 2026 19:42:25 GMT"
   },
   "https://newsletter.pragmaticengineer.com/feed": {
-    "etag": "W/\"b69b3-EYhux8VB0MB4TmVEEK72FPutOBM\"",
+    "etag": "W/\"b69b3-Ar0vMukwukL2jkzY5448S19bCsc\"",
     "last_modified": null
   },
   "https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_anthropic_news.xml": {
@@ -85,7 +85,7 @@
   },
   "https://www.notebookcheck.net/RSS-Feed-Notebook-Reviews.8156.0.html": {
     "etag": null,
-    "last_modified": "Sat, 28 Nov 2026 01:48:45 GMT"
+    "last_modified": "Sat, 28 Nov 2026 01:58:30 GMT"
   },
   "https://www.oneusefulthing.org/feed": {
     "etag": "W/\"e0f01-YKQEUEQiFKwDp3MgQTvadS1Eemk\"",
@@ -104,15 +104,15 @@
     "last_modified": "Fri, 27 Nov 2026 21:05:13 GMT"
   },
   "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml": {
-    "etag": "W/\"3bdb04d8b16e2a99aa5fe88d439db443\"",
+    "etag": "W/\"fd6e8791c9715b25c1d9d050e6841638\"",
     "last_modified": null
   },
   "https://www.theverge.com/rss/installer-newsletter/index.xml": {
-    "etag": "W/\"fe7d4c900ef9ae7017c7f36e3871c517\"",
+    "etag": "W/\"fd6e8791c9715b25c1d9d050e6841638\"",
     "last_modified": null
   },
   "https://www.theverge.com/rss/reviews/index.xml": {
-    "etag": "W/\"3bdb04d8b16e2a99aa5fe88d439db443\"",
+    "etag": "W/\"00992e158ccd076d6f4ed57d72151c19\"",
     "last_modified": null
   }
 }
