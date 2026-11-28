@@ -275,10 +275,11 @@
       "8795e9d3c3e28090",
       "de1ff291eddd7949",
       "8234c4721cb10646",
-      "cb3d9ebf7366cd42"
+      "cb3d9ebf7366cd42",
+      "96b18355215fdc7d"
     ],
     "kind": "fixed",
-    "last_item_at": "2026-11-27T11:35:00Z",
+    "last_item_at": "2026-11-28T10:00:44Z",
     "state": "active",
     "title": "Information Technology",
     "topic_id": "markets"
@@ -1482,6 +1483,18 @@
     "state": "active",
     "title": "Britain · Burnham · Reset · Brexit",
     "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-28T10:23:02.528772Z",
+    "id": "t17c54e641cce",
+    "item_ids": [
+      "de99aa6665d57686"
+    ],
+    "kind": "question",
+    "last_item_at": "2026-11-28T10:00:50Z",
+    "state": "pending",
+    "title": "It’s the World’s Third Leading Cause of Death. Are Better Treatments Coming?",
+    "topic_id": "health-wellbeing"
   },
   {
     "created_at": "2026-11-22T09:09:42.410739Z",
@@ -4652,6 +4665,18 @@
     "state": "pending",
     "title": "Android’s DIY widgets are a bit of vibe-coding fun",
     "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-28T10:23:02.528772Z",
+    "id": "t63167821443c",
+    "item_ids": [
+      "d9acca7844f7c04d"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-28T10:00:44Z",
+    "state": "pending",
+    "title": "Canada’s Arctic Reservists Know the Land. Fewer Young People Do.",
+    "topic_id": "world-news"
   },
   {
     "created_at": "2026-11-26T01:48:38.580251Z",
@@ -7839,6 +7864,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-28T10:23:02.528772Z",
+    "id": "tb24955b0d85c",
+    "item_ids": [
+      "a65a807e025efbd7"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-28T10:14:37Z",
+    "state": "pending",
+    "title": "Seven students killed and nearly 100 injured in explosion in Afghanistan, official says",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-26T12:48:42.229036Z",
     "id": "tb264e03c1d05",
     "item_ids": [
@@ -10091,6 +10128,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-28T10:23:02.528772Z",
+    "id": "tea08de3f2e59",
+    "item_ids": [
+      "8578729ade34f948"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-28T10:02:17Z",
+    "state": "pending",
+    "title": "Millions of Children Are Losing Food Stamps",
+    "topic_id": "us-politics"
+  },
+  {
     "created_at": "2026-11-26T09:48:36.356682Z",
     "id": "teaee57a7165a",
     "item_ids": [
@@ -10338,6 +10387,18 @@
     "state": "active",
     "title": "Wearables",
     "topic_id": "tech-trackers"
+  },
+  {
+    "created_at": "2026-11-28T10:23:02.528772Z",
+    "id": "ted3ee218fd45",
+    "item_ids": [
+      "035fc86f72b9d0ea"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-28T10:02:15Z",
+    "state": "pending",
+    "title": "Ukraine’s Deep Strikes Grow in Scale and Scope Across Russia and Beyond",
+    "topic_id": "world-news"
   },
   {
     "created_at": "2026-11-22T03:51:06.410293Z",
@@ -10851,6 +10912,18 @@
     "state": "pending",
     "title": "How safe and effective is mifepristone when used for emergency contraception?",
     "topic_id": "health-sleep"
+  },
+  {
+    "created_at": "2026-11-28T10:23:02.528772Z",
+    "id": "tf7e04e3850dc",
+    "item_ids": [
+      "ee3db0cab65f080e"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-28T10:00:00Z",
+    "state": "pending",
+    "title": "New wave of Democratic attorneys general may reshape the justice system",
+    "topic_id": "us-politics"
   },
   {
     "created_at": "2026-11-25T14:48:56.624988Z",
