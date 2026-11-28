@@ -1962,6 +1962,18 @@
     "topic_id": "us-politics"
   },
   {
+    "created_at": "2026-11-28T03:48:41.943379Z",
+    "id": "t2426c7837efa",
+    "item_ids": [
+      "14f57ff759ec1ad1"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-28T03:45:59Z",
+    "state": "pending",
+    "title": "[AINews] Inside the exploding Coding Data Market",
+    "topic_id": "ai-news"
+  },
+  {
     "created_at": "2026-11-24T08:48:33.505341Z",
     "id": "t2445e51ead75",
     "item_ids": [
@@ -3501,6 +3513,18 @@
     "last_item_at": "2026-11-20T11:30:24Z",
     "state": "pending",
     "title": "Why Is Everything Breaking?",
+    "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-28T03:48:41.943379Z",
+    "id": "t48b6e332914d",
+    "item_ids": [
+      "86e750eb90d47890"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-28T03:00:00Z",
+    "state": "pending",
+    "title": "How Starlink Limits Force Ukraine to Fight With the Brakes On",
     "topic_id": "world-news"
   },
   {
@@ -7625,6 +7649,18 @@
     "topic_id": "health-sleep"
   },
   {
+    "created_at": "2026-11-28T03:48:41.943379Z",
+    "id": "taf87e98be929",
+    "item_ids": [
+      "4c920f1a77d3e5a0"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-28T03:00:00Z",
+    "state": "pending",
+    "title": "Why Karl Marx’s Ideas Are Making a Comeback in Europe",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-26T18:48:42.594948Z",
     "id": "tafa7f90f84ad",
     "item_ids": [
@@ -10109,10 +10145,11 @@
       "addc32967419ca84",
       "451daa45791e6204",
       "9bc86ee69b219913",
-      "7b217c03ed138544"
+      "7b217c03ed138544",
+      "98cb1220faa01178"
     ],
     "kind": "tracker",
-    "last_item_at": "2026-11-27T20:58:22Z",
+    "last_item_at": "2026-11-28T03:07:04Z",
     "state": "active",
     "title": "Headphones & earbuds",
     "topic_id": "tech-trackers"
@@ -10358,12 +10395,13 @@
     "item_ids": [
       "6de15d8bbbb2c91f",
       "291ac92f825a2742",
-      "e242a324ac5ae26a"
+      "e242a324ac5ae26a",
+      "28f9827c32e7f223"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-25T08:05:15Z",
+    "last_item_at": "2026-11-28T03:00:00Z",
     "state": "active",
-    "title": "Colombia’s Leader Blames ‘Terrorist Attack’ for Power Outages",
+    "title": "Colombia · President",
     "topic_id": "world-news"
   },
   {
