@@ -2173,6 +2173,18 @@
     "topic_id": "ai-news"
   },
   {
+    "created_at": "2026-11-28T12:48:40.119316Z",
+    "id": "t2889a85bef2a",
+    "item_ids": [
+      "812ddc416d7b595d"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-28T12:00:00Z",
+    "state": "pending",
+    "title": "The Houthis Are the Future of Warfare",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-27T03:48:41.308049Z",
     "id": "t28f2eaf8b3b5",
     "item_ids": [
@@ -3533,11 +3545,12 @@
     "item_ids": [
       "3e398dc2bccc8ed7",
       "821eca60bf6d0ece",
-      "8afc67698d9b5f71"
+      "8afc67698d9b5f71",
+      "4bddf9210dca2d3b"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-20T21:00:00Z",
-    "state": "cooling",
+    "last_item_at": "2026-11-28T12:00:15Z",
+    "state": "active",
     "title": "Silicon · Valley",
     "topic_id": "us-politics"
   },
@@ -3948,6 +3961,18 @@
     "state": "pending",
     "title": "Net Migration to U.K. Falls to Lowest Level Since 1997, Excluding Pandemic",
     "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-28T12:48:40.119316Z",
+    "id": "t53b7ac9f2c38",
+    "item_ids": [
+      "b1c2bf1c258495d4"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-28T12:00:21Z",
+    "state": "pending",
+    "title": "Trump’s War on the I.C.C. Would Leave Victims Nowhere to Turn",
+    "topic_id": "us-politics"
   },
   {
     "created_at": "2026-11-25T20:48:40.987096Z",
@@ -4667,6 +4692,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-28T12:48:40.119316Z",
+    "id": "t62803f78f6b3",
+    "item_ids": [
+      "e6a3711c29d3386e"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-28T12:24:06Z",
+    "state": "pending",
+    "title": "Min Jin Lee: My Origin Story as an American",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-27T14:48:31.834302Z",
     "id": "t630fd0a01cd3",
     "item_ids": [
@@ -5120,6 +5157,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-28T12:48:40.119316Z",
+    "id": "t6e8b69a36396",
+    "item_ids": [
+      "1a61e98d3e1e197b"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-28T12:20:07Z",
+    "state": "pending",
+    "title": "What the World’s Richest Man Did to the World’s Poorest Children",
+    "topic_id": "us-politics"
+  },
+  {
     "created_at": "2026-11-26T17:48:40.240159Z",
     "id": "t6eb3aa6181cf",
     "item_ids": [
@@ -5300,6 +5349,30 @@
     "state": "pending",
     "title": "Token fraud is here and it’s BAD (YouTube)",
     "topic_id": "ai-news"
+  },
+  {
+    "created_at": "2026-11-28T12:48:40.119316Z",
+    "id": "t733c3b1c1c3d",
+    "item_ids": [
+      "0534f31c56d27cf9"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-28T12:00:00Z",
+    "state": "pending",
+    "title": "The Civil-Rights Law That Activists Say Prohibits Civil-Rights Programs",
+    "topic_id": "us-politics"
+  },
+  {
+    "created_at": "2026-11-28T12:48:40.119316Z",
+    "id": "t734fbf15bb3d",
+    "item_ids": [
+      "00f5c1530d75518e"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-28T12:00:11Z",
+    "state": "pending",
+    "title": "America’s Power Is Eroding, One Bad Decision at a Time",
+    "topic_id": "world-news"
   },
   {
     "created_at": "2026-11-25T07:48:38.321733Z",
@@ -11177,6 +11250,18 @@
     "state": "pending",
     "title": "Tajikistan becomes fourth country to withdraw from ICC since US diplomatic push",
     "topic_id": "world-news"
+  },
+  {
+    "created_at": "2026-11-28T12:48:40.119316Z",
+    "id": "tfca4c8111bae",
+    "item_ids": [
+      "ffd8fc3e8aabeb88"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-28T12:39:24Z",
+    "state": "pending",
+    "title": "Week in Politics: Trump's Thanksgiving messaging; Congress' pre-holiday to-do list",
+    "topic_id": "us-politics"
   },
   {
     "created_at": "2026-11-26T01:48:38.580251Z",
