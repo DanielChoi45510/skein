@@ -8819,6 +8819,18 @@
     "topic_id": "world-news"
   },
   {
+    "created_at": "2026-11-28T16:48:35.825333Z",
+    "id": "tc2d77dfdc426",
+    "item_ids": [
+      "6ab4c2f4e495c69e"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-28T16:23:01Z",
+    "state": "pending",
+    "title": "How Trump Is Shifting America’s Alliances",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-22T12:34:08.686149Z",
     "id": "tc3327beb07e5",
     "item_ids": [
@@ -10279,12 +10291,13 @@
     "created_at": "2026-11-28T10:23:02.528772Z",
     "id": "tea08de3f2e59",
     "item_ids": [
-      "8578729ade34f948"
+      "8578729ade34f948",
+      "ec5b0cbdb41c19ba"
     ],
     "kind": "story",
-    "last_item_at": "2026-11-28T10:02:17Z",
-    "state": "pending",
-    "title": "Millions of Children Are Losing Food Stamps",
+    "last_item_at": "2026-11-28T10:02:18Z",
+    "state": "active",
+    "title": "Millions · Children · Food · Stamps",
     "topic_id": "us-politics"
   },
   {
@@ -10925,6 +10938,18 @@
     "topic_id": "ai-news"
   },
   {
+    "created_at": "2026-11-28T16:48:35.825333Z",
+    "id": "tf5121b50e67c",
+    "item_ids": [
+      "a87dfaf835b9761a"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-28T16:10:23Z",
+    "state": "pending",
+    "title": "Violent Protests in Albania: What to Know",
+    "topic_id": "world-news"
+  },
+  {
     "created_at": "2026-11-22T09:09:42.410739Z",
     "id": "tf583e6ed8c4f",
     "item_ids": [
@@ -11057,7 +11082,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-25T16:22:17Z",
-    "state": "active",
+    "state": "cooling",
     "title": "South · African · President · Farmgate",
     "topic_id": "world-news"
   },
@@ -11252,7 +11277,7 @@
     ],
     "kind": "story",
     "last_item_at": "2026-11-25T16:00:59Z",
-    "state": "active",
+    "state": "cooling",
     "title": "Nothing · AI · Earbuds",
     "topic_id": "ai-news"
   },
@@ -11292,6 +11317,18 @@
     "state": "pending",
     "title": "Does electrical stimulation of the leg muscles improve muscle structure and function in adults with kidney failure undergoing dialysis?",
     "topic_id": "health-sleep"
+  },
+  {
+    "created_at": "2026-11-28T16:48:35.825333Z",
+    "id": "tfbb7ab65acad",
+    "item_ids": [
+      "c86c1918c4da4cc1"
+    ],
+    "kind": "story",
+    "last_item_at": "2026-11-28T15:45:00Z",
+    "state": "pending",
+    "title": "Argentina Ramps Up Its Claim to the Falklands. Here’s What to Know.",
+    "topic_id": "world-news"
   },
   {
     "created_at": "2026-11-22T09:09:42.410739Z",
